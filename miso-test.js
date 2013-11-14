@@ -4,6 +4,20 @@ var _ = require('lodash');
 // var _ = require("underscore");
 // _.mixin(require("underscore.deferred"));
 
+_.mixin({
+  movingAvg : function(arr, size, method) {
+    method = method || _.mean;
+    var win, i, newarr = [];
+    for(i = size-1; i <= arr.length; i++) {
+      win = arr.slice(i-size, i);
+      if (win.length === size) {
+        newarr.push(method(win)); 
+      }
+    }
+    return newarr;
+  }
+});
+
 var ds = new Miso.Dataset({
   data: [
     {key:"AZ", value:130000},
@@ -16,14 +30,14 @@ var ds = new Miso.Dataset({
 });
 
 var ds2 = new Miso.Dataset({
-  data: [
-    {key:"A", value:130000},
-    {key:"B", value:420},
-    {key:"C", value:1000},
-    {key:"D", value:200},
-    {key:"E", value:2900},
-    {key:"F", value:4}
-  ]
+  data: {
+    columns: [
+      { name : "A", data : [1,2,3,4,5,6,7,8,9,10],           type : "numeric" },
+      { name : "B", data : [10,9,8,7,6,5,4,3,2,1],           type : "numeric" },
+      { name : "C", data : [10,20,30,40,50,60,70,80,90,100], type : "numeric" }
+    ]
+  },
+  strict: true
 });
 
 // count by
@@ -55,8 +69,8 @@ console.log();
 // moving average
 ds2.fetch({ 
   success: function() {
-    var x = this.movingAverage('value');
-    x.each(function(row) {
+    var x = this.movingAverage(["A"]);
+    this.each(function(row) {
       delete row._id;
       delete row._oids;
       console.log(row);
