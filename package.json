@@ -9,7 +9,8 @@
   "dependencies": {
     "miso.dataset": "~0.4.1",
     "underscore": "~1.5.2",
-    "underscore.deferred": "~0.4.0"
+    "underscore.deferred": "~0.4.0",
+    "lodash": "~2.3.0"
   },
   "engines": {
     "node": "*"
