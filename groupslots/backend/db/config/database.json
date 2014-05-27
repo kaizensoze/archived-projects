@@ -1,0 +1,15 @@
+{
+  "groupslots": {
+    "driver": "mysql",
+    "user": "root",
+    "password": "root",
+    "database": "groupslots"
+  },
+
+  "groupslots_mohegan_sun": {
+    "driver": "mysql",
+    "user": "root",
+    "password": "root",
+    "database": "groupslots_mohegan_sun"
+  }
+}

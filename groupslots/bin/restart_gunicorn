@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo kill -HUP `cat /tmp/gunicorn.pid`

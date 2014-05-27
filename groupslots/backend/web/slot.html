@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <title>GroupSlots</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/slot.css" />
+
+    <script src="js/jquery-1.7.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/slot.js"></script>
+    <script type="text/javascript" src="js/slotMachine.js"></script>
+
+    <style>
+      body {
+        background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, #899);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img class="logo col-left" src="./images/app-icon-114x114.png" width="57" height="57" alt="Logo" />
+      <div class="col-left title">GroupSlots - Virtual Slot Machine</div>
+    </div>
+    <div id="main" style="position: relative; top: -20px;">
+      <div id="info">
+        <div id="logged_in" class="hidden">
+          <!-- <a
+            class="button button-clear"
+            href="#"
+            id="logout"
+            style="color: #79c; float: right; font-weight: bold;"
+          >Logout</a> -->
+          User:
+          <span class="text bold user-value">John S.</span>
+          Group:
+          <span class="text bold user-value">Spider Pigs</span>
+          <div class="fixer"></div>
+        </div>
+        <div id="logged_out" class="hidden">
+          <div id="login">
+            Insert card:
+            <input id="card_id" type="text" />
+            <input id="login_button" type="button" value="LOGIN" />
+          </div>
+        </div>
+      </div>
+      <div id="game" class="hidden">
+        <div id="slotBack">&nbsp;</div>
+        <div id="slotWrapper" class="col-left">
+          <ul class="slot" style="">
+            <li><img src="images/7.png" width="100" height="100" alt="7" /></li>
+            <li><img src="images/6.png" width="100" height="100" alt="6" /></li>
+            <li><img src="images/5.png" width="100" height="100" alt="5" /></li>
+            <li><img src="images/4.png" width="100" height="100" alt="4" /></li>
+            <li><img src="images/3.png" width="100" height="100" alt="3" /></li>
+            <li><img src="images/2.png" width="100" height="100" alt="2" /></li>
+            <li><img src="images/1.png" width="100" height="100" alt="1" /></li>
+            <li><img src="images/7.png" width="100" height="100" alt="7" /></li>
+          </ul>
+          <ul class="slot" style="">
+            <li><img src="images/7.png" width="100" height="100" alt="7" /></li>
+            <li><img src="images/6.png" width="100" height="100" alt="6" /></li>
+            <li><img src="images/5.png" width="100" height="100" alt="5" /></li>
+            <li><img src="images/4.png" width="100" height="100" alt="4" /></li>
+            <li><img src="images/3.png" width="100" height="100" alt="3" /></li>
+            <li><img src="images/2.png" width="100" height="100" alt="2" /></li>
+            <li><img src="images/1.png" width="100" height="100" alt="1" /></li>
+            <li><img src="images/7.png" width="100" height="100" alt="7" /></li>
+          </ul>
+          <ul class="slot" style="margin-left: 1px;">
+            <li><img src="images/7.png" width="100" height="100" alt="7" /></li>
+            <li><img src="images/6.png" width="100" height="100" alt="6" /></li>
+            <li><img src="images/5.png" width="100" height="100" alt="5" /></li>
+            <li><img src="images/4.png" width="100" height="100" alt="4" /></li>
+            <li><img src="images/3.png" width="100" height="100" alt="3" /></li>
+            <li><img src="images/2.png" width="100" height="100" alt="2" /></li>
+            <li><img src="images/1.png" width="100" height="100" alt="1" /></li>
+            <li><img src="images/7.png" width="100" height="100" alt="7" /></li>
+          </ul>
+        </div>
+        <div id="controls" class="col-left">
+          <input type="button" class="button button-large col-right" id="playButton" value="Play" />
+          <div class="fixer" style="height: 20px;"></div>
+          <div style="text-align: right;">
+            <span class="label2">Bet:</span><input class="input" type="number" name="bet" id="bet" min="5" step="5" value="10" style="width: 80px; text-align: right;" />
+            <div class="fixer"></div>
+            <span class="label2" style="margin-left: 20px;">Your Money:</span><input class="input" type="text" name="money" id="money" value="100" size="8" readonly="readonly" style="width: 80px; text-align: right;" />
+          </div>
+          <div class="fixer" style="height: 2px;"></div>
+          <div class="key">
+            one 7 = 5x<br/>
+            two 7's = 40x<br/>
+            three 7's = 300x
+          </div>
+          <div class="fixer"></div>
+          <div class="col-right" style="margin-top: 20px;">
+            <input type="checkbox" id="win_always"/>&nbsp;Always win
+          </div>
+        </div>
+        <div class="fixer"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+create table last_win (time TIMESTAMP DEFAULT NOW(), win_amount int);

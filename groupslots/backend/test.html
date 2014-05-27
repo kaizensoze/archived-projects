@@ -1,0 +1,13 @@
+
+<html>
+<body>
+  <script src="node_modules/socket.io/node_modules/socket.io-client/dist/socket.io.js"></script>
+  <script>
+  var socket = io.connect('http://groupslots.local.elephantventures.com:3000');
+  socket.on('ping', function (data) {
+    console.log('client received ping: ' + data);
+    socket.emit('pong', { data: 'pong data' });
+  });
+  </script>
+</body>
+</html>

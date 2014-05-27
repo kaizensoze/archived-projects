@@ -1,0 +1,89 @@
+<?php
+
+$databases = array (
+  'default' =>
+  array (
+    'default' =>
+    array (
+      'database' => '<%= node[:ev][:project][:mysql][:db_name]%>',
+      'username' => '<%= node[:ev][:project][:mysql][:username]%>',
+      'password' => '<%= node[:ev][:project][:mysql][:password]%>',
+      'host'     => '<%= @db_host %>',
+      'port'     => '',
+      'driver'   => 'mysql',
+      'prefix'   => '<%= node[:ev][:project][:mysql][:prefix]%>',
+    ),
+  ),
+);
+
+
+$drupal_hash_salt = '';
+
+
+$base_url = '<%= node[:ev][:project][:base_url] %>';
+
+
+ini_set('session.gc_probability', 1);
+ini_set('session.gc_divisor', 100);
+ini_set('session.gc_maxlifetime', 200000);
+ini_set('session.cookie_lifetime', 2000000);
+
+
+# $conf['site_name'] = 'My Drupal site';
+# $conf['theme_default'] = 'garland';
+# $conf['anonymous'] = 'Visitor';
+# $conf['maintenance_theme'] = 'bartik';
+
+# $conf['reverse_proxy'] = TRUE;
+# $conf['reverse_proxy_addresses'] = array('a.b.c.d', ...);
+# $conf['reverse_proxy_header'] = 'HTTP_X_CLUSTER_CLIENT_IP';
+# $conf['omit_vary_cookie'] = TRUE;
+
+# $conf['css_gzip_compression'] = FALSE;
+# $conf['js_gzip_compression'] = FALSE;
+
+/**
+ * String overrides:
+ *
+ */
+# $conf['locale_custom_strings_en'][''] = array(
+#   'forum'      => 'Discussion board',
+#   '@count min' => '@count minutes',
+# );
+
+/**
+ *
+ * IP blocking:
+ *
+ * To bypass database queries for denied IP addresses, use this setting.
+ * Drupal queries the {blocked_ips} table by default on every page request
+ * for both authenticated and anonymous users. This allows the system to
+ * block IP addresses from within the administrative interface and before any
+ * modules are loaded. However on high traffic websites you may want to avoid
+ * this query, allowing you to bypass database access altogether for anonymous
+ * users under certain caching configurations.
+ *
+ * If using this setting, you will need to add back any IP addresses which
+ * you may have blocked via the administrative interface. Each element of this
+ * array represents a blocked IP address. Uncommenting the array and leaving it
+ * empty will have the effect of disabling IP blocking on your site.
+ *
+ * Remove the leading hash signs to enable.
+ */
+# $conf['blocked_ips'] = array(
+#   'a.b.c.d',
+# );
+
+# drupal_fast_404();
+$conf['404_fast_paths_exclude'] = '/\/(?:styles)\//';
+$conf['404_fast_paths'] = '/\.(?:txt|png|gif|jpe?g|css|js|ico|swf|flv|cgi|bat|pl|dll|exe|asp)$/i';
+$conf['404_fast_html'] = '<html xmlns="http://www.w3.org/1999/xhtml"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "@path" was not found on this server.</p></body></html>';
+
+$conf['install_profile'] = '<%= node[:ev][:project][:profile_name] %>';
+
+# API keys
+$conf['addthis_publisher_id'] = 'ra-52162ff3145d575d';
+
+# address to ping with email subscriptions
+# FIXME? later we can move this to the admin UI
+$conf['email_subscription_ping'] = 'archie.datester@gmail.com';

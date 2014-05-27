@@ -1,0 +1,22 @@
+#!/bin/sh
+
+read -p "Are you sure? " REPLY
+if [ $REPLY = 'yes' ]
+    echo "Doing nothing."
+then
+    echo "Dropping groupslots database..."
+    mysql -u root -proot groupslots -e "drop database groupslots"
+
+    echo "Recreating groupslots database..."
+    mysql -u root -proot -e "create database groupslots"
+
+    echo "Loading python tables..."
+    cd /home/vagrant/workspace/groupslots/api
+    python api.py
+
+    if [ -f /tmp/gunicorn.pid ]; then
+        echo "Restarting gunicorn..."
+        /home/vagrant/workspace/groupslots/bin/restart_gunicorn
+    fi
+fi
+

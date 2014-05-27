@@ -1,0 +1,19 @@
+
+# xcode project
+UserInterfaceState.xcuserstate
+*.xcuserdatad/
+
+.settings/*
+.project
+.buildpath
+
+
+backend/logs/*.log
+
+vagrant/output.txt
+
+# Python compiled code
+*.pyc
+
+# Configs
+api/flask_config.py

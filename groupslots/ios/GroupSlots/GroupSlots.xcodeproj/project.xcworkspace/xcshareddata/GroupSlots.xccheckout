@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0E775D4D-ADD1-4CF7-8782-85F1C30407B9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GroupSlots</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AE5A41F9-9E10-49F0-B9B8-3D56E72684A2</key>
+		<string>ssh://github.com/ElephantVentures/groupslots.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/GroupSlots/GroupSlots.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AE5A41F9-9E10-49F0-B9B8-3D56E72684A2</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/ElephantVentures/groupslots.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>AE5A41F9-9E10-49F0-B9B8-3D56E72684A2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AE5A41F9-9E10-49F0-B9B8-3D56E72684A2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>groupslots</string>
+		</dict>
+	</array>
+</dict>
+</plist>
