@@ -2098,8 +2098,8 @@
 		7CF94D23170F696200154615 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Elephant Ventures";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Elephant Ventures";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Gallo (V79QM36WKB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Gallo (V79QM36WKB)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -2125,8 +2125,8 @@
 		7CF94D24170F696200154615 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Elephant Ventures";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Elephant Ventures";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Gallo (V79QM36WKB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Gallo (V79QM36WKB)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
