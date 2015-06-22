@@ -1,0 +1,46 @@
+{% load i18n staticfiles %}
+
+<div class="pagination">
+  <ul>
+    {% if page.has_previous %}
+        <li class="prev">
+          <a href="?{{ page.previous_page_number.querystring }}">
+            <img src="{% static 'images/button-previous.png' %}" alt="previous" width="50" height="20">
+          </a>
+        </li>
+    {% else %}
+        <li class="disabled prev">
+          <img src="{% static 'images/button-previous.png' %}" alt="previous" width="50" height="20">
+        </li>
+    {% endif %}
+    {% for p in page.pages %}
+        {% if p %}
+            {% if p == page.number %}
+                <li class="current page">{{ p }}</li>
+            {% else %}
+                <li class="page"><a href="?{{ p.querystring }}">{{ p }}</a></li>
+            {% endif %}
+        {% else %}
+                <li>...</li>
+        {% endif %}
+    {% endfor %}
+    {% if page.has_next %}
+        <li class="next">
+          <a href="?{{ page.next_page_number.querystring }}">
+            <img src="{% static 'images/button-next.png' %}" alt="next" width="50" height="20" />
+          </a>
+        </li>
+    {% else %}
+        <li class="disabled next">
+          <img src="{% static 'images/button-next.png' %}" alt="next" width="50" height="20" />
+        </li>
+    {% endif %}
+    {% if paginator.count <= 100 and not profile %}
+    <li>
+      <a href="?{{ request.META.QUERY_STRING }}&display=all">
+        <img src="{% static 'images/view-all-button.png' %}" alt="View All" width="73" height="20" />
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</div>

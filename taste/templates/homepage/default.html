@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+{% load compressed staticfiles %}
+
+{% block meta_tags %}
+  <meta name="description" content="Taste Savant - Food Discovery at Your Fingers." />
+{% endblock %}
+
+{% block title %}Food Discovery at Your Fingertips{% endblock %}
+
+{% block body_class %}homepage{% endblock %}
+
+{% block css %}
+  {% compressed_css 'homepage' %}
+  {% if show_splash %}
+  <style type="text/css">
+    #dismiss img {
+      position: absolute;
+      top: 21px;
+      left: 814px;
+      width: 20px;
+      height: 20px;
+    }
+    #splash {
+        width: 850px;
+        margin-left: -425px;
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        background-color: transparent;
+        z-index: 500;
+    }
+    #background {
+        width: 850px;
+    }
+    #text {
+        position: relative;
+        top: -590px; /* The height of the splash image. */
+        width: 800px;
+        margin: 0 auto;
+    }
+    #hero {
+        /*margin-top: 80px;*/
+        margin-top: 71px;
+        font-family: "Georgia", serif;
+        /*font-size: 18pt;*/
+        font-size: 20pt;
+        text-align: center;
+        line-height: 120%;
+        color: #534741;
+        /*letter-spacing: 1px;*/
+    }
+    #hero em {
+        color: #e25a2e;
+    }
+    #explanation {
+        text-align: center;
+        position: relative;
+        top: 17px;
+        font-family: "Arial", sans-serif;
+        color: #ffffff;
+        font-size: 12pt;
+    }
+    #get_started {
+        position: relative;
+        top: 250px;
+        left: 17px;
+        width: 383px;
+        font-family: "Georgia", serif;
+        font-size: 14px;
+        color: #534741;
+    }
+    #sign_up {
+        position: relative;
+        top: 210px;
+        left: 400px;
+        width: 383px;
+        font-family: "Arial", serif;
+        font-size: 14px;
+        color: #534741;
+    }
+    #sign_up a {
+        font-variant: small-caps;
+    }
+    #sign_up img {
+        vertical-align: middle;
+    }
+    #browse {
+        position: relative;
+        top: 210px;
+        left: 675px;
+        width: 100px;
+    }
+    #get_started_authenticated {
+      text-align: center;
+      position: relative;
+      top: 250px;
+    }
+    #get_started_authenticated p {
+      margin-top: 20px;
+      font-family: "Georgia", serif;
+      font-size: 12pt;
+    }
+  </style>
+  {% endif %}
+{% endblock %}
+
+{% block js %}
+  {% compressed_js 'homepage' %}
+  <!-- For suggested-followers carousel -->
+  <script type="text/javascript">
+  function toggle_button(btn) {
+    var img = btn.childNodes.item("img");
+    var orange = "{% static 'images/follow.png' %}";
+    var grey = "{% static 'images/unfollow.png' %}"
+    var src = img.getAttribute('src');
+    var href = btn.getAttribute('href');
+    if (src == orange) {
+      img.setAttribute('src', grey);
+      btn.setAttribute('href', href.replace("follow", "unfollow"));
+    } else {
+      img.setAttribute('src', orange);
+      btn.setAttribute('href', href.replace("unfollow", "follow"));
+    }
+  }
+  function show_error() {
+    var show_for = 10; /* Seconds to show for. */
+    var error_div = "<div class=\"ajax-error\">There was an error communicating with the server.</div>";
+    var error_jq = jQuery(error_div);
+    error_jq.appendTo("#follow_suggestions .box-title").hide().fadeIn().delay(show_for * 1000).fadeOut(function () {
+        error_jq.remove();
+      });
+  }
+  jQuery(document).ready(function() {
+    jQuery('.follow-button').click(function(evt) {
+      evt.preventDefault();
+      var currentTarget = evt.currentTarget;
+      var pathname = currentTarget.pathname;
+      /*
+       * Ajax call to pathname.
+       * If we get a 404, that's a failure-to-follow and should cause no change in button state, but display an error.
+       * If we get a 204, that's a successful follow and should cause a change in button state.
+       */
+      jQuery.ajax(pathname, {
+        error: function() {
+          toggle_button(currentTarget);
+          show_error();
+        },
+        beforeSend: function() {
+          toggle_button(currentTarget);
+        }
+      });
+    });
+  });
+  </script>
+
+  {% if show_splash %}
+  <script type="text/javascript">
+  window.addEvent('keyup', function(evt) {
+    if (evt.key == 'esc') {
+      $('splash').fade('out');
+    }
+  });
+  window.addEvent('domready', function() {
+    $$('.dismiss').addEvent('click', function(evt) {
+      evt.preventDefault();
+      $('splash').fade('out');
+    });
+  });
+  </script>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if show_splash %}
+    <!--[if IE]>
+    <style type="text/css">
+    div#text p#explanation {
+      top: 14px;
+    }
+    </style>
+    <![endif]-->
+    <div id="splash">
+      <a href="/" id="dismiss"><img src="{% static 'splash/x.png' %}" /></a>
+      <img id="background" src="{% static splash_for_city %}" />
+      <div id="text">
+        <p id="hero">We help you discover where to eat next by curating and<br />aggregating reviews from sources <em>you</em> trust.</p>
+        <p id="explanation">
+            Search for a restaurant and find reviews from
+        </p>
+      {% if not user.is_authenticated %}
+        <p id="get_started">
+            <strong>Get Started Now!</strong> Connect with your friends by signing in with Facebook and start your restaurant discovery.
+        </p>
+        <p id="sign_up" class="{% if user.is_authenticated %}get-started{% endif %}">
+
+            <a class="social-auth-link" href="{% url socialauth_begin 'facebook' %}?next={{ current_path }}"><img src="{% static 'splash/fb.png' %}" style="width: 222px;" data-auth='Facebook' /></a>
+            or <a href="{% url registration_register_signup %}">create an account</a>
+        </p>
+        <p id="browse">
+            <a id="browse_site" class="dismiss" href="/">&raquo; Browse the Site</a>
+        </p>
+      {% else %}
+        <div id="get_started_authenticated">
+          <a href="{% url follower_suggestions %}"><input type="submit" class="button orange" value="Get Started Now!" /></a>
+          <p>
+            Connect with your friends by signing in with Facebook and start your restaurant journey.
+          </p>
+        </div>
+      {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  {{ block.super}}
+  <form action="/search/advanced/" method="GET" id="widget-form" class="{{ current_city|slugify }}">
+    <input type="hidden" name="sort" value="critic" />
+    {% for field in extended_search_form %}
+      <span id="{{ field.label|lower }}-content" class="nodisplay">
+        <h4>{{ field.label }}<span class="save close-button"></span></h4>
+        <div class="box-wrap{% if field.label|lower == 'occasion' %} non-tree{% endif %}">
+          {% if field.label|lower == 'neighborhood' or field.label|lower == 'cuisine' %}
+            <div class="optional-controls">
+              <label>
+                <input type="checkbox" name="select-all" class="select-all-checkbox">
+                  ALL {{ field.label|upper }}S
+                </label>
+              </div>
+            {% endif %}
+            <div class="controls {{ field.name }} {{ current_city|slugify }}">
+            {{ field }}
+            <div style="clear: both;"></div>
+            </div>
+          </div>
+        </span>
+      {% endfor %}
+      <div id="homepage-left-column" class="homepage-side-column">
+        {% if user.is_authenticated %}
+          {% include "homepage/deets.html" %}
+          {% include "homepage/new-critic-reviews.html" %}
+          {% include "homepage/new-user-reviews.html" %}
+        {% else %}
+          {% include "homepage/new-critic-reviews.html" %}
+          {% include "homepage/new-user-reviews.html" %}
+        {% endif %}
+      </div>
+      <div id="homepage-center-column">
+        <div id="search-widget">
+          <input type="text" value="Neighborhood" id="neighborhood-box" class="search-box" readonly="readonly"/>
+          <input type="text" value="Cuisine" id="cuisine-box" class="search-box" readonly="readonly"/>
+		  <ul id="priceContainer">
+			<li id="one">$</li>
+			<li id="two">$$</li>
+			<li id="three">$$$</li>
+			<li id="four">$$$$</li>
+			<li id="five" class="last">$$$$$</li>
+		  </ul>
+
+          <input type="text" value="Occasion" id="occasion-box" class="search-box" readonly="readonly"/>
+          <input id="big-search-submit" type="submit" value=""/>
+        </div>
+        {% if user.is_authenticated %}
+        {% include "homepage/follow-suggestions.html" %}
+        {% endif %}
+      </div>
+    </form>
+    <div id="homepage-right-column" class="homepage-side-column">
+      {% if user.is_authenticated %}
+        {% if friends %}
+          {% include "homepage/newsfeed.html" %}
+        {% else %}
+          {% include "homepage/hottest-reviewers.html" %}
+        {% endif %}
+      {% else %}
+        {% include "homepage/hottest-reviewers.html" %}
+      {% endif %}
+      {% include "homepage/new-restaurants.html" %}
+    </div>
+    {% include "homepage/toplist.html" %}
+{% endblock %}

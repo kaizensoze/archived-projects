@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load compressed i18n avatar_tags staticfiles %}
+
+{% block css %}
+  {% compressed_css 'blackbook' %}
+{% endblock %}
+
+{% block title %}Blackbook{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+  <div id="blackbook">
+    <h2>
+      {% avatar request.user 26 %}
+      {{ request.user.get_full_name }}'s Blackbook
+    </h2>
+    <div class="binding"></div>
+    <div class="catelog">
+      {% include 'blackbook/_collection_list.html' %}
+    </div>
+    <div class="spacing"></div>
+  </div>
+{% endblock %}
+
+{% block js %}
+  {% compressed_js 'blackbook' %}
+{% endblock %}

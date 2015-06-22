@@ -1,0 +1,318 @@
+div#body {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+div#body > h1:before {
+    background-image: url('../images/blackbook-banner.png');
+    width: 20px;
+    height: 31px;
+    content: "";
+    display: inline-block;
+}
+
+div#body > h1:after {
+    background-image: url('../images/blackbook-banner.png');
+    background-position: 20px 0px;
+    width: 20px;
+    height: 31px;
+    content: "";
+    display: inline-block;
+}
+
+
+div#body > h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    margin: 0 auto;
+    width: 100%;
+    height: 25px;
+    line-height: 31px;
+    position: relative;
+    z-index: 2;
+}
+
+div#body > h1 span {
+    background-color: #362f2d;
+    vertical-align: top;
+    display: inline-block;
+    font-size: 18pt;
+    font-weight: 300;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+hr {
+    position: relative;
+    top: -17px;
+}
+
+div#body img {
+    display: block;
+    margin: 10px auto;
+}
+
+.list {
+    width: 207px;
+    height: 420px;
+    float: left;
+    border: 1px solid #c5c5c5;
+    margin: 10px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.list a:hover {
+    text-decoration: none;
+}
+
+.list-entry {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid #c5c5c5;
+    position: relative;
+    height: 20px;
+}
+
+.list-entry:hover {
+    background-color: #f5f5f5;
+}
+
+.list-entry-x {
+    float: right;
+    display: none;
+}
+
+.list-entry:hover .list-entry-x {
+    display: block;
+    font-weight: 900;
+    color: #c5c5c5;
+}
+
+.list-header,
+.list-footer {
+    background-color: #f5f5f5;
+}
+
+.list-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #c5c5c5;
+    position: relative;
+    z-index: 10;
+    height: 72px;
+}
+
+.list-header h1 {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14px;
+    text-align: center;
+    line-height: 120%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.list-header .list-controls {
+    text-align: center;
+    color: #c5c5c5;
+    padding-bottom: 5px;
+}
+
+.list-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 1px solid #c5c5c5;
+    text-align: center;
+    font-weight: bold;
+}
+
+.list-footer a {
+    color: #c5c5c5;
+}
+
+.list-footer .list-active-page {
+    color: #ee7b3b;
+}
+
+.list-footer a,
+.list-footer .list-active-page {
+    display: inline-block;
+    width: 15px;
+}
+
+.prev,
+.next {
+    font-weight: bold;
+    display: inline-block;
+    width: 15px;
+    color: #c5c5c5;
+}
+
+.prev.active,
+.next.active {
+    color: #ee7b3b;
+}
+
+.prev {
+    float: left;
+}
+
+.next {
+    float: right;
+}
+
+.list-controls-edit,
+.list-controls-delete,
+.add-restaurant-to-list,
+.prev,
+.next {
+    cursor: pointer;
+}
+
+.new-list-button {
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    color: #ee7b3b;
+    font-family: "Georgia", serif;
+    background-color: #f5f5f5;
+}
+
+.new-list-button-inner {
+    margin-top: -53px; /* Half its height */
+    height: 106px;
+    position: relative;
+    top: 50%;
+    font-size: 130%;
+}
+
+.new-list-button-form {
+    display: none;
+    position: relative;
+    top: -20px;
+}
+
+.edit-list-form {
+    display: none;
+    position: absolute;
+    top: 10px; /* To align with normal text below */
+    left: 12px;
+    /*opacity: 0.3;*/
+}
+
+.new-list-button-form input,
+.edit-list-form input {
+    border: 1px solid #c5c5c5;
+    text-align: center;
+    font-family: georgia;
+    font-weight: bold;
+    font-style: italic;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.new-list-button-form button,
+.edit-list-form button {
+    color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 70px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.edit-list-form input {
+    height: 8px;
+}
+
+.edit-list-form button {
+    margin-top: 1px;
+}
+
+.list-big-plus {
+    font-weight: normal;
+    line-height: 100%;
+    font-size: 90px;
+    font-family: sans-serif;
+    font-style: normal;
+    color: #dadada;
+}
+
+.add-restaurant-to-list {
+    color: #c5c5c5;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.add-list-entry-form {
+    display: none;
+    width: 207px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(3, 3, 3, 0.1);
+}
+
+.new-list-okay,
+.edit-list-okay {
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #F9AD81),
+        color-stop(1, #F36E2C)
+    );
+    background-image: -o-linear-gradient(bottom, #F9AD81 0%, #F36E2C 100%);
+    background-image: -moz-linear-gradient(bottom, #F9AD81 0%, #F36E2C 100%);
+    background-image: -webkit-linear-gradient(bottom, #F9AD81 0%, #F36E2C 100%);
+    background-image: -ms-linear-gradient(bottom, #F9AD81 0%, #F36E2C 100%);
+    background-image: linear-gradient(to bottom, #F9AD81 0%, #F36E2C 100%);
+    border: 1px solid #f9ad81;
+}
+
+.new-list-cancel,
+.edit-list-cancel {
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #E1E1E1),
+        color-stop(1, #CFCFCF)
+    );
+    background-image: -o-linear-gradient(bottom, #E1E1E1 0%, #CFCFCF 100%);
+    background-image: -moz-linear-gradient(bottom, #E1E1E1 0%, #CFCFCF 100%);
+    background-image: -webkit-linear-gradient(bottom, #E1E1E1 0%, #CFCFCF 100%);
+    background-image: -ms-linear-gradient(bottom, #E1E1E1 0%, #CFCFCF 100%);
+    background-image: linear-gradient(to bottom, #E1E1E1 0%, #CFCFCF 100%);
+    border: 1px solid #e1e1e1;
+}
+
+.select2-container .select2-choice > .select2-chosen {
+    text-transform: none;
+}
+
+.list-entry-restaurant-name {
+    display: inline-block;
+    width: 175px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
+}

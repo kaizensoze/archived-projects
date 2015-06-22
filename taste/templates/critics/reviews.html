@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load compressed rangefilter staticfiles thumbnail tz %}
+
+{% block title %}{{ critic.name }}{% endblock %}
+
+{% block css %}
+  {% compressed_css 'critics' %}
+{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+  <div id="col-left" class="column">
+    <div id="critic-logo-large">
+      <img src="{{ critic.large_logo.url }}">
+    </div>
+    <div id="critic-description">
+    	<span id="critic-description-header">{{ critic.name }}</span>
+    	<pre id="critic-description-body">{{ critic.description }}</pre>
+    </div>
+  </div>
+  <div id="col-reviews" class="column">
+    <div id="review-sort">
+	    <h2>{{ critic.name }} REVIEWS</h2>
+	    <div id="social-sort">
+	      <ul>
+	        <li class="label">Sort By:</li>
+	        <li class="button first{% if order == 'score' %} active{% endif %}">
+	          <a href="{{ url }}{% if not url %}?{% endif %}order=score">Score</a></li>
+	        <li class="button{% if order == 'restaurant' %} active{% endif %}">
+	          <a href="{{ url }}{% if not url %}?{% endif %}order=restaurant">Restaurant</a></li>
+	        <li class="button last{% if not order or order == 'date' %} active{% endif %}">
+	          <a href="{{ url }}{% if not url %}?{% endif %}order=date">Date</a></li>
+	      </ul>
+	    </div>
+	  </div>
+    <div id="reviews">
+      {% block review %}
+        {% for review in page.object_list %}
+          <div class="review-row">
+            <div class="rating">
+              <img src="{% static review.large_rwd %}" alt="run"/>
+            </div>
+            <div class="summary">
+              <div style="margin-top: 4px;">
+                <h2><a href="{{ review.restaurant.get_absolute_url }}">{{ review.restaurant.name }}</a></h2>
+              <span class="review-date">{{ review.display_date|date:"n/d/Y" }}</span>
+              </div>
+            </div>
+            <div class="rating-summary-wrap">
+              <div class="star-rating">
+                {% if review.site.rating_denominator and review.number_of_stars != None %}
+                  {% for i in review.site.rating_denominator|get_range %}
+                    {% if i < review.number_of_stars %}
+                      <img class="copyright-infringement" src="{% static 'images/black-star.png' %}" />
+                    {% else %}
+                      <img class="copyright-infringement" src="{% static 'images/white-star.png' %}" />
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </div>
+              <div class="critical-review">
+                {{ review.summary }}
+                {% if review.site.affiliate %}
+                  <a class="restaurant-review" href="{{ review.url }}" target="_blank">
+                  &raquo; {{ review.site.link_copy }}</a>
+                {% else %}
+                  {% if review.url %}
+                  <a class="restaurant-review" href="{{ review.url }}" target="_blank">
+                  &raquo; Read Full Review</a>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+            <div class="recommendations">
+              <ul>
+              {% if review.good_dishes or review.bad_dishes %}
+                <li class="label">Outstanding Dishes: </li>
+                {% for dish in review.good_dishes %}
+                  <li class="menu-item suggested">{{dish.name|title}}</li>
+                {% endfor %}
+                {% for dish in review.bad_dishes %}
+                  <li class="menu-item not-suggested">{{dish.name|title}}</li>
+                {% endfor %}
+              {% endif %}
+              </ul>
+            </div>
+          </div>
+          {% if forloop.last %}
+            <div class="last"></div>
+          {% else %}
+            <div class="break"></div>
+            <br clear="all">
+          {% endif %}
+          {% empty %}
+          <h1 class="not-reviewed">Sorry, no critics have reviewed this restaurant.</h1>
+        {% endfor %}
+      {% endblock %}
+      {% if paginator.num_pages > 1 %}
+      {% include "search/pagination.html" %}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

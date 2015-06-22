@@ -1,0 +1,36 @@
+        <a href="{% url profiles_profile_detail user.username %}">
+          <div id="deets" class="mini-container homepage-box">
+            <h2>
+              Here are your Deets
+            </h2>
+            <div class="mini-content">
+              <ul>
+                <li>
+                  <ul class="colMiniContent">
+                    <li class="number">{{ user.review_set.all|length }}</li>
+                    <li>Reviews written</li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="colMiniContent">
+                    <li class="number">{{ user.get_profile.view_count }}</li>
+                    <li>Views of your profile</li>
+                    </ul>
+                  </li>
+                <li>
+                  <ul class="colMiniContent">
+                    <li class="number">{{ user.get_profile.friends.all|length }}</li>
+                    <li>Following</li>
+                  </ul>
+                </li>
+                <li>
+                  <ul class="colMiniContent">
+                    <li class="number">{{ user.friends.all|length }}</li>
+                    <li>Followers</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </a>
+        <div class="shadow"></div>

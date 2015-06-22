@@ -1,0 +1,42 @@
+Feature: Accounts and Login
+  In order to have a persistent identity with the system
+  As a user
+  I want to be able to log in and out and maintain my profile
+
+  Scenario: Log in
+    Given I have an account
+    And I go to '/login/'
+    When I fill in the form
+    I should be logged in
+
+  Scenario: Log out
+    Given I am logged in
+    And I go to '/logout/'
+    I should not be logged in
+
+  Scenario: Register
+    Given I do not have an account
+    And I go to '/accounts/register/'
+    When I fill in the form
+    I should have an inactive account
+
+  Scenario: Log in through Twitter
+    Given I do not have an account
+    And I go to '/social/login/twitter/'
+    I should be logged in
+
+  Scenario: Log in through Facebook
+    Given I do not have an account
+    And I go to '/social/login/facebook/'
+    I should be logged in
+
+  Scenario: Link accounts
+    Given I am logged in
+    And I go to '/profiles/link/'
+    And I click '.login-icon'
+    I should link my accounts
+
+  Scenario: Log in for the first time
+    Given I have never logged in before
+    When I log in
+    I should see follower suggestions

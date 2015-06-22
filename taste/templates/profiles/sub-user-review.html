@@ -1,0 +1,46 @@
+{% load tz %}
+<div class="rating">
+  <img src="{% static review.large_rwd %}" alt="run"/>
+  <span class="overall-score">{{ review.overall_score }}/10</span>
+  <ul class="score-categories">
+    <li>Food:
+      <span class="score-{{ review.food_score }}">
+        {{ review.food_score }}/10
+      </span>
+    </li>
+    <li>Ambience:
+      <span class="score-{{ review.ambience_score }}">
+        {{ review.ambience_score }}/10
+      </span>
+    </li>
+    <li>Service:
+      <span class="score-{{ review.service_score }}">
+        {{ review.service_score }}/10
+      </span>
+    </li>
+  </ul>
+</div>
+<div class="review">
+  <span class="date-published">{{ review.display_date|date:"n/d/Y" }}</span>
+  <h2><a href="{{ review.restaurant.get_absolute_url }}">
+      {{ review.restaurant.name }}</a></h2>
+  {{ review.summary }}
+</div>
+{% if review.good_dishes|length > 0 or review.bad_dishes|length > 0 %}
+<div class="recommendations">
+  <ul>
+    <li class="label">Outstanding Dishes: </li>
+    {% for dish in review.good_dishes %}
+    <li class="menu-item suggested">{{dish.dish.name|title}}</li>
+    {% endfor %}
+    {% for dish in review.bad_dishes %}
+    <li class="menu-item not-suggested">{{dish.dish.name|title}}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+{% if forloop.last %}
+<hr class="last" />
+{% else %}
+<hr class="break" />
+{% endif %}

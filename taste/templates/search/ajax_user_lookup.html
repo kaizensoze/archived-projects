@@ -1,0 +1,31 @@
+{% load i18n avatar_tags %}
+{% for r in results %}
+    <li id="{{ r.username }}">
+
+<a class="user-result-link" href="{% url profiles_profile_detail r.username %}">
+  <div class="user-result">
+    <span class='picture-frame-45x45'>
+      {% avatar r.username 45 %}
+    </span>
+    <div class="follow-suggestions-body">
+      <div class="follow-suggestions-name">
+          {{ r.get_profile.get_truncated_name }}
+      </div>
+      <div class="follow-suggestions-review-count">
+        {{ r.review_set.count }} review{% if r.review_set.count != 1 %}s{% endif %}
+      </div>
+      <div class="follow-suggestions-user-type">
+      {% if r.get_profile.type_expert %}
+        {{ r.get_profile.type_expert }} Expert
+      {% endif %}
+      {% if r.get_profile.type_expert and r.get_profile.type_reviewer %}<br />{% endif %}
+      {% if r.get_profile.type_reviewer %}
+        {{ r.get_profile.get_type_reviewer_display }}
+      {% endif %}
+      </div>
+    </div>
+  </div>
+</a>
+
+    </li>
+{% endfor %}

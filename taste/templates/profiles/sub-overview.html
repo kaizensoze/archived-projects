@@ -1,0 +1,102 @@
+{% load i18n avatar_tags staticfiles %}
+<div id="overview">
+  {% avatar profile.user 105 %}
+  <div class="basic first-col">
+    <ul>
+      {% with expertise=profile.type_expert location=profile.location %}
+      <li><h2>{{ profile.get_truncated_name }}</h2></li>
+      {% if expertise %}
+      <li>{{ expertise }} Expert</li>
+      {% endif %}
+      {% if profile.type_reviewer %}
+      <li>{{ profile.get_type_reviewer_display }}</li>
+      {% endif %}
+      {% if location %}
+      <li>{{ location }} resident</li>
+      {% endif %}
+      {% endwith %}
+    </ul>
+  </div>
+  <div class="fav-food col">
+    <div>Favorite Food:
+      <span>
+        {% if profile.favorite_food %}
+        {{ profile.favorite_food }}
+        {% else %}
+        None specified
+        {% endif %}
+      </span>
+    </div>
+  </div>
+  <div class="fav-restaurant col">
+    <div>Favorite Restaurant:
+      <span>
+        {% if profile.favorite_restaurant %}
+        {{ profile.favorite_restaurant }}
+        {% else %}
+        None specified
+        {% endif %}
+      </span>
+    </div>
+  </div>
+  <div class="follow-user col">
+    {% if user.is_authenticated %}
+    {% if is_user %}
+    <div>
+      <img src="{% static 'images/icon-edit.png' %}" width="30" height="30" />
+      <span><a href="{% url profiles_edit_profile %}">Edit<br />profile</a></span>
+    </div>
+    {% else %}
+    {% if profile.user in user.get_profile.friends.all %}
+    <div>
+      <img src="{% static 'images/icon-follow.png' %}" width="30" height="30" />
+      <span>Following <br />
+        {% if profile.user.first_name %}
+        {{ profile.first_name }}
+        {% else %}
+        {{ profile.user.username }}
+        {% endif %}
+      </span>
+    </div>
+    {% else %}
+    <div>
+      <img src="{% static 'images/icon-follow.png' %}" width="30" height="30" />
+      <span>
+        <a href="{% url follow_user profile.user.username %}">Follow <br />
+          {% if profile.user.first_name %}
+          {{ profile.first_name }}
+          {% else %}
+          {{ profile.user.username }}
+          {% endif %}
+        </a>
+      </span>
+    </div>
+    {% endif %}
+    {% endif %}
+    {% else %}
+    <div>
+      <img src="{% static 'images/icon-follow.png' %}" width="30" height="30" />
+      <span>
+        <a class="login" href="{% url auth_login %}">Follow <br />
+          {% if profile.user.first_name %}
+          {{ profile.first_name }}
+          {% else %}
+          {{ profile.user.username }}
+          {% endif %}
+        </a>
+      </span>
+    </div>
+    {% endif %}
+  </div>
+  <div class="message-user last-col">
+    <div>
+      <img src="{% static 'images/icon-message.png' %}" width="30" height="30" />
+      <span><a id="compose-new-message" href="{% url comingsoon %}">Message <br />
+          {% if profile.user.first_name %}
+          {{ profile.user.first_name }}
+          {% else %}
+          User
+          {% endif %}
+      </a></span>
+    </div>
+  </div>

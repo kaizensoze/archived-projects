@@ -1,0 +1,1 @@
+{% if digest %}New people are following you on Taste Savant!{% else %}{{ follower }} Is Now Following You On Taste Savant!{% endif %}

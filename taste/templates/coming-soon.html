@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Coming soon{% endblock %}
+
+{% block css %}
+  {{ block.super }}
+<link href="{% static 'css/coming-soon.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+  <div id="coming-soon">
+    <h1>This feature is coming soon.</h1>
+  </div>
+{% endblock %}

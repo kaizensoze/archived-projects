@@ -1,0 +1,33 @@
+{% load i18n avatar_tags humanize message_extras tz %}
+{% for event in friends.object_list %}
+  {% with action=event.action.action_name username=event.user.username %}
+    <li class='newsfeed {% cycle "alt" "" %}'>
+      <span class='picture-frame-45x45'>
+        <a href='{% url profiles_profile_detail username %}'>
+          {% avatar event.user 45 %}
+        </a>
+      </span>
+      <span class="activity-info">
+        {% ifequal user.id event.user.id %}
+          {% if action == "reviewed" %}You have{% endif %}
+          {% if action == "checkin" %}You've{% endif %}
+          {% if action == "follow" %}You are{% endif %}
+          {% if action == "blackbook" %}You{% endif %}
+          {{ event.message|safe }}
+        {% else %}
+          <a href='{% url profiles_profile_detail username %}'>
+          {{ event.user.get_profile.get_truncated_name }}</a>
+          {% if action == "reviewed" or action == "checkin" %}has{% endif %}
+          {% if action == "follow" %}is{% endif %}
+          {{ event.message|is_this_me:user|safe }}
+        {% endifequal %}
+      </span>
+      <span class='block secondary'>
+        {{ event.occurred|localtime|naturalday|title }}
+      </span>
+    </li>
+  {% endwith %}
+{% endfor %}
+{% for filler_idx in fillers %}
+<li class='newsfeed {% if friends.object_list.count|divisibleby:"2" %}{% cycle "alt" "" %}{% else %}{% cycle "" "alt" %}{% endif %}'></li>
+{% endfor %}

@@ -1,0 +1,316 @@
+{% load i18n compressed message_extras tags staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    <meta http-equiv="Content-Type" content="text-html; charset=utf-8">
+    <meta name="google-site-verification" content="AGfZ_WF9dQhAvF9GQwVB5VqawOf_ubW3Nue24JJgfO0">
+    <meta property="og:image" content="{% static 'images/facebook-icon.png' %}">
+    <meta property="og:site_name" content="Taste Savant">
+    <meta property="og:description" content="Taste Savant is a highly curated restaurant discovery site designed to help us decide where to eat out. They curate only the very best restaurants and reviews from trusted sources including friends, critics, bloggers, chefs, and other people in the know.">
+
+    {% block meta_tags %}{% endblock %}
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    {% compressed_css 'base' %}
+    {% block css %}{% endblock %}
+    <!--[if IE 9]>
+        <link href="{% static 'css/ie9.css' %}" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 8]>
+        <link href="{% static 'css/ie8.css' %}" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 7]>
+        <link href="{% static 'css/ie7.css' %}" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <title>{% block title %}{% endblock %} : Taste Savant</title>
+
+    {% if not debug_setting %}
+      <!-- Start of Woopra Code -->
+      <script type="text/javascript">
+      function woopraReady(tracker) {
+          var tracking_ids = {
+            'domain-root': 'tastesavant.com',
+            'chicago': 'chicago.tastesavant.com',
+            'boston': 'boston.tastesavant.com',
+            'los-angeles': 'la.tastesavant.com',
+            'new-york': 'newyork.tastesavant.com',
+            'brooklyn': 'brooklyn.tastesavant.com'
+          }
+          var acct = tracking_ids['{{ current_city|slugify }}'];
+          tracker.setDomain(acct);
+          tracker.setIdleTimeout(300000);
+          tracker.track();
+          return false;
+      }
+      (function() {
+          var wsc = document.createElement('script');
+          wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+          wsc.type = 'text/javascript';
+          wsc.async = true;
+          var ssc = document.getElementsByTagName('script')[0];
+          ssc.parentNode.insertBefore(wsc, ssc);
+      })();
+      </script>
+      <!-- End of Woopra Code -->
+      <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-21189669-1']);
+        _gaq.push(['_setDomainName', 'tastesavant.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    {% endif %}
+
+  </head>
+  <body class="{% block body_class %}{% endblock %}">
+    <div id="fb-root"></div>
+
+    {% if user.is_staff %}
+      <div style="position: fixed; top: 150px; left: 10px; font-weight: bold; font-size: 50px; z-index: 1000; color: rgba(0, 0, 0, 0.75); line-height: 100%; font-family: Georgia; font-style: italic; text-align: center; width: 100%; pointer-events: none;">
+        Logged in as admin
+      </div>
+    {% endif %}
+
+    <div id="please-wait-overlay-inner-wrapper">
+      <div id="please-wait-overlay-inner">
+        <div id="please-wait-overlay-inner-inner">
+          <img src="{% static 'images/ajax-loader.gif' %}" />
+          <p>
+            Please wait&hellip; connecting to <span id="please-wait-overlay-auth-service-name"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="please-wait-overlay">
+    </div>
+
+    <div id="super-wrap">
+      <div id="header" class="container">
+        <div id="logo-cnt">
+          <a href="{% url homepage %}">
+            {% if current_city == 'New York' %}
+              <img src="{% static 'images/logo-main.png' %}" id="logo" alt="Taste Savant Logo">
+            {% else %}
+              <img src="{% static 'images/logo-beta.png' %}" id="logo" alt="Taste Savant Logo">
+            {% endif %}
+          </a>
+          <img src="{% static 'images/logo-phrase.png' %}" id="logo-phrase">
+        </div>
+        <div id="user-auth">
+          <div id="city-select">
+            <span id="city-select-text">City:</span>
+
+            <div id="city-select-dropdown" class="wrapper-dropdown">
+              <span>{{ current_city }}</span>
+              <ul class="dropdown">
+              {% for city in all_other_cities %}
+                <li data-value="{{ city.domain }}"><a href="#">{{ city.name }}</a></li>
+              {% endfor %}
+              </ul>
+            </div>
+            <img src="{% static 'images/city-select-arrow.png' %}" />
+
+            <!--<select>
+            </select>-->
+          </div>
+
+          {% if user.is_authenticated %}
+            Hello, <a href="{% url profiles_profile_detail user.username %}">{% firstname user.username %}</a>
+            | {% if messages_inbox_count > 0 %}<strong>{% endif %}
+            <a href="{% url messages_inbox %}">Messages ({{ messages_inbox_count }})</a>
+            {% if messages_inbox_count > 0 %}</strong>{% endif %}
+            | <a href="{% url invite_from_email %}">{% trans "Invite a Friend" %}</a>
+          {% if user.is_superuser %}
+          | <a href="/admin/">{% trans "Admin" %}</a>
+          {% endif %}
+          | <a href="{% url search_users %}">Find a Friend</a>
+            | <a href="{% url auth_logout_next request.get_full_path %}">{% trans "Log out" %}</a>
+          {% else %}
+            <a class="social-auth-link" href="{% url socialauth_begin 'facebook' %}?next={{ current_path }}"><img src="{% static 'images/facebook-login.png' %}" alt="facebook login" class="login-icon" data-auth="Facebook" /></a>
+            <a class="social-auth-link" href="{% url socialauth_begin 'twitter' %}?next={{ current_path }}"><img src="{% static 'images/twitter-login.png' %}" alt="twitter login" class="login-icon" data-auth="Twitter" ></a>
+            <a class="login" href="{% url auth_login %}">Login</a> |
+            <a href="{% url invite_from_email %}">{% trans "Invite a Friend" %}</a> |
+            <a href="{% url search_users %}">Find a Friend</a> |
+            <a href="{% url registration_register_signup %}">Join Now</a>
+          {% endif %}
+        </div>
+      </div>
+      <div id="content" class="container">
+        {% block content %}
+          <div id="nav">
+            <ul>
+              {% if not user.is_authenticated %}
+              <li id="welcome">
+                <span class="nav-button">
+                  <a href="/">Welcome</a>
+                </span>
+              </li>
+              {% endif %}
+              <li id="about-us">
+                <span class="nav-button">
+                  <a href="/about">About us</a>
+                </span>
+              </li>
+              <li id="my-profile">
+                <span class="nav-button">
+                  {% if user.is_authenticated %}
+                  <a href="{% url profiles_profile_detail user.username %}">My profile</a>
+                  {% else %}
+                  <a class="login" href="{% url auth_login %}">My profile</a>
+                  {% endif %}
+                </span>
+              </li>
+              {% if user.is_authenticated %}
+              <li id="write-review-tab">
+                <span class="nav-button">
+                  <a href="{% url profiles_edit_profile %}">Edit profile</a>
+                </span>
+              </li>
+              {% endif %}
+              <li id="my-blackbook">
+                <span class="nav-button">
+                  {% if user.is_authenticated %}
+                  <a href="{% url blackbook username=user.username %}">My Blackbook</a>
+                  {% else %}
+                  <a class="login" href="{% url auth_login %}">My Blackbook</a>
+                  {% endif %}
+                </span>
+              </li>
+            </ul>
+            <div id="search-form-wrapper">
+              <div id="search-form">
+                <form action="/search/" method="GET">
+                  {% for field in search_form %}
+                    {{ field|htmlattributes:"id: id_query" }}
+                  {% endfor %}
+                  <input type="hidden" name="sort" value="critic">
+                  <input id="search-submit" type="submit" name="submit" value="">
+                </form>
+              </div>
+            </div>
+          </div>
+            <div class="nav-triangle-l"></div>
+            <div class="nav-triangle-r"></div>
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="messages {{ message.tags }}">
+                    <ul>
+                      <li>{{ message }}</li>
+                    </ul>
+                  </div>
+                {% endfor %}
+                <div class="triangle-l"></div>
+                <div class="triangle-r"></div>
+              {% endif %}
+            {% endblock %}
+          </div>
+        </div>
+        <div id="footer" class="container">
+          <div id="flatpages1">
+            {% for page in pages1 %}
+              {% if page.title == "Contact Us" %}
+                <a href="mailto:admin@tastesavant.com">{{ page.title }}</a>
+                {% if not forloop.last %}|{% endif %}
+              {% elif page.title == "Blog" %}
+                <a href="http://blog.tastesavant.com">{{ page.title }}</a>
+                {% if not forloop.last %}|{% endif %}
+              {% else %}
+                <a href="{{ page.url }}">{{ page.title }}</a>
+                {% if not forloop.last %}|{% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div id="flatpages2">
+            {% for page in pages2 %}
+              {% if page.title == "Contact Us" %}
+                <a href="mailto:admin@tastesavant.com">{{ page.title }}</a>
+                {% if not forloop.last %}|{% endif %}
+              {% elif page.title == "Blog" %}
+                <a href="http://blog.tastesavant.com">{{ page.title }}</a>
+                {% if not forloop.last %}|{% endif %}
+              {% else %}
+                <a href="{{ page.url }}">{{ page.title }}</a>
+                {% if not forloop.last %}|{% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <span id="newsletter">
+            <div id="newsletter-copy">Sign up for our newsletter:</div>
+            <div id="signup-form">
+              <form action="/" id="theform" method="POST">
+                {% csrf_token %}
+                <input id="id_address" type="text" name="address" class="validate-email" maxlength="320">
+                  <input id="address-submit" type="submit" value="Sign Up"/>
+                </form>
+              </div>
+            </span>
+            <div id="copyright">
+              Copyright &copy; 2014 TasteSavant. All rights reserved.
+            </div>
+            <div id="social-icons">
+              <a href="https://www.facebook.com/pages/Taste-Savant/183217758377121" target="_blank">
+                <img src="{% static 'images/fb_icon.png' %}" alt="Taste Savant on Facebook"></a>&nbsp;&nbsp;
+                <a href="http://twitter.com/tastesavant" target="_blank">
+                  <img src="{% static 'images/twitter_icon.png' %}" alt="Follow us on Twitter"></a>
+                </div>
+              </div>
+              {% if not user.is_authenticated %}
+                <span id="login-box" class="nodisplay">
+                  <h4>Login<span class="save close-button"></span></h4>
+                  <div class="box-wrap non-tree">
+                    <div id="site-auth">
+                      <form method="post" action="{% url auth_login %}">
+                        {% csrf_token %}
+                        <div class="inpt-1">Username<br />
+                        <input id="id_username" type="text" name="username" maxlength="30" /></div>
+                        <div class="inpt-1">Password<br />
+                        <input id="id_password" type="password" name="password" autocomplete="off" />
+                        </div>
+                        <div id="password-reset">
+                          <a href="{% url auth_password_reset %}">Forgot your username/password?</a>
+                        </div>
+                        <br />
+                        <input type="submit" value="Login" />
+                        <input type="hidden" name="next" value="{{ request.get_full_path }}" />
+                      </form>
+                    </div>
+                    <div id="social-auth">
+                      <span class="auth-banner">
+                        Or sign in with your existing
+                        Facebook or Twitter account.
+                      </span>
+                      <ul>
+                        <li>
+                          <a href="{% url socialauth_begin 'facebook' %}">
+                            <img src="{% static 'images/facebook-large.png' %}"></a>
+                          </li>
+                          <li>
+                            <a href="{% url socialauth_begin 'twitter' %}">
+                              <img src="{% static 'images/twitter-large.png' %}"></a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </span>
+              {% endif %}
+                  <div class="hide overlay"></div>
+                </body>
+                {% block js_templates %}{% endblock js_templates %}
+                {% compressed_js 'base' %}
+                {% block js %}
+                  {# What's this tags thing about? --kit 2013.10.17 #}
+                  {% for tag in tags %}
+                    {{ tag|safe }}
+                  {% endfor %}
+                {% endblock %}
+                {% block no_compress_js %}{% endblock %}
+
+              </html>

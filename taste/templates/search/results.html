@@ -1,0 +1,116 @@
+{% load pagination_tags staticfiles %}
+<div id="column-header">
+  {% if not restaurants|length %}
+  <div id="search-title">
+    <h1>
+      Whoops! Sorry, but no restaurants match your specified criteria at this
+      time. You can tweak your search using the options at the left or try a
+      new search on the homepage.
+    </h1>
+  </div>
+  {% else %}
+  <div id="search-title">
+    <h1>Your Search Results!</h1>
+  </div>
+</div>
+<div id="search-by">
+  Sort By:
+  <span id="critic-order">
+    {% if orderby == "critic" %}
+    <a href="{{ url }}&orderby=critics">
+      <img src="{% static 'images/orange-triangle.png' %}" />
+    </a>
+    {% else %}
+    <a href="{{ url }}&orderby=critics">
+      <img src="{% static 'images/gray-triangle.png' %}" />
+    </a>
+    {% endif %}
+  </span>
+  <span id="sanvants-order">
+    {% if orderby == "savants" %}
+    <a href="{{ url }}&orderby=savants">
+      <img src="{% static 'images/orange-triangle.png' %}" />
+    </a>
+    {% else %}
+    <a href="{{ url }}&orderby=savants">
+      <img src="{% static 'images/gray-triangle.png' %}" />
+    </a>
+    {% endif %}
+  </span>
+  <span id="restaurant-order">
+    {% if orderby == "restaurant" %}
+    <a href="{{ url }}&orderby=restaurants">
+      <img src="{% static 'images/orange-triangle.png' %}" />
+    </a>
+    {% else %}
+    <a href="{{ url }}&orderby=restaurants">
+      <img src="{% static 'images/gray-triangle.png' %}" />
+    </a>
+    {% endif %}
+  </span>
+</div>
+<div id="results-topbar">
+  <a href="{{ url }}&orderby=critics"><span id="critic-bar">CRITICS SAY</span></a>
+  <a href="{{ url }}&orderby=savants"><span id="user-bar">USERS SAY</span></a>
+  <a href="{{ url }}&orderby=restaurants"><span id="restaurant-bar">RESTAURANTS</span></a>
+  <span id="dish-bar">OUTSTANDING DISHES</span>
+</div>
+<div id="results">
+  {% if not view_all %}{% autopaginate restaurants 10 %}{% endif %}
+  {% for restaurant in restaurants %}
+  <a class="result-link" href="{{restaurant.get_absolute_url}}">
+    <div id="result{{forloop.counter}}" class="result">
+      <div class="result-leftbar">{{ forloop.counter }}</div>
+      <div class="review-info">
+        <img class="rwd-image" width="45"
+             src="{% static restaurant.large_critics_say_rwd_url %}" alt="run"/>
+        {% if restaurant.critics_say %}
+        <div class="restaurant-score">
+          {{restaurant.critics_say|floatformat}}/10</div>
+        {% endif %}
+      </div>
+      <div class="review-info">
+        <img class="rwd-image" width="45" src="{% static restaurant.large_savants_say_rwd_url %}" alt="run"/>
+        {% if restaurant.savants_say %}<div class="restaurant-score">{{restaurant.savants_say|floatformat}}/10</div>{% endif %}
+      </div>
+      <div class="restaurant-info">
+        <div>
+          <div class="restaurant-name">{{ restaurant.name }}</div>
+          <div class="restaurant-details">
+            {% for cuisine in restaurant.cuisine.all %}{{cuisine.name}}{% if not forloop.last %}, {% endif %}{% endfor %}
+            | {{ restaurant.price.name }}
+            {% if restaurant.occasion.all %}
+            | {% for occasion in restaurant.occasion.all|slice:"8" %}{{ occasion.name }}{% if not forloop.last %}, {% endif %}{% endfor %}
+            {% for occasion in restaurant.occasion.all|slice:"8" %}{% if forloop.revcounter == 8 %}...{% endif %}{% endfor %}
+            {% endif %}
+          </div>
+        </div>
+        <span id="restaurant-locations">
+          {% for local in restaurant.location_set.all %}
+          <div>{{local.address}} {{local.city}}, {{local.state}} {{local.zip_code}}</div>
+          <div class="phone-number">{{local.phone_number}}</div>
+          {% endfor %}
+        </span>
+      </div>
+      <div class="dishes">
+        {% for dish in restaurant.good_dishes|slice:":4" %}
+        <div class="dish good-dish">
+          <span class="tooltip" title="{{dish.name}}">{{dish.name|title|slice:":20"}}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+  {% if restaurants.count > 10 or not view_all %}
+  {% paginate %}
+  {% endif %}
+  {% endif %}
+</div>
+<div id="add-a-restaurant">
+  <h2>Restaurant not here?</h2>
+  <span>
+    Email us at <a href="mailto:admin@tastesavant.com?subject=Restaurant%20Suggestion%20for%20Taste%20Savant">admin@tastesavant.com</a>
+    and tell us what you think about it.
+  </span>
+</div>

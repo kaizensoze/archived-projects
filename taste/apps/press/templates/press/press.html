@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}Press{% endblock title %}
+
+{% block css %}
+{{ block.super }}
+<link href="{% static 'css/press.css' %}" rel="stylesheet" type="text/css" />
+{% endblock css %}
+
+{% block content %}
+{{ block.super }}
+<div id="body">
+
+    <h1>Press</h1>
+
+    <p>Big thanks for all the press we've received! Press questions? Contact <a href="mailto:press@tastesavant.com">press@tastesavant.com</a>.</p>
+
+    <div id="badges">
+    {% for badge in badges %}
+        <div class="press-badge-container">
+            <a href="{{ badge.url }}" target="_blank"><img class="press-badge" src="{{ badge.image.url }}" alt="{{ badge.name }}" title="{{ badge.name }}" /></a>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}

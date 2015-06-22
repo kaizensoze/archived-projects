@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ flatpage.title }}{% endblock %}
+
+{% block css %}
+  <style>
+    #flatpage-content{
+      padding:40px;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  {{block.super}}
+  <div id="flatpage-content">
+    <h1>{{flatpage.title}}</h1>
+    {{ flatpage.content|safe }}
+  </div>
+{% endblock %}

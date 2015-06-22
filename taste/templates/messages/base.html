@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load i18n staticfiles compressed %}
+
+{% block css %}
+  {% compressed_css 'messages' %}
+{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+{% endblock %}

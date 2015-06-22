@@ -1,0 +1,44 @@
+{% load i18n avatar_tags staticfiles %}
+
+<input type="hidden" id="following-pagination-curr" value="1" />
+<input type="hidden" id="following-pagination-next" value="2" />
+<input type="hidden" id="following-pagination-prev" value="1" />
+<input type="hidden" id="following-num-pages" value="{{ following_num_pages }}" />
+<div id="friends" class="mini-container">
+
+  <h2><a href="{% url profiles_profile_detail_following username=profile.user.username %}">Following ({{ following_count }})</a></h2>
+  {% if profile.friends.all %}
+  <div id="friends-pagination">
+    <div id="following_ajax_stream">
+    {% include "profiles/ajax_following.html" %}
+    </div>
+  </div>
+  {% if following_num_pages > 1 %}
+  <div id="friends-paginator">
+    <ul>
+      <li>
+        <ul>
+          <li><a id="following-prev-page" href="#">
+              <img src="{% static 'images/button-arrow-left.png' %}" /></a>
+          </li>
+          <li><a id="following-next-page" href="#">
+              <img src="{% static 'images/button-arrow-right.png' %}" /></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+  {% else %}
+    <div id="friends-pagination">
+    {% if is_user %}
+      <p style="margin: 5px;margin-top: 30px">You are not following anyone yet<br> on Taste Savant.</p>
+      <p style="margin: 5px;">Follow people on the site so you can add others to your network of friends!</p>
+    {% else %}
+      <p style="margin: 5px;margin-top: 30px">This person is not following<br>anyone yet on Taste Savant.</p>
+    {% endif %}
+    </div>
+{% endif %}
+</div>
+<div class="shadow" style="margin-bottom: 8px;"></div>
+

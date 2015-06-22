@@ -1,0 +1,54 @@
+{% extends "restaurants/detail.html" %}
+{% load compressed staticfiles %}
+
+{% block title %}Menu for {{ restaurant.name }}{% endblock %}
+
+{% block css %}
+  {% compressed_css 'singleplatform' %}
+{% endblock %}
+
+{% block restaurantdetail %}
+  <div id="menu">
+    <h1><a href="{{ restaurant.get_absolute_url }}">{{ restaurant.name }}</a> - Menu</h1>
+    {% for menu in menus %}
+      <div class="menu">
+        <h2>{{ menu.title }}</h2>
+        {% for entry in menu.entry_set.all %}
+            {% if entry.type == 'section' %}
+              <h3 class="menu-section">{{ entry.title }}</h3>
+            {% else %}
+              <div class="menu-entry{% if forloop.last %} menu-entry-final{% endif %}">
+                <div class="menu-entry-title-desc">
+                  <h3 class="menu-item">{{ entry.title }}</h3>
+                  {% if entry.desc %}
+                    <p class="menu-entry-desc">{{ entry.desc }}</p>
+                  {% endif %}
+                </div>
+                {% if entry.type == 'item' %}
+                  <ul class="menu-item-price">
+                    {% for price in entry.price_set.all %}
+                      <li>
+                        {% if price.title %}{{ price.title }}: {% endif %}
+                        {% if price.price %}${{ price.price }}{% endif %}
+                        {% if price.unit %} per {{ price.unit }}{% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                <div style="clear: both;"></div>
+              </div>
+            {% endif %}
+        {% endfor %}
+        <p class="menu-footnote">
+          {{ menu.footnote }}
+        </p>
+        <p class="menu-disclaimer">
+          {{ menu.disclaimer }}
+        </p>
+        <div class="menu-attribution">
+          <a href="{{ menu.attribution_image_link }}"><img src="{{ menu.attribution_image }}" /></a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

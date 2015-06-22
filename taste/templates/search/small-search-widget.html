@@ -1,0 +1,42 @@
+<form action="/search/advanced/" method="GET" id="search-widget-form" class="{{ current_city|slugify }}">
+  <input type="hidden" name="sort" value="critic" />
+  {% for field in extended_search_form %}
+  <span id="{{ field.label|lower }}-content" class="nodisplay">
+    <h4>{{ field.label }}<span class="save close-button"></span></h4>
+    <div class="box-wrap{% if field.label|lower == 'occasion' %} non-tree{% endif %}">
+      {% if field.label|lower == 'neighborhood' or field.label|lower == 'cuisine'  %}
+      <div class="optional-controls">
+        <label>
+          <input type="checkbox" name="select-all" class="select-all-checkbox" id="meme">
+          ALL {{ field.label|upper }}S
+        </label>
+      </div>
+      {% endif %}
+      <div class="masonry controls {{ field.name }} {{ current_city|slugify }}">
+        {{ field }}
+      </div>
+    </div>
+  </span>
+  {% endfor %}
+  <div id="search-widget">
+    <span id="neighborhood-arrow" class="input-arrow"></span>
+    <input type="text" value="Neighborhood" id="neighborhood-box" class="search-box" readonly="readonly"/>
+    <span id="cuisine-arrow" class="input-arrow"></span>
+    <input type="text" value="Cuisine" id="cuisine-box" class="search-box" readonly="readonly"/>
+	<ul id="priceContainer-small">
+	  <li id="one">$</li>
+	  <li id="two">$$</li>
+	  <li id="three">$$$</li>
+	  <li id="four">$$$$</li>
+	  <li id="five" class="last">$$$$$</li>
+	</ul>
+  <div style="clear: both;"></div>
+    <span id="occasion-arrow" class="input-arrow"></span>
+    <input type="text" value="Occasion" id="occasion-box" class="search-box" readonly="readonly"/>
+    <input id="big-search-submit" type="submit" value=""/>
+  </div>
+</form>
+<input type="hidden" name="neighborhood_qs" value="" />
+<input type="hidden" name="cuisine_qs" value="" />
+<input type="hidden" name="occasion_qs" value="" />
+<input type="hidden" name="price_qs" value="" />

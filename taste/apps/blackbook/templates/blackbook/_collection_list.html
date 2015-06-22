@@ -1,0 +1,34 @@
+{% load range_tags %}
+
+{% for section in collections %}
+  <form action="/" method="post" id="blackbook-form-{{ forloop.counter0 }}">
+    {% csrf_token %}
+    <div class="section">
+      <span class="title">{{ section.title }}</span>
+      <ol>
+        {% for item in section.entry_set.all %}
+          <li><span id="entry-{{ item.pk }}">{{ item.entry }}</span></li>
+          {% if forloop.last %}
+            <li><input type="text" name="entry" class="textbox-add-entry" /></li>
+          {% endif %}
+        {% empty %}
+          <li><input type="text" name="entry" class="textbox-add-entry" /></li>
+        {% endfor %}
+      </ol>
+    </div>
+    <input type="hidden" name="collection" class="textbox-collection" value="{{ section.pk }}" />
+  </form>
+  {% if forloop.last and empty_collections != 0 %}
+    {% for i in empty_collections|get_range %}
+      <div class="section open">
+        <span class="title">Create new list</span>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% empty %}
+  {% for i in 4|get_range %}
+    <div class="section open">
+      <span class="title">Create new list</span>
+    </div>
+  {% endfor %}
+{% endfor %}

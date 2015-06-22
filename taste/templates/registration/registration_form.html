@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block css %}
+{{ block.super }}
+<link href="{% static 'css/registration.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block title %}Register for an account{% endblock %}
+{% block content %}
+{{ block.super }}
+<div id="account" class="registration-signup">
+  <div id="sign-up-box">
+    <h2>Sign-up</h2>
+    <form method="post" action="">{% csrf_token %}
+      <ul>
+        {{ form.as_ul }}
+      </ul>
+      <input id="signup-button" type="submit" class="button orange" value="Send activation email" />
+    </form>
+  </div>
+</div>
+{% endblock %}

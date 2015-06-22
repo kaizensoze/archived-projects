@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /profiles/
+Disallow: /profiles*
+
+# Baiduspider
+User-agent: Baiduspider
+Disallow: /

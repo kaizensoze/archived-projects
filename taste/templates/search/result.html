@@ -1,0 +1,60 @@
+{% load tags staticfiles %}
+<a class="result-link" href="{{ restaurant.get_absolute_url }}?{{ request.GET.urlencode }}">
+  <div id="result{{ forloop.counter }}" class="result">
+    <div class="result-leftbar">{{ forloop.counter }}</div>
+    <div class="review-info">
+      <img class="rwd-image" width="45"
+           src="{% static restaurant.large_critics_say_rwd_url %}" alt="run"/>
+      {% if restaurant.critics_say %}
+      <div class="restaurant-score">
+        {{ restaurant.critics_say|floatformat }}/10</div>
+      {% endif %}
+    </div>
+    <div class="review-info">
+      <img class="rwd-image" width="45" src="{% static restaurant.large_savants_say_rwd_url %}" alt="run"/>
+      {% if restaurant.savants_say %}
+      <div class="restaurant-score">{{ restaurant.savants_say|floatformat }}/10</div>
+      {% endif %}
+    </div>
+    <div class="review-info">
+      {% if user.is_authenticated and user.get_profile.is_valid %}
+      <img class="rwd-image" width="45" src="{% static restaurant.large_friends_say_rwd_url %}" alt="run"/>
+      {% else %}
+      <img class="rwd-image" width="45" src="{% static 'images/large-login-now.png' %}" alt="run"/>
+      {% endif %}
+      {% if restaurant.friends_score %}
+      <div class="restaurant-score">{{ restaurant.friends_score|floatformat }}/10</div>
+      {% endif %}
+    </div>
+    <div class="restaurant-info">
+      <div>
+        <div class="restaurant-name">
+          {{ restaurant.name }}
+        </div>
+        <div class="restaurant-details">
+          {{ restaurant.price.name }}
+          |
+          {% filter truncatechars:50 %}{% for cuisine in restaurant.cuisine.all %}{{cuisine.name}}{% if not forloop.last %}, {% endif %}{% endfor %}
+          {% endfilter %}<br />
+          {% if restaurant.occasion.all %}
+            {% filter truncatechars:52 %}{% for occasion in restaurant.occasion.all|slice:"8" %}{{ occasion.name }}{% if not forloop.last %}, {% endif %}{% endfor %}
+            {% endfilter %}
+          {% endif %}
+        </div>
+      </div>
+      <span id="restaurant-locations">
+        {% for local in restaurant.location_set.all %}
+        <div>{{local.address}}<br />{{local.city}}, {{local.state}} {{local.zip_code}}</div>
+        <div class="phone-number">{{local.phone_number}}</div>
+        {% endfor %}
+      </span>
+    </div>
+    <div class="dishes">
+      {% for dish in restaurant.good_dishes|slice:":4" %}
+      <div class="dish good-dish">
+        <span class="tooltip" title="{{dish.name}}">{{dish.name|title|slice:":20"}}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</a>

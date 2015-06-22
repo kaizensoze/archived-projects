@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% load staticfiles compressed message_extras avatar_tags %}
+
+{% block title %}{% firstname blackbook_user.username %}'s Blackbook{% endblock title %}
+
+{% block css %}
+  {% compressed_css 'blackbook' %}
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<input type="hidden" id="username" value="{{ blackbook_user.username }}">
+<input type="hidden" id="the_username" value="{{ user.username }}">
+<div id="body">
+  {% avatar blackbook_user 64 %}
+  <h1><span>{% firstname blackbook_user.username %}'s blackbook</span></h1>
+  <hr>
+  <div id="blackbooks">
+    <img src="{% static 'images/ajax-loader.gif' %}">
+  </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+  {% compressed_js 'blackbook' %}
+{% endblock %}
+
+{% block js_templates %}
+<script type="text/template" class="template" id="listTemplate">
+<% this.model.each(function (list) { %>
+  <div class="list">
+    <div class="list-header">
+      <h1><%- list.get('title') %></h1>
+      {% if user.username == blackbook_user.username %}
+      <div class="list-controls">
+        <span><span class="list-controls-edit" data-listid="<%- list.get('id') %>">edit</span> | <span class="list-controls-delete" data-listid="<%- list.get('id') %>">delete</span></span>
+        <form class="edit-list-form">
+          <input type="text" name="new_list_name" value="<%- list.get('title') %>"><br>
+          <button class="edit-list-okay" data-listid="<%- list.get('id') %>">OKAY</button>
+          <button class="edit-list-cancel" data-listid="<%- list.get('id') %>">CANCEL</button>
+        </form>
+      </div>
+      {% endif %}
+    </div>
+    <div class="list-entries">
+      <% list.entries.each(function (item) { %>
+        <% if (item.get('restaurant')) { %>
+          <a href="/restaurant/<%- item.get('slug') %>/">
+        <% } %>
+        <div class="list-entry" style="top: <%- item.get('offset') %>px;">
+          <span class="list-entry-restaurant-name"><%- item.get('name') %></span>
+          {% if user.username == blackbook_user.username %}
+          <div class="list-entry-x" data-listid="<%- list.get('id') %>" data-id="<%- item.get('id') %>">✕</div>
+          {% endif %}
+        </div>
+        <% if (item.get('restaurant')) { %>
+          </a>
+        <% } %>
+      <% }); %>
+      {% if user.username == blackbook_user.username %}
+      <a href="#" class="add-restaurant-to-list" data-listid="<%- list.get('id') %>">
+        <div class="list-entry add-list-entry-show" style="top: <%- list.get('addOffset') %>px;">
+          + Add restaurant
+          <form class="add-list-entry-form">
+            <input type="text" name="new_restaurant_name" class="new-restaurant-name" data-listid="<%- list.get('id') %>">
+            <input type="hidden" name="api_uri">
+          </form>
+        </div>
+      </a>
+      {% endif %}
+    </div>
+    <div class="list-footer">
+    <% if (list.pageCount() > 0) { %>
+      <span class="prev<% if (!list.atFirstPage()) { %> active<% } %>" data-listid="<%- list.get('id') %>">&#10094;</span>
+      <% _.each(list.pagesLinks(), function (elt) { %>
+        <% if (elt === list.currentPageNumber()) { %>
+          <span class="list-active-page"><%- elt %></span>
+        <% } else { %>
+          <% if (list.closePage(elt) || list.firstOrLast(elt)) { %>
+            <a href="#" data-listid="<%- list.get('id') %>" data-pageid="<%- elt %>" class="pagination"><%- elt %></a>
+          <% } else if (list.justOutsideBounds(elt)) { %>
+            &hellip;
+          <% } %>
+        <% } %>
+      <% }); %>
+      <span class="next<% if (!list.atLastPage()) { %> active<% } %>" data-listid="<%- list.get('id') %>">&#10095;</span>
+    <% } %>
+    </div>
+  </div>
+<% }); %>
+  {% if user.username == blackbook_user.username %}
+  <a href="#" class="new-list-button-link">
+    <div class="list new-list-button">
+      <div class="new-list-button-inner">
+        <div class="list-big-plus">+</div>
+        Add new list
+        <form class="new-list-button-form">
+          <input type="text" name="new_list_name"><br>
+          <button class="new-list-okay">OKAY</button>
+          <button class="new-list-cancel">CANCEL</button>
+        </form>
+      </div>
+    </div>
+  </a>
+  {% endif %}
+</script>
+{% endblock js_templates %}

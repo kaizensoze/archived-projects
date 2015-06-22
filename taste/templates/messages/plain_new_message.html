@@ -1,0 +1,14 @@
+{% load i18n %}
+{% load message_extras %}
+{% with message.recipient.username as recipient and message.sender.username as sender%}
+Dear {% fullname recipient %},
+You've received a message from {% fullname sender %} on TasteSavant saying:
+{% endwith %}
+{{ message.body|safe }}
+
+Check out the message by clicking here. {{ site_url }}{% url messages_inbox %}<br/>
+
+--
+Enjoy!
+The Taste Savant Team
+

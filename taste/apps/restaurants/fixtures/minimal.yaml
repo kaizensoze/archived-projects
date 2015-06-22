@@ -1,0 +1,493 @@
+-   fields:
+        domain: playground.tastesavant.com
+        name: "Taste Savant"
+    model: sites.site
+    pk: 1
+-   fields:
+        domain: chi.playground.tastesavant.com
+        name: "Chicago"
+    model: sites.site
+    pk: 2
+-   fields:
+        domain: nyc.playground.tastesavant.com
+        name: "New York"
+    model: sites.site
+    pk: 3
+-   fields:
+        domain: london.playground.tastesavant.com
+        name: "London"
+    model: sites.site
+    pk: 4
+-   fields:
+        domain: la.playground.tastesavant.com
+        name: "Los Angeles"
+    model: sites.site
+    pk: 5
+-   fields:
+        domain: bos.playground.tastesavant.com
+        name: "Boston"
+    model: sites.site
+    pk: 6
+-   fields:
+        domain: localhost:8000
+        name: "Localhost"
+    model: sites.site
+    pk: 7
+-   fields:
+        domain: bklyn.playground.tastesavant.com
+        name: "Brooklyn"
+    model: sites.site
+    pk: 8
+-   fields:
+        affiliate: false
+        description: This is a test critic site.
+        large_logo: ''
+        link_copy: ''
+        logo: ''
+        name: Test Critic Site
+        rating_denominator: 4
+        rating_style: Stars
+        review_weight: 1
+        slug: test-critic-site
+        url: 'http://example.com/'
+    model: critics.site
+    pk: 1
+-   fields: {name: Test McTester, site: 1}
+    model: critics.author
+    pk: 1
+-   fields: {action_name: reviewed, description: '', includes_context: false, is_custom: false,
+        is_public: true, message: reviewed <a href="$url" title="$name">$name</a>.}
+    model: newsfeed.action
+    pk: 1
+-   fields: {action_name: checkin, description: '', includes_context: false, is_custom: false,
+        is_public: true, message: checked into <a href="$url" title="$address $cross_street">$name</a>.}
+    model: newsfeed.action
+    pk: 2
+-   fields: {action_name: follow, description: '', includes_context: false, is_custom: false,
+        is_public: true, message: now following <a href="$url">$name</a>}
+    model: newsfeed.action
+    pk: 3
+-   fields: {action_name: blackbook, description: '', includes_context: false, is_custom: false,
+        is_public: true, message: blackbooked <a href="$url">$name</a>}
+    model: newsfeed.action
+    pk: 4
+-   fields: {action: 1, activity_id: ea54acee73796d46c3f4f40d7ab724c5, meta_data: '{"url":
+            "/restaurant/test-restaurant/review/savants/", "name": "Test Restaurant"}',
+        occurred: !!timestamp '2012-10-17 15:53:34', restaurant: 1, user: 1}
+    model: newsfeed.activity
+    pk: 1
+-   fields: {action: 1, activity_id: a231019395458897a02e22556c28259c, meta_data: '{"url":
+            "/restaurant/test-restaurant/review/savants/", "name": "Test Restaurant"}',
+        occurred: !!timestamp '2012-10-17 15:53:54', restaurant: 1, user: 1}
+    model: newsfeed.activity
+    pk: 2
+-   fields: {action: 1, activity_id: 74fb33a6f8abc7e7bc01e3bf102f1c12, meta_data: '{"url":
+            "/restaurant/test-restaurant/review/savants/", "name": "Test Restaurant"}',
+        occurred: !!timestamp '2012-10-17 15:55:07', restaurant: 1, user: 1}
+    model: newsfeed.activity
+    pk: 3
+-   fields:
+        date_joined: 2012-10-16 23:40:15
+        email: test@example.com
+        first_name: ''
+        groups: []
+        is_active: true
+        is_staff: true
+        is_superuser: true
+        last_login: 2012-10-16 23:40:24
+        last_name: ''
+        password: sha1$3e17f$d9577df3a00ef31a0e0661d380f545f1c694227e
+        user_permissions: []
+        username: test
+    model: auth.user
+    pk: 1
+-   fields:
+        date_joined: 2012-10-16 23:40:15
+        email: inactive_test@example.com
+        first_name: ''
+        groups: []
+        is_active: false
+        is_staff: true
+        is_superuser: true
+        last_login: 2012-10-16 23:40:24
+        last_name: ''
+        password: sha1$3e17f$d9577df3a00ef31a0e0661d380f545f1c694227e
+        user_permissions: []
+        username: inactive_test
+    model: auth.user
+    pk: 2
+-   fields:
+        date_joined: 2012-10-16 23:40:15
+        email: friend_test@example.com
+        first_name: ''
+        groups: []
+        is_active: true
+        is_staff: false
+        is_superuser: false
+        last_login: 2012-10-16 23:40:24
+        last_name: ''
+        password: sha1$3e17f$d9577df3a00ef31a0e0661d380f545f1c694227e
+        user_permissions: []
+        username: friend_test
+    model: auth.user
+    pk: 3
+-   fields:
+        birthday: 2012-10-16
+        blogger: false
+        digest_notifications: ''
+        favorite_food: ''
+        favorite_restaurant: ''
+        first_name: Test
+        gender: null
+        last_name: Example
+        last_sync_facebook: null
+        last_sync_foursquare: null
+        location: ''
+        notification_level: instant
+        type_expert: ''
+        type_reviewer: ''
+        user: 1
+        view_count: 0
+        zipcode: ''
+        preferred_site: 2
+    model: profiles.profile
+    pk: 1
+-   fields:
+        birthday: 2012-10-16
+        blogger: false
+        digest_notifications: ''
+        favorite_food: ''
+        favorite_restaurant: ''
+        first_name: Inactive
+        gender: null
+        last_name: Test
+        last_sync_facebook: null
+        last_sync_foursquare: null
+        location: ''
+        notification_level: instant
+        type_expert: ''
+        type_reviewer: ''
+        user: 2
+        view_count: 0
+        zipcode: ''
+        preferred_site: 2
+    model: profiles.profile
+    pk: 2
+-   fields:
+        birthday: 2012-10-16
+        blogger: false
+        digest_notifications: ''
+        favorite_food: ''
+        favorite_restaurant: ''
+        first_name: Friend
+        gender: null
+        last_name: Test
+        last_sync_facebook: null
+        last_sync_foursquare: null
+        location: ''
+        notification_level: instant
+        type_expert: ''
+        type_reviewer: ''
+        user: 3
+        view_count: 0
+        zipcode: ''
+        preferred_site: 1
+    model: profiles.profile
+    pk: 3
+-   fields:
+        user: 1
+        profile: 3
+        notice_sent_to_user_at: 2013-09-07T23:21:44Z
+    model: profiles.friendship
+    pk: 1
+-   fields: {closed: '22.00', day: 0, open: '16.00', time_zone: US/Eastern}
+    model: restaurants.operatinghour
+    pk: 1
+-   fields:
+        level: 0
+        lft: 1
+        name: Cuisines
+        parent: null
+        position: 1
+        rght: 102
+        tree_id: 1
+    model: restaurants.cuisine
+    pk: 1
+-   fields:
+        level: 1
+        lft: 2
+        name: Test Cuisine
+        parent: 1
+        position: 1
+        rght: 7
+        tree_id: 1
+    model: restaurants.cuisine
+    pk: 2
+-   fields:
+        level: 2
+        lft: 3
+        name: Test Cuisine 1
+        parent: 2
+        position: 1
+        rght: 4
+        tree_id: 1
+    model: restaurants.cuisine
+    pk: 3
+-   fields:
+        level: 2
+        lft: 5
+        name: Test Cuisine 2
+        parent: 2
+        position: 2
+        rght: 6
+        tree_id: 1
+    model: restaurants.cuisine
+    pk: 4
+-   fields: {name: Test Occasion}
+    model: restaurants.occasion
+    pk: 1
+-   fields: {name: $}
+    model: restaurants.price
+    pk: 1
+-   fields: {name: $$}
+    model: restaurants.price
+    pk: 2
+-   fields: {name: $$$}
+    model: restaurants.price
+    pk: 3
+-   fields: {name: $$$$}
+    model: restaurants.price
+    pk: 4
+-   fields: {name: $$$$$}
+    model: restaurants.price
+    pk: 5
+-   fields:
+        active: true
+        added: 2013-08-15 00:00:00+00:00
+        critics_say: '7.00'
+        cuisine: [1]
+        hits: 0
+        hours: [1]
+        menupages: ''
+        name: Test Restaurant
+        occasion: [1]
+        opentable: ''
+        price: 3
+        savants_say: '7.00'
+        site: 1
+        slug: test-restaurant
+        url: http://example.com/
+    model: restaurants.restaurant
+    pk: 1
+-   fields:
+        active: true
+        added: 2013-08-15 00:00:00+00:00
+        critics_say: '7.00'
+        cuisine: [1]
+        hits: 0
+        hours: [1]
+        menupages: ''
+        name: Test Restaurant Too
+        occasion: [1]
+        opentable: ''
+        price: 3
+        savants_say: '7.00'
+        site: 1
+        slug: test-restaurant-2
+        url: http://example.com/
+    model: restaurants.restaurant
+    pk: 2
+-   fields:
+        active: false
+        added: 2013-08-15 00:00:00+00:00
+        critics_say: '7.00'
+        cuisine: [1]
+        hits: 0
+        hours: [1]
+        menupages: ''
+        name: Test Restaurant Three
+        occasion: [1]
+        opentable: ''
+        price: 3
+        savants_say: '7.00'
+        site: 1
+        slug: test-restaurant-3
+        url: http://example.com/
+    model: restaurants.restaurant
+    pk: 3
+-   fields: {name: Test Borough, site: 1}
+    model: restaurants.borough
+    pk: 1
+-   fields: {borough: 1, level: 0, lft: 1, name: Test Neighborhood, parent: null,
+        rght: 2, tree_id: 1, position: 1}
+    model: restaurants.neighborhood
+    pk: 1
+-   fields:
+        address: 1234 Main St
+        city: New York
+        foursquare_id: ''
+        lat: 40.0
+        lng: -73.0
+        neighborhood: [1]
+        phone_number: 212-555-1234
+        restaurant: 1
+        seamless_direct_url: ''
+        seamless_mobile_url: ''
+        singleplatform_id: ''
+        state: NY
+        zip_code: '10012'
+    model: restaurants.location
+    pk: 1
+-   fields: {description: '', name: '*', star_rating: true}
+    model: reviews.rating
+    pk: 1
+-   fields: {description: '', name: '**', star_rating: true}
+    model: reviews.rating
+    pk: 2
+-   fields: {description: '', name: '***', star_rating: true}
+    model: reviews.rating
+    pk: 3
+-   fields: {description: '', name: '****', star_rating: true}
+    model: reviews.rating
+    pk: 4
+-   fields: {description: '', name: '*****', star_rating: true}
+    model: reviews.rating
+    pk: 5
+-   fields: {description: '', value: '1.00'}
+    model: reviews.score
+    pk: 1
+-   fields: {description: '', value: '1.50'}
+    model: reviews.score
+    pk: 2
+-   fields: {description: '', value: '2.00'}
+    model: reviews.score
+    pk: 3
+-   fields: {description: '', value: '2.50'}
+    model: reviews.score
+    pk: 4
+-   fields: {description: '', value: '3.00'}
+    model: reviews.score
+    pk: 5
+-   fields: {description: '', value: '3.50'}
+    model: reviews.score
+    pk: 6
+-   fields: {description: '', value: '4.00'}
+    model: reviews.score
+    pk: 7
+-   fields: {description: '', value: '4.50'}
+    model: reviews.score
+    pk: 8
+-   fields: {description: '', value: '5.00'}
+    model: reviews.score
+    pk: 9
+-   fields: {description: '', value: '5.50'}
+    model: reviews.score
+    pk: 10
+-   fields: {description: '', value: '6.00'}
+    model: reviews.score
+    pk: 11
+-   fields: {description: '', value: '6.50'}
+    model: reviews.score
+    pk: 12
+-   fields: {description: '', value: '7.00'}
+    model: reviews.score
+    pk: 13
+-   fields: {description: '', value: '7.50'}
+    model: reviews.score
+    pk: 14
+-   fields: {description: '', value: '8.00'}
+    model: reviews.score
+    pk: 15
+-   fields: {description: '', value: '8.50'}
+    model: reviews.score
+    pk: 16
+-   fields: {description: '', value: '9.00'}
+    model: reviews.score
+    pk: 17
+-   fields: {description: '', value: '9.50'}
+    model: reviews.score
+    pk: 18
+-   fields: {description: '', value: '10.00'}
+    model: reviews.score
+    pk: 19
+-   fields: {name: Test Dish}
+    model: reviews.dish
+    pk: 1
+-   fields:
+        _name: ''
+        active: true
+        ambience_score: null
+        author: 1
+        body: ''
+        created: 2013-08-15 00:00:00+00:00
+        food_score: null
+        more_tips: []
+        overall_score: null
+        post_to_facebook: false
+        post_to_twitter: false
+        published: 2012-10-17
+        restaurant: 1
+        rwd: 2
+        score: 11
+        service_score: null
+        site: 1
+        site_rating: 3
+        summary: This is a test review from an external critic.
+        url: ''
+        user: null
+        vote: 0
+    model: reviews.review
+    pk: 1
+-   fields:
+        _name: ''
+        active: true
+        ambience_score: 4
+        author: null
+        body: ''
+        created: 2013-08-15 00:00:00+00:00
+        food_score: 10
+        more_tips: []
+        overall_score: 8
+        post_to_facebook: false
+        post_to_twitter: false
+        published: 2012-10-17
+        restaurant: 1
+        rwd: 1
+        score: 15
+        service_score: 7
+        site: null
+        site_rating: null
+        summary: This is a test review from a Taste Savant user.
+        url: ''
+        user: 1
+        vote: 0
+    model: reviews.review
+    pk: 2
+-   fields:
+        _name: ''
+        active: true
+        ambience_score: 4
+        author: null
+        body: ''
+        created: 2013-08-15 00:00:00+00:00
+        food_score: 10
+        more_tips: []
+        overall_score: 8
+        post_to_facebook: false
+        post_to_twitter: false
+        published: 2012-10-17
+        restaurant: 2
+        rwd: 1
+        score: 15
+        service_score: 7
+        site: null
+        site_rating: null
+        summary: This is a test review of a different restaurant from a Taste Savant user.
+        url: ''
+        user: 1
+        vote: 0
+    model: reviews.review
+    pk: 3
+-   fields: {dish: 1, recommended: true, review: 1}
+    model: reviews.reviewdish
+    pk: 1

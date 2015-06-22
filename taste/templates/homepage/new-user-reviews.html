@@ -1,0 +1,20 @@
+{% load i18n avatar_tags humanize message_extras tz %}
+<div id="hottest" class="homepage-box">
+  <div class="box-title">Latest User Reviews</div>
+  <ul>
+  {% for review in new_user_reviews %}
+    <li class="{% cycle 'alt' '' %}">
+      <span class="picture-frame-45x45">
+        {% avatar review.user.username 45 %}
+      </span>
+      <span class="activity-info hottest-reviewers">
+        <a href="{{ review.restaurant.get_absolute_url }}review/savants/">
+          {{ review.restaurant.name }}</a>
+          <span class="block secondary">by {{ review.user.get_profile.get_truncated_name }}</span>
+          <span class="block secondary">{{ review.display_date|naturalday|title }}</span>
+      </span>
+    </li>
+  {% endfor %}
+  </ul>
+  <div class="border-bottom"></div>
+</div>

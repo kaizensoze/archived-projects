@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load compressed staticfiles %}
+
+{% block css %}
+  {% compressed_css 'invite' %}
+{% endblock %}
+
+{% block title %}Invite Friends{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+  {% block invite %}
+    <div id="invites">
+      <h1>Invite Friends</h1>
+      <span class="secondary">Invite your friends and tell them all about Taste Savant.
+        Select from the options below</span>
+    </div>
+  {% endblock %}
+{% endblock %}

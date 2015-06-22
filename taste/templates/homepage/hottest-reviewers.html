@@ -1,0 +1,23 @@
+{% load i18n avatar_tags %}
+<div id="hottest" class="homepage-box">
+  <div class="box-title">Featured Reviewers</div>
+  <ul>
+  {% for user in hottest %}
+    <li class="{% cycle 'alt' '' %}">
+      <span class="picture-frame-45x45">
+        {% avatar user.username 45 %}
+      </span>
+      <span class="activity-info hottest-reviewers">
+        <a href="{% url profiles_profile_detail user.username %}">
+          {{ user.get_profile.get_truncated_name }}</a>
+          <span class="block secondary">{{ user.count }} Reviews</span>
+          {% if user.get_profile.type_expert %}
+          <span class="block">Expert on {{ user.get_profile.type_expert|truncatewords_html:2 }}</span>
+          {% endif %}
+          <span class="block">{{ user.get_profile.get_type_reviewer_display }}</span>
+      </span>
+    </li>
+  {% endfor %}
+  </ul>
+  <div class="border-bottom"></div>
+</div>

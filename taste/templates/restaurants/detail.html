@@ -1,0 +1,386 @@
+{% extends "base.html" %}
+{% load compressed rangefilter staticfiles tz %}
+
+{% block meta_tags %}
+  <meta name="description" content="Taste Savant - Critics Ratings, Reviews, Reservation, and Menu for {{ restaurant.name }}{% if restaurant.cuisine.all %} | Cuisine - {% for cuisine in restaurant.cuisine.all %}{{ cuisine.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}{% if restaurant.occasion.all %} | Occasion {% for occasion in restaurant.occasion.all %}{{ occasion.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}" />
+  <meta property="fb:app_id" content="221610771211198" />
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="{{ restaurant.name }}" />
+  <meta property="og:url" content="http://{{ host }}{% url restaurant-detail restaurant.slug %}" />
+  <meta property="og:description" content="{{ restaurant.name }}{% if restaurant.cuisine.all %} | Cuisine - {% for cuisine in restaurant.cuisine.all %}{{ cuisine.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}{% if restaurant.occasion.all %} | Occasion {% for occasion in display_occasions %}{{ occasion.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}" />
+{% endblock %}
+
+{% block title %}{{ restaurant.name }}{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+  <div id="col-left" class="column">
+    {% include "restaurants/image-carousel.html" %}
+    <div id="map">
+      <div id="google-map"></div>
+    </div>
+      {% include "search/small-search-widget.html" %}
+      {% include "search/ranking-legend.html" %}
+    </div>
+    {% block restaurantdetail %}
+    <div id="col-content" class="column">
+      <div id="col-content-left">
+        <div id="preamble-container">
+          <h1>{{ restaurant.name }}</h1>
+          <div id="at-a-glance">
+            <ul>
+              <li class="first">{{ restaurant.price.name }}</li>
+              <li class="last">
+                {% for cuisine in restaurant.cuisine.all %}
+                  {{ cuisine.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+              </li>
+            </ul>
+              {% if restaurant.occasion.all %}
+              <div id="at-a-glance-occasions">
+                  {% for occasion in display_occasions %}
+                    {{ occasion.name }}{% if not forloop.last %}, {% endif %}
+                  {% endfor %}
+              </div>
+              {% endif %}
+          </div>
+        </div>
+        <div id="about">
+          <a href="{% url restaurant-detail restaurant.slug %}">
+            <div id="critics-score" class="column">
+              <span class="block-score-labels">Critics Say</span>
+              <img class="rwd-image"
+                   src="{% static restaurant.large_critics_say_rwd_url %}"
+                   alt="run"/>
+              {% if restaurant.critics_say %}
+                <span id="best-of-10">{{ restaurant.critics_say|floatformat }}/10</span>
+              {% endif %}
+            </div>
+          </a>
+          <a href="{% url restaurant-review restaurant.slug 'savants' %}">
+            <div id="savants-score" class="column">
+              <span class="block-score-labels">Users Say</span>
+              {% if savants %}
+                <img class="rwd-image" src="{% static restaurant.large_savants_say_rwd_url %}" alt="run"/>
+              {% else %}
+                <img class="rwd-image" src="{% static 'images/rwd/not-rated.45x45.png' %}" alt="run"/>
+              {% endif %}
+              {% if savants_score %}<span id="best-of-10">{{ savants_score|floatformat }}/10</span>{% endif %}
+            </div>
+          </a>
+          {% if user.is_authenticated %}
+          <a href="{% url restaurant-review restaurant.slug 'friends' %}">
+            <div id="friends-score" class="column">
+              <span class="block-score-labels">Friends Say</span>
+              {% if friends %}
+                {# Should use a model method, but this'll do for now. #}
+                <img class="rwd-image" src="{% static friends %}" alt="run"/>
+              {% else %}
+                <img class="rwd-image" src="{% static 'images/rwd/not-rated.45x45.png' %}" alt="run"/>
+              {% endif %}
+              {% if friends_score %}
+                <span id="best-of-10">{{ friends_score|floatformat }}/10</span>
+              {% endif %}
+            </div>
+          </a>
+          {% endif %}
+          <div id="score-breakdown" class="column">
+            <img src="{% static 'images/vertical-line.png' %}" id="score-vertical-line" />
+            <ul class="score-categories">
+                <li>Food: {% if food %}<span class="score-{{ food }}">{{ food }}/10</span>{% else %}Not rated{% endif %}</li>
+                <li>Ambience: {% if ambience %}<span class="score-{{ ambience }}">{{ ambience }}/10</span>{% else %}Not rated{% endif %}</li>
+                <li>Service: {% if service %}<span class="score-{{ service }}">{{ service }}/10</span>{% else %}Not rated{% endif %}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="col-content-right">
+        <div id="general" class="column">
+          <ul>
+            {% for local in restaurant.location_set.all %}
+              {% if local.neighborhood.all %}
+              <li><img src="{% static 'images/map-pin.png' %}" title="arrow" alt="arrow" />
+              {% for neighborhood in local.neighborhood.all %}
+                {% if forloop.first %}
+                {{ neighborhood.name }}
+                {% else %}
+                , {{ neighborhood.name }}
+                {% endif %}
+              {% endfor %}
+              </li>
+              {% endif %}
+              <li>{{ local.address }}</li>
+              <li>{{ local.city }}, {{ local.state }} {{ local.zip_code }}</li>
+              <li><strong>{{ local.phone_number }}</strong></li>
+              <li class="secondary">{{ restaurant.human_readable_hours }}</li>
+              {% if restaurant.url %}
+                <li>
+                  <a href="{{ restaurant.url }}" target="_blank">
+                  {{ restaurant.name }} - Website</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        <div id="resources" class="column">
+          <ul class="resource-icons">
+            {% if restaurant.has_menu %}
+              <li>
+                <a href="{{ restaurant.get_menu_url }}"{% if not restaurant.has_local_menu %} target="_blank"{% endif %}>
+                  <img src="{% static 'images/menu.png' %}" class="resources-icon" />
+                  <span>View menu</span>
+                </a>
+              </li>
+            {% endif %}
+            {% if restaurant.location_set.all.0.seamless_direct_url %}
+            {# This just gives you the link for the first location, if you have multiple locations. #}
+              <li>
+                <a target="_blank" href="{{ restaurant.location_set.all.0.seamless_direct_url }}">
+                  <img src="{% static 'images/delivery.png' %}" class="resources-icon" />
+                  <span>Delivery</span>
+                </a>
+              </li>
+            {% elif restaurant.location_set.all.0.grubhub_url %}
+            {# This just gives you the link for the first location, if you have multiple locations. #}
+              <li>
+                <a target="_blank" href="{{ restaurant.location_set.all.0.grubhub_url }}">
+                  <img src="{% static 'images/delivery.png' %}" class="resources-icon" />
+                  <span>Delivery</span>
+                </a>
+              </li>
+            {% endif %}
+            {% if restaurant.opentable %}
+              <li>
+                <script type="text/javascript" src="{{ restaurant.opentable_widget_link }}"></script>
+                <a id="show-opentable-widget" href="{{ restaurant.opentable }}" target="_blank">
+                <img src="{% static 'images/make-reservation.png' %}" class="resources-icon" />
+                <span>Reservations</span>
+                </a>
+              </li>
+            {% endif %}
+            <li>
+              {% if user.is_authenticated %}
+              <a href="#" class="blackbook">
+                <img src="{% static 'images/blackbook.png' %}" class="resources-icon" />
+                <span>Blackbook this</span>
+              </a>
+              {% else %}
+              <a href="{% url auth_login %}" class="login">
+                <img src="{% static 'images/blackbook.png' %}" class="resources-icon" />
+                <span>Blackbook this</span>
+              </a>
+              {% endif %}
+            </li>
+            {% comment %}
+            <li>
+              <a id="book-chef" href="{{ restaurant.kitchensurfing }}" target="_blank">
+                <img src="{% static 'images/book-chef.png' %}" class="resources-icon" />
+                <span>Book the chef</span>
+              </a>
+            </li>
+            {% endcomment %}
+          </ul>
+          {% if user.is_authenticated %}
+          <div id="blackbook-modal">
+            <input type="hidden" value="{{ restaurant_api_uri }}" id="restaurant_api_uri">
+            
+            <h1 class="header">Add this Restaurant to Your Blackbook
+              <img src="{% static 'images/close-button.png' %}" class="close close-x">
+            </h1>
+
+            <div class="label">BLACKBOOK:</div>
+
+            <input type="text" value="" class="select-blackbook" readonly>
+            <input type="hidden" value="" class="selected-blackbook-item">
+
+            <ul class="blackbook-list">
+              {% for collection in user.collection_set.all %}
+              <li value="{{ collection.id }}" class="blackbook-list-item">{{ collection.title }}</li>
+              {% endfor %}
+              <li class="new-blackbook-item" value="">Create a Blackbook</li>
+            </ul>
+
+            <form id="add-new-list">
+              <input type="text" class="create-blackbook">
+              <input type="image" src="{% static 'images/button-create.png' %}" class="submit-new-blackbook" value="CREATE" alt="Create blackbook">
+            </form>
+
+            <div class="footer">
+              <div class="footer-buttons">
+                <img src="{% static 'images/button-add.png' %}" alt="add" class="add-to-blackbook" width="67" height="24" />
+              </div>
+            </div>
+
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+      <div id="col-reviews" class="column">
+        <div id="review-navigation">
+          {% block review-navigation %}
+            <ul>
+              <li class="active">
+                <a href="{% url restaurant-detail restaurant.slug %}">
+                  <span>Critics</span>
+                </a>
+              </li>
+              <li>
+                <a href="{% url restaurant-review restaurant.slug 'savants' %}">
+                  <span>Users</span>
+                </a>
+              </li>
+              <li>
+                <a href="{% url restaurant-review restaurant.slug 'friends' %}">
+                  <span>Friends</span>
+                </a>
+              </li>
+              <li>
+                <a href="{% url restaurant-review restaurant.slug 'create_edit' %}">
+                  <span>Review Now</span>
+                </a>
+              </li>
+            </ul>
+          {% endblock %}
+        </div>
+        <div id="reviews">
+          {% block review %}
+            {% for review in reviews %}
+              <div class="review-row">
+                <div class="rating">
+                  <img src="{% static review.large_rwd %}" alt="run"/>
+                </div>
+                <div class="summary">
+                {% if review.site.logo %}
+                  <img src="{{ review.site.logo.url }}" width="43" height="43">
+                  <div style="margin-top: 4px;">
+                    <h2 style="padding-left: 4px;">
+                      <a href="{% url critic-reviews review.site.slug %}">{{ review.site.name }}</a>
+                    </h2><br>
+                  <span class="review-date">{{ review.display_date|date:"n/d/Y" }}</span>
+                  </div>
+                {% else %}
+                  <h2><a href="{% url critic-reviews review.site.slug %}">{{ review.site.name }}</a></h2>
+                  <span class="review-date">{{ review.display_date|date:"n/d/Y" }}</span>
+                {% endif %}
+
+                </div>
+                <div class="rating-summary-wrap">
+                  <div class="star-rating">
+                    {% if review.site.rating_denominator and review.number_of_stars != None %}
+                      {% for i in review.site.rating_denominator|get_range %}
+                        {% if i < review.number_of_stars %}
+                          <img class="copyright-infringement" src="{% static 'images/black-star.png' %}" />
+                        {% else %}
+                          <img class="copyright-infringement" src="{% static 'images/white-star.png' %}" />
+                        {% endif %}
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                  <div class="critical-review">
+                    {{ review.summary }}
+                    {% if review.site.affiliate %}
+                      <a class="restaurant-review" href="{{ review.url }}" target="_blank">
+                      &raquo; {{ review.site.link_copy }}</a>
+                    {% else %}
+                      {% if review.url %}
+                      <a class="restaurant-review" href="{{ review.url }}" target="_blank">
+                      &raquo; Read Full Review</a>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="recommendations">
+                  <ul>
+                  {% if review.good_dishes or review.bad_dishes %}
+                    <li class="label">Outstanding Dishes: </li>
+                    {% for dish in review.good_dishes %}
+                      <li class="menu-item suggested">{{dish.name|title}}</li>
+                    {% endfor %}
+                    {% for dish in review.bad_dishes %}
+                      <li class="menu-item not-suggested">{{dish.name|title}}</li>
+                    {% endfor %}
+                  {% endif %}
+                  </ul>
+                </div>
+              </div>
+              {% if forloop.last %}
+                <div class="last"></div>
+              {% else %}
+                <div class="break"></div>
+                <br clear="all">
+              {% endif %}
+              {% empty %}
+              <h1 class="not-reviewed">Sorry, no critics have reviewed this restaurant.</h1>
+            {% endfor %}
+          {% endblock %}
+        </div>
+      </div>
+    {% endblock %}
+{% endblock %}
+
+{% block css %}
+  {% compressed_css 'restaurants' %}
+{% endblock %}
+
+{% block js %}
+  <!-- Put this first, as maps.js depends on it. -->
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  {% compressed_js 'restaurants' %}
+  <script type="text/javascript">
+    var restaurants = [{% for l in restaurant.locations %}
+    {% with name=restaurant.name lng=l.lng lat=l.lat zindex=forloop.parentloop.revcounter %}
+    ["{{ name }}", {{ lat }}, {{ lng }}]//, {{ zindex }}]
+    {% endwith %}{% endfor %}
+    ];
+    initialize();
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId: '{{ FACEBOOK_APP_ID }}',
+          version: 'v2.0',
+          status: true,
+          cookie: true,
+          xfbml: true
+        });
+    };
+    (function() {
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol +
+            '//connect.facebook.net/en_US/sdk.js';
+        document.getElementById('fb-root').appendChild(e);
+    }());
+  </script>
+  <script type="text/javascript">
+  function afterExpand() {
+    jQuery('.details').css('display', 'inline');
+  }
+  function jQuery_document_ready() {
+    slicePoint = 195;
+    if (jQuery.browser.msie &&
+      (jQuery.browser.version == '7.0' || jQuery.browser.version == '8.0')) {
+      /* Apparently, IE9 and all real browsers treat slicePoint as a measure
+         in pixels? Or something? And IE 8 and below treat it as a measure in
+         characters. Hence this workaround. */
+      slicePoint = 70;
+    }
+    jQuery('#at-a-glance-occasions').expander({
+      slicePoint: slicePoint,
+      expandPrefix: " ",
+      expandText: "see all",
+      userCollapseText: "see less",
+      userCollapsePrefix: "&nbsp;",
+      expandEffect: 'show',
+      expandSpeed: 0,
+      collapseEffect: 'hide',
+      collapseSpeed: 0,
+      afterExpand: afterExpand
+    });
+    jQuery('#OT_form').append("<a id='closex-link' href='#'><img id='closex' src='{% static 'splash/x.png' %}' /></a>");
+    jQuery('#closex-link').click(function(evt) {
+      evt.preventDefault();
+      jQuery('#OT_form').toggle();
+    });
+  }
+  jQuery(document).ready(jQuery_document_ready);
+  </script>
+{% endblock %}

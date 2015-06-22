@@ -1,0 +1,31 @@
+div.box {
+    width: 225px;
+}
+
+div.box div.content {
+    background-color: #F4F1EA;
+   min-height: 160px;
+}
+
+div.box div.title {
+    background-color: #F4F1EA;
+    height: 26px;
+    border-bottom: 1px solid white;
+    width: 225px;
+    font-style: italic;
+    font-family: Georgia;
+    font-size: 14px;
+   /*  display: table-cell; */
+    text-align: center;
+   /*  vertical-align: middle; */
+    font-weight: bold;
+    color: #534741;
+    padding:6px 0 0;
+}
+
+div.box div.shadow {
+    width: 225px;
+    height: 10px;
+    background: url(../images/border-bottom-shadow.png) no-repeat;
+    float: left;
+}

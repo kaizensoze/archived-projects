@@ -1,0 +1,31 @@
+{% extends "registration/registration_base.html" %}
+{% block title %}
+{% if account %}Activation complete
+{% else %}Activation problem
+{% endif %}
+{% endblock %}
+{% block content %}
+    {{ block.super }}
+
+{% if account %}
+<div class="registration-email">
+        <h2>Thanks {{ account }}, activation complete!</h2>
+        <br><br>
+        {% if account %}
+        You may now <a href='{% url follower_suggestions %}'>login</a> using the username and password you set at registration.
+        {% else %}
+        Oops &ndash; it seems that your activation key is invalid.  Please check the url again.
+        {% endif %}
+    </div>
+{% else %}
+<div class="registration-email">
+        <h2>Oops</h2>
+        <br><br>
+        <h3 style="font-size: 16px;">It seems that your activation key has either been used or invalid.</h3>
+    </div>
+
+	
+  
+{% endif %}
+{% endblock %}
+

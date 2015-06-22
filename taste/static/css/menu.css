@@ -1,0 +1,91 @@
+#menu {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 600px;
+    float: left;
+    font-family: "Georgia", serif;
+}
+
+#menu h1 {
+    font-size: 32px;
+    margin-bottom: 9px;
+    font-weight: 400;
+}
+
+#menu h1 a {
+    color: #534741;
+}
+
+#menu h1 a:hover {
+    text-decoration: none;
+}
+
+.menu {
+    border-top: 1px solid #dddddd;
+    padding-top: 5px;
+}
+
+.menu h2 {
+    padding-left: 0px;
+    text-transform: none;
+    font-weight: bold;
+    font-family: "Georgia", serif;
+}
+
+.menu-section {
+    background-color: #f68e56;
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menu-item {
+    /*pass*/
+}
+
+.menu-entry {
+    border-top: 1px solid #e2e2e2;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h3 + .menu-entry {
+    border: none;
+}
+
+.menu-entry-final {
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 1em;
+}
+
+.menu-entry-title-desc {
+    float: left;
+    width: 330px;
+    padding-right: 20px;
+}
+
+.menu-entry-desc {
+    font-style: italic;
+    line-height: 95%;
+}
+
+.menu-item-price {
+    float: left;
+    width: 250px;
+}
+
+.menu-item-price li {
+    text-align: right;
+    width: 250px;
+    line-height: 90%;
+    font-weight: bold;
+}

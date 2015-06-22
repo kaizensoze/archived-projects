@@ -1,0 +1,27 @@
+{% load staticfiles compressed %}<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taste Savant</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% compressed_css 'mobile_splash' %}
+  </head>
+  <body>
+    <div id="mobile-overlay">
+      <img id="mobile-overlay-taste-savant-logo" src="{% static 'images/logo-main-bare.png' %}" title="Taste Savant" alt="Taste Savant">
+      <p>
+        We help you discover where to eat next by curating and aggregating
+        reviews from sources <em>you</em> trust.
+      </p>
+      <a href="{{ app_store_link }}">
+        <img id="mobile-overlay-download-on-app-store" src="{% static 'images/download-on-the-app-store.png' %}" title="Download on the App Store" alt="Download on the App Store">
+      </a>
+      <img id="mobile-overlay-happy-phones" src="{% static 'images/happy-phones.png' %}" title="" alt="Phones showing the Taste Savant app">
+      <a href="{{ app_store_link }}">
+        <button class="mobile-overlay-button mobile-overlay-orange">Download App</button>
+      </a>
+      <a href="{{ next }}">
+        <button class="mobile-overlay-button mobile-overlay-white">Continue to Tastesavant.com</button>
+      </a>
+    </div>
+  </body>
+</html>

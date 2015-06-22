@@ -1,0 +1,20 @@
+#id_query {
+    background: transparent none repeat scroll 0px 50%;
+    border: none;
+    color: gray;
+    font-size: 13px;
+    position: relative;
+    top: 0px;
+    width: 300px;
+    height:28px;
+    text-align: left;
+    margin:0 0 0 5px;
+    padding: 2px 0 0 4px;
+}
+
+/* For OpenTable widget. */
+li.OT_day input.OT_searchDateField,
+li.OT_time input.OT_searchTimeField,
+li.OT_party input.OT_searchPartyField {
+    height: 11px; /* 18px for all other browsers. */
+}

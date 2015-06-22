@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title %}{{ flatpage.title }}{% endblock %}
+
+{% block css %}
+  <style>
+    .mobile-app-container {
+      position: relative;
+      font-family: Georgia;
+      margin-top: 10px;
+    }
+
+    .mobile-app-container ul {
+      font-size: 18px;
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .mobile-app-container ul li {
+      background: url(https://s3.amazonaws.com/storage.tastesavant.com/images/mobile-app-list-bullet.png) no-repeat 5px 0px;
+      padding-left: 45px;
+      margin-bottom: 25px;
+    }
+
+    .app-row1 {
+      padding-top: 37px;
+      text-align: center;
+    }
+
+    .app-row1 .text1 {
+      font-size: 36px;
+    }
+
+    .app-row1 .text2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 23px;
+    }
+
+    .app-row1 .text3 {
+      font-size: 18px;
+      margin-top: 6px;
+    }
+
+    .wrapper {
+      position: relative;
+    }
+
+    .app-row1 .image1 {
+      margin-top: 22px;
+    }
+
+    .app-row1 .mobile-app-download {
+      position: absolute;
+      top: 193px;
+      right: 29px;
+    }
+
+    .app-row2 {
+      margin-top: 80px;
+      display: inline-block;
+    }
+
+    .app-row2 .image1 {
+      margin-left: 40px;
+    }
+
+    .app-row2 .text1 {
+      font-size: 36px;
+      width: 340px;
+      line-height: 38px;
+      display: inline-block;
+      margin-top: 64px;
+      margin-left: 50px;
+      vertical-align: top;
+    }
+
+    .app-row2 ul {
+      position: absolute;
+      top: 844px;
+      left: 533px;
+      list-style-type: none;
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .app-row3 {
+      margin-top: 60px;
+    }
+
+    .app-row3 .image1 {
+      margin-top: 22px;
+      width: 960px;
+      height: 420px;
+    }
+
+    .app-row4 {
+      margin-top: 84px;
+      margin-bottom: 94px;
+      display: inline-block;
+    }
+
+    .app-row4 ul {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 62px;
+      margin-left: 26px;
+    }
+
+    .app-row4 p {
+      position: absolute;
+      font-size: 36px;
+      top: 1946px;
+      left: 30px;
+    }
+
+    .app-row4 .mobile-app-download {
+      position: absolute;
+      top: 2020px;
+      left: 30px;
+    }
+
+    .app-row4 .image1 {
+      margin-left: 260px;
+    }
+  </style>
+{% endblock %}
+
+{% load humanize staticfiles %}
+
+{% block content %}
+  {{block.super}}
+  <div id="flatpage-content">
+    <div class="mobile-app-container">
+      <div class="app-row1">
+        <p class="text1">The mobile app is finally here!</p>
+        <p class="text2">Now you can access Taste Savant on the go.</p>
+        <p class="text3">Download our iOS app now to find the best restaurants nearby, wherever you are.</p>
+        <a href="https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8" target="_blank">
+          <img class="image1" src="{% static 'images/mobile-app1.png' %}" />
+        </a>
+        <a href="https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8" target="_blank">
+          <img class="mobile-app-download" src="{% static 'images/mobile-app-download.png' %}" />
+        </a>
+      </div>
+      <div class="app-row2">
+        <a href="https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8" target="_blank">
+          <img class="image1" src="{% static 'images/mobile-app2.png' %}" />
+        </a>
+        <p class="text1">Use the Taste Savant app to:</p>
+        <ul>
+          <li>Find the best restaurants nearby</li>
+          <li>Read reviews from Critics, Chefs, and<br />Your Friends</li>
+          <li>Filter by neighborhood, cuisine, price<br />point, and occasion</li>
+          <li>Write reviews</li>
+        </ul>
+      </div>
+      <div class="app-row3">
+        <a href="https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8" target="_blank">
+          <img class="image1" src="{% static 'images/mobile-app3.png' %}" />
+        </a>
+      </div>
+      <div class="app-row4">
+        <ul>
+          <li>Make Reservations</li>
+          <li>View Menus</li>
+          <li>Order Deliver</li>
+        </ul>
+        <p>...All on your phone</p>
+        <a href="https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8" target="_blank">
+          <img class="mobile-app-download" src="{% static 'images/mobile-app-download2.png' %}" />
+        </a>
+        <a href="https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8" target="_blank">
+          <img class="image1" src="{% static 'images/mobile-app4.png' %}" />
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

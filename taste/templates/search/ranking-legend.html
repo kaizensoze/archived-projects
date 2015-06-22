@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<div id="ranking-legend">
+	<span id="ranking-legend-header">Taste Savant Ranking System</span>
+	<p id="ranking-legend-description">
+		We rank restaurants into three categories based on the content of reviews and the review scores.
+	</p>
+	<div class="ranking-info">
+		<img class="ranking-image" src="{% static 'images/rwd/love.45x45.png' %}" />
+		<div class="ranking-range">10-8</div>
+	</div>
+	<div class="ranking-info">
+		<img class="ranking-image" src="{% static 'images/rwd/like.45x45.png' %}" />
+		<div class="ranking-range">7-5</div>
+	</div>
+	<div class="ranking-info">
+		<img class="ranking-image" src="{% static 'images/rwd/skip.45x45.png' %}" />
+		<div class="ranking-range">4-0</div>
+	</div>
+</div>

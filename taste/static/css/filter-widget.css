@@ -1,0 +1,89 @@
+/* FILTER STYLES */
+.nodisplay{display:none;}
+.filter-button{ padding:4px; }
+
+#filter_input, #filterprofile_input{
+	width:284px;
+	margin-left:0px;
+	}
+
+.filter label, .filterprofile label{width:80px;}
+.filter .help, .filterprofile .help{
+	margin-left:90px!important;
+	padding-left:0px!important;}
+
+.tooltip {
+	background-color: #e3ecf4;
+	padding:4px;
+	font-size:12px;
+}
+.tooltip-arrow{
+	margin-left: -14px;
+	margin-right: 4px;
+	vertical-align: middle;
+	}
+#tooltip h3, #tooltip div { color:black; font-weight:normal; font-size:11px; margin: 0; }
+
+p.add_short {
+	width: 130px;
+	padding-left: 0px!important;
+	padding-bottom: 6px;
+	margin-left: 90px!important;
+}
+
+.unchecked-item{display:none;}
+.checked-item{display:block!important;}
+
+p.add_short a {
+	color: #3d993b;
+	outline: none;
+}
+.filter, .filterprofile{
+	border-bottom: 0px!important;
+	float:left;
+}
+.filter{border-right: 1px #ccc solid;}
+.filter ul, .filterprofile ul {
+	margin-left:90px!important;
+	width: 338px;
+	padding: 0px!important;
+	border: 1px #ccc solid;
+}
+
+.filter ul .header, .filterprofile ul div{
+	padding:2px 5px;
+	background-color: #edf3fe;
+	margin: 0px;
+	font-weight:bold;
+}
+
+.filterprofile ul input{
+	float:right;
+	margin-right:6px;
+}
+.filterprofile ul li div, .filter .header{
+	line-height: 180%;
+}
+
+.filter li, .filterprofile li, .filterprofile .subitem {
+	list-style-type: none; 
+	margin: 0px;
+	width:auto!important;
+}
+.subitem div{
+	background:white!important;
+	font-weight:normal!important;
+	line-height: 100%!important;
+	}
+.subitem, .filter div{
+	font-weight:normal!important;
+	background: white !important;
+	padding-bottom: 2px;
+	padding-left: 4px;
+	padding-top: 2px;
+	}
+.subitem{padding-left:12px;}
+input.box_right {
+	float: right;
+	margin: 0px 3px 0px 0px;
+}

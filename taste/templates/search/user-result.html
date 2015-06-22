@@ -1,0 +1,35 @@
+{% load avatar_tags tags staticfiles %}
+<li>
+<a class="user-result-link" href="{% url profiles_profile_detail user.username %}">
+  <div class='user-result'>
+    <span class='picture-frame-45x45'>
+      {% avatar user.username 45 %}
+    </span>
+    <div class="follow-suggestions-body">
+      <div class="follow-suggestions-name">
+          {{ user.get_profile.get_truncated_name }}
+      </div>
+      <div class="follow-suggestions-review-count">
+        {{ user.review_set.count }} review{% if user.review_set.count != 1 %}s{% endif %}
+      </div>
+      <div class="follow-suggestions-user-type">
+      {% if user.get_profile.type_expert %}
+        {{ user.get_profile.type_expert }} Expert
+      {% endif %}
+      {% if user.get_profile.type_expert and user.get_profile.type_reviewer %}<br />{% endif %}
+      {% if user.get_profile.type_reviewer %}
+        {{ user.get_profile.get_type_reviewer_display }}
+      {% endif %}
+      </div>
+    </div>
+    <div class="follow-suggestions-follow">
+      {% if user in current_user.get_profile.friends.all %}
+        <a class="follow-button" href="{% url unfollow_user username=user.username,success_url=request.get_full_path %}"><img src="{% static 'images/unfollow.png' %}" /></a>
+      {% else %}
+        <a class="follow-button" href="{% url follow_user username=user.username,success_url=request.get_full_path %}"><img src="{% static 'images/follow.png' %}" /></a>
+      {% endif %}
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+</a>
+</li>

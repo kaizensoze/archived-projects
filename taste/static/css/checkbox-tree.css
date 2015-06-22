@@ -1,0 +1,104 @@
+div.controls.occasion > ul {
+    float: left;
+}
+
+li.parent-checkbox label, .optional-controls label {
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+li.parent-checkbox label input {
+    margin-left: 0 !important;
+    cursor: pointer;
+}
+
+li.parent-group {
+    width: 175px;
+    padding-top: 0;
+}
+
+div.cuisine li.parent-group {
+    width: 140px;
+}
+
+li.parent-group ul li label {
+    display: block;
+    padding-left: 26px;
+    text-indent: -25px;
+    font-size: 12px !important;
+    cursor: pointer;
+}
+
+div.cuisine li.parent-group ul li {
+    width: 140px;
+}
+
+li.parent-group ul {
+    overflow: visible;
+    cursor: pointer;
+}
+
+li.parent-group ul li {
+    padding-bottom: 0;
+    width: 175px;
+    cursor: pointer;
+}
+
+li.parent-group ul li label input {
+    margin-left: 14px;
+    cursor: pointer
+}
+
+div.non-tree li {
+    width: 147px;
+    cursor: pointer;
+}
+
+div.box-wrap {
+    width: 100%;
+}
+
+div.box-wrap.non-tree {
+    width: auto;
+}
+
+div.controls {
+    width: 100%;
+}
+
+div.controls.neighborhood > ul,
+div.controls.cuisine > ul {
+    width: 100%;
+}
+
+div.box-wrap div.controls {
+    height: 440px;
+}
+
+div.box-wrap div.controls li {
+    float: none;
+}
+
+div.box-wrap div.controls.neighborhood.new-york {
+    height: 310px;
+}
+
+div.box-wrap div.controls.neighborhood.boston {
+    height: 390px;
+}
+
+div.box-wrap div.controls.neighborhood {
+}
+
+div.box-wrap div.controls.cuisine {
+    height: 425px;
+}
+
+div.floatifier-column {
+    float: left;
+}
+
+div.floatifier-column li {
+    padding: 0;
+}

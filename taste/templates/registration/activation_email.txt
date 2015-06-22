@@ -1,0 +1,14 @@
+Hello!
+Welcome to Taste Savant.  We see that you have asked to register for an account at {{ site.domain }}.  If this wasn't you, please ignore our intrusion (and this email) and your email address will be removed from our records.
+
+If it was you, go ahead and activate your account by clicking on the following link within the next {{ expiration_days }} days and you will get access to some exciting features on Taste Savant.
+
+http://{{ site.domain }}/accounts/activate/{{ activation_key }}
+
+Enjoy the search for good food,
+The Taste Savant Team
+
+P.S. - Once you are logged in, remember to fill out your profile information and then download the iPhone app!
+
+https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8
+

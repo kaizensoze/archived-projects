@@ -1,0 +1,23 @@
+{{ object.name }}
+{% for cuisine in object.cuisine.all %}
+   {{ cuisine.name }}
+   {{ cuisine.parent.name }}
+{% endfor %}
+
+{% for occasion in object.occasion.all %}
+   {{ occasion.name }}
+{% endfor %}
+
+{% for cuisine in object.cuisine.all %}
+   {{ cuisine.name }}
+{% endfor %}
+
+{% for loc in object.location_set.all %}
+   {{ loc.city }}, {{ loc.state }} {{ loc.zip_code }}
+   {% for neighborhood in loc.neighborhood.all %}
+      {{ neighborhood.name }}
+      {{ neighborhood.parent.name }}
+   {% endfor %}
+{% endfor %}
+
+{{ object.price }}

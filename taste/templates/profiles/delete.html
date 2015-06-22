@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load compressed i18n avatar_tags staticfiles %}
+
+{% block title %}Delete account?{% endblock %}
+
+{% block css %}
+  {% compressed_css 'profiles-delete' %}
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<div id="delete">
+{% if confirm %}
+
+<h1>Cancel Account</h1>
+<p>Are you sure you want to cancel your account? If you cancel your account, all of your data and history will be erased. If you have any feedback for us on the site or more info on why you're canceling, we'd love to hear from you. Email us at <a href="mailto:admin@tastesavant.com?subject=Cancel%20Account">admin@tastesavant.com</a>.</p>
+
+<form method='post' action='{{ request.path }}'>
+  {% csrf_token %}
+  <input id="delete-yes" class="delete-choice" type='submit' value='' />
+  <a href="{% url profiles_edit_profile %}"><input id="delete-no" class="delete-choice" type='button' value='' /></a>
+</form>
+{% else %}
+<h1>Your account is now canceled.</h1>
+
+<p>We are sad to see you go. If you have a change of heart, we are always here for you. Come back anytime.</p>
+{% endif %}
+</div>
+{% endblock %}

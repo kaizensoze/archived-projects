@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% load staticfiles compressed %}
+
+{% block meta_tags %}
+<meta name="description" content="Taste Savant - Food Discovery at Your Fingers | Search">
+{% endblock %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block css %}
+  {% compressed_css 'search' %}
+  <style type="text/css">
+  .input-arrow {
+    left: 262px;
+    z-index: 10;
+  }
+  </style>
+{% endblock %}
+
+{% block js %}
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  {% compressed_js 'search' %}
+  <script type="text/javascript">
+  /* We load the contents of this page asynchronously so that we can display an inidicator that the page is loading, to manage user expectations. */
+  jQuery(document).ready(function($) {
+    {% if advanced_ajax_search %}
+    var ajax_path = '{% url advanced_ajax_search %}';
+    {% else %}
+    var ajax_path = '{% url ajax_search %}';
+    {% endif %}
+    $.ajax(ajax_path, {
+      data: '{{ query_string|safe }}',
+      beforeSend: function() {
+        $('#results').html('<img id="ajax-loader" src="{% static 'images/ajax-loader.gif' %}" alt="loading..." />');
+      },
+      success: function(data) {
+        $('#results').html(data);
+        var lat = {{ current_city_lat_lng.0 }};
+        var lng = {{ current_city_lat_lng.1 }};
+        initialize(lat, lng);
+      },
+      error: function() {
+        $('#results').html("<h2>There was an error. Please try again later.</h2>");
+      }
+    });
+  });
+  </script>
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<div id="info">
+  <div id="left-column">
+    <div id="slide-menu">
+      <div id="google-map"></div>
+      {% include "search/small-search-widget.html" %}
+      {% include "search/ranking-legend.html" %}
+    </div>
+  </div>
+  <div id="right-column">
+{% with aqs=advanced sqs=request.GET.q display=request.GET.display %}
+{% if defaulted_to_backup_search %}
+<div id="no-results-found-title">
+  <h1>
+    Sorry, no restaurants match your specified criteria,
+    but here are some alternative results in the neighborhood!
+  </h1>
+  {% if site_id == 3 or site_id == 8 %}
+  <h1>
+    Looking for something different? Meet new people at a pop up dinner with CookApp. <a href="https://www.cookapp.com?utm_source=TasteSavant&utm_medium=SearchTS&utm_campaign=TasteSavant&utm_adgroup=Welcome&utm_content=Foodie">Check it out here.</a>
+  </h1>
+  {% endif %}
+</div>
+{% endif %}
+<div id="search-title">
+  <h1 style="width: 400px; float:left;">{% if not defaulted_to_backup_search %}Your Search Results{% else %}Alternative Suggestions{% endif %}
+    <span id="paginationPlace"></span>
+  </h1>
+  <label style="margin-top: 10px; float: right; font-weight: bold;">Sort by
+
+  <select id="sortUrl" style="margin-left: 5px;" NAME="sortUrl" ONCHANGE="sortTypeSelect(this);">
+    <option {% if sort_by == 'critic' %}SELECTED{% endif %} value="{{ url }}&sort=critic">Critics Say</option>
+    <option {% if sort_by == 'savant' %}SELECTED{% endif %} value="{{ url }}&sort=savant">Users Say</option>
+    <option {% if sort_by == 'friends' %}SELECTED{% endif %} value="{{ url }}&sort=friends">Friends Say</option>
+    <option {% if sort_by == 'restaurant' %}SELECTED{% endif %} value="{{ url }}&sort=restaurant">Restaurants</option>
+    <option {% if sort_by == 'price-asc' %}SELECTED{% endif %} value="{{ url }}&sort=price-asc">Price: Low to High</option>
+    <option {% if sort_by == 'price-desc' %}SELECTED{% endif %} value="{{ url }}&sort=price-desc">Price: High to Low</option>
+  </select>
+  </label>
+<br clear="all">
+</div>
+
+<div id="results-topbar">
+  <span id="blank-bar" class="results-topbar-item">&nbsp;<br /><br /></span>
+  {% if aqs %}
+  <a href="{{ url }}&sort=critic"><span id="critic-bar" class="results-topbar-item {% if sort_by == 'critic' %}results-topbar-item-selected{% endif %}">CRITICS<br />SAY</span></a>
+  {% else %}
+  <a href="{{ url }}&sort=critic"><span id="critic-bar" class="results-topbar-item {% if sort_by == 'critic' %}results-topbar-item-selected{% endif %}">CRITICS<br />SAY</span></a>
+  {% endif %}
+
+  {% if aqs %}
+  <a href="{{ url }}&sort=savant"><span id="user-bar" class="results-topbar-item {% if sort_by == 'savant' %}results-topbar-item-selected{% endif %}">USERS<br />SAY</span></a>
+  {% else %}
+  <a href="{{ url }}&sort=savant"><span id="user-bar" class="results-topbar-item {% if sort_by == 'savant' %}results-topbar-item-selected{% endif %}">USERS<br />SAY</span></a>
+  {% endif %}
+
+  {% if aqs %}
+  <a class="login" href="{{ url }}&sort=friends"><span id="friend-bar" class="results-topbar-item {% if sort_by == 'friends' %}results-topbar-item-selected{% endif %}">FRIENDS<br />SAY</span></a>
+  {% else %}
+  <a class="login" href="{{ url }}&sort=friends"><span id="friend-bar" class="results-topbar-item {% if sort_by == 'friends' %}results-topbar-item-selected{% endif %}">FRIENDS<br />SAY</span></a>
+  {% endif %}
+
+  {% if aqs %}
+  <a href="{{ url }}&sort=restaurant"><span id="restaurant-bar" class="results-topbar-item {% if sort_by == 'restaurant' %}results-topbar-item-selected{% endif %}">RESTAURANTS<br /><br /></span></a>
+  {% else %}
+  <a href="{{ url }}&sort=restaurant"><span id="restaurant-bar" class="results-topbar-item {% if sort_by == 'restaurant' %}results-topbar-item-selected{% endif %}">RESTAURANTS<br /><br /></span></a>
+  {% endif %}
+
+  <span id="dish-bar" class="results-topbar-item">OUTSTANDING DISHES<br /><br /></span>
+</div>
+<div id="critic-bar-arrow" {% if defaulted_to_backup_search %}style="top: 162px;"{% endif %} class="selected-column-arrow {% if sort_by == 'critic' %}showme{% endif %}">&nbsp;</div>
+<div id="user-bar-arrow"  {% if defaulted_to_backup_search %}style="top: 162px;"{% endif %} class="selected-column-arrow {% if sort_by == 'savant' %}showme{% endif %}">&nbsp;</div>
+<div id="friend-bar-arrow" {% if defaulted_to_backup_search %}style="top: 162px;"{% endif %} class="selected-column-arrow {% if sort_by == 'friends' %}showme{% endif %}">&nbsp;</div>
+<div id="restaurant-bar-arrow" {% if defaulted_to_backup_search %}style="top: 162px;"{% endif %} class="selected-column-arrow {% if sort_by == 'restaurant' %}showme{% endif %}">&nbsp;</div>
+{% endwith %}
+    <div id="results">
+    </div>
+    <div id="add-a-restaurant">
+       {% if suggestion %}
+         <h2>Did you mean <a href="/search/?q={% filter force_escape %}{{ suggestion }}{% endfilter %}">{{ suggestion|safe }}</a></h2>
+        {% endif %}
+      <br/>
+      <br/>
+      <br/>
+      <h2>Restaurant not here?</h2>
+
+      <span>
+        Email us at <a href="mailto:admin@tastesavant.com?subject=Restaurant%20Suggestion%20for%20Taste%20Savant">admin@tastesavant.com</a>
+        and tell us what you think about it.
+      </span>
+    </div>
+  </div>
+</div>
+{% endblock %}

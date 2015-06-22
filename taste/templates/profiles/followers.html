@@ -1,0 +1,43 @@
+{% load i18n avatar_tags staticfiles %}
+
+<input type="hidden" id="followers-pagination-curr" value="1" />
+<input type="hidden" id="followers-pagination-next" value="2" />
+<input type="hidden" id="followers-pagination-prev" value="1" />
+<input type="hidden" id="followers-num-pages" value="{{ followers_num_pages }}" />
+<div id="friends" class="mini-container">
+
+  <h2><a href="{% url profiles_profile_detail_followers username=profile.user.username %}">Followers ({{ followers_count }})</a></h2>
+  {% if followers %}
+  <div id="friends-pagination">
+    <div id="followers_ajax_stream">
+    {% include "profiles/ajax_followers.html" %}
+    </div>
+  </div>
+  {% if followers_num_pages > 1 %}
+  <div id="friends-paginator">
+    <ul>
+      <li>
+        <ul>
+          <li><a id="followers-prev-page" href="#">
+              <img src="{% static 'images/button-arrow-left.png' %}" /></a>
+          </li>
+          <li><a id="followers-next-page" href="#">
+              <img src="{% static 'images/button-arrow-right.png' %}" /></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+  {% else %}
+    <div id="friends-pagination">
+    {% if is_user %}
+      <p style="margin: 5px;margin-top: 30px">You have no followers yet<br> on Taste Savant.</p>
+    {% else %}
+      <p style="margin: 5px;margin-top: 30px">This person has no followers<br> yet on Taste Savant.</p>
+    {% endif %}
+    </div>
+{% endif %}
+</div>
+<div class="shadow"></div>
+

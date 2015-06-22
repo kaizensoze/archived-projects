@@ -1,0 +1,17 @@
+Feature: Restaurants
+  In order decide where to get some food
+  As a user
+  I want to see restaurant reviews
+
+  Scenario: View critic reviews
+    Given I go to "/restaurant/test-restaurant/"
+    I should see critic reviews
+
+  Scenario: View user reviews
+    Given I go to "/restaurant/test-restaurant/review/savants/"
+    I should see user reviews
+
+  Scenario: View friend reviews
+    Given I am logged in
+    And I go to "/restaurant/test-restaurant/review/friends/"
+    I should see friend reviews

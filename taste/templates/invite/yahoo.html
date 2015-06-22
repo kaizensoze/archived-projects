@@ -1,0 +1,36 @@
+{% extends "invite/base.html" %}
+{% load compressed staticfiles %}
+
+{% block js %}
+  {% compressed_js 'invite-yahoo' %}
+{% endblock %}
+
+{% block invite %}
+  {{ block.super }}
+  <div id="panel">
+    <div id="sidebar">
+      {% include "invite/sidebar-menu.html" with yahoo="active" %}
+    </div>
+  </div>
+  <div id="invite-header">
+    <h2>Invite your contacts from <span class="upper">yahoo</span></h2>
+  </div>
+  <div id="invite-panel" class="from-select">
+    <div class="inner-wrap multi-select-widget">
+      <form action="{% url invite_from_yahoo %}" method="post">{% csrf_token %}
+        <div class="selection-menu selectable">
+          Contacts (<span class="contacts-count">0</span>)
+          <span id="select-all" class="bulk">Add all contacts</span>
+        </div>
+        <div class="selection-menu selected">
+          Invitees (<span class="invitees-count">0</span>)
+          <span id="deselect-all" class="bulk">Remove all contacts</span>
+        </div>
+        {% for field in form %}
+        {{ field }}
+        {% endfor %}
+        <button type="submit" class="multi-select-widget" id="send-invite"></button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

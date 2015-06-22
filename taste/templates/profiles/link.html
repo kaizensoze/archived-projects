@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+{{ block.super }}
+<h1>Link your accounts WOO</h1>
+
+<div id="linkables">
+  <ul>
+  {% for auth in social_auth_list %}
+    <li>{{ auth }}</li>
+  {% endfor %}
+  </ul>
+
+  {% if not has_facebook %}
+  <a href="{% url socialauth_associate_begin 'facebook' %}?next={{ current_path }}">
+    <img src="{% static 'images/facebook-login.png' %}" alt="facebook login" class="login-icon"/>
+  </a>
+  {% endif %}
+  {% if not has_twitter %}
+  <a href="{% url socialauth_associate_begin 'twitter' %}?next={{ current_path }}">
+    <img src="{% static 'images/twitter-login.png' %}" alt="twitter login" class="login-icon"/>
+  </a>
+  {% endif %}
+</div>
+{% endblock %}

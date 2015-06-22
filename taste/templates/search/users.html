@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load staticfiles compressed %}
+
+{% block title %}Find a user{% endblock %}
+
+{% block css %}
+  {% compressed_css 'search-users' %}
+  <style type="text/css">
+  div.ajax-error {
+      text-align: center;
+      background-color: #f0f5ea; /* Using a green for errors to contrast with the warm palette of the site. */
+      border: 1px solid #668c62;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px;
+      width: 380px;
+      opacity: 0.9;
+      position: relative;
+      z-index: 500;
+      top: 15px;
+      -webkit-border-radius: 3px;
+         -moz-border-radius: 3px;
+              border-radius: 3px;
+  }
+  </style>
+{% endblock %}
+
+{% block js %}
+  <script type="text/javascript">
+  new Autocompleter.Request.HTML('friend-input', '{% url auto_complete_user_search %}', {
+      postVar: 'q',
+      minLength: 3,
+      autoSubmit: false,
+      cache: true,
+      delay: 0,
+      onRequest: function() {
+        $('friend-input').setStyles({
+          'background-position':'350px 7px',
+          'background-repeat':'no-repeat'
+        });
+      },
+      onSelect: function() {
+          var selected = this.selected.get('id');
+          $$('.autocompleter-choices').getElements('li')[0].each(function(el, i) {
+              if($$('.autocompleter-choices').getChildren()[0][i].get('id') == selected) {
+                  $$('.autocompleter-choices').getElements('li')[0][i].setStyle('background', 'gray');
+              } else {
+                  $$('.autocompleter-choices').getElements('li')[0][i].setStyle('background', '');
+              }
+          });
+      },
+      onSelection: function(elt, selected, value, input) {
+        val = selected.id;
+        this.observer.setValue(val);
+      },
+      onComplete: function() {
+        $('friend-input').setStyle('background','');
+      }
+  });
+  function toggle_button(btn) {
+    var img = btn.childNodes.item("img");
+    var orange = "{% static 'images/follow.png' %}";
+    var grey = "{% static 'images/unfollow.png' %}"
+    var src = img.getAttribute('src');
+    var href = btn.getAttribute('href');
+    if (src == orange) {
+      img.setAttribute('src', grey);
+      btn.setAttribute('href', href.replace("follow", "unfollow"));
+    } else {
+      img.setAttribute('src', orange);
+      btn.setAttribute('href', href.replace("unfollow", "follow"));
+    }
+  }
+  function show_error() {
+    var show_for = 10; /* Seconds to show for. */
+    var error_div = "<div class=\"ajax-error\">There was an error communicating with the server.</div>";
+    var error_jq = jQuery(error_div);
+    error_jq.appendTo("#error_div").hide().fadeIn().delay(show_for * 1000).fadeOut(function () {
+        error_jq.remove();
+      });
+  }
+  jQuery(document).ready(function() {
+    jQuery('.follow-button').click(function(evt) {
+      evt.preventDefault();
+      var currentTarget = evt.currentTarget;
+      var pathname = currentTarget.pathname;
+      /*
+       * Ajax call to pathname.
+       * If we get a 404, that's a failure-to-follow and should cause no change in button state, but display an error.
+       * If we get a 204, that's a successful follow and should cause a change in button state.
+       */
+      jQuery.ajax(pathname, {
+        error: function() {
+          toggle_button(currentTarget);
+          show_error();
+        },
+        beforeSend: function() {
+          toggle_button(currentTarget);
+        }
+      });
+    });
+    var placeholder = "Search for people…";
+    function grey_placeholder() {
+      if (jQuery('#friend-input').val() == placeholder) {
+        jQuery('#friend-input').css('color', '#999');
+      } else {
+        jQuery('#friend-input').css('color', 'black');
+      }
+    }
+    if (jQuery('#friend-input').val() == '') {
+      jQuery('#friend-input').val(placeholder);
+      grey_placeholder();
+    }
+    jQuery('#friend-input').focus(function() {
+      if (jQuery('#friend-input').val() == placeholder) {
+        jQuery('#friend-input').val('');
+      }
+      grey_placeholder();
+    });
+    jQuery('#friend-input').blur(function() {
+      if (jQuery('#friend-input').val() == '') {
+        jQuery('#friend-input').val(placeholder);
+      }
+      grey_placeholder();
+    });
+  });
+  </script>
+{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+  <div id="find-a-friend">
+    <h1>Find a Friend</h1>
+    <p>Looking for friends you already follow or new friends on Taste Savant? Start typing their name below to find them.</p>
+    <form action="{{ request.path }}" method="get">
+      <div id="friend-input-fields">
+      <input type="text" id="friend-input" name="q" value="{{ request.GET.q }}" />
+      <input type="submit" id="friend-input-submit" name='submit' value="" />
+      </div>
+    </form>
+    <ul id="user-results">
+      <div id="error_div"></div>
+      {% if page.object_list %}
+        {% for result in page.object_list %}
+        {% with current_user=user user=result.object %}
+          {% include "search/user-result.html" %}
+        {% endwith %}
+        {% endfor %}
+        {% if paginator.num_pages > 1 %}
+          {% include "search/pagination.html" %}
+        {% endif %}
+      {% else %}
+        {% if 'q' in request.GET %}
+          <p>Sorry, no users with that name have been found.</p>
+        {% endif %}
+      {% endif %}
+    </ul>
+  </div>
+{% endblock %}

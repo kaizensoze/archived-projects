@@ -1,0 +1,21 @@
+<p>Dear {{ fullname }},</p>
+{% if digest %}
+<p>Congrats, you have some new followers on Taste Savant:</p>
+<ul>
+{% for username in digest %}
+    <li><a href="http://{{ domain }}/profiles/{{ username }}/">{{ username }}</a></li>
+{% endfor %}
+</ul>
+<p>If you want to check out their profiles and follow them back, click on their names to visit their profiles.</p>
+{% else %}
+<p>Congrats. {{ follower }} is now following you on Taste Savant. If you want to check out their profile and follow them back, visit their profile <a href="http://{{ domain }}{{ follower_profile }}">here</a>.</p>
+{% endif %}
+<p>Enjoy!</p>
+
+<p>The Taste Savant Team</p>
+
+<p>We now have an iPhone app! To check out restaurants nearby, reservations, reviews and menus on the go <a href="https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8">download it here</a>.</p>
+
+{% if not digest %}
+<p>If you'd like to receive only one email a day with a list of your new followers please go to your edit profile page to <a href="{{ edit_profile_link }}">change your settings</a>.</p>
+{% endif %}

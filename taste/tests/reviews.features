@@ -1,0 +1,13 @@
+Feature: Reviews
+  In order to tell my friends what I think about a restaurant
+  As a user
+  I want to write reviews
+
+  Scenario: Write a review
+    Given there is a "Restaurant" named "Test Restaurant"
+      And I am logged in
+      And my profile is complete
+      And I create a review for "Test Restaurant"
+     Then a review should exist for "Test Restaurant"
+      And I should see it on the restaurant page for "Test Restaurant"
+      And I should see a review for "Test Restaurant" on my profile

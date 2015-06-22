@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<div class="homepage-box{% if user.is_authenticated %} stacked{% endif %}">
+  <div class="box-title">New Critic Reviews Just In</div>
+  {% for review in new_critic_reviews %}
+  <div class="new-review">
+    <img src="{% static review.small_rwd %}" width="30" height="30" style="vertical-align: top; padding-top: 3px;" />
+    <span>
+      <span><a href="{{ review.restaurant.get_absolute_url }}">{{ review.restaurant.name|truncatechars:34 }}</a></span>
+      <span style="margin-top: -7px;"><em>by {{ review.site.name|truncatechars:32 }}</em></span>
+    </span>
+  </div>
+  {% endfor %}
+  <div class="border-bottom"></div>
+</div>

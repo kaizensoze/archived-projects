@@ -1,0 +1,19 @@
+Dear {{ fullname }},
+{% if digest %}
+Congrats, you have some new followers on Taste Savant:
+{% for username in digest %}
+    {{ username }} (http://{{ domain }}/profiles/{{ username }}/)
+{% endfor %}
+If you want to check out their profiles and follow them back, follow the links after their names to visit their profiles.
+{% else %}
+Congrats. {{ follower }} is now following you on Taste Savant. If you want to check out their profile and follow them back, visit their profile here http://{{ domain }}{{ follower_profile }}.
+{% endif %}
+Enjoy!
+
+The Taste Savant Team
+
+We now have an iPhone app! To check out restaurants nearby, reservations, reviews and menus on the go <a href="https://itunes.apple.com/us/app/taste-savant/id828925581?mt=8">download it here</a>.
+
+{% if not digest %}
+If you'd like to receive only one email a day with a list of your new followers please go to your edit profile page to change your settings. {{ edit_profile_link }}
+{% endif %}

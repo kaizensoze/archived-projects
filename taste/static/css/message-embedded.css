@@ -1,0 +1,308 @@
+div#compose-container {
+    text-align: center;
+    margin-top: 10px;
+    width: 105px;
+    height: 65px;
+    border: 2px solid #f2f2f2;
+    display: block;
+    color: #f26522;
+    text-transform: uppercase;
+    padding: 12px 0;
+    cursor: pointer; 
+    cursor: hand;
+}
+
+div#compose-container p {
+    line-height: normal;
+    text-align: center;
+}
+
+span#compose-model {
+    width: 460px;
+}
+
+div#message-container {
+    height: 314px;
+}
+
+div#message-container ul.form li {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+div#message-container ul.form li label {
+    line-height: normal;
+    display: block;
+    text-transform: uppercase;
+    padding: 10px 0 5px 0;
+}
+
+div#message-container input#id_recipient, input#id_subject, textarea#id_body {
+    width: 410px;
+    padding: 0 4px;
+    font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+}
+
+div#message-container textarea#id_body, 
+div#message-container textarea#id_body:focus {
+    padding: 4px 4px;
+    height: 100px;
+    border: 1px solid #534741;
+    overflow: auto;
+}
+
+div#message-container input#id_recipient, input#id_subject {
+    height: 28px;
+    border: 1px solid #534741;
+}
+
+div#message-container ul.form {
+    margin-left: 7px;
+}
+
+div#message-container ul.form li {
+    width: auto;
+}
+
+div#message-container button.send {
+    background: #FFF url(../images/button-send.png) no-repeat;
+    width: 67px;
+    height: 24px;
+    border: none;
+    float: right;
+    margin: 8px;
+}
+
+span.nodisplay {
+    display: none;
+}
+
+div#view-message {
+    font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+}
+
+div#view-message div.details-header {
+    border-top: 3px solid #f26522;
+    height: 105px;
+    width: 800px;
+    float: right;
+    background: #f2f2f2;
+    margin-top: 20px;
+}
+
+div#view-message div.message-details {
+    float: left;
+}
+
+div#view-message div.profile-image {
+    float: left;
+    width: 105px;
+    height: 105px;
+    display: block;
+}
+
+div#view-message div.message-details ul li span {
+    width: 70px;
+    display: inline-block;
+}
+
+div#view-message div.message-details ul li {
+    padding-bottom: 6px;
+}
+
+div#view-message div.message-details ul {
+    padding: 8px 0 0 15px;
+    width: 675px;
+}
+
+div#view-message div.message-details strong.sender {
+    color: #f26522;
+    font-size: 18px;
+    font-family: times, Times New Roman, times-roman, georgia, serif;
+}
+
+div.message-body {
+    display: block;
+    width: 800px;
+    clear: both;
+    padding-top: 10px;
+    min-height: 230px;
+    border-bottom: 2px solid #f2f2f2;
+    line-height: 1.9;
+}
+
+div.message-footer ul {
+    margin-top: 30px;
+}
+
+div.message-footer ul li {
+    display: inline; 
+}
+
+div#dropdownwrapper { 
+    width: 416px;
+    height: auto;
+    display: block;
+    border-left: 2px solid #c1c1c1;
+    border-right: 2px solid #c1c1c1;
+    border-bottom: 2px solid #c1c1c1;
+    position: absolute;
+    padding: 0;
+    background-color:rgba(236,236,236,0.97);
+}
+
+div#dropdownwrapper ul {
+    padding: 0;
+    font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+    width: 416px;
+
+}
+
+div#dropdownwrapper ul li {
+    padding-left: 10px !important;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    padding-top: 3px !important;
+    padding-bottom: 1px !important;
+    display: block;
+    cursor: pointer;
+    color: #757575;
+}
+
+div#dropdownwrapper ul li span {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+/* Example tokeninput style #1: Token vertical list*/
+ul.token-input-list {
+    width: 410px;
+    padding: 0 4px;
+    font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+    overflow: hidden; 
+    min-height: 28px;
+    border: 1px solid #534741;
+    cursor: text;
+    font-family: Verdana;
+    z-index: 999;
+    margin: 0 0 11px 0;
+    background: url(../images/input-help.png) no-repeat 6px 5px;
+    list-style-type: none;
+    clear: left;
+}
+
+ul.token-input-list li {
+    list-style-type: none;
+    min-width: 100px !important;
+    display: inline-block;
+}
+
+ul.token-input-list li input {
+    border: 0;
+    width: 100px;
+    padding: 0px 8px;
+    display: inline-block;
+    background: transparent;
+    -webkit-appearance: caret;
+    float: left;
+    margin-bottom: -8px;
+}
+
+li.token-input-token {
+    font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+    overflow: hidden; 
+    height: auto !important; 
+    height: 1%;
+    margin: 3px 3px -11px 3px;
+    padding: 4px 5px 3px 5px;
+    color: #000;
+    cursor: default;
+    -webkit-border-radius: 2px;
+    border: 1px solid #CCC;
+    display: inline-block;
+    background: #F2F2F2;
+}
+
+li.token-input-token p {
+    float: left;
+    padding: 2px 15px 2px 0;
+    margin: 0;
+}
+
+li.token-input-token span {
+    float: right;
+    color: #777;
+    cursor: pointer;
+    padding-top: 1px;
+}
+
+li.token-input-selected-token {
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+li.token-input-selected-token span {
+    color: #bbb;
+}
+
+div.token-input-dropdown {
+    position: absolute;
+    background-color: #fff;
+    overflow: hidden;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #ccc;
+    width: 418px;
+    font: 13.34px helvetica,arial,freesans,clean,sans-serif;
+    cursor: default;
+    z-index: 11000;
+}
+
+div.token-input-dropdown p {
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    color: #777;
+}
+
+div.token-input-dropdown ul {
+    margin: 0;
+    padding: 0;
+}
+
+div.token-input-dropdown ul li {
+    background-color: #fff;
+    padding: 3px;
+    list-style-type: none;
+}
+
+div.token-input-dropdown ul li.token-input-dropdown-item {
+    background-color: #fff;
+}
+
+div.token-input-dropdown ul li.token-input-dropdown-item2 {
+    background-color: #fff;
+}
+
+div.token-input-dropdown ul li em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+div.token-input-dropdown ul li.token-input-selected-dropdown-item {
+    background-color: #FFF;
+    color: #000;
+    background-color: #F2F2F2;
+border-top: 1px solid #E2E2E2;
+border-bottom: none;
+}
+
+span.search-name {
+    display: inline-block;
+    padding-left: 3px;
+    margin-top: -7px;
+    line-height: normal;
+    vertical-align: text-top;
+}

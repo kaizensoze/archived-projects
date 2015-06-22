@@ -1,0 +1,23 @@
+{% load i18n avatar_tags staticfiles %}
+
+{% if blackbooks %}
+<input type="hidden" id="following-pagination-curr" value="1" />
+
+<div id="blackbook" class="mini-container">
+  <h2>
+    <a href="{% url blackbook username=profile.user.username %}">{{ profile.get_truncated_name }}'s Blackbook</a>
+  </h2>
+  <div id="blackbook-content">
+    {% for blackbook in blackbooks %}
+      <h3>{{ blackbook.title }}</h3>
+      <ol>
+      {% for entry in blackbook.entry_set.all|slice:":3" %}
+        <li class="blackbook-item"><a href="{{ entry.restaurant.get_absolute_url }}">{{ entry.restaurant.name }}</a></li>
+      {% endfor %}
+        <li class="see-more"><a href="{% url blackbook username=profile.user.username %}">&raquo; See More</a></li>
+      </ol>
+    {% endfor %}
+  </div>
+</div>
+<div class="shadow" style="margin-bottom: 8px;"></div>
+{% endif %}

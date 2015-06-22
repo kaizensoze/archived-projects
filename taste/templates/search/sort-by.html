@@ -1,0 +1,16 @@
+{% load staticfiles %}
+{% with aqs=advanced sqs=request.GET.q display=request.GET.display %}
+<span id="{{ field }}-order">
+{% if aqs %}
+  <a href="?{% if aqs %}{{ aqs }}{% if display %}&display={{ display }}{% endif %}&sort={{ field }}{% else %}?sort={{ field }}{% endif %}">
+{% else %}
+  <a href="{% if sqs %}?q={{ sqs }}{% if display %}&display={{ display }}{% endif %}&sort={{ field }}{% else %}?sort={{ field }}{% endif %}">
+{% endif %}
+    {% if request.GET.sort == field %}
+    <img src="{% static 'images/orange-triangle.png' %}" />
+    {% else %}
+    <img src="{% static 'images/gray-triangle.png' %}" />
+    {% endif %}
+  </a>
+</span>
+{% endwith %}

@@ -1,0 +1,59 @@
+{% load i18n %}
+<script type="text/javascript">
+  var restaurants = [
+  {% if query %}
+  {% for r in page.object_list %}{% for l in r.object.locations %}
+  {% with name=r.object.name lng=l.lng lat=l.lat zindex=forloop.parentloop.revcounter %}
+  ["{{ name|safe }}", {{ lat }}, {{ lng }}, {{ zindex }}]{% if not forloop.parentloop.last %},{% endif %}
+  {% endwith %}{% endfor %}{% endfor %}
+  {% else %}
+  {% for r in page.object_list %}{% for l in r.locations %}
+  {% with name=r.name lng=l.lng lat=l.lat zindex=forloop.parentloop.revcounter %}
+  ["{{ name|safe }}", {{ lat }}, {{ lng }}, {{ zindex }}]{% if not forloop.parentloop.last %},{% endif %}
+  {% endwith %}{% endfor %}{% endfor %}
+  {% endif %}
+  ];
+  initialize();
+  jQuery('#paginationPlace').html('{% if displayAll %}<span class="paginationCount">{{ paginator.count }}</span> of {{ paginator.count }} results{% else %}<span class="paginationCount">{{ page.start_index }}-{{ page.end_index }}</span> of {{ paginator.count }} results{% endif %}');
+</script>
+{% if defaulted_to_backup_search %}
+<div id="no-results-found-title">
+  <h1>
+    Sorry, no restaurants match your specified criteria,
+    but here are some alternative results in the neighborhood!
+  </h1>
+  {% if site_id == 3 or site_id == 8 %}
+  <h1>
+    Looking for something different? Meet new people at a pop up dinner with CookApp. <a href="https://www.cookapp.com?utm_source=TasteSavant&utm_medium=SearchTS&utm_campaign=TasteSavant&utm_adgroup=Welcome&utm_content=Foodie">Check it out here.</a>
+  </h1>
+  {% endif %}
+</div>
+{% endif %}
+
+{% for result in page.object_list %}
+  {% if query %}
+    {% with restaurant=result.object %}
+      {% include "search/result.html" %}
+    {% endwith %}
+  {% else %}
+    {% with restaurant=result %}
+      {% include "search/result.html" %}
+    {% endwith %}
+  {% endif %}
+{% endfor %}
+{% if paginator.num_pages > 1 %}
+{% include "search/pagination.html" %}
+{% endif %}
+
+<script type="text/javascript">
+  function sortTypeSelect(el) {
+    var selectedText = el.options[el.selectedIndex].text;
+    var selectedValue = el.options[el.selectedIndex].value;
+
+    //if (selectedText.toLowerCase() == "friends say") {
+    //  showLoginModal();
+    //}
+
+    location = selectedValue;
+  }
+</script>

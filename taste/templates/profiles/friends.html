@@ -1,0 +1,44 @@
+{% load i18n avatar_tags staticfiles %}
+
+<input type="hidden" id="pagination-curr" value="1" />
+<input type="hidden" id="pagination-next" value="2" />
+<input type="hidden" id="pagination-prev" value="1" />
+<input type="hidden" id="num-pages" value="{{ friends_num_pages }}" />
+<div id="friends" class="mini-container">
+
+  <h2>Friends</h2>
+  {% if profile.friends.all %}
+  <div id="friends-pagination">
+    <div id="ajax_stream">
+    {% include "profiles/ajax_friends.html" %}
+    </div>
+  </div>
+  {% if friends_num_pages > 1 %}
+  <div id="friends-paginator">
+    <ul>
+      <li>
+        <ul>
+          <li><a id="prev-page" href="#">
+              <img src="{% static 'images/button-arrow-left.png' %}" /></a>
+          </li>
+          <li><a id="next-page" href="#">
+              <img src="{% static 'images/button-arrow-right.png' %}" /></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+  {% else %}
+    <div id="friends-pagination">
+    {% if is_user %}
+      <p style="margin: 5px;margin-top: 30px">You have no friends yet<br> on Taste Savant.</p>
+      <p style="margin: 5px;">Follow people on the site so you can add others to your network of friends!</p>
+    {% else %}
+      <p style="margin: 5px;margin-top: 30px">This person has no friends<br> yet on Taste Savant.</p>
+    {% endif %}
+    </div>
+{% endif %}
+</div>
+<div class="shadow"></div>
+

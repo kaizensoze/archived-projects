@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<div id="toplist" {% if not toplist or toplist.entries.all|length != 10 %}style="display: none;"{% endif %}>
+  <div id="toplist-header">
+    <span id="toplist-header-content">
+      <div id="toplist-banner"></div>
+      <span id="toplist-name">{{ toplist.name }}</span>
+    </span>
+  </div>
+  <div id="toplist-content-container">
+    <div id="toplist-left"></div>
+    <div id="toplist-entry-container">
+      {% for entry in toplist.entries.all|slice:":10" %}
+        <div class="toplist-entry-outer" onclick="window.location.href='{{ entry.restaurant.get_absolute_url }}';" {%if forloop.counter > 6 %}style="display: none;"{% endif %}>
+          <div class="toplist-entry">
+            <div class="toplist-entry-image">
+              {% with image=entry.restaurant.image_url %}
+              {% if image %}
+                <img src="{{ image }}">
+              {% else %}
+                <img src="{% static 'images/restaurant-default.jpg' %}" />
+              {% endif %}
+              {% endwith %}
+              <div class="toplist-entry-ranking">{{ forloop.counter }}&nbsp;{%if forloop.counter != 10 %}&nbsp;{% endif %}</div>
+            </div>
+            <div class="toplist-entry-text">{{ entry.restaurant.name|truncatewords_html:4 }}</div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div id="toplist-right"></div>
+  </div>
+</div>

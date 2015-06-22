@@ -1,0 +1,73 @@
+/* Mobile Overlay! */
+
+a {
+    text-decoration: none;
+}
+
+#mobile-overlay {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#mobile-overlay p {
+    color: black;
+    font-family: Georgia;
+    line-height: 100%;
+    font-size: 18pt;
+    text-align: center;
+    width: 100%;
+}
+
+#mobile-overlay p em {
+    color: #f26522;
+}
+
+#mobile-overlay-taste-savant-logo {
+    width: 40%;
+}
+
+#mobile-overlay-download-on-app-store {
+    width: 40%;
+}
+
+#mobile-overlay-happy-phones {
+    width: 80%;
+}
+
+#mobile-overlay img {
+    display: block;
+    margin: 20px auto;
+}
+
+.mobile-overlay-button {
+    background: none;
+    border-radius: 5px;
+    border: 2px solid #cccccc;
+    display: block;
+    font-family: Georgia;
+    font-size: 12pt;
+    font-weight: bold;
+    height: 41px;
+    margin: 20px auto;
+    width: 288px;
+}
+
+.mobile-overlay-orange {
+    background-color: #f26c4f;
+    color: #ffffff;
+}
+
+.mobile-overlay-orange:active {
+    background-color: #d85336;
+}
+
+.mobile-overlay-white {
+    background-color: #ffffff;
+    color: #f26c4f;
+}
+
+.mobile-overlay-white:active {
+    background-color: #f3f3f3;
+}

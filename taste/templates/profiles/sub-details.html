@@ -1,0 +1,60 @@
+<div id="deets" class="mini-container">
+  <h2>
+    <span class="ornament left"></span>
+    {% if profile.first_name %}
+    {{ profile.first_name }}'s 
+    {% endif %}Deets
+    <span class="ornament right"></span>
+  </h2>
+  <div class="mini-content">
+    <ul>
+      <li>
+        <ul class="colMiniContent">
+          <li class="number">{{ profile.user.review_set.all|length }}</li>
+          <li>Reviews written</li>
+        </ul>
+      </li>
+	  <li>
+	    <ul class="colMiniContent">
+	      <li class="number">{{ profile.view_count }}</li>
+          {% with gender=profile.gender %}
+	      <li>
+      		Views of 
+		    {% if gender == 'M' %}
+		    his
+		    {% else %}
+		    {% if gender == 'F' %}
+		    her
+		    {% else %}
+		    their
+		    {% endif %}{% endif %} profile
+	      </li>
+          {% endwith %}
+	    </ul>
+	  </li>	
+	  <li>
+        <ul class="colMiniContent">
+          <li class="number">{{ profile.friends.all|length }}</li>
+          <li>Friends</li>
+        </ul>
+      </li>
+	  <li>
+	    <ul class="colMiniContent">
+	      <li class="number">0</li>
+	      <li>
+	        Restaurants in 
+			{% if profile.gender == 'M' %}
+			his
+			{% else %}
+			{% if profile.gender == 'F' %}
+			her
+			{% else %}
+			their
+			{% endif %}{% endif %} blackbook
+	      </li>
+	    </ul>
+	  </li>
+    </ul>
+  </div>
+</div>
+<div class="shadow"></div>

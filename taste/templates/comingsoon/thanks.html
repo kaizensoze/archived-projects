@@ -1,0 +1,20 @@
+﻿{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+    <head>
+        <title>Taste Savant: Coming Soon</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/welcome.css' %}">
+    </head>
+
+<body>
+    <div id="content">
+        <div id="center-column">
+            <img src="{{logo.file.url}}" title="Food Discovery at Your Fingertips"/>
+            <div id="signup">
+                <div id="signup-copy">{{thanks|safe}}</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

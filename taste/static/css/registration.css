@@ -1,0 +1,120 @@
+#sign-up-box {
+    background-color: #F4F1EA;
+    width: 400px;
+    margin: 50px auto;
+    padding: 10px 20px 30px 20px;
+    text-align: center;
+    border: solid #736357 4px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 18px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 0 18px rgba(0,0,0,0.4);
+    box-shadow: 0 0 18px rgba(0,0,0,0.4);
+}
+
+#account {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+#account h2 {
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 18px;
+    color: #534741;
+    padding-bottom: 6px;
+    font-family: Georgia;
+}
+
+
+#account ul.errorlist {
+    margin: 0;
+}
+#account ul.errorlist li {
+    color: red;
+    text-align: left;
+}
+
+#account ul {
+    width: 265px;
+    margin-top: 20px;
+}
+
+#account ul li {
+    list-style: none;
+}
+
+#account label {
+    float: left;
+    color: #534741;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    display: block;
+    clear: both;
+}
+
+#account input[type="text"], #account input[type="password"], #account input[type="search"] {
+    background: white url('../images/form-bg.png') no-repeat top left;
+    border: 1px solid #a0a0a0;
+    border-radius: 4px;
+    padding: 5px;
+    width: 250px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+div.registration-signup {
+
+}
+
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 13px/100% Georgia, serif;
+    text-transform: uppercase;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    font-weight: bold;
+    border: 2px solid #75665a !important;
+    margin-top: 10px;
+}
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 1px;
+}
+
+.orange {
+	color: #fef4e9;
+	border: solid 1px #da7c0c;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f68f57), to(#f26b2a));
+	background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+.orange:hover {
+	background: #f47c20;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f88e11), to(#f06015));
+	background: -moz-linear-gradient(top,  #f88e11,  #f06015);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f88e11', endColorstr='#f06015');
+}
+.orange:active {
+	color: #fcd3a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f47a20), to(#faa51a));
+	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
+}

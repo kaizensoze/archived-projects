@@ -1,0 +1,362 @@
+span.gmail-icon.inactive {
+    background: url(../images/gmail-inactive.png) no-repeat !important;
+    width: 42px !important;
+    height: 14px;
+    display: inline-block;
+}
+
+span.gmail-icon.active {
+    background: url(../images/gmail-active.png) no-repeat !important;
+    width: 42px !important;
+    height: 14px;
+    display: inline-block;
+}
+
+span.gmail-icon {
+    background-position: right top;
+    background-repeat: no-repeat;
+    margin-bottom: -1px;
+    width: 42px !important;
+    height: 14px;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+
+span.yahoo-icon.inactive {
+    background: url(../images/yahoo-inactive.png) no-repeat !important;
+}
+
+span.yahoo-icon.active {
+    background: url(../images/yahoo-active.png) no-repeat !important;
+}
+
+span.yahoo-icon {
+    margin-bottom: 0px;
+    width: 42px !important;
+    height: 8px;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+
+div#invites {
+    padding: 20px 20px 0 20px;
+    color: #333;
+    background: url(../images/envelope-bg.jpg) no-repeat 490px -15px;
+}
+
+div#invites span.secondary {
+    color: #999;
+    font-size: 12px;
+    font-family: Arial;
+}
+
+div#invites h1 {
+    color: #534741;
+    font-family: Georgia;
+    font-size: 36px;
+    font-weight: normal;
+}
+
+div#invite-panel {
+   background: #F2F2F2;
+   width: 800px;
+   float: right;
+   border-top: 1px solid #FFF;
+}
+
+div#invite-header h2 {
+    color: #534741;
+    font-family: Georgia;
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+    display: block;
+    padding: 6px 0 0 10px;
+}
+
+div#invite-header {
+    margin-top: 13px;
+    width: 800px;
+    float: right;
+    height: 30px;
+    border-top: 3px solid #f26522;
+    border-bottom: 1px solid #d7d7d7;
+    background: #F2F2F2;
+}
+
+div#invite-panel.multi-select-widget {
+
+}
+
+div#invite-header span.upper {
+    text-transform: uppercase;
+}
+
+div#invite-panel.from-email {
+    height: 380px;
+}
+
+
+div#invite-panel.from-select {
+    background: #F2F2F2 url(../images/select-multiple-bg.png) repeat-y center center;
+    height: 360px;
+}
+
+div#invite-panel input {
+    border: 2px solid #736357;
+    width: 550px;
+    height: 30px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 3px 8px;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+div#invite-panel textarea {
+    border: 2px solid #736357;
+    width: 550px;
+    height: 180px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 10px 8px;
+    font-family: arial;
+    font-size: 13px;
+}
+
+div#invite-panel label {
+    float: right;
+    color: #534741;
+    font-family: Georgia;
+    font-size: 17px;
+    display: block;
+    text-transform: uppercase;
+    width: 120px;
+}
+
+div#invite-panel ul li.email-address label {
+    padding: 12px 0;
+
+}
+
+div#invite-panel ul li.email-address {
+    padding: 2px 0;
+    width: 100px;
+    vertical-align: middle;
+}
+
+div#invite-panel ul {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #d7d7d7;
+    padding: 6px 0 0 10px;
+}
+
+div#invite-panel ul li {
+    display: inline-block;
+}
+
+div#invite-panel ul.first {
+    border-top: none;
+}
+
+div#invite-panel ul.last {
+    display: block;
+    padding-top: 21px;
+    border-bottom: none;
+}
+
+div#invite-panel ul.row {
+    display: block;
+    min-height: 65px;
+}
+
+div#invite-panel ul li.message {
+    vertical-align: top;
+}
+
+div#invite-panel ul li.label {
+    width: 130px;
+    height: 70px;
+    display: inline-block;
+    float: left;
+}
+
+div#invite-panel ul li.input {
+    width: 600px;
+    display: inline-block;
+}
+
+div#sidebar {
+    margin-top: 20px;
+    width: 120px;
+    float: left;
+    min-height: 435px;
+}
+
+div#sidebar ul li span.menu-item a {
+    text-decoration: none;
+}
+
+div#sidebar ul li span.menu-item {
+    display: block;
+    padding: 5px 10px;
+}
+
+div#sidebar ul li span.active {
+    background: url(../images/message-active-nav.png) no-repeat;
+    width: 114px;
+}
+
+div#sidebar ul li span.inactive {
+    color: #f26522;
+}
+
+div#sidebar ul li span.active a {
+    color: #FFF;
+}
+
+#sidebar ul li {
+    font-weight: bold;
+    height: 31px;
+    text-transform: uppercase;
+}
+
+button#send-invite.multi-select-widget {
+    margin: 9px 20px 20px 20px;
+}
+
+button#send-invite {
+    background: url(../images/button-send-invite.png) no-repeat;
+    width: 196px;
+    height: 40px;
+    border: none;
+    display: block;
+    float: right;
+    margin: 9px 86px 20px 20px;
+}
+
+
+div.selection-menu {
+    color: #534741;
+    font-family: Georgia;
+    font-size: 16px;
+    width: 325px;
+    line-height: normal;
+    height: 30px;
+    padding-top: 5px;
+}
+
+div.selection-menu.selectable {
+    margin-left: 20px;
+    float: left;
+}
+
+div.selection-menu.selected {
+    margin-right: 20px;
+    float: right;
+}
+
+span.bulk {
+    display: block;
+    float: right;
+    text-transform: uppercase;
+    color: #f26522;
+    font-family: Arial;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+span.italic {
+    font-style:italic;
+    font-weight: normal;
+    text-transform: lowercase;
+    font-family: Georgia;
+    display: inline-block;
+}
+
+/* For Facebook invites */
+div.from-facebook#invite-panel input {
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
+
+div.from-facebook#invite-panel label {
+    float: none;
+    text-transform: none;
+    display: inline;
+}
+
+button.orange {
+    color: #fef4e9;
+    border: solid 1px #da7c0c;
+    background: #f78d1d;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f68f57), to(#f26b2a));
+    background: -moz-linear-gradient(top,  #faa51a,  #f47a20);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#faa51a', endColorstr='#f47a20');
+}
+
+
+div#filter-list {
+    margin-left: 20px;
+}
+
+div#filter-list input#filter-list-input {
+    width: 554px;
+    height: 19px;
+    color: gray;
+    font-size: 13px;
+    font-family: sans-serif;
+    font-weight: normal;
+    border: none;
+    background-image: url(../images/facebook-invite-input-background.png);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    padding-left: 35px;
+}
+
+div#mfs > img {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#mfsForm-inner-div {
+    height: 400px;
+    overflow: auto;
+}
+
+div.facebook-friend {
+    margin-top: 20px;
+    margin-bottom: 7px;
+    margin-left: 20px;
+    width: 215px;
+    height: 60px;
+    float: left;
+}
+
+div.facebook-friend div.inner {
+    float: left;
+    height: 50px;
+    width: 160px;
+    padding-left: 5px;
+}
+
+div.facebook-friend img {
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+
+div.facebook-friend a {
+    font-family: "Georgia", serif;
+    text-decoration: none;
+    color: #534741;
+    font-size: 14px;
+}

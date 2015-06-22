@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load extra_humanize message_extras inbox avatar_tags i18n staticfiles compressed %}
+
+{% block title %}({% inbox_count %}) Messages{% endblock %}
+
+{% block css %}
+  {% compressed_css 'messages-list' %}
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+{% with new_count=message_list.count %}
+<div id="messages">
+  <h1>My Messages</h1>
+  <h2>You have <strong>{% inbox_count %} new</strong> message(s) in your inbox.</h2>
+  <div id="panel">
+    <div id="sidebar">
+      {% block sidebar %}
+      {% include "messages/sidebar-menu.html" with inbox="active" %}
+      {% endblock %}
+      <div id="compose-container">
+        <img src="{% static 'images/icon-message.png' %}" width="30" height="30">
+        <p>
+          <a href="#" id="compose-new-message">compose<br/>new message</a>
+        </p>
+      </div>
+    </div>
+    {% block messages %}
+    <table class="messages">
+      <thead>
+        <tr>
+          <th class="from first">{% if outbox %}To{% else %}From{% endif %}</th>
+          <th class="subject">Subject</th>
+          <th class="received" colspan="2">{% if outbox %}Sent{% else %}Received{% endif %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for message in message_list %}
+        {% with unread=message.new|yesno:'unread,' replied=message.replied|yesno:'replied,' %}
+        {% url messages.views.delete message.id as url_delete %}
+        <tr class="{% if not outbox %} {% if message.new %}alt{% endif %}{% endif %}">
+          <td class="from first {% if not outbox %}{{ unread }} {{ replied }}{% endif %}">
+            <span class="avatar-30x30-frame">
+              {% if not outbox %}
+              {% avatar message.sender 24 %}
+              {% else %}
+              {% avatar message.recipient 24 %}
+              {% endif %}
+            </span>
+            {% if not outbox %}
+            {% fullname message.sender %}
+            {% else %}
+            {% fullname message.recipient %}
+            {% endif %}
+          </td>
+          <td class="subject {% if not outbox %}{{ unread }} {{ replied }}{% endif %}">
+            <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
+          </td>
+          <td class="received {% if not outbox %}{{ unread }} {{ replied }}{% endif %}">
+            {{ message.sent_at|date:"n/j/y - g:iA"|lower }}
+          </td>
+          <td class="delete {% if not outbox %}{{ unread }} {{ replied }}{% endif %}"><a href="{% if trash %}{% url messages_undelete message_id=message.id %}{% else %}{% url messages_delete message.id %}{% endif %}">
+              {# This should really use model methods and statc. #}
+              <img src="{% if trash %}{% static 'images/button-restore.png' %}{% else %}{% static 'images/button-delete.png' %}{% endif %}" /></a>
+          </td>
+        </tr>
+        {% endwith %}
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endblock %}
+  </div>
+</div>
+{% include "messages/embedded-compose.html" %}
+{% endwith %}
+{% endblock %}

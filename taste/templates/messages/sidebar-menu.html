@@ -1,0 +1,20 @@
+{% load inbox %}
+<ul>
+  <li>
+    <span class="menu-item {{ inbox|default:'inactive' }}">
+      <a href="{% url messages_inbox %}">Inbox
+        <span class="inbox-count">({% inbox_count %})</span>
+      </a>
+    </span>
+  </li>
+  <li>
+    <span class="menu-item {{ outbox|default:'inactive' }}">
+      <a href="{% url messages_outbox %}">Sent</a>
+    </span>
+  </li>
+  <li>
+    <span class="menu-item {{ trash|default:'inactive' }}">
+      <a href="{% url messages_trash %}">Trash</a>
+    </span>
+  </li>
+</ul>

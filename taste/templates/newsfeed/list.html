@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+  {% block content %}
+    {{ block.super }}
+<ul>
+{% for x in newsfeed %}
+<li><a href="{% url profiles_profile_detail x.user.username %}">
+    {{ x.user.get_profile.get_truncated_name }}</a> {{ x.message|safe }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

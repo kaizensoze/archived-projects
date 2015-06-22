@@ -1,0 +1,155 @@
+{% extends "restaurants/detail.html" %}
+{% load rangefilter i18n avatar_tags staticfiles tz %}
+{% block review-navigation %}
+  <ul>
+    <li>
+      <a href="{% url restaurant-detail restaurant.slug %}">
+        <span>Critics</span>
+      </a>
+    </li>
+    <li class="active">
+      <a href="{% url restaurant-review restaurant.slug 'savants' %}">
+        <span>Users</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url restaurant-review restaurant.slug 'friends' %}">
+        <span>Friends</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url restaurant-review restaurant.slug 'create_edit' %}">
+        <span>Review Now</span>
+      </a>
+    </li>
+  </ul>
+{% endblock %}
+  {% block review %}
+  <div id="review-sort">
+    <h2>Reviews</h2>
+    <div id="social-sort">
+      <ul>
+        <li class="label">Sort By:</li>
+        <li class="button first{% if order == 'score' %} active{% endif %}">
+          <a href="{{ url }}{% if not url %}?{% endif %}order=score">Score</a></li>
+        <li class="button{% if order == 'savant' %} active{% endif %}">
+          <a href="{{ url }}{% if not url %}?{% endif %}order=savant">User</a></li>
+        <li class="button last{% if not order or order == 'date' %} active{% endif %}">
+          <a href="{{ url }}{% if not url %}?{% endif %}order=date">Date</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="savants">
+    {% for review in user_reviews %}
+      <div class="rating">
+        <img src="{% static review.large_rwd %}" alt="run" />
+        <span class="overall-score">{{ review.overall_score }}/10</span>
+        <ul class="score-categories">
+          <li>
+            Food:
+            <span class="score-{{ review.food_score }}">
+              {{ review.food_score }}/10
+            </span>
+          </li>
+          <li>
+            Ambience:
+            <span class="score-{{ review.ambience_score }}">
+              {{ review.ambience_score }}/10
+            </span>
+          </li>
+          <li>
+            Service:
+            <span class="score-{{ review.service_score }}">
+              {{ review.service_score }}/10
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="review">
+        <span class="date-published">{{ review.display_date|date:"n/d/Y" }}</span>
+        <span class="user-profile-image">{% avatar review.user 40 %}</span>
+        <h2><a href="{% url profiles_profile_detail review.user.username %}">
+            {% if review.user.get_profile.get_truncated_name %}
+            {{ review.user.get_profile.get_truncated_name }}
+            {% else %}
+            {{ review.user.username }}
+            {% endif %}</a>
+        <span class="user-type">
+          {% if review.user.get_profile.type_expert %}
+            {{ review.user.get_profile.type_expert }} Expert
+          {% endif %}
+          {% if review.user.get_profile.type_expert and review.user.get_profile.type_reviewer %} | {% endif %}
+          {% if review.user.get_profile.type_reviewer %}
+            {{ review.user.get_profile.get_type_reviewer_display }}
+          {% endif %}
+        </span>
+        </h2>
+        {{ review.summary }}
+        {% if review.url %}
+          <a class="restaurant-review" href="{{ review.url }}" target="_blank">&raquo;&nbsp;Read Full Review</a>
+        {% endif %}
+      </div>
+      <div class="follow">
+        {% if user.is_authenticated %}
+          {% if is_user %}
+            <div></div>
+          {% else %}
+            {% if review.user == user %}
+            <div>
+                <img src="{% static 'images/profile-link-image.png' %}" />
+                <div>
+                  <a href="{% url profiles_profile_detail username=user.username %}">
+                    <img src="{% static 'images/profile.png' %}" />
+                  </a>
+                </div>
+            </div>
+            {% else %}{% if review.user in user.get_profile.friends.all %}
+            <div>
+              <img src="{% static 'images/icon-unfollow.png' %}" width="24" height="30">
+              <a class="follow-button" href="{% url unfollow_user username=review.user.username,success_url=request.get_full_path %}"><img src="{% static 'images/unfollow.png' %}" /></a>
+            </div>
+            {% else %}
+            <div>
+              <img src="{% static 'images/icon-follow.png' %}" width="24" height="30">
+              <a class="follow-button" href="{% url follow_user username=review.user.username,success_url=request.get_full_path %}"><img src="{% static 'images/follow.png' %}" /></a>
+            </div>
+            {% endif %}{% endif %}
+          {% endif %}
+        {% else %}
+              <div>
+                <img src="{% static 'images/icon-follow.png' %}" width="24" height="30">
+                <a class="login follow-button" href="{% url auth_login %}"><img src="{% static 'images/follow.png' %}" /></a>
+              </div>
+        {% endif %}
+      </div>
+      <div class="recommendations">
+        <ul>
+          {% if review.good_dishes or review.bad_dishes %}
+          <li class="label">Outstanding Dishes: </li>
+          {% for dish in review.good_dishes %}
+            <li class="menu-item suggested">{{dish.name|title}}</li>
+          {% endfor %}
+          {% for dish in review.bad_dishes %}
+            <li class="menu-item not-suggested">{{dish.name|title}}</li>
+          {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+      {% if forloop.last %}
+        <div class="last"></div>
+      {% else %}
+        <div class="break"></div>
+      {% endif %}
+      {% empty %}
+      <div class="friends-not-reviewed">
+        <h1 class="not-reviewed">
+          This restaurant currently has no reviews from Savant Users.
+        </h1>
+        <p>
+          <a href="{% url restaurant-review restaurant.slug 'create_edit' %}">Be the first</a> to write one.
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

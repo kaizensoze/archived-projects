@@ -1,0 +1,11 @@
+{% extends "invite/base.html" %}
+
+{% block invite %}
+  {{ block.super }}
+  <div id="panel">
+    <div id="sidebar">
+      {% include "invite/sidebar-menu.html" with email="active" %}
+    </div>
+  </div>
+  {% include "invite/invite-panel.html" with method="email" %}
+{% endblock %}

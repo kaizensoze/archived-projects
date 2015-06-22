@@ -1,0 +1,166 @@
+{% extends "restaurants/detail.html" %}
+{% load staticfiles %}
+{% block no_compress_js %}
+  {{ block.super }}
+  {% if user.is_authenticated and user.get_profile.is_valid %}
+    <script type="text/javascript" src="{% static 'js/restaurant.js' %}"></script>
+  {% endif %}
+{% endblock %}
+{% block review-navigation %}
+  <ul>
+    <li>
+      <a href="{% url restaurant-detail restaurant.slug %}">
+        <span>Critics</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url restaurant-review restaurant.slug 'savants' %}">
+        <span>Users</span>
+      </a>
+    </li>
+    <li>
+      <a href="{% url restaurant-review restaurant.slug 'friends' %}">
+        <span>Friends</span>
+      </a>
+    </li>
+    <li class="active">
+      <a href="{% url restaurant-review restaurant.slug 'create_edit' %}">
+        <span>Review Now</span>
+      </a>
+    </li>
+  </ul>
+{% endblock %}
+
+{% block review %}
+{% if success_message %}
+<div id="share-modal">
+  <h4>Success!<span class="save close-button"></span></h4>
+  <div id="share-modal-inner">
+    <p>Your review will be approved shortly. Meanwhile, want to share it?</p>
+    <div id="share-modal-links">
+      <a href="http://www.facebook.com/dialog/feed?{{ facebook_text }}" class="new-modal-window"><img src="{% static 'images/facebook_icon_square.png' %}" /> Share on Facebook</a>
+      <br />
+      <a href="http://twitter.com/home?{{ tweet_text }}" class="new-modal-window"><img src="{% static 'images/twitter_2012.png' %}" /> Share on Twitter</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+  {% if user.is_authenticated %}
+    {% if user.get_profile.is_valid %}
+    <div id="review-create">
+      <form action="{% url restaurant-review restaurant.slug 'create_edit' %}" method="post">{% csrf_token %}
+      <div class="stylefix groups">
+        <div class="stylefix labels">
+          <h1>Your Scores*</h1>
+          <span class="additional-notes">
+            *Required
+          </span>
+        </div>
+        <div class="controls stylefix">
+          <ul class="sliders">
+            <li>
+              <div class="slider-label">Overall</div>
+              <div id="slider-overall-value" class="ui-slider-value"></div>
+              <div id="slider-overall" class="ui-slider-area">
+                <div id="slider-overall-knob" class="ui-slider-knob"></div>
+              </div>
+              {{ write_review_form.overall_score }}
+            </li>
+            <li>
+              <div class="slider-label">Food</div>
+              <div id="slider-food-value" class="ui-slider-value"></div>
+              <div id="slider-food" class="ui-slider-area">
+                <div id="slider-food-knob" class="ui-slider-knob"></div>
+              </div>
+              {{ write_review_form.food_score }}
+            </li>
+            <li>
+              <div class="slider-label">Ambience</div>
+              <div id="slider-ambience-value" class="ui-slider-value"></div>
+              <div id="slider-ambience" class="ui-slider-area">
+                <div id="slider-ambience-knob" class="ui-slider-knob"></div>
+              </div>
+              {{ write_review_form.ambience_score }}
+            </li>
+            <li class="last">
+              <div class="slider-label">Service</div>
+              <div id="slider-service-value" class="ui-slider-value"></div>
+              <div id="slider-service" class="ui-slider-area">
+                <div id="slider-service-knob" class="ui-slider-knob"></div>
+              </div>
+              {{ write_review_form.service_score }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="stylefix groups">
+        <div class="stylefix labels">
+          <h1>Your Review</h1>
+        </div>
+        <div class="controls stylefix">
+          {{ write_review_form.review }}
+        </div>
+      </div>
+      <div class="groups stylefix">
+        <div class="labels stylefix">
+          <h1>Dishes</h1>
+          <span class="additional-notes">
+            (Use comma &quot;,&quot; or
+            semicolon &quot;;&quot; to
+            separate dishes)
+          </span>
+        </div>
+        <div class="controls stylefix">
+          <ul>
+            <li>
+              <label class="help-text">
+                <img src="{% static 'images/checkmark.png' %}" />
+                {{ write_review_form.good_dishes.label }}
+              </label>
+              {{ write_review_form.good_dishes }}
+            </li>
+            <li>
+              <label class="help-text">
+                <img src="{% static 'images/xmark.png' %}" />
+                {{ write_review_form.bad_dishes.label }}
+              </label>
+              {{ write_review_form.bad_dishes }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="stylefix groups">
+        <div class="stylefix labels">
+          <h1>More Tips</h1>
+        </div>
+        <div id="more-tips" class="controls stylefix list-columns toggle-expand">
+          <span class="help-text">{{ write_review_form.more_tips.help_text }}</span>
+          {{ write_review_form.more_tips }}
+        </div>
+        <div><div id="tips-expander" class="stylefix"><p id="tips-label">Show more</p></div></div>
+        <div class="groups stylefix" id="submit">
+          {% if success_message %}
+          <span class="success-message">{{ success_message }}</span>
+          {% endif %}
+          <button type="submit" class="submit-big"></button>
+        </div>
+      </div>
+      </form>
+    </div>
+    {% else %}
+    <div class="friends-not-reviewed">
+      <h1 class="not-reviewed">If you want to use this feature</h1>
+      <p>
+        please <a class="login" href="{% url profiles_edit_profile %}">complete your profile</a>!
+      </p>
+  </div>
+    {% endif %}
+  {% else %}
+    <div class="friends-not-reviewed">
+      <h1 class="not-reviewed">If you want to use this feature</h1>
+      <p>
+        please <a class="login" href="{% url auth_login %}">log in to the site</a>!
+      </p>
+  </div>
+{% endif %}
+{% endblock %}

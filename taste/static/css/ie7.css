@@ -1,0 +1,56 @@
+div#social-sort {
+    width: 290px;
+    float: right;
+    position: relative;
+    clear: both;
+    top: -17px;
+}
+
+#results-topbar {
+  margin-top: 9px;
+}
+.results-topbar-item {
+  cursor: pointer;
+}
+
+#critic-bar {
+  margin-left: 3px;
+}
+#dish-bar {
+  margin-left: 3px;
+}
+
+#friend-bar {
+  width: 62px;
+}
+#dish-bar {
+  width: 135px;
+}
+
+#friend-bar-arrow {
+  left: 193px;
+}
+
+#restaurant-bar-arrow {
+    left: 352px;
+}
+
+.image-dot {
+    zoom: 1;
+    *display: inline;
+    _height: 8px;
+}
+
+/* For OpenTable widget. */
+li.OT_day input.OT_searchDateField,
+li.OT_time input.OT_searchTimeField,
+li.OT_party input.OT_searchPartyField {
+    height: 11px; /* 18px for all other browsers. */
+}
+
+li.OT_day,
+li.OT_time,
+li.OT_party,
+li.OT_submit {
+  margin-left: -3px;
+}

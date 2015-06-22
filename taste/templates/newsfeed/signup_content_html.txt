@@ -1,0 +1,37 @@
+<div style="width: 600px; border: 1px solid #ddd; margin-left: auto; margin-right: auto; font-size: larger;">
+    <div style="text-align: center;">
+        <img src="http://gallery.mailchimp.com/feaa461229b219720abd97590/images/TasteSavant_logo_0199139a.png" alt="Taste Savant" title="Taste Savant" />
+    </div>
+    <div style="width: 560px; margin-left: auto; margin-right: auto; font-family: 'Georgia', serif; color: rgb(102, 51, 0); font-style: italic; line-height: 120%;">
+    <hr />
+
+    <p>Hi there,</p>
+
+    <p>Welcome to Taste Savant! We are a highly curated restaurant discovery site designed to help you decide where to eat out next. Here are a couple tips to get you started:</p>
+    <ol style="margin-left: 0px; padding-left: 1.5em;">
+        <li style="margin-bottom: 16px;">Fill out your profile on the site. This will help others in the community get to know you and your food preferences.</li>
+
+        <li style="margin-bottom: 16px;">Make friends by following other people on the site so that you can build out your community and get reviews from people you trust. You can find your real friends on Taste Savant if you've logged in with Facebook or you can make new friends.</li>
+
+        <li style="margin-bottom: 16px;">Have something to say? Write reviews on restaurants you've been to by clicking on the "Review Now" tab on the restaurant pages.</li>
+
+        <li>Come back often. We add new critic and user reviews everyday, so the site is always changing. Visit us often to keep updated on what's new!</li>
+    </ol>
+    <p>As a reminder your username is {{ username }}</p>
+
+    <p>If you have any questions, you can always refer to our <a style="color: #336699;" href="http://www.tastesavant.com/FAQs">FAQs</a> or email us at <a style="color: #336699;" href="mailto:admin@tastesavant.com">admin@tastesavant.com</a>.</p>
+
+    <p>Thanks and Enjoy!<br />
+    The Taste Savant Team</p>
+    </div>
+    <div style="text-align: center;">
+        <div>
+            <a href="http://twitter.com/#!/TasteSavant" style="color: #336699;">follow on Twitter</a>
+            |
+            <a href="http://www.facebook.com/tastesavant" style="color: #336699;">friend on Facebook</a>
+        </div>
+        <p style="color: #707070; font-style: italic;">
+            Copyright © 2014 Taste Savant. All rights reserved.
+        </p>
+    </div>
+</div>

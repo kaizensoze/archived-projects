@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% load i18n avatar_tags staticfiles %}
+
+{% block title %}Follower Suggestions{% endblock %}
+
+{% block css %}
+  <style type="text/css">
+    #suggestions {
+      padding: 20px;
+    }
+    #already-following,
+    #suggestions-list {
+      width: 440px;
+      float: left;
+    }
+    #suggestions h1 {
+      color: #362f2d;
+      font-family: "Georgia", serif;
+      font-size: 24pt;
+      font-weight: normal;
+    }
+    #suggestions h3 {
+      color: #362f2d;
+      font-family: "Georgia", serif;
+      font-size: 10pt;
+      font-style: italic;
+    }
+    #already-following {
+      margin-right: 40px;
+    }
+    #already-following h2,
+    #suggestions-list h2 {
+      color: #362f2d;
+      font-family: "Georgia", serif;
+      font-size: 14pt;
+      font-style: italic;
+    }
+    #already-following li:first-child,
+    #suggestions-list li:first-child {
+      border-top: 1px solid #ccc;
+      padding-top: 5px;
+    }
+    #already-following li,
+    #suggestions-list li {
+      border-bottom: 1px solid #ccc;
+    }
+    #already-following span.picture-frame-45x45,
+    #suggestions-list span.picture-frame-45x45 {
+      float: left;
+    }
+    #already-following .follow-suggestions-name,
+    #suggestions-list .follow-suggestions-name {
+      font-weight: bold;
+    }
+    #already-following .follow-suggestions-review-count,
+    #suggestions-list .follow-suggestions-review-count {
+      color: #999;
+      font-style: italic;
+    }
+    #already-following .follow-suggestions-body,
+    #suggestions-list .follow-suggestions-body {
+      float: left;
+      width: 324px;
+    }
+    #already-following .follow-suggestions-follow img,
+    #suggestions-list .follow-suggestions-follow img {
+      float: left;
+    }
+    #done-following {
+      float: right;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .follow-suggestions-body div {
+      line-height: 95%;
+      padding-left: 10px;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  {{ block.super }}
+  <div id="suggestions">
+    <h1>Welcome to Taste Savant!</h1>
+    <p>You'll want to follow people to improve your experience on the site.</p>
+    <!-- Two columns, one may be empty -->
+    {% if friends %}
+    <div id="already-following">
+      <h2>You are now following:</h2>
+      <ul>{% for friend in friends %}
+        <li>
+          <span class='picture-frame-45x45'>
+              <a href='{% url profiles_profile_detail friend.username %}'>
+                {% avatar friend 45 %}
+              </a>
+          </span>
+          <div class="follow-suggestions-body">
+            <div class="follow-suggestions-name">
+                <a href="{% url profiles_profile_detail friend.username %}">{{ friend.get_profile.get_truncated_name }}</a>
+            </div>
+            <div class="follow-suggestions-review-count">
+              {{ friend.review_set.count }} review{% if friend.review_set.count != 0 %}s{% endif %}
+            </div>
+            <div class="follow-suggestions-user-type">
+            {% if friend.get_profile.type_expert %}
+              {{ friend.get_profile.type_expert }} Expert
+            {% endif %}
+            {% if friend.get_profile.type_expert and friend.get_profile.type_reviewer %}<br />{% endif %}
+            {% if friend.get_profile.type_reviewer %}
+              {{ friend.get_profile.get_type_reviewer_display }}
+            {% endif %}
+            </div>
+          </div>
+          <div class="follow-suggestions-follow">
+            {% if friend in user.get_profile.friends.all %}
+              <a class="follow-button" href="{% url unfollow_user username=friend.username,success_url=request.get_full_path %}"><img src="{% static 'images/unfollow.png' %}" /></a>
+            {% else %}
+              <a class="follow-button" href="{% url follow_user username=friend.username,success_url=request.get_full_path %}"><img src="{% static 'images/follow.png' %}" /></a>
+            {% endif %}
+          </div>
+          <div style="clear: both;"></div>
+        </li>
+      {% endfor %}</ul>
+    </div>
+    {% endif %}
+    <div id="suggestions-list">
+      <h2>Some people you might like to follow:</h2>
+      {% for category, suggestions in suggestions_dict %}
+      {% if suggestions %}
+      <h3>{{ category }}</h3>
+      <ul>{% for suggestion in suggestions %}
+        <li>
+          <span class='picture-frame-45x45'>
+              <a href='{% url profiles_profile_detail suggestion.username %}'>
+                {% avatar suggestion 45 %}
+              </a>
+          </span>
+          <div class="follow-suggestions-body">
+            <div class="follow-suggestions-name">
+                <a href="{% url profiles_profile_detail suggestion.username %}">{{ suggestion.get_profile.get_truncated_name }}</a>
+            </div>
+            <div class="follow-suggestions-review-count">
+              {{ suggestion.review_set.count }} review{% if suggestion.review_set.count != 0 %}s{% endif %}
+            </div>
+            <div class="follow-suggestions-user-type">
+            {% if suggestion.get_profile.type_expert %}
+              {{ suggestion.get_profile.type_expert }} Expert
+            {% endif %}
+            {% if suggestion.get_profile.type_expert and suggestion.get_profile.type_reviewer %}<br />{% endif %}
+            {% if suggestion.get_profile.type_reviewer %}
+              {{ suggestion.get_profile.get_type_reviewer_display }}
+            {% endif %}
+            </div>
+          </div>
+          <div class="follow-suggestions-follow">
+            {% if suggestion in user.get_profile.friends.all %}
+              <a class="follow-button" href="{% url unfollow_user username=suggestion.username,success_url=request.get_full_path %}"><img src="{% static 'images/unfollow.png' %}" /></a>
+            {% else %}
+              <a class="follow-button" href="{% url follow_user username=suggestion.username,success_url=request.get_full_path %}"><img src="{% static 'images/follow.png' %}" /></a>
+            {% endif %}
+          </div>
+          <div style="clear: both;"></div>
+        </li>
+      {% endfor %}</ul>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div style="clear: both;"></div>
+    <div id="done-following">
+      <a href="{% url profiles_edit_profile %}"><img src="{% static 'images/done-following.png' %}" alt="Done Following" title="Done Following" /></a>
+    </div>
+  </div>
+{% endblock %}

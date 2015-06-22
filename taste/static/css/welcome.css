@@ -1,0 +1,85 @@
+h3{
+    font-size:24px;
+    padding:4px;
+    margin:0px;
+    text-align:center;
+}
+div, body{
+    margin:0;
+    padding:0;
+    font-family:georgian;
+    font-size:13pt;
+    }
+#content{
+    display: table;
+    overflow: auto;
+    width: 100%;
+    }
+#center-column{
+    padding-top:80px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    }
+#signup{
+    text-align: left!important;
+    width:320px;
+    margin:40px auto;
+    padding:12px;
+    background:#F5F1EF;
+
+    -moz-box-shadow: 0 0 4px gray;
+    -webkit-box-shadow: 0 0 4px gray;
+    box-shadow: 0 0 2px gray;
+    
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+}
+.DefaultPointyTip{
+    margin-left: 44px;
+    }
+#signup-copy{
+    margin:8px;
+    margin-bottom:20px;
+    text-align:justify;
+}
+#signup-form{
+    border:2px solid #F89862;
+    float:left;
+    padding:1px;
+}
+#signup-form-wrapper{
+    height:25px;
+}
+
+#id_address{
+    _height:27px;
+    _z-index:0;
+    float:left;
+    position:absolute;
+    width: 280px;
+    border:none;
+    margin-left:2px;
+    padding-top:6px;
+}
+#address-submit{
+    margin-left:270px;
+    _margin-left:0px;
+    float:right;
+    background:#EE7B3B;
+    border:3px solid #F89862;
+    z-index:10;
+    position:relative;
+    }
+
+#address-submit:hover{
+    cursor:pointer;
+    }
+
+#id_address:focus{
+    outline:none;
+    }
+input, form{
+    padding:0;
+    margin:0;
+}

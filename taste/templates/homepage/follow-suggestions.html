@@ -1,0 +1,44 @@
+{% load i18n avatar_tags %}
+{% load humanize staticfiles %}
+<div id="follow_suggestions" class="homepage-box">
+  <div class="box-title">Who to follow</div>
+  <div id="follow_suggestions_left">
+    <div class="inner">
+      <a id="follow_suggestions_left_arrow" href="#"><img src="{% static 'images/button-arrow-left.png' %}" /></a>
+    </div>
+  </div>
+  <div id="follow-suggestions-carousel">
+    <div id="follow-suggestions-carousel-inner" style="width: {{ follow_suggestions_width }}px;">
+    {% for user in follow_suggestions %}
+        <div class="follow-suggestions-element">
+          <div class="follow-suggestions-picture-frame">
+            <span class='picture-frame-45x45'>
+                <a href='{% url profiles_profile_detail user.username %}'>
+                  {% avatar user 45 %}
+                </a>
+            </span>
+          </div>
+          <span class="follow-suggestions-name">
+              <a href="{% url profiles_profile_detail user.username %}">{{ user.get_profile.get_truncated_name }}</a>
+          </span>
+          <span class="follow-suggestions-review-count">
+            {{ user.review_set.count }} review{% if user.review_set.count != 0 %}s{% endif %}
+          </span>
+          <div class="follow-suggestions-follow">
+            {% if user in user.get_profile.friends.all %}
+              <a class="follow-button" href="{% url unfollow_user username=user.username,success_url=request.get_full_path %}"><img src="{% static 'images/unfollow.png' %}" /></a>
+            {% else %}
+              <a class="follow-button" href="{% url follow_user username=user.username,success_url=request.get_full_path %}"><img src="{% static 'images/follow.png' %}" /></a>
+            {% endif %}
+          </div>
+        </div>
+    {% endfor %}
+    </div>
+  </div>
+  <div id="follow_suggestions_right">
+    <div class="inner">
+      <a id="follow_suggestions_right_arrow" href="#"><img src="{% static 'images/button-arrow-right.png' %}" /></a>
+    </div>
+  </div>
+  <div class="border-bottom long"></div>
+</div>

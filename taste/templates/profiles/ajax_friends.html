@@ -1,0 +1,31 @@
+{% load i18n avatar_tags %}
+{% if friends %}
+  {% for friend in friends.object_list %}
+    {% if forloop.counter0|divisibleby:"3" %}
+      {% if not forloop.first %}
+        </ul>
+      {% endif %}
+      {% if forloop.first %}
+        <ul class="friend-first-row">
+      {% else %}
+        <ul>
+      {% endif %}
+    {% endif %}
+    <li class="{% cycle 'row1' 'row2' 'row3' %}">
+      <a href="{% url profiles_profile_detail friend.username %}">
+        <span class="picture-frame-45x45">
+          {% avatar friend.username 45 %}
+          <span class="friend-name">
+              {% firstof friend.get_profile.first_name friend.first_name friend.username "User" %}
+          </span>
+        </span>
+      </a>
+    </li>
+    {% if forloop.last %}
+      {% if forloop.counter|divisibleby:"2" %}
+        <li class="row3"></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+        </ul>
+      {% endif %}

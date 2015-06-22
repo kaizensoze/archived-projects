@@ -1,0 +1,32 @@
+<ul>
+  <li>
+    <span class="menu-item {{ email|default:'inactive' }}">
+      <a href="{% url invite_from_email %}">
+        <span class="italic">By</span> Email</a>
+    </span>
+  </li>
+  {% if user.is_authenticated %}
+  {% if has_facebook_auth %}
+  <li>
+    <span class="menu-item facebook {{ facebook|default:'inactive' }}">
+      <a href="{% url invite_from_facebook %}"><span class="italic">By</span> Facebook
+      </a>
+    </span>
+  </li>
+  {% endif %}
+  <li>
+    <span class="menu-item gmail {{ gmail|default:'inactive' }}">
+      <a href="{% url invite_auth_google %}"><span class="italic">By</span>
+        <span class="gmail-icon {{ gmail|default:'inactive' }}"></span>
+      </a>
+      </span>
+  </li>
+  <li>
+    <span class="menu-item yahoo {{ yahoo|default:'inactive' }}">
+      <a href="{% url invite_auth_yahoo %}"><span class="italic">By</span>
+        <span class="yahoo-icon {{ yahoo|default:'inactive' }}"></span>
+      </a>
+    </span>
+  </li>
+{% endif %}
+</ul>

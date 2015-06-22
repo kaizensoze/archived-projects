@@ -1,0 +1,31 @@
+#body {
+    margin: 40px;
+}
+
+#body p {
+    font-size: 14px;
+    font-family: "Georgia", serif;
+}
+
+div#badges {
+    margin-top: 20px;
+}
+
+div.press-badge-container {
+    display: inline-block;
+    margin: 5px;
+    padding: 0px;
+    width: 162px;
+    height: 100px;
+}
+
+div.press-badge-container a {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+
+img.press-badge {
+    max-width: 162px;
+    max-height: 100px;
+}

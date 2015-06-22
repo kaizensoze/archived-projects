@@ -1,0 +1,27 @@
+Hi there,
+
+Welcome to Taste Savant! We are a highly curated restaurant discovery site
+designed to help you decide where to eat out next. Here are a couple tips to
+get you started:
+
+1. Fill out your profile on the site. This will help others in the community
+get to know you and your food preferences.
+
+2. Make friends by following other people on the site so that you can build
+out your community and get reviews from people you trust. You can find your
+real friends on Taste Savant if you've logged in with Facebook or you can make
+new friends.
+
+3. Have something to say? Write reviews on restaurants you've been to by
+clicking on the "Review Now" tab on the restaurant pages.
+
+4. Come back often. We add new critic and user reviews everyday, so the site
+is always changing. Visit us often to keep updated on what's new!
+
+As a reminder your username is {{ username }}
+
+If you have any questions, you can always refer to our FAQs
+(http://www.tastesavant.com/FAQs) or email us at admin@tastesavant.com.
+
+Thanks and Enjoy!
+The Taste Savant Team

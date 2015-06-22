@@ -1,0 +1,28 @@
+<span id="compose-modal" class="nodisplay">
+  <h4>Compose New Message<span class="save close-button"></span></h4>
+  <div id="message-container" class="box-wrap non-tree">
+    <form action="{% url messages_compose %}" method="post" id="FormCompose">{% csrf_token %}
+      <ul class="form">
+        {% for field in compose_form %}
+        {% if field.label == 'Recipient' and recipient %}
+        <input type="hidden" name="recipient" id="id_recipient_i" value="{{ recipient }}">
+        {% else %}
+        {% if field.label == 'Body' and recipient %}
+        <li><label for="id_body">Message</label></li>
+        <li><textarea id="id_body" rows="12" cols="55" name="body" style="height: 185px"></textarea></li>
+        {% else %}
+        <li>{% if field.label == 'Recipient' %}
+          <label for="id_recipient">To</label>
+          {% else %}{% if field.label == 'Body' %}
+          <label for="id_body">Message</label>
+          {% else %}{{ field.label_tag }}{% endif %}
+          {% endif %}
+        </li>
+        <li>{{ field }}</li>
+        {% endif %}{% endif %}
+        {% endfor %}
+      </ul>
+      <button type="submit" class="send"></button>
+    </form>
+  </div>
+</span>

@@ -1,0 +1,104 @@
+
+pre {
+    white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+    white-space: -pre-wrap; /* Opera */
+    white-space: -o-pre-wrap; /* Opera */
+    white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+    word-wrap: break-word; /* IE 5.5+ */
+}
+
+#col-left {
+	width: 215px;
+	margin-top: 40px;
+}
+
+#col-reviews {
+	margin-top: 40px;
+}
+
+#review-sort {
+	width: 670px;
+	border-top: solid #F26522 3px;
+}
+#review-sort h2 {
+	font-size: 18px;
+}
+
+#reviews {
+	width: 668px;
+	border-top: none;
+}
+
+.review-row {
+	width: 662px;
+}
+
+div#social-sort ul li.label {
+	padding-top: 1px;
+}
+
+/*div#social-sort ul li.button {
+	margin-right: -2px;
+}*/
+
+.review-date {
+	display: inline-block;
+	float: right;
+}
+
+.summary {
+	width: 549px;
+}
+
+.summary,
+.critical-review,
+.star-rating {
+	margin-left: -7px;
+}
+
+li {
+	width: 120px;
+	float: left;
+}
+
+.star-rating {
+	padding-right: 9px;
+}
+
+div.rating-summary-wrap {
+	width: 542px;
+}
+
+div.recommendations ul {
+	width: 549px;
+}
+
+#critic-logo-large {
+	margin: 0 auto;
+	margin-bottom: 24px;
+}
+#critic-logo-large img {
+	max-width: 217px;
+	max-height: 217px;
+}
+
+#critic-description {
+	width: 209px;
+	margin: 0 auto;
+}
+#critic-description-header {
+	font-family: Georgia;
+	font-weight: bold;
+	font-size: 15px;
+	color: #333333;
+}
+#critic-description-body {
+	font-family: Arial;
+	font-size: 12px;
+	color: #999999;
+	margin-top: 9px;
+	line-height: 16px;
+}
+div.pagination {
+	margin-bottom: 20px;
+}

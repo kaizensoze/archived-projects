@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% load compressed i18n avatar_tags message_extras staticfiles tz %}
+
+{% block css %}
+  {% compressed_css 'profiles-detail' %}
+{% endblock %}
+
+{% block js %}
+  <script type="text/javascript">
+    var username = "{{ profile.user.username }}";
+  </script>
+  {% compressed_js 'profiles-detail' %}
+{% endblock %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<div id="profile-view">
+  <div id="profile-column-left">
+    <div id="overview">
+      <div id="avatar-wrapper">
+        {% avatar profile.user 105 %}
+        <span id="city-tag">{{ profile.city_tag }}</span>
+      </div>
+      <div class="basic first-col">
+        <ul>
+          <li><h2>{{ profile.get_truncated_name }}</h2></li>
+          {% if profile.type_expert %}
+          <li>{{ profile.type_expert }} Expert</li>
+          {% endif %}
+          {% if profile.type_reviewer %}
+          <li>{{ profile.get_type_reviewer_display }}</li>
+          {% endif %}
+          {% if profile.location %}
+          <li>{{ profile.location }} resident</li>
+          {% endif %}
+        </ul>
+      </div>
+      <div class="fav-food col">
+        <div>Favorite Food:
+          <span>
+            {% if profile.favorite_food %}
+            {{ profile.favorite_food }}
+            {% else %}
+            None specified
+            {% endif %}
+          </span>
+        </div>
+      </div>
+      <div class="fav-restaurant col">
+        <div>Favorite Restaurant:
+          <span>
+            {% if profile.favorite_restaurant %}
+            {{ profile.favorite_restaurant }}
+            {% else %}
+            None specified
+            {% endif %}
+          </span>
+        </div>
+      </div>
+      <div class="follow-user col">
+        {% if user.is_authenticated %}
+          {% if is_user %}
+            <div>
+              <img src="{% static 'images/icon-edit.png' %}" width="30" height="30">
+              <span><a href="{% url profiles_edit_profile %}">Edit<br />profile</a></span>
+            </div>
+          {% else %}
+            {% if profile.user in user.get_profile.friends.all %}
+            <div>
+              <img src="{% static 'images/icon-unfollow.png' %}" width="24" height="30">
+              <a class="follow-button" href="{% url unfollow_user username=profile.user.username,success_url=request.get_full_path %}"><img src="{% static 'images/unfollow.png' %}" /></a>
+            </div>
+            {% else %}
+            <div>
+              <img src="{% static 'images/icon-follow.png' %}" width="24" height="30">
+              <a class="follow-button" href="{% url follow_user username=profile.user.username,success_url=request.get_full_path %}"><img src="{% static 'images/follow.png' %}" /></a>
+            </div>
+            {% endif %}
+          {% endif %}
+        {% else %}
+              <div>
+                <img src="{% static 'images/icon-follow.png' %}" width="24" height="30">
+                <a class="login follow-button" href="{% url auth_login %}"><img src="{% static 'images/follow.png' %}" /></a>
+              </div>
+        {% endif %}
+      </div>
+      <div class="message-user last-col">
+        <div>
+          <img src="{% static 'images/icon-message.png' %}" width="30" height="30">
+          {% if is_user %}
+          <span>
+            <a href="{% url messages_inbox %}">Messages</a>
+          </span>
+          {% else %}
+          <span><a id="compose-new-message" href="#">Message <br />
+              {% firstname profile.user.username %}
+          </a></span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div id="my-reviews">
+      <div id="review-sort">
+        <h2>{% firstname profile.user.username %}'s Reviews</h2>
+        <div id="social-sort">
+          <ul>
+            <li class="label">Sort By:</li>
+            <li class="button first{% if order == 'score' %} active{% endif %}">
+              <a href="{{ url }}?{{ order_by_score }}">Score</a>
+            </li>
+            <li class="button {% if order == 'restaurant' %} active{% endif %}">
+              <a href="{{ url }}?{{ order_by_restaurant }}">Restaurant</a>
+            </li>
+            <li class="button last{% if not order or order == 'date' %} active{% endif %}">
+              <a href="{{ url }}?{{ order_by_date }}">Date</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% for review in page.object_list %}
+      <div class="rating">
+        <img src="{% static review.large_rwd %}" alt="run"/>
+        <span class="overall-score">{{ review.overall_score }}/10</span>
+        <ul class="score-categories">
+          <li>Food:
+            <span class="score-{{ review.food_score }}">
+              {{ review.food_score }}/10
+            </span>
+          </li>
+          <li>Ambience:
+            <span class="score-{{ review.ambience_score }}">
+              {{ review.ambience_score }}/10
+            </span>
+          </li>
+          <li>Service:
+            <span class="score-{{ review.service_score }}">
+              {{ review.service_score }}/10
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="review">
+        <span class="date-published">{{ review.display_date|date:"n/d/Y" }}</span>
+        <h2><a href="{{ review.restaurant.get_absolute_url }}review/savants/">
+            {{ review.restaurant.name }}</a></h2>
+        {{ review.summary }}
+        {% if review.url %}
+          <a class="restaurant-review" href="{{ review.url }}" target="_blank">
+          &raquo; Read Full Review</a>
+        {% endif %}
+      </div>
+      {% if review.good_dishes|length > 0 or review.bad_dishes|length > 0 %}
+      <div class="recommendations">
+        <ul>
+          <li class="label">Outstanding Dishes: </li>
+          {% for dish in review.good_dishes %}
+          <li class="menu-item suggested">{{dish.name|title}}</li>
+          {% endfor %}
+          {% for dish in review.bad_dishes %}
+          <li class="menu-item not-suggested">{{dish.name|title}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% if user.is_authenticated and is_user %}
+      {# This should only happen if you have reviews, which should only happen if you have a valid profile. #}
+      <div class="edit-review">
+          <a href="{{ review.restaurant.get_absolute_url }}review/create_edit">Edit</a>
+      </div>
+      {% endif %}
+      {% if forloop.last %}
+      <div class="last"></div>
+      {% else %}
+      <div class="break"></div>
+      {% endif %}
+      {% endfor %}
+      {% if paginator.num_pages > 1 %}
+      {% include "search/pagination.html" %}
+      {% endif %}
+    </div>
+ </div>
+  <div id="profile-column-right">
+    <div id="deets" class="mini-container">
+      <div class="title">
+        <span class="ornament left"></span>
+        {% firstname profile.user.username %}'s Deets
+        <span class="ornament right"></span>
+      </div>
+      <div class="mini-content">
+        <ul>
+          <li><ul class="colMiniContent"><li class="number">{{ profile.user.review_set.count }}</li><li>Reviews written</li></ul></li>
+	      <li>
+	      	<ul class="colMiniContent">
+	      		<li class="number">{{ profile.view_count }}</li>
+	      		<li>
+      			    Views of
+		            {% if profile.gender == 'M' %}
+		            his
+		            {% else %}
+		            {% if profile.gender == 'F' %}
+		            her
+		            {% else %}
+		            their
+		            {% endif %}{% endif %} profile
+	      		</li>
+	      	</ul>
+	      </li>
+          <li><ul class="colMiniContent"><li class="number">{{ following_count }}</li><li>Following</li></ul></li>
+          <li><ul class="colMiniContent"><li class="number">{{ followers_count }}</li><li>Followers</li></ul></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shadow"></div>
+    {% include "profiles/blackbook.html" %}
+    <!--{% include "profiles/friends.html" %}-->
+    {% include "profiles/following.html" %}
+    {% include "profiles/followers.html" %}
+  </div>
+</div>
+{% include "messages/embedded-compose.html" with recipient=profile.user.username %}
+{% endblock %}

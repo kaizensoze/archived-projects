@@ -1,0 +1,57 @@
+{% extends "messages/list.html" %}
+{% load inbox message_extras i18n avatar_tags staticfiles %}
+
+{% block js %}
+  <script type="text/javascript">
+    window.addEvent('domready', function() {
+      compose_modal.addEvent('show', function() {
+        var subject = $$('.message-details .subject').get('html')[0];
+        if (subject.substr(0, 4).toLowerCase() != "re: ") {
+          subject = "Re: " + subject;
+        }
+        $$('#id_subject').set('value', subject);
+      });
+    });
+  </script>
+{% endblock %}
+
+{% block sidebar %}
+  {% if outbox %}
+    {% include "messages/sidebar-menu.html" with outbox="active" %}
+  {% else %}
+    {% include "messages/sidebar-menu.html" with inbox="active" %}
+  {% endif %}
+{% endblock %}
+
+{% block messages %}
+<div id="view-message">
+  <div class="details-header">
+    <div class="profile-image">
+      {% avatar message.sender 105 %}
+    </div>
+    <div class="message-details">
+      <ul>
+        <li><span>From:</span>
+          <a href="{% url profiles_profile_detail message.sender %}">
+            <strong class="sender">{% fullname message.sender %}</strong></a></li>
+        <li><span>Subject:</span><strong class="subject">{{ message.subject }}</strong></li>
+        <li><span>Date:</span>{{ message.sent_at|date:"n/j/y - g:iA"|lower }}</li>
+        <li><span>To:</span><a href="{% url profiles_profile_detail message.recipient %}">{% fullname message.recipient %}</a></li>
+      </ul>
+    </div>
+    <div class="message-body">
+      {{ message.body|safe|linebreaksbr }}
+    </div>
+    <div class="message-footer">
+      <ul>
+        <li><img id="{{ message.sender }}" class="reply-to-message" src="{% static 'images/button-reply.png' %}" alt="reply" width="67" height="24" /></li>
+        <li><img id="{{ message.sender }}" class="reply-to-message" src="{% static 'images/button-reply-all.png' %}" alt="reply all" width="91" height="24" /></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<input type="hidden" value="{{ message.id }}" id="reply-message-id" />
+<Input type="hidden" value="{{ message.sender }}" id="reply-sender-id" />
+<input type="hidden" value="{% firstname message.sender %}" id="reply-sender-firstname" />
+<input type="hidden" value="{% lastname message.sender %}" id="reply-sender-lastname" />
+{% endblock %}

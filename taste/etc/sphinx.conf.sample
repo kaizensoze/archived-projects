@@ -1,0 +1,67 @@
+source restaurants_restaurant
+{
+    type                = mysql
+    sql_host            = localhost
+    sql_user            = root
+    sql_pass            =
+    sql_db              = tastesavant
+    sql_port            =
+
+    sql_query_pre       =
+    sql_query_post      =
+    sql_query           = SELECT r.id as ID, r.active, r.name AS name_ord, r.url, r.opentable, r.menupages, r.price_id, r.critic_rating, \
+        l.lat, l.lng, l.address, l.city, l.state, l.zip_code, \
+        n.name, \
+        GROUP_CONCAT(c.name SEPARATOR ', ') as cuisines \
+    FROM restaurants_restaurant as r, restaurants_cuisine as c, \
+        restaurants_restaurant_cuisine as rc, restaurants_location as l, \
+        restaurants_location_neighborhood as ln, restaurants_neighborhood as n \
+    WHERE c.id = rc.cuisine_id \
+        AND r.id = rc.restaurant_id \
+        AND l.restaurant_id = r.id \
+        AND r.active = 1 \
+        AND l.id = ln.location_id \
+        AND ln.neighborhood_id = n.id \
+    GROUP BY r.id;
+
+    sql_query_info      = SELECT * FROM `restaurants_restaurant` WHERE `id` = $id
+
+    # ForeignKey's
+    # sql_attr_uint       = price_id
+    sql_attr_uint       = critic_rating
+    sql_attr_str2ordinal = name_ord
+
+}
+
+index restaurants_restaurant
+{
+    source          = restaurants_restaurant
+    path            = /var/lib/sphinx/restaurants_restaurant
+    docinfo         = extern
+    morphology      = none
+    stopwords       =
+    min_word_len    = 2
+    charset_type    = utf-8
+    min_prefix_len  = 0
+    min_infix_len   = 0
+}
+
+indexer
+{
+        mem_limit                       = 512M
+}
+
+
+searchd
+{
+        port                            = 3312
+        log                             = /var/log/sphinx/searchd.log
+        query_log                       = /var/log/sphinx/query.log
+        read_timeout                    = 5
+        max_children                    = 30
+        pid_file                        = /var/run/sphinx/searchd.pid
+        max_matches                     = 1000
+        seamless_rotate                 = 1
+        preopen_indexes                 = 0
+        unlink_old                      = 1
+}

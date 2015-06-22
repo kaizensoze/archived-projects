@@ -1,0 +1,8 @@
+{% load i18n avatar_tags %}
+{% for r in results %}
+    <li id="{{ r.user.username }}">{% avatar r.user.username 30 %}
+      <span>
+        {{ r.first_name }} {{ r.last_name }}{% if not r.first_name and not r.last_name %}{{ r.user.username }}{% endif %}
+      </span>   
+    </li>
+{% endfor %}

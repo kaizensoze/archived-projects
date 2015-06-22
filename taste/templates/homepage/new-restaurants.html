@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<div id="new-restaurants" class="homepage-box">
+  <div class="box-title">New on the Scene</div>
+  {% for restaurant in restaurants %}
+    <div class="new-review">
+      <img src="{% static 'images/fork.png' %}" width="24" height="8" />
+      <span>
+        {% with neighborhood=restaurant.location_set.all.0.neighborhood.all.0.name name=restaurant.name %}
+          {% with neighborhood_count=neighborhood|length name_count=name|length %}
+            <a href="{{ restaurant.get_absolute_url }}">{{ name|truncatewords_html:4 }}</a>
+            {% if neighborhood_count|add:name_count <= 29 %}
+              <em>in {{ neighborhood }}</em>
+            {% endif %}
+          {% endwith %}
+        {% endwith %}
+      </span>
+    </div>
+  {% endfor %}
+  <div class="border-bottom"></div>
+</div>

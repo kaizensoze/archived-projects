@@ -1,0 +1,40 @@
+{% load i18n avatar_tags humanize tz %}
+{% for a in activity %}
+<li>
+  <span class="picture-frame-45x45">
+    {% avatar a.user 45 %}
+  </span>
+  <span class="activity-info">
+    {% ifequal user.id a.user.id %}
+    {% if a.action.action_name == 'reviewed' %}
+    You have
+    {% endif %}
+    {% if a.action.action_name == 'checkin' %}
+    You've
+    {% endif %}
+    {% if a.action.action_name == 'follow' %}
+    You are
+    {% endif %}
+    {% if a.action.action_name == 'blackbook' %}
+    You
+    {% endif %}
+    {{ a.message|safe }}
+    {% else %}
+    <a href="{% url profiles_profile_detail a.user.username %}">
+      {{ a.user.get_profile.get_truncated_name }}</a>
+    {% if a.action.action_name == 'reviewed' %}
+    has
+    {% endif %}
+    {% if a.action.action_name == 'checkin' %}
+    has
+    {% endif %}
+    {% if a.action.action_name == 'follow' %}
+    is
+    {% endif %}
+    {{ a.message|safe }}
+    {% endifequal %}
+  </span>
+  <span class="pub-date">{{ a.occurred|localtime|naturalday|title }}</span>
+</span>
+</li>
+{% endfor %}

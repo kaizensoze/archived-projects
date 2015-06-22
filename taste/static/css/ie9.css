@@ -1,0 +1,8 @@
+/* For OpenTable widget. */
+li.OT_day input.OT_searchDateField,
+li.OT_time input.OT_searchTimeField,
+li.OT_party input.OT_searchPartyField {
+    height: 21px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}

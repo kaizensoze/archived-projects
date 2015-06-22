@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+{% load compressed i18n avatar_tags staticfiles %}
+
+{% block css %}
+  {% compressed_css 'profiles-edit' %}
+{% endblock %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+{{ block.super }}
+  <div id="profile">
+    <form method="POST" action="{% url profiles_edit_profile %}">{% csrf_token %}
+      <h1>Edit Profile</h1>
+      <p>
+        While most of these areas of your profile are optional,
+        if you fill them out it will really help the community!
+        So go ahead, it will only take 30 seconds. We timed it!
+      </p>
+      <span class="req">* Indicates required field</span>
+      <div class="section">
+        <ul class="side-by-side {% if form.first_name.errors or form.last_name.errors %} errors{% endif %}">
+          <li>
+            <dl>
+              <dt>{{ form.first_name.label_tag }}<span class="req">*</span></dt>
+              <dd>{{ form.first_name }}</dd>
+              {% if form.first_name.errors %}
+              <dd class="errors">{{ form.first_name.errors }}</dd>
+              {% endif %}
+            </dl>
+          </li>
+          <li class="last">
+            <dl>
+              <dt>{{ form.last_name.label_tag }}<span class="req">*</span></dt>
+              <dd>{{ form.last_name }}</dd>
+              {% if form.last_name.errors %}
+              <dd class="errors">{{ form.last_name.errors }}</dd>
+              {% endif %}
+            </dl>
+          </li>
+        </ul>
+        <div class="clearLeft"></div>
+        <ul class="side-by-side {% if form.first_name.errors or form.last_name.errors %} errors{% endif %}">
+          <li>
+            <dl>
+              <dt>{{ form.email.label_tag }}<span class="req">*</span></dt>
+              <dd>{{ form.email }}</dd>
+              {% if form.email.errors %}
+              <dd class="errors">{{ form.email.errors }}</dd>
+              {% endif %}
+            </dl>
+          </li>
+
+        </ul>
+        <div class="clearLeft"></div>
+        <dl>
+          <dt>{{ form.gender.label_tag }}</dt>
+          <dd>{{ form.gender }}</dd>
+          {% if form.gender.errors %}
+          <dd class="errors">{{ form.gender.errors }}</dd>
+          {% endif %}
+          <dt>{{ form.birthday.label_tag }} (e.g.: MM-DD-YYYY)</dt>
+          <dd>{{ form.birthday }}</dd>
+          {% if form.birthday.errors %}
+          <dd class="errors">{{ form.birthday.errors }}</dd>
+          {% endif %}
+          <dt>{{ form.zipcode.label_tag }}</dt>
+          <dd>{{ form.zipcode }}</dd>
+          {% if form.zipcode.errors %}
+          <dd class="errors">{{ form.zipcode.errors }}</dd>
+          {% endif %}
+          <dt>{{ form.location.label_tag }}</dt>
+          <dd>{{ form.location }}</dd>
+          {% if form.location.errors %}
+          <dd class="errors">{{ form.location.errors }}</dd>
+          {% endif %}
+        </dl>
+      </div>
+      <div class="section section-border">
+        <dl>
+          <dt>{{ form.type_expert.label_tag }}</dt>
+          <dd>{{ form.type_expert }}</dd>
+          {% if form.type_expert.errors %}
+          <dd class="errors">{{ form.type_expert.errors }}</dd>
+          {% endif %}
+          <dt>{{ form.type_reviewer.label_tag }}</dt>
+          <dd>{{ form.type_reviewer }}</dd>
+          {% if form.type_reviewer.errors %}
+          <dd class="errors">{{ form.type_reviewer.errors }}</dd>
+          {% endif %}
+          <dt>{{ form.favorite_food.label_tag }}</dt>
+          <dd>{{ form.favorite_food }}</dd>
+          {% if form.favorite_food.errors %}
+          <dd class="errors">{{ form.favorite_food.errors }}</dd>
+          {% endif %}
+          <dt>{{ form.favorite_restaurant.label_tag }}</dt>
+          <dd>{{ form.favorite_restaurant }}</dd>
+          {% if form.favorite_restaurant.errors %}
+          <dd class="errors">{{ form.favorite_restaurant.errors }}</dd>
+          {% endif %}
+        </dl>
+      </div>
+      <div class="section section-border">
+        <dl>
+          <dt>{{ form.notification_level.label_tag }}</dt>
+          <dd>{{ form.notification_level }}</dd>
+          {% if form.notification_level.errors %}
+          <dd class="errors">{{ form.notification_level.errors }}</dd>
+          {% endif %}
+        </dl>
+      </div>
+      <div id="save-button">
+        <button class="button2 orange" type="submit">Save</button>
+      </div>
+      <div id="delete-account">
+        <a href="{% url account_delete %}">Cancel account</a>
+      </div>
+    </form>
+  </div>
+  <div id="profile-image">
+    <div class="box">
+      <div class="title">Profile Picture</div>
+      <div class="content">
+        <div class="picture">
+          {% avatar user 64 %}
+          <p>
+            Must be a GIF, JPG or PNG under 100KB
+          </p>
+          <div class="form">
+            <form enctype="multipart/form-data" method="POST" action="{% url profiles_edit_avatar %}">
+              {% csrf_token %}
+              {{ upload_avatar_form.avatar }}
+              <button class="button2 orange" type="submit">Upload</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+    <div class="box">
+      <div class="title">Sync Your Check Ins!</div>
+      <div class="content">
+        <span>
+          Pull in your Check Ins to let your friends know where
+          you've been and keep track of where you've eaten! Link
+          your accounts here.
+        </span>
+        <ul>
+          <li>
+            <img src="{% static 'images/foursquare-icon.png' %}"/>
+            <span class="add-network">
+              {% if not foursquare_association %}
+              <a href="{% url socialauth_associate_begin 'foursquare' %}">
+                Add Foursquare
+              </a>
+              {% else %}
+              <span class="has_association">
+              Your account is associated with Foursquare
+              </span>
+              {% endif %}
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+{% endblock %}

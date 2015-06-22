@@ -1,0 +1,150 @@
+div#messages {
+    padding: 40px 20px 0 20px;
+    color: #333;
+    min-height: 96px;
+    background: url(../images/envelope-bg.jpg) no-repeat 275px -15px;
+}
+
+
+
+div#messages h1 {
+    font-family: Georgia;
+    font-size: 36px;
+    font-weight: normal;
+    color: #534741;
+    padding-bottom: 0;
+}
+
+div#messages h2 {
+    font-family: Arial;
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+}
+
+div#messages h2 strong {
+    color: #333;
+}
+
+div#messages table.messages {
+    margin-top: 20px;
+    width: 800px;
+    float: right;
+    background: white;
+    border-collapse:collapse;
+}
+
+div#messages table.messages thead th {
+    background: #f2f2f2;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: Arial;
+    font-size: 12px;
+    height: 30px;
+    vertical-align: middle;
+    border-top: 3px solid #f26522;
+}
+
+div#messages table.messages .first {
+    padding-left: 10px;
+}
+
+div#messages table.messages tbody tr.alt {
+    background: url(../images/message-row.png) repeat-x;
+}
+
+div#messages table.messages tbody tr {
+    font-family: Arial;
+    font-size: 12px;
+    height: 40px;
+    border-bottom: 2px solid #f2f2f2;
+}
+
+div#messages table.messages tbody td {
+    vertical-align: middle;
+    border-bottom: 2px solid #f2f2f2;
+}
+
+div#messages table.messages td.unread {
+    font-weight: bold;
+    background: url(../images/message-row.png) repeat-x;
+}
+
+div#messages table.messages tbody td.from,
+div#messages table.messages thead th.from {
+    max-width: 210px;
+    min-width: 210px;
+}
+
+div#messages table.messages tbody td.subject,
+div#messages table.messages thead th.subject {
+    max-width: 350px;
+    min-width: 350px;
+}
+
+div#messages table.messages tbody td.received {
+    max-width: 190px;
+    min-width: 190px;
+
+}
+
+div#messages table.messages tbody td.delete {
+    max-width: 30px;
+    min-width: 30px;
+}
+
+div#messages table.messages thead th.received {
+    max-width: 220px;
+    min-width: 220px;
+
+}
+
+div#messages span.avatar-30x30-frame {
+    background-color:#FFF;
+    border:1px solid #a6a6a6;
+    display:inline-block;
+    height:28px;
+    margin:1px 0 0;
+    width:28px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+div#messages span.avatar-30x30-frame img {
+    padding:2px;
+}
+
+div#sidebar {
+    margin-top: 20px;
+    width: 120px;
+    float: left;
+    min-height: 435px;
+}
+
+div#sidebar ul li span.menu-item {
+    display: block;
+    padding: 5px 10px;
+}
+
+div#sidebar ul li span.active {
+    background: url(../images/message-active-nav.png) no-repeat;
+    width: 114px;
+}
+
+div#sidebar ul li span.inactive {
+    color: #f26522;
+}
+
+div#sidebar ul li span.active a {
+    color: #FFF;
+}
+
+#sidebar ul li {
+    font-weight: bold;
+    height: 31px;
+    text-transform: uppercase;
+}
+
+span.inbox-count {
+    font-weight: normal !important;
+}

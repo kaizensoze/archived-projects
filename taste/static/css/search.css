@@ -1,0 +1,477 @@
+
+a:hover {
+    text-decoration: none;
+}
+
+.sort-by {
+    /*background: url(../images/small-search-box.png) no-repeat;*/
+    display: inline-block;
+    width: 195px;
+    height: 34px;
+    margin: 0 auto;
+    color: gray;
+    line-height: 34px;
+    font-size: 10px;
+    cursor: pointer;
+    z-index: 20;
+    border: 1px solid black
+}
+
+#results-topbar{
+    width: 675px;
+    margin-top: 5px;
+}
+#results-topbar a:hover {
+    text-decoration:none;
+}
+#results-topbar a{
+    color:white;
+}
+.results-topbar-item {
+    background: #736357;
+    color: white;
+    display: inline-block;
+    height: 26px;
+    line-height: 12px;
+    font-family: Arial;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin-bottom: 3px;
+}
+.results-topbar-item-selected {
+    background: #f26522;
+}
+
+#blank-bar {
+    width: 36px;
+    cursor: default;
+}
+#critic-bar {
+    width: 67px;
+}
+#user-bar {
+    width: 59px;
+}
+#friend-bar {
+    width: 55px;
+}
+#restaurant-bar {
+    width: 272px;
+    text-align: left;
+    padding-left: 14px;
+}
+#dish-bar {
+    width: 141px;
+    cursor: default;
+    text-align: left;
+    padding-left: 14px;
+}
+
+#critic-bar-arrow {
+    position: absolute;
+    top: 78px;
+    left: 64px;
+}
+#user-bar-arrow {
+    position: absolute;
+    top: 78px;
+    left: 130px;
+}
+#friend-bar-arrow {
+    position: absolute;
+    top: 78px;
+    left: 190px;
+}
+#restaurant-bar-arrow {
+    position: absolute;
+    top: 78px;
+    left: 342px;
+}
+
+.selected-column-arrow {
+    width: 0px;
+    height: 0px;
+    border-color: #f26522 transparent transparent;
+    border-style: solid;
+    border-width: 8px;
+    display: none;
+}
+
+.showme {
+    display: block;
+}
+
+#results {
+    margin-right:24px;
+    padding-bottom:24px;
+}
+
+#results img#ajax-loader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.result-leftbar {
+    font-family: Georgia, Helvetica, serif;
+    /* background-color: lightGrey; */
+    background-color: #d7d3cd;
+    color: #fff;
+   /*  display: table-cell; */
+    height: 138px;
+    text-align: center;
+    vertical-align: middle;
+    width: 36px;
+    margin-right:8px;
+    font-size: 30px;
+    float: left;
+    display: inline;
+    line-height: 118px;
+
+}
+
+
+.result-leftbar a{
+	color:#fff;
+}
+
+
+.result {
+    width: 674px;
+    height:140px;
+    border-bottom: 2px solid whiteSmoke;
+    cursor:pointer;
+    float:left;
+    display: inline;
+    clear:both;
+}
+
+.result:hover {
+    background:whitesmoke;
+}
+.result-link:hover {
+    text-decoration:none!important;
+}
+
+#right-column {
+    font-family: 'Droid Sans', sans-serif;
+    width: 676px;
+}
+
+.restaurant-address {
+    width: 300px;
+}
+
+.restaurant-name {
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 18px;
+    color: #f26522;
+}
+
+.phone-number{
+    margin-bottom:4px;
+}
+#restaurant-locations{
+    color:#333;
+    line-height: 17px;
+}
+.review-info{
+    /* display: table-cell; */
+    height: 110px;
+    vertical-align: middle;
+    float:left;
+    margin:0px;
+    padding-left: 7px;
+    display: inline;
+    padding-top:24px;
+}
+
+.restaurant-info {
+    position: relative;
+    width: 278px;
+    height: 110px;
+    padding-left: 12px;
+    vertical-align: middle;
+    /* display: table-cell; */
+    float:left;
+    display: inline;
+    padding-top:10px;
+}
+.restaurant-details{
+    color: #999;
+    margin-bottom: 6px;
+    font-size: 10px;
+    line-height: 14px;
+    height: 27px;
+    overflow: hidden;
+}
+
+.restaurant-details a{ color:#999;}
+
+.dishes{
+    width: 140px;
+    height:100px;
+   /*  display:table-cell; */
+    vertical-align:middle;
+    float: left;
+    display: inline;
+    padding-top:20px;
+    padding-left: 7px;
+}
+.dish{
+    margin: 2px;
+    line-height:18px;
+    font-style:arial;
+    font-size:10px;
+    color:#333;
+}
+
+.good-dish{
+    background-image: url('../images/checkmark.png');
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    padding-left: 16px;
+}
+
+.good-dish a, dishes a { color: #333;}
+
+/* tooltips */
+.tip {
+    background-color:black;
+    opacity:0.8;
+    border-radius:4px;
+    color:#F68E56;
+    padding:4px;
+}
+/* end */
+
+.pagination {
+    text-align:center;
+    font-size:14px;
+}
+#paginationPlace {
+    font-family: Arial;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-left: 14px;
+    color: #999999;
+}
+.paginationCount {
+    font-weight: bold;
+    color: black;
+}
+
+#search-by {
+    font-size:14px;
+    margin-bottom: 2px;
+}
+
+#critic-order {
+    margin-left: 20px;
+}
+#restaurant-order {
+    margin-left: 60px;
+}
+
+#savant-order {
+    margin-left: 54px;
+}
+
+.restaurant-score {
+    margin-top: -8px;
+    *margin-top: -4px !important;
+    color: #534741;
+    font-family: Georgia, Helvetica, Arial;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#no-results-found-title {
+    margin-top: 10px;
+}
+#no-results-found-title h1 {
+    font-weight: normal;
+    line-height: 33px;
+    margin-bottom: 8px;
+}
+#no-results-found-title span {
+    font-size: 14px;
+    color: #534741;
+}
+
+#search-title {
+  width: 674px;
+}
+#search-title h1 {
+    font-weight: normal;
+    padding-bottom: 2px;
+}
+
+div.pagination {
+    overflow:hidden;
+    position:relative;
+    float:left;
+    width:645px;
+    margin-top: 17px;
+}
+
+div.pagination ul {
+ clear:left;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   left:50%;
+   text-align:center;
+}
+
+div.pagination ul li.page a {
+    color: #999;
+}
+
+div.pagination ul li.next {
+    padding: 0 5px 0 20px;
+}
+
+div.pagination ul li.prev {
+    padding: 0 20px;
+}
+
+div.pagination ul li.current {
+    color: #f26522;
+}
+
+div.pagination ul li {
+    display:block;
+    float:left;
+    list-style:none;
+    margin:0;
+    position:relative;
+    right:50%;
+    width: auto;
+    padding: 0 5px;
+    font-size: 16px;
+}
+
+div#add-a-restaurant {
+    margin: 37px 0 32px 0;
+    text-align: center;
+}
+
+div#add-a-restaurant span {
+    /* display: inline-block; */
+    color: #666666;
+    font-size: 14px;
+    display: inline;
+}
+
+div#add-a-restaurant h2 {
+    padding: 0 7px;
+    color: #736357;
+    /* display: inline-block; */
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: Georgia;
+    display: block;
+}
+
+div#find-a-friend {
+    padding: 40px;
+}
+
+div#find-a-friend p {
+    font-family: "Georgia", serif;
+    font-size: 14px;
+}
+
+#friend-input-fields {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-image: url(../images/search.png);
+    height: 30px;
+    width: 344px;
+}
+
+#friend-input {
+    border: none;
+    padding-left: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 290px;
+    height: 28px;
+    line-height: 28px;
+    padding-top: 2px;
+    background: transparent;
+    font-family: "Georgia", serif;
+}
+
+#friend-input-submit {
+    background: transparent;
+    border: none;
+    float: right;
+    cursor: pointer;
+    height: 30px;
+    width: 32px;
+}
+
+/* User search  */
+.autocompleter-choices {
+    background-color: #ff0000;
+}
+
+ul.autocompleter-choices li {
+    margin-top: 10px;
+}
+
+#user-results {
+    width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+#user-results li:first-child {
+  border-top: 1px solid #ccc;
+  padding-top: 5px;
+}
+#user-results li {
+  border-bottom: 1px solid #ccc;
+}
+
+.user-result span.picture-frame-45x45 {
+  float: left;
+}
+.user-result .follow-suggestions-name {
+  font-weight: bold;
+  color: #413731;
+}
+.user-result .follow-suggestions-review-count {
+  font-style: italic;
+  color: #999;
+}
+.user-result .follow-suggestions-user-type {
+  color: #413731;
+}
+#user-results .user-result .follow-suggestions-body {
+  float: left;
+  width: 323px;
+}
+.autocompleter-choices .user-result .follow-suggestions-body {
+  float: left;
+  width: 235px;
+  height: 60px;
+}
+.user-result .follow-suggestions-body div {
+  line-height: 95%;
+  padding-left: 10px;
+}
+.user-result .follow-suggestions-follow img {
+  float: left;
+}

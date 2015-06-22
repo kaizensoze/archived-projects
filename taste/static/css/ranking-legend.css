@@ -1,0 +1,44 @@
+#ranking-legend {
+	width: 228px;
+	height: 174px;
+	margin: 0 auto;
+
+	font-family: Arial;
+	font-size: 12px;
+}
+
+#ranking-legend-header {
+	font-weight: bold;
+	color: #f26522;
+}
+
+#ranking-legend-description {
+	margin-top: 5px;
+    color: #666666;
+    line-height: 17px;
+}
+
+.ranking-info {
+	height: 110px;
+    vertical-align: middle;
+    float: left;
+    margin: 0px;
+    padding-left: 12px;
+    display: inline;
+    padding-top: 13px;
+}
+.ranking-image {
+	margin: 4px;
+}
+.ranking-range {
+	font-family: Georgia, Helvetica, Arial;
+    font-size: 11px;
+    font-weight: bold;
+
+	margin-top: -8px;
+    *margin-top: -4px !important;
+
+    color: #534741;
+    
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+
+# environment variables
+Taste Savant/Environment.h
+
+# xcode
+UserInterfaceState.xcuserstate
+xcuserdata
+*.xccheckout
+
+# vim
+*~
+*.swp
+*.swo
+
+# misc
+TODO

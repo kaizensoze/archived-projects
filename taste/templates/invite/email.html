@@ -1,0 +1,26 @@
+{% extends "invite/base.html" %}
+
+{% block invite %}
+  {{ block.super }}
+  <div id="panel">
+    <div id="sidebar">
+      {% include "invite/sidebar-menu.html" with email="active" %}
+    </div>
+  </div>
+  <div id="invite-header">
+    <h2>Invite by <span class="upper">email</span></h2>
+  </div>
+  <div id="invite-panel" class="from-email">
+    <div class="inner-wrap">
+      <form action="{% url invite_from_email %}" method="post">{% csrf_token %}
+        {% for field in form %}
+        <ul class="row {% if forloop.first %}first {% else %}{% if forloop.last %}last {% endif %}{% endif %}">
+          <li class="{{ field.label|lower|slugify }} label">{{ field.label_tag }}</li>
+          <li class="input">{{ field }}</li>
+        </ul>
+        {% endfor %}
+        <button type="submit" id="send-invite"></button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

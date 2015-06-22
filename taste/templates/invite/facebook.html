@@ -1,0 +1,157 @@
+{% extends "invite/base.html" %}
+{% load compressed staticfiles %}
+
+{% block invite %}
+  <div id="fb-root"></div>
+  {{ block.super }}
+  <div id="panel">
+    <div id="sidebar">
+      {% include "invite/sidebar-menu.html" with facebook="active" %}
+    </div>
+  </div>
+  <div id="invite-header">
+    <h2>Invite by <span class="upper">facebook</span></h2>
+  </div>
+  <div id="invite-panel" class="from-facebook">
+    <div class="inner-wrap">
+      <!-- Facebook cruft -->
+      <div id="filter-list">
+        <input type="text" id="filter-list-input" />
+      </div>
+      <div id="mfs">
+        <img src="{% static 'images/loading.gif' %}" alt="loading…" />
+      </div>
+      <!-- end Facebook cruft -->
+    </div>
+  </div>
+{% endblock %}
+
+{% block js %}
+  <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+  {% compressed_js 'invite-facebook' %}
+  <script type="text/javascript">
+    function toTitleCase(str)
+    {
+        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    }
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '383119498397626', // App ID
+        version    : 'v2.0',
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        oauth      : true, // enable OAuth 2.0
+        xfbml      : true  // parse XFBML
+      });
+
+      //
+      // All your canvas and getLogin stuff here
+      //
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+       var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       d.getElementsByTagName('head')[0].appendChild(js);
+     }(document));
+
+    function sendRequest(elt) {
+      // Get the list of selected friends
+      var sendUID = elt.parent().attr('id');
+      jQuery('.facebook-friend').children('input:checked').each(function() {
+        sendUIDs.push(jQuery(this).val());
+      });
+
+      // Use FB.ui to send the Request(s)
+      FB.ui({
+        method: 'send',
+        to: sendUID,
+        name: 'Taste Savant',
+        description: 'Check out this awesome new website, Taste Savant. It is a highly curated restaurant discovery site designed to help us decide where to eat out. They curate only the very best restaurants and reviews from trusted sources including friends, critics, bloggers, chefs, and other people in the know. Join now and we will become friends automatically on the site!',
+        link: 'http://tastesavant.com/',
+        picture: 'http://tastesavant.com/media/images/logo-main.png'
+      }, callback);
+      return false;
+    }
+
+    function callback(response) {
+      // In case we need a callback.
+    }
+
+    /* Define jQuery vertical-center from http://www.seodenver.com/simple-vertical-align-plugin-for-jquery/ */
+    (function ($) {
+    // VERTICALLY ALIGN FUNCTION
+    $.fn.vAlign = function() {
+      return this.each(function(i){
+      var ah = $(this).height();
+      var ph = $(this).parent().height();
+      var mh = Math.ceil((ph-ah) / 2);
+      $(this).css('margin-top', mh);
+      });
+    };
+    })(jQuery);
+
+    jQuery(document).ready(function() {
+      function renderMFS() {
+        FB.api(
+          {
+            method: 'fql.query',
+            query: 'SELECT uid, name, is_app_user, pic_square FROM user WHERE uid IN (SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 0 ORDER BY name',
+            access_token: '{{ has_facebook_auth.extra_data.access_token }}'
+          },
+            function(response) {
+          var container = document.getElementById('mfs');
+          var mfsForm = document.createElement('form');
+          mfsForm.id = 'mfsForm';
+          var inner_div = document.createElement('div');
+          inner_div.id = 'mfsForm-inner-div';
+          mfsForm.appendChild(inner_div);
+          // Iterate through the array of friends object and create a checkbox for each one.
+
+          for(var i = 0; i < response.length; i++) {
+            var friendItem = document.createElement('div');
+            friendItem.id = response[i].uid;
+            jQuery(friendItem).addClass('facebook-friend');
+            friendItem.innerHTML = "<a class='facebook-friend-click' href='#'>"
+              + "<div class='outer'>"
+              + "<img src='" + response[i].pic_square + "' /> "
+              + "<div class='inner'><div class='inner-content'>" +
+              response[i].name
+              + "</div></div></div></a>";
+              inner_div.appendChild(friendItem);
+          }
+          jQuery(container).html(mfsForm);
+          // Because vertical centering is not easy to do when you don't know the height of the element, we use JavaScript to do it. Ew.
+          jQuery('.inner-content').vAlign();
+        });
+      }
+      renderMFS();
+      jQuery('#filter-list-input').typeWatch({
+        callback: function(element) {
+          var search_text = toTitleCase(jQuery('input#filter-list-input').val());
+          jQuery('.facebook-friend a:not(:contains("' + search_text + '"))').parent().hide();
+          jQuery('.facebook-friend a:contains("' + search_text + '")').parent().show();
+        },
+        captureLength: 0
+      });
+      // Use live instead of click because the elements don't exist at this
+      // point this is declared.
+      jQuery('.facebook-friend a').live('click', function(evt) {
+        evt.preventDefault();
+        sendRequest(jQuery(this));
+        return false;
+      });
+      var placeholder = "Type a friend's name to filter"
+      jQuery('#filter-list-input').val(placeholder);
+      jQuery('#filter-list-input').focus(function() {
+        if (this.value == placeholder) {
+          this.value = '';
+          jQuery(this).css('color', '#000000'); // Ugly, but not sure where else to put this.
+        }
+      });
+    });
+  </script>
+{% endblock %}
