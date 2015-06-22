@@ -1,0 +1,48 @@
+
+# NOTE: This is just a template and not to be copy-pasted directly.
+#       Replace server ip and only use the checks for processes running
+#       on the given server.
+
+set daemon 30
+
+set logfile /var/log/monit.log
+set idfile /var/lib/monit/id
+set statefile /var/lib/monit/state
+
+set eventqueue
+  basedir /var/lib/monit/events
+  slots 100
+
+set mailserver localhost
+set alert wgw@sosolimited.com
+
+set mmonit http://sosolimited:t3mp0r4ry@192.168.170.95:8080/collector
+
+set httpd port 2812 and
+  use address <server ip>     # Put server ip here
+  allow sosolimited:t3mp0r4ry
+
+check system dev
+  if loadavg (1min) > 4 then alert
+  if loadavg (5min) > 2 then alert
+  if memory usage > 75% then alert
+  if swap usage > 25% then alert
+  if cpu usage (user) > 70% then alert
+  if cpu usage (system) > 30% then alert
+  if cpu usage (wait) > 20% then alert
+
+# algo
+check process dev-algo
+  matching "node algorithm"
+
+# api
+check process dev-api
+  matching "node api"
+
+# nginx
+check process nginx with pidfile /var/run/nginx.pid
+  start program = "/etc/init.d/nginx start"
+  stop program  = "/etc/init.d/nginx stop"
+  group www-data
+
+include /etc/monit/conf.d/*

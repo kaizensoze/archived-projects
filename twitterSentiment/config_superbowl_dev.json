@@ -1,0 +1,163 @@
+{
+  "couch": {
+    "master": {
+      "url": "http://sosolimited:t3mp0r4ry@localhost:5984/superbowl_master"
+    },
+    "slave": {
+      "url": "http://sosolimited:t3mp0r4ry@localhost:5984/superbowl_slave"
+    }
+  },
+
+  "questions": {
+    "game": {
+      "afc": "broncos",
+      "nfc": "seahawks",
+      "ss": {
+        "afc": "afc",
+        "nfc": "nfc"
+      }
+    },
+    "passing": {
+      "afc": "broncos",
+      "nfc": "seahawks",
+      "ss": {
+        "afc": "afc",
+        "nfc": "nfc"
+      }
+    },
+    "rushing": {
+      "afc": "broncos",
+      "nfc": "seahawks",
+      "ss": {
+        "afc": "afc",
+        "nfc": "nfc"
+      }
+    },
+    "defense": {
+      "afc": "broncos",
+      "nfc": "seahawks",
+      "ss": {
+        "afc": "afc",
+        "nfc": "nfc"
+      }
+    },
+    "fans": {
+      "afc": "broncos",
+      "nfc": "seahawks",
+      "ss": {
+        "afc": "afc",
+        "nfc": "nfc"
+      }
+    },
+    "espn": {
+      "afc": "broncos",
+      "nfc": "seahawks",
+      "ss": {
+        "afc": "afc",
+        "nfc": "nfc"
+      }
+    }
+  },
+
+  "datasift": {
+    "accounts": {
+      "2d2c6ebd3c98dfd6ca60189249966809": { "user": "sosolimited", "key": "2d2c6ebd3c98dfd6ca60189249966809" },
+      "846e12e53ae689606d3b977a86e352f4": { "user": "sosolimited3", "key": "846e12e53ae689606d3b977a86e352f4" }
+    },
+    "streams": {
+      "fcbe022d6a42b6c58338ead978979741": {
+        "question": "game",
+        "team": "afc",
+        "csdl": [
+          "twitter.text substr \"Broncos\"",
+          "OR",
+          "twitter.text contains_any \"Peyton Manning,Knowshon Moreno,Montee Ball,Demaryius Thomas,Wes Welker,Eric Decker,Julius Thomas,Danny Trevathan,Wesley Woodyard,Shaun Phillips,Duke Ihenacho,Dominique Rodgers-Cromartie,Von Miller,Champ Bailey,John Fox\"",
+          "OR",
+          "(",
+          "twitter.text contains_any \"denver\"",
+          "AND",
+          "twitter.text contains_any \"whosgonnawin,SBXLVIII,SuperBowlXLVIII,superbowl,super bowl,DENvsSEA,SEAvsDEN,QB,pass,passing,passed,threw,throws,RB,rush,rushing,rushed,ran,runs,sack,sacks,sacked,interception,interceptions,intercepted,score,scores,scored,scoring,touchdown,touchdowns,nfl,football,ball,play,player,playing,record,endzone,zone,win,winning,winner,lose,losing,loser,yard,yards,game,games,penalty,penalties,team,teams,drive,drives,watch,tv,season,career,half,quarter,fantasy,ofense,defense\"",
+          ") AND  NOT",
+          "twitter.links exists ",
+          "AND",
+          "language.tag in \"en\""
+        ],
+        "dpu": 1.4,
+        "key": "2d2c6ebd3c98dfd6ca60189249966809"
+      },
+      "b309360f83c19e456de2017aed3ac301": {
+        "question": "game",
+        "team": "nfc",
+        "csdl": [
+          "twitter.text substr \"Seahawk\"",
+          "OR",
+          "twitter.text contains_any \"Russell Wilson,Marshawn Lynch,Golden Tate,Doug Baldwin,Jermaine Kearse,Zach Miller,Richard Sherman,Bobby Wagner,Earl Thomas,Byron Maxwell,Michael Bennett,Brandon Browner,Kam Chancellor,Pete Carroll\"",
+          "OR",
+          "(",
+          "twitter.text contains_any \"seattle\"",
+          "AND",
+          "twitter.text contains_any \"whosgonnawin,SBXLVIII,SuperBowlXLVIII,superbowl,super bowl,DENvsSEA,SEAvsDEN,QB,pass,passing,passed,threw,throws,RB,rush,rushing,rushed,ran,runs,sack,sacks,sacked,interception,interceptions,intercepted,score,scores,scored,scoring,touchdown,touchdowns,nfl,football,ball,play,player,playing,record,endzone,zone,win,winning,winner,lose,losing,loser,yard,yards,game,games,penalty,penalties,team,teams,drive,drives,watch,tv,season,career,half,quarter,fantasy,ofense,defense\"",
+          ") AND  NOT",
+          "twitter.links exists ",
+          "AND",
+          "language.tag in \"en\""
+        ],
+        "dpu": 1.4,
+        "key": "2d2c6ebd3c98dfd6ca60189249966809"
+      },
+
+      "86ceeaa94b6daeb3557ae2b8906f8163": {
+        "question": "fans",
+        "team": "afc",
+        "csdl": [
+          "interaction.type == \"twitter\"",
+          "AND",
+          "(",
+          "interaction.content substr \"Broncos\"",
+          "OR",
+          "interaction.content contains_any \"denver\"",
+          ")",
+          "AND",
+          "interaction.content contains_any \"fan, fans\"",
+          "AND",
+          "language.tag in \"en\""
+        ],
+        "dpu": 0.4,
+        "key": "846e12e53ae689606d3b977a86e352f4"
+      },
+      "b351cccf3023f20d40dda1338e339efc": {
+        "question": "fans",
+        "team": "nfc",
+        "csdl": [
+          "interaction.type == \"twitter\"",
+          "AND",
+          "(",
+          "interaction.content substr \"Seahawk\"",
+          "OR",
+          "interaction.content contains_any \"seattle\"",
+          ")",
+          "AND",
+          "interaction.content contains_any \"fan, fans\"",
+          "AND",
+          "language.tag in \"en\""
+        ],
+        "dpu": 0.4,
+        "key": "846e12e53ae689606d3b977a86e352f4"
+      }
+    }
+  },
+
+  "DAILY_TWEET_LIMIT": 500000,
+
+  "api": {
+    "port": 4577
+  },
+
+  "redis": {
+    "connection": ["/tmp/redis.sock"]
+  },
+
+  "sentistrength": {
+    "next_available_port": 3214
+  }
+}

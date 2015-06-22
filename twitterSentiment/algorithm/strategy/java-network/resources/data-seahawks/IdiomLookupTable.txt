@@ -1,0 +1,474 @@
+act like	1	Jun-12
+acts like	1	Jun-12
+am like	1	Jul-13
+are like	1	Jul-13
+are you serious	1	New May 2012
+back foot	-3	May-13
+bang goes	-2	
+banging on	-2	
+barking up the wrong tree	-2	May-13
+basket case	-4	May-13
+bated breath	4	May-13
+be honest	-2	New Feb 2011
+be like	1	Jul-13
+bit the dust	-3	May-13
+bite the dust	-3	May-13
+bitter pill	-4	May-13
+burn the midnight oil	-2	May-13
+can’t wait	2	SB 2014
+cant wait	2	SB 2014
+chew the fat	1	May-13
+damp squib	-2	May-13
+dead and buried	-2	May-13
+dead as a	-3	May-13
+dead heat	1	May-13
+dead right	3	May-13
+dead to the world	1	May-13
+dear john letter	-4	May-13
+dont worry	2	New Feb 2011
+don't worry	2	New Feb 2011
+early bath	-3	May-13
+economical with the truth	-3	May-13
+face like thunder	-4	May-13
+face the music	-3	May-13
+famous last words	-2	May-13
+feather brained	-3	May-13
+feathers fly	-3	May-13
+feel blue	-4	May-13
+feel the pinch	-3	May-13
+feeling blue	-4	May-13
+feeling the pinch	-3	May-13
+fired up	2	SB 2014
+get bent	-3	May-13
+good deal of	1	New May 2012
+good god	-2	New Dec 2011
+great britain	1	New May 2012 Justin soso
+great deal of	1	New May 2012
+had a blast	3	May-13
+hang about	1	May-13
+hang around	1	May-13
+hang out	1	May-13
+hard done by	-3	May-13
+hat trick	3	May-13
+have a blast	3	May-13
+have a cow	-3	May-13
+he likes	2	
+hit the road	1	May-13
+hit the sack	1	May-13
+how are you	2	
+humble pie	-3	May-13
+i like	2	
+icing on the cake	4	May-13
+immaculate reception	2	SB 2014
+in a jam	-4	May-13
+is like	1	Jul-13
+it hanging	2	
+kangaroo court	-3	May-13
+last straw	-4	May-13
+long may it continue	3	Jacopo July 2013
+looking forward	2	SB 2014
+low fat	2	May-13
+make fun	-2	New Feb 2011
+money loving	-3	New Feb 2011
+no laughing matter	-3	May-13
+off colour	-3	May-13
+off the hook	3	May-13
+on a roll	3	May-13
+pearls before swine	-3	May-13
+pet peeve	-3	May-13
+pie in the sky	-2	May-13
+piece of cake	3	May-13
+pretty good	3	New May 2012
+pretty great	3	New May 2012
+pretty late	-2	July 2013
+pretty much	1	July 2013
+pretty soon	1	July 2013
+rat race	-3	May-13
+red rag	-3	May-13
+reinvent the wheel	-2	May-13
+screw up	-3	SB2014
+she likes	2	
+shock horror	-2	
+square one	-2	May-13
+sweet jesus	-2	May-13
+sweet pea	1	May-13
+sweet peas	1	May-13
+sweet potato	1	May-13
+sweet potatoes	1	May-13
+thank goodness	1	New May 2012
+under the weather	-3	May-13
+wat up	2	
+we like	2	
+weight loss	2	May-13
+whats good	2	
+what's good	2	
+whats up	2	
+what's up	2	
+wuts good	2	
+you like	2	
+
+
+seahawks beat	3	sb2014
+seahawks crush	4	sb2014
+seahawks destroy	4	sb2014
+seahawks dominate	4	sb2014
+seahawks kill	4	sb2014
+seahawks win	3	sb2014
+seahawks defeat	3	sb2014
+seahawks won	3	sb2014
+seahawks choke	-3	sb2014
+
+seahawks beats	3	sb2014
+seahawks crushes	4	sb2014
+seahawks destroys	4	sb2014
+seahawks dominates	4	sb2014
+seahawks kills	4	sb2014
+seahawks wins	3	sb2014
+seahawks defeats	3	sb2014
+seahawks chokes	-3	sb2014
+
+seahawks favored	3	sb2014
+seahawks victory	4	sb2014
+seahawks >	3	sb2014
+seahawks over	3	sb2014
+seahawks fan	3	sb2014
+seahawks nation	3	sb2014
+
+seahawks gonna beat	4	sb2014
+seahawks gonna crush	4	sb2014
+seahawks gonna destroy	4	sb2014
+seahawks gonna dominate	4	sb2014
+seahawks gonna kill	4	sb2014
+seahawks gonna win	3	sb2014
+seahawks gonna defeat	3	sb2014
+seahawks gonna shut	3	sb2014
+seahawks gonna choke	-3	sb2014
+
+seahawks are gonna beat	4	sb2014
+seahawks are gonna crush	4	sb2014
+seahawks are gonna destroy	4	sb2014
+seahawks are gonna dominate	4	sb2014
+seahawks are gonna kill	4	sb2014
+seahawks are gonna win	3	sb2014
+seahawks are gonna defeat	3	sb2014
+seahawks are gonna shut	3	sb2014
+seahawks are gonna choke	-3	sb2014
+
+seahawks are going to beat	4	sb2014
+seahawks are going to crush	4	sb2014
+seahawks are going to destroy	4	sb2014
+seahawks are going to dominate	4	sb2014
+seahawks are going to kill	4	sb2014
+seahawks are going to win	3	sb2014
+seahawks are going to defeat	3	sb2014
+seahawks are going to shut	3	sb2014
+seahawks are going to choke	-3	sb2014
+
+seahawks could beat	2	sb2014
+seahawks could crush	2	sb2014
+seahawks could destroy	2	sb2014
+seahawks could dominate	2	sb2014
+seahawks could kill	2	sb2014
+seahawks could win	2	sb2014
+seahawks could defeat	2	sb2014
+seahawks could choke	-3	sb2014
+
+seahawks will beat	4	sb2014
+seahawks will crush	4	sb2014
+seahawks will destroy	4	sb2014
+seahawks will dominate	4	sb2014
+seahawks will kill	4	sb2014
+seahawks will win	3	sb2014
+seahawks will defeat	3	sb2014
+seahawks will shut	3	sb2014
+seahawks will choke	-3	sb2014
+
+seahawks to beat	4	sb2014
+seahawks to crush	4	sb2014
+seahawks to destroy	4	sb2014
+seahawks to dominate	4	sb2014
+seahawks to kill	4	sb2014
+seahawks to win	3	sb2014
+seahawks to defeat	3	sb2014
+seahawks to shut	3	sb2014
+
+seahawks look better	2	sb2014
+seahawks looked better	2	sb2014
+
+seahawks play better	2	sb2014
+seahawks played better	2	sb2014
+
+beat by the seahawks	4	sb2014
+crushed by the seahawks	4	sb2014
+destroyed by the seahawks	4	sb2014
+dominated by the seahawks	4	sb2014
+killed by the seahawks	4	sb2014
+beat by the seahawks	4	sb2014
+lose to the seahawks	3	sb2014
+
+beat by seahawks	4	sb2014
+crushed by seahawks	4	sb2014
+destroyed by seahawks	4	sb2014
+dominated by seahawks	4	sb2014
+killed by seahawks	4	sb2014
+beat by seahawks	4	sb2014
+lose to seahawks	3	sb2014
+
+go seahawks	3	sb2014
+
+
+
+seattle beat	3	sb2014
+seattle crush	4	sb2014
+seattle destroy	4	sb2014
+seattle dominate	4	sb2014
+seattle kill	4	sb2014
+seattle win	3	sb2014
+seattle defeat	3	sb2014
+seattle choke	-3	sb2014
+
+seattle beats	3	sb2014
+seattle crushes	4	sb2014
+seattle destroys	4	sb2014
+seattle dominates	4	sb2014
+seattle kills	4	sb2014
+seattle wins	3	sb2014
+seattle defeats	3	sb2014
+seattle chokes	-3	sb2014
+
+seattle favored	3	sb2014
+seattle victory	4	sb2014
+seattle >	3	sb2014
+seattle over	3	sb2014
+
+seattle gonna beat	4	sb2014
+seattle gonna crush	4	sb2014
+seattle gonna destroy	4	sb2014
+seattle gonna dominate	4	sb2014
+seattle gonna kill	4	sb2014
+seattle gonna win	3	sb2014
+seattle gonna defeat	3	sb2014
+seattle gonna shut	3	sb2014
+seattle gonna choke	-3	sb2014
+
+seattle is gonna beat	4	sb2014
+seattle is gonna crush	4	sb2014
+seattle is gonna destroy	4	sb2014
+seattle is gonna dominate	4	sb2014
+seattle is gonna kill	4	sb2014
+seattle is gonna win	3	sb2014
+seattle is gonna defeat	3	sb2014
+seattle is gonna shut	3	sb2014
+seattle is gonna choke	-3	sb2014
+
+seattle is going to beat	4	sb2014
+seattle is going to crush	4	sb2014
+seattle is going to destroy	4	sb2014
+seattle is going to dominate	4	sb2014
+seattle is going to kill	4	sb2014
+seattle is going to win	3	sb2014
+seattle is going to defeat	3	sb2014
+seattle is going to shut	3	sb2014
+seattle is going to choke	-3	sb2014
+
+seattle's gonna beat	4	sb2014
+seattle's gonna crush	4	sb2014
+seattle's gonna destroy	4	sb2014
+seattle's gonna dominate	4	sb2014
+seattle's gonna kill	4	sb2014
+seattle's gonna win	3	sb2014
+seattle's gonna defeat	3	sb2014
+seattle's gonna shut	3	sb2014
+seattle's gonna choke	-3	sb2014
+
+seattle's going to beat	4	sb2014
+seattle's going to crush	4	sb2014
+seattle's going to destroy	4	sb2014
+seattle's going to dominate	4	sb2014
+seattle's going to kill	4	sb2014
+seattle's going to win	3	sb2014
+seattle's going to defeat	3	sb2014
+seattle's going to shut	3	sb2014
+seattle's going to choke	-3	sb2014
+
+seattle could beat	2	sb2014
+seattle could crush	2	sb2014
+seattle could destroy	2	sb2014
+seattle could dominate	2	sb2014
+seattle could kill	2	sb2014
+seattle could win	2	sb2014
+seattle could defeat	2	sb2014
+seattle could choke	-3	sb2014
+
+seattle will beat	4	sb2014
+seattle will crush	4	sb2014
+seattle will destroy	4	sb2014
+seattle will dominate	4	sb2014
+seattle will kill	4	sb2014
+seattle will win	3	sb2014
+seattle will defeat	3	sb2014
+seattle will shut	3	sb2014
+seattle will choke	-3	sb2014
+
+seattle to beat	4	sb2014
+seattle to crush	4	sb2014
+seattle to destroy	4	sb2014
+seattle to dominate	4	sb2014
+seattle to kill	4	sb2014
+seattle to win	3	sb2014
+seattle to defeat	3	sb2014
+seattle to shut	3	sb2014
+
+seattle looks better	2	sb2014
+seattle looked better	2	sb2014
+
+seattle plays better	2	sb2014
+seattle played better	2	sb2014
+
+beat by seattle	4	sb2014
+crushed by seattle	4	sb2014
+destroyed by seattle	4	sb2014
+dominated by seattle	4	sb2014
+killed by seattle	4	sb2014
+beat by seattle	4	sb2014
+lose to seattle	3	sb2014
+
+go seattle	3	sb2014
+
+money on seattle 3
+money on the seahawks 3
+money on seahawks 3
+
+
+
+
+seahawks lose	-3	sb2014
+seahawks lost	-3	sb2014
+seahawks beat	-3	sb2014
+seahawks crushed	-3	sb2014
+seahawks destroyed	-3	sb2014
+seahawks dominated	-3	sb2014
+seahawks killed	-3	sb2014
+
+seahawks get beat	-3	sb2014
+seahawks get crushed	-3	sb2014
+seahawks get destroyed	-3	sb2014
+seahawks get dominated	-3	sb2014
+seahawks get killed	-3	sb2014
+
+seahawks could get beat	-2	sb2014
+seahawks could get crushed	-2	sb2014
+seahawks could get destroyed	-2	sb2014
+seahawks could get dominated	-2	sb2014
+seahawks could get killed	-2	sb2014
+
+seahawks will get beat	-3	sb2014
+seahawks will get crushed	-3	sb2014
+seahawks will get destroyed	-3	sb2014
+seahawks will get dominated	-3	sb2014
+seahawks will get killed	-3	sb2014
+
+seahawks gonna get beat	-3	sb2014
+seahawks gonna get crushed	-3	sb2014
+seahawks gonna get destroyed	-3	sb2014
+seahawks gonna get dominated	-3	sb2014
+seahawks gonna get killed	-3	sb2014
+
+seahawks going to get beat	-3	sb2014
+seahawks going to get crushed	-3	sb2014
+seahawks going to get destroyed	-3	sb2014
+seahawks going to get dominated	-3	sb2014
+seahawks going to get killed	-3	sb2014
+ 
+seahawks won’t score	-3	sb2014
+seahawks wont score	-3	sb2014
+
+beat seahawks	-3	sb2014
+crush seahawks	-3	sb2014
+destroy seahawks	-3	sb2014
+dominate seahawks	-3	sb2014
+kill seahawks	-3	sb2014
+over seahawks	-3	sb2014
+
+beat the seahawks	-3	sb2014
+crush the seahawks	-3	sb2014
+destroy the seahawks	-3	sb2014
+dominate the seahawks	-3	sb2014
+kill the seahawks	-3	sb2014
+over the seahawks	-3	sb2014
+
+
+seattle lose	-3	sb2014
+seattle lost	-3	sb2014
+seattle beat	-3	sb2014
+seattle crushed	-3	sb2014
+seattle destroyed	-3	sb2014
+seattle dominated	-3	sb2014
+seattle killed	-3	sb2014
+
+seattle get beat	-3	sb2014
+seattle get crushed	-3	sb2014
+seattle get destroyed	-3	sb2014
+seattle get dominated	-3	sb2014
+seattle get killed	-3	sb2014
+
+seattle could get beat	-2	sb2014
+seattle could get crushed	-2	sb2014
+seattle could get destroyed	-2	sb2014
+seattle could get dominated	-2	sb2014
+seattle could get killed	-2	sb2014
+
+seattle will get beat	-3	sb2014
+seattle will get crushed	-3	sb2014
+seattle will get destroyed	-3	sb2014
+seattle will get dominated	-3	sb2014
+seattle will get killed	-3	sb2014
+
+seattle gonna get beat	-3	sb2014
+seattle gonna get crushed	-3	sb2014
+seattle gonna get destroyed	-3	sb2014
+seattle gonna get dominated	-3	sb2014
+seattle gonna get killed	-3	sb2014
+
+seattle going to get beat	-3	sb2014
+seattle going to get crushed	-3	sb2014
+seattle going to get destroyed	-3	sb2014
+seattle going to get dominated	-3	sb2014
+seattle going to get killed	-3	sb2014
+ 
+seattle is gonna get beat	-3	sb2014
+seattle is gonna get crushed	-3	sb2014
+seattle is gonna get destroyed	-3	sb2014
+seattle is gonna get dominated	-3	sb2014
+seattle is gonna get killed	-3	sb2014
+
+seattle is going to get beat	-3	sb2014
+seattle is going to get crushed	-3	sb2014
+seattle is going to get destroyed	-3	sb2014
+seattle is going to get dominated	-3	sb2014
+seattle is going to get killed	-3	sb2014
+
+seattle's gonna get beat	-3	sb2014
+seattle's gonna get crushed	-3	sb2014
+seattle's gonna get destroyed	-3	sb2014
+seattle's gonna get dominated	-3	sb2014
+seattle's gonna get killed	-3	sb2014
+
+seattle's going to get beat	-3	sb2014
+seattle's going to get crushed	-3	sb2014
+seattle's going to get destroyed	-3	sb2014
+seattle's going to get dominated	-3	sb2014
+seattle's going to get killed	-3	sb2014
+
+seattle won’t score	-3	sb2014
+seattle wont score	-3	sb2014
+
+beat seattle	-3	sb2014
+crush seattle	-3	sb2014
+destroy seattle	-3	sb2014
+dominate seattle	-3	sb2014
+kill seattle	-3	sb2014
+over seattle	-3	sb2014
+
+my nigga	3	sb2014
+class act	3	sb2014

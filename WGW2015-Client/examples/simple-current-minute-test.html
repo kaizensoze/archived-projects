@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script src="../src/moment.min.js"></script>
+    <script src="../src/jquery.min.js"></script>
+    <style>
+      table {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div><br />
+
+    official past hour: <span id="past-hour-count"></span><br /><br />
+    past minutes (A): <span id="past-minutes1"></span><br />
+    sum: <span id="past-minutes1-sum"></span><br /><br />
+
+    past minutes (B): <span id="past-minutes2"></span><br />
+    sum: <span id="past-minutes2-sum"></span><br /><br />
+
+    go with: <span id="go-with"></span><br /><br />
+
+    remaining minutes (A): <span id="remaining-minutes1"></span><br />
+    size: <span id="remaining-minutes1-size"></span><br />
+    sum: <span id="remaining-minutes1-sum"></span><br /><br />
+
+    remaining minutes (B): <span id="remaining-minutes2"></span><br />
+    size: <span id="remaining-minutes2-size"></span><br />
+    sum: <span id="remaining-minutes2-sum"></span><br /><br />
+
+    new entities: <span id="new-entities-count"></span><br />
+    current minute count: <span id="current-minute-count"></span><br /><br />
+
+    <b>Current Hour: <span id="final-sum"></span></b><br />
+    <b>Adjusted Current Hour: <span id="adjusted-final-sum"></span></b><br /><br />
+
+    <script>
+      var lastEntityId;
+      var currentMinCount = 0;
+      var lastCurrentMinCount = 0;
+      var currentMode;
+
+      function update() {
+        $('#clock').text(moment().utc().format());
+
+        // get meta data
+        $.get('http://api.massrelevance.com/sosowgw/seahawks-vast/meta.json?num_days=1&num_hours=3&num_minutes=120', function(meta) {
+          var hours = meta.activity.hourly.approved;
+          var minutes = meta.activity.minute.approved;
+
+          // past hour count
+          var pastHourCount = hours[hours.length - 1];
+          $('#past-hour-count').text(pastHourCount);
+
+          // past minutes
+          var currentMinute = moment().minute();
+          var numMinutesIntoCurrentHour = currentMinute; // massrel is always behind by a minute so don't add 1
+          var pastHourStartIndex = -(60 + numMinutesIntoCurrentHour);
+          var pastHourEndIndex = -(numMinutesIntoCurrentHour);
+          var minutesInPastHour = minutes.slice(pastHourStartIndex, pastHourEndIndex);
+          var minutesInCurHour = minutes.slice(pastHourEndIndex);
+          if (minutesInCurHour.length > 60) {
+            minutesInCurHour = [];
+          }
+          var pastHourFromMinutesCount;
+          var curHourFromMinutesCount;
+          try {
+            pastHourFromMinutesCount= minutesInPastHour.reduce(function(a, b) {
+              return a + b;
+            });
+          } catch (e) {
+            pastHourFromMinutesCount = 0;
+          }
+          //do the same for the remaining
+          try {
+            curHourFromMinutesCount= minutesInCurHour.reduce(function(a, b) {
+              return a + b;
+            });
+          } catch (e) {
+            curHourFromMinutesCount = 0;
+          }
+
+          $('#past-minutes1').text(minutesInPastHour.join(' '));
+          $('#past-minutes1-sum').text(pastHourFromMinutesCount);
+
+          $('#remaining-minutes1').text(minutesInCurHour.join(' '));
+          $('#remaining-minutes1-size').text(minutesInCurHour.length);
+          $('#remaining-minutes1-sum').text(curHourFromMinutesCount);
+
+          //now try the alternative
+          var adjustedMinutesInPastHour = minutes.slice(pastHourStartIndex+1, pastHourEndIndex+1);
+          var adjustedMinutesInCurHour = minutes.slice(pastHourEndIndex+1);
+          if (adjustedMinutesInCurHour.length > 60) {
+            adjustedMinutesInCurHour = [];
+          }
+          var adjustedPastHourFromMinutesCount;
+          var adjustedCurHourFromMinutesCount;
+          try {
+            adjustedPastHourFromMinutesCount = adjustedMinutesInPastHour.reduce(function(a, b) {
+              return a + b;
+            });
+          } catch (e) {
+            adjustedPastHourFromMinutesCount = 0;
+          }
+          try {
+            adjustedCurHourFromMinutesCount = adjustedMinutesInCurHour.reduce(function(a, b) {
+              return a + b;
+            });
+          } catch (e) {
+            adjustedCurHourFromMinutesCount = 0;
+          }
+          $('#past-minutes2').text(adjustedMinutesInPastHour.join(' '));
+          $('#past-minutes2-sum').text(adjustedPastHourFromMinutesCount);
+
+          $('#remaining-minutes2').text(adjustedMinutesInCurHour.join(' '));
+          $('#remaining-minutes2-size').text(adjustedMinutesInCurHour.length);
+          $('#remaining-minutes2-sum').text(adjustedCurHourFromMinutesCount);
+          
+          if (pastHourFromMinutesCount === pastHourCount) {
+            currentMode = 'A';
+          } else {
+            currentMode = 'B';
+          }
+          $('#go-with').text(currentMode);
+
+          var currentHourSum = curHourFromMinutesCount;
+          if (currentMode === 'B') {
+            currentHourSum = adjustedCurHourFromMinutesCount + lastCurrentMinCount;
+          }
+          $('#final-sum').text(currentHourSum);
+
+        });
+
+        // get entities
+        var newEntitiesCount = 0;
+
+        if (moment().seconds() === 0) {
+          lastCurrentMinCount = currentMinCount;
+          currentMinCount = 0;
+          $('#current-minute-count').text(currentMinCount);
+        }
+
+        var sinceId = lastEntityId ? ('&since_id=' + lastEntityId) : '';
+        var streamURL = 'http://api.massrelevance.com/sosowgw/seahawks-vast.json?reverse=1' + sinceId;
+        $.get(streamURL, function(entities) {
+          for (var i=0; i < entities.length; i++) {
+            var entity = entities[i];
+            lastEntityId = entity.entity_id;
+
+            var entityCreatedAt = entity.created_at;
+            var entityCreatedAtMomentObj = moment(entityCreatedAt);
+            var startOfMinute = moment().utc().startOf('minute');
+            if (entityCreatedAtMomentObj.isSame(startOfMinute) || entityCreatedAtMomentObj.isAfter(startOfMinute)) {
+              newEntitiesCount++;
+              currentMinCount++;
+            }
+          }
+          $('#new-entities-count').text(newEntitiesCount);
+          $('#current-minute-count').text(currentMinCount);
+
+          var adjustedHourCount = parseInt( $('#final-sum').text() ) + parseInt( $('#current-minute-count').text() );
+          $('#adjusted-final-sum').text(adjustedHourCount);
+        });
+
+        setTimeout(update, 1000);
+      }
+      update();
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+# add sosolimited user with root permissions
+adduser sosolimited
+usermod -a -G sudo sosolimited
+
+# switch to sosolimited user
+su - sosolimited
+
+# disable root login
+sudo vim /etc/ssh/sshd_config
+PermitRootLogin no
+
+sudo service ssh restart
+
+# iptables
+sudo vim /etc/iptables.firewall.rules
+(see iptables file)
+
+sudo iptables-restore < /etc/iptables.firewall.rules
+
+# have iptable rules load on reboot
+sudo vim /etc/network/if-pre-up.d/firewall
+#!/bin/sh
+/sbin/iptables-restore < /etc/iptables.firewall.rules
+
+sudo chmod +x /etc/network/if-pre-up.d/firewall
+
+# fail2ban
+sudo apt-get install -y fail2ban
+
+# git
+sudo apt-get install -y git
+
+# switch to static ip
+sudo dpkg-reconfigure resolvconf
+
+sudo vim /etc/resolvconf/resolv.conf.d/base
+domain members.linode.com
+search members.linode.com
+nameserver 97.107.133.4
+nameserver 207.192.69.4
+nameserver 207.192.69.5
+options rotate
+
+sudo resolvconf -u
+
+sudo vim /etc/network/interfaces (see network-interfaces.txt)
+
+sudo /etc/init.d/networking restart

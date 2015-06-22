@@ -1,0 +1,168 @@
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+General CSS
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+html{
+  font-size: 62.5%;     /* Brings it to 10px, since default is usually 16px. */
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+}
+h1.total {
+  font-size: 8rem;
+  line-height: 6rem;
+}
+h2.section-header {
+  font-size: 1.6rem;
+  color: black;
+}
+p {
+  font-size: 1.4rem
+}
+#stats {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 1rem;
+}
+#settings {
+  margin-top: 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 1rem;
+}
+#settings p {
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+img.team-logo {
+  width: 6.0rem;
+}
+.leading-by {
+  margin-top: 1rem;
+  line-height: 1rem;
+}
+.leading-by p:first {
+  padding-top: 3rem;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+D3 - General
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+.subtitle {
+  font-size: 1.2rem;
+  color: silver;
+  line-height: 1rem;
+}
+.bar {
+  fill: steelblue;
+}
+.bar:hover {
+  fill: red;
+}
+.axis {
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.bar.isOverlapping {
+  opacity: 0.5;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+D3 - Current hour in minutes graph
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+.hour-cutoff .line {
+  stroke: none;
+  fill: red;
+}
+.hour-cutoff .background {
+  stroke: none;
+  fill: red;
+  opacity: 0.1;
+}
+.hour-cutoff p {
+  padding: 10px;
+  background-color: rgba(220,220,220,0.7);
+  border-radius: 5px;
+}
+
+
+
+.info-block p {
+  padding: 10px;
+  background-color: rgba(220,220,220,0.7);
+  border-radius: 5px;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+NFL team colors
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+.seahawks-game, .seahawks-vast {
+  color: #71D54A;
+}
+.eagles-game {
+  /* Official color */
+  /*color: #003B48;*/
+  /* Perceptually adjusted color */
+  color: #006666;
+}
+.cardinals-game {
+  color: #870619;
+}
+.broncos-game {
+  color: #FB4F14;
+}
+.patriots-game {
+  /* grey */
+  /*color: #D6D6D6;*/
+  /* blue */
+  color: #0D254C;
+}
+.packers-game {
+  color: #FFCC00;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+svg .seahawks-game, svg .seahawks-vast {
+  fill: #71D54A;
+}
+svg .eagles-game {
+  /* Official color */
+  /*fill: #003B48;*/
+  /* Perceptually adjusted color */
+  fill: #006666;
+}
+svg .cardinals-game {
+  fill: #870619;
+}
+svg .broncos-game {
+  fill: #FB4F14;
+}
+svg .patriots-game {
+  /* grey */
+  /*fill: #D6D6D6;*/
+  /* blue */
+  fill: #0D254C;
+}
+svg .packers-game {
+  fill: #FFCC00;
+}

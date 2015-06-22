@@ -1,0 +1,216 @@
+{
+  "streams": {
+    "f8a5afa7b52d28322748fb7758134b25": {
+      "question": "passing",
+      "team": "afc",
+      "csdl": [
+        "(",
+        "twitter.text substr \"Patriots\"",
+        "AND",
+        "twitter.text contains_any \"pass, passing, quarterback, qb\"",
+        ")",
+        "OR",
+        "twitter.text contains_any \"Tom Brady\"",
+        "OR",
+        "(",
+        "twitter.text contains_any \"Brady\"",
+        "AND",
+        "twitter.text contains_any \"whosgonnawin,#12,patriots,pats,gopats,gopatriots,patriotsnation,QB,pass,passing,passed,threw,throws,RB,rush,rushing,rushed,ran,runs,sack,sacks,sacked,interception,interceptions,intercepted,score,scores,scored,scoring,touchdown,touchdowns,nfl,football,ball,play,player,playing,record,endzone,zone,win,winning,winner,lose,losing,loser,yard,yards,game,games,penalty,penalties,team,teams,drive,drives,watch,tv,season,career,half,quarter,fantasy,offense,defense\"",
+        ")",
+        "AND  NOT",
+        "twitter.links exists ",
+        "AND",
+        "twitter.user.lang in \"en\""
+      ],
+      "dpu": 1.1
+    },
+    "5cacbb1c3e0a1eab4cf50313da195a27": {
+      "question": "passing",
+      "team": "nfc",
+      "csdl": [
+        "(",
+        "twitter.text substr \"49ers\"",
+        "AND",
+        "twitter.text contains_any \"pass, passing, quarterback, qb\"",
+        ")",
+        "OR",
+        "twitter.text contains_any \"Colin Kaepernick\"",
+        "OR",
+        "(",
+        "twitter.text contains_any \"Kaepernick\"",
+        "AND",
+        "twitter.text contains_any \"whosgonnawin,49ers,niners,go49ers,goniners,49ersnation,ninersnation,QB,pass,passing,passed,threw,throws,RB,rush,rushing,rushed,ran,runs,sack,sacks,sacked,interception,interceptions,intercepted,score,scores,scored,scoring,touchdown,touchdowns,nfl,football,ball,play,player,playing,record,endzone,zone,win,winning,winner,lose,losing,loser,yard,yards,game,games,penalty,penalties,team,teams,drive,drives,watch,tv,season,career,half,quarter,fantasy,offense,defense\"",
+        ")",
+        "AND  NOT",
+        "twitter.links exists ",
+        "AND",
+        "twitter.user.lang in \"en\""
+      ],
+      "dpu": 1.2
+    },
+
+    "5e77cd6ea1847077a2df6280e2973360": {
+      "question": "rushing",
+      "team": "afc",
+      "csdl": [
+        "(",
+        "twitter.text substr \"Patriots\"",
+        "AND",
+        "twitter.text contains_any \"run, running, ran, rush, rushing, rushed, ground, rb, runningback\"",
+        ")",
+        "OR",
+        "twitter.text contains_any \"Stevan Ridley,LaGarrette Blount,Shane Vereen\"",
+        "OR",
+        "(",
+        "twitter.text contains_any \"Ridley,Blount,Vereen\"",
+        "AND",
+        "twitter.text contains_any \"whosgonnawin,pats,patriots,gopats,gopatriots,patriotsnation,QB,pass,passing,passed,threw,throws,RB,rush,rushing,rushed,ran,runs,sack,sacks,sacked,interception,interceptions,intercepted,score,scores,scored,scoring,touchdown,touchdowns,nfl,football,ball,play,player,playing,record,endzone,zone,win,winning,winner,lose,losing,loser,yard,yards,game,games,penalty,penalties,team,teams,drive,drives,watch,tv,season,career,half,quarter,fantasy,offense,defense\"",
+        ")",
+        "AND NOT",
+        "twitter.links exists ",
+        "AND",
+        "twitter.user.lang in \"en\""
+      ],
+      "dpu": 1.2
+    },
+    "0e8c2d9868ff312388f229d0e07253c6": {
+      "question": "rushing",
+      "team": "nfc",
+      "csdl": [
+        "(",
+        "twitter.text substr \"49ers\"",
+        "AND",
+        "twitter.text contains_any \"run, running, ran, rush, rushing, rushed, ground, rb, runningback\"",
+        ")",
+        "OR",
+        "twitter.text contains_any \"Frank Gore,Kendall Hunter\"",
+        "OR",
+        "(",
+        "twitter.text contains_any \"Gore\"",
+        "AND",
+        "twitter.text contains_any \"whosgonnawin,49ers,niners,go49ers,goniners,49ersnation,ninersnation,QB,pass,passing,passed,threw,throws,RB,rush,rushing,rushed,ran,runs,sack,sacks,sacked,interception,interceptions,intercepted,score,scores,scored,scoring,touchdown,touchdowns,nfl,football,ball,play,player,playing,record,endzone,zone,win,winning,winner,lose,losing,loser,yard,yards,game,games,penalty,penalties,team,teams,drive,drives,watch,tv,season,career,half,quarter,fantasy,offense,defense\"",
+        ")",
+        "AND NOT",
+        "twitter.links exists ",
+        "AND",
+        "twitter.user.lang in \"en\""
+      ],
+      "dpu": 1.2
+    },
+
+    "b35f7f55b9850cbad08c072082100983": {
+      "question": "defense",
+      "team": "afc",
+      "csdl": [
+        "(",
+        "twitter.text substr \"patriots\"",
+        "AND",
+        "twitter.text contains_any \"defense, d, sack, sacked, intercept, intercepts, intercepted, interception, interceptions, saftey, safties, corner, corners, LB, LBs, linebacker, linebackers, DB, DBs, tackle, tackling, tackles, tackled\"",
+        ")",
+        "OR",
+        "twitter.text contains_any \"Rob Ninkovich,Chandler Jones,Aqib Talib,Steve Gregory,Logan Ryan,Devin McCourty,Alfonzo Dennard\"",
+        "OR",
+        "(",
+        "twitter.text contains_any \"Ninkovich,Talib,McCourty,Bennett,Dennard\"",
+        "AND",
+        "twitter.text contains_any \"whosgonnawin,patriots,pats,gopats,gopatriots,patriotsnation,QB,pass,passing,passed,threw,throws,RB,rush,rushing,rushed,ran,runs,sack,sacks,sacked,interception,interceptions,intercepted,score,scores,scored,scoring,touchdown,touchdowns,nfl,football,ball,play,player,playing,record,endzone,zone,win,winning,winner,lose,losing,loser,yard,yards,game,games,penalty,penalties,team,teams,drive,drives,watch,tv,season,career,half,quarter,fantasy,offense,defense\"",
+        ")",
+        "AND NOT",
+        "twitter.links exists ",
+        "AND",
+        "twitter.user.lang in \"en\""
+      ],
+      "dpu": 1.5
+    },
+    "c42634f59464a07d028a18b1130e3acd": {
+      "question": "defense",
+      "team": "nfc",
+      "csdl": [
+        "(",
+        "twitter.text substr \"49ers\"",
+        "AND",
+        "twitter.text contains_any \"defense, d, sack, sacked, intercept, intercepts, intercepted, interception, interceptions, saftey, safties, corner, corners, LB, LBs, linebacker, linebackers, DB, DBs, tackle, tackling, tackles, tackled\"",
+        ")",
+        "OR",
+        "twitter.text contains_any \"Bowman,Willis,Reid,Smith\"",
+        "OR",
+        "(",
+        "twitter.text contains_any \"Sherman,Wagner,Maxwell,Bennett,Browner,Chancellor\"",
+        "AND",
+        "twitter.text contains_any \"whosgonnawin,49ers,niners,go49ers,goniners,49ersnation,ninersnation,QB,pass,passing,passed,threw,throws,RB,rush,rushing,rushed,ran,runs,sack,sacks,sacked,interception,interceptions,intercepted,score,scores,scored,scoring,touchdown,touchdowns,nfl,football,ball,play,player,playing,record,endzone,zone,win,winning,winner,lose,losing,loser,yard,yards,game,games,penalty,penalties,team,teams,drive,drives,watch,tv,season,career,half,quarter,fantasy,offense,defense\"",
+        ")",
+        "AND NOT",
+        "twitter.links exists",
+        "AND",
+        "twitter.user.lang in \"en\""
+      ],
+      "dpu": 1.5
+    },
+
+    "668c2522c7a9be51815e39cad7b990f7": {
+      "question": "fans",
+      "team": "afc",
+      "csdl": [
+        "(",
+        "twitter.text substr \"Patriots\"",
+        "OR",
+        "twitter.text contains_any \"pats, new england\"",
+        ")",
+        "AND",
+        "twitter.text contains_any \"fan, fans\"",
+        "AND  NOT",
+        "twitter.links exists ",
+        "AND",
+        "twitter.user.lang in \"en\""
+      ],
+      "dpu": 0.5
+    },
+    "853e5bc495de82f8d0677ec578f1aee2": {
+      "question": "fans",
+      "team": "nfc",
+      "csdl": [
+        "(",
+        "twitter.text substr \"49ers\"",
+        "OR",
+        "twitter.text contains_any \"niner, san fran, san francisco\"",
+        ")",
+        "AND",
+        "twitter.text contains_any \"fan, fans\"",
+        "AND  NOT",
+        "twitter.links exists ",
+        "AND",
+        "twitter.user.lang in \"en\""
+      ],
+      "dpu": 0.5
+    },
+
+    "cec95aa66f5944207f74bf93845c317d": {
+      "question": "espn",
+      "team": "afc",
+      "csdl": [
+        "twitter.text contains \"whosgonnawin\"",
+        "AND",
+        "(",
+        "twitter.text substr \"patriots\"",
+        "OR",
+        "twitter.text contains_any \"pats,new england,Tom Brady,Stevan Ridley,LaGarrette Blount,Shane Vereen,Julian Edelman,Danny Amendola,Rob Ninkovich,Chandler Jones,Aqib Talib,Steve Gregory,Logan Ryan,Devin McCourty,Alfonzo Dennard,Bill Belichick\"",
+        ")"
+      ],
+      "dpu": 0.7
+    },
+    "df4ba8ba60e93ab90147498fd1b1c795": {
+      "question": "espn",
+      "team": "nfc",
+      "csdl": [
+        "twitter.text contains \"whosgonnawin\"",
+        "AND",
+        "(",
+        "twitter.text substr \"49ers\"",
+        "OR",
+        "twitter.text contains_any \"niners,san fran,san francisco,Colin Kaepernick,Frank Gore,Anquan Boldin,Vernon Davis,NaVorro Bowman,Patrick Willis,Eric Reid,Ahmad Brooks,Tramaine Brock,Aldon Smith,Justin Smith,Jim Harbaugh\"",
+        ")"
+      ],
+      "dpu": 0.6
+    }
+  }
+}

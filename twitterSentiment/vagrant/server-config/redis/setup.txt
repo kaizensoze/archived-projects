@@ -1,0 +1,5 @@
+
+sudo vim /etc/sysctl.conf
+vm.overcommit_memory = 1
+
+# open up redis port to api machines (private ip) with iptables

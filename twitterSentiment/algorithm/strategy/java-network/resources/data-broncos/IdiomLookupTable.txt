@@ -1,0 +1,475 @@
+act like	1	Jun-12
+acts like	1	Jun-12
+am like	1	Jul-13
+are like	1	Jul-13
+are you serious	1	New May 2012
+back foot	-3	May-13
+bang goes	-2	
+banging on	-2	
+barking up the wrong tree	-2	May-13
+basket case	-4	May-13
+bated breath	4	May-13
+be honest	-2	New Feb 2011
+be like	1	Jul-13
+bit the dust	-3	May-13
+bite the dust	-3	May-13
+bitter pill	-4	May-13
+burn the midnight oil	-2	May-13
+can’t wait	2	SB 2014
+cant wait	2	SB 2014
+chew the fat	1	May-13
+damp squib	-2	May-13
+dead and buried	-2	May-13
+dead as a	-3	May-13
+dead heat	1	May-13
+dead right	3	May-13
+dead to the world	1	May-13
+dear john letter	-4	May-13
+dont worry	2	New Feb 2011
+don't worry	2	New Feb 2011
+early bath	-3	May-13
+economical with the truth	-3	May-13
+face like thunder	-4	May-13
+face the music	-3	May-13
+famous last words	-2	May-13
+feather brained	-3	May-13
+feathers fly	-3	May-13
+feel blue	-4	May-13
+feel the pinch	-3	May-13
+feeling blue	-4	May-13
+feeling the pinch	-3	May-13
+fired up	2	SB 2014
+get bent	-3	May-13
+good deal of	1	New May 2012
+good god	-2	New Dec 2011
+great britain	1	New May 2012 Justin soso
+great deal of	1	New May 2012
+had a blast	3	May-13
+hang about	1	May-13
+hang around	1	May-13
+hang out	1	May-13
+hard done by	-3	May-13
+hat trick	3	May-13
+have a blast	3	May-13
+have a cow	-3	May-13
+he likes	2	
+hit the road	1	May-13
+hit the sack	1	May-13
+how are you	2	
+humble pie	-3	May-13
+i like	2	
+icing on the cake	4	May-13
+immaculate reception	2	SB 2014
+in a jam	-4	May-13
+is like	1	Jul-13
+it hanging	2	
+kangaroo court	-3	May-13
+last straw	-4	May-13
+long may it continue	3	Jacopo July 2013
+looking forward	2	SB 2014
+low fat	2	May-13
+make fun	-2	New Feb 2011
+money loving	-3	New Feb 2011
+no laughing matter	-3	May-13
+off colour	-3	May-13
+off the hook	3	May-13
+on a roll	3	May-13
+pearls before swine	-3	May-13
+pet peeve	-3	May-13
+pie in the sky	-2	May-13
+piece of cake	3	May-13
+pretty good	3	New May 2012
+pretty great	3	New May 2012
+pretty late	-2	July 2013
+pretty much	1	July 2013
+pretty soon	1	July 2013
+rat race	-3	May-13
+red rag	-3	May-13
+reinvent the wheel	-2	May-13
+screw up	-3	SB2014
+she likes	2	
+shock horror	-2	
+square one	-2	May-13
+sweet jesus	-2	May-13
+sweet pea	1	May-13
+sweet peas	1	May-13
+sweet potato	1	May-13
+sweet potatoes	1	May-13
+thank goodness	1	New May 2012
+under the weather	-3	May-13
+wat up	2	
+we like	2	
+weight loss	2	May-13
+whats good	2	
+what's good	2	
+whats up	2	
+what's up	2	
+wuts good	2	
+you like	2	
+
+
+
+
+broncos beat	3	sb2014
+broncos crush	4	sb2014
+broncos destroy	4	sb2014
+broncos dominate	4	sb2014
+broncos kill	4	sb2014
+broncos win	3	sb2014
+broncos defeat	3	sb2014
+broncos won	3	sb2014
+broncos choke	-3	sb2014
+
+broncos beats	3	sb2014
+broncos crushes	4	sb2014
+broncos destroys	4	sb2014
+broncos dominates	4	sb2014
+broncos kills	4	sb2014
+broncos wins	3	sb2014
+broncos defeats	3	sb2014
+broncos chokes	-3	sb2014
+
+broncos favored	3	sb2014
+broncos victory	4	sb2014
+broncos >	3	sb2014
+broncos over	3	sb2014
+broncos fan	3	sb2014
+broncos nation	3	sb2014
+
+broncos gonna beat	4	sb2014
+broncos gonna crush	4	sb2014
+broncos gonna destroy	4	sb2014
+broncos gonna dominate	4	sb2014
+broncos gonna kill	4	sb2014
+broncos gonna win	3	sb2014
+broncos gonna defeat	3	sb2014
+broncos gonna shut	3	sb2014
+broncos gonna choke	-3	sb2014
+
+broncos are gonna beat	4	sb2014
+broncos are gonna crush	4	sb2014
+broncos are gonna destroy	4	sb2014
+broncos are gonna dominate	4	sb2014
+broncos are gonna kill	4	sb2014
+broncos are gonna win	3	sb2014
+broncos are gonna defeat	3	sb2014
+broncos are gonna shut	3	sb2014
+broncos are gonna choke	-3	sb2014
+
+broncos are going to beat	4	sb2014
+broncos are going to crush	4	sb2014
+broncos are going to destroy	4	sb2014
+broncos are going to dominate	4	sb2014
+broncos are going to kill	4	sb2014
+broncos are going to win	3	sb2014
+broncos are going to defeat	3	sb2014
+broncos are going to shut	3	sb2014
+broncos are going to choke	-3	sb2014
+
+broncos could beat	2	sb2014
+broncos could crush	2	sb2014
+broncos could destroy	2	sb2014
+broncos could dominate	2	sb2014
+broncos could kill	2	sb2014
+broncos could win	2	sb2014
+broncos could defeat	2	sb2014
+broncos could choke	-3	sb2014
+
+broncos will beat	4	sb2014
+broncos will crush	4	sb2014
+broncos will destroy	4	sb2014
+broncos will dominate	4	sb2014
+broncos will kill	4	sb2014
+broncos will win	3	sb2014
+broncos will defeat	3	sb2014
+broncos will shut	3	sb2014
+broncos willchoke	-3	sb2014
+
+broncos to beat	4	sb2014
+broncos to crush	4	sb2014
+broncos to destroy	4	sb2014
+broncos to dominate	4	sb2014
+broncos to kill	4	sb2014
+broncos to win	3	sb2014
+broncos to defeat	3	sb2014
+broncos to shut	3	sb2014
+
+broncos look better	2	sb2014
+broncos looked better	2	sb2014
+
+broncos play better	2	sb2014
+broncos played better	2	sb2014
+
+beat by the broncos	4	sb2014
+crushed by the broncos	4	sb2014
+destroyed by the broncos	4	sb2014
+dominated by the broncos	4	sb2014
+killed by the broncos	4	sb2014
+beat by the broncos	4	sb2014
+lose to the broncos	3	sb2014
+
+beat by broncos	4	sb2014
+crushed by broncos	4	sb2014
+destroyed by broncos	4	sb2014
+dominated by broncos	4	sb2014
+killed by broncos	4	sb2014
+beat by broncos	4	sb2014
+lose to broncos	3	sb2014
+
+go broncos	3	sb2014
+
+
+
+denver beat	3	sb2014
+denver crush	4	sb2014
+denver destroy	4	sb2014
+denver dominate	4	sb2014
+denver kill	4	sb2014
+denver win	3	sb2014
+denver defeat	3	sb2014
+denver choke	-3	sb2014
+
+denver beats	3	sb2014
+denver crushes	4	sb2014
+denver destroys	4	sb2014
+denver dominates	4	sb2014
+denver kills	4	sb2014
+denver wins	3	sb2014
+denver defeats	3	sb2014
+denver chokes	-3	sb2014
+
+denver favored	3	sb2014
+denver victory	4	sb2014
+denver >	3	sb2014
+denver over	3	sb2014
+
+denver gonna beat	4	sb2014
+denver gonna crush	4	sb2014
+denver gonna destroy	4	sb2014
+denver gonna dominate	4	sb2014
+denver gonna kill	4	sb2014
+denver gonna win	3	sb2014
+denver gonna defeat	3	sb2014
+denver gonna shut	3	sb2014
+denver gonna choke	-3	sb2014
+
+denver is gonna beat	4	sb2014
+denver is gonna crush	4	sb2014
+denver is gonna destroy	4	sb2014
+denver is gonna dominate	4	sb2014
+denver is gonna kill	4	sb2014
+denver is gonna win	3	sb2014
+denver is gonna defeat	3	sb2014
+denver is gonna shut	3	sb2014
+denver is gonna choke	-3	sb2014
+
+denver is going to beat	4	sb2014
+denver is going to crush	4	sb2014
+denver is going to destroy	4	sb2014
+denver is going to dominate	4	sb2014
+denver is going to kill	4	sb2014
+denver is going to win	3	sb2014
+denver is going to defeat	3	sb2014
+denver is going to shut	3	sb2014
+denver is going to choke	-3	sb2014
+
+denver's gonna beat	4	sb2014
+denver's gonna crush	4	sb2014
+denver's gonna destroy	4	sb2014
+denver's gonna dominate	4	sb2014
+denver's gonna kill	4	sb2014
+denver's gonna win	3	sb2014
+denver's gonna defeat	3	sb2014
+denver's gonna shut	3	sb2014
+denver's gonna choke	-3	sb2014
+
+denver's going to beat	4	sb2014
+denver's going to crush	4	sb2014
+denver's going to destroy	4	sb2014
+denver's going to dominate	4	sb2014
+denver's going to kill	4	sb2014
+denver's going to win	3	sb2014
+denver's going to defeat	3	sb2014
+denver's going to shut	3	sb2014
+denver's going to choke	-3	sb2014
+
+denver could beat	2	sb2014
+denver could crush	2	sb2014
+denver could destroy	2	sb2014
+denver could dominate	2	sb2014
+denver could kill	2	sb2014
+denver could win	2	sb2014
+denver could defeat	2	sb2014
+denver could choke	-3	sb2014
+
+denver will beat	4	sb2014
+denver will crush	4	sb2014
+denver will destroy	4	sb2014
+denver will dominate	4	sb2014
+denver will kill	4	sb2014
+denver will win	3	sb2014
+denver will defeat	3	sb2014
+denver will shut	3	sb2014
+denver will choke	-3	sb2014
+
+denver to beat	4	sb2014
+denver to crush	4	sb2014
+denver to destroy	4	sb2014
+denver to dominate	4	sb2014
+denver to kill	4	sb2014
+denver to win	3	sb2014
+denver to defeat	3	sb2014
+denver to shut	3	sb2014
+
+denver looks better	2	sb2014
+denver looked better	2	sb2014
+
+denver plays better	2	sb2014
+denver played better	2	sb2014
+
+beat by denver	4	sb2014
+crushed by denver	4	sb2014
+destroyed by denver	4	sb2014
+dominated by denver	4	sb2014
+killed by denver	4	sb2014
+beat by denver	4	sb2014
+lose to denver	3	sb2014
+
+go denver	3	sb2014
+go denverbroncos	3	sb2014
+
+money on denver 3
+money on the broncos 3
+money on broncos 3
+
+
+broncos lose	-3	sb2014
+broncos lost	-3	sb2014
+broncos beat	-3	sb2014
+broncos crushed	-3	sb2014
+broncos destroyed	-3	sb2014
+broncos dominated	-3	sb2014
+broncos killed	-3	sb2014
+
+broncos get beat	-3	sb2014
+broncos get crushed	-3	sb2014
+broncos get destroyed	-3	sb2014
+broncos get dominated	-3	sb2014
+broncos get killed	-3	sb2014
+
+broncos could get beat	-2	sb2014
+broncos could get crushed	-2	sb2014
+broncos could get destroyed	-2	sb2014
+broncos could get dominated	-2	sb2014
+broncos could get killed	-2	sb2014
+
+broncos will get beat	-3	sb2014
+broncos will get crushed	-3	sb2014
+broncos will get destroyed	-3	sb2014
+broncos will get dominated	-3	sb2014
+broncos will get killed	-3	sb2014
+
+broncos gonna get beat	-3	sb2014
+broncos gonna get crushed	-3	sb2014
+broncos gonna get destroyed	-3	sb2014
+broncos gonna get dominated	-3	sb2014
+broncos gonna get killed	-3	sb2014
+
+broncos going to get beat	-3	sb2014
+broncos going to get crushed	-3	sb2014
+broncos going to get destroyed	-3	sb2014
+broncos going to get dominated	-3	sb2014
+broncos going to get killed	-3	sb2014
+ 
+broncos won’t score	-3	sb2014
+broncos wont score	-3	sb2014
+
+beat broncos	-3	sb2014
+crush broncos	-3	sb2014
+destroy broncos	-3	sb2014
+dominate broncos	-3	sb2014
+kill broncos	-3	sb2014
+over broncos	-3	sb2014
+
+beat the broncos	-3	sb2014
+crush the broncos	-3	sb2014
+destroy the broncos	-3	sb2014
+dominate the broncos	-3	sb2014
+kill the broncos	-3	sb2014
+over the broncos	-3	sb2014
+
+
+denver lose	-3	sb2014
+denver lost	-3	sb2014
+denver beat	-3	sb2014
+denver crushed	-3	sb2014
+denver destroyed	-3	sb2014
+denver dominated	-3	sb2014
+denver killed	-3	sb2014
+
+denver get beat	-3	sb2014
+denver get crushed	-3	sb2014
+denver get destroyed	-3	sb2014
+denver get dominated	-3	sb2014
+denver get killed	-3	sb2014
+
+denver could get beat	-2	sb2014
+denver could get crushed	-2	sb2014
+denver could get destroyed	-2	sb2014
+denver could get dominated	-2	sb2014
+denver could get killed	-2	sb2014
+
+denver will get beat	-3	sb2014
+denver will get crushed	-3	sb2014
+denver will get destroyed	-3	sb2014
+denver will get dominated	-3	sb2014
+denver will get killed	-3	sb2014
+
+denver gonna get beat	-3	sb2014
+denver gonna get crushed	-3	sb2014
+denver gonna get destroyed	-3	sb2014
+denver gonna get dominated	-3	sb2014
+denver gonna get killed	-3	sb2014
+
+denver going to get beat	-3	sb2014
+denver going to get crushed	-3	sb2014
+denver going to get destroyed	-3	sb2014
+denver going to get dominated	-3	sb2014
+denver going to get killed	-3	sb2014
+
+denver is gonna get beat	-3	sb2014
+denver is gonna get crushed	-3	sb2014
+denver is gonna get destroyed	-3	sb2014
+denver is gonna get dominated	-3	sb2014
+denver is gonna get killed	-3	sb2014
+
+denver is going to get beat	-3	sb2014
+denver is going to get crushed	-3	sb2014
+denver is going to get destroyed	-3	sb2014
+denver is going to get dominated	-3	sb2014
+denver is going to get killed	-3	sb2014
+
+denver's gonna get beat	-3	sb2014
+denver's gonna get crushed	-3	sb2014
+denver's gonna get destroyed	-3	sb2014
+denver's gonna get dominated	-3	sb2014
+denver's gonna get killed	-3	sb2014
+
+denver's going to get beat	-3	sb2014
+denver's going to get crushed	-3	sb2014
+denver's going to get destroyed	-3	sb2014
+denver's going to get dominated	-3	sb2014
+denver's going to get killed	-3	sb2014
+ 
+denver won’t score	-3	sb2014
+denver wont score	-3	sb2014
+
+beat denver	-3	sb2014
+crush denver	-3	sb2014
+destroy denver	-3	sb2014
+dominate denver	-3	sb2014
+kill denver	-3	sb2014
+over denver	-3	sb2014
+
+my nigga	3	sb2014
+class act	3	sb2014

@@ -1,0 +1,4 @@
+Host wgw
+  HostName 104.237.128.23
+  User soso
+  ForwardAgent yes

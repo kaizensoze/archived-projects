@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>sosowgw test</title>
+    <script src="../sosowgw.js"></script>
+    <style>
+      .key { color: black; font-weight: bold; }
+      .string { color: green; }
+      .number { color: darkorange; }
+      .boolean { color: blue; }
+      .null { color: magenta; }
+    </style>
+  </head>
+  <body>
+    <pre id="wrapper"></pre>
+    <script>
+      var vote = {
+        team: 'seahawks',
+        location: [42.358347, -71.124869],
+        zip: '02114',
+        name: 'John Doe',
+        email: 'johndoe@gmail.com',
+        source: 'other'
+      };
+      // sosowgw.excludeDirectVotes(true);
+      sosowgw.postVote(vote);
+    
+      // window.setInterval(checkCounts, 2000);
+
+      function checkCounts() {
+        var countsJSON = sosowgw.getCounts();
+        document.getElementById('wrapper').innerHTML = syntaxHighlight(JSON.stringify(countsJSON, undefined, 3));
+      }
+
+      function syntaxHighlight(json) {
+        if (typeof json != 'string') {
+             json = JSON.stringify(json, undefined, 2);
+        }
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+            var cls = 'number';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'key';
+                } else {
+                    cls = 'string';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'boolean';
+            } else if (/null/.test(match)) {
+                cls = 'null';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+        });
+    }
+    </script>
+  </body>
+</html>

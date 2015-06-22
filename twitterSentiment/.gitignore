@@ -1,0 +1,25 @@
+
+# os x
+.DS_Store
+
+# node/npm
+#node_modules
+npm-debug.log
+
+# config
+config.json
+config_local.json
+config_live.json
+
+# log
+algorithm/log.txt
+
+# sublime
+*.sublime-project
+*.sublime-workspace
+
+# vagrant
+.vagrant
+
+# vim
+.sw*

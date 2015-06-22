@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>check chart</title>
+  <style>
+    body {
+      font: 10px sans-serif;
+      color: black;
+    }
+    h1 {
+      font-size: 2em;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: #CCC;
+      color: white;
+      padding: 10px;
+    }
+    h2 {
+      text-transform: uppercase;
+      font-size: 2em;
+      line-height: 0.3em;
+    }
+    p {
+      font-size: 1em;
+      font-weight: normal;
+    }
+    .chart_containers {
+      margin: 0 auto;
+      width: 1000px;
+    }
+    .chart_container {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .column1{
+      float: left;
+      width: 300px;
+    }
+    .column2{
+      margin-left: 50px;
+      float: left;
+      width: 300px;
+    }
+    .column3{
+      float: right;
+      width: 300px;
+    }
+    .full_row{
+      margin-top:0px;
+      float: left;
+      width: 1000px;
+    }
+    .chart{
+      margin-top:50px;
+      margin-bottom:50px;
+    }
+    /* Controls color and size of label text for ticks on axes. */
+    .axis {
+      font-size: 1em;
+      fill: #777;
+    }
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #CCC;
+      shape-rendering: crispEdges;
+    }
+    .axis-text {
+      font-size: 1em;
+    }
+    .area_afc {
+      stroke-width: 0px;
+      fill: #FF6319;
+      opacity: 0.5;
+    }
+    .area_nfc {
+      stroke-width: 0px;
+      fill: #C60C30;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="chart_containers">
+    <div class="full_row">
+      <div class="chart_container" class="chart"></div>
+    </div>
+  </div>
+
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script>
+    // datetime parse
+    // var dateParse = d3.time.format("%Y,%m,%d,%H,%M").parse;
+
+    var margin = {top: 20, right: 20, bottom: 30, left: 50},
+        width = 1000 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+    // x,y
+    var x = d3.time.scale().range([0, width]);
+    var y = d3.scale.linear().range([height, 0]);
+
+    // axes
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left");
+
+    // generate chart container
+    var chart = d3.select(".chart_container").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+    var now = new Date();
+    var nowString = now.getFullYear() + "-" + (now.getMonth()+1) + "-" + now.getDate() + "T" + now.getHours() + ":" + now.getMinutes();
+
+    var url = "http://97.107.131.209:4577/game/tweets?time=min&start=2013-12-17T20:00&end="+nowString;
+    console.log(url);
+
+    // get data
+    d3.json(url, function(error, json) {
+      var data = format_data(json);
+
+      // draw chart
+      draw_chart(data);
+    });
+
+    function format_data(data) {
+      // afc
+      data.afc.map(function(row) {
+        row.time = parseDateFormat(row.time);
+      });
+
+      // nfc
+      data.nfc.map(function(row) {
+        row.time = parseDateFormat(row.time);
+      });
+
+      return data;
+    }
+
+    function draw_chart(data) {
+      // x domain
+      x.domain([
+        Math.min(d3.min(data.afc, function(d) { return d.time; }), d3.min(data.nfc, function(d) { return d.time; })),
+        Math.max(d3.max(data.afc, function(d) { return d.time; }), d3.max(data.nfc, function(d) { return d.time; }))
+      ]);
+
+      // y domain
+      y.domain([
+        Math.min(d3.min(data.afc, function(d) { return d.value; }), d3.min(data.nfc, function(d) { return d.value; })),
+        Math.max(d3.max(data.afc, function(d) { return d.value; }), d3.max(data.nfc, function(d) { return d.value; }))
+      ]);
+
+      // draw x-axis
+      chart.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+      // draw y-axis
+      chart.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 6)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .attr("class", "axis-text")
+        .text("value");
+
+      // afc
+      var area = d3.svg.area()
+        .x(function(d) { return x(d.time); })
+        .y0(height)
+        .y1(function(d,i) {
+          return y(d.value);
+        })
+      .interpolate("basis");
+
+      chart.append("path")
+        .datum(data.afc)
+        .attr("class", "area_afc")
+        .attr("d", area);
+
+      // nfc
+      var area = d3.svg.area()
+        .x(function(d) { return x(d.time); })
+        .y0(height)
+        .y1(function(d,i) {
+          return y(d.value);
+        })
+      .interpolate("basis");
+
+      // nfc path
+      chart.append("path")
+        .datum(data.nfc)
+        .attr("class", "area_nfc")
+        .attr("d", area);
+    }
+
+    function parseDateFormat(timeArray) {
+      // remove 15min part if present
+      if (timeArray.length >= 5) {
+        timeArray.splice(4, 1);
+      }
+
+      timeArray = timeArray.filter(function(x) { return x; });
+
+      var timeFormatterParts = ["%Y", "%m", "%d", "%H", "%M"];
+      var timeFormatterString = timeFormatterParts.slice(0, timeArray.length).join(',');
+
+      var parse = d3.time.format(timeFormatterString).parse;
+
+      return parse(String(timeArray));
+    }
+  </script>
+</body>
+</html>

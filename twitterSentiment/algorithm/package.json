@@ -1,0 +1,22 @@
+{
+  "author": "",
+  "name": "api-server",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bocoup/eye.git"
+  },
+  "dependencies": {
+    "nano": "~4.2.1",
+    "datasift": "~0.3.1",
+    "q": "~0.9.7",
+    "underscore": "~1.5.2",
+    "request": "~2.27.0",
+    "winston": "~0.7.2",
+    "moment": "~2.5.0"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "./server/"
+}

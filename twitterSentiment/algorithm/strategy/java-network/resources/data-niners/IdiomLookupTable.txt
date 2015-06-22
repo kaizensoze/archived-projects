@@ -1,0 +1,806 @@
+act like	1	Jun-12
+acts like	1	Jun-12
+am like	1	Jul-13
+are like	1	Jul-13
+are you serious	1	New May 2012
+back foot	-3	May-13
+bang goes	-2	
+banging on	-2	
+barking up the wrong tree	-2	May-13
+basket case	-4	May-13
+bated breath	4	May-13
+be honest	-2	New Feb 2011
+be like	1	Jul-13
+bit the dust	-3	May-13
+bite the dust	-3	May-13
+bitter pill	-4	May-13
+burn the midnight oil	-2	May-13
+can’t wait	2	SB 2014
+cant wait	2	SB 2014
+chew the fat	1	May-13
+damp squib	-2	May-13
+dead and buried	-2	May-13
+dead as a	-3	May-13
+dead heat	1	May-13
+dead right	3	May-13
+dead to the world	1	May-13
+dear john letter	-4	May-13
+dont worry	2	New Feb 2011
+don't worry	2	New Feb 2011
+early bath	-3	May-13
+economical with the truth	-3	May-13
+face like thunder	-4	May-13
+face the music	-3	May-13
+famous last words	-2	May-13
+feather brained	-3	May-13
+feathers fly	-3	May-13
+feel blue	-4	May-13
+feel the pinch	-3	May-13
+feeling blue	-4	May-13
+feeling the pinch	-3	May-13
+fired up	2	SB 2014
+get bent	-3	May-13
+good deal of	1	New May 2012
+good god	-2	New Dec 2011
+great britain	1	New May 2012 Justin soso
+great deal of	1	New May 2012
+had a blast	3	May-13
+hang about	1	May-13
+hang around	1	May-13
+hang out	1	May-13
+hard done by	-3	May-13
+hat trick	3	May-13
+have a blast	3	May-13
+have a cow	-3	May-13
+he likes	2	
+hit the road	1	May-13
+hit the sack	1	May-13
+how are you	2	
+humble pie	-3	May-13
+i like	2	
+icing on the cake	4	May-13
+immaculate reception	2	SB 2014
+in a jam	-4	May-13
+is like	1	Jul-13
+it hanging	2	
+kangaroo court	-3	May-13
+last straw	-4	May-13
+long may it continue	3	Jacopo July 2013
+looking forward	2	SB 2014
+low fat	2	May-13
+make fun	-2	New Feb 2011
+money loving	-3	New Feb 2011
+no laughing matter	-3	May-13
+off colour	-3	May-13
+off the hook	3	May-13
+on a roll	3	May-13
+pearls before swine	-3	May-13
+pet peeve	-3	May-13
+pie in the sky	-2	May-13
+piece of cake	3	May-13
+pretty good	3	New May 2012
+pretty great	3	New May 2012
+pretty late	-2	July 2013
+pretty much	1	July 2013
+pretty soon	1	July 2013
+rat race	-3	May-13
+red rag	-3	May-13
+reinvent the wheel	-2	May-13
+screw up	-3	SB2014
+she likes	2	
+shock horror	-2	
+square one	-2	May-13
+sweet jesus	-2	May-13
+sweet pea	1	May-13
+sweet peas	1	May-13
+sweet potato	1	May-13
+sweet potatoes	1	May-13
+thank goodness	1	New May 2012
+under the weather	-3	May-13
+wat up	2	
+we like	2	
+weight loss	2	May-13
+whats good	2	
+what's good	2	
+whats up	2	
+what's up	2	
+wuts good	2	
+you like	2	
+
+
+
+49ers beat	3	sb2014
+49ers crush	4	sb2014
+49ers destroy	4	sb2014
+49ers dominate	4	sb2014
+49ers kill	4	sb2014
+49ers win	3	sb2014
+49ers defeat	3	sb2014
+
+49ers favored	3	sb2014
+49ers victory	4	sb2014
+49ers >	3	sb2014
+49ers over	3	sb2014
+
+49ers gonna beat	4	sb2014
+49ers gonna crush	4	sb2014
+49ers gonna destroy	4	sb2014
+49ers gonna dominate	4	sb2014
+49ers gonna kill	4	sb2014
+49ers gonna win	3	sb2014
+49ers gonna defeat	3	sb2014
+49ers gonna shut	3	sb2014
+
+49ers are gonna beat	4	sb2014
+49ers are gonna crush	4	sb2014
+49ers are gonna destroy	4	sb2014
+49ers are gonna dominate	4	sb2014
+49ers are gonna kill	4	sb2014
+49ers are gonna win	3	sb2014
+49ers are gonna defeat	3	sb2014
+49ers are gonna shut	3	sb2014
+
+49ers are going to beat	4	sb2014
+49ers are going to crush	4	sb2014
+49ers are going to destroy	4	sb2014
+49ers are going to dominate	4	sb2014
+49ers are going to kill	4	sb2014
+49ers are going to win	3	sb2014
+49ers are going to defeat	3	sb2014
+49ers are going to shut	3	sb2014
+
+49ers could beat	2	sb2014
+49ers could crush	2	sb2014
+49ers could destroy	2	sb2014
+49ers could dominate	2	sb2014
+49ers could kill	2	sb2014
+49ers could win	2	sb2014
+49ers could defeat	2	sb2014
+
+49ers will beat	4	sb2014
+49ers will crush	4	sb2014
+49ers will destroy	4	sb2014
+49ers will dominate	4	sb2014
+49ers will kill	4	sb2014
+49ers will win	3	sb2014
+49ers will defeat	3	sb2014
+49ers will shut	3	sb2014
+
+49ers to beat	4	sb2014
+49ers to crush	4	sb2014
+49ers to destroy	4	sb2014
+49ers to dominate	4	sb2014
+49ers to kill	4	sb2014
+49ers to win	3	sb2014
+49ers to defeat	3	sb2014
+49ers to shut	3	sb2014
+
+49ers look better	2	sb2014
+49ers looked better	2	sb2014
+
+49ers play better	2	sb2014
+49ers played better	2	sb2014
+
+beat by the 49ers	4	sb2014
+crushed by the 49ers	4	sb2014
+destroyed by the 49ers	4	sb2014
+dominated by the 49ers	4	sb2014
+killed by the 49ers	4	sb2014
+beat by the 49ers	4	sb2014
+lose to the 49ers	3	sb2014
+
+beat by 49ers	4	sb2014
+crushed by 49ers	4	sb2014
+destroyed by 49ers	4	sb2014
+dominated by 49ers	4	sb2014
+killed by 49ers	4	sb2014
+beat by 49ers	4	sb2014
+lose to 49ers	3	sb2014
+
+go 49ers	3	sb2014
+
+
+
+
+niners beat	3	sb2014
+niners crush	4	sb2014
+niners destroy	4	sb2014
+niners dominate	4	sb2014
+niners kill	4	sb2014
+niners win	3	sb2014
+niners defeat	3	sb2014
+
+niners favored	3	sb2014
+niners victory	4	sb2014
+niners >	3	sb2014
+niners over	3	sb2014
+
+niners gonna beat	4	sb2014
+niners gonna crush	4	sb2014
+niners gonna destroy	4	sb2014
+niners gonna dominate	4	sb2014
+niners gonna kill	4	sb2014
+niners gonna win	3	sb2014
+niners gonna defeat	3	sb2014
+niners gonna shut	3	sb2014
+
+niners are gonna beat	4	sb2014
+niners are gonna crush	4	sb2014
+niners are gonna destroy	4	sb2014
+niners are gonna dominate	4	sb2014
+niners are gonna kill	4	sb2014
+niners are gonna win	3	sb2014
+niners are gonna defeat	3	sb2014
+niners are gonna shut	3	sb2014
+
+niners are going to beat	4	sb2014
+niners are going to crush	4	sb2014
+niners are going to destroy	4	sb2014
+niners are going to dominate	4	sb2014
+niners are going to kill	4	sb2014
+niners are going to win	3	sb2014
+niners are going to defeat	3	sb2014
+niners are going to shut	3	sb2014
+
+niners could beat	2	sb2014
+niners could crush	2	sb2014
+niners could destroy	2	sb2014
+niners could dominate	2	sb2014
+niners could kill	2	sb2014
+niners could win	2	sb2014
+niners could defeat	2	sb2014
+
+niners will beat	4	sb2014
+niners will crush	4	sb2014
+niners will destroy	4	sb2014
+niners will dominate	4	sb2014
+niners will kill	4	sb2014
+niners will win	3	sb2014
+niners will defeat	3	sb2014
+niners will shut	3	sb2014
+
+niners to beat	4	sb2014
+niners to crush	4	sb2014
+niners to destroy	4	sb2014
+niners to dominate	4	sb2014
+niners to kill	4	sb2014
+niners to win	3	sb2014
+niners to defeat	3	sb2014
+niners to shut	3	sb2014
+
+niners look better	2	sb2014
+niners looked better	2	sb2014
+
+niners play better	2	sb2014
+niners played better	2	sb2014
+
+beat by the niners	4	sb2014
+crushed by the niners	4	sb2014
+destroyed by the niners	4	sb2014
+dominated by the niners	4	sb2014
+killed by the niners	4	sb2014
+beat by the niners	4	sb2014
+lose to the niners	3	sb2014
+
+beat by niners	4	sb2014
+crushed by niners	4	sb2014
+destroyed by niners	4	sb2014
+dominated by niners	4	sb2014
+killed by niners	4	sb2014
+beat by niners	4	sb2014
+lose to niners	3	sb2014
+
+go niners	3	sb2014
+
+
+san francisco beat	3	sb2014
+san francisco crush	4	sb2014
+san francisco destroy	4	sb2014
+san francisco dominate	4	sb2014
+san francisco kill	4	sb2014
+san francisco win	3	sb2014
+san francisco defeat	3	sb2014
+
+san francisco favored	3	sb2014
+san francisco victory	4	sb2014
+san francisco >	3	sb2014
+san francisco over	3	sb2014
+
+san francisco gonna beat	4	sb2014
+san francisco gonna crush	4	sb2014
+san francisco gonna destroy	4	sb2014
+san francisco gonna dominate	4	sb2014
+san francisco gonna kill	4	sb2014
+san francisco gonna win	3	sb2014
+san francisco gonna defeat	3	sb2014
+san francisco gonna shut	3	sb2014
+
+san francisco is gonna beat	4	sb2014
+san francisco is gonna crush	4	sb2014
+san francisco is gonna destroy	4	sb2014
+san francisco is gonna dominate	4	sb2014
+san francisco is gonna kill	4	sb2014
+san francisco is gonna win	3	sb2014
+san francisco is gonna defeat	3	sb2014
+san francisco is gonna shut	3	sb2014
+
+san francisco is going to beat	4	sb2014
+san francisco is going to crush	4	sb2014
+san francisco is going to destroy	4	sb2014
+san francisco is going to dominate	4	sb2014
+san francisco is going to kill	4	sb2014
+san francisco is going to win	3	sb2014
+san francisco is going to defeat	3	sb2014
+san francisco is going to shut	3	sb2014
+
+san francisco could beat	2	sb2014
+san francisco could crush	2	sb2014
+san francisco could destroy	2	sb2014
+san francisco could dominate	2	sb2014
+san francisco could kill	2	sb2014
+san francisco could win	2	sb2014
+san francisco could defeat	2	sb2014
+
+san francisco will beat	4	sb2014
+san francisco will crush	4	sb2014
+san francisco will destroy	4	sb2014
+san francisco will dominate	4	sb2014
+san francisco will kill	4	sb2014
+san francisco will win	3	sb2014
+san francisco will defeat	3	sb2014
+san francisco will shut	3	sb2014
+
+san francisco to beat	4	sb2014
+san francisco to crush	4	sb2014
+san francisco to destroy	4	sb2014
+san francisco to dominate	4	sb2014
+san francisco to kill	4	sb2014
+san francisco to win	3	sb2014
+san francisco to defeat	3	sb2014
+san francisco to shut	3	sb2014
+
+san francisco looks better	2	sb2014
+san francisco looked better	2	sb2014
+
+san francisco plays better	2	sb2014
+san francisco played better	2	sb2014
+
+beat by san francisco	4	sb2014
+crushed by san francisco	4	sb2014
+destroyed by san francisco	4	sb2014
+dominated by san francisco	4	sb2014
+killed by san francisco	4	sb2014
+beat by san francisco	4	sb2014
+lose to san francisco	3	sb2014
+
+go san francisco	3	sb2014
+
+
+
+san fran beat	3	sb2014
+san fran crush	4	sb2014
+san fran destroy	4	sb2014
+san fran dominate	4	sb2014
+san fran kill	4	sb2014
+san fran win	3	sb2014
+san fran defeat	3	sb2014
+
+san fran favored	3	sb2014
+san fran victory	4	sb2014
+san fran >	3	sb2014
+san fran over	3	sb2014
+
+san fran gonna beat	4	sb2014
+san fran gonna crush	4	sb2014
+san fran gonna destroy	4	sb2014
+san fran gonna dominate	4	sb2014
+san fran gonna kill	4	sb2014
+san fran gonna win	3	sb2014
+san fran gonna defeat	3	sb2014
+san fran gonna shut	3	sb2014
+
+san fran is gonna beat	4	sb2014
+san fran is gonna crush	4	sb2014
+san fran is gonna destroy	4	sb2014
+san fran is gonna dominate	4	sb2014
+san fran is gonna kill	4	sb2014
+san fran is gonna win	3	sb2014
+san fran is gonna defeat	3	sb2014
+san fran is gonna shut	3	sb2014
+
+san fran is going to beat	4	sb2014
+san fran is going to crush	4	sb2014
+san fran is going to destroy	4	sb2014
+san fran is going to dominate	4	sb2014
+san fran is going to kill	4	sb2014
+san fran is going to win	3	sb2014
+san fran is going to defeat	3	sb2014
+san fran is going to shut	3	sb2014
+
+san fran could beat	2	sb2014
+san fran could crush	2	sb2014
+san fran could destroy	2	sb2014
+san fran could dominate	2	sb2014
+san fran could kill	2	sb2014
+san fran could win	2	sb2014
+san fran could defeat	2	sb2014
+
+san fran will beat	4	sb2014
+san fran will crush	4	sb2014
+san fran will destroy	4	sb2014
+san fran will dominate	4	sb2014
+san fran will kill	4	sb2014
+san fran will win	3	sb2014
+san fran will defeat	3	sb2014
+san fran will shut	3	sb2014
+
+san fran to beat	4	sb2014
+san fran to crush	4	sb2014
+san fran to destroy	4	sb2014
+san fran to dominate	4	sb2014
+san fran to kill	4	sb2014
+san fran to win	3	sb2014
+san fran to defeat	3	sb2014
+san fran to shut	3	sb2014
+
+san fran looks better	2	sb2014
+san fran looked better	2	sb2014
+
+san fran plays better	2	sb2014
+san fran played better	2	sb2014
+
+beat by san fran	4	sb2014
+crushed by san fran	4	sb2014
+destroyed by san fran	4	sb2014
+dominated by san fran	4	sb2014
+killed by san fran	4	sb2014
+beat by san fran	4	sb2014
+lose to san fran	3	sb2014
+
+go san fran	3	sb2014
+
+
+
+sf beat	3	sb2014
+sf crush	4	sb2014
+sf destroy	4	sb2014
+sf dominate	4	sb2014
+sf kill	4	sb2014
+sf win	3	sb2014
+sf defeat	3	sb2014
+
+sf favored	3	sb2014
+sf victory	4	sb2014
+sf >	3	sb2014
+sf over	3	sb2014
+
+sf gonna beat	4	sb2014
+sf gonna crush	4	sb2014
+sf gonna destroy	4	sb2014
+sf gonna dominate	4	sb2014
+sf gonna kill	4	sb2014
+sf gonna win	3	sb2014
+sf gonna defeat	3	sb2014
+sf gonna shut	3	sb2014
+
+sf is gonna beat	4	sb2014
+sf is gonna crush	4	sb2014
+sf is gonna destroy	4	sb2014
+sf is gonna dominate	4	sb2014
+sf is gonna kill	4	sb2014
+sf is gonna win	3	sb2014
+sf is gonna defeat	3	sb2014
+sf is gonna shut	3	sb2014
+
+sf is going to beat	4	sb2014
+sf is going to crush	4	sb2014
+sf is going to destroy	4	sb2014
+sf is going to dominate	4	sb2014
+sf is going to kill	4	sb2014
+sf is going to win	3	sb2014
+sf is going to defeat	3	sb2014
+sf is going to shut	3	sb2014
+
+sf could beat	2	sb2014
+sf could crush	2	sb2014
+sf could destroy	2	sb2014
+sf could dominate	2	sb2014
+sf could kill	2	sb2014
+sf could win	2	sb2014
+sf could defeat	2	sb2014
+
+sf will beat	4	sb2014
+sf will crush	4	sb2014
+sf will destroy	4	sb2014
+sf will dominate	4	sb2014
+sf will kill	4	sb2014
+sf will win	3	sb2014
+sf will defeat	3	sb2014
+sf will shut	3	sb2014
+
+sf to beat	4	sb2014
+sf to crush	4	sb2014
+sf to destroy	4	sb2014
+sf to dominate	4	sb2014
+sf to kill	4	sb2014
+sf to win	3	sb2014
+sf to defeat	3	sb2014
+sf to shut	3	sb2014
+
+sf looks better	2	sb2014
+sf looked better	2	sb2014
+
+sf plays better	2	sb2014
+sf played better	2	sb2014
+
+beat by sf	4	sb2014
+crushed by sf	4	sb2014
+destroyed by sf	4	sb2014
+dominated by sf	4	sb2014
+killed by sf	4	sb2014
+beat by sf	4	sb2014
+lose to sf	3	sb2014
+
+go sf	3	sb2014
+
+
+49ers lose	-3	sb2014
+49ers lost	-3	sb2014
+49ers beat	-3	sb2014
+49ers crushed	-3	sb2014
+49ers destroyed	-3	sb2014
+49ers dominated	-3	sb2014
+49ers killed	-3	sb2014
+
+49ers get beat	-3	sb2014
+49ers get crushed	-3	sb2014
+49ers get destroyed	-3	sb2014
+49ers get dominated	-3	sb2014
+49ers get killed	-3	sb2014
+
+49ers could get beat	-2	sb2014
+49ers could get crushed	-2	sb2014
+49ers could get destroyed	-2	sb2014
+49ers could get dominated	-2	sb2014
+49ers could get killed	-2	sb2014
+
+49ers will get beat	-3	sb2014
+49ers will get crushed	-3	sb2014
+49ers will get destroyed	-3	sb2014
+49ers will get dominated	-3	sb2014
+49ers will get killed	-3	sb2014
+
+49ers gonna get beat	-3	sb2014
+49ers gonna get crushed	-3	sb2014
+49ers gonna get destroyed	-3	sb2014
+49ers gonna get dominated	-3	sb2014
+49ers gonna get killed	-3	sb2014
+
+49ers going to get beat	-3	sb2014
+49ers going to get crushed	-3	sb2014
+49ers going to get destroyed	-3	sb2014
+49ers going to get dominated	-3	sb2014
+49ers going to get killed	-3	sb2014
+ 
+49ers won’t score	-3	sb2014
+49ers wont score	-3	sb2014
+
+beat 49ers	-3	sb2014
+crush 49ers	-3	sb2014
+destroy 49ers	-3	sb2014
+dominate 49ers	-3	sb2014
+kill 49ers	-3	sb2014
+over 49ers	-3	sb2014
+
+beat the 49ers	-3	sb2014
+crush the 49ers	-3	sb2014
+destroy the 49ers	-3	sb2014
+dominate the 49ers	-3	sb2014
+kill the 49ers	-3	sb2014
+over the 49ers	-3	sb2014
+
+
+
+niners lose	-3	sb2014
+niners lost	-3	sb2014
+niners beat	-3	sb2014
+niners crushed	-3	sb2014
+niners destroyed	-3	sb2014
+niners dominated	-3	sb2014
+niners killed	-3	sb2014
+
+niners get beat	-3	sb2014
+niners get crushed	-3	sb2014
+niners get destroyed	-3	sb2014
+niners get dominated	-3	sb2014
+niners get killed	-3	sb2014
+
+niners could get beat	-2	sb2014
+niners could get crushed	-2	sb2014
+niners could get destroyed	-2	sb2014
+niners could get dominated	-2	sb2014
+niners could get killed	-2	sb2014
+
+niners will get beat	-3	sb2014
+niners will get crushed	-3	sb2014
+niners will get destroyed	-3	sb2014
+niners will get dominated	-3	sb2014
+niners will get killed	-3	sb2014
+
+niners gonna get beat	-3	sb2014
+niners gonna get crushed	-3	sb2014
+niners gonna get destroyed	-3	sb2014
+niners gonna get dominated	-3	sb2014
+niners gonna get killed	-3	sb2014
+
+niners going to get beat	-3	sb2014
+niners going to get crushed	-3	sb2014
+niners going to get destroyed	-3	sb2014
+niners going to get dominated	-3	sb2014
+niners going to get killed	-3	sb2014
+ 
+niners won’t score	-3	sb2014
+niners wont score	-3	sb2014
+
+beat niners	-3	sb2014
+crush niners	-3	sb2014
+destroy niners	-3	sb2014
+dominate niners	-3	sb2014
+kill niners	-3	sb2014
+over niners	-3	sb2014
+
+beat the niners	-3	sb2014
+crush the niners	-3	sb2014
+destroy the niners	-3	sb2014
+dominate the niners	-3	sb2014
+kill the niners	-3	sb2014
+over the niners	-3	sb2014
+
+
+
+san francisco lose	-3	sb2014
+san francisco lost	-3	sb2014
+san francisco beat	-3	sb2014
+san francisco crushed	-3	sb2014
+san francisco destroyed	-3	sb2014
+san francisco dominated	-3	sb2014
+san francisco killed	-3	sb2014
+
+san francisco get beat	-3	sb2014
+san francisco get crushed	-3	sb2014
+san francisco get destroyed	-3	sb2014
+san francisco get dominated	-3	sb2014
+san francisco get killed	-3	sb2014
+
+san francisco could get beat	-2	sb2014
+san francisco could get crushed	-2	sb2014
+san francisco could get destroyed	-2	sb2014
+san francisco could get dominated	-2	sb2014
+san francisco could get killed	-2	sb2014
+
+san francisco will get beat	-3	sb2014
+san francisco will get crushed	-3	sb2014
+san francisco will get destroyed	-3	sb2014
+san francisco will get dominated	-3	sb2014
+san francisco will get killed	-3	sb2014
+
+san francisco gonna get beat	-3	sb2014
+san francisco gonna get crushed	-3	sb2014
+san francisco gonna get destroyed	-3	sb2014
+san francisco gonna get dominated	-3	sb2014
+san francisco gonna get killed	-3	sb2014
+
+san francisco going to get beat	-3	sb2014
+san francisco going to get crushed	-3	sb2014
+san francisco going to get destroyed	-3	sb2014
+san francisco going to get dominated	-3	sb2014
+san francisco going to get killed	-3	sb2014
+ 
+san francisco won’t score	-3	sb2014
+san francisco wont score	-3	sb2014
+
+beat san francisco	-3	sb2014
+crush san francisco	-3	sb2014
+destroy san francisco	-3	sb2014
+dominate san francisco	-3	sb2014
+kill san francisco	-3	sb2014
+over san francisco	-3	sb2014
+
+
+
+san fran lose	-3	sb2014
+san fran lost	-3	sb2014
+san fran beat	-3	sb2014
+san fran crushed	-3	sb2014
+san fran destroyed	-3	sb2014
+san fran dominated	-3	sb2014
+san fran killed	-3	sb2014
+
+san fran get beat	-3	sb2014
+san fran get crushed	-3	sb2014
+san fran get destroyed	-3	sb2014
+san fran get dominated	-3	sb2014
+san fran get killed	-3	sb2014
+
+san fran could get beat	-2	sb2014
+san fran could get crushed	-2	sb2014
+san fran could get destroyed	-2	sb2014
+san fran could get dominated	-2	sb2014
+san fran could get killed	-2	sb2014
+
+san fran will get beat	-3	sb2014
+san fran will get crushed	-3	sb2014
+san fran will get destroyed	-3	sb2014
+san fran will get dominated	-3	sb2014
+san fran will get killed	-3	sb2014
+
+san fran gonna get beat	-3	sb2014
+san fran gonna get crushed	-3	sb2014
+san fran gonna get destroyed	-3	sb2014
+san fran gonna get dominated	-3	sb2014
+san fran gonna get killed	-3	sb2014
+
+san fran going to get beat	-3	sb2014
+san fran going to get crushed	-3	sb2014
+san fran going to get destroyed	-3	sb2014
+san fran going to get dominated	-3	sb2014
+san fran going to get killed	-3	sb2014
+ 
+san fran won’t score	-3	sb2014
+san fran wont score	-3	sb2014
+
+beat san fran	-3	sb2014
+crush san fran	-3	sb2014
+destroy san fran	-3	sb2014
+dominate san fran	-3	sb2014
+kill san fran	-3	sb2014
+over san fran	-3	sb2014
+
+
+sf lose	-3	sb2014
+sf lost	-3	sb2014
+sf beat	-3	sb2014
+sf crushed	-3	sb2014
+sf destroyed	-3	sb2014
+sf dominated	-3	sb2014
+sf killed	-3	sb2014
+
+sf get beat	-3	sb2014
+sf get crushed	-3	sb2014
+sf get destroyed	-3	sb2014
+sf get dominated	-3	sb2014
+sf get killed	-3	sb2014
+
+sf could get beat	-2	sb2014
+sf could get crushed	-2	sb2014
+sf could get destroyed	-2	sb2014
+sf could get dominated	-2	sb2014
+sf could get killed	-2	sb2014
+
+sf will get beat	-3	sb2014
+sf will get crushed	-3	sb2014
+sf will get destroyed	-3	sb2014
+sf will get dominated	-3	sb2014
+sf will get killed	-3	sb2014
+
+sf gonna get beat	-3	sb2014
+sf gonna get crushed	-3	sb2014
+sf gonna get destroyed	-3	sb2014
+sf gonna get dominated	-3	sb2014
+sf gonna get killed	-3	sb2014
+
+sf going to get beat	-3	sb2014
+sf going to get crushed	-3	sb2014
+sf going to get destroyed	-3	sb2014
+sf going to get dominated	-3	sb2014
+sf going to get killed	-3	sb2014
+ 
+sf won’t score	-3	sb2014
+sf wont score	-3	sb2014
+
+beat sf	-3	sb2014
+crush sf	-3	sb2014
+destroy sf	-3	sb2014
+dominate sf	-3	sb2014
+kill sf	-3	sb2014
+over sf	-3	sb2014

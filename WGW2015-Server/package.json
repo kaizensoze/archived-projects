@@ -1,0 +1,19 @@
+{
+  "name": "WGW2015-Server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^2.3.11",
+    "lodash": "^2.4.1",
+    "moment": "^2.8.4",
+    "moment-range": "^1.0.5",
+    "redis": "^0.12.1",
+    "restify": "^2.8.3"
+  }
+}

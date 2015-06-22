@@ -1,0 +1,24 @@
+Host dev
+  HostName 97.107.131.209
+  User sosolimited
+  ForwardAgent yes
+
+Host prod-algo
+  HostName 23.239.11.52
+  User sosolimited
+  ForwardAgent yes
+
+Host prod-nginx
+  HostName 23.239.11.71
+  User sosolimited
+  ForwardAgent yes
+
+Host prod-api1
+  HostName 23.239.12.203
+  User sosolimited
+  ForwardAgent yes
+
+Host prod-api2
+  HostName 23.239.12.213
+  User sosolimited
+  ForwardAgent yes

@@ -1,0 +1,20 @@
+{
+  "author": "",
+  "name": "util",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bocoup/eye.git"
+  },
+  "dependencies": {
+    "nano": "~4.2.0",
+    "underscore": "~1.5.2",
+    "q": "~0.9.7",
+    "moment": "~2.4.0",
+    "datasift": "~0.3.1",
+    "request": "~2.30.0"
+  },
+  "engines": {
+    "node": "*"
+  }
+}

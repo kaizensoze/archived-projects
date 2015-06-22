@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>WGW2015 Dashboard - Sosolimited : REST API</title>
+
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!-- Soso -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">WGW2015 Dashboard | Basic REST API</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li id='team-a' class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Stream A | <span class="selected-team">None</span> <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a id='none' href="#">None</a></li>
+                <li><a id='seahawks-vast' href="#">seahawks-vast</a></li>
+                <li><a id='seahawks-game' href="#">seahawks-game</a></li>
+                <li><a id='eagles-game' href="#">eagles-game</a></li>
+                <li><a id='cardinals-game' href="#">cardinals-game</a></li>
+                <li><a id='broncos-game' href="#">broncos-game</a></li>
+                <li><a id='patriots-game' href="#">patriots-game</a></li>
+                <li><a id='packers-game' href="#">packers-game</a></li>
+              </ul>
+            </li>
+            <li id='team-b' class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Stream B | <span class="selected-team">None</span> <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a id='none' href="#">None</a></li>
+                <li><a id='seahawks-vast' href="#">seahawks-vast</a></li>
+                <li><a id='seahawks-game' href="#">seahawks-game</a></li>
+                <li><a id='eagles-game' href="#">eagles-game</a></li>
+                <li><a id='cardinals-game' href="#">cardinals-game</a></li>
+                <li><a id='broncos-game' href="#">broncos-game</a></li>
+                <li><a id='patriots-game' href="#">patriots-game</a></li>
+                <li><a id='packers-game' href="#">packers-game</a></li>
+              </ul>
+            </li>
+            <!-- <li><a href="#">REST API</a></li> -->
+            <!-- <li><a href="#">Settings</a></li> -->
+            <!-- <li><a href="#">Profile</a></li> -->
+            <!-- <li><a href="#">Help</a></li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div id='settings' class='row'></div>
+      <div id='stats' class='row'>
+        <div class='col-md-12'>
+          <div id='mentions-day' class='row'>
+            <div class='col-md-12'><h2 class='section-header'>Votes Today</h2></div>
+          </div>
+        </div>
+      </div>
+      <div id='graph-container'></div>
+      <!-- <footer>
+        <p>© Sosolimited 2014</p>
+      </footer> -->
+    </div>
+
+    <!-- ================================================== -->
+    <script src="js/libs/jquery-1.11.1.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/underscore-min.js"></script>
+    <script src="js/libs/d3.min.js"></script>
+    <script src="js/libs/moment.min.js"></script>
+    <script src="js/libs/moment-timezone-with-data-2010-2020.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/pageView.js"></script>
+    <script src="js/pageController.js"></script>
+    <script src="js/graphView.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

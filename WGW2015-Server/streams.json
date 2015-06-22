@@ -1,0 +1,37 @@
+{
+  "account": "sosowgw",
+  "streams": [
+    {
+      "name": "broncos-game",
+      "team": "broncos"
+    },
+    {
+      "name": "colts-game",
+      "team": "colts"
+    },
+    {
+      "name": "cowboys-game",
+      "team": "cowboys"
+    },
+    {
+      "name": "packers-game",
+      "team": "packers"
+    },
+    {
+      "name": "panthers-game",
+      "team": "panthers"
+    },
+    {
+      "name": "patriots-game",
+      "team": "patriots"
+    },
+    {
+      "name": "ravens-game",
+      "team": "ravens"
+    },
+    {
+      "name": "seahawks-game",
+      "team": "seahawks"
+    }
+  ]
+}

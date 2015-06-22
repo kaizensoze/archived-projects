@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>sosowgw test</title>
+    <script src="../sosowgw.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    <pre id="wrapper"></pre>
+    <script>
+      window.setInterval(checkGeoEvents, 5000);
+
+      function checkGeoEvents() {
+        var geoEvents = sosowgw.getGeoEvents();
+        console.log(geoEvents);
+        // for (geoEventIndex in geoEvents) {
+        //   var geoEvent = geoEvents[geoEventIndex];
+        //   console.log(geoEvent.team, geoEvent.username, geoEvent.text);
+        // }
+      }
+    </script>
+  </body>
+</html>

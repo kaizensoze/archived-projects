@@ -1,0 +1,674 @@
+act like	1	Jun-12
+acts like	1	Jun-12
+am like	1	Jul-13
+are like	1	Jul-13
+are you serious	1	New May 2012
+back foot	-3	May-13
+bang goes	-2	
+banging on	-2	
+barking up the wrong tree	-2	May-13
+basket case	-4	May-13
+bated breath	4	May-13
+be honest	-2	New Feb 2011
+be like	1	Jul-13
+bit the dust	-3	May-13
+bite the dust	-3	May-13
+bitter pill	-4	May-13
+burn the midnight oil	-2	May-13
+can’t wait	2	SB 2014
+cant wait	2	SB 2014
+chew the fat	1	May-13
+damp squib	-2	May-13
+dead and buried	-2	May-13
+dead as a	-3	May-13
+dead heat	1	May-13
+dead right	3	May-13
+dead to the world	1	May-13
+dear john letter	-4	May-13
+dont worry	2	New Feb 2011
+don't worry	2	New Feb 2011
+early bath	-3	May-13
+economical with the truth	-3	May-13
+face like thunder	-4	May-13
+face the music	-3	May-13
+famous last words	-2	May-13
+feather brained	-3	May-13
+feathers fly	-3	May-13
+feel blue	-4	May-13
+feel the pinch	-3	May-13
+feeling blue	-4	May-13
+feeling the pinch	-3	May-13
+fired up	2	SB 2014
+get bent	-3	May-13
+good deal of	1	New May 2012
+good god	-2	New Dec 2011
+great britain	1	New May 2012 Justin soso
+great deal of	1	New May 2012
+had a blast	3	May-13
+hang about	1	May-13
+hang around	1	May-13
+hang out	1	May-13
+hard done by	-3	May-13
+hat trick	3	May-13
+have a blast	3	May-13
+have a cow	-3	May-13
+he likes	2	
+hit the road	1	May-13
+hit the sack	1	May-13
+how are you	2	
+humble pie	-3	May-13
+i like	2	
+icing on the cake	4	May-13
+immaculate reception	2	SB 2014
+in a jam	-4	May-13
+is like	1	Jul-13
+it hanging	2	
+kangaroo court	-3	May-13
+last straw	-4	May-13
+long may it continue	3	Jacopo July 2013
+looking forward	2	SB 2014
+low fat	2	May-13
+make fun	-2	New Feb 2011
+money loving	-3	New Feb 2011
+no laughing matter	-3	May-13
+off colour	-3	May-13
+off the hook	3	May-13
+on a roll	3	May-13
+pearls before swine	-3	May-13
+pet peeve	-3	May-13
+pie in the sky	-2	May-13
+piece of cake	3	May-13
+pretty good	3	New May 2012
+pretty great	3	New May 2012
+pretty late	-2	July 2013
+pretty much	1	July 2013
+pretty soon	1	July 2013
+rat race	-3	May-13
+red rag	-3	May-13
+reinvent the wheel	-2	May-13
+screw up	-3	SB2014
+she likes	2	
+shock horror	-2	
+square one	-2	May-13
+sweet jesus	-2	May-13
+sweet pea	1	May-13
+sweet peas	1	May-13
+sweet potato	1	May-13
+sweet potatoes	1	May-13
+thank goodness	1	New May 2012
+under the weather	-3	May-13
+wat up	2	
+we like	2	
+weight loss	2	May-13
+whats good	2	
+what's good	2	
+whats up	2	
+what's up	2	
+wuts good	2	
+you like	2	
+
+
+
+patriots beat	3	sb2014
+patriots crush	4	sb2014
+patriots destroy	4	sb2014
+patriots dominate	4	sb2014
+patriots kill	4	sb2014
+patriots win	3	sb2014
+patriots defeat	3	sb2014
+
+patriots favored	3	sb2014
+patriots victory	4	sb2014
+patriots >	3	sb2014
+patriots over	3	sb2014
+
+patriots gonna beat	4	sb2014
+patriots gonna crush	4	sb2014
+patriots gonna destroy	4	sb2014
+patriots gonna dominate	4	sb2014
+patriots gonna kill	4	sb2014
+patriots gonna win	3	sb2014
+patriots gonna defeat	3	sb2014
+patriots gonna shut	3	sb2014
+
+patriots are gonna beat	4	sb2014
+patriots are gonna crush	4	sb2014
+patriots are gonna destroy	4	sb2014
+patriots are gonna dominate	4	sb2014
+patriots are gonna kill	4	sb2014
+patriots are gonna win	3	sb2014
+patriots are gonna defeat	3	sb2014
+patriots are gonna shut	3	sb2014
+
+patriots are going to beat	4	sb2014
+patriots are going to crush	4	sb2014
+patriots are going to destroy	4	sb2014
+patriots are going to dominate	4	sb2014
+patriots are going to kill	4	sb2014
+patriots are going to win	3	sb2014
+patriots are going to defeat	3	sb2014
+patriots are going to shut	3	sb2014
+
+patriots could beat	2	sb2014
+patriots could crush	2	sb2014
+patriots could destroy	2	sb2014
+patriots could dominate	2	sb2014
+patriots could kill	2	sb2014
+patriots could win	2	sb2014
+patriots could defeat	2	sb2014
+
+patriots will beat	4	sb2014
+patriots will crush	4	sb2014
+patriots will destroy	4	sb2014
+patriots will dominate	4	sb2014
+patriots will kill	4	sb2014
+patriots will win	3	sb2014
+patriots will defeat	3	sb2014
+patriots will shut	3	sb2014
+
+patriots to beat	4	sb2014
+patriots to crush	4	sb2014
+patriots to destroy	4	sb2014
+patriots to dominate	4	sb2014
+patriots to kill	4	sb2014
+patriots to win	3	sb2014
+patriots to defeat	3	sb2014
+patriots to shut	3	sb2014
+
+patriots look better	2	sb2014
+patriots looked better	2	sb2014
+
+patriots play better	2	sb2014
+patriots played better	2	sb2014
+
+beat by the patriots	4	sb2014
+crushed by the patriots	4	sb2014
+destroyed by the patriots	4	sb2014
+dominated by the patriots	4	sb2014
+killed by the patriots	4	sb2014
+beat by the patriots	4	sb2014
+lose to the patriots	3	sb2014
+
+beat by patriots	4	sb2014
+crushed by patriots	4	sb2014
+destroyed by patriots	4	sb2014
+dominated by patriots	4	sb2014
+killed by patriots	4	sb2014
+beat by patriots	4	sb2014
+lose to patriots	3	sb2014
+
+go patriots	3	sb2014
+
+
+
+
+pats beat	3	sb2014
+pats crush	4	sb2014
+pats destroy	4	sb2014
+pats dominate	4	sb2014
+pats kill	4	sb2014
+pats win	3	sb2014
+pats defeat	3	sb2014
+
+pats favored	3	sb2014
+pats victory	4	sb2014
+pats >	3	sb2014
+pats over	3	sb2014
+
+pats gonna beat	4	sb2014
+pats gonna crush	4	sb2014
+pats gonna destroy	4	sb2014
+pats gonna dominate	4	sb2014
+pats gonna kill	4	sb2014
+pats gonna win	3	sb2014
+pats gonna defeat	3	sb2014
+pats gonna shut	3	sb2014
+
+pats are gonna beat	4	sb2014
+pats are gonna crush	4	sb2014
+pats are gonna destroy	4	sb2014
+pats are gonna dominate	4	sb2014
+pats are gonna kill	4	sb2014
+pats are gonna win	3	sb2014
+pats are gonna defeat	3	sb2014
+pats are gonna shut	3	sb2014
+
+pats are going to beat	4	sb2014
+pats are going to crush	4	sb2014
+pats are going to destroy	4	sb2014
+pats are going to dominate	4	sb2014
+pats are going to kill	4	sb2014
+pats are going to win	3	sb2014
+pats are going to defeat	3	sb2014
+pats are going to shut	3	sb2014
+
+pats could beat	2	sb2014
+pats could crush	2	sb2014
+pats could destroy	2	sb2014
+pats could dominate	2	sb2014
+pats could kill	2	sb2014
+pats could win	2	sb2014
+pats could defeat	2	sb2014
+
+pats will beat	4	sb2014
+pats will crush	4	sb2014
+pats will destroy	4	sb2014
+pats will dominate	4	sb2014
+pats will kill	4	sb2014
+pats will win	3	sb2014
+pats will defeat	3	sb2014
+pats will shut	3	sb2014
+
+pats to beat	4	sb2014
+pats to crush	4	sb2014
+pats to destroy	4	sb2014
+pats to dominate	4	sb2014
+pats to kill	4	sb2014
+pats to win	3	sb2014
+pats to defeat	3	sb2014
+pats to shut	3	sb2014
+
+pats look better	2	sb2014
+pats looked better	2	sb2014
+
+pats play better	2	sb2014
+pats played better	2	sb2014
+
+beat by the pats	4	sb2014
+crushed by the pats	4	sb2014
+destroyed by the pats	4	sb2014
+dominated by the pats	4	sb2014
+killed by the pats	4	sb2014
+beat by the pats	4	sb2014
+lose to the pats	3	sb2014
+
+beat by pats	4	sb2014
+crushed by pats	4	sb2014
+destroyed by pats	4	sb2014
+dominated by pats	4	sb2014
+killed by pats	4	sb2014
+beat by pats	4	sb2014
+lose to pats	3	sb2014
+
+go pats	3	sb2014
+
+
+new england beat	3	sb2014
+new england crush	4	sb2014
+new england destroy	4	sb2014
+new england dominate	4	sb2014
+new england kill	4	sb2014
+new england win	3	sb2014
+new england defeat	3	sb2014
+
+new england favored	3	sb2014
+new england victory	4	sb2014
+new england >	3	sb2014
+new england over	3	sb2014
+
+new england gonna beat	4	sb2014
+new england gonna crush	4	sb2014
+new england gonna destroy	4	sb2014
+new england gonna dominate	4	sb2014
+new england gonna kill	4	sb2014
+new england gonna win	3	sb2014
+new england gonna defeat	3	sb2014
+new england gonna shut	3	sb2014
+
+new england is gonna beat	4	sb2014
+new england is gonna crush	4	sb2014
+new england is gonna destroy	4	sb2014
+new england is gonna dominate	4	sb2014
+new england is gonna kill	4	sb2014
+new england is gonna win	3	sb2014
+new england is gonna defeat	3	sb2014
+new england is gonna shut	3	sb2014
+
+new england is going to beat	4	sb2014
+new england is going to crush	4	sb2014
+new england is going to destroy	4	sb2014
+new england is going to dominate	4	sb2014
+new england is going to kill	4	sb2014
+new england is going to win	3	sb2014
+new england is going to defeat	3	sb2014
+new england is going to shut	3	sb2014
+
+new england could beat	2	sb2014
+new england could crush	2	sb2014
+new england could destroy	2	sb2014
+new england could dominate	2	sb2014
+new england could kill	2	sb2014
+new england could win	2	sb2014
+new england could defeat	2	sb2014
+
+new england will beat	4	sb2014
+new england will crush	4	sb2014
+new england will destroy	4	sb2014
+new england will dominate	4	sb2014
+new england will kill	4	sb2014
+new england will win	3	sb2014
+new england will defeat	3	sb2014
+new england will shut	3	sb2014
+
+new england to beat	4	sb2014
+new england to crush	4	sb2014
+new england to destroy	4	sb2014
+new england to dominate	4	sb2014
+new england to kill	4	sb2014
+new england to win	3	sb2014
+new england to defeat	3	sb2014
+new england to shut	3	sb2014
+
+new england looks better	2	sb2014
+new england looked better	2	sb2014
+
+new england plays better	2	sb2014
+new england played better	2	sb2014
+
+beat by new england	4	sb2014
+crushed by new england	4	sb2014
+destroyed by new england	4	sb2014
+dominated by new england	4	sb2014
+killed by new england	4	sb2014
+beat by new england	4	sb2014
+lose to new england	3	sb2014
+
+go new england	3	sb2014
+
+
+
+
+ne beat	3	sb2014
+ne crush	4	sb2014
+ne destroy	4	sb2014
+ne dominate	4	sb2014
+ne kill	4	sb2014
+ne win	3	sb2014
+ne defeat	3	sb2014
+
+ne favored	3	sb2014
+ne victory	4	sb2014
+ne >	3	sb2014
+ne over	3	sb2014
+
+ne gonna beat	4	sb2014
+ne gonna crush	4	sb2014
+ne gonna destroy	4	sb2014
+ne gonna dominate	4	sb2014
+ne gonna kill	4	sb2014
+ne gonna win	3	sb2014
+ne gonna defeat	3	sb2014
+ne gonna shut	3	sb2014
+
+ne is gonna beat	4	sb2014
+ne is gonna crush	4	sb2014
+ne is gonna destroy	4	sb2014
+ne is gonna dominate	4	sb2014
+ne is gonna kill	4	sb2014
+ne is gonna win	3	sb2014
+ne is gonna defeat	3	sb2014
+ne is gonna shut	3	sb2014
+
+ne is going to beat	4	sb2014
+ne is going to crush	4	sb2014
+ne is going to destroy	4	sb2014
+ne is going to dominate	4	sb2014
+ne is going to kill	4	sb2014
+ne is going to win	3	sb2014
+ne is going to defeat	3	sb2014
+ne is going to shut	3	sb2014
+
+ne could beat	2	sb2014
+ne could crush	2	sb2014
+ne could destroy	2	sb2014
+ne could dominate	2	sb2014
+ne could kill	2	sb2014
+ne could win	2	sb2014
+ne could defeat	2	sb2014
+
+ne will beat	4	sb2014
+ne will crush	4	sb2014
+ne will destroy	4	sb2014
+ne will dominate	4	sb2014
+ne will kill	4	sb2014
+ne will win	3	sb2014
+ne will defeat	3	sb2014
+ne will shut	3	sb2014
+
+ne to beat	4	sb2014
+ne to crush	4	sb2014
+ne to destroy	4	sb2014
+ne to dominate	4	sb2014
+ne to kill	4	sb2014
+ne to win	3	sb2014
+ne to defeat	3	sb2014
+ne to shut	3	sb2014
+
+ne looks better	2	sb2014
+ne looked better	2	sb2014
+
+ne plays better	2	sb2014
+ne played better	2	sb2014
+
+beat by ne	4	sb2014
+crushed by ne	4	sb2014
+destroyed by ne	4	sb2014
+dominated by ne	4	sb2014
+killed by ne	4	sb2014
+beat by ne	4	sb2014
+lose to ne	3	sb2014
+
+go ne	3	sb2014
+
+
+patriots lose	-3	sb2014
+patriots lost	-3	sb2014
+patriots beat	-3	sb2014
+patriots crushed	-3	sb2014
+patriots destroyed	-3	sb2014
+patriots dominated	-3	sb2014
+patriots killed	-3	sb2014
+
+patriots get beat	-3	sb2014
+patriots get crushed	-3	sb2014
+patriots get destroyed	-3	sb2014
+patriots get dominated	-3	sb2014
+patriots get killed	-3	sb2014
+
+patriots could get beat	-2	sb2014
+patriots could get crushed	-2	sb2014
+patriots could get destroyed	-2	sb2014
+patriots could get dominated	-2	sb2014
+patriots could get killed	-2	sb2014
+
+patriots will get beat	-3	sb2014
+patriots will get crushed	-3	sb2014
+patriots will get destroyed	-3	sb2014
+patriots will get dominated	-3	sb2014
+patriots will get killed	-3	sb2014
+
+patriots gonna get beat	-3	sb2014
+patriots gonna get crushed	-3	sb2014
+patriots gonna get destroyed	-3	sb2014
+patriots gonna get dominated	-3	sb2014
+patriots gonna get killed	-3	sb2014
+
+patriots going to get beat	-3	sb2014
+patriots going to get crushed	-3	sb2014
+patriots going to get destroyed	-3	sb2014
+patriots going to get dominated	-3	sb2014
+patriots going to get killed	-3	sb2014
+ 
+patriots won’t score	-3	sb2014
+patriots wont score	-3	sb2014
+
+beat patriots	-3	sb2014
+crush patriots	-3	sb2014
+destroy patriots	-3	sb2014
+dominate patriots	-3	sb2014
+kill patriots	-3	sb2014
+over patriots	-3	sb2014
+
+beat the patriots	-3	sb2014
+crush the patriots	-3	sb2014
+destroy the patriots	-3	sb2014
+dominate the patriots	-3	sb2014
+kill the patriots	-3	sb2014
+over the patriots	-3	sb2014
+
+
+
+pats lose	-3	sb2014
+pats lost	-3	sb2014
+pats beat	-3	sb2014
+pats crushed	-3	sb2014
+pats destroyed	-3	sb2014
+pats dominated	-3	sb2014
+pats killed	-3	sb2014
+
+pats get beat	-3	sb2014
+pats get crushed	-3	sb2014
+pats get destroyed	-3	sb2014
+pats get dominated	-3	sb2014
+pats get killed	-3	sb2014
+
+pats could get beat	-2	sb2014
+pats could get crushed	-2	sb2014
+pats could get destroyed	-2	sb2014
+pats could get dominated	-2	sb2014
+pats could get killed	-2	sb2014
+
+pats will get beat	-3	sb2014
+pats will get crushed	-3	sb2014
+pats will get destroyed	-3	sb2014
+pats will get dominated	-3	sb2014
+pats will get killed	-3	sb2014
+
+pats gonna get beat	-3	sb2014
+pats gonna get crushed	-3	sb2014
+pats gonna get destroyed	-3	sb2014
+pats gonna get dominated	-3	sb2014
+pats gonna get killed	-3	sb2014
+
+pats going to get beat	-3	sb2014
+pats going to get crushed	-3	sb2014
+pats going to get destroyed	-3	sb2014
+pats going to get dominated	-3	sb2014
+pats going to get killed	-3	sb2014
+ 
+pats won’t score	-3	sb2014
+pats wont score	-3	sb2014
+
+beat pats	-3	sb2014
+crush pats	-3	sb2014
+destroy pats	-3	sb2014
+dominate pats	-3	sb2014
+kill pats	-3	sb2014
+over pats	-3	sb2014
+
+beat the pats	-3	sb2014
+crush the pats	-3	sb2014
+destroy the pats	-3	sb2014
+dominate the pats	-3	sb2014
+kill the pats	-3	sb2014
+over the pats	-3	sb2014
+
+
+
+new england lose	-3	sb2014
+new england lost	-3	sb2014
+new england beat	-3	sb2014
+new england crushed	-3	sb2014
+new england destroyed	-3	sb2014
+new england dominated	-3	sb2014
+new england killed	-3	sb2014
+
+new england get beat	-3	sb2014
+new england get crushed	-3	sb2014
+new england get destroyed	-3	sb2014
+new england get dominated	-3	sb2014
+new england get killed	-3	sb2014
+
+new england could get beat	-2	sb2014
+new england could get crushed	-2	sb2014
+new england could get destroyed	-2	sb2014
+new england could get dominated	-2	sb2014
+new england could get killed	-2	sb2014
+
+new england will get beat	-3	sb2014
+new england will get crushed	-3	sb2014
+new england will get destroyed	-3	sb2014
+new england will get dominated	-3	sb2014
+new england will get killed	-3	sb2014
+
+new england gonna get beat	-3	sb2014
+new england gonna get crushed	-3	sb2014
+new england gonna get destroyed	-3	sb2014
+new england gonna get dominated	-3	sb2014
+new england gonna get killed	-3	sb2014
+
+new england going to get beat	-3	sb2014
+new england going to get crushed	-3	sb2014
+new england going to get destroyed	-3	sb2014
+new england going to get dominated	-3	sb2014
+new england going to get killed	-3	sb2014
+ 
+new england won’t score	-3	sb2014
+new england wont score	-3	sb2014
+
+beat new england	-3	sb2014
+crush new england	-3	sb2014
+destroy new england	-3	sb2014
+dominate new england	-3	sb2014
+kill new england	-3	sb2014
+over new england	-3	sb2014
+
+
+
+ne lose	-3	sb2014
+ne lost	-3	sb2014
+ne beat	-3	sb2014
+ne crushed	-3	sb2014
+ne destroyed	-3	sb2014
+ne dominated	-3	sb2014
+ne killed	-3	sb2014
+
+ne get beat	-3	sb2014
+ne get crushed	-3	sb2014
+ne get destroyed	-3	sb2014
+ne get dominated	-3	sb2014
+ne get killed	-3	sb2014
+
+ne could get beat	-2	sb2014
+ne could get crushed	-2	sb2014
+ne could get destroyed	-2	sb2014
+ne could get dominated	-2	sb2014
+ne could get killed	-2	sb2014
+
+ne will get beat	-3	sb2014
+ne will get crushed	-3	sb2014
+ne will get destroyed	-3	sb2014
+ne will get dominated	-3	sb2014
+ne will get killed	-3	sb2014
+
+ne gonna get beat	-3	sb2014
+ne gonna get crushed	-3	sb2014
+ne gonna get destroyed	-3	sb2014
+ne gonna get dominated	-3	sb2014
+ne gonna get killed	-3	sb2014
+
+ne going to get beat	-3	sb2014
+ne going to get crushed	-3	sb2014
+ne going to get destroyed	-3	sb2014
+ne going to get dominated	-3	sb2014
+ne going to get killed	-3	sb2014
+ 
+ne won’t score	-3	sb2014
+ne wont score	-3	sb2014
+
+beat ne	-3	sb2014
+crush ne	-3	sb2014
+destroy ne	-3	sb2014
+dominate ne	-3	sb2014
+kill ne	-3	sb2014
+over ne	-3	sb2014

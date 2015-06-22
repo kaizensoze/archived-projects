@@ -1,0 +1,48 @@
+
+# NOTE: This is just a template and not to be copy-pasted directly.
+#       Replace <server ip> and <password>, and only include checks
+#       for processes running on the given server.
+
+set daemon 30
+
+set logfile /var/log/monit.log
+set idfile /var/lib/monit/id
+set statefile /var/lib/monit/state
+
+set mailserver localhost
+set alert wgw@sosolimited.com
+
+set eventqueue
+  basedir /var/lib/monit/events
+  slots 1000
+
+set mmonit http://soso:<password>@192.168.187.202:8080/collector
+
+set httpd port 2812 and use address <server ip>
+  allow 192.168.187.202
+  allow soso:<password>
+
+check system wgw-prod-api1
+  if loadavg (1min) > 4 then alert
+  if loadavg (5min) > 2 then alert
+  if memory usage > 75% then alert
+  if swap usage > 25% then alert
+  if cpu usage (user) > 70% then alert
+  if cpu usage (system) > 30% then alert
+  if cpu usage (wait) > 20% then alert
+
+# algo
+check process algo
+  matching "node algo"
+
+# api
+check process api
+  matching "node api"
+
+# nginx
+check process nginx with pidfile /var/run/nginx.pid
+  start program = "/etc/init.d/nginx start"
+  stop program  = "/etc/init.d/nginx stop"
+  group www-data
+
+include /etc/monit/conf.d/*

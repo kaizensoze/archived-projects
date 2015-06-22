@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Massrel test</title>
+    <script src="../src/massrel/massrel.min.js"></script>
+  </head>
+  <body>
+    <div id="tweets" style="height: 200px; overflow: scroll; padding-left: 10px; margin-bottom: 15px; border: 1px solid black;"></div>
+
+    <table id="states" style="float: left; margin-right: 15px;">
+      <thead>
+        <tr>
+          <th>States</th>
+        </tr>
+      </thead>
+    </table>
+
+    <table id="counts" style="float: left; margin-right: 15px;">
+      <thead>
+        <tr>
+          <th>Approved count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td id="total-count"></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table id="compare" style="float: left; margin-right: 15px;">
+      <thead>
+        <tr>
+          <th>Compare</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>seahawks-vast</td>
+          <td id="seahawks-vast-count"></td>
+        </tr>
+        <tr>
+          <td>seavssf-seattle</td>
+          <td id="seavssf-seattle-count"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table id="top-hashtags" style="float: left; margin-right: 15px;">
+      <thead>
+        <tr>
+          <th>Top hashtags</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <!-- <table id="top-urls" style="float: left; margin-right: 15px; max-width: 500px;">
+      <thead>
+        <tr>
+          <th>Top urls</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table> -->
+
+    <table id="geo" style="float: left; margin-right: 15px; max-width: 500px;">
+      <thead>
+        <tr>
+          <th>Geo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>geo</td>
+          <td id="geo-count">0</td>
+        </tr>
+        <tr>
+          <td>coordinates</td>
+          <td id="coordinates-count">0</td>
+        </tr>
+        <tr>
+          <td>place</td>
+          <td id="place-count">0</td>
+        </tr>
+        <tr>
+          <td>geo_hint</td>
+          <td id="geo-hint-count">0</td>
+        </tr>
+        <tr>
+          <td>total</td>
+          <td id="geo-total-count">0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      // state table
+      var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+      var tblBody = document.createElement('tbody');
+      for (var i = 0; i < states.length; i++) {
+        var state = states[i];
+
+        var row = document.createElement('tr');
+
+        var cell = document.createElement('td');
+        cell.innerHTML = state;
+        row.appendChild(cell);
+
+        cell = document.createElement('td');
+        cell.id = state + '-count';
+        cell.innerHTML = '0';
+        row.appendChild(cell);
+
+        tblBody.appendChild(row);
+      }
+
+      var statesTable = document.getElementById('states');
+      statesTable.appendChild(tblBody);
+
+      var limit = 200;
+      var pollFrequency = 0;
+      var displayTweetFrequency = 100;
+
+      var stream = new massrel.Stream('sosowgw', 'seahawks-vast');
+
+      var count = 0;
+
+      // poller queue
+      var poller = stream.poller({frequency: pollFrequency, limit: limit, geo_hint: 1});
+      var queue = new massrel.PollerQueue(poller);
+      poller.start();
+      queue.next(function(tweet, step) {
+        count++;
+
+        // geo
+        if (tweet.geo) {
+          geoId = 'geo';
+          var geoCountCell = document.getElementById('geo-count');
+          var geoCountVal = parseInt(geoCountCell.innerHTML);
+          geoCountVal++;
+          geoCountCell.innerHTML = geoCountVal;
+        }
+        if (tweet.coordinates) {
+          var geoCountCell = document.getElementById('coordinates-count');
+          var geoCountVal = parseInt(geoCountCell.innerHTML);
+          geoCountVal++;
+          geoCountCell.innerHTML = geoCountVal;
+        }
+        if (tweet.place) {
+          var geoCountCell = document.getElementById('place-count');
+          var geoCountVal = parseInt(geoCountCell.innerHTML);
+          geoCountVal++;
+          geoCountCell.innerHTML = geoCountVal;
+        }
+        if (tweet.geo_hint) {
+          var geoCountCell = document.getElementById('geo-hint-count');
+          var geoCountVal = parseInt(geoCountCell.innerHTML);
+          geoCountVal++;
+          geoCountCell.innerHTML = geoCountVal;
+        }
+
+        var geoTotalCountCell = document.getElementById('geo-total-count');
+        geoTotalCountCell.innerHTML = count;
+
+        var userLocation = tweet.user.location;
+        // console.log(userLocation);
+
+        for (var i = 0; i < states.length; i++) {
+          var state = states[i];
+          if (userLocation.toLowerCase().indexOf(state.toLowerCase()) !== -1) {
+            // console.log(state);
+            var stateCountCell = document.getElementById(state+'-count');
+            var stateCountVal = parseInt(stateCountCell.innerHTML);
+            stateCountVal++;
+            stateCountCell.innerHTML = stateCountVal;
+          }
+        }
+        // console.log();
+
+        var container = document.getElementById('tweets');
+
+        var ptag = document.createElement('p');
+        ptag.innerHTML = tweet.text;
+        container.insertBefore(ptag, container.firstChild);
+        setTimeout(step, displayTweetFrequency);
+      });
+
+      // meta poller
+      var metaPoller = stream.metaPoller({frequency: pollFrequency, limit: limit});
+      metaPoller.start();
+      metaPoller.each(function(meta) {
+        var totalCount = meta.count.approved;
+        var totalCountCell = document.getElementById('total-count');
+        totalCountCell.innerHTML = totalCount;
+      });
+
+      // compare
+      var compare = new massrel.Compare(['sosowgw/seahawks-vast', 'sosowgw/seavssf-seattle']);
+      var comparePoller = compare.poller({frequency: pollFrequency, limit: limit});
+      comparePoller.start();
+      comparePoller.each(function(x) {
+        var streams = x.streams;
+        for (var i = 0; i < streams.length; i++) {
+          var stream = streams[i];
+          var el = document.getElementById(stream.name+'-count');
+          el.innerHTML = stream.count.approved;
+        }
+      });
+
+      // top things poller (hashtags)
+      var topThingsPoller = stream.topThingsPoller({frequency: pollFrequency, limit: limit, thing: 'hashtags'});
+      topThingsPoller.start();
+      topThingsPoller.each(function(x) {
+        var data = x.data;
+        var things = data[0].things;
+
+        var newTbody = document.createElement('tbody');
+
+        for (var i = 0; i < things.length; i++) {
+          var thing = things[i];
+
+          var row = document.createElement('tr');
+
+          var cell = document.createElement('td');
+          cell.innerHTML = thing.thing;
+          row.appendChild(cell);
+
+          newTbody.appendChild(row);
+        }
+
+        var oldTbody = document.getElementById('top-hashtags').tBodies[0];
+        oldTbody.parentNode.replaceChild(newTbody, oldTbody);
+      });
+
+      // top things poller (urls)
+      var topThingsPoller = stream.topThingsPoller({frequency: pollFrequency, limit: limit, thing: 'urls'});
+      topThingsPoller.start();
+      topThingsPoller.each(function(x) {
+        var data = x.data;
+        var things = data[0].things;
+
+        var newTbody = document.createElement('tbody');
+
+        for (var i = 0; i < things.length; i++) {
+          var thing = things[i];
+
+          var row = document.createElement('tr');
+
+          var cell = document.createElement('td');
+          cell.innerHTML = '<a href="'+thing.thing+'">'+thing.thing+'</a>';
+          row.appendChild(cell);
+
+          newTbody.appendChild(row);
+        }
+
+        // var oldTbody = document.getElementById('top-urls').tBodies[0];
+        // oldTbody.parentNode.replaceChild(newTbody, oldTbody);
+      });
+    </script>
+  </body>
+</html>

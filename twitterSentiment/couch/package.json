@@ -1,0 +1,17 @@
+{
+  "author": "",
+  "name": "config",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bocoup/eye.git"
+  },
+  "dependencies": {
+    "couchapp": "~0.10.0"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

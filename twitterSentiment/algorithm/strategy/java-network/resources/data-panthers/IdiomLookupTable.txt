@@ -1,0 +1,391 @@
+act like	1	Jun-12
+acts like	1	Jun-12
+am like	1	Jul-13
+are like	1	Jul-13
+are you serious	1	New May 2012
+back foot	-3	May-13
+bang goes	-2	
+banging on	-2	
+barking up the wrong tree	-2	May-13
+basket case	-4	May-13
+bated breath	4	May-13
+be honest	-2	New Feb 2011
+be like	1	Jul-13
+bit the dust	-3	May-13
+bite the dust	-3	May-13
+bitter pill	-4	May-13
+burn the midnight oil	-2	May-13
+can’t wait	2	SB 2014
+cant wait	2	SB 2014
+chew the fat	1	May-13
+damp squib	-2	May-13
+dead and buried	-2	May-13
+dead as a	-3	May-13
+dead heat	1	May-13
+dead right	3	May-13
+dead to the world	1	May-13
+dear john letter	-4	May-13
+dont worry	2	New Feb 2011
+don't worry	2	New Feb 2011
+early bath	-3	May-13
+economical with the truth	-3	May-13
+face like thunder	-4	May-13
+face the music	-3	May-13
+famous last words	-2	May-13
+feather brained	-3	May-13
+feathers fly	-3	May-13
+feel blue	-4	May-13
+feel the pinch	-3	May-13
+feeling blue	-4	May-13
+feeling the pinch	-3	May-13
+fired up	2	SB 2014
+get bent	-3	May-13
+good deal of	1	New May 2012
+good god	-2	New Dec 2011
+great britain	1	New May 2012 Justin soso
+great deal of	1	New May 2012
+had a blast	3	May-13
+hang about	1	May-13
+hang around	1	May-13
+hang out	1	May-13
+hard done by	-3	May-13
+hat trick	3	May-13
+have a blast	3	May-13
+have a cow	-3	May-13
+he likes	2	
+hit the road	1	May-13
+hit the sack	1	May-13
+how are you	2	
+humble pie	-3	May-13
+i like	2	
+icing on the cake	4	May-13
+immaculate reception	2	SB 2014
+in a jam	-4	May-13
+is like	1	Jul-13
+it hanging	2	
+kangaroo court	-3	May-13
+last straw	-4	May-13
+long may it continue	3	Jacopo July 2013
+looking forward	2	SB 2014
+low fat	2	May-13
+make fun	-2	New Feb 2011
+money loving	-3	New Feb 2011
+no laughing matter	-3	May-13
+off colour	-3	May-13
+off the hook	3	May-13
+on a roll	3	May-13
+pearls before swine	-3	May-13
+pet peeve	-3	May-13
+pie in the sky	-2	May-13
+piece of cake	3	May-13
+pretty good	3	New May 2012
+pretty great	3	New May 2012
+pretty late	-2	July 2013
+pretty much	1	July 2013
+pretty soon	1	July 2013
+rat race	-3	May-13
+red rag	-3	May-13
+reinvent the wheel	-2	May-13
+screw up	-3	SB2014
+she likes	2	
+shock horror	-2	
+square one	-2	May-13
+sweet jesus	-2	May-13
+sweet pea	1	May-13
+sweet peas	1	May-13
+sweet potato	1	May-13
+sweet potatoes	1	May-13
+thank goodness	1	New May 2012
+under the weather	-3	May-13
+wat up	2	
+we like	2	
+weight loss	2	May-13
+whats good	2	
+what's good	2	
+whats up	2	
+what's up	2	
+wuts good	2	
+you like	2	
+
+
+
+panthers beat	3	sb2014
+panthers crush	4	sb2014
+panthers destroy	4	sb2014
+panthers dominate	4	sb2014
+panthers kill	4	sb2014
+panthers win	3	sb2014
+panthers defeat	3	sb2014
+
+panthers favored	3	sb2014
+panthers victory	4	sb2014
+panthers >	3	sb2014
+panthers over	3	sb2014
+
+panthers gonna beat	4	sb2014
+panthers gonna crush	4	sb2014
+panthers gonna destroy	4	sb2014
+panthers gonna dominate	4	sb2014
+panthers gonna kill	4	sb2014
+panthers gonna win	3	sb2014
+panthers gonna defeat	3	sb2014
+panthers gonna shut	3	sb2014
+
+panthers are gonna beat	4	sb2014
+panthers are gonna crush	4	sb2014
+panthers are gonna destroy	4	sb2014
+panthers are gonna dominate	4	sb2014
+panthers are gonna kill	4	sb2014
+panthers are gonna win	3	sb2014
+panthers are gonna defeat	3	sb2014
+panthers are gonna shut	3	sb2014
+
+panthers are going to beat	4	sb2014
+panthers are going to crush	4	sb2014
+panthers are going to destroy	4	sb2014
+panthers are going to dominate	4	sb2014
+panthers are going to kill	4	sb2014
+panthers are going to win	3	sb2014
+panthers are going to defeat	3	sb2014
+panthers are going to shut	3	sb2014
+
+panthers could beat	2	sb2014
+panthers could crush	2	sb2014
+panthers could destroy	2	sb2014
+panthers could dominate	2	sb2014
+panthers could kill	2	sb2014
+panthers could win	2	sb2014
+panthers could defeat	2	sb2014
+
+panthers will beat	4	sb2014
+panthers will crush	4	sb2014
+panthers will destroy	4	sb2014
+panthers will dominate	4	sb2014
+panthers will kill	4	sb2014
+panthers will win	3	sb2014
+panthers will defeat	3	sb2014
+panthers will shut	3	sb2014
+
+panthers to beat	4	sb2014
+panthers to crush	4	sb2014
+panthers to destroy	4	sb2014
+panthers to dominate	4	sb2014
+panthers to kill	4	sb2014
+panthers to win	3	sb2014
+panthers to defeat	3	sb2014
+panthers to shut	3	sb2014
+
+panthers look better	2	sb2014
+panthers looked better	2	sb2014
+
+panthers play better	2	sb2014
+panthers played better	2	sb2014
+
+beat by the panthers	4	sb2014
+crushed by the panthers	4	sb2014
+destroyed by the panthers	4	sb2014
+dominated by the panthers	4	sb2014
+killed by the panthers	4	sb2014
+beat by the panthers	4	sb2014
+lose to the panthers	3	sb2014
+
+beat by panthers	4	sb2014
+crushed by panthers	4	sb2014
+destroyed by panthers	4	sb2014
+dominated by panthers	4	sb2014
+killed by panthers	4	sb2014
+beat by panthers	4	sb2014
+lose to panthers	3	sb2014
+
+go panthers	3	sb2014
+
+
+
+carolina beat	3	sb2014
+carolina crush	4	sb2014
+carolina destroy	4	sb2014
+carolina dominate	4	sb2014
+carolina kill	4	sb2014
+carolina win	3	sb2014
+carolina defeat	3	sb2014
+
+carolina favored	3	sb2014
+carolina victory	4	sb2014
+carolina >	3	sb2014
+carolina over	3	sb2014
+
+carolina gonna beat	4	sb2014
+carolina gonna crush	4	sb2014
+carolina gonna destroy	4	sb2014
+carolina gonna dominate	4	sb2014
+carolina gonna kill	4	sb2014
+carolina gonna win	3	sb2014
+carolina gonna defeat	3	sb2014
+carolina gonna shut	3	sb2014
+
+carolina is gonna beat	4	sb2014
+carolina is gonna crush	4	sb2014
+carolina is gonna destroy	4	sb2014
+carolina is gonna dominate	4	sb2014
+carolina is gonna kill	4	sb2014
+carolina is gonna win	3	sb2014
+carolina is gonna defeat	3	sb2014
+carolina is gonna shut	3	sb2014
+
+carolina is going to beat	4	sb2014
+carolina is going to crush	4	sb2014
+carolina is going to destroy	4	sb2014
+carolina is going to dominate	4	sb2014
+carolina is going to kill	4	sb2014
+carolina is going to win	3	sb2014
+carolina is going to defeat	3	sb2014
+carolina is going to shut	3	sb2014
+
+carolina could beat	2	sb2014
+carolina could crush	2	sb2014
+carolina could destroy	2	sb2014
+carolina could dominate	2	sb2014
+carolina could kill	2	sb2014
+carolina could win	2	sb2014
+carolina could defeat	2	sb2014
+
+carolina will beat	4	sb2014
+carolina will crush	4	sb2014
+carolina will destroy	4	sb2014
+carolina will dominate	4	sb2014
+carolina will kill	4	sb2014
+carolina will win	3	sb2014
+carolina will defeat	3	sb2014
+carolina will shut	3	sb2014
+
+carolina to beat	4	sb2014
+carolina to crush	4	sb2014
+carolina to destroy	4	sb2014
+carolina to dominate	4	sb2014
+carolina to kill	4	sb2014
+carolina to win	3	sb2014
+carolina to defeat	3	sb2014
+carolina to shut	3	sb2014
+
+carolina looks better	2	sb2014
+carolina looked better	2	sb2014
+
+carolina plays better	2	sb2014
+carolina played better	2	sb2014
+
+beat by carolina	4	sb2014
+crushed by carolina	4	sb2014
+destroyed by carolina	4	sb2014
+dominated by carolina	4	sb2014
+killed by carolina	4	sb2014
+beat by carolina	4	sb2014
+lose to carolina	3	sb2014
+
+go carolina	3	sb2014
+
+
+
+
+panthers lose	-3	sb2014
+panthers lost	-3	sb2014
+panthers beat	-3	sb2014
+panthers crushed	-3	sb2014
+panthers destroyed	-3	sb2014
+panthers dominated	-3	sb2014
+panthers killed	-3	sb2014
+
+panthers get beat	-3	sb2014
+panthers get crushed	-3	sb2014
+panthers get destroyed	-3	sb2014
+panthers get dominated	-3	sb2014
+panthers get killed	-3	sb2014
+
+panthers could get beat	-2	sb2014
+panthers could get crushed	-2	sb2014
+panthers could get destroyed	-2	sb2014
+panthers could get dominated	-2	sb2014
+panthers could get killed	-2	sb2014
+
+panthers will get beat	-3	sb2014
+panthers will get crushed	-3	sb2014
+panthers will get destroyed	-3	sb2014
+panthers will get dominated	-3	sb2014
+panthers will get killed	-3	sb2014
+
+panthers gonna get beat	-3	sb2014
+panthers gonna get crushed	-3	sb2014
+panthers gonna get destroyed	-3	sb2014
+panthers gonna get dominated	-3	sb2014
+panthers gonna get killed	-3	sb2014
+
+panthers going to get beat	-3	sb2014
+panthers going to get crushed	-3	sb2014
+panthers going to get destroyed	-3	sb2014
+panthers going to get dominated	-3	sb2014
+panthers going to get killed	-3	sb2014
+ 
+panthers won’t score	-3	sb2014
+panthers wont score	-3	sb2014
+
+beat panthers	-3	sb2014
+crush panthers	-3	sb2014
+destroy panthers	-3	sb2014
+dominate panthers	-3	sb2014
+kill panthers	-3	sb2014
+over panthers	-3	sb2014
+
+beat the panthers	-3	sb2014
+crush the panthers	-3	sb2014
+destroy the panthers	-3	sb2014
+dominate the panthers	-3	sb2014
+kill the panthers	-3	sb2014
+over the panthers	-3	sb2014
+
+
+carolina lose	-3	sb2014
+carolina lost	-3	sb2014
+carolina beat	-3	sb2014
+carolina crushed	-3	sb2014
+carolina destroyed	-3	sb2014
+carolina dominated	-3	sb2014
+carolina killed	-3	sb2014
+
+carolina get beat	-3	sb2014
+carolina get crushed	-3	sb2014
+carolina get destroyed	-3	sb2014
+carolina get dominated	-3	sb2014
+carolina get killed	-3	sb2014
+
+carolina could get beat	-2	sb2014
+carolina could get crushed	-2	sb2014
+carolina could get destroyed	-2	sb2014
+carolina could get dominated	-2	sb2014
+carolina could get killed	-2	sb2014
+
+carolina will get beat	-3	sb2014
+carolina will get crushed	-3	sb2014
+carolina will get destroyed	-3	sb2014
+carolina will get dominated	-3	sb2014
+carolina will get killed	-3	sb2014
+
+carolina gonna get beat	-3	sb2014
+carolina gonna get crushed	-3	sb2014
+carolina gonna get destroyed	-3	sb2014
+carolina gonna get dominated	-3	sb2014
+carolina gonna get killed	-3	sb2014
+
+carolina going to get beat	-3	sb2014
+carolina going to get crushed	-3	sb2014
+carolina going to get destroyed	-3	sb2014
+carolina going to get dominated	-3	sb2014
+carolina going to get killed	-3	sb2014
+ 
+carolina won’t score	-3	sb2014
+carolina wont score	-3	sb2014
+
+beat carolina	-3	sb2014
+crush carolina	-3	sb2014
+destroy carolina	-3	sb2014
+dominate carolina	-3	sb2014
+kill carolina	-3	sb2014
+over carolina	-3	sb2014

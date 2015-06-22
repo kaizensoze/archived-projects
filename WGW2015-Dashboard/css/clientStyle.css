@@ -1,0 +1,329 @@
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+General CSS
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+html{
+  font-size: 62.5%;     /* Brings it to 10px, since default is usually 16px. */
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+}
+h1.total {
+  font-size: 8rem;
+  line-height: 6rem;
+}
+h2.section-header {
+  font-size: 1.6rem;
+  color: black;
+}
+p {
+  font-size: 1.4rem
+}
+#stats {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 1rem;
+}
+#settings {
+  margin-top: 2rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 1rem;
+}
+#settings p {
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+img.team-logo {
+  width: 6.0rem;
+}
+img.team-logo.colts-game {
+  width: 4.0rem;
+}
+img.team-logo.cowboys-game {
+  width: 4.5rem;
+}
+.leading-by {
+  line-height: 1rem;
+}
+.popover {
+  max-width: 300px;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+D3 - General
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+.subtitle {
+  font-size: 1.2rem;
+  color: silver;
+  line-height: 1rem;
+}
+.bar {
+  fill: steelblue;
+}
+.bar:hover {
+  fill: red;
+}
+.axis {
+  font: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.bar.isOverlapping {
+  opacity: 0.5;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+D3 - Current hour in minutes graph
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+.hour-cutoff .line {
+  stroke: none;
+  fill: red;
+}
+.hour-cutoff .background {
+  stroke: none;
+  fill: red;
+  opacity: 0.1;
+}
+.hour-cutoff p {
+  padding: 10px;
+  background-color: rgba(220,220,220,0.7);
+  border-radius: 5px;
+}
+
+
+
+.info-block p {
+  padding: 10px;
+  background-color: rgba(220,220,220,0.7);
+  border-radius: 5px;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+NFL team colors
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+.seahawks, .seahawks-game, .seahawks-vast {
+  color: #71D54A;
+}
+.eagles, .eagles-game {
+  /* Official color */
+  /*color: #003B48;*/
+  /* Perceptually adjusted color */
+  color: #006666;
+}
+.cardinals, .cardinals-game {
+  color: #870619;
+}
+.broncos, .broncos-game {
+  color: #FB4F14;
+}
+.patriots, .patriots-game {
+  /* grey */
+  /*color: #D6D6D6;*/
+  /* blue */
+  /*color: #0D254C;*/
+  /* red */
+  color: #C80815;
+}
+.packers, .packers-game {
+  color: #FFCC00;
+}
+}
+.bengals, .bengals-game {
+  color: #000000;
+}
+.colts, .colts-game {
+  color: #003B7B;
+}
+.cowboys, .cowboys-game {
+  /* grey */
+  color: #8C8B8A;
+  /* blue */
+  /*color: #002244;*/
+}
+.lions, .lions-game {
+  color: #006DB0;
+}
+.ravens, .ravens-game {
+  color: #280353;
+}
+.panthers, .panthers-game {
+  color: #0088CE;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+svg .seahawks {
+  fill: #71D54A;
+}
+svg .eagles {
+  /* Official color */
+  /*fill: #003B48;*/
+  /* Perceptually adjusted color */
+  fill: #006666;
+}
+svg .cardinals {
+  fill: #870619;
+}
+svg .broncos {
+  fill: #FB4F14;
+}
+svg .patriots {
+  /* grey */
+  /*fill: #D6D6D6;*/
+  /* blue */
+  /*fill: #0D254C;*/
+  /* red */
+  fill: #C80815;
+}
+svg .packers {
+  fill: #FFCC00;
+}
+svg .bengals {
+  fill: #000000;
+}
+svg .colts {
+  fill: #003B7B;
+}
+svg .cowboys {
+  /* grey */
+  fill: #8C8B8A;
+  /* blue */
+  /*fill: #002244;*/
+}
+svg .lions {
+  fill: #006DB0;
+}
+svg .ravens {
+  fill: #280353;
+}
+svg .panthers {
+  fill: #0088CE;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Client.html-specific CSS
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+.country-stroke {
+  fill: none;
+  stroke: silver;
+}
+.states-fill {
+  /*fill: red;*/
+  fill: none;
+}
+.states-fill.none {
+  fill: silver;
+}
+.states-borders {
+  fill: none;
+  stroke: silver;
+}
+.text-states .text-content {
+  font-size: 1.0rem;
+  color: black;
+}
+.map-state-popover-content {
+  text-align: center;
+}
+.map-state-popover-content > p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.map-state-popover-content > .title-state {
+  font-size: 2.0rem;
+}
+.map-state-popover-content > .mentions {
+  font-size: 2.0rem;
+  font-weight: bold;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Vote buttons
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+#stats .btn {
+  color: #fff;
+  border-color: silver;
+}
+#stats .btn.seahawks-game, .btn.seahawks-vast {
+  background-color: #71D54A;
+}
+#stats .btn.eagles-game {
+  background-color: #006666;
+}
+#stats .btn.cardinals-game {
+  background-color: #870619;
+}
+#stats .btn.broncos-game {
+  background-color: #FB4F14;
+}
+#stats .btn.patriots-game {
+  background-color: #C80815;
+}
+#stats .btn.packers-game {
+  background-color: #FFCC00;
+}
+#stats .btn.bengals-game {
+  background-color: #000000;
+}
+#stats .btn.colts-game {
+  background-color: #003B7B;
+}
+#stats .btn.cowboys-game {
+  background-color: #8C8B8A;
+}
+#stats .btn.lions-game {
+  background-color: #006DB0;
+}
+#stats .btn.ravens-game {
+  background-color: #280353;
+}
+#stats .btn.panthers-game {
+  background-color: #0088CE;
+}
+
+/*
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+DEV
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*/
+
+.marker {
+  fill: black;
+  stroke: white;
+  stroke-width: 1px;
+}
+button#button-map-geo-reset {
+  position: absolute;
+}
+.map-geo-popover-content {
+  line-height: 1.6rem;
+}
+.map-geo-popover-content > .team {
+  font-size: 2.0rem;
+  font-weight: bold;
+}

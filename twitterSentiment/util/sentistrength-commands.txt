@@ -1,0 +1,4 @@
+java -jar senti-strength.jar sentidata /Sosolimited/SuperBowl/software/twitterSentiment/algorithm/strategy/java-network/resources/data/ explain text i+hate+you 
+
+
+java -jar senti-strength.jar sentidata /Sosolimited/SuperBowl/software/twitterSentiment/algorithm/strategy/java-network/resources/data-broncos/ explain text broncos+gonna+crush+the+pats
