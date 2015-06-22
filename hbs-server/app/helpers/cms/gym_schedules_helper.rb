@@ -1,0 +1,2 @@
+module Cms::GymSchedulesHelper
+end

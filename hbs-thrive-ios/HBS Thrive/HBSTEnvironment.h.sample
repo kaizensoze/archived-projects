@@ -1,0 +1,16 @@
+//
+//  HBSTEnvironment.h
+//  HBS Thrive
+//
+//  Created by Joe Gallo on 8/4/14.
+//  Copyright (c) 2014 HappyFunCorp. All rights reserved.
+//
+
+#ifndef HBS_Thrive_HBSTEnvironment_h
+#define HBS_Thrive_HBSTEnvironment_h
+
+//#define LOCAL
+//#define STAGING
+//#define PRODUCTION
+
+#endif

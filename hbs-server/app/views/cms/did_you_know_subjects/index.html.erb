@@ -1,0 +1,35 @@
+<h1 class="page-header">
+  Did you Know
+  <span class="pull-right">
+    <a href="/cms/did_you_know_subjects/new" class="btn btn-primary">
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    </a>
+  </span>
+</h1>
+<%= render 'layouts/cms/flashes' %>
+
+<div class="table-responsive">
+  <table class="table table-striped did-you-know-subjects-table">
+    <thead>
+      <tr>
+        <th>Sort</th>
+        <th>Subject</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @did_you_know_subjects.each do |did_you_know_subject| %>
+        <tr data-id=<%= did_you_know_subject.id %>>
+          <td><span class="glyphicon glyphicon-move"></span></td>
+          <td><%= did_you_know_subject.subject %></td>
+          <td><%= link_to "show", cms_did_you_know_subject_path(did_you_know_subject) %></td>
+          <td><%= link_to "edit", edit_cms_did_you_know_subject_path(did_you_know_subject) %></td>
+          <td><%= link_to "delete", cms_did_you_know_subject_path(did_you_know_subject), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

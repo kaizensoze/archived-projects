@@ -1,0 +1,9 @@
+var announcement_id = "<%= @announcement.id %>";
+var announcement_active = "<%= @announcement.active %>";
+var announcement_tr = $("table.announcements-table").find('tr[data-id="' + announcement_id + '"]');
+var announcement_active_inactive_span = announcement_tr.find('.active_inactive span');
+if (announcement_active === 'true') {
+    announcement_active_inactive_span.removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
+} else {
+    announcement_active_inactive_span.removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
+}

@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF5BBBCD87E745E891D8E894 /* libPods-Illuminex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 908375A004F44C47A31B08DE /* libPods-Illuminex.a */; };
+		CE021D5B1A126C0B007DE0D3 /* ILUCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE021D5A1A126C0B007DE0D3 /* ILUCollectionsViewController.m */; };
+		CE021D5E1A126C18007DE0D3 /* ILUCollectionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE021D5D1A126C18007DE0D3 /* ILUCollectionDetailsViewController.m */; };
+		CE021D611A1279C6007DE0D3 /* ILUCollectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE021D601A1279C6007DE0D3 /* ILUCollectionCollectionViewCell.m */; };
+		CE021D641A127B5E007DE0D3 /* ILUCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = CE021D631A127B5E007DE0D3 /* ILUCollection.m */; };
+		CE021D671A12B376007DE0D3 /* ILUNewCollectionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE021D661A12B376007DE0D3 /* ILUNewCollectionCollectionViewCell.m */; };
+		CE04153119FF0238005F7321 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE04153019FF0238005F7321 /* RobotoCondensed-Bold.ttf */; };
+		CE0775141A12D65D0095EDD2 /* ILUBookmarkedItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0775131A12D65D0095EDD2 /* ILUBookmarkedItemTableViewCell.m */; };
+		CE0775171A12D9690095EDD2 /* ILUBookmarkedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0775161A12D9690095EDD2 /* ILUBookmarkedItem.m */; };
+		CE07751A1A14737E0095EDD2 /* ILUItemImagesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0775191A14737E0095EDD2 /* ILUItemImagesCollectionViewCell.m */; };
+		CE07751D1A1473880095EDD2 /* ILUItemVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE07751C1A1473880095EDD2 /* ILUItemVideoCollectionViewCell.m */; };
+		CE0775211A15BC150095EDD2 /* I3DragBetweenHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0775201A15BC150095EDD2 /* I3DragBetweenHelper.m */; };
+		CE179EDA19DA0DB4002AB357 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE179ED919DA0DB4002AB357 /* RobotoCondensed-Italic.ttf */; };
+		CE19DADB19D3AA9200A9E70C /* ILUFlyoutMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE19DADA19D3AA9200A9E70C /* ILUFlyoutMenuTableViewCell.m */; };
+		CE19DADD19D3ABB400A9E70C /* PlayfairDisplay-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE19DADC19D3ABB400A9E70C /* PlayfairDisplay-BoldItalic.otf */; };
+		CE26E4361A0A964C008449C2 /* ILUSavedSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE26E4351A0A964C008449C2 /* ILUSavedSearchTableViewCell.m */; };
+		CE26E4391A0AD0A1008449C2 /* ILUSavedSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = CE26E4381A0AD0A1008449C2 /* ILUSavedSearch.m */; };
+		CE27D1E219FD4AC90061934B /* ILUDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE27D1E119FD4AC90061934B /* ILUDetailsViewController.m */; };
+		CE27D1E619FD53000061934B /* ILUItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CE27D1E519FD53000061934B /* ILUItem.m */; };
+		CE27D22519FDE1AA0061934B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE27D22419FDE1AA0061934B /* MediaPlayer.framework */; };
+		CE27D22819FDE4FD0061934B /* sample.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE27D22719FDE4FD0061934B /* sample.mp4 */; };
+		CE386FAE19D228CF000A5FF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FAD19D228CF000A5FF6 /* main.m */; };
+		CE386FB119D228CF000A5FF6 /* ILUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FB019D228CF000A5FF6 /* ILUAppDelegate.m */; };
+		CE386FB419D228CF000A5FF6 /* ILUSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FB319D228CF000A5FF6 /* ILUSearchViewController.m */; };
+		CE386FB719D228CF000A5FF6 /* Illuminex.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE386FB519D228CF000A5FF6 /* Illuminex.storyboard */; };
+		CE386FB919D228D0000A5FF6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE386FB819D228D0000A5FF6 /* Images.xcassets */; };
+		CE386FBC19D228D0000A5FF6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE386FBA19D228D0000A5FF6 /* LaunchScreen.xib */; };
+		CE386FD919D236B0000A5FF6 /* ILUGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FD819D236B0000A5FF6 /* ILUGlobals.m */; };
+		CE386FE219D23BA1000A5FF6 /* NSDictionary+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FE119D23BA1000A5FF6 /* NSDictionary+Utility.m */; };
+		CE386FE519D23BFE000A5FF6 /* NSMutableDictionary+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FE419D23BFE000A5FF6 /* NSMutableDictionary+Utility.m */; };
+		CE386FE819D23EA1000A5FF6 /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FE719D23EA1000A5FF6 /* UIImage+Utility.m */; };
+		CE386FEB19D23EF0000A5FF6 /* ILUUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FEA19D23EF0000A5FF6 /* ILUUtil.m */; };
+		CE386FEF19D240D4000A5FF6 /* ILUCustomStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FEE19D240D4000A5FF6 /* ILUCustomStyler.m */; };
+		CE386FF319D254DE000A5FF6 /* ILUFlyoutMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE386FF219D254DD000A5FF6 /* ILUFlyoutMenuViewController.m */; };
+		CE43CFA419EEEE5600274B13 /* ILUSearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE43CFA319EEEE5600274B13 /* ILUSearchResultsViewController.m */; };
+		CE464D4F19F6C349007477D9 /* ILUSearchResultCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE464D4E19F6C349007477D9 /* ILUSearchResultCollectionViewCell.m */; };
+		CE5408071A3E6FD5007CE602 /* ILULandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5408061A3E6FD5007CE602 /* ILULandingPageViewController.m */; };
+		CE5408091A3E7425007CE602 /* beach.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE5408081A3E741F007CE602 /* beach.mp4 */; };
+		CE7DBE9E19D393110073105C /* PlayfairDisplay-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE7DBE9C19D393110073105C /* PlayfairDisplay-BlackItalic.otf */; };
+		CE7DBE9F19D393110073105C /* PlayfairDisplay-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE7DBE9D19D393110073105C /* PlayfairDisplay-Regular.otf */; };
+		CE7DBEA219D39EE60073105C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7DBEA019D39EE60073105C /* Roboto-Regular.ttf */; };
+		CE7DBEA319D39EE60073105C /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE7DBEA119D39EE60073105C /* RobotoCondensed-Regular.ttf */; };
+		CEC4063E1A06A1D900EC87FE /* ILUSavedSearchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC4063D1A06A1D900EC87FE /* ILUSavedSearchesViewController.m */; };
+		CEC406411A06D19600EC87FE /* ILUSearchParams.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC406401A06D19600EC87FE /* ILUSearchParams.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		908375A004F44C47A31B08DE /* libPods-Illuminex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Illuminex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE021D591A126C0B007DE0D3 /* ILUCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUCollectionsViewController.h; sourceTree = "<group>"; };
+		CE021D5A1A126C0B007DE0D3 /* ILUCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUCollectionsViewController.m; sourceTree = "<group>"; };
+		CE021D5C1A126C18007DE0D3 /* ILUCollectionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUCollectionDetailsViewController.h; sourceTree = "<group>"; };
+		CE021D5D1A126C18007DE0D3 /* ILUCollectionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUCollectionDetailsViewController.m; sourceTree = "<group>"; };
+		CE021D5F1A1279C6007DE0D3 /* ILUCollectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUCollectionCollectionViewCell.h; sourceTree = "<group>"; };
+		CE021D601A1279C6007DE0D3 /* ILUCollectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUCollectionCollectionViewCell.m; sourceTree = "<group>"; };
+		CE021D621A127B5E007DE0D3 /* ILUCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUCollection.h; sourceTree = "<group>"; };
+		CE021D631A127B5E007DE0D3 /* ILUCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUCollection.m; sourceTree = "<group>"; };
+		CE021D651A12B376007DE0D3 /* ILUNewCollectionCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUNewCollectionCollectionViewCell.h; sourceTree = "<group>"; };
+		CE021D661A12B376007DE0D3 /* ILUNewCollectionCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUNewCollectionCollectionViewCell.m; sourceTree = "<group>"; };
+		CE04153019FF0238005F7321 /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		CE0775121A12D65D0095EDD2 /* ILUBookmarkedItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUBookmarkedItemTableViewCell.h; sourceTree = "<group>"; };
+		CE0775131A12D65D0095EDD2 /* ILUBookmarkedItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUBookmarkedItemTableViewCell.m; sourceTree = "<group>"; };
+		CE0775151A12D9690095EDD2 /* ILUBookmarkedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUBookmarkedItem.h; sourceTree = "<group>"; };
+		CE0775161A12D9690095EDD2 /* ILUBookmarkedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUBookmarkedItem.m; sourceTree = "<group>"; };
+		CE0775181A14737E0095EDD2 /* ILUItemImagesCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUItemImagesCollectionViewCell.h; sourceTree = "<group>"; };
+		CE0775191A14737E0095EDD2 /* ILUItemImagesCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUItemImagesCollectionViewCell.m; sourceTree = "<group>"; };
+		CE07751B1A1473880095EDD2 /* ILUItemVideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUItemVideoCollectionViewCell.h; sourceTree = "<group>"; };
+		CE07751C1A1473880095EDD2 /* ILUItemVideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUItemVideoCollectionViewCell.m; sourceTree = "<group>"; };
+		CE07751F1A15BC150095EDD2 /* I3DragBetweenHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = I3DragBetweenHelper.h; sourceTree = "<group>"; };
+		CE0775201A15BC150095EDD2 /* I3DragBetweenHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = I3DragBetweenHelper.m; sourceTree = "<group>"; };
+		CE179ED919DA0DB4002AB357 /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		CE19DAD919D3AA9200A9E70C /* ILUFlyoutMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUFlyoutMenuTableViewCell.h; sourceTree = "<group>"; };
+		CE19DADA19D3AA9200A9E70C /* ILUFlyoutMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUFlyoutMenuTableViewCell.m; sourceTree = "<group>"; };
+		CE19DADC19D3ABB400A9E70C /* PlayfairDisplay-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BoldItalic.otf"; sourceTree = "<group>"; };
+		CE26E4341A0A964C008449C2 /* ILUSavedSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUSavedSearchTableViewCell.h; sourceTree = "<group>"; };
+		CE26E4351A0A964C008449C2 /* ILUSavedSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUSavedSearchTableViewCell.m; sourceTree = "<group>"; };
+		CE26E4371A0AD0A1008449C2 /* ILUSavedSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUSavedSearch.h; sourceTree = "<group>"; };
+		CE26E4381A0AD0A1008449C2 /* ILUSavedSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUSavedSearch.m; sourceTree = "<group>"; };
+		CE27D1E019FD4AC90061934B /* ILUDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUDetailsViewController.h; sourceTree = "<group>"; };
+		CE27D1E119FD4AC90061934B /* ILUDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUDetailsViewController.m; sourceTree = "<group>"; };
+		CE27D1E419FD53000061934B /* ILUItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUItem.h; sourceTree = "<group>"; };
+		CE27D1E519FD53000061934B /* ILUItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUItem.m; sourceTree = "<group>"; };
+		CE27D22419FDE1AA0061934B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		CE27D22719FDE4FD0061934B /* sample.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.mp4; sourceTree = "<group>"; };
+		CE386FA819D228CF000A5FF6 /* Illuminex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Illuminex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE386FAC19D228CF000A5FF6 /* Illuminex-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Illuminex-Info.plist"; sourceTree = "<group>"; };
+		CE386FAD19D228CF000A5FF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE386FAF19D228CF000A5FF6 /* ILUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILUAppDelegate.h; sourceTree = "<group>"; };
+		CE386FB019D228CF000A5FF6 /* ILUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ILUAppDelegate.m; sourceTree = "<group>"; };
+		CE386FB219D228CF000A5FF6 /* ILUSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILUSearchViewController.h; sourceTree = "<group>"; };
+		CE386FB319D228CF000A5FF6 /* ILUSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ILUSearchViewController.m; sourceTree = "<group>"; };
+		CE386FB619D228CF000A5FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Illuminex.storyboard; sourceTree = "<group>"; };
+		CE386FB819D228D0000A5FF6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CE386FBB19D228D0000A5FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CE386FD119D22B94000A5FF6 /* ILUEnvironment.h.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ILUEnvironment.h.sample; sourceTree = "<group>"; };
+		CE386FD319D22C10000A5FF6 /* ILUEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUEnvironment.h; sourceTree = "<group>"; };
+		CE386FD519D23611000A5FF6 /* Illuminex-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Illuminex-Prefix.pch"; sourceTree = "<group>"; };
+		CE386FD819D236B0000A5FF6 /* ILUGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUGlobals.m; sourceTree = "<group>"; };
+		CE386FDB19D23754000A5FF6 /* ILUGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUGlobals.h; sourceTree = "<group>"; };
+		CE386FE019D23BA1000A5FF6 /* NSDictionary+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utility.h"; sourceTree = "<group>"; };
+		CE386FE119D23BA1000A5FF6 /* NSDictionary+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Utility.m"; sourceTree = "<group>"; };
+		CE386FE319D23BFE000A5FF6 /* NSMutableDictionary+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Utility.h"; sourceTree = "<group>"; };
+		CE386FE419D23BFE000A5FF6 /* NSMutableDictionary+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Utility.m"; sourceTree = "<group>"; };
+		CE386FE619D23EA1000A5FF6 /* UIImage+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
+		CE386FE719D23EA1000A5FF6 /* UIImage+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
+		CE386FEA19D23EF0000A5FF6 /* ILUUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUUtil.m; sourceTree = "<group>"; };
+		CE386FEC19D23F01000A5FF6 /* ILUUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUUtil.h; sourceTree = "<group>"; };
+		CE386FED19D240AF000A5FF6 /* ILUCustomStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUCustomStyler.h; sourceTree = "<group>"; };
+		CE386FEE19D240D4000A5FF6 /* ILUCustomStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUCustomStyler.m; sourceTree = "<group>"; };
+		CE386FF119D254DD000A5FF6 /* ILUFlyoutMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUFlyoutMenuViewController.h; sourceTree = "<group>"; };
+		CE386FF219D254DD000A5FF6 /* ILUFlyoutMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUFlyoutMenuViewController.m; sourceTree = "<group>"; };
+		CE43CFA219EEEE5600274B13 /* ILUSearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUSearchResultsViewController.h; sourceTree = "<group>"; };
+		CE43CFA319EEEE5600274B13 /* ILUSearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUSearchResultsViewController.m; sourceTree = "<group>"; };
+		CE464D4D19F6C349007477D9 /* ILUSearchResultCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUSearchResultCollectionViewCell.h; sourceTree = "<group>"; };
+		CE464D4E19F6C349007477D9 /* ILUSearchResultCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUSearchResultCollectionViewCell.m; sourceTree = "<group>"; };
+		CE5408051A3E6FD5007CE602 /* ILULandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILULandingPageViewController.h; sourceTree = "<group>"; };
+		CE5408061A3E6FD5007CE602 /* ILULandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILULandingPageViewController.m; sourceTree = "<group>"; };
+		CE5408081A3E741F007CE602 /* beach.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = beach.mp4; sourceTree = "<group>"; };
+		CE7DBE9C19D393110073105C /* PlayfairDisplay-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-BlackItalic.otf"; sourceTree = "<group>"; };
+		CE7DBE9D19D393110073105C /* PlayfairDisplay-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Regular.otf"; sourceTree = "<group>"; };
+		CE7DBEA019D39EE60073105C /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		CE7DBEA119D39EE60073105C /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		CEC4063C1A06A1D900EC87FE /* ILUSavedSearchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUSavedSearchesViewController.h; sourceTree = "<group>"; };
+		CEC4063D1A06A1D900EC87FE /* ILUSavedSearchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUSavedSearchesViewController.m; sourceTree = "<group>"; };
+		CEC4063F1A06D19600EC87FE /* ILUSearchParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUSearchParams.h; sourceTree = "<group>"; };
+		CEC406401A06D19600EC87FE /* ILUSearchParams.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUSearchParams.m; sourceTree = "<group>"; };
+		FDC5F7FA27BC41FF92D32AC1 /* Pods-Illuminex.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Illuminex.xcconfig"; path = "Pods/Pods-Illuminex.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE386FA519D228CF000A5FF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE27D22519FDE1AA0061934B /* MediaPlayer.framework in Frameworks */,
+				AF5BBBCD87E745E891D8E894 /* libPods-Illuminex.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3444665549A84D18BDDD07BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE07751E1A15BBF10095EDD2 /* I3DragNDrop */,
+				CE27D22419FDE1AA0061934B /* MediaPlayer.framework */,
+				908375A004F44C47A31B08DE /* libPods-Illuminex.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE07751E1A15BBF10095EDD2 /* I3DragNDrop */ = {
+			isa = PBXGroup;
+			children = (
+				CE07751F1A15BC150095EDD2 /* I3DragBetweenHelper.h */,
+				CE0775201A15BC150095EDD2 /* I3DragBetweenHelper.m */,
+			);
+			name = I3DragNDrop;
+			sourceTree = "<group>";
+		};
+		CE19DAD819D3AA6A00A9E70C /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				CE19DAD919D3AA9200A9E70C /* ILUFlyoutMenuTableViewCell.h */,
+				CE19DADA19D3AA9200A9E70C /* ILUFlyoutMenuTableViewCell.m */,
+				CE464D4D19F6C349007477D9 /* ILUSearchResultCollectionViewCell.h */,
+				CE464D4E19F6C349007477D9 /* ILUSearchResultCollectionViewCell.m */,
+				CE26E4341A0A964C008449C2 /* ILUSavedSearchTableViewCell.h */,
+				CE26E4351A0A964C008449C2 /* ILUSavedSearchTableViewCell.m */,
+				CE021D5F1A1279C6007DE0D3 /* ILUCollectionCollectionViewCell.h */,
+				CE021D601A1279C6007DE0D3 /* ILUCollectionCollectionViewCell.m */,
+				CE021D651A12B376007DE0D3 /* ILUNewCollectionCollectionViewCell.h */,
+				CE021D661A12B376007DE0D3 /* ILUNewCollectionCollectionViewCell.m */,
+				CE0775121A12D65D0095EDD2 /* ILUBookmarkedItemTableViewCell.h */,
+				CE0775131A12D65D0095EDD2 /* ILUBookmarkedItemTableViewCell.m */,
+				CE0775181A14737E0095EDD2 /* ILUItemImagesCollectionViewCell.h */,
+				CE0775191A14737E0095EDD2 /* ILUItemImagesCollectionViewCell.m */,
+				CE07751B1A1473880095EDD2 /* ILUItemVideoCollectionViewCell.h */,
+				CE07751C1A1473880095EDD2 /* ILUItemVideoCollectionViewCell.m */,
+			);
+			name = "Custom UI";
+			sourceTree = "<group>";
+		};
+		CE27D1E319FD51500061934B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE27D1E419FD53000061934B /* ILUItem.h */,
+				CE27D1E519FD53000061934B /* ILUItem.m */,
+				CEC4063F1A06D19600EC87FE /* ILUSearchParams.h */,
+				CEC406401A06D19600EC87FE /* ILUSearchParams.m */,
+				CE26E4371A0AD0A1008449C2 /* ILUSavedSearch.h */,
+				CE26E4381A0AD0A1008449C2 /* ILUSavedSearch.m */,
+				CE021D621A127B5E007DE0D3 /* ILUCollection.h */,
+				CE021D631A127B5E007DE0D3 /* ILUCollection.m */,
+				CE0775151A12D9690095EDD2 /* ILUBookmarkedItem.h */,
+				CE0775161A12D9690095EDD2 /* ILUBookmarkedItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CE27D22619FDE4E60061934B /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				CE27D22719FDE4FD0061934B /* sample.mp4 */,
+				CE5408081A3E741F007CE602 /* beach.mp4 */,
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
+		CE386F9F19D228CF000A5FF6 = {
+			isa = PBXGroup;
+			children = (
+				CE386FAA19D228CF000A5FF6 /* Illuminex */,
+				CE386FA919D228CF000A5FF6 /* Products */,
+				FDC5F7FA27BC41FF92D32AC1 /* Pods-Illuminex.xcconfig */,
+				3444665549A84D18BDDD07BC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE386FA919D228CF000A5FF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE386FA819D228CF000A5FF6 /* Illuminex.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE386FAA19D228CF000A5FF6 /* Illuminex */ = {
+			isa = PBXGroup;
+			children = (
+				CE386FD119D22B94000A5FF6 /* ILUEnvironment.h.sample */,
+				CE386FD319D22C10000A5FF6 /* ILUEnvironment.h */,
+				CE386FDB19D23754000A5FF6 /* ILUGlobals.h */,
+				CE386FD819D236B0000A5FF6 /* ILUGlobals.m */,
+				CE386FAF19D228CF000A5FF6 /* ILUAppDelegate.h */,
+				CE386FB019D228CF000A5FF6 /* ILUAppDelegate.m */,
+				CE386FB519D228CF000A5FF6 /* Illuminex.storyboard */,
+				CE386FBA19D228D0000A5FF6 /* LaunchScreen.xib */,
+				CE386FB819D228D0000A5FF6 /* Images.xcassets */,
+				CE386FF019D24FBB000A5FF6 /* Controllers */,
+				CE27D1E319FD51500061934B /* Models */,
+				CE386FE919D23ED1000A5FF6 /* Util */,
+				CE386FDC19D23AB5000A5FF6 /* Categories */,
+				CE19DAD819D3AA6A00A9E70C /* Custom UI */,
+				CE840BFA19D390B100081DF7 /* Fonts */,
+				CE27D22619FDE4E60061934B /* Videos */,
+				CE386FAB19D228CF000A5FF6 /* Supporting Files */,
+			);
+			path = Illuminex;
+			sourceTree = "<group>";
+		};
+		CE386FAB19D228CF000A5FF6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE386FAC19D228CF000A5FF6 /* Illuminex-Info.plist */,
+				CE386FAD19D228CF000A5FF6 /* main.m */,
+				CE386FD519D23611000A5FF6 /* Illuminex-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CE386FDC19D23AB5000A5FF6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CE386FE019D23BA1000A5FF6 /* NSDictionary+Utility.h */,
+				CE386FE119D23BA1000A5FF6 /* NSDictionary+Utility.m */,
+				CE386FE319D23BFE000A5FF6 /* NSMutableDictionary+Utility.h */,
+				CE386FE419D23BFE000A5FF6 /* NSMutableDictionary+Utility.m */,
+				CE386FE619D23EA1000A5FF6 /* UIImage+Utility.h */,
+				CE386FE719D23EA1000A5FF6 /* UIImage+Utility.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		CE386FE919D23ED1000A5FF6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CE386FEC19D23F01000A5FF6 /* ILUUtil.h */,
+				CE386FEA19D23EF0000A5FF6 /* ILUUtil.m */,
+				CE386FED19D240AF000A5FF6 /* ILUCustomStyler.h */,
+				CE386FEE19D240D4000A5FF6 /* ILUCustomStyler.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		CE386FF019D24FBB000A5FF6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE386FF119D254DD000A5FF6 /* ILUFlyoutMenuViewController.h */,
+				CE386FF219D254DD000A5FF6 /* ILUFlyoutMenuViewController.m */,
+				CE5408051A3E6FD5007CE602 /* ILULandingPageViewController.h */,
+				CE5408061A3E6FD5007CE602 /* ILULandingPageViewController.m */,
+				CE386FB219D228CF000A5FF6 /* ILUSearchViewController.h */,
+				CE386FB319D228CF000A5FF6 /* ILUSearchViewController.m */,
+				CE43CFA219EEEE5600274B13 /* ILUSearchResultsViewController.h */,
+				CE43CFA319EEEE5600274B13 /* ILUSearchResultsViewController.m */,
+				CE27D1E019FD4AC90061934B /* ILUDetailsViewController.h */,
+				CE27D1E119FD4AC90061934B /* ILUDetailsViewController.m */,
+				CEC4063C1A06A1D900EC87FE /* ILUSavedSearchesViewController.h */,
+				CEC4063D1A06A1D900EC87FE /* ILUSavedSearchesViewController.m */,
+				CE021D591A126C0B007DE0D3 /* ILUCollectionsViewController.h */,
+				CE021D5A1A126C0B007DE0D3 /* ILUCollectionsViewController.m */,
+				CE021D5C1A126C18007DE0D3 /* ILUCollectionDetailsViewController.h */,
+				CE021D5D1A126C18007DE0D3 /* ILUCollectionDetailsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CE840BFA19D390B100081DF7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE7DBE9D19D393110073105C /* PlayfairDisplay-Regular.otf */,
+				CE7DBE9C19D393110073105C /* PlayfairDisplay-BlackItalic.otf */,
+				CE19DADC19D3ABB400A9E70C /* PlayfairDisplay-BoldItalic.otf */,
+				CE7DBEA019D39EE60073105C /* Roboto-Regular.ttf */,
+				CE7DBEA119D39EE60073105C /* RobotoCondensed-Regular.ttf */,
+				CE179ED919DA0DB4002AB357 /* RobotoCondensed-Italic.ttf */,
+				CE04153019FF0238005F7321 /* RobotoCondensed-Bold.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE386FA719D228CF000A5FF6 /* Illuminex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE386FCB19D228D0000A5FF6 /* Build configuration list for PBXNativeTarget "Illuminex" */;
+			buildPhases = (
+				D247AE2C416A43B49F0A4949 /* Check Pods Manifest.lock */,
+				CE386FA419D228CF000A5FF6 /* Sources */,
+				CE386FA519D228CF000A5FF6 /* Frameworks */,
+				CE386FA619D228CF000A5FF6 /* Resources */,
+				30138DCFD64543918788FCA1 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Illuminex;
+			productName = Illuminex;
+			productReference = CE386FA819D228CF000A5FF6 /* Illuminex.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE386FA019D228CF000A5FF6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ILU;
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = HappyFunCorp;
+				TargetAttributes = {
+					CE386FA719D228CF000A5FF6 = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = XQZCRE565B;
+					};
+				};
+			};
+			buildConfigurationList = CE386FA319D228CF000A5FF6 /* Build configuration list for PBXProject "illuminex" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE386F9F19D228CF000A5FF6;
+			productRefGroup = CE386FA919D228CF000A5FF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE386FA719D228CF000A5FF6 /* Illuminex */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE386FA619D228CF000A5FF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE386FB719D228CF000A5FF6 /* Illuminex.storyboard in Resources */,
+				CE386FBC19D228D0000A5FF6 /* LaunchScreen.xib in Resources */,
+				CE19DADD19D3ABB400A9E70C /* PlayfairDisplay-BoldItalic.otf in Resources */,
+				CE5408091A3E7425007CE602 /* beach.mp4 in Resources */,
+				CE7DBEA319D39EE60073105C /* RobotoCondensed-Regular.ttf in Resources */,
+				CE7DBE9F19D393110073105C /* PlayfairDisplay-Regular.otf in Resources */,
+				CE7DBE9E19D393110073105C /* PlayfairDisplay-BlackItalic.otf in Resources */,
+				CE386FB919D228D0000A5FF6 /* Images.xcassets in Resources */,
+				CE7DBEA219D39EE60073105C /* Roboto-Regular.ttf in Resources */,
+				CE179EDA19DA0DB4002AB357 /* RobotoCondensed-Italic.ttf in Resources */,
+				CE27D22819FDE4FD0061934B /* sample.mp4 in Resources */,
+				CE04153119FF0238005F7321 /* RobotoCondensed-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30138DCFD64543918788FCA1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Illuminex-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D247AE2C416A43B49F0A4949 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE386FA419D228CF000A5FF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE19DADB19D3AA9200A9E70C /* ILUFlyoutMenuTableViewCell.m in Sources */,
+				CE386FB419D228CF000A5FF6 /* ILUSearchViewController.m in Sources */,
+				CE27D1E219FD4AC90061934B /* ILUDetailsViewController.m in Sources */,
+				CE07751D1A1473880095EDD2 /* ILUItemVideoCollectionViewCell.m in Sources */,
+				CE386FE219D23BA1000A5FF6 /* NSDictionary+Utility.m in Sources */,
+				CE386FF319D254DE000A5FF6 /* ILUFlyoutMenuViewController.m in Sources */,
+				CEC406411A06D19600EC87FE /* ILUSearchParams.m in Sources */,
+				CE26E4361A0A964C008449C2 /* ILUSavedSearchTableViewCell.m in Sources */,
+				CE386FB119D228CF000A5FF6 /* ILUAppDelegate.m in Sources */,
+				CE26E4391A0AD0A1008449C2 /* ILUSavedSearch.m in Sources */,
+				CE021D5B1A126C0B007DE0D3 /* ILUCollectionsViewController.m in Sources */,
+				CE386FEF19D240D4000A5FF6 /* ILUCustomStyler.m in Sources */,
+				CE0775211A15BC150095EDD2 /* I3DragBetweenHelper.m in Sources */,
+				CE021D611A1279C6007DE0D3 /* ILUCollectionCollectionViewCell.m in Sources */,
+				CE021D5E1A126C18007DE0D3 /* ILUCollectionDetailsViewController.m in Sources */,
+				CE386FEB19D23EF0000A5FF6 /* ILUUtil.m in Sources */,
+				CE0775171A12D9690095EDD2 /* ILUBookmarkedItem.m in Sources */,
+				CE386FE819D23EA1000A5FF6 /* UIImage+Utility.m in Sources */,
+				CE5408071A3E6FD5007CE602 /* ILULandingPageViewController.m in Sources */,
+				CE43CFA419EEEE5600274B13 /* ILUSearchResultsViewController.m in Sources */,
+				CE0775141A12D65D0095EDD2 /* ILUBookmarkedItemTableViewCell.m in Sources */,
+				CE07751A1A14737E0095EDD2 /* ILUItemImagesCollectionViewCell.m in Sources */,
+				CEC4063E1A06A1D900EC87FE /* ILUSavedSearchesViewController.m in Sources */,
+				CE27D1E619FD53000061934B /* ILUItem.m in Sources */,
+				CE464D4F19F6C349007477D9 /* ILUSearchResultCollectionViewCell.m in Sources */,
+				CE386FE519D23BFE000A5FF6 /* NSMutableDictionary+Utility.m in Sources */,
+				CE386FAE19D228CF000A5FF6 /* main.m in Sources */,
+				CE021D641A127B5E007DE0D3 /* ILUCollection.m in Sources */,
+				CE021D671A12B376007DE0D3 /* ILUNewCollectionCollectionViewCell.m in Sources */,
+				CE386FD919D236B0000A5FF6 /* ILUGlobals.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE386FB519D228CF000A5FF6 /* Illuminex.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE386FB619D228CF000A5FF6 /* Base */,
+			);
+			name = Illuminex.storyboard;
+			sourceTree = "<group>";
+		};
+		CE386FBA19D228D0000A5FF6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE386FBB19D228D0000A5FF6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE386FC919D228D0000A5FF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Gallo (R8354GK9FL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Gallo (R8354GK9FL)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "aa16f036-3603-4228-ae4c-4164530dea5a";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CE386FCA19D228D0000A5FF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: HappyFunCorp LLC (XQZCRE565B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HappyFunCorp LLC (XQZCRE565B)";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "e3419709-6f19-4f64-b76e-b13feec83492";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE386FCC19D228D0000A5FF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC5F7FA27BC41FF92D32AC1 /* Pods-Illuminex.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joseph Gallo (R8354GK9FL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Gallo (R8354GK9FL)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Illuminex/Illuminex-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Illuminex/Illuminex-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b5029498-4975-49b1-b3b4-26ec2838416e";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CE386FCD19D228D0000A5FF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC5F7FA27BC41FF92D32AC1 /* Pods-Illuminex.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: HappyFunCorp LLC (XQZCRE565B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HappyFunCorp LLC (XQZCRE565B)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Illuminex/Illuminex-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Illuminex/Illuminex-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fed6e67b-ce3b-4bcf-9090-bc2eb0ce88e4";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE386FA319D228CF000A5FF6 /* Build configuration list for PBXProject "illuminex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE386FC919D228D0000A5FF6 /* Debug */,
+				CE386FCA19D228D0000A5FF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE386FCB19D228D0000A5FF6 /* Build configuration list for PBXNativeTarget "Illuminex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE386FCC19D228D0000A5FF6 /* Debug */,
+				CE386FCD19D228D0000A5FF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE386FA019D228CF000A5FF6 /* Project object */;
+}

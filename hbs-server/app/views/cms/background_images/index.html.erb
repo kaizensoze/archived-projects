@@ -1,0 +1,40 @@
+<h1 class="page-header">
+  Background Images
+  <span class="pull-right">
+    <a href="/cms/background_images/new" class="btn btn-primary">
+      <span class="glyphicon glyphicon-plus"></span>
+      Add Background Image
+    </a>
+  </span>
+</h1>
+<%= render 'layouts/cms/flashes' %>
+
+<div class="background-image-container">
+<% @background_images.each do |background_image| %>
+  <div class="background-image" data-id=<%= background_image.id %>>
+    <%= image_tag background_image.image %> <!-- , size: "150x150" -->
+    
+    <div class="util-bar">
+      <%= link_to edit_cms_background_image_path(background_image) do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+      <% end %>
+
+      &nbsp;&nbsp;
+
+      <%= link_to cms_background_image_path(background_image), :method => :delete, data: { confirm: 'Are you sure?' } do %>
+        <span class="glyphicon glyphicon-trash"></span>
+      <% end %>
+
+      &nbsp;&nbsp;
+
+      <%= link_to set_active_inactive_cms_background_image_path(background_image), :class => "active_inactive", :method => :post, :remote => true do %>
+        <% if background_image.active %>
+          <span class="glyphicon glyphicon-eye-open"></span>
+        <% else %>
+          <span class="glyphicon glyphicon-eye-close"></span>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+</div>

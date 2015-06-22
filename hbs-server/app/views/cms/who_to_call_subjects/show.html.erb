@@ -1,0 +1,46 @@
+<h1 class="page-header">
+  Who to Call
+  <span class="pull-right">
+    <%= link_to new_cms_who_to_call_subject_who_to_call_item_path(@who_to_call_subject), class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    <% end %>
+  </span>
+</h1>
+
+<%= render 'layouts/cms/flashes' %>
+
+<%= link_to 'Back', cms_who_to_call_subjects_path %>
+
+<h3>Subject: <%= @who_to_call_subject.subject %></h3>
+
+<input id="who-to-call-subject-id" type="hidden" name="" value="<%= @who_to_call_subject.id %>">
+
+<div class="table-responsive">
+  <table class="table table-striped who-to-call-items-table">
+    <thead>
+      <tr>
+        <th>Sort</th>
+        <th>Title</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @who_to_call_items.each do |who_to_call_item| %>
+        <tr data-id=<%= who_to_call_item.id %>>
+          <td><span class="glyphicon glyphicon-move"></span></td>
+          <td><%= who_to_call_item.title %></td>
+          <td><%= who_to_call_item.name %></td>
+          <td><%= who_to_call_item.phone_number %></td>
+          <td><%= who_to_call_item.email %></td>
+          <td><%= link_to "edit", edit_cms_who_to_call_subject_who_to_call_item_path(@who_to_call_subject, who_to_call_item) %></td>
+          <td><%= link_to "delete", cms_who_to_call_subject_who_to_call_item_path(@who_to_call_subject, who_to_call_item), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

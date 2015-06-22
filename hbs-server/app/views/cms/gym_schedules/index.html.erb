@@ -1,0 +1,36 @@
+<h1 class="page-header">
+  Gym Schedules
+  <span class="pull-right">
+    <a href="/cms/gym_schedules/new" class="btn btn-primary">
+      <span class="glyphicon glyphicon-plus"></span>
+      Add Gym Schedule
+    </a>
+  </span>
+</h1>
+<%= render 'layouts/cms/flashes' %>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Date</th>
+        <th>Summary</th>
+        <th>Created By</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @gym_schedules.each do |gym_schedule| %>
+        <tr>
+          <td><%= gym_schedule.id %></td>
+          <td><%= gym_schedule.date %></td>
+          <td><%= gym_schedule.summary %></td>
+          <td><%= gym_schedule.admin_user.try(:email) %></td>
+          <td><%= link_to "edit", edit_cms_gym_schedule_path(gym_schedule) %></td>
+          <td><%= link_to "delete", cms_gym_schedule_path(gym_schedule), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

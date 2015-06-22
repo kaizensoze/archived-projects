@@ -1,0 +1,11 @@
+<ul class="nav nav-sidebar">
+  <li class='<%= "active" if current_page?(cms_dashboard_path) %>'><a href="/cms/dashboard">Dashboard</a></li>
+  <li class='<%= "active" if params[:controller] == "cms/background_images" %>'><a href="/cms/background_images">Background Images</a></li>
+  <li class='<%= "active" if params[:controller] == "cms/menus" %>'><a href="/cms/menus">Menus</a></li>
+  <li class='<%= "active" if params[:controller] == "cms/gym_schedules" %>'><a href="/cms/gym_schedules">Gym Schedules</a></li>
+  <li class='<%= "active" if params[:controller] == "cms/poll" %>'><a href="/cms/poll">Poll</a></li>
+  <li class='<%= "active" if params[:controller] == "cms/announcements" %>'><a href="/cms/announcements">Don't Miss</a></li>
+  <li class='<%= "active" if params[:controller] == "cms/help_now_items" %>'><a href="/cms/help_now_items">Help Now</a></li>
+  <li class='<%= "active" if params[:controller] == "cms/who_to_call_subjects" || params[:controller] == "cms/who_to_call_items" %>'><a href="/cms/who_to_call_subjects">Who to Call</a></li>
+  <li class='<%= "active" if params[:controller] == "cms/did_you_know_subjects"  || params[:controller] == "cms/did_you_know_items" %>'><a href="/cms/did_you_know_subjects">Did you Know</a></li>
+</ul>

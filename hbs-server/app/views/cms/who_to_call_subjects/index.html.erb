@@ -1,0 +1,35 @@
+<h1 class="page-header">
+  Who to Call
+  <span class="pull-right">
+    <a href="/cms/who_to_call_subjects/new" class="btn btn-primary">
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    </a>
+  </span>
+</h1>
+<%= render 'layouts/cms/flashes' %>
+
+<div class="table-responsive">
+  <table class="table table-striped who-to-call-subjects-table">
+    <thead>
+      <tr>
+        <th>Sort</th>
+        <th>Subject</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @who_to_call_subjects.each do |who_to_call_subject| %>
+        <tr data-id=<%= who_to_call_subject.id %>>
+          <td><span class="glyphicon glyphicon-move"></span></td>
+          <td><%= who_to_call_subject.subject %></td>
+          <td><%= link_to "show", cms_who_to_call_subject_path(who_to_call_subject) %></td>
+          <td><%= link_to "edit", edit_cms_who_to_call_subject_path(who_to_call_subject) %></td>
+          <td><%= link_to "delete", cms_who_to_call_subject_path(who_to_call_subject), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,213 @@
+                                                   Prefix Verb       URI Pattern                                                                                Controller#Action
+                                   apipie_apipie_checksum GET        /apipie/apipie_checksum(.:format)                                                          apipie/apipies#apipie_checksum {:format=>"json"}
+                                            apipie_apipie GET        /apipie(/:version)(/:resource)(/:method)(.:format)                                         apipie/apipies#index {:version=>/[^\/]+/, :resource=>/[^\/]+/, :method=>/[^\/]+/}
+                                   new_admin_user_session GET        /admin/login(.:format)                                                                     active_admin/devise/sessions#new
+                                       admin_user_session POST       /admin/login(.:format)                                                                     active_admin/devise/sessions#create
+                               destroy_admin_user_session DELETE|GET /admin/logout(.:format)                                                                    active_admin/devise/sessions#destroy
+                                      admin_user_password POST       /admin/password(.:format)                                                                  active_admin/devise/passwords#create
+                                  new_admin_user_password GET        /admin/password/new(.:format)                                                              active_admin/devise/passwords#new
+                                 edit_admin_user_password GET        /admin/password/edit(.:format)                                                             active_admin/devise/passwords#edit
+                                                          PATCH      /admin/password(.:format)                                                                  active_admin/devise/passwords#update
+                                                          PUT        /admin/password(.:format)                                                                  active_admin/devise/passwords#update
+                                               admin_root GET        /admin(.:format)                                                                           admin/dashboard#index
+                           batch_action_admin_admin_users POST       /admin/admin_users/batch_action(.:format)                                                  admin/admin_users#batch_action
+                                        admin_admin_users GET        /admin/admin_users(.:format)                                                               admin/admin_users#index
+                                                          POST       /admin/admin_users(.:format)                                                               admin/admin_users#create
+                                     new_admin_admin_user GET        /admin/admin_users/new(.:format)                                                           admin/admin_users#new
+                                    edit_admin_admin_user GET        /admin/admin_users/:id/edit(.:format)                                                      admin/admin_users#edit
+                                         admin_admin_user GET        /admin/admin_users/:id(.:format)                                                           admin/admin_users#show
+                                                          PATCH      /admin/admin_users/:id(.:format)                                                           admin/admin_users#update
+                                                          PUT        /admin/admin_users/:id(.:format)                                                           admin/admin_users#update
+                                                          DELETE     /admin/admin_users/:id(.:format)                                                           admin/admin_users#destroy
+                         batch_action_admin_announcements POST       /admin/announcements/batch_action(.:format)                                                admin/announcements#batch_action
+                                      admin_announcements GET        /admin/announcements(.:format)                                                             admin/announcements#index
+                                                          POST       /admin/announcements(.:format)                                                             admin/announcements#create
+                                   new_admin_announcement GET        /admin/announcements/new(.:format)                                                         admin/announcements#new
+                                  edit_admin_announcement GET        /admin/announcements/:id/edit(.:format)                                                    admin/announcements#edit
+                                       admin_announcement GET        /admin/announcements/:id(.:format)                                                         admin/announcements#show
+                                                          PATCH      /admin/announcements/:id(.:format)                                                         admin/announcements#update
+                                                          PUT        /admin/announcements/:id(.:format)                                                         admin/announcements#update
+                                                          DELETE     /admin/announcements/:id(.:format)                                                         admin/announcements#destroy
+                     batch_action_admin_background_images POST       /admin/background_images/batch_action(.:format)                                            admin/background_images#batch_action
+                                  admin_background_images GET        /admin/background_images(.:format)                                                         admin/background_images#index
+                                                          POST       /admin/background_images(.:format)                                                         admin/background_images#create
+                               new_admin_background_image GET        /admin/background_images/new(.:format)                                                     admin/background_images#new
+                              edit_admin_background_image GET        /admin/background_images/:id/edit(.:format)                                                admin/background_images#edit
+                                   admin_background_image GET        /admin/background_images/:id(.:format)                                                     admin/background_images#show
+                                                          PATCH      /admin/background_images/:id(.:format)                                                     admin/background_images#update
+                                                          PUT        /admin/background_images/:id(.:format)                                                     admin/background_images#update
+                                                          DELETE     /admin/background_images/:id(.:format)                                                     admin/background_images#destroy
+                                          admin_dashboard GET        /admin/dashboard(.:format)                                                                 admin/dashboard#index
+                    batch_action_admin_did_you_know_items POST       /admin/did_you_know_items/batch_action(.:format)                                           admin/did_you_know_items#batch_action
+                                 admin_did_you_know_items GET        /admin/did_you_know_items(.:format)                                                        admin/did_you_know_items#index
+                                                          POST       /admin/did_you_know_items(.:format)                                                        admin/did_you_know_items#create
+                              new_admin_did_you_know_item GET        /admin/did_you_know_items/new(.:format)                                                    admin/did_you_know_items#new
+                             edit_admin_did_you_know_item GET        /admin/did_you_know_items/:id/edit(.:format)                                               admin/did_you_know_items#edit
+                                  admin_did_you_know_item GET        /admin/did_you_know_items/:id(.:format)                                                    admin/did_you_know_items#show
+                                                          PATCH      /admin/did_you_know_items/:id(.:format)                                                    admin/did_you_know_items#update
+                                                          PUT        /admin/did_you_know_items/:id(.:format)                                                    admin/did_you_know_items#update
+                                                          DELETE     /admin/did_you_know_items/:id(.:format)                                                    admin/did_you_know_items#destroy
+                         batch_action_admin_gym_schedules POST       /admin/gym_schedules/batch_action(.:format)                                                admin/gym_schedules#batch_action
+                                      admin_gym_schedules GET        /admin/gym_schedules(.:format)                                                             admin/gym_schedules#index
+                                                          POST       /admin/gym_schedules(.:format)                                                             admin/gym_schedules#create
+                                   new_admin_gym_schedule GET        /admin/gym_schedules/new(.:format)                                                         admin/gym_schedules#new
+                                  edit_admin_gym_schedule GET        /admin/gym_schedules/:id/edit(.:format)                                                    admin/gym_schedules#edit
+                                       admin_gym_schedule GET        /admin/gym_schedules/:id(.:format)                                                         admin/gym_schedules#show
+                                                          PATCH      /admin/gym_schedules/:id(.:format)                                                         admin/gym_schedules#update
+                                                          PUT        /admin/gym_schedules/:id(.:format)                                                         admin/gym_schedules#update
+                                                          DELETE     /admin/gym_schedules/:id(.:format)                                                         admin/gym_schedules#destroy
+                        batch_action_admin_help_now_items POST       /admin/help_now_items/batch_action(.:format)                                               admin/help_now_items#batch_action
+                                     admin_help_now_items GET        /admin/help_now_items(.:format)                                                            admin/help_now_items#index
+                                                          POST       /admin/help_now_items(.:format)                                                            admin/help_now_items#create
+                                  new_admin_help_now_item GET        /admin/help_now_items/new(.:format)                                                        admin/help_now_items#new
+                                 edit_admin_help_now_item GET        /admin/help_now_items/:id/edit(.:format)                                                   admin/help_now_items#edit
+                                      admin_help_now_item GET        /admin/help_now_items/:id(.:format)                                                        admin/help_now_items#show
+                                                          PATCH      /admin/help_now_items/:id(.:format)                                                        admin/help_now_items#update
+                                                          PUT        /admin/help_now_items/:id(.:format)                                                        admin/help_now_items#update
+                                                          DELETE     /admin/help_now_items/:id(.:format)                                                        admin/help_now_items#destroy
+                                 batch_action_admin_menus POST       /admin/menus/batch_action(.:format)                                                        admin/menus#batch_action
+                                              admin_menus GET        /admin/menus(.:format)                                                                     admin/menus#index
+                                                          POST       /admin/menus(.:format)                                                                     admin/menus#create
+                                           new_admin_menu GET        /admin/menus/new(.:format)                                                                 admin/menus#new
+                                          edit_admin_menu GET        /admin/menus/:id/edit(.:format)                                                            admin/menus#edit
+                                               admin_menu GET        /admin/menus/:id(.:format)                                                                 admin/menus#show
+                                                          PATCH      /admin/menus/:id(.:format)                                                                 admin/menus#update
+                                                          PUT        /admin/menus/:id(.:format)                                                                 admin/menus#update
+                                                          DELETE     /admin/menus/:id(.:format)                                                                 admin/menus#destroy
+                                 batch_action_admin_users POST       /admin/users/batch_action(.:format)                                                        admin/users#batch_action
+                                              admin_users GET        /admin/users(.:format)                                                                     admin/users#index
+                                                          POST       /admin/users(.:format)                                                                     admin/users#create
+                                           new_admin_user GET        /admin/users/new(.:format)                                                                 admin/users#new
+                                          edit_admin_user GET        /admin/users/:id/edit(.:format)                                                            admin/users#edit
+                                               admin_user GET        /admin/users/:id(.:format)                                                                 admin/users#show
+                                                          PATCH      /admin/users/:id(.:format)                                                                 admin/users#update
+                                                          PUT        /admin/users/:id(.:format)                                                                 admin/users#update
+                                                          DELETE     /admin/users/:id(.:format)                                                                 admin/users#destroy
+                     batch_action_admin_who_to_call_items POST       /admin/who_to_call_items/batch_action(.:format)                                            admin/who_to_call_items#batch_action
+                                  admin_who_to_call_items GET        /admin/who_to_call_items(.:format)                                                         admin/who_to_call_items#index
+                                                          POST       /admin/who_to_call_items(.:format)                                                         admin/who_to_call_items#create
+                               new_admin_who_to_call_item GET        /admin/who_to_call_items/new(.:format)                                                     admin/who_to_call_items#new
+                              edit_admin_who_to_call_item GET        /admin/who_to_call_items/:id/edit(.:format)                                                admin/who_to_call_items#edit
+                                   admin_who_to_call_item GET        /admin/who_to_call_items/:id(.:format)                                                     admin/who_to_call_items#show
+                                                          PATCH      /admin/who_to_call_items/:id(.:format)                                                     admin/who_to_call_items#update
+                                                          PUT        /admin/who_to_call_items/:id(.:format)                                                     admin/who_to_call_items#update
+                                                          DELETE     /admin/who_to_call_items/:id(.:format)                                                     admin/who_to_call_items#destroy
+                                         new_user_session GET        /users/sign_in(.:format)                                                                   devise/sessions#new
+                                             user_session POST       /users/sign_in(.:format)                                                                   devise/sessions#create
+                                     destroy_user_session DELETE     /users/sign_out(.:format)                                                                  devise/sessions#destroy
+                                            user_password POST       /users/password(.:format)                                                                  devise/passwords#create
+                                        new_user_password GET        /users/password/new(.:format)                                                              devise/passwords#new
+                                       edit_user_password GET        /users/password/edit(.:format)                                                             devise/passwords#edit
+                                                          PATCH      /users/password(.:format)                                                                  devise/passwords#update
+                                                          PUT        /users/password(.:format)                                                                  devise/passwords#update
+                                        user_confirmation POST       /users/confirmation(.:format)                                                              confirmations#create
+                                    new_user_confirmation GET        /users/confirmation/new(.:format)                                                          confirmations#new
+                                                          GET        /users/confirmation(.:format)                                                              confirmations#show
+                             users_confirmation_confirmed GET        /users/confirmation/confirmed(.:format)                                                    devise/confirmations#confirmed
+                                                     root GET        /                                                                                          redirect(301, /cms)
+                                                 cms_root GET        /cms(.:format)                                                                             redirect(301, cms/dashboard)
+                                            cms_dashboard GET        /cms/dashboard(.:format)                                                                   cms/dashboard#index
+                               sort_cms_background_images POST       /cms/background_images/sort(.:format)                                                      cms/background_images#sort
+set_active_inactive_cms_background_image_background_image POST       /cms/background_images/:background_image_id/background_image/set_active_inactive(.:format) cms/background_images#set_active_inactive
+                    cms_background_image_background_image POST       /cms/background_images/:background_image_id/background_image(.:format)                     cms/background_images#create
+                new_cms_background_image_background_image GET        /cms/background_images/:background_image_id/background_image/new(.:format)                 cms/background_images#new
+               edit_cms_background_image_background_image GET        /cms/background_images/:background_image_id/background_image/edit(.:format)                cms/background_images#edit
+                                                          GET        /cms/background_images/:background_image_id/background_image(.:format)                     cms/background_images#show
+                                                          PATCH      /cms/background_images/:background_image_id/background_image(.:format)                     cms/background_images#update
+                                                          PUT        /cms/background_images/:background_image_id/background_image(.:format)                     cms/background_images#update
+                                                          DELETE     /cms/background_images/:background_image_id/background_image(.:format)                     cms/background_images#destroy
+                                    cms_background_images GET        /cms/background_images(.:format)                                                           cms/background_images#index
+                                                          POST       /cms/background_images(.:format)                                                           cms/background_images#create
+                                 new_cms_background_image GET        /cms/background_images/new(.:format)                                                       cms/background_images#new
+                                edit_cms_background_image GET        /cms/background_images/:id/edit(.:format)                                                  cms/background_images#edit
+                                     cms_background_image GET        /cms/background_images/:id(.:format)                                                       cms/background_images#show
+                                                          PATCH      /cms/background_images/:id(.:format)                                                       cms/background_images#update
+                                                          PUT        /cms/background_images/:id(.:format)                                                       cms/background_images#update
+                                                          DELETE     /cms/background_images/:id(.:format)                                                       cms/background_images#destroy
+                                                cms_menus GET        /cms/menus(.:format)                                                                       cms/menus#index
+                                                          POST       /cms/menus(.:format)                                                                       cms/menus#create
+                                             new_cms_menu GET        /cms/menus/new(.:format)                                                                   cms/menus#new
+                                            edit_cms_menu GET        /cms/menus/:id/edit(.:format)                                                              cms/menus#edit
+                                                 cms_menu GET        /cms/menus/:id(.:format)                                                                   cms/menus#show
+                                                          PATCH      /cms/menus/:id(.:format)                                                                   cms/menus#update
+                                                          PUT        /cms/menus/:id(.:format)                                                                   cms/menus#update
+                                                          DELETE     /cms/menus/:id(.:format)                                                                   cms/menus#destroy
+                                        cms_gym_schedules GET        /cms/gym_schedules(.:format)                                                               cms/gym_schedules#index
+                                                          POST       /cms/gym_schedules(.:format)                                                               cms/gym_schedules#create
+                                     new_cms_gym_schedule GET        /cms/gym_schedules/new(.:format)                                                           cms/gym_schedules#new
+                                    edit_cms_gym_schedule GET        /cms/gym_schedules/:id/edit(.:format)                                                      cms/gym_schedules#edit
+                                         cms_gym_schedule GET        /cms/gym_schedules/:id(.:format)                                                           cms/gym_schedules#show
+                                                          PATCH      /cms/gym_schedules/:id(.:format)                                                           cms/gym_schedules#update
+                                                          PUT        /cms/gym_schedules/:id(.:format)                                                           cms/gym_schedules#update
+                                                          DELETE     /cms/gym_schedules/:id(.:format)                                                           cms/gym_schedules#destroy
+                                      save_cms_poll_index POST       /cms/poll/save(.:format)                                                                   cms/poll#save
+                                           cms_poll_index GET        /cms/poll(.:format)                                                                        cms/poll#index
+                                                          POST       /cms/poll(.:format)                                                                        cms/poll#create
+                                             new_cms_poll GET        /cms/poll/new(.:format)                                                                    cms/poll#new
+                                            edit_cms_poll GET        /cms/poll/:id/edit(.:format)                                                               cms/poll#edit
+                                                 cms_poll GET        /cms/poll/:id(.:format)                                                                    cms/poll#show
+                                                          PATCH      /cms/poll/:id(.:format)                                                                    cms/poll#update
+                                                          PUT        /cms/poll/:id(.:format)                                                                    cms/poll#update
+                                                          DELETE     /cms/poll/:id(.:format)                                                                    cms/poll#destroy
+                                   sort_cms_announcements POST       /cms/announcements/sort(.:format)                                                          cms/announcements#sort
+                                        cms_announcements GET        /cms/announcements(.:format)                                                               cms/announcements#index
+                                                          POST       /cms/announcements(.:format)                                                               cms/announcements#create
+                                     new_cms_announcement GET        /cms/announcements/new(.:format)                                                           cms/announcements#new
+                                    edit_cms_announcement GET        /cms/announcements/:id/edit(.:format)                                                      cms/announcements#edit
+                                         cms_announcement GET        /cms/announcements/:id(.:format)                                                           cms/announcements#show
+                                                          PATCH      /cms/announcements/:id(.:format)                                                           cms/announcements#update
+                                                          PUT        /cms/announcements/:id(.:format)                                                           cms/announcements#update
+                                                          DELETE     /cms/announcements/:id(.:format)                                                           cms/announcements#destroy
+                                  sort_cms_help_now_items POST       /cms/help_now_items/sort(.:format)                                                         cms/help_now_items#sort
+                                       cms_help_now_items GET        /cms/help_now_items(.:format)                                                              cms/help_now_items#index
+                                                          POST       /cms/help_now_items(.:format)                                                              cms/help_now_items#create
+                                    new_cms_help_now_item GET        /cms/help_now_items/new(.:format)                                                          cms/help_now_items#new
+                                   edit_cms_help_now_item GET        /cms/help_now_items/:id/edit(.:format)                                                     cms/help_now_items#edit
+                                        cms_help_now_item GET        /cms/help_now_items/:id(.:format)                                                          cms/help_now_items#show
+                                                          PATCH      /cms/help_now_items/:id(.:format)                                                          cms/help_now_items#update
+                                                          PUT        /cms/help_now_items/:id(.:format)                                                          cms/help_now_items#update
+                                                          DELETE     /cms/help_now_items/:id(.:format)                                                          cms/help_now_items#destroy
+                            sort_cms_who_to_call_subjects POST       /cms/who_to_call_subjects/sort(.:format)                                                   cms/who_to_call_subjects#sort
+           sort_cms_who_to_call_subject_who_to_call_items POST       /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items/sort(.:format)         cms/who_to_call_items#sort
+                cms_who_to_call_subject_who_to_call_items GET        /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items(.:format)              cms/who_to_call_items#index
+                                                          POST       /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items(.:format)              cms/who_to_call_items#create
+             new_cms_who_to_call_subject_who_to_call_item GET        /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items/new(.:format)          cms/who_to_call_items#new
+            edit_cms_who_to_call_subject_who_to_call_item GET        /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items/:id/edit(.:format)     cms/who_to_call_items#edit
+                 cms_who_to_call_subject_who_to_call_item GET        /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items/:id(.:format)          cms/who_to_call_items#show
+                                                          PATCH      /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items/:id(.:format)          cms/who_to_call_items#update
+                                                          PUT        /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items/:id(.:format)          cms/who_to_call_items#update
+                                                          DELETE     /cms/who_to_call_subjects/:who_to_call_subject_id/who_to_call_items/:id(.:format)          cms/who_to_call_items#destroy
+                                 cms_who_to_call_subjects GET        /cms/who_to_call_subjects(.:format)                                                        cms/who_to_call_subjects#index
+                                                          POST       /cms/who_to_call_subjects(.:format)                                                        cms/who_to_call_subjects#create
+                              new_cms_who_to_call_subject GET        /cms/who_to_call_subjects/new(.:format)                                                    cms/who_to_call_subjects#new
+                             edit_cms_who_to_call_subject GET        /cms/who_to_call_subjects/:id/edit(.:format)                                               cms/who_to_call_subjects#edit
+                                  cms_who_to_call_subject GET        /cms/who_to_call_subjects/:id(.:format)                                                    cms/who_to_call_subjects#show
+                                                          PATCH      /cms/who_to_call_subjects/:id(.:format)                                                    cms/who_to_call_subjects#update
+                                                          PUT        /cms/who_to_call_subjects/:id(.:format)                                                    cms/who_to_call_subjects#update
+                                                          DELETE     /cms/who_to_call_subjects/:id(.:format)                                                    cms/who_to_call_subjects#destroy
+                           sort_cms_did_you_know_subjects POST       /cms/did_you_know_subjects/sort(.:format)                                                  cms/did_you_know_subjects#sort
+         sort_cms_did_you_know_subject_did_you_know_items POST       /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items/sort(.:format)      cms/did_you_know_items#sort
+              cms_did_you_know_subject_did_you_know_items GET        /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items(.:format)           cms/did_you_know_items#index
+                                                          POST       /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items(.:format)           cms/did_you_know_items#create
+           new_cms_did_you_know_subject_did_you_know_item GET        /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items/new(.:format)       cms/did_you_know_items#new
+          edit_cms_did_you_know_subject_did_you_know_item GET        /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items/:id/edit(.:format)  cms/did_you_know_items#edit
+               cms_did_you_know_subject_did_you_know_item GET        /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items/:id(.:format)       cms/did_you_know_items#show
+                                                          PATCH      /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items/:id(.:format)       cms/did_you_know_items#update
+                                                          PUT        /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items/:id(.:format)       cms/did_you_know_items#update
+                                                          DELETE     /cms/did_you_know_subjects/:did_you_know_subject_id/did_you_know_items/:id(.:format)       cms/did_you_know_items#destroy
+                                cms_did_you_know_subjects GET        /cms/did_you_know_subjects(.:format)                                                       cms/did_you_know_subjects#index
+                                                          POST       /cms/did_you_know_subjects(.:format)                                                       cms/did_you_know_subjects#create
+                             new_cms_did_you_know_subject GET        /cms/did_you_know_subjects/new(.:format)                                                   cms/did_you_know_subjects#new
+                            edit_cms_did_you_know_subject GET        /cms/did_you_know_subjects/:id/edit(.:format)                                              cms/did_you_know_subjects#edit
+                                 cms_did_you_know_subject GET        /cms/did_you_know_subjects/:id(.:format)                                                   cms/did_you_know_subjects#show
+                                                          PATCH      /cms/did_you_know_subjects/:id(.:format)                                                   cms/did_you_know_subjects#update
+                                                          PUT        /cms/did_you_know_subjects/:id(.:format)                                                   cms/did_you_know_subjects#update
+                                                          DELETE     /cms/did_you_know_subjects/:id(.:format)                                                   cms/did_you_know_subjects#destroy
+                         api_v1_send_verification_request POST       /api/v1/send-verification-request(.:format)                                                api/v1/home#send_verification_request {:format=>"json"}
+                                    api_v1_check_verified POST       /api/v1/check-verified(.:format)                                                           api/v1/home#check_verified {:format=>"json"}
+                                             api_v1_today GET        /api/v1/today(.:format)                                                                    api/v1/home#today {:format=>"json"}
+                                       api_v1_poll_submit POST       /api/v1/poll-submit(.:format)                                                              api/v1/home#poll_submit {:format=>"json"}
+                                      api_v1_poll_results GET        /api/v1/poll-results(.:format)                                                             api/v1/home#poll_results {:format=>"json"}
+                                          api_v1_help_now GET        /api/v1/help-now(.:format)                                                                 api/v1/home#help_now {:format=>"json"}
+                                       api_v1_who_to_call GET        /api/v1/who-to-call(.:format)                                                              api/v1/home#who_to_call {:format=>"json"}
+                                      api_v1_did_you_know GET        /api/v1/did-you-know(.:format)                                                             api/v1/home#did_you_know {:format=>"json"}

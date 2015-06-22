@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en" data-placeholder-focus="false">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HBS Thrive CMS</title>
+  <%= stylesheet_link_tag 'cms/application', :media => 'all' %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'cms/application' %>
+  <%= yield :javascript %>
+</head>
+<body class="<%= controller_name %> <%= action_name %>" data-no-turbolink>
+  <%= render 'layouts/cms/header' %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <%= render 'layouts/cms/sidebar' %>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://happyfun.atlassian.net/s/466d6a18992fbd8641961f2ae5a66042-T/en_US-7s5ti5/64003/14/1.4.15/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=69503b1d"></script>
+</body>
+</html>

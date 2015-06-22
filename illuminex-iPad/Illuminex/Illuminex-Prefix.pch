@@ -1,0 +1,21 @@
+//
+//  Illuminex-Prefix.pch
+//  Illuminex
+//
+//  Created by Joe Gallo on 9/23/14.
+//  Copyright (c) 2014 HappyFunCorp. All rights reserved.
+//
+
+#ifndef Illuminex_Illuminex_Prefix_pch
+#define Illuminex_Illuminex_Prefix_pch
+
+#import <Availability.h>
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import "ILUEnvironment.h"
+    #import "ILUGlobals.h"
+#endif
+
+#endif

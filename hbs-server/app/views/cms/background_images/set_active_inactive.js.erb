@@ -1,0 +1,9 @@
+var background_image_id = "<%= @background_image.id %>";
+var background_image_active = "<%= @background_image.active %>";
+var background_image_div = $("div.background-image-container").find('[data-id="' + background_image_id + '"]');
+var background_image_active_inactive_span = background_image_div.find('.active_inactive span');
+if (background_image_active === 'true') {
+    background_image_active_inactive_span.removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
+} else {
+    background_image_active_inactive_span.removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
+}

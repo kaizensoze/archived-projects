@@ -1,0 +1,21 @@
+.background-image {
+  background-color: white;
+  border: 1px solid black;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  float: left;
+  cursor: move;
+}
+
+.background-image .util-bar {
+  margin-top: 15px;
+  text-align: center;
+}
+
+/*.background-image-container img {
+  width: auto;
+  height: auto;
+  max-width: 175px;
+  max-height: 100%;
+}*/

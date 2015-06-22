@@ -1,0 +1,11 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, "6.0"
+
+target "Illuminex" do
+
+pod 'AFNetworking', '~> 2.2'
+pod 'CocoaLumberjack'
+pod 'MBProgressHUD', '~> 0.8'
+pod 'ViewDeck', '~> 2.2.11'
+
+end

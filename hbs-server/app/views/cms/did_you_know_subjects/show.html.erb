@@ -1,0 +1,46 @@
+<h1 class="page-header">
+  Did you Know
+  <span class="pull-right">
+    <%= link_to new_cms_did_you_know_subject_did_you_know_item_path(@did_you_know_subject), class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    <% end %>
+  </span>
+</h1>
+
+<%= render 'layouts/cms/flashes' %>
+
+<%= link_to 'Back', cms_did_you_know_subjects_path %>
+
+<h3>Subject: <%= @did_you_know_subject.subject %></h3>
+
+<input id="did-you-know-subject-id" type="hidden" name="" value="<%= @did_you_know_subject.id %>">
+
+<div class="table-responsive">
+  <table class="table table-striped did-you-know-items-table">
+    <thead>
+      <tr>
+        <th>Sort</th>
+        <th>Title</th>
+        <th>Website</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @did_you_know_items.each do |did_you_know_item| %>
+        <tr data-id=<%= did_you_know_item.id %>>
+          <td><span class="glyphicon glyphicon-move"></span></td>
+          <td><%= did_you_know_item.title %></td>
+          <td><%= did_you_know_item.website %></td>
+          <td><%= did_you_know_item.email %></td>
+          <td><%= did_you_know_item.phone_number %></td>
+          <td><%= link_to "edit", edit_cms_did_you_know_subject_did_you_know_item_path(@did_you_know_subject, did_you_know_item) %></td>
+          <td><%= link_to "delete", cms_did_you_know_subject_did_you_know_item_path(@did_you_know_subject, did_you_know_item), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

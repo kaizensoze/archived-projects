@@ -1,0 +1,2 @@
+web: bundle exec unicorn -p $PORT -c ./config/unicorn.rb
+worker: env DB_POOL=25 bundle exec sidekiq -v -q mailer -q default

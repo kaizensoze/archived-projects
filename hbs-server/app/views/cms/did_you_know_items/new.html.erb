@@ -1,0 +1,11 @@
+<h1 class="page-header">
+  Did you Know
+  <span class="pull-right">
+    <%= link_to new_cms_did_you_know_subject_did_you_know_item_path(@did_you_know_subject), class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    <% end %>
+  </span>
+</h1>
+<%= render 'layouts/cms/flashes' %>
+<%= render 'form' %>

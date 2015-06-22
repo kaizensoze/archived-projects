@@ -1,0 +1,6 @@
+platform :ios, '7.0'
+pod 'AFNetworking', '~> 2.2'
+pod 'CocoaLumberjack'
+pod 'MBProgressHUD', '~> 0.8'
+pod 'Instabug'
+pod 'SDWebImage', '~>3.6'

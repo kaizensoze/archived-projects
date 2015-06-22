@@ -1,0 +1,111 @@
+<div>
+  <%= form_for [:cms, @announcement], html: {class: "form-horizontal", role: "form"} do |f| %>
+    <div class="action-buttons top">
+      <%= render 'form_action' %>
+    </div>
+    
+    <% if @announcement.errors.full_messages.any? %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <% @announcement.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label required">Summary</label>
+      <div class="col-sm-10">
+        <%= f.text_field :summary, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label required">Headline</label>
+      <div class="col-sm-10">
+        <%= f.text_field :headline, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label"></label>
+      <div class="col-sm-10">
+        <%= image_tag @announcement.image, size: "200x150" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Image</label>
+      <div class="col-sm-10">
+        <%= f.file_field :image, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label required">Body</label>
+      <div class="col-sm-10">
+        <%= f.text_area :body, class: "form-control", rows: 7 %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Location</label>
+      <div class="col-sm-10">
+        <%= f.text_field :location, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Start Time</label>
+      <span class="col-sm-2">
+        <%= f.text_field :start_time, class: "form-control datepicker", value: "#{f.object.start_time.strftime("%Y-%m-%d") rescue ""}" %>
+      </span>
+      <span class="col-sm-2">
+        <%= f.time_select :start_time, ignore_date: true, ampm: true, include_blank: true %>
+        <span class="glyphicon glyphicon-remove clear_input hide"></span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">End Time</label>
+      <span class="col-sm-2">
+        <%= f.text_field :end_time, class: "form-control datepicker", value: "#{f.object.end_time.strftime("%Y-%m-%d") rescue ""}" %>
+      </span>
+      <span class="col-sm-2">
+        <%= f.time_select :end_time, ignore_date: true, ampm: true, include_blank: true %>
+        <span class="glyphicon glyphicon-remove clear_input hide"></span>
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Button</label>
+      <div class="col-sm-10">
+        <%= f.check_box :has_button, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Button Text</label>
+      <div class="col-sm-10">
+        <%= f.text_field :button_text, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Button Link</label>
+      <div class="col-sm-10">
+        <%= f.text_field :button_link, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Active</label>
+      <div class="col-sm-10">
+        <%= f.check_box :active, class: "form-control" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+<%= form_for [:cms, @announcement], method: :delete, html: {id: "delete_announcement"} do |f| %>
+<% end %>

@@ -1,0 +1,46 @@
+<h1 class="page-header">
+  Don't Miss
+  <span class="pull-right">
+    <a href="/cms/announcements/new" class="btn btn-primary">
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    </a>
+  </span>
+</h1>
+<%= render 'layouts/cms/flashes' %>
+<div class="table-responsive">
+  <table class="table table-striped announcements-table">
+    <thead>
+      <tr>
+        <th>Sort</th>
+        <th>Created Date</th>
+        <th>Summary</th>
+        <th>Created By</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @announcements.each do |announcement| %>
+        <tr data-id=<%= announcement.id %>>
+          <td><span class="glyphicon glyphicon-move"></span></td>
+          <td><%= announcement.created_at %></td>
+          <td><%= announcement.summary %></td>
+          <td><%= announcement.admin_user.try(:email) %></td>
+          <td>
+            <%= link_to set_active_inactive_cms_announcement_path(announcement), :class => "active_inactive", :method => :post, :remote => true do %>
+              <% if announcement.active %>
+                <span class="glyphicon glyphicon-eye-open"></span>
+              <% else %>
+                <span class="glyphicon glyphicon-eye-close"></span>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= link_to "edit", edit_cms_announcement_path(announcement) %></td>
+          <td><%= link_to "delete", cms_announcement_path(announcement), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

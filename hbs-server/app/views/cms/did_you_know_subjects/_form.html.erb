@@ -1,0 +1,26 @@
+<div>
+  <%= form_for [:cms, @did_you_know_subject], html: {class: "form-horizontal", role: "form"} do |f| %>
+    <div class="action-buttons top">
+      <%= render 'form_action' %>
+    </div>
+    
+    <% if @did_you_know_subject.errors.full_messages.any? %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <% @did_you_know_subject.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Subject</label>
+      <div class="col-sm-10">
+        <%= f.text_field :subject, class: "form-control" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+
+<%= form_for [:cms, @did_you_know_subject], method: :delete, html: {id: "delete_did_you_know_subject"} do |f| %>
+<% end %>

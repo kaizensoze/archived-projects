@@ -1,0 +1,11 @@
+<h1 class="page-header">
+  Who to Call
+  <span class="pull-right">
+    <%= link_to new_cms_who_to_call_subject_who_to_call_item_path(@who_to_call_subject), class: "btn btn-primary" do %>
+      <span class="glyphicon glyphicon-plus"></span>
+      Add
+    <% end %>
+  </span>
+</h1>
+<%= render 'layouts/cms/flashes' %>
+<%= render 'form' %>

@@ -1,0 +1,15 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery-ui/datepicker
+//= require cms/jquery.datetime
+//= require jquery-ui/slider
+//= require jquery-ui/sortable
+//= require bootstrap.min
+//= require select2
+//= require turbolinks
+//= require cms/common
+//= require cms/background_images
+//= require cms/announcements
+//= require cms/help_now
+//= require cms/who_to_call
+//= require cms/did_you_know
