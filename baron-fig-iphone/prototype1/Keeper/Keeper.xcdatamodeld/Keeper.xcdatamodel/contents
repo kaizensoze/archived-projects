@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CapturedImage" representedClassName="BFKCapturedImage" parentEntity="CapturedItem" syncable="YES">
+        <attribute name="image" attributeType="Binary" syncable="YES"/>
+        <attribute name="imported" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+    </entity>
+    <entity name="CapturedItem" representedClassName="BFKCapturedItem" isAbstract="YES" syncable="YES">
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="page" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Page" inverseName="item" inverseEntity="Page" syncable="YES"/>
+    </entity>
+    <entity name="CapturedNote" representedClassName="BFKCapturedNote" parentEntity="CapturedItem" syncable="YES"/>
+    <entity name="Notebook" representedClassName="BFKNotebook" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="sortOrder" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="sections" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Section" inverseName="notebook" inverseEntity="Section" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="name"/>
+                <index value="sortOrder"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <entity name="Page" representedClassName="BFKPage" syncable="YES">
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CapturedItem" inverseName="page" inverseEntity="CapturedItem" syncable="YES"/>
+        <relationship name="section" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Section" inverseName="pages" inverseEntity="Section" syncable="YES"/>
+    </entity>
+    <entity name="Section" representedClassName="BFKSection" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="notebook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notebook" inverseName="sections" inverseEntity="Notebook" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Page" inverseName="section" inverseEntity="Page" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="name"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <elements>
+        <element name="CapturedImage" positionX="133" positionY="387" width="128" height="73"/>
+        <element name="CapturedItem" positionX="207" positionY="270" width="128" height="73"/>
+        <element name="CapturedNote" positionX="306" positionY="387" width="128" height="43"/>
+        <element name="Notebook" positionX="-45" positionY="0" width="128" height="88"/>
+        <element name="Page" positionX="-45" positionY="269" width="128" height="73"/>
+        <element name="Section" positionX="-47" positionY="125" width="128" height="88"/>
+    </elements>
+</model>

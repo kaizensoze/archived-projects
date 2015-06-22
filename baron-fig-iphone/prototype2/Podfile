@@ -1,0 +1,10 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+inhibit_all_warnings!
+
+pod 'CocoaLumberjack', '2.0.0-beta4'
+pod 'ViewDeck', '~> 2.2.11'
+pod 'AFNetworking', '~> 2.4'
+pod 'SendGrid', '~>  0.2.6'
+pod 'KCOrderedAccessorFix'
+pod 'GoogleAnalytics-iOS-SDK'

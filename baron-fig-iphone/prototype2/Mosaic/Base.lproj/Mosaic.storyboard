@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="nUB-ZW-1JJ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="BrandonGrotesque-Bold.otf">
+            <string>BrandonGrotesque-Bold</string>
+        </mutableArray>
+        <mutableArray key="BrandonGrotesque-Regular.otf">
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+        </mutableArray>
+        <mutableArray key="GothamBold.ttf">
+            <string>GothamBold</string>
+        </mutableArray>
+        <mutableArray key="GothamBook.ttf">
+            <string>GothamBook</string>
+            <string>GothamBook</string>
+            <string>GothamBook</string>
+            <string>GothamBook</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="2i8-lj-Oh7">
+            <objects>
+                <viewController storyboardIdentifier="Intro" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qON-46-784" customClass="BFKIntroViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GOA-dd-nHb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro" id="eHf-bb-xv7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3yu-n0-e3P" appends="YES" id="YWm-zn-K64"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QM3-Pi-Gtq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="3yu-n0-e3P">
+                    <connections>
+                        <action selector="advance:" destination="qON-46-784" id="Evz-58-QIW"/>
+                        <outlet property="delegate" destination="eHf-bb-xv7" id="Ud5-NS-n6e"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-686" y="-314"/>
+        </scene>
+        <!--Intro1 View Controller-->
+        <scene sceneID="eY8-KX-Bxn">
+            <objects>
+                <viewController storyboardIdentifier="Intro1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IVE-g4-ZNF" customClass="BFKIntro1ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ybm-UO-LAV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro1" id="QJD-hJ-ehz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MBY-ED-EkF" appends="YES" id="zds-Pj-7L5"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SMG-vN-xw9"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="reV-iq-dhl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="MBY-ED-EkF">
+                    <connections>
+                        <action selector="next:" destination="IVE-g4-ZNF" id="33e-NT-43C"/>
+                        <outlet property="delegate" destination="IVE-g4-ZNF" id="tjj-aJ-pTH"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-311" y="-314"/>
+        </scene>
+        <!--Intro2 View Controller-->
+        <scene sceneID="bdk-nL-pvm">
+            <objects>
+                <viewController storyboardIdentifier="Intro2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eCe-Ka-P2w" customClass="BFKIntro2ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PWg-y1-dTc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro2" id="qpH-k6-2Ub">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PZD-jc-LYJ" appends="YES" id="YFH-e8-uEJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="1eL-ey-K4W" appends="YES" id="MCp-t3-McC"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qhv-Mq-hJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="PZD-jc-LYJ">
+                    <connections>
+                        <action selector="next:" destination="eCe-Ka-P2w" id="YFJ-oK-qXU"/>
+                        <outlet property="delegate" destination="eCe-Ka-P2w" id="m2f-1k-svT"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="1eL-ey-K4W">
+                    <connections>
+                        <action selector="prev:" destination="eCe-Ka-P2w" id="DLC-xG-V2l"/>
+                        <outlet property="delegate" destination="eCe-Ka-P2w" id="Sp6-FD-Re0"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="58" y="-314"/>
+        </scene>
+        <!--Intro3 View Controller-->
+        <scene sceneID="tNE-Yh-eg5">
+            <objects>
+                <viewController storyboardIdentifier="Intro3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cZc-0g-gzM" customClass="BFKIntro3ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Pg-AG-13L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro3" id="Khf-pm-PC4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="50L-dO-oe0" appends="YES" id="QlB-Tn-klE"/>
+                                    <outletCollection property="gestureRecognizers" destination="Tyy-rW-mKr" appends="YES" id="LFl-Qh-7zg"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FK7-5c-6sQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="50L-dO-oe0">
+                    <connections>
+                        <action selector="next:" destination="cZc-0g-gzM" id="ZNG-Hh-JEl"/>
+                        <outlet property="delegate" destination="cZc-0g-gzM" id="Hsx-1V-SH9"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Tyy-rW-mKr">
+                    <connections>
+                        <action selector="prev:" destination="cZc-0g-gzM" id="R58-Pz-yVz"/>
+                        <outlet property="delegate" destination="cZc-0g-gzM" id="Dcb-EM-M4l"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="430" y="-314"/>
+        </scene>
+        <!--Intro4 View Controller-->
+        <scene sceneID="oWb-3Q-jhd">
+            <objects>
+                <viewController storyboardIdentifier="Intro4" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wuh-Vc-0qB" customClass="BFKIntro4ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uwu-aZ-jxn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro4" id="FgT-Ir-FKR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rg1-ig-a0A" appends="YES" id="1RT-Wf-WtM"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o3E-AL-vl7">
+                                <rect key="frame" x="23" y="451" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="intro4-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="advance:" destination="wuh-Vc-0qB" eventType="touchUpInside" id="d19-ZV-K7H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mDz-cf-asn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="rg1-ig-a0A">
+                    <connections>
+                        <action selector="prev:" destination="wuh-Vc-0qB" id="I1a-GE-QEF"/>
+                        <outlet property="delegate" destination="wuh-Vc-0qB" id="vks-lA-Njg"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="808" y="-314"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3PD-O4-5JS">
+            <objects>
+                <navigationController storyboardIdentifier="SidebarNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J7d-Pz-5Kr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1ra-q9-ZnB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="X6b-Kb-KjG" kind="relationship" relationship="rootViewController" id="88Z-2J-wtI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jit-4F-6sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="356"/>
+        </scene>
+        <!--Sidebar View Controller-->
+        <scene sceneID="XH1-5J-aiQ">
+            <objects>
+                <viewController storyboardIdentifier="Sidebar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X6b-Kb-KjG" customClass="BFKSidebarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nla-VH-k4u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="iyY-Tj-l9M">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ceh-hJ-rr5">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="465"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <inset key="contentInset" minX="0.0" minY="-36" maxX="0.0" maxY="-30"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Feedback1Cell" rowHeight="150" id="egw-6T-hDj" customClass="BFKFeedback1TableViewCell">
+                                                <rect key="frame" x="0.0" y="50" width="320" height="150"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="egw-6T-hDj" id="FSy-b6-3bE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q1: What do you like about this app?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oV0-nD-Lh2">
+                                                            <rect key="frame" x="25" y="14" width="277" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
+                                                            <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="50U-Rs-F2u">
+                                                            <rect key="frame" x="25" y="48" width="277" height="85"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <inset key="contentInset" minX="-4" minY="-8" maxX="0.0" maxY="0.0"/>
+                                                            <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="X6b-Kb-KjG" id="WEK-KW-kgy"/>
+                                                            </connections>
+                                                        </textView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="label" destination="oV0-nD-Lh2" id="g4O-Gk-GnA"/>
+                                                    <outlet property="textView" destination="50U-Rs-F2u" id="aFg-Wb-uTm"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Feedback2Cell" rowHeight="50" id="gnd-Sn-fbM" customClass="BFKFeedback2TableViewCell">
+                                                <rect key="frame" x="0.0" y="200" width="320" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gnd-Sn-fbM" id="4Gn-rS-w2R">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" clearButtonMode="whileEditing" id="JmC-40-Tmv">
+                                                            <rect key="frame" x="25" y="0.0" width="277" height="49"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="X6b-Kb-KjG" id="5jX-s7-0JE"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="textField" destination="JmC-40-Tmv" id="cgo-MM-1gb"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="X6b-Kb-KjG" id="UoA-kt-3qP"/>
+                                            <outlet property="delegate" destination="X6b-Kb-KjG" id="RTF-mm-rnI"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="2Ak-UO-kD1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="pl0-YW-CdA">
+                                        <rect key="frame" x="13" y="65" width="298" height="384"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">Baron Fig started as a project between friends. We
+love making things. We know there are others out
+there, both hobbyists and professionals, that feel
+the same way. It's our mission to empower them to
+create and inspire the world.  Our roots stem back into the community. We
+designed our notebooks—the Confidant and
+Apprentice—by listening to the thoughts and ideas
+of others. And the company came to exist through a
+backer-fueled Kickstarter.
+
+You now have the next iteration of Baron Fig in your
+hands. The Keeer is our first journey into the digital
+realm—and we're extremely excited.
+
+Together with your feedback, we're going to work on
+making this the best idea and note app we possibly
+can. We hope you enjoy it so far, and we look
+forward to your thoughts.
+
+—The Baron Fig Team</string>
+                                        <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j2h-Vm-dD9">
+                                        <rect key="frame" x="19" y="462" width="271" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="12"/>
+                                        <inset key="imageEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                                        <state key="normal" title="VISIT BARONFIG.COM" backgroundImage="button">
+                                            <color key="titleColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="button-active"/>
+                                        <state key="highlighted" backgroundImage="button-active"/>
+                                        <connections>
+                                            <action selector="visitWebsite:" destination="X6b-Kb-KjG" eventType="touchUpInside" id="fUG-Xq-7Jj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Drh-FV-Wkf">
+                                <rect key="frame" x="0.0" y="532" width="160" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="feedback-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="feedback-button-active"/>
+                                <state key="highlighted" image="feedback-button-active"/>
+                                <connections>
+                                    <action selector="showFeedback:" destination="X6b-Kb-KjG" eventType="touchUpInside" id="dBl-PJ-oGW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DgC-uY-oQa">
+                                <rect key="frame" x="160" y="532" width="160" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="about-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="about-button-active"/>
+                                <state key="highlighted" image="about-button-active"/>
+                                <connections>
+                                    <action selector="showAbout:" destination="X6b-Kb-KjG" eventType="touchUpInside" id="f9I-Me-rII"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zKc-54-mgr"/>
+                    <connections>
+                        <outlet property="aboutButton" destination="DgC-uY-oQa" id="awk-em-UKr"/>
+                        <outlet property="aboutTextView" destination="pl0-YW-CdA" id="mGK-XN-9Oi"/>
+                        <outlet property="aboutView" destination="2Ak-UO-kD1" id="wtZ-4l-b4f"/>
+                        <outlet property="feedbackButton" destination="Drh-FV-Wkf" id="YBr-IG-GqZ"/>
+                        <outlet property="feedbackTableView" destination="ceh-hJ-rr5" id="7Si-wl-yao"/>
+                        <outlet property="feedbackView" destination="iyY-Tj-l9M" id="6QF-5a-GZj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7B5-sU-BWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311" y="356"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xvz-NB-a34">
+            <objects>
+                <navigationController storyboardIdentifier="NoteListNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="51x-Xg-2IL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6f-Jv-Gc9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nUB-ZW-1JJ" kind="relationship" relationship="rootViewController" id="pej-1P-5g1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mlw-RW-dR5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="1014"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gTH-tq-nAt">
+            <objects>
+                <navigationController storyboardIdentifier="NoteNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dkk-Q3-gKz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dZo-1o-wCn"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n9Q-Pw-teb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xfi-YK-vk5" kind="relationship" relationship="rootViewController" id="545-TQ-UUd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oTV-rn-3sH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="1671"/>
+        </scene>
+        <!--Note Table View Controller-->
+        <scene sceneID="n3d-S0-kmc">
+            <objects>
+                <tableViewController storyboardIdentifier="Note" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xfi-YK-vk5" customClass="BFKNoteTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="235" sectionHeaderHeight="22" sectionFooterHeight="22" id="DHl-KM-dJX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NotePartCell" rowHeight="235" id="y2T-H6-RD9" customClass="BFKNotePartTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="235"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y2T-H6-RD9" id="ZFN-jh-IdI">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="235"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cPc-9L-7h2">
+                                            <rect key="frame" x="8" y="9" width="301" height="12"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="9"/>
+                                            <color key="textColor" red="0.70980392156862748" green="0.59215686274509804" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="bdD-du-p2g">
+                                            <rect key="frame" x="8" y="29" width="301" height="77"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <color key="textColor" red="0.41176470588235292" green="0.19215686274509805" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="12"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <view contentMode="scaleToFill" id="3AX-Ja-BR3">
+                                            <rect key="frame" x="8" y="29" width="301" height="194"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uM2-TE-YjS">
+                                                    <rect key="frame" x="1" y="1" width="299" height="192"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dateLabel" destination="cPc-9L-7h2" id="SFt-cC-5De"/>
+                                    <outlet property="outerImageView" destination="3AX-Ja-BR3" id="XxV-zI-411"/>
+                                    <outlet property="textView" destination="bdD-du-p2g" id="QnM-ZH-uMc"/>
+                                    <outlet property="theImageView" destination="uM2-TE-YjS" id="Zzd-Vw-jaT"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xfi-YK-vk5" id="Yvi-TG-Cdm"/>
+                            <outlet property="delegate" destination="xfi-YK-vk5" id="ZrU-NZ-IYT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="MSS-g4-zzv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j37-0B-cBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311" y="1671"/>
+        </scene>
+        <!--Note List Table View Controller-->
+        <scene sceneID="RP9-Fj-bkt">
+            <objects>
+                <tableViewController storyboardIdentifier="NoteList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nUB-ZW-1JJ" customClass="BFKNoteListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OQQ-3f-gZu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="81" id="bVW-1j-zbm" customClass="BFKNoteTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="81"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bVW-1j-zbm" id="pNy-ja-VFd">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K1R-6y-kHa">
+                                            <rect key="frame" x="18" y="13" width="158" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="GothamBold" family="Gotham Bold" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="faK-TQ-LPy">
+                                            <rect key="frame" x="185" y="15" width="102" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="10"/>
+                                            <color key="textColor" red="0.85490196078431369" green="0.79607843137254897" blue="0.82745098039215681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note-cell-arrow" id="TwM-T8-f3X">
+                                            <rect key="frame" x="297" y="17" width="5" height="9"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cVw-uX-yFp">
+                                            <rect key="frame" x="18" y="29" width="284" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="GothamBook" family="Gotham Book" pointSize="11"/>
+                                            <color key="textColor" red="0.85490196080000003" green="0.79607843140000001" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="bodyLabel" destination="cVw-uX-yFp" id="qKP-y4-euC"/>
+                                    <outlet property="dateLabel" destination="faK-TQ-LPy" id="vwy-98-Esh"/>
+                                    <outlet property="nameLabel" destination="K1R-6y-kHa" id="feP-p6-uAi"/>
+                                    <segue destination="xfi-YK-vk5" kind="push" identifier="goToNote" id="FAN-OP-dge"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nUB-ZW-1JJ" id="VcJ-2r-Dv9"/>
+                            <outlet property="delegate" destination="nUB-ZW-1JJ" id="U8a-ln-b8X"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gnk-xR-doi">
+                        <barButtonItem key="leftBarButtonItem" image="sidebar-button" id="wVO-j1-vTb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="toggleSidebar:" destination="nUB-ZW-1JJ" id="S3n-SR-gU9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="new-note-button" id="3N0-Aa-vGK">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="goToNewNote:" destination="nUB-ZW-1JJ" id="DNe-m9-3RL"/>
+                                <segue destination="Dkk-Q3-gKz" kind="modal" id="0k4-r2-OSK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Grw-PE-opE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311" y="1014"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="about-button" width="160" height="36"/>
+        <image name="about-button-active" width="160" height="36"/>
+        <image name="button" width="271" height="42"/>
+        <image name="button-active" width="271" height="42"/>
+        <image name="feedback-button" width="160" height="36"/>
+        <image name="feedback-button-active" width="160" height="36"/>
+        <image name="intro" width="320" height="568"/>
+        <image name="intro1" width="320" height="568"/>
+        <image name="intro2" width="320" height="568"/>
+        <image name="intro3" width="320" height="568"/>
+        <image name="intro4" width="320" height="568"/>
+        <image name="intro4-button" width="275" height="34"/>
+        <image name="new-note-button" width="19" height="19"/>
+        <image name="note-cell-arrow" width="5" height="9"/>
+        <image name="sidebar-button" width="20" height="13"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="FAN-OP-dge"/>
+    </inferredMetricsTieBreakers>
+</document>

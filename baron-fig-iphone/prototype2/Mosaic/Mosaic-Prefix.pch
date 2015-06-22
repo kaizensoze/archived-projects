@@ -1,0 +1,14 @@
+//
+//  Mosaic-Prefix.pch
+//  Mosaic
+//
+//  Created by Joe Gallo on 10/23/14.
+//  Copyright (c) 2014 Baron Fig. All rights reserved.
+//
+
+#ifndef Mosaic_Mosaic_Prefix_pch
+#define Mosaic_Mosaic_Prefix_pch
+
+#import "BFKGlobals.h"
+
+#endif

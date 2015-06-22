@@ -1,0 +1,1566 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="X6b-Kb-KjG">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="BrandonGrotesque-Bold.otf">
+            <string>BrandonGrotesque-Bold</string>
+            <string>BrandonGrotesque-Bold</string>
+            <string>BrandonGrotesque-Bold</string>
+            <string>BrandonGrotesque-Bold</string>
+            <string>BrandonGrotesque-Bold</string>
+        </mutableArray>
+        <mutableArray key="BrandonGrotesque-Light.otf">
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+            <string>BrandonGrotesque-Light</string>
+        </mutableArray>
+        <mutableArray key="BrandonGrotesque-Regular.otf">
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+            <string>BrandonGrotesque-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Notebooks View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="Notebooks" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="BFKNotebooksViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g3d-CT-c73">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="yZX-mw-KvJ">
+                                <rect key="frame" x="0.0" y="76" width="320" height="405"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="contentInset" minX="70" minY="0.0" maxX="20" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="bmS-Jg-XIu" customClass="DraggableCollectionViewFlowLayout">
+                                    <size key="itemSize" width="192" height="346"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NotebookCell" id="Byi-xf-hJa" customClass="BFKNotebookCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="94" width="192" height="346"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="192" height="346"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notebook" id="1pV-f1-FzB">
+                                                    <rect key="frame" x="8" y="8" width="184" height="294"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gZz-Ru-4bb">
+                                                    <rect key="frame" x="8" y="245" width="184" height="36"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="24"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gj0-Ty-BV8">
+                                                    <rect key="frame" x="-5" y="-5" width="30" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="delete-notebook-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteNotebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ooV-fQ-lO0"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <inset key="insetFor6xAndEarlier" minX="0.0" minY="-6" maxX="0.0" maxY="6"/>
+                                        <size key="customSize" width="192" height="346"/>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="gj0-Ty-BV8" id="b9Q-Be-yM0"/>
+                                            <outlet property="nameLabel" destination="gZz-Ru-4bb" id="dWE-7o-faI"/>
+                                            <outletCollection property="gestureRecognizers" destination="bKe-4T-3ji" appends="YES" id="D4J-id-eJ0"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewNotebookCell" id="jtc-Fs-bR3" customClass="BFKNewNotebookCollectionViewCell">
+                                        <rect key="frame" x="192" y="94" width="165" height="346"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="346"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-notebook" id="3A3-AL-gGw">
+                                                    <rect key="frame" x="0.0" y="22" width="165" height="256"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <inset key="insetFor6xAndEarlier" minX="0.0" minY="-6" maxX="0.0" maxY="6"/>
+                                        <size key="customSize" width="165" height="346"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="2jx-wf-AXw"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="ZW0-Un-oaP"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 NOTEBOOKS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hlo-he-gXg">
+                                <rect key="frame" x="20" y="518" width="84" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 SECTIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kmx-8V-YSS">
+                                <rect key="frame" x="20" y="533" width="84" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zLr-S7-7YN">
+                                <rect key="frame" x="256" y="507" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="import-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="importContent:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K34-p5-PQh"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" alpha="0.20000000298023224" contentMode="scaleToFill" id="4RT-rz-KfF">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Glu-bk-k3c" appends="YES" id="SPb-Rr-C1m"/>
+                                </connections>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="aVu-qN-Ujd">
+                                <rect key="frame" x="0.0" y="504" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTEBOOK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="htA-Sj-jTB">
+                                        <rect key="frame" x="21" y="31" width="50" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="Xun-ua-i7F">
+                                        <rect key="frame" x="79" y="20" width="170" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="8tN-rf-5V3"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QX8-I0-63F">
+                                        <rect key="frame" x="257" y="12" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="save-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editNotebookName:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="12E-kX-pt1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Ry-2d-IOK">
+                        <barButtonItem key="leftBarButtonItem" image="sidebar-button" id="k7Q-8a-FXM">
+                            <inset key="imageInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="toggleSidebar:" destination="vXZ-lx-hvc" id="Inu-nq-DnZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editNotebookNameOverlay" destination="4RT-rz-KfF" id="Tlt-e4-dFH"/>
+                        <outlet property="editNotebookNameTextField" destination="Xun-ua-i7F" id="lxX-Z3-p5s"/>
+                        <outlet property="editNotebookNameView" destination="aVu-qN-Ujd" id="boa-Gz-GU5"/>
+                        <outlet property="longPressGR" destination="bKe-4T-3ji" id="d3D-4G-ez5"/>
+                        <outlet property="notebookCollectionView" destination="yZX-mw-KvJ" id="PHG-NE-NnY"/>
+                        <outlet property="numNotebooksLabel" destination="hlo-he-gXg" id="0Nk-oe-MuJ"/>
+                        <outlet property="numSectionsLabel" destination="kmx-8V-YSS" id="6d4-we-4jc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.59999999999999998" id="bKe-4T-3ji">
+                    <connections>
+                        <action selector="enableEditMode:" destination="vXZ-lx-hvc" id="vay-yG-Jrm"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="2Zf-De-HRo"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="Glu-bk-k3c">
+                    <connections>
+                        <action selector="hideEditNotebookNameView:" destination="vXZ-lx-hvc" id="5A4-kN-IG1"/>
+                        <outlet property="delegate" destination="vXZ-lx-hvc" id="LZr-A4-AcR"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-311" y="1048"/>
+        </scene>
+        <!--Capture View Controller-->
+        <scene sceneID="Kqe-w8-XYh">
+            <objects>
+                <viewController storyboardIdentifier="Capture" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ITv-Ar-Dcy" customClass="BFKCaptureViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QXr-b4-h9Q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="LLt-EZ-6jp" customClass="BFKCustomScrollView">
+                                <rect key="frame" x="-20" y="-20" width="360" height="608"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="capture-overlay" id="ipi-vF-4E8">
+                                        <rect key="frame" x="20" y="20" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pm1-bK-Qwg">
+                                        <rect key="frame" x="20" y="20" width="45" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="back-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="back:" destination="ITv-Ar-Dcy" eventType="touchUpInside" id="M0P-lt-ji3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ReV-t4-Ihd">
+                                        <rect key="frame" x="280" y="20" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="flash-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="flash-button-active"/>
+                                        <state key="highlighted" image="flash-button-active"/>
+                                        <connections>
+                                            <action selector="toggleFlash:" destination="ITv-Ar-Dcy" eventType="touchUpInside" id="4HE-dZ-TtI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YF4-Kh-aoo">
+                                        <rect key="frame" x="47" y="90" width="29" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="new-note-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showNewNote:" destination="ITv-Ar-Dcy" eventType="touchUpInside" id="CRP-nE-2zj"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="QNo-6Q-F8G">
+                                        <rect key="frame" x="46" y="94" width="268" height="361"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ITv-Ar-Dcy" id="G2E-zw-T9y"/>
+                                        </connections>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HdI-3p-nwA">
+                                        <rect key="frame" x="69" y="515" width="30" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="upload-image-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="uploadImage:" destination="ITv-Ar-Dcy" eventType="touchUpInside" id="mM6-I1-kHa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="x4w-RW-Sts">
+                                        <rect key="frame" x="143" y="494" width="73" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="capture-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="capture:" destination="ITv-Ar-Dcy" eventType="touchUpInside" id="9N1-28-cQD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NtA-XA-VII">
+                                        <rect key="frame" x="143" y="494" width="73" height="73"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="capture:" destination="ITv-Ar-Dcy" eventType="touchUpInside" id="g6D-F3-TA8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aOu-ZJ-QJI">
+                                        <rect key="frame" x="257" y="515" width="43" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="single-multi-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" id="UVA-uy-Q0O">
+                                        <rect key="frame" x="257" y="515" width="43" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ITv-Ar-Dcy" id="4Gq-Yq-wJs"/>
+                                        </connections>
+                                    </textField>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="63n-dp-tlk">
+                                        <rect key="frame" x="284" y="35" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="close">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeImportedImage:" destination="ITv-Ar-Dcy" eventType="touchUpInside" id="kPY-1u-GRJ"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="faM-Sn-55o">
+                                        <rect key="frame" x="35" y="79" width="290" height="390"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="ITv-Ar-Dcy" id="QNj-bz-f8j"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gBu-95-19J"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="captureButton1" destination="x4w-RW-Sts" id="Kw1-WQ-okX"/>
+                        <outlet property="captureButton2" destination="NtA-XA-VII" id="Mkw-pF-MgW"/>
+                        <outlet property="captureOverlay" destination="ipi-vF-4E8" id="xNm-Ha-pAL"/>
+                        <outlet property="closeImportedImageButton" destination="63n-dp-tlk" id="UhK-MJ-P14"/>
+                        <outlet property="flashButton" destination="ReV-t4-Ihd" id="BPD-gx-8Hc"/>
+                        <outlet property="importedImageView" destination="faM-Sn-55o" id="IjM-vR-jyc"/>
+                        <outlet property="noteButton" destination="YF4-Kh-aoo" id="Ywt-wt-KJ9"/>
+                        <outlet property="noteTextView" destination="QNo-6Q-F8G" id="1FU-yB-hDP"/>
+                        <outlet property="scrollView" destination="LLt-EZ-6jp" id="aRr-jU-pdy"/>
+                        <outlet property="singleMultiButton" destination="aOu-ZJ-QJI" id="If8-8u-cyY"/>
+                        <outlet property="singleMultiTextField" destination="UVA-uy-Q0O" id="ziS-tL-OrE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLY-Uu-c1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="1730"/>
+        </scene>
+        <!--New Note View Controller-->
+        <scene sceneID="2LN-4z-AVI">
+            <objects>
+                <viewController storyboardIdentifier="NewNote" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ofb-z3-cF2" customClass="BFKNewNoteViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="90E-9F-Jwn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-note-bg" id="epc-Kq-P9I">
+                                <rect key="frame" x="2" y="3" width="316" height="427"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEW NOTE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pQ0-So-Wgf">
+                                <rect key="frame" x="129" y="23" width="70" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="12"/>
+                                <color key="textColor" red="0.41176470588235292" green="0.19215686274509805" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nbY-8E-8XP">
+                                <rect key="frame" x="270" y="3" width="50" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="new-note-close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="Ofb-z3-cF2" eventType="touchUpInside" id="W6b-9x-Isp"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TQv-pw-WcD">
+                                <rect key="frame" x="14" y="41" width="295" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ofb-z3-cF2" id="VLD-zk-h3k"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mCE-mh-aCh">
+                                <rect key="frame" x="18" y="285" width="226" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family=".Helvetica Neue DeskInterface" pointSize="11"/>
+                                <connections>
+                                    <action selector="showChangeLocationView:" destination="Ofb-z3-cF2" eventType="touchUpInside" id="cnT-oG-EjP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Y8H-GZ-udx">
+                                <rect key="frame" x="264" y="277" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="new-note-save-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveNote:" destination="Ofb-z3-cF2" eventType="touchUpInside" id="jMO-sx-9vG"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" alpha="0.20000000000000001" contentMode="scaleToFill" id="4Np-6w-sc7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hPZ-2I-ngU" appends="YES" id="LXB-KL-VAv"/>
+                                </connections>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="MYg-9V-uae">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANGE LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RAw-3A-iuA">
+                                        <rect key="frame" x="100" y="13" width="116" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTEBOOK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aut-Io-FoO">
+                                        <rect key="frame" x="21" y="50" width="50" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Notebook" minimumFontSize="17" id="jbm-lf-dFl">
+                                        <rect key="frame" x="79" y="39" width="176" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ofb-z3-cF2" id="vsJ-fY-VE8"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECTION" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9L6-a5-rl0">
+                                        <rect key="frame" x="21" y="91" width="50" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Section" minimumFontSize="17" id="nuX-H4-6Ox">
+                                        <rect key="frame" x="79" y="80" width="176" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Ofb-z3-cF2" id="oGK-Op-LeC"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zvh-Nl-HRf">
+                                        <rect key="frame" x="264" y="68" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="new-note-save-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveNote:" destination="Ofb-z3-cF2" eventType="touchUpInside" id="cDf-d6-gS1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="changeLocationView" destination="MYg-9V-uae" id="W8O-hs-GBX"/>
+                        <outlet property="locationButton" destination="mCE-mh-aCh" id="nj2-Be-jmB"/>
+                        <outlet property="noteOverlay" destination="4Np-6w-sc7" id="HcD-8h-9e2"/>
+                        <outlet property="noteTextView" destination="TQv-pw-WcD" id="lSk-Br-6rS"/>
+                        <outlet property="notebookTextField" destination="jbm-lf-dFl" id="Xnh-fU-EpE"/>
+                        <outlet property="saveButton" destination="Y8H-GZ-udx" id="Z5Y-b2-mkO"/>
+                        <outlet property="sectionTextField" destination="nuX-H4-6Ox" id="DsY-ab-oki"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EiN-yU-6aI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hPZ-2I-ngU">
+                    <connections>
+                        <action selector="hideChangeLocationView:" destination="Ofb-z3-cF2" id="d3s-yf-NUR"/>
+                        <outlet property="delegate" destination="Ofb-z3-cF2" id="BXj-cD-kEl"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-686" y="2390"/>
+        </scene>
+        <!--Pages View Controller-->
+        <scene sceneID="3YG-Vl-RW3">
+            <objects>
+                <viewController storyboardIdentifier="Pages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dqQ-K4-VEJ" customClass="BFKPagesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RW7-WZ-Du9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="kfm-fJ-bkO">
+                                <rect key="frame" x="0.0" y="78" width="320" height="402"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="contentInset" minX="10" minY="15" maxX="15" maxY="20"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hdA-VE-0RM" customClass="DraggableCollectionViewFlowLayout">
+                                    <size key="itemSize" width="101" height="167"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PagesGridCell" id="6QG-3H-qGu" customClass="BFKPagesGridCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="115"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="85" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1Ob-X9-QKT">
+                                                    <rect key="frame" x="5" y="7" width="80" height="108"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Hec-mN-upz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="delete-notebook-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deletePage:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="gmL-zg-auU"/>
+                                                        <action selector="deleteSection:" destination="zjR-v1-6A1" eventType="touchUpInside" id="GDd-fo-Lo8"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="85" height="115"/>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="Hec-mN-upz" id="fUI-aB-vgW"/>
+                                            <outlet property="pageImageView" destination="1Ob-X9-QKT" id="MZj-uQ-O1z"/>
+                                            <outletCollection property="gestureRecognizers" destination="dST-43-yaj" appends="YES" id="thK-if-bSK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dqQ-K4-VEJ" id="ynd-SM-4oi"/>
+                                    <outlet property="delegate" destination="dqQ-K4-VEJ" id="7B2-EK-JYx"/>
+                                </connections>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="gbD-aG-h4l">
+                                <rect key="frame" x="0.0" y="76" width="320" height="415"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lfm-5P-AsM">
+                                    <size key="itemSize" width="320" height="415"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PagesSingleCell" id="Rh5-3H-qbW" customClass="BFKPagesSingleCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="415"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="415"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new-note-bg" id="buW-Yr-7Vp">
+                                                    <rect key="frame" x="6" y="0.0" width="307" height="415"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BWi-3q-Zgq">
+                                                    <rect key="frame" x="10" y="5" width="300" height="400"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="dqQ-K4-VEJ" id="y8y-1V-5w4"/>
+                                                    </connections>
+                                                </textView>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="cA8-wc-dh0">
+                                                    <rect key="frame" x="6" y="0.0" width="307" height="415"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fKf-JL-2wh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="307" height="415"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="dqQ-K4-VEJ" id="gtw-c8-yEN"/>
+                                                    </connections>
+                                                </scrollView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="7MI-qi-be5">
+                                                    <rect key="frame" x="0.0" y="381" width="320" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="slide-for-note">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="16P-LH-Bwy">
+                                                    <rect key="frame" x="256" y="190" width="45" height="45"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="new-note-save-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="saveNote:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="IbL-5w-J9d"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="320" height="415"/>
+                                        <connections>
+                                            <outlet property="noteBackgroundImageView" destination="buW-Yr-7Vp" id="JcV-Wt-xlV"/>
+                                            <outlet property="noteTextView" destination="BWi-3q-Zgq" id="wJc-xT-lgB"/>
+                                            <outlet property="pageImageView" destination="fKf-JL-2wh" id="dlz-bH-qmu"/>
+                                            <outlet property="saveNoteButton" destination="16P-LH-Bwy" id="4qf-JZ-qxj"/>
+                                            <outlet property="scrollView" destination="cA8-wc-dh0" id="K2Q-JW-jkf"/>
+                                            <outlet property="slideForNoteButton" destination="7MI-qi-be5" id="ehr-eX-Jf4"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="dqQ-K4-VEJ" id="LRn-4g-MrW"/>
+                                    <outlet property="delegate" destination="dqQ-K4-VEJ" id="E0V-3W-O6r"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vRA-gE-eK8">
+                                <rect key="frame" x="256" y="507" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="import-button2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="importContent:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="5uG-nT-0Sk"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 PAGES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vLu-bK-u7o">
+                                <rect key="frame" x="20" y="524" width="84" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="10"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 of 3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9YZ-9U-9k6">
+                                <rect key="frame" x="20" y="535" width="84" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="10"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mut-mU-glV">
+                                <rect key="frame" x="18" y="514" width="218" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family=".Helvetica Neue DeskInterface" pointSize="11"/>
+                                <connections>
+                                    <action selector="showChangeLocationView:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="hmV-Ao-phP"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" alpha="0.20000000000000001" contentMode="scaleToFill" id="NYF-5B-F2F">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="moP-d1-p2Q" appends="YES" id="fPK-5o-HUH"/>
+                                </connections>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="19R-Bw-FUP">
+                                <rect key="frame" x="0.0" y="503" width="320" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="i04-88-dMl">
+                                        <rect key="frame" x="28" y="23" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="instagram-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="instagram-button-active"/>
+                                        <state key="highlighted" image="instagram-button-active"/>
+                                        <connections>
+                                            <action selector="shareInstagram:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="OE1-90-p4z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dQe-Qx-0xA">
+                                        <rect key="frame" x="74" y="22" width="33" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="facebook-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="facebook-button-active"/>
+                                        <state key="highlighted" image="facebook-button-active"/>
+                                        <connections>
+                                            <action selector="shareFacebook:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="YEZ-2n-Z2R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="A6l-XY-bPp">
+                                        <rect key="frame" x="137" y="22" width="23" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="twitter-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="twitter-button-active"/>
+                                        <state key="highlighted" image="twitter-button-active"/>
+                                        <connections>
+                                            <action selector="shareTwitter:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="0Pm-s4-UeM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ScI-d5-mKf">
+                                        <rect key="frame" x="195" y="22" width="26" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="email-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="email-button-active"/>
+                                        <state key="highlighted" image="email-button-active"/>
+                                        <connections>
+                                            <action selector="shareEmail:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="gfJ-ds-ZYE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view hidden="YES" alpha="0.20000000298023224" contentMode="scaleToFill" id="A3l-0t-mEk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="thD-xw-roF" appends="YES" id="hIB-Sb-lnD"/>
+                                </connections>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="AcI-8T-eSG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANGE LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hyq-a1-92L">
+                                        <rect key="frame" x="100" y="13" width="116" height="12"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTEBOOK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kqb-sE-SFf">
+                                        <rect key="frame" x="21" y="50" width="50" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Notebook" minimumFontSize="17" id="5tT-Yv-R42">
+                                        <rect key="frame" x="79" y="39" width="176" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="dqQ-K4-VEJ" id="x2B-B4-zlZ"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECTION" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qHF-LH-nFy">
+                                        <rect key="frame" x="21" y="91" width="50" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Section" minimumFontSize="17" id="05x-H3-rcq">
+                                        <rect key="frame" x="79" y="80" width="176" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="dqQ-K4-VEJ" id="zld-Ti-ARL"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SBG-pB-3CX">
+                                        <rect key="frame" x="257" y="63" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="save-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="save:" destination="tjB-7M-8Te" eventType="touchUpInside" id="Atr-FW-cOc"/>
+                                            <action selector="save:" destination="dqQ-K4-VEJ" eventType="touchUpInside" id="KUX-Os-Hki"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0w6-N0-A1T"/>
+                    <connections>
+                        <outlet property="changeLocationView" destination="AcI-8T-eSG" id="0ta-y2-qKc"/>
+                        <outlet property="changeLocationViewOverlay" destination="A3l-0t-mEk" id="RRI-67-vKW"/>
+                        <outlet property="locationButton" destination="Mut-mU-glV" id="FrT-Zx-Cmu"/>
+                        <outlet property="longPressGR" destination="dST-43-yaj" id="m41-is-k1b"/>
+                        <outlet property="notebookTextField" destination="5tT-Yv-R42" id="xy4-9V-KUw"/>
+                        <outlet property="numPagesLabel" destination="vLu-bK-u7o" id="dgp-0f-9VP"/>
+                        <outlet property="pageIndexLabel" destination="9YZ-9U-9k6" id="Xww-fT-7wa"/>
+                        <outlet property="pagesGridCollectionView" destination="kfm-fJ-bkO" id="bvp-Se-zXb"/>
+                        <outlet property="pagesSingleCollectionView" destination="gbD-aG-h4l" id="885-Mi-9C0"/>
+                        <outlet property="sectionTextField" destination="05x-H3-rcq" id="var-7v-VV9"/>
+                        <outlet property="shareOverlay" destination="NYF-5B-F2F" id="8mO-8X-2uv"/>
+                        <outlet property="shareView" destination="19R-Bw-FUP" id="W4u-Vk-EwS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ew2-l2-feh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.59999999999999998" id="dST-43-yaj">
+                    <connections>
+                        <action selector="enableEditMode:" destination="dqQ-K4-VEJ" id="Obn-67-a88"/>
+                        <outlet property="delegate" destination="dqQ-K4-VEJ" id="Hzn-CA-tj2"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="moP-d1-p2Q">
+                    <connections>
+                        <action selector="hideSharePageView:" destination="dqQ-K4-VEJ" id="Oxt-hU-yd0"/>
+                        <outlet property="delegate" destination="dqQ-K4-VEJ" id="gEd-Dn-vvf"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="thD-xw-roF">
+                    <connections>
+                        <action selector="hideChangeLocationView:" destination="dqQ-K4-VEJ" id="bUJ-4M-4EM"/>
+                        <outlet property="delegate" destination="dqQ-K4-VEJ" id="cLT-Xd-Ral"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-686" y="3063"/>
+        </scene>
+        <!--Sections View Controller-->
+        <scene sceneID="Nzj-nj-sD2">
+            <objects>
+                <viewController storyboardIdentifier="Sections" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zjR-v1-6A1" customClass="BFKSectionsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oFi-co-Cde">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="cDb-Hb-fwq">
+                                <rect key="frame" x="0.0" y="49" width="320" height="401"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="contentInset" minX="22" minY="50" maxX="27" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="YOg-TX-iIs" customClass="DraggableCollectionViewFlowLayout">
+                                    <size key="itemSize" width="101" height="167"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SectionCell" id="07Y-Om-ezw" customClass="BFKSectionCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="167"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="101" height="167"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="multi-page-section" id="tYR-ea-i6g">
+                                                    <rect key="frame" x="11" y="8" width="90" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="j26-W7-YRU">
+                                                    <rect key="frame" x="11" y="8" width="90" height="115"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="rA9-Wy-4gO">
+                                                    <rect key="frame" x="16" y="11" width="80" height="110"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J8A-Kq-Wyk">
+                                                    <rect key="frame" x="11" y="140" width="90" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                                                    <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qh9-hP-gwq">
+                                                    <rect key="frame" x="6" y="0.0" width="22" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="delete-notebook-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="deleteSection:" destination="zjR-v1-6A1" eventType="touchUpInside" id="8aP-Mn-Bpv"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="101" height="167"/>
+                                        <connections>
+                                            <outlet property="deleteButton" destination="qh9-hP-gwq" id="c3D-gx-5hF"/>
+                                            <outlet property="nameLabel" destination="J8A-Kq-Wyk" id="jsk-xK-TQe"/>
+                                            <outlet property="sectionImageView" destination="tYR-ea-i6g" id="FrD-LU-1YZ"/>
+                                            <outlet property="stackTopImageView" destination="rA9-Wy-4gO" id="KxJ-Tg-9pR"/>
+                                            <outlet property="topImageView" destination="j26-W7-YRU" id="eJ2-OJ-dTX"/>
+                                            <outletCollection property="gestureRecognizers" destination="IgL-dt-cvX" appends="YES" id="DAa-wJ-II5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="zjR-v1-6A1" id="GJr-1A-rsm"/>
+                                    <outlet property="delegate" destination="zjR-v1-6A1" id="pF8-Q3-aNp"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 SECTIONS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PfM-VH-Ohq">
+                                <rect key="frame" x="20" y="518" width="84" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="10"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 PAGES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sxf-HE-WKc">
+                                <rect key="frame" x="20" y="533" width="84" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="10"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="a23-Wn-azk">
+                                <rect key="frame" x="256" y="507" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="import-button2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="importContent:" destination="zjR-v1-6A1" eventType="touchUpInside" id="hof-gi-K4A"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" alpha="0.20000000298023224" contentMode="scaleToFill" id="FQa-25-Ine">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="L8d-i7-MJ0" appends="YES" id="j6h-jE-3yg"/>
+                                </connections>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="OgT-TZ-hhI">
+                                <rect key="frame" x="0.0" y="504" width="320" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECTION" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nF4-AH-G3y">
+                                        <rect key="frame" x="21" y="31" width="50" height="13"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="n2n-8g-5DG">
+                                        <rect key="frame" x="79" y="20" width="170" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="zjR-v1-6A1" id="wZx-OG-VUv"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uLH-sK-Xbf">
+                                        <rect key="frame" x="257" y="12" width="45" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="save-button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editSectionName:" destination="zjR-v1-6A1" eventType="touchUpInside" id="j8Z-12-aJs"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="editSectionNameOverlay" destination="FQa-25-Ine" id="hVK-Of-em7"/>
+                        <outlet property="editSectionNameTextField" destination="n2n-8g-5DG" id="cZF-Pe-JER"/>
+                        <outlet property="editSectionNameView" destination="OgT-TZ-hhI" id="pRz-Rl-w6C"/>
+                        <outlet property="longPressGR" destination="IgL-dt-cvX" id="u09-Fb-Bii"/>
+                        <outlet property="numPagesLabel" destination="Sxf-HE-WKc" id="4Ki-Ni-vcc"/>
+                        <outlet property="numSectionsLabel" destination="PfM-VH-Ohq" id="ju6-3R-Vsn"/>
+                        <outlet property="sectionCollectionView" destination="cDb-Hb-fwq" id="skD-Xc-jFM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEn-HM-6GP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.59999999999999998" id="IgL-dt-cvX">
+                    <connections>
+                        <action selector="enableEditMode:" destination="zjR-v1-6A1" id="QhA-PR-LDi"/>
+                        <outlet property="delegate" destination="zjR-v1-6A1" id="1yh-SU-Wm8"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="L8d-i7-MJ0">
+                    <connections>
+                        <action selector="hideEditSectionNameView:" destination="zjR-v1-6A1" id="KHu-5x-GvS"/>
+                        <outlet property="delegate" destination="zjR-v1-6A1" id="m15-ia-xyj"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-311" y="2390"/>
+        </scene>
+        <!--Review View Controller-->
+        <scene sceneID="dzI-jO-PLn">
+            <objects>
+                <viewController storyboardIdentifier="Review" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tjB-7M-8Te" customClass="BFKReviewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YAq-L4-oeh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dlc-VR-g9L" customClass="BFKCustomScrollView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="iJ6-Tf-7T7">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="466"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="g3V-T0-b1c">
+                                                <rect key="frame" x="15" y="66" width="290" height="240"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tjB-7M-8Te" id="bH4-VL-FgG"/>
+                                                </connections>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="TUs-Oh-ved">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="466"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="LvT-Z0-dIP">
+                                                <rect key="frame" x="0.0" y="75" width="320" height="276"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="fzQ-0m-4EU" customClass="BFKCustomScrollView">
+                                                <rect key="frame" x="18" y="67" width="283" height="383"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Bfd-xA-wk1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="383"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tjB-7M-8Te" id="Elu-fA-KQ2"/>
+                                                </connections>
+                                            </scrollView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" id="AsK-WW-JzP">
+                                                <rect key="frame" x="60" y="75" width="201" height="276"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tjB-7M-8Te" id="0Yp-dB-pGY"/>
+                                                </connections>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="X1B-HG-Fex">
+                                                <rect key="frame" x="0.0" y="405" width="320" height="61"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="slide-for-note">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="jU3-gw-zWL">
+                                        <rect key="frame" x="0.0" y="466" width="320" height="102"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="lrp-ue-dC8">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PfU-EF-mhN">
+                                                <rect key="frame" x="28" y="9" width="218" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family=".Helvetica Neue DeskInterface" pointSize="11"/>
+                                                <connections>
+                                                    <action selector="showChangeLocationView:" destination="tjB-7M-8Te" eventType="touchUpInside" id="73m-At-yuK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oeX-qd-VAU">
+                                                <rect key="frame" x="28" y="54" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="instagram-button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" image="instagram-button-active"/>
+                                                <state key="highlighted" image="instagram-button-active"/>
+                                                <connections>
+                                                    <action selector="shareInstagram:" destination="tjB-7M-8Te" eventType="touchUpInside" id="fwQ-dM-BSS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qYA-ak-JYh">
+                                                <rect key="frame" x="74" y="54" width="33" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="facebook-button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" image="facebook-button-active"/>
+                                                <state key="highlighted" image="facebook-button-active"/>
+                                                <connections>
+                                                    <action selector="shareFacebook:" destination="tjB-7M-8Te" eventType="touchUpInside" id="30e-fm-H6j"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CDh-qp-Q6t">
+                                                <rect key="frame" x="137" y="55" width="23" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="twitter-button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" image="twitter-button-active"/>
+                                                <state key="highlighted" image="twitter-button-active"/>
+                                                <connections>
+                                                    <action selector="shareTwitter:" destination="tjB-7M-8Te" eventType="touchUpInside" id="dWl-XT-XHP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pb3-jb-tYh">
+                                                <rect key="frame" x="195" y="56" width="26" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="email-button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" image="email-button-active"/>
+                                                <state key="highlighted" image="email-button-active"/>
+                                                <connections>
+                                                    <action selector="shareEmail:" destination="tjB-7M-8Te" eventType="touchUpInside" id="OCz-bZ-AGF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lC6-ND-H9R">
+                                                <rect key="frame" x="257" y="42" width="45" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="save-button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="save:" destination="tjB-7M-8Te" eventType="touchUpInside" id="9HU-rX-qsG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" alpha="0.20000000298023224" contentMode="scaleToFill" id="vGj-Ee-5gk">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Ieh-le-Kfz" appends="YES" id="7CC-BX-1WE"/>
+                                        </connections>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" id="c2L-cT-rXJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHANGE LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6eD-07-avU">
+                                                <rect key="frame" x="100" y="13" width="116" height="12"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTEBOOK" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yaK-1R-fQc">
+                                                <rect key="frame" x="21" y="50" width="50" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="9"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Notebook" minimumFontSize="17" id="sk8-8o-Dts">
+                                                <rect key="frame" x="79" y="39" width="176" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tjB-7M-8Te" id="mFu-mU-q3I"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SECTION" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fcO-9u-6MQ">
+                                                <rect key="frame" x="21" y="91" width="50" height="13"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Light" family="Brandon Grotesque" pointSize="9"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Section" minimumFontSize="17" id="K7g-rl-eGU">
+                                                <rect key="frame" x="79" y="80" width="176" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="tjB-7M-8Te" id="dKU-iN-IbU"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C36-7Y-9IN">
+                                                <rect key="frame" x="257" y="63" width="45" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="save-button">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="save:" destination="tjB-7M-8Te" eventType="touchUpInside" id="Y2B-lP-Osk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="tjB-7M-8Te" id="NcI-KU-I92"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="changeLocationView" destination="c2L-cT-rXJ" id="dqJ-8w-epR"/>
+                        <outlet property="changeLocationViewOverlay" destination="vGj-Ee-5gk" id="pOd-sw-qsN"/>
+                        <outlet property="locationButton" destination="PfU-EF-mhN" id="wBh-jK-3Nx"/>
+                        <outlet property="noteTextView" destination="g3V-T0-b1c" id="Lhm-X4-jQ2"/>
+                        <outlet property="noteView" destination="iJ6-Tf-7T7" id="1IU-LU-ml1"/>
+                        <outlet property="notebookTextField" destination="sk8-8o-Dts" id="vqq-wD-OFZ"/>
+                        <outlet property="scrollView" destination="dlc-VR-g9L" id="vAl-xe-sTl"/>
+                        <outlet property="sectionTextField" destination="K7g-rl-eGU" id="d6Y-AC-pOS"/>
+                        <outlet property="shareSaveView" destination="jU3-gw-zWL" id="iT4-7P-3fJ"/>
+                        <outlet property="slideForNoteButton" destination="X1B-HG-Fex" id="r0F-Y5-K8v"/>
+                        <outlet property="slideUpView" destination="TUs-Oh-ved" id="79h-jP-zK2"/>
+                        <outlet property="snapshotImageView" destination="Bfd-xA-wk1" id="Y0v-YW-ug4"/>
+                        <outlet property="snapshotScrollView" destination="fzQ-0m-4EU" id="MQS-8G-Wsq"/>
+                        <outlet property="snapshotSwipeView" destination="LvT-Z0-dIP" id="cxu-mN-vsX"/>
+                        <outlet property="snapshotTextView" destination="AsK-WW-JzP" id="Wn3-LY-kj2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHX-La-yfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ieh-le-Kfz">
+                    <connections>
+                        <action selector="hideChangeLocationView:" destination="tjB-7M-8Te" id="ZXk-hg-dNx"/>
+                        <outlet property="delegate" destination="tjB-7M-8Te" id="UUy-T0-raV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-311" y="1730"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mdu-IM-8Dd">
+            <objects>
+                <navigationController storyboardIdentifier="NotebooksNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yuc-S9-Utj" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SkO-ay-skv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="io5-Us-VAc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9be-9C-N3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="1048"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3PD-O4-5JS">
+            <objects>
+                <navigationController storyboardIdentifier="SidebarNav" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J7d-Pz-5Kr" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1ra-q9-ZnB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="X6b-Kb-KjG" kind="relationship" relationship="rootViewController" id="88Z-2J-wtI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jit-4F-6sg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-686" y="356"/>
+        </scene>
+        <!--Sidebar View Controller-->
+        <scene sceneID="XH1-5J-aiQ">
+            <objects>
+                <viewController storyboardIdentifier="Sidebar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X6b-Kb-KjG" customClass="BFKSidebarViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nla-VH-k4u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="iyY-Tj-l9M">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ceh-hJ-rr5">
+                                        <rect key="frame" x="0.0" y="66" width="320" height="465"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <inset key="contentInset" minX="0.0" minY="-36" maxX="0.0" maxY="-30"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Feedback1Cell" rowHeight="150" id="egw-6T-hDj" customClass="BFKFeedback1TableViewCell">
+                                                <rect key="frame" x="0.0" y="50" width="320" height="150"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="egw-6T-hDj" id="FSy-b6-3bE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q1: What do you like about this app?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oV0-nD-Lh2">
+                                                            <rect key="frame" x="25" y="14" width="277" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
+                                                            <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="50U-Rs-F2u">
+                                                            <rect key="frame" x="25" y="48" width="277" height="85"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <inset key="contentInset" minX="-4" minY="-8" maxX="0.0" maxY="0.0"/>
+                                                            <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="X6b-Kb-KjG" id="WEK-KW-kgy"/>
+                                                            </connections>
+                                                        </textView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="label" destination="oV0-nD-Lh2" id="g4O-Gk-GnA"/>
+                                                    <outlet property="textView" destination="50U-Rs-F2u" id="aFg-Wb-uTm"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Feedback2Cell" rowHeight="50" id="gnd-Sn-fbM" customClass="BFKFeedback2TableViewCell">
+                                                <rect key="frame" x="0.0" y="200" width="320" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gnd-Sn-fbM" id="4Gn-rS-w2R">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" clearButtonMode="whileEditing" id="JmC-40-Tmv">
+                                                            <rect key="frame" x="25" y="0.0" width="277" height="49"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="X6b-Kb-KjG" id="5jX-s7-0JE"/>
+                                                            </connections>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.90196078430000004" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="textField" destination="JmC-40-Tmv" id="cgo-MM-1gb"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="X6b-Kb-KjG" id="UoA-kt-3qP"/>
+                                            <outlet property="delegate" destination="X6b-Kb-KjG" id="RTF-mm-rnI"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" id="2Ak-UO-kD1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="pl0-YW-CdA">
+                                        <rect key="frame" x="13" y="65" width="298" height="384"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <string key="text">Baron Fig started as a project between friends. We
+love making things. We know there are others out
+there, both hobbyists and professionals, that feel
+the same way. It's our mission to empower them to
+create and inspire the world.  Our roots stem back into the community. We
+designed our notebooks—the Confidant and
+Apprentice—by listening to the thoughts and ideas
+of others. And the company came to exist through a
+backer-fueled Kickstarter.
+
+You now have the next iteration of Baron Fig in your
+hands. The Keeer is our first journey into the digital
+realm—and we're extremely excited.
+
+Together with your feedback, we're going to work on
+making this the best idea and note app we possibly
+can. We hope you enjoy it so far, and we look
+forward to your thoughts.
+
+—The Baron Fig Team</string>
+                                        <color key="textColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Regular" family="Brandon Grotesque" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="j2h-Vm-dD9">
+                                        <rect key="frame" x="19" y="462" width="271" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="12"/>
+                                        <inset key="imageEdgeInsets" minX="6" minY="6" maxX="6" maxY="6"/>
+                                        <state key="normal" title="VISIT BARONFIG.COM" backgroundImage="button">
+                                            <color key="titleColor" red="0.41176470590000003" green="0.19215686269999999" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="button-active"/>
+                                        <state key="highlighted" backgroundImage="button-active"/>
+                                        <connections>
+                                            <action selector="visitWebsite:" destination="X6b-Kb-KjG" eventType="touchUpInside" id="fUG-Xq-7Jj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Drh-FV-Wkf">
+                                <rect key="frame" x="0.0" y="532" width="160" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="feedback-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="feedback-button-active"/>
+                                <state key="highlighted" image="feedback-button-active"/>
+                                <connections>
+                                    <action selector="showFeedback:" destination="X6b-Kb-KjG" eventType="touchUpInside" id="dBl-PJ-oGW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DgC-uY-oQa">
+                                <rect key="frame" x="160" y="532" width="160" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="about-button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="about-button-active"/>
+                                <state key="highlighted" image="about-button-active"/>
+                                <connections>
+                                    <action selector="showAbout:" destination="X6b-Kb-KjG" eventType="touchUpInside" id="f9I-Me-rII"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="zKc-54-mgr"/>
+                    <connections>
+                        <outlet property="aboutButton" destination="DgC-uY-oQa" id="awk-em-UKr"/>
+                        <outlet property="aboutTextView" destination="pl0-YW-CdA" id="mGK-XN-9Oi"/>
+                        <outlet property="aboutView" destination="2Ak-UO-kD1" id="wtZ-4l-b4f"/>
+                        <outlet property="feedbackButton" destination="Drh-FV-Wkf" id="YBr-IG-GqZ"/>
+                        <outlet property="feedbackTableView" destination="ceh-hJ-rr5" id="7Si-wl-yao"/>
+                        <outlet property="feedbackView" destination="iyY-Tj-l9M" id="6QF-5a-GZj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7B5-sU-BWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-311" y="356"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="about-button" width="160" height="36"/>
+        <image name="about-button-active" width="160" height="36"/>
+        <image name="back-button" width="10" height="18"/>
+        <image name="button" width="271" height="42"/>
+        <image name="button-active" width="271" height="42"/>
+        <image name="capture-button" width="73" height="73"/>
+        <image name="capture-overlay" width="320" height="568"/>
+        <image name="delete-notebook-button" width="22" height="22"/>
+        <image name="email-button" width="26" height="17"/>
+        <image name="email-button-active" width="26" height="17"/>
+        <image name="facebook-button" width="11" height="21"/>
+        <image name="facebook-button-active" width="11" height="21"/>
+        <image name="feedback-button" width="160" height="36"/>
+        <image name="feedback-button-active" width="160" height="36"/>
+        <image name="flash-button" width="11" height="22"/>
+        <image name="flash-button-active" width="8" height="22"/>
+        <image name="import-button" width="45" height="45"/>
+        <image name="import-button2" width="45" height="46"/>
+        <image name="instagram-button" width="20" height="20"/>
+        <image name="instagram-button-active" width="20" height="20"/>
+        <image name="multi-page-section" width="89" height="115"/>
+        <image name="new-note-bg" width="316" height="427"/>
+        <image name="new-note-button" width="11" height="13"/>
+        <image name="new-note-close" width="15" height="15"/>
+        <image name="new-note-save-button" width="45" height="45"/>
+        <image name="new-notebook" width="165" height="256"/>
+        <image name="notebook" width="181" height="280"/>
+        <image name="save-button" width="45" height="45"/>
+        <image name="sidebar-button" width="21" height="16"/>
+        <image name="single-multi-button" width="43" height="31"/>
+        <image name="slide-for-note" width="44" height="6"/>
+        <image name="twitter-button" width="23" height="19"/>
+        <image name="twitter-button-active" width="23" height="19"/>
+        <image name="upload-image-button" width="30" height="31"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

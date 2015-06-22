@@ -1,0 +1,58 @@
+PODS:
+  - AFNetworking (2.4.1):
+    - AFNetworking/NSURLConnection (= 2.4.1)
+    - AFNetworking/NSURLSession (= 2.4.1)
+    - AFNetworking/Reachability (= 2.4.1)
+    - AFNetworking/Security (= 2.4.1)
+    - AFNetworking/Serialization (= 2.4.1)
+    - AFNetworking/UIKit (= 2.4.1)
+  - AFNetworking/NSURLConnection (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
+  - AFNetworking/UIKit (2.4.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.0.0-beta4):
+    - CocoaLumberjack/Default (= 2.0.0-beta4)
+    - CocoaLumberjack/Extensions (= 2.0.0-beta4)
+  - CocoaLumberjack/Core (2.0.0-beta4)
+  - CocoaLumberjack/Default (2.0.0-beta4):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.0-beta4):
+    - CocoaLumberjack/Default
+  - GoogleAnalytics-iOS-SDK (3.10):
+    - GoogleAnalytics-iOS-SDK/Core (= 3.10)
+  - GoogleAnalytics-iOS-SDK/Core (3.10)
+  - KCOrderedAccessorFix (0.0.1)
+  - SendGrid (0.2.6):
+    - AFNetworking (~> 2.0)
+    - SMTPAPI
+  - SMTPAPI (0.2.0)
+  - ViewDeck (2.2.11)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.4)
+  - CocoaLumberjack (= 2.0.0-beta4)
+  - GoogleAnalytics-iOS-SDK
+  - KCOrderedAccessorFix
+  - SendGrid (~> 0.2.6)
+  - ViewDeck (~> 2.2.11)
+
+SPEC CHECKSUMS:
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  CocoaLumberjack: 24153b24b17d853d7182b22b128971fb98e8cb18
+  GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
+  KCOrderedAccessorFix: d177d657cbe2b3b070540d6b1652e8534c8bceae
+  SendGrid: 9f0f015932c4ba0629c9609fbcb90a1b3ece0e00
+  SMTPAPI: 6dd830b6fb939e2cd288e68c455a44613ddbbbb5
+  ViewDeck: 2f38c054dfe8e69af4877c006785996faa277902
+
+COCOAPODS: 0.35.0
