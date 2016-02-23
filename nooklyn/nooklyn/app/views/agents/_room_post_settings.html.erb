@@ -1,0 +1,71 @@
+<div class="narrow-form-container">
+<%= form_for(@room_post) do |f| %>
+  <% if @room_post.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@room_post.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @room_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image, "Upload a picture of the room", class: "general-text-label" %><br>
+    <%= f.file_field :image, class: "form-control" %>
+    <p class="form-help-block">We recommend image dimensions of 640×640.</p>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Describe the room", class: "general-text-label" %><br>
+    <%= f.text_area :description, class: "general-text-area limit_250", rows: 5 %>
+    <p class="form-help-block"><span id="remain">250</span> characters remaining</p>
+  </div>
+  <div class="field">
+    <%= f.label :price, "Price", class: "general-text-label" %><br>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">$</span>
+      <%= f.text_field :price, class: "general-text-field", value: @room_post.price.to_i %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :when, "Whats the Move In Date?", class: "general-text-label" %><br>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1"><i class="nklyn-icon-calendar"></i></span>
+      <%= f.text_field :when, class: "general-text-field datepicker", value: @room_post.when.strftime('%A %b %d, %Y') %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :neighborhood_id, "What neighborhood is the room in?", class: "general-text-label" %><br>
+    <%= grouped_collection_select :room_post, :neighborhood_id, @regions, :neighborhoods, :name, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+  <br>
+  <%= f.label "Where is your room?", class: "general-text-label" %>
+  <div id="form-map"></div>
+  <%= f.hidden_field :latitude, id: "listing_latitude" %>
+  <%= f.hidden_field :longitude, id: "listing_longitude" %>
+  <%= f.hidden_field :full_address, class: "map-autocomplete-address" %>
+
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
+    <div id="type-selector" class="controls">
+      <input type="radio" name="type" id="changetype-all" checked="checked">
+      <label for="changetype-all">All</label>
+    </div>
+  <br>
+
+  <script type="text/javascript">
+    $('.rm_form_container').on("keyup keypress", function(e) {
+    var code = e.keyCode || e.which;
+    if (code  == 13) {
+      e.preventDefault();
+      return false;
+    }
+    });
+  </script>
+  <div class="actions text-center">
+    <hr>
+    <%= f.submit "Submit", class: "button btn-nklyn-black btn-4x" %>
+  </div>
+<% end %>
+</div>

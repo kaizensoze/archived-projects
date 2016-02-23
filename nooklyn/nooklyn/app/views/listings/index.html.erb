@@ -1,0 +1,41 @@
+<% content_for :title, "Find apartments and lofts for rent Brooklyn, New York - Powered by Nooklyn" %>
+<% content_for :description, "Search through available apartments, rentals, and lofts in Brooklyn. Nooklyn's listings are updated daily to help you find your next home." %>
+<% content_for :meta_url, "http://nooklyn.com/listings" %>
+<% content_for :og_image, "https://nooklyn-files.s3.amazonaws.com/img/home_mini.jpg" %>
+
+<div class="listings-index-container">
+  <div class="split-pane-frame">
+    <div class="split-pane vertical-percent">
+      <div class="split-pane-component" id="left-component">
+        <div class="decoration">
+          <div class="listing-index">
+            <%= render 'listings/listings_filters' %>
+          </div>
+          <div class="nooklyn_listings_index_container"></div>
+        </div>
+      </div>
+      <div class="split-pane-divider" id="my-divider"></div>
+      <div class="split-pane-component" id="right-component">
+        <div class="decoration">
+          <div id="nooklyn_listings_index_map" data-latitude="40.69664826715396" data-longitude="-73.93627166748047" data-zoom="13"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    // split pane
+    $('div.split-pane').splitPane();
+
+    // on split pane resize, trigger google map resize
+    $('div.split-pane').on('resize', function() {
+      var mapDiv = document.getElementById('nooklyn_listings_index_map');
+      google.maps.event.trigger(mapDiv, "resize");
+    });
+
+    // liked listings
+    likedListingIds = [<%= @liked_listings.join(', ') %>];
+  });
+</script>

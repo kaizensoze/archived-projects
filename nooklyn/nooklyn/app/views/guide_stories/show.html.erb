@@ -1,0 +1,34 @@
+<% content_for :title, "#{@guide_story.title} in #{@guide_story.neighborhood.name } - Powered by Nooklyn: Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<% content_for :description, "#{@guide_story.description}" %>
+<% content_for :meta_url, guide_story_url(@guide_story.id) %>
+<% content_for :og_image, @guide_story.image(:standard) %>
+
+<div class="mega-container">
+  <div class="guide-story-header" style="background-image: url('<%= @guide_story.image(:standard) %>;')  ">
+    <div class="guide-story-header-card">
+      <h1><%= @guide_story.title %></h1>
+      <h2><%= @guide_story.neighborhood.name %></h2>
+      <h3>&ldquo;</h3>
+      <p><%= @guide_story.description %></p>
+      <h3>&rdquo;</h3>
+    </div>
+  </div>
+  <div class="guide-story-gallery">
+    <% @guide_story.photos.each do |photo| %>
+      <div class="guide-story-photo-card">
+        <%= image_tag photo.image.url(:standard), class: 'img-responsive center-block' %><br>
+        <% unless photo.caption.blank? %>
+          <h3>&ldquo;</h3>
+          <p><%= photo.caption %></p>
+          <h3>&rdquo;</h3>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <% if can? :manage, :all %>
+  <div class="text-center">
+    <%= link_to 'Edit', edit_guide_story_path(@guide_story), class: "button btn-transparent-bk btn-2x" %>
+    <%= link_to 'Manage Photos', manage_photos_guide_story_path(@guide_story), class: "button btn-transparent-bk btn-2x" %>
+  </div>
+  <% end %>
+</div>

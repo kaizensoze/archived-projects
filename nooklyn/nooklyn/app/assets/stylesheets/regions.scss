@@ -1,0 +1,95 @@
+/*****************************************************************************/
+/*
+/* Regions#Index
+/*
+/*****************************************************************************/
+
+div.region-card-container {
+  /* Positioning */
+  /* Box-model */
+  text-align: center;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+div.region-card {
+  /* Positioning */
+  position: relative;
+  display: inline-block;
+  /* Box-model */
+  margin-bottom: 15px;
+  margin-left: 15px;
+  max-width: 424px;
+  /* Typography */
+  /* Visual */
+  color: #fff;
+  /* Misc */
+  clear: both;
+  @media screen and (max-width: 541px) {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  img {
+    min-width: 320px;
+    min-height: 320px;
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  a {
+    color: #fff;
+  }
+  .region-overlay {
+    /* Positioning */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 35% 15% 40% 15%;
+    /* Box-model */
+    width: 100%;
+    height: 100%;
+    /* Typography */
+    /* Visual */
+    background-color: rgba(17,17,17,.3);
+    color: #fff;
+    /* Misc */
+    -webkit-transition: all .2s ease-in-out;
+       -moz-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+
+    &:hover {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      background-color: rgba(255,212,84,.6);
+      /* Misc */
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Regions#Show
+/*
+/*****************************************************************************/
+
+div#region-show-map {
+  /* Positioning */
+  /* Box-model */
+  width: 100%;
+  height: 800px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}

@@ -1,0 +1,9 @@
+<div class="text-center">
+  <%= render partial: "mate_posts/mate_post", collection: @mate_posts %>
+</div>
+
+<% current_agent.mate_posts.each do |mate_post| %>
+  <% mate_post.interested_agents.each do |agent| %>
+    <%= agent.name %><br>
+  <% end %>
+<% end %>

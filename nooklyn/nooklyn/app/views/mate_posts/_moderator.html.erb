@@ -1,0 +1,32 @@
+<hr>
+<div class="text-center">
+  <h2 class="text-center">Moderator Tools</h2>
+  <%= link_to view.mate_post, method: :delete, data: { confirm: 'Are you sure?' } do %>
+    <button class="button btn-reject btn-2x">Delete</button>
+  <% end %>
+  <% if view.mate_post.hidden? %>
+    <%= link_to make_public_mate_post_path(view.mate_post) do %>
+      <button class="button btn-edit btn-2x">Mark as Public</button>
+    <% end %>
+  <% else %>
+    <%= link_to make_private_mate_post_path(view.mate_post) do %>
+      <button class="button btn-edit btn-2x">Mark as Private</button>
+    <% end %>
+  <% end %>
+</div>
+<div class="row">
+  <div>
+    <ul class="list-unstyled mate-moderator-tool-list">
+    <% view.conversations.each do |conversation| %>
+      <% other_participants_than(conversation, view.mate_agent).tap do |participants| %>
+        <li class="col-xs-3">
+          <%= link_to "#{participants.map(&:first_name).join(',')} (#{conversation.messages.count})", conversation_url(conversation) %><br>
+          <% participants.each do |agent| %>
+            <%= image_tag agent.profile_picture.url(:medium), class: "img-circle img-circle-small" %>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+</div>

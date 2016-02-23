@@ -1,0 +1,27 @@
+<%= form_for [:matrix, @deposit, @deposit_client] do |f| %>
+  <% if @deposit_client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deposit_client.errors.count, "error") %> prohibited this deposit_client from being saved:</h2>
+
+      <ul>
+      <% @deposit_client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, class: "general-text-label" %><br>
+    <%= f.text_field :name, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :guarantor, class: "general-text-label" %><br>
+    <%= f.check_box :guarantor %>
+  </div>
+  <%= f.hidden_field :creator_id, :value => current_agent.id %>
+  <hr>
+  <div class="actions">
+    <%= f.submit "Submit", class: "button btn-black btn-3x" %>
+  </div>
+<% end %>

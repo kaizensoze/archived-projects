@@ -1,0 +1,9 @@
+<div class="location-gallery-area row no-gutters">
+  <% @location.photos.each do |photo| %>
+    <div class="col-md-4">
+      <%= link_to photo.image.url(:standard), data: {lightbox: "location"} do %>
+        <%= image_tag photo.image.url(:half_standard), class: 'img-responsive center-block' %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

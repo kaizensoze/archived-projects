@@ -1,0 +1,117 @@
+div.common-jumbotron {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  height: 1080px;
+  padding-top: 300px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-image: url('//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  /* Misc */
+  @media screen and (max-width: 540px) {
+    height: 800px;
+    padding-top: 150px;
+  }
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+    font-size: 82px;
+    /* Visual */
+    /* Misc */
+  }
+  img {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    max-width: 150px;
+    /* Visual */
+    /* Misc */
+  }
+  p.common-jumbotron-lead {
+    /* Positioning */
+    /* Box-model */
+    margin: 0 auto;
+    max-width: 420px;
+    padding: 15px;
+    /* Typography */
+    font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+div.common-content-section {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  div#location-show-map {
+    height: 500px;
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    /* Typography */
+    font-weight: 100;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin: 0 auto 30px auto;
+    max-width: 60px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    border-bottom: 1px solid #2d2d2d;
+    /* Misc */
+  }
+  h4 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  hr {
+    max-width: 50%;
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    max-width: 310px;
+    margin: 0 auto;
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    font-weight: 100;
+    font-size: 20px;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+img#common-logo {
+  max-width: 100px;
+  margin-bottom: 30px;
+}

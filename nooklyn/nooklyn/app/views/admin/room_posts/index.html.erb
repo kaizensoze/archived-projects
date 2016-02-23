@@ -1,0 +1,48 @@
+<% content_for :title, "(#{@room_posts.total_count}) Nooklyn Room Posts Database" %>
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5><%= @room_posts.total_count %> rooms</h5>
+    <h1>Room Post Database</h1>
+  </div>
+</div>
+<div class="container-fluid">
+  <%= render 'admin/shared/admin_navigation' %>
+  <div class="text-center">
+    <%= paginate @room_posts, :window => 10, :right => 1 %><br>
+  </div>
+  <div class="responsive-table">
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Hidden</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th colspan="5">Actions</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <% @room_posts.each do |room_post| %>
+        <tr>
+          <td><%= room_post.id %></td>
+          <td><%= link_to room_post.agent.name, room_post_path(room_post) %></td>
+          <td><%= room_post.latitude %></td>
+          <td><%= room_post.longitude %></td>
+          <td><%= room_post.hidden? %></td>
+          <td><%= room_post.created_at.strftime('%D at %I:%M%P') %></td>
+          <td><%= room_post.updated_at.strftime('%D at %I:%M%P') %></td>
+          <td><%= link_to 'Make Private', make_private_admin_room_post_path(room_post), class: "button btn-red btn-2x" %></td>
+          <td><%= link_to 'Make Public', make_public_admin_room_post_path(room_post), class: "button btn-red btn-2x" %></td>
+          <td><%= link_to 'Show', room_post_path(room_post), class: "button btn-default btn-2x" %></td>
+          <td><%= link_to 'Edit', edit_room_post_path(room_post), class: "button btn-edit btn-2x" %></td>
+          <td><%= link_to 'Delete', room_post, method: :delete, data: {confirm: 'Are you sure you want to delete the post?' }, class: "button btn-red btn-2x" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

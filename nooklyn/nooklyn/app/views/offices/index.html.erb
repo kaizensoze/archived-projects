@@ -1,0 +1,41 @@
+<% content_for :title, "Offices - Nooklyn - Rental, Sales, Lofts" %>
+
+<div class="mega-container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/2x/PoweredByNooklyn.png', class: "img-responsive" %>
+    <h1>Offices</h1>
+    <%= link_to 'New Office', new_office_path, class: "button btn-black btn-2x" %>
+    <hr>
+  </div>
+  <div class="container">
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address line one</th>
+          <th>Address line two</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip code</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @offices.each do |office| %>
+          <tr>
+            <td><%= office.name %></td>
+            <td><%= office.address_line_one %></td>
+            <td><%= office.address_line_two %></td>
+            <td><%= office.city %></td>
+            <td><%= office.state %></td>
+            <td><%= office.zip_code %></td>
+            <td><%= link_to 'Show', office %></td>
+            <td><%= link_to 'Edit', edit_office_path(office) %></td>
+            <td><%= link_to 'Destroy', office, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

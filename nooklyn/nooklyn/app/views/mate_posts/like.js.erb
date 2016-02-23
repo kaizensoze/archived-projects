@@ -1,0 +1,2 @@
+$('<%= "#mate_card_#{@mate_post.id}" %> .like-notice').fadeIn().delay(1000 * 2).fadeOut();
+$('<%= "#mate_card_#{@mate_post.id}" %> .button_to').replaceWith('<%=j render 'unlike_button', :mate_post => @mate_post %>');

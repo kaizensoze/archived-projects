@@ -1,0 +1,11 @@
+<%= image_tag 'https://nooklyn-files.s3.amazonaws.com/teepee/teepee.png', class: "center" %><br><br><br>
+
+Hiya <%= @agent.first_name %>,<br><br>
+
+Your profile is no longer public on Rooms &amp; Mates.<br><br>
+
+Only profiles with an upcoming move in date are listed publicly.<br><br>
+
+Did you already find a roommate/apartment? You're good to go.<br><br>
+
+If you still need to find a rooommate, you can <%= link_to 'update your move-in date', rm_settings_url %> to find more mates.<br><br>

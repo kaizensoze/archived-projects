@@ -1,0 +1,20 @@
+<% content_for :title, "New Room - Nooklyn - Powered by Nooklyn" %>
+
+<div class="super_container">
+  <br>
+  <div class="container">
+    <div class="rm_form_container">
+      <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/BrowseRooms.png', class: "img-responsive center-block" %>
+      <h1 class="text-center">Rooms</h1>
+      <br>
+      <div class="text-center">
+      <a class="button btn-white btn-4x" data-toggle="modal" data-target="#rmModal">Posting Guidelines</a>
+      </div>
+      <br>
+      <%= render 'form' %>
+    </div>
+  </div>
+  <br>
+</div>
+
+<%= render 'roommates/posting_guidelines_modal' %>

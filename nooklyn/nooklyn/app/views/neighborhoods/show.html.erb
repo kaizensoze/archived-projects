@@ -1,0 +1,12 @@
+<% content_for :title, "Apartments and Lofts in #{@neighborhood.name}, #{@neighborhood.borough} - Nooklyn - Rentals, Sales & Lofts" %>
+<% content_for :description, "#{@neighborhood.name} apartment finder. Browse currently available apartments and lofts in #{@neighborhood.name}." %>
+
+<%= render 'neighborhoods/header' %>
+
+<% if @listings.empty? %>
+  <%= render 'neighborhoods/explore' %>
+  <% else %>
+  <%= render 'neighborhoods/apartments' %>
+<% end %>
+
+

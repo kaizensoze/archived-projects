@@ -1,0 +1,34 @@
+<%= link_to conversation do %>
+  <div class="conversation-index-card">
+    <div class="text-center">
+      <% if conversation.unread? %> <i class="nklyn-icon-message nklyn-4x"></i><% else %><i class="nklyn-icon-message-open nklyn-4x"></i> <% end %>
+      <h3>____</h3>
+    </div>
+
+    <% if other_participants_than(conversation, current_agent).size > 1 %>
+      <div class="text-center">
+        <ul class="list-unstyled list-inline">
+          <% other_participants_than(conversation, current_agent).each do |agent| %>
+            <li><%= image_tag agent.profile_picture.url(:medium), class: "img-circle img-responsive" %></li>
+          <% end %>
+        </ul>
+      </div>
+      <h5>Group Conversation</h5>
+      <h6><%= conversation.updated_at.strftime('%D') %></h6>
+    <% else %>
+      <% other_participants_than(conversation, current_agent).each do |agent| %>
+        <div class="text-center">
+          <%= image_tag agent.profile_picture.url(:medium), class: "img-circle" %><br>
+          <h5><%= agent.full_name %></h5>
+          <h6><%= conversation.updated_at.strftime('%D') %></h6>
+        </div>
+      <% end %>
+    <% end %>
+    <%= link_to "Reply", conversation, class: "button btn-nklyn-black btn-3x" %>
+    <% if conversation.archived_for?(current_agent) %>
+      <%= link_to "Unarchive", mark_as_unarchived_conversation_path(conversation), class: "button btn-edit btn-3x", method: :post %>
+    <% else %>
+      <%= link_to "Archive", mark_as_archived_conversation_path(conversation), class: "button btn-edit btn-3x", method: :post %>
+    <% end %>
+  </div>
+<% end %>

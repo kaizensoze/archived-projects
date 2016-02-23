@@ -1,0 +1,36 @@
+/*****************************************************************************/
+/*
+/* Containers
+/*
+/*****************************************************************************/
+
+
+div.narrow-page-container {
+  /* Positioning */
+  /* Box-model */
+  max-width: 700px;
+  margin: 10px auto;
+  padding-bottom: 15px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 10px;
+    /* Typography */
+    font-size: 20px;
+    /* Visual */
+    /* Misc */
+  }
+  img {
+    text-align: center;
+  }
+  p#legal_box_statement {
+    border: 1px solid #ccc;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+}

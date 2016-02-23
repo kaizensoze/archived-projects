@@ -1,0 +1,72 @@
+<% content_for :title, "A Conversation - Powered by Nooklyn" %>
+
+<%= render 'conversations/conversation_header' %>
+
+<div class="conversation-show-page container">
+  <div class="conversation-action-bar row">
+    <div class="col-sm-4">
+      <ul class="list-inline line-unstyled">
+        <% @conversation.participants.each do |participant| %>
+          <li><%= image_tag participant.agent.profile_picture.url(:medium), class: "img-circle img-xxsmall" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-sm-8 text-right">
+      <%= link_to "Listing", @conversation.context_url, class: "button btn-white btn-2x", target: "_blank" %>
+      <% if @conversation.archived_for?(current_agent) %>
+        <%= link_to "Unarchive", mark_as_unarchived_conversation_path(@conversation), class: "button btn-edit btn-2x", method: :post %>
+      <% else %>
+        <%= link_to "Archive this Conversation", mark_as_archived_conversation_path(@conversation), class: "button btn-edit btn-2x", method: :post %>
+      <% end %>
+    </div>
+  </div>
+  <% @conversation.messages.order(:created_at).each do |message| %>
+    <div class="conversation-message-strip">
+      <% if message.agent == current_agent %>
+        <div class="row conversation-message-current-user">
+          <div class="col-sm-9 text-right">
+            <p><%= simple_format(message.message) %></p>
+            <br>
+            <p><%= render partial: 'attachment', collection: native_attachments(message.attachments) %></p>
+          </div>
+          <div class="col-sm-3 conversation-message-user-area">
+            <%= image_tag message.agent.profile_picture.url(:medium), class: "img-circle img-human" %><br>
+            <h5><%= link_to message.agent.short_name, agent_path(message.agent.id) %></h5>
+            <h6><%= message.created_at.strftime('%D at %I:%M%P') %></h6>
+          </div>
+        </div>
+      <% else %>
+        <div class="row">
+          <div class="col-sm-3 conversation-message-user-area">
+            <%= image_tag message.agent.profile_picture.url(:medium), class: "img-circle img-human" %><br>
+            <h5><%= link_to message.agent.short_name, agent_path(message.agent.id) %></h5>
+            <h6><%= message.created_at.strftime('%D at %I:%M%P') %></h6>
+          </div>
+          <div class="col-sm-9">
+            <p><%= simple_format(message.message) %></p>
+            <br>
+            <p><%= render partial: 'attachment', collection: native_attachments(message.attachments) %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <hr>
+  <%= form_for(@conversation.messages.build) do |f| %>
+    <div class="conversation-message-area row">
+      <div class="col-sm-9">
+        <fieldset>
+          <%= f.hidden_field :conversation_id %>
+          <%= f.text_area :message, :autocomplete => "off", class: "general-text-area limit_500", placeholder: "Send a nice message." %><br>
+          <p class="form-help-block"><span id="remain">500</span> characters remaining</p>
+        </fieldset>
+      </div>
+      <div class="col-sm-3 conversation-message-user-area">
+        <%= image_tag current_agent.profile_picture.url(:medium), class: "img-circle img-xxsmall" %>
+        <br>
+        <%= f.submit 'Send', :class => 'button btn-blue btn-3x' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>

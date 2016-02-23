@@ -1,0 +1,51 @@
+<div class="super_container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="text-center">
+    <%= paginate @listings, :window => 10, :right => 1 %><br>
+  </div>
+  <div class="nooklyn-matrix-listings-container container">
+    <% @listings.each do |listing| %>
+      <div class="nooklyn-matrix-listing-card">
+        <%= link_to listing do %>
+        <%= image_tag listing.image(:thumb), class: "img-responsive" %>
+        <% end %>
+        <div class="nooklyn-matrix-listing-card-stub">
+          <address>
+            <p>
+              <b><%= listing.address %></b><br>
+              <small>
+              Unit: <%= listing.apartment %><br>
+              <%= listing.neighborhood.full_name %>
+              </small>
+            </p>
+          </address>
+          <div class="price">
+            <h5>Price</h5>
+            <h3><%= number_to_currency(listing.price, precision: 0) %></h3>
+          </div>
+          <div class="bedrooms">
+            <h5>Beds</h5>
+            <h3><%= number_to_human(listing.bedrooms) %></h3>
+          </div>
+          <div class="bathrooms">
+            <h5>Baths</h5>
+            <h3><%= number_to_human(listing.bathrooms) %></h3>
+          </div>
+          <div class="clearfix"></div>
+          <div class="nooklyn-matrix-listing-card-stub-details">
+            <small>Access:</small> <%= listing.access.humanize %><br>
+            <% unless listing.owner_pays.blank? %><small>Owner Pays:</small> <%= number_to_percentage(listing.owner_pays, precision: 0) %><br><% end %>
+            <% unless listing.fee.blank? %><small>Fee Notes:</small> <%= listing.fee.humanize %><br><% end %>
+            <% unless listing.utilities.blank? %><small>Utilities:</small> <%= listing.utilities.humanize %><br><% end %>
+            <% unless listing.move_in_cost.blank? %><small>Move In Cost:</small> <% if listing.move_in_cost == true %>First, Last and Security<% else %>First and Security<% end %><br><% end %>
+            <small>Pets:</small> <% if listing.pets == true %>Allowed<% else %>Not Allowed<% end %><br>
+            <% unless listing.term.blank? %><small>Term:</small> <%= listing.term %><br><% end %>
+            <small>Availablility: </small><% if listing.date_available.blank? %> - <% else %><%= listing.date_available.strftime('%D') %><% end %> <br>
+            <small>Exclusivity:</small> <% unless listing.exclusive %>Non-<% end %>Exclusive<br>
+          </div>
+          <%= link_to 'Edit', edit_listing_path(listing), class: "button btn-white btn-1x" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

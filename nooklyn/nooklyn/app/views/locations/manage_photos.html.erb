@@ -1,0 +1,60 @@
+<% content_for :title, "Manage Photos - Powered by Nooklyn" %>
+
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5>Manage Photos</h5>
+    <h1>#<%= @location.id %></h1>
+    <h2><%= @location.neighborhood.borough %></h2>
+    <hr>
+    <ul class="list-inline list-unstyled">
+      <li><%= link_to "Public Listing Page", @location, class: "button btn-transparent btn-3x" %></li>
+      <li><%= link_to "Edit Location", edit_location_path(@location), class: "button btn-transparent btn-3x" %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="super_container">
+  <div class="container manage-photos-page">
+    <div class="text-center">
+      <%= image_tag "//nooklyn-files.s3.amazonaws.com/illustrations/UploadPhotos.png", class: "img-responsive center-block" %>
+      <h3>Upload</h3>
+    </div>
+    <%= form_for LocationPhoto.new, :html => { :multipart => true, :id => "fileupload", :class => "dropzone nklyn-dropzone" } do |f| %>
+      <%= f.hidden_field :location_id, :value => @location.id %>
+    <% end %>
+    <script>
+      Dropzone.options.fileupload = {
+        paramName: "location_photo[image]",
+        dictDefaultMessage : "Drop your photos here to upload."
+      };
+    </script>
+    <hr>
+    <div class="text-center">
+      <h3>Gallery</h3>
+    </div>
+    <div class="row">
+    <% @location.photos.each do |photo| %>
+      <div class="col-sm-4">
+        <%= image_tag photo.image.url(:standard), class: 'img-responsive' %>
+        <div class="manage-photo-toolbar">
+          <%= link_to 'Download Original', photo.image.url(:original),  class: "button btn-white btn-2x", target: "_blank" %>
+          <%= link_to 'Edit', edit_location_photo_path(photo), class: "button btn-edit btn-2x" %>
+          <%= link_to 'Delete', photo, remote: true, method: :delete, data: {type: 'json', confirm: 'Are you sure you want to delete the photo?' }, class: "button btn-reject btn-2x delete-button" %>
+        </div>
+        <br>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  </div>
+</div>
+
+<script>
+  // remove photo on delete asynchronously
+  $(function() {
+    $(".delete-button").on("ajax:send", function(event, data, status, xhr) {
+      var photoElement = $(event.target).closest("div.col-sm-4");
+      photoElement.remove();
+    });
+  });
+</script>

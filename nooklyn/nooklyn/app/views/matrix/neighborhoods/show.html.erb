@@ -1,0 +1,25 @@
+<% content_for :title, "The Matrix - Nooklyn - Rentals, Sales, Lofts" %>
+<div class="super_container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="text-center">
+    <%= paginate @listings, :window => 10, :right => 1 %><br>
+  </div>
+  <div class="container matrix_page">
+    <%= render 'matrix/listings/matrix_filters' %>
+    <br>
+    <table class="table table-bordered table-condensed listings matrix-table">
+      <thead>
+        <tr>
+          <th width="8%">Apartment</th>
+          <th width="26%">Listing</th>
+          <th width="18%">Details</th>
+          <th width="10%">Agents</th>
+          <th width="10%">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+          <%= render partial: 'matrix/listings/matrix_listings', collection: @listings, as: :listing %>
+      </tbody>
+    </table>
+  </div>
+</div>

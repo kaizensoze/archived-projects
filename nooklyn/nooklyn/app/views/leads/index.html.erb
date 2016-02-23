@@ -1,0 +1,63 @@
+<% content_for :title, "Recent Leads - Nooklyn - Rentals, Sales, Lofts" %>
+
+<div class="super_container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="text-center">
+    <h1>Leads</h1>
+  </div>
+  <div class="container leads-index">
+    <div class="text-center">
+      <%= paginate @leads, :window => 10, :right => 1 %><br>
+    </div>
+    <div class="responsive-table">
+      <table class="table table-striped table-hover nook-desk">
+          <thead>
+            <tr>
+                <th width ="21%">Lead</th>
+                <th width ="10%">Min Price</th>
+                <th width ="10%">Max Price</th>
+                <th width ="10%">Move In</th>
+                <th width ="35%">Notes</th>
+                <th width ="35%">Last Update</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @leads.each do |lead| %>
+            <tr>
+              <td>
+                <b><%= lead.full_name %></b><br>
+                <i class="nklyn-icon-phone"></i> <%= number_to_phone(lead.phone) %><br>
+                <i class="nklyn-icon-message"></i> <%= lead.email %><br>
+                Pets: <% if lead.pets == true %>Yes<% else %>No<% end %><br>
+                When: <%= lead.created_at.strftime('%D at %I:%M%P') %>
+              </td>
+              <td numerical-value="<%= lead.min_price %>"><%= number_to_currency(lead.min_price) || "$0.00" %></td>
+              <td numerical-value="<%= lead.max_price %>"><%= number_to_currency(lead.max_price) %></td>
+              <td><% unless lead.move_in.blank? %><%= lead.move_in.strftime('%m/%d') %><% end %></td>
+              <td><%= lead.comments %></td>
+              <td numerical-value="
+              <% if lead.updates.empty? %>
+              0
+              <% else %>
+                <% lead.updates.each do |update| %>
+                  <%= update.created_at.to_i %>
+                <% end %>
+              <% end %>">
+                <% lead.updates[0,1].reverse_each do |update| %>
+                <small><%= update.agent.first_name %> on <%= update.created_at.strftime('%D at %I:%M%P')%></small><br>
+                <p><%= update.message %></p>
+                <% end %>
+                <% if can? :create, Listing %>
+                    <%= link_to 'Update', lead, :class => 'btn btn-primary btn-xs' %>
+                <% end %>
+                <% if can? :manage, :all %>
+                  <%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-xs btn-danger' %>
+                <% end %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>

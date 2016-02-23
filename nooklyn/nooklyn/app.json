@@ -1,0 +1,57 @@
+{
+"name": "Nooklyn",
+"description": "Browse available apartments, rentals, sales, and lofts in Brooklyn, NY. Nooklyn has exclusive listings that are updated daily to help you find your next home.",
+"website": "https://nooklyn.com",
+"success_url": "/",
+"addons": [
+"heroku-postgresql:hobby-dev"
+],
+"env": {
+"AWS_ACCESS_KEY_ID": {
+"required": true
+},
+"AWS_BUCKET": {
+"required": true
+},
+"AWS_SECRET_ACCESS_KEY": {
+"required": true
+},
+"BONSAI_URL": {
+"required": true
+},
+"BUILDPACK_URL": {
+"required": true
+},
+"DATABASE_URL": {
+"required": true
+},
+"MANDRILL_APIKEY": {
+"required": true
+},
+"MANDRILL_USERNAME": {
+"required": true
+},
+"MEMCACHIER_PASSWORD": {
+"required": true
+},
+"MEMCACHIER_SERVERS": {
+"required": true
+},
+"MEMCACHIER_USERNAME": {
+"required": true
+},
+"REDISTOGO_URL": {
+"required": true
+},
+"REDIS_PROVIDER": {
+"required": true
+},
+"S3_ACCESS_KEY": {
+"required": true
+},
+"S3_ACCESS_KEY_ID": {
+"required": true
+},
+"RAILS_ENV": "production"
+}
+}

@@ -1,0 +1,22 @@
+<div class="mega-container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/Registration.png', class: "img-responsive center-block" %>
+    <h1>Resend Confirmation Instructions</h1>
+  </div>
+  <div class="narrow-form-container">
+    <hr>
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="field">
+      <%= f.label :email, "Your Email", class: "general-text-label" %><br>
+      <%= f.email_field :email, placeholder: "Your Email", class: "general-text-field" %>
+    </div>
+    <br>
+    <div class="actions text-center">
+      <%= f.submit "Submit", class: "button btn-nklyn-black btn-4x" %>
+    </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+  <br>
+</div>

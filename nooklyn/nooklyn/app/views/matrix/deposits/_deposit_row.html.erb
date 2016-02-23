@@ -1,0 +1,100 @@
+<tr class="deposit-row"
+    data-address="<%= deposit.address %>"
+    data-listing-agent="<%= deposit.listing_agent.name %>"
+    data-sales-agent="<%= deposit.sales_agent.name %>"
+    data-split-agent="<%= deposit.other_sales_agent.try(:name) %>"
+  >
+  <td>
+    <%= link_to matrix_deposit_path(deposit), id: "link" do %>
+      <address>
+        <%= deposit.address %><br>
+        <b>Unit:</b> <%= deposit.unit %>
+      </address>
+    <% end %>
+    <hr>
+    <% if can? :create, DepositClient %>
+    <%= link_to 'New Client', new_matrix_deposit_deposit_client_path(deposit), class: "button btn-white btn-2x", target: "_blank" %>
+    <% end %>
+    <% unless deposit.clients.empty? %>
+    <h5>Clients</h5>
+    <ul class="list-unstyled">
+      <% deposit.clients.each do |client| %>
+      <li><i class="nklyn-icon-dot-fill nklyn-green"></i> <%= client.name %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </td>
+  <td><%= deposit.deposit_status.try(:name) %></td>
+  <td class="text-center">
+    <%= link_to deposit.listing_agent do %>
+      <% if deposit.listing_agent.profile_picture.nil? %>
+        <%= image_tag 'missing.png', class: "img-circle" %>
+      <% else %>
+        <%= image_tag deposit.listing_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+      <% end %>
+    <% end %>
+    <h5><%= deposit.listing_agent.name %></h5>
+    <small><%= number_to_phone(deposit.listing_agent.phone) %></small><br>
+  </td>
+  <td class="text-center">
+    <%= link_to deposit.sales_agent do %>
+      <% if deposit.sales_agent.profile_picture.nil? %>
+        <%= image_tag 'missing.png', class: "img-circle" %>
+      <% else %>
+        <%= image_tag deposit.sales_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+      <% end %>
+    <% end %>
+    <h5><%= deposit.sales_agent.name %></h5>
+    <small><%= number_to_phone(deposit.sales_agent.phone) %></small><br>
+  </td>
+  <td class="text-center">
+    <% unless deposit.other_sales_agent.nil? %>
+      <%= link_to deposit.other_sales_agent do %>
+        <% if deposit.other_sales_agent.profile_picture.nil? %>
+          <%= image_tag 'missing.png', class: "img-circle" %>
+        <% else %>
+          <%= image_tag deposit.other_sales_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+        <% end %>
+      <% end %>
+      <h5><%= deposit.other_sales_agent.name %></h5>
+      <small><%= number_to_phone(deposit.other_sales_agent.phone) %></small><br>
+    <% end %>
+  </td>
+  <td>
+    <% if deposit.offer_price.blank? %>
+    <%= number_to_currency(deposit.apartment_price, precision: 0) %>
+    <% else %>
+    <%= number_to_currency(deposit.apartment_price, precision: 0) %> <small>(price)</small> /
+    <%= number_to_currency(deposit.offer_price, precision: 0) %> <small>(offer)</small>
+    <% end %>
+  </td>
+  <td numerical-value="<%= deposit.transactions.count.to_i  %>">
+    <%= deposit.transactions.count %> transaction(s)<br>
+    <b>Total:</b> <%= number_to_currency(deposit.transactions.sum(:amount)) %>
+  </td>
+  <td><%= deposit.office.try(:name) %></td>
+  <td numerical-value="<%= deposit.when.to_i  %>"><%= deposit.when.strftime('%D') %></td>
+  <td numerical-value="<%= deposit.created_at.to_i  %>"><%= deposit.created_at.strftime('%D') %></td>
+  <td>
+    <% if can? :create, DepositTransaction %>
+    <%= link_to 'New Transaction', new_matrix_deposit_deposit_transaction_path(deposit), class: "button btn-white btn-2x" %>
+    <hr>
+    <%= link_to 'Refund', mark_as_refund_matrix_deposit_path(deposit), class: "button btn-reject btn-2x", data: {confirm: 'Are you sure you want to refund the deposit?' } %>
+    <% end %>
+    <hr>
+    <%= form_for [:matrix, deposit] do |f| %>
+      <label><%= f.radio_button :deposit_status_id, "1" %> Unsigned, Unapproved</label><br>
+      <label><%= f.radio_button :deposit_status_id, "2" %> Unsigned, Approved</label><br>
+      <label><%= f.radio_button :deposit_status_id, "3" %> Signed, Approved</label><br>
+      <label><%= f.radio_button :deposit_status_id, "4" %> Client Backed Out</label><br>
+      <label><%= f.radio_button :deposit_status_id, "5" %> Cancelled</label><br>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to 'Show', matrix_deposit_path(deposit), class: "button btn-white btn-2x" %>
+    <hr>
+    <% if can? :edit, Deposit %>
+      <%= link_to 'Edit', edit_matrix_deposit_path(deposit), class: "button btn-edit btn-2x" %>
+    <% end %>
+  </td>
+</tr>

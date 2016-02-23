@@ -1,0 +1,332 @@
+/*****************************************************************************/
+/*
+/* Nook
+/*
+/*****************************************************************************/
+
+@font-face {
+  font-family: "nook";
+  src:font-url('nook.eot');
+  src:font-url('nook.eot?#iefix') format('embedded-opentype'),
+    font-url('nook.woff') format('woff'),
+    font-url('nook.ttf') format('truetype'),
+    font-url('nook.svg#nook') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+// Size classes
+
+.nklyn-1x { font-size: 10px; }
+.nklyn-2x { font-size: 20px; }
+.nklyn-3x { font-size: 30px; }
+.nklyn-4x { font-size: 40px; }
+.nklyn-5x { font-size: 50px; }
+.nklyn-6x { font-size: 60px; }
+.nklyn-7x { font-size: 70px; }
+
+
+[data-icon]:before {
+  font-family: "nook" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="nklyn-icon-"]:before,
+[class*=" nklyn-icon-"]:before {
+  font-family: "nook" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.nklyn-icon-amenity-bath:before {
+  content: "a";
+}
+.nklyn-icon-amenity-bed:before {
+  content: "b";
+}
+.nklyn-icon-logo:before {
+  content: "c";
+}
+.nklyn-icon-amenity-brick:before {
+  content: "d";
+}
+.nklyn-icon-x-circle:before {
+  content: "e";
+}
+.nklyn-icon-x:before {
+  content: "f";
+}
+.nklyn-icon-users:before {
+  content: "g";
+}
+.nklyn-icon-user:before {
+  content: "h";
+}
+.nklyn-icon-star-fill:before {
+  content: "i";
+}
+.nklyn-icon-star:before {
+  content: "j";
+}
+.nklyn-icon-social-youtube:before {
+  content: "k";
+}
+.nklyn-icon-social-vimeo:before {
+  content: "l";
+}
+.nklyn-icon-social-twitter:before {
+  content: "m";
+}
+.nklyn-icon-social-tumblr:before {
+  content: "n";
+}
+.nklyn-icon-social-snapchat:before {
+  content: "o";
+}
+.nklyn-icon-social-pinterest:before {
+  content: "p";
+}
+.nklyn-icon-social-instagram:before {
+  content: "q";
+}
+.nklyn-icon-social-google-plus:before {
+  content: "r";
+}
+.nklyn-icon-pet-dog-b:before {
+  content: "s";
+}
+.nklyn-icon-pet-dog-c:before {
+  content: "t";
+}
+.nklyn-icon-phone:before {
+  content: "u";
+}
+.nklyn-icon-pie-chart:before {
+  content: "v";
+}
+.nklyn-icon-question:before {
+  content: "w";
+}
+.nklyn-icon-rocket:before {
+  content: "x";
+}
+.nklyn-icon-question-circle-fill:before {
+  content: "y";
+}
+.nklyn-icon-social-apple:before {
+  content: "z";
+}
+.nklyn-icon-social-dropbox:before {
+  content: "A";
+}
+.nklyn-icon-social-android:before {
+  content: "B";
+}
+.nklyn-icon-social-facebook:before {
+  content: "C";
+}
+.nklyn-icon-social-foursquare:before {
+  content: "D";
+}
+.nklyn-icon-social-github:before {
+  content: "E";
+}
+.nklyn-icon-pet-dog-a:before {
+  content: "F";
+}
+.nklyn-icon-pet-cat-b:before {
+  content: "G";
+}
+.nklyn-icon-pet-cat-a:before {
+  content: "H";
+}
+.nklyn-icon-paperclip:before {
+  content: "I";
+}
+.nklyn-icon-paper-plane:before {
+  content: "J";
+}
+.nklyn-icon-newspaper:before {
+  content: "K";
+}
+.nklyn-icon-mug:before {
+  content: "L";
+}
+.nklyn-icon-money-coins:before {
+  content: "M";
+}
+.nklyn-icon-money-card:before {
+  content: "N";
+}
+.nklyn-icon-money-bills:before {
+  content: "O";
+}
+.nklyn-icon-money-bill:before {
+  content: "P";
+}
+.nklyn-icon-message-open:before {
+  content: "Q";
+}
+.nklyn-icon-message-fill:before {
+  content: "R";
+}
+.nklyn-icon-heart-fill:before {
+  content: "S";
+}
+.nklyn-icon-infinity:before {
+  content: "T";
+}
+.nklyn-icon-key:before {
+  content: "U";
+}
+.nklyn-icon-lock:before {
+  content: "V";
+}
+.nklyn-icon-marker:before {
+  content: "W";
+}
+.nklyn-icon-media-fast-forward:before {
+  content: "X";
+}
+.nklyn-icon-media-pause:before {
+  content: "Y";
+}
+.nklyn-icon-media-play:before {
+  content: "Z";
+}
+.nklyn-icon-media-replay:before {
+  content: "0";
+}
+.nklyn-icon-media-rewind:before {
+  content: "1";
+}
+.nklyn-icon-media-volume:before {
+  content: "2";
+}
+.nklyn-icon-message:before {
+  content: "3";
+}
+.nklyn-icon-heart:before {
+  content: "4";
+}
+.nklyn-icon-grid:before {
+  content: "5";
+}
+.nklyn-icon-globe:before {
+  content: "6";
+}
+.nklyn-icon-gear:before {
+  content: "7";
+}
+.nklyn-icon-fire:before {
+  content: "8";
+}
+.nklyn-icon-face-sad:before {
+  content: "9";
+}
+.nklyn-icon-face-happy:before {
+  content: "!";
+}
+.nklyn-icon-drinks:before {
+  content: "\"";
+}
+.nklyn-icon-dot-fill:before {
+  content: "#";
+}
+.nklyn-icon-dot:before {
+  content: "$";
+}
+.nklyn-icon-couch:before {
+  content: "%";
+}
+.nklyn-icon-cloud:before {
+  content: "&";
+}
+.nklyn-icon-clock:before {
+  content: "'";
+}
+.nklyn-icon-asterisk:before {
+  content: "(";
+}
+.nklyn-icon-bar-chart-a:before {
+  content: ")";
+}
+.nklyn-icon-bar-chart-b:before {
+  content: "*";
+}
+.nklyn-icon-bell:before {
+  content: "+";
+}
+.nklyn-icon-bike:before {
+  content: ",";
+}
+.nklyn-icon-building:before {
+  content: "-";
+}
+.nklyn-icon-bus:before {
+  content: ".";
+}
+.nklyn-icon-calendar:before {
+  content: "/";
+}
+.nklyn-icon-camera:before {
+  content: ":";
+}
+.nklyn-icon-chair:before {
+  content: ";";
+}
+.nklyn-icon-chat:before {
+  content: "<";
+}
+.nklyn-icon-check:before {
+  content: "=";
+}
+.nklyn-icon-check-circle:before {
+  content: ">";
+}
+.nklyn-icon-amenity-washer:before {
+  content: "?";
+}
+.nklyn-icon-amenity-wash-dry:before {
+  content: "@";
+}
+.nklyn-icon-amenity-subway:before {
+  content: "[";
+}
+.nklyn-icon-amenity-rooftop:before {
+  content: "]";
+}
+.nklyn-icon-amenity-pool:before {
+  content: "^";
+}
+.nklyn-icon-amenity-gym:before {
+  content: "_";
+}
+.nklyn-icon-amenity-fireplace:before {
+  content: "`";
+}
+.nklyn-icon-amenity-elevator:before {
+  content: "{";
+}
+.nklyn-icon-amenity-doorman:before {
+  content: "|";
+}
+.nklyn-icon-amenity-dishwasher:before {
+  content: "}";
+}
+

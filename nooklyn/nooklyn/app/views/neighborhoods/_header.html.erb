@@ -1,0 +1,12 @@
+<div class="neighborhoods-show-header text-center">
+  <h1><%= @neighborhood.name + ", " + @neighborhood.borough %></h1>
+  <% unless @neighborhood.listings.empty? %>
+    <div class="btn-group">
+      <%= link_to "Guide", guide_path(@neighborhood), class: "button btn-nklyn-dark btn-2x" %>
+      <%= link_to "Apartments", @neighborhood, class: "button btn-nklyn-dark btn-2x" %>
+      <%= link_to "Rooms", rooms_neighborhood_path(@neighborhood), class: "button btn-nklyn-dark btn-2x" %>
+      <%= link_to "Mates", mates_neighborhood_path(@neighborhood), class: "button btn-nklyn-dark btn-2x" %>
+      <%= link_to "Places", locations_neighborhood_path(@neighborhood), class: "button btn-nklyn-dark btn-2x" %>
+    </div>
+  <% end %>
+</div>

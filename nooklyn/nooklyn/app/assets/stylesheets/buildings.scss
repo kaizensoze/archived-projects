@@ -1,0 +1,103 @@
+div.nklyn-17-monitor-page {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  div.nklyn-17-monitor-about-section {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    h1 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      text-align: center;
+      font-weight: 700;
+      /* Visual */
+      /* Misc */
+    }
+    h2 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-weight: 700;
+      font-size: 18px;
+      /* Visual */
+      /* Misc */
+    }
+    h3 {
+      /* Positioning */
+      /* Box-model */
+      padding-top: 25px;
+      padding-bottom: 25px;
+      margin: 0;
+      /* Typography */
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      /* Visual */
+      /* Misc */
+    }
+  }
+  div#location-show-map {
+    /* Positioning */
+    /* Box-model */
+    height: 500px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+    @media screen and (max-width: 540px) {
+      height: 250px;
+    }
+  }
+}
+
+div.nklyn-building-jumbotron {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 160px;
+  padding-bottom: 200px;
+  /* Typography */
+  /* Visual */
+  height: 800px;
+  background: url('//nooklyn-files.s3.amazonaws.com/buildings/hero-new.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  /* Misc */
+  img {
+    /* Positioning */
+    /* Box-model */
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  a {
+    color: #fff;
+  }
+}

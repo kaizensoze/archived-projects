@@ -1,0 +1,17 @@
+<% content_for :title, "The Best Photos Nooklyn - Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="location-gallery-area row no-gutters">
+      <% @photos.shuffle.each do |photo| %>
+        <div class="col-xs-4">
+          <%= link_to photo.location do %>
+            <%= image_tag photo.image.url(:half_standard), class: 'img-responsive center-block' %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="text-center">
+    <%= paginate @photos, :window => 10, :right => 1 %><br>
+  </div>
+</div>

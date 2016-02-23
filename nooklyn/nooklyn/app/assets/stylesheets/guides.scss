@@ -1,0 +1,453 @@
+/*****************************************************************************/
+/*
+/* Guides#Show
+/*
+/*****************************************************************************/
+
+div.guides-hero {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  height: 250px;
+  padding-top: 20px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-image: url('//nooklyn-files.s3.amazonaws.com/guides/Neighborhood_Illo_Hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 104px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    @media screen and (max-width: 570px) {
+      font-size: 70px;
+    }
+  }
+  h6 {
+    /* Positioning */
+    position: relative;
+    /* Box-model */
+    display: inline-block;
+    padding: 0 .5em;
+    width: 140px;
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    /* Visual */
+    /* Misc */
+    &:before,
+    &:after{
+      content:"";
+      position: absolute;
+      width:200px;
+      height: 1px;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      top:50%;
+      @media screen and (max-width: 570px) {
+        width: 110px;
+      }
+    }
+    &:after{
+      left:100%;
+    }
+    &:before{
+      right: 100%;
+    }
+  }
+}
+
+div.guides-details-area {
+  /* Positioning */
+  /* Box-model */
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 50px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  div.guide-quote-area {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    /* Misc */
+  }
+  .button {
+    margin: 10px;
+    &:nth-child(1) {
+      margin-left: 5px;
+    }
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Visual */
+    color: #ffc03a;
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin: 0 auto;
+    padding-bottom: 25px;
+    max-width: 300px;
+    padding-top: 0;
+    /* Typography */
+    color: #333;
+    font-family: 'kepler-std', Georgia, serif;
+    font-weight: 300;
+    /* Visual */
+    /* Misc */
+  }
+  h4 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    color: #333;
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin: 0 auto;
+    padding-bottom: 0;
+    /* Typography */
+    line-height: .5;
+    font-size: 50px;
+    /* Visual */
+    color: #333;
+    /* Misc */
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    max-width: 80%;
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    font-size: 18px;
+    font-weight: 300;
+    /* Visual */
+    color: #333;
+    /* Misc */
+      @media screen and (max-width: 989px) {
+        max-width: 95%;
+      }
+  }
+}
+
+div.guide-explore-section {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 30px;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  img.img-mate {
+    /* Positioning */
+    /* Box-model */
+    max-width: 50px;
+    margin: 5px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+}
+
+div.guide-help-area {
+  /* Positioning */
+  /* Box-model */
+  max-width: 500px;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  /* Typography */
+  /* Visual */
+  border-top: 1px solid #ccc;
+  /* Misc */
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+    a {
+      font-family: inherit;
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Guide Story Card Container
+/*
+/*****************************************************************************/
+
+div.guide-stories-container {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  padding-bottom: 100px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  a {
+    color: #333;
+    &:hover {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #ffc03a;
+      /* Misc */
+    }
+  }
+  div.guide-story-card {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    padding-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    /* Visual */
+    background-color: #ffc03a;
+    /* Misc */
+    -webkit-transition: all .4s ease-in-out;
+       -moz-transition: all .4s ease-in-out;
+            transition: all .4s ease-in-out;
+    &:hover {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      background-color: #333;
+      color: #ffc03a;
+      /* Misc */
+    }
+    h3 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      /* Visual */
+      /* Misc */
+    }
+    h4 {
+      /* Positioning */
+      /* Box-model */
+      padding-bottom: 15px;
+      /* Typography */
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      /* Visual */
+      /* Misc */
+    }
+  }
+}
+
+div.guide-story {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  img {
+    display: inline-block;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* GuideStory#Show
+/*
+/*****************************************************************************/
+
+div.guide-story-header {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  height: 1080px;
+  padding-top: 300px;
+  /* Typography */
+  /* Visual */
+  background-size: cover;
+  background-color: #2d2d2d;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  text-align: center;
+  /* Misc */
+  @media screen and (max-width: 540px) {
+    height: 800px;
+    padding-top: 150px;
+  }
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    position: relative;
+    /* Box-model */
+    display: block;
+    padding: 10px 0;
+    /* Typography */
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 44%;
+      top: 15px;
+      border-bottom: solid 1px #2d2d2d;
+    }
+    &:after {
+      right: 0;
+      content: '';
+      position: absolute;
+      display: block;
+      width: 44%;
+      top: 15px;
+      border-bottom: solid 1px #2d2d2d;
+    }
+  }
+  h3 {
+    font-size: 50px;
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    margin: 0 auto;
+    max-width: 300px;
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    font-size: 18px;
+    font-weight: 100;
+    /* Visual */
+    text-align: left;
+    /* Misc */
+      @media screen and (max-width: 989px) {
+        max-width: 95%;
+      }
+  }
+}
+
+div.guide-story-header-card {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 25px;
+  width: 90%;
+  /* Typography */
+  /* Visual */
+  background-color: #111;
+  color: #fff;
+  /* Misc */
+}
+
+div.guide-story-photo-card {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+  h3 {
+    font-size: 50px;
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    margin: 0 auto;
+    max-width: 300px;
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    font-size: 18px;
+    font-weight: 100;
+    /* Visual */
+    color: #333;
+    text-align: left;
+    /* Misc */
+      @media screen and (max-width: 989px) {
+        max-width: 95%;
+      }
+  }
+}

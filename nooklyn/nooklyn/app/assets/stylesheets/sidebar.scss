@@ -1,0 +1,96 @@
+nav.rm-sidebar {
+  @media screen and (max-width: 540px) {
+    position: relative;
+    top:0;
+    margin-bottom: 10px;
+    width: 100%;
+    ul {
+      div.allocate-sidebar-section {
+        border-color: #191818 !important;
+        display: inline-block;
+        width: 100px;
+      }
+    }
+  }
+  /* Positioning */
+  left: 0;
+  top: 50px;
+  position: fixed;
+  width: 139px;
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background-color: #000;
+  color:#999;
+  /* Misc */
+  z-index: 15;
+  ul {
+    div.rm-sidebar-section {
+      @media screen and (max-width: 540px) {
+        display: inline-block;
+        width: 49%;
+        border-bottom: 0;
+      }
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #333;
+      -webkit-transition: all 400ms ease-in-out;
+         -moz-transition: all 400ms ease-in-out;
+              transition: all 400ms ease-in-out;
+
+      &:hover {
+        background-color: #ffc03a;
+        color: #333;
+      }
+      img {
+        padding-bottom: 5px;
+      }
+      li {
+        /* Positioning */
+        /* Box-model */
+        padding-top: 5px;
+        /* Typography */
+        font-weight: 700;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        /* Visual */
+        /* Misc */
+      }
+    }
+    a {
+      color:#9ea7b1;
+      &:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+div.application-container {
+  @media screen and (max-width: 540px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  /* Positioning */
+  /* Box-model */
+  padding-left: 139px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  div.nklyn-container {
+    @media screen and (max-width: 400px) {
+      padding: 15px;
+    }
+    /* Positioning */
+    padding: 20px;
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #fff;
+    /* Misc */
+
+  }
+}

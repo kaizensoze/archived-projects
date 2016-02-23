@@ -1,0 +1,449 @@
+/*****************************************************************************/
+/*
+/* Matrix Index Page
+/*
+/*****************************************************************************/
+
+div.matrix-filters {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 20px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  .btn {
+    border-radius: 0;
+    margin-bottom: 5px;
+  }
+  .btn-default:focus {
+    background-color: #fff;
+  }
+  span.input-group-addon {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    /* Misc */
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+  }
+  input {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    /* Misc */
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+  }
+  .form-control:focus {
+    border-color: #f1e577;
+  }
+}
+
+div.nooklyn-matrix-index-listing-card-stub {
+  /* Positioning */
+  /* Box-model */
+  max-width: 250px;
+  padding-bottom: 15px;
+  /* Typography */
+  text-align: left;
+  /* Visual */
+  /* Misc */
+  div.nooklyn-matrix-listing-card-stub-details {
+    /* Positioning */
+    /* Box-model */
+    padding: 15px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 300;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    text-align: center;
+    font-size: 36px;
+    line-height: 60px;
+    font-weight: 300;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 0;
+    /* Typography */
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    padding: 20px;
+    /* Typography */
+    font-size: 16px;
+    /* Visual */
+    color: #555;
+    /* Misc */
+    b {
+      font-weight: 600;
+    }
+  }
+  div.bedrooms {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 125px;
+    /* Typography */
+    /* Visual */
+    border: 1px solid #ddd;
+    border-right: 0;
+    color: #555;
+    /* Misc */
+  }
+  div.bathrooms {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 125px;
+    /* Typography */
+    /* Visual */
+    border: 1px solid #ddd;
+    color: #555;
+    /* Misc */
+  }
+  div.price {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 125px;
+    /* Typography */
+    /* Visual */
+    border: 1px solid #ddd;
+    border-right: 0;
+    border-bottom: 0;
+    color: #555;
+    /* Misc */
+  }
+  div.price-per-bed {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 125px;
+    /* Typography */
+    /* Visual */
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    color: #555;
+    /* Misc */
+  }
+  div.hood {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 250px;
+    /* Typography */
+    /* Visual */
+    border: 1px solid #ddd;
+    border-top: 0;
+    color: #555;
+    /* Misc */
+  }
+  div.subway {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* Typography */
+    /* Visual */
+    border: 1px solid #ddd;
+    border-top: 0;
+    color: #555;
+    /* Misc */
+    img {
+      /* Positioning */
+      /* Box-model */
+      max-width: 25px;
+      margin-left: 3px;
+      margin-right: 3px;
+      /* Typography */
+      /* Visual */
+      /* Misc */
+    }
+  }
+}
+
+div.matrix-agents {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  img {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    max-width: 150px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    /* Typography */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    /* Visual */
+    /* Misc */
+  }
+  h6 {
+    /* Positioning */
+    /* Box-model */
+    max-width: 150px;
+    margin: 0 auto;
+    padding-top: 5px;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    /* Visual */
+    border-top: 1px solid #eee;
+    /* Misc */
+  }
+}
+
+
+/*****************************************************************************/
+/*
+/* My Listings Page
+/*
+/*****************************************************************************/
+
+div.nooklyn-matrix-listings-container {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+}
+
+div.nooklyn-matrix-listing-card {
+  /* Positioning */
+  /* Box-model */
+  display: inline-block;
+  margin-bottom: 20px;
+  vertical-align: top;
+  /* Typography */
+  /* Visual */
+  border: 1px solid #eee;
+  /* Misc */
+  img {
+    /* Positioning */
+    /* Box-model */
+    width: 250px;
+    height: 250px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+  div.nooklyn-matrix-listing-card-stub {
+    /* Positioning */
+    /* Box-model */
+    max-width: 250px;
+    padding-bottom: 15px;
+    /* Typography */
+    text-align: left;
+    /* Visual */
+    background-color: #fff;
+    /* Misc */
+    div.nooklyn-matrix-listing-card-stub-details {
+      /* Positioning */
+      /* Box-model */
+      padding: 15px;
+      /* Typography */
+      /* Visual */
+      /* Misc */
+    }
+    h3 {
+      /* Positioning */
+      /* Box-model */
+      margin-top: 0;
+      margin-bottom: 0;
+      /* Typography */
+      font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 100;
+      text-align: center;
+      font-size: 36px;
+      line-height: 60px;
+      font-weight: 300;
+      text-transform: uppercase;
+      /* Visual */
+      /* Misc */
+    }
+    h5 {
+      /* Positioning */
+      /* Box-model */
+      margin-bottom: 0;
+      /* Typography */
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      /* Visual */
+      /* Misc */
+    }
+    p {
+      /* Positioning */
+      /* Box-model */
+      padding: 20px;
+      /* Typography */
+      font-size: 16px;
+      /* Visual */
+      color: #555;
+      /* Misc */
+      b {
+        font-weight: 600;
+      }
+    }
+    div.bedrooms {
+      /* Positioning */
+      /* Box-model */
+      float: left;
+      width: 50%;
+      /* Typography */
+      /* Visual */
+      border: 1px solid #ddd;
+      border-left: 0;
+      border-right: 0;
+      color: #555;
+      /* Misc */
+    }
+    div.bathrooms {
+      /* Positioning */
+      /* Box-model */
+      float: left;
+      width: 50%;
+      /* Typography */
+      /* Visual */
+      border: 1px solid #ddd;
+      border-right: 0;
+      color: #555;
+      /* Misc */
+    }
+  }
+}
+
+div.matrix-listing-image {
+  /* Positioning */
+  /* Box-model */
+  float: left;
+  width: 125px;
+  /* Typography */
+  /* Visual */
+  border: 1px solid #ddd;
+  border-bottom: 0;
+  color: #555;
+  img {
+    /* Positioning */
+    /* Box-model */
+    max-width: 124px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+}
+
+div.matrix-listing-id {
+  /* Positioning */
+  /* Box-model */
+  float: left;
+  width: 125px;
+  height: 125px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  border: 1px solid #ddd;
+  border-bottom: 0;
+  color: #555;
+  h3 {
+    padding-top: 20px;
+  }
+}
+
+div.matrix-date-available {
+  /* Positioning */
+  /* Box-model */
+  max-width: 100px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  border: 3px solid #df4a37;
+  /* Misc */
+  h4 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 15px 0;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Visual */
+    background: #f7f9fb;
+    font-size: 34px;
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* Typography */
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    /* Visual */
+    background-color: #df4a37;
+    color: #fff;
+    /* Misc */
+  }
+}

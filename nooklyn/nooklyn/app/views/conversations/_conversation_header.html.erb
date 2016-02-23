@@ -1,0 +1,8 @@
+<div class="conversations-header">
+  <%= link_to conversations_path do %>
+    <%= image_tag '//nooklyn-files.s3.amazonaws.com/illustrations/2x/Messages.png', class: "img-responsive" %>
+  <% end %>
+  <br>
+  <%= link_to "Inbox", conversations_path, class: "button btn-outline" %>
+  <%= link_to "Archive", archive_conversations_path, class: "button btn-outline" %>
+</div>

@@ -1,0 +1,193 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+body {
+  background-color: #000 !important;
+}
+
+* { font-family: 'proxima-nova', Helvetica, Arial, sans-serif; }
+
+// For pages that don't have black backgrounds
+
+div.super_container {
+  background-color: #ECEEF1;
+  width: 100%;
+}
+
+div.mega-container {
+  /* Positioning */
+  /* Box-model */
+  width: 100%;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+}
+
+div.dark-mega-container {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background-color: #000;
+  color: #fff;
+  /* Misc */
+  hr {
+    border-color: #4e4e4e;
+  }
+}
+
+// Map as form
+
+div#form-map {
+  height: 500px;
+}
+
+.help-block {
+  font-size:10px;
+}
+
+/*****************************************************************************/
+/*
+/* Error Explanation
+/*
+/*****************************************************************************/
+
+
+#error_explanation {
+  /* Positioning */
+  /* Box-model */
+  margin: 20px;
+  padding-bottom:2px;
+  /* Typography */
+  /* Visual */
+  background-color:#2d2d2d;
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 10px;
+    padding: 15px 0 15px 15px;
+    /* Typography */
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #d25641;
+    color: #fff;
+    border-bottom: 2px solid #b84a39;
+    /* Misc */
+  }
+  li {
+    /* Positioning */
+    /* Box-model */
+    margin-left: 4px;
+    /* Typography */
+    list-style-type: disc;
+    line-height: 1.7em;
+    /* Visual */
+    color: #fff;
+    /* Misc */
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Footer
+/*
+/*****************************************************************************/
+
+div.nooklyn-footer {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* Typography */
+  /* Visual */
+  color: #fff;
+  /* Misc */
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Visual */
+    color: #ffc03a;
+    /* Misc */
+  }
+  hr {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    border-color: #4e4e4e;
+    /* Misc */
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 13px;
+    /* Visual */
+    color: #666;
+    /* Misc */
+    a {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      text-decoration: none;
+      /* Visual */
+      color: #666;
+      /* Misc */
+      -webkit-transition: all 300ms ease-in-out;
+         -moz-transition: all 300ms ease-in-out;
+              transition: all 300ms ease-in-out;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  ul {
+    li {
+      a {
+        /* Positioning */
+        /* Box-model */
+        /* Typography */
+        text-decoration: none;
+        /* Visual */
+        color: #666;
+        /* Misc */
+        -webkit-transition: all 300ms ease-in-out;
+           -moz-transition: all 300ms ease-in-out;
+                transition: all 300ms ease-in-out;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+td > ul {
+  margin: 0 0 0 0;
+}
+
+a.fake-link {
+  color: inherit;
+}

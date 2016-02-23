@@ -1,0 +1,50 @@
+<%= form_for(@guide_story) do |f| %>
+  <% if @guide_story.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@guide_story.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @guide_story.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :guide_id, "Guide ID", class: "general-text-label" %><br>
+    <label class="select">
+    <%= collection_select(:guide_story, :guide_id, @guides, :id, :neighborhood_name) %>
+    </label>
+  </div>
+  <div class="field">
+    <%= f.label :image, "Cover Image", class: "general-text-label" %><br>
+    <%= f.file_field :image, class: "form-control" %>
+    <p class="form-help-block">Please upload the largest resolution of the file.</p>
+  </div>
+  <div class="field">
+    <%= f.label :url, class: "general-text-label" %><br>
+    <%= f.text_field :url, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :title, class: "general-text-label" %><br>
+    <%= f.text_field :title, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :description, class: "general-text-label" %><br>
+    <%= f.text_area :description, class: "general-text-area" %>
+  </div>
+  <div class="field">
+    <%= f.label :neighborhood, class: "general-text-label" %><br>
+    <label class="select">
+    <%= grouped_collection_select(:guide_story, :neighborhood_id, @regions, :neighborhoods, :name, :id, :name) %>
+    </label>
+  </div>
+  <div class="field">
+    <%= f.label :featured, class: "general-text-label" %><br>
+    <%= f.check_box :featured %>
+  </div>
+  <hr>
+  <div class="actions">
+    <%= f.submit "Submit", class: "button btn-black btn-2x" %>
+  </div>
+<% end %>

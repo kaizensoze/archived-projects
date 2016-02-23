@@ -1,0 +1,2 @@
+$('<%= "#location_card_#{@location.id}" %> .unlike-notice').fadeIn().delay(1000 * 2).fadeOut();
+$('<%= "#location_card_#{@location.id}" %> .button_to').replaceWith('<%=j render 'like_button', :location => @location %>');

@@ -1,0 +1,22 @@
+<i class="nklyn-icon-camera nklyn-4x"></i>
+<h3>Photos</h3>
+<% if can? :create, :location_photo %>
+  <div class="text-center">
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/illustrations/UploadPhotos.png", class: "img-responsive center-block img-small" %>
+    <h3>Upload Photos</h3>
+  </div>
+  <%= form_for LocationPhoto.new, :html => { :multipart => true, :id => "fileupload", :class => "dropzone nklyn-dropzone" } do |f| %>
+    <%= f.hidden_field :location_id, :value => @location.id %>
+  <% end %>
+  <script>
+    Dropzone.options.fileupload = {
+      paramName: "location_photo[image]",
+      dictDefaultMessage : "Drop your photos here to upload."
+    };
+  </script>
+  <br>
+<% end %>
+<% @location.photos.each do |photo| %>
+  <%= image_tag photo.image.url(:standard), class: 'img-responsive col-xs-12' %>
+  <br>
+<% end %>

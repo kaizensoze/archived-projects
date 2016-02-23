@@ -1,0 +1,9 @@
+<div class="standard-page-header">
+  <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/BrowseRoomies.png', class: "img-responsive" %>
+  <h1>Mates</h1>
+  <% if current_agent.mate_posts.empty? %>
+    <%= link_to new_mate_post_path do %>
+      <button class="button btn-black">Create a Profile</button>
+    <% end %>
+  <% end %>
+</div>

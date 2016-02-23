@@ -1,0 +1,26 @@
+/*****************************************************************************/
+/*
+/* Alerts
+/*
+/*****************************************************************************/
+
+.alert {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* Typography */
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+  text-shadow: none;
+  /* Visual */
+  border: none;
+  border-radius: 0px;
+  /* Misc */
+}
+
+.alert, .alert-success {
+  background-color: #ffc03a;
+  color: #000;
+}

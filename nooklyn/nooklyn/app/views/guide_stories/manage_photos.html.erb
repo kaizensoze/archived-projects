@@ -1,0 +1,48 @@
+<% content_for :title, "Manage Photos - Powered by Nooklyn" %>
+
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5>Manage Photos</h5>
+    <h1><%= @guide_story.title %></h1>
+    <h2><%= @guide_story.neighborhood.name %></h2>
+    <hr>
+    <ul class="list-inline list-unstyled">
+      <li><%= link_to "Public Listing Page", @guide_story, class: "button btn-transparent btn-3x" %></li>
+      <li><%= link_to "Edit Guide Story", edit_guide_story_path(@guide_story), class: "button btn-transparent btn-3x" %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="super_container">
+  <div class="container manage-photos-page">
+    <div class="text-center">
+      <%= image_tag "//nooklyn-files.s3.amazonaws.com/illustrations/UploadPhotos.png", class: "img-responsive center-block" %>
+      <h3>Upload Photos</h3>
+    </div>
+    <%= form_for GuideStoryPhoto.new, :html => { :multipart => true, :id => "fileupload", :class => "dropzone nklyn-dropzone" } do |f| %>
+      <%= f.hidden_field :guide_story_id, :value => @guide_story.id %>
+    <% end %>
+    <script>
+      Dropzone.options.fileupload = {
+        paramName: "guide_story_photo[image]",
+        dictDefaultMessage : "Drop your photos here to upload."
+      };
+    </script>
+    <hr>
+    <div class="text-center">
+      <h3>Gallery</h3>
+    </div>
+    <% @guide_story.photos.each do |photo| %>
+      <%= image_tag photo.image.url(:standard), class: 'img-responsive' %>
+      <hr>
+      <div class="caption">
+        <%= link_to 'Download Original', photo.image.url(:original),  class: "button btn-white btn-2x", target: "_blank" %>
+        <%= link_to 'Show', guide_story_photo_path(photo),  class: "button btn-white btn-2x", target: "_blank" %>
+        <%= link_to 'Edit', edit_guide_story_photo_path(photo), class: "button btn-edit btn-2x" %>
+        <%= link_to 'Delete', photo, remote: true, method: :delete, data: {type: 'json', confirm: 'Are you sure you want to delete the photo?' }, class: "button btn-reject btn-2x delete-button" %>
+      </div>
+      <br>
+    <% end %>
+  <br>
+  </div>
+</div>

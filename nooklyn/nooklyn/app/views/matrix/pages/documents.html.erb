@@ -1,0 +1,135 @@
+<% content_for :title, "Documents - Nooklyn - Rentals, Sales, Lofts" %>
+
+<div class="super_container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/PoweredByNooklyn.png', class: "img-responsive" %>
+    <h1>Documents</h1>
+  </div>
+  <div class="narrow-page-container documents-page">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Statistics</h2>
+        <p>Keep up with the latest numbers.</p>
+        <br>
+        <%= link_to matrix_statistics_path do %>
+        <button class="button btn-white btn-2x">Read More</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Agent Guide</h2>
+        <p>This is the official Nooklyn Agent Guide.</p>
+        <br>
+        <%= link_to matrix_guide_path do %>
+        <button class="button btn-white btn-2x">Read More</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Rental Application</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/Rental-Application.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>NYS Disclosure Form</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/nys-disclosure.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Guarantor Application</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/nklyn-guarantor-application.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Agent Invoice</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/nklyn-agent-invoice.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Client Registration</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/nklyn-client-registration.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Exclusive Agency Agreement</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/nklyn-exclusive-agency.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Co Broker Agreement</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/nklyn-co-broker-agreement.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Deposit Agreement</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/nklyn-deposit-agreement.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Client Qualification Sheet</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/qualification-sheet.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <% if current_agent.employer? %>
+      <div class="col-sm-12">
+        <h2>Recruiting Team Guidelines</h2>
+        <br>
+        <%= link_to matrix_recruiting_guide_path do %>
+        <button class="button btn-white btn-2x">Download</button>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <br>
+</div>

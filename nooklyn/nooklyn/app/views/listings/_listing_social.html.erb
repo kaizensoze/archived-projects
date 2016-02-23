@@ -1,0 +1,17 @@
+<div class="text-center listing-social-section">
+  <%= image_tag 'nklyn-logo-alt.png' %>
+  <h5>Share</h5>
+  <hr>
+  <ul class="list-inline list-unstyled">
+    <li>
+      <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{listing_url(page.listing)}", target: "_blank" do %>
+      <i class="nklyn-icon-social-facebook nklyn-4x"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "https://twitter.com/intent/tweet?button_hashtag=nooklyn&text=#{listing_url(page.listing)} in #{page.neighborhood_name}", target: "_blank" do %>
+      <i class="nklyn-icon-social-twitter nklyn-4x"></i>
+      <% end %>
+    </li>
+  </ul>
+</div>

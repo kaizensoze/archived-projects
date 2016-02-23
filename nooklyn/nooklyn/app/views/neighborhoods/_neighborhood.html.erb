@@ -1,0 +1,8 @@
+<%= link_to neighborhood do %>
+<div class="neighborhood-card">
+  <%= image_tag neighborhood.image(:medium), class: "img-responsive" %>
+   <div class="hood-overlay">
+    <h3><%= neighborhood.name %></h3>
+   </div>
+</div>
+<% end %>

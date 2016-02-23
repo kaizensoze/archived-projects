@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h3>Pictures</h3>
+  <div class="row">
+    <div class="listing-gallery">
+      <% photos.each do |photo| %>
+        <%= link_to photo.image.url(:large), data: {lightbox: "listing"} do %>
+          <%= image_tag photo.image.url(:square), class: 'img-responsive col-sm-6 col-xs-12' %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="text-center">
+  <%= render partial: "room_posts/room_post", collection: @room_posts %>
+</div>
+
+<% current_agent.room_posts.each do |room_post| %>
+  <% room_post.interested_agents.each do |agent| %>
+    <%= agent.name %><br>
+  <% end %>
+<% end %>

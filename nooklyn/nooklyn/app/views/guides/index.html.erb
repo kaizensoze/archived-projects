@@ -1,0 +1,45 @@
+<% content_for :title, "Neighborhood Guides for Brooklyn, NY - Powered by Nooklyn" %>
+<div class="super_container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/Neighborhoods.png', class: "img-responsive" %>
+    <h1>Guides</h1>
+    <% if can? :manage, Guide %>
+      <%= link_to 'New Guide', new_guide_path, class: "button btn-black btn-2x" %>
+    <% end %>
+  </div>
+  <br>
+  <div class="container narrow-page-container">
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>Neighborhood</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Pull quote</th>
+          <th>Pull quote author</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @guides.each do |guide| %>
+          <tr>
+            <td><%= guide.neighborhood.name %></td>
+            <td><%= guide.title %></td>
+            <td><%= guide.description %></td>
+            <td><%= guide.pull_quote %></td>
+            <td><%= guide.pull_quote_author %></td>
+            <td>
+              <%= link_to 'Show', guide %><br>
+              <% if can? :manage, Guide %>
+              <%= link_to 'Edit', edit_guide_path(guide) %><br>
+              <%= link_to 'Destroy', guide, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+</div>

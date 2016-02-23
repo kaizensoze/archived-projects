@@ -1,0 +1,38 @@
+<div class="nooklyn_listings_filters_area container">
+  <div class="row">
+    <div class="btn-group" id="zoning-types" data-toggle="buttons-radio">
+      <button type="button" data-filter-type="is-residential" class="btn btn-warning filter" id="residential-button" value="true" data-toggle="tab">Residential</button>
+      <button type="button" data-filter-type="is-residential" class="btn btn-warning filter" id="commercial-button" value="false" data-toggle="tab">Commercial</button>
+      <input type="hidden" id="is-residential" class="square-listing-filter" />
+    </div>
+    <br class="visible-xs">
+
+    <div class="btn-group" id="price-beds-buttons">
+      <button type="button" id="woot" class="btn btn-warning">Price <span class="caret"></span></button>
+      <button type="button" id="beds-filter-button" class="btn btn-warning">Beds <span class="caret"></span></button>
+    </div>
+  </div>
+  <div class="row more-filter-row">
+    <div class="col-sm-6">
+      <div class="min-max-price-container">
+        <h5>Price</h5>
+        <div class="input-group min-max-price">
+          <span class="input-group-addon"><i class="nklyn-icon-money-bills"></i></span>
+          <input type="text" class="form-control square-listing-filter price" placeholder="Min" id="minimum-price">
+          <input type="text" class="form-control square-listing-filter price" placeholder="Max" id="maximum-price">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <h5>Beds</h5>
+      <div class="btn-group" data-toggle="buttons-radio" id="bedroom-filter-bar">
+        <button type="button" data-filter-type="bedrooms" class="button btn-warning filter" value="0.0" data-toggle="tab">0</button>
+        <button type="button" data-filter-type="bedrooms" class="button btn-warning filter" value="1.0" data-toggle="tab">1</button>
+        <button type="button" data-filter-type="bedrooms" class="button btn-warning filter" value="2.0" data-toggle="tab">2</button>
+        <button type="button" data-filter-type="bedrooms" class="button btn-warning filter" value="3.0" data-toggle="tab">3</button>
+        <button type="button" data-filter-type="bedrooms" class="button btn-warning filter" value="4.0" data-toggle="tab">4</button>
+        <button type="button" data-filter-type="bedrooms" class="button btn-warning filter" value="5.0" data-toggle="tab">5+</button>
+      </div>
+    </div>
+  </div>
+</div>

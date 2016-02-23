@@ -1,0 +1,24 @@
+<% content_for :title, "Choose a Region - Powered by Nooklyn" %>
+
+<div class-"mega-container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/Neighborhoods.png', class: "img-responsive" %>
+    <h1>Regions</h1>
+  </div>
+
+  <div class="region-card-container">
+    <% @regions.each do |region| %>
+      <%= link_to region do %>
+      <div class="region-card">
+        <%= image_tag region.image(:medium), class: "img-responsive" %>
+         <div class="region-overlay">
+          <h3><%= region.name %></h3>
+         </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+

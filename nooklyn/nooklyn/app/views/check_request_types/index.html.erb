@@ -1,0 +1,28 @@
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/PoweredByNooklyn.png', class: "img-responsive" %>
+    <h1>Check Request Types</h1>
+  </div>
+
+<div class="responsive-table container">
+  <table class="table nklyn-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Active</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @check_request_types.each do |check_request_type| %>
+        <tr>
+          <td><%= check_request_type.name %></td>
+          <td><%= check_request_type.active %></td>
+          <td><%= link_to 'Show', check_request_type %></td>
+          <td><%= link_to 'Edit', edit_check_request_type_path(check_request_type) %></td>
+          <td><%= link_to 'Destroy', check_request_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

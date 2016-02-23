@@ -1,0 +1,9 @@
+<% if current_agent %>
+  <%= button_to like_room_post_path(room_post), :method => :get, :remote => true, :class=> 'like-button' do %>
+    <i class="nklyn-icon-heart nklyn-4x"></i>
+  <% end %>
+<% else %>
+  <%= link_to login_path, :class=> 'like-button' do  %>
+    <i class="nklyn-icon-heart-fill nklyn-4x"></i>
+  <% end %>
+<% end %>

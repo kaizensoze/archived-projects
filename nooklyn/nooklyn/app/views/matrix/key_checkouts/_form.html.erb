@@ -1,0 +1,32 @@
+<%= form_for [:matrix, @key_checkout] do |f| %>
+  <% if @key_checkout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@key_checkout.errors.count, "error") %> prohibited this key_checkout from being saved:</h2>
+
+      <ul>
+      <% @key_checkout.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :message, "Address", class: "general-text-label" %><br>
+    <%= f.text_area :message, class: "general-text-area" %>
+  </div>
+  <div class="field">
+    <%= f.label :office_id, class: "general-text-label" %><br>
+    <label class="select">
+    <%= collection_select :key_checkout, :office_id, @offices, :id, :name, include_blank: true %>
+    </label>
+  </div>
+  <div class="field">
+    <%= f.label :agent_id, "Agent", class: "general-text-label" %><br>
+    <%= collection_select :key_checkout, :agent_id, @agents, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+  <div class="actions text-center">
+    <hr>
+    <%= f.submit "Save", class: "button btn-black btn-4x" %>
+  </div>
+<% end %>

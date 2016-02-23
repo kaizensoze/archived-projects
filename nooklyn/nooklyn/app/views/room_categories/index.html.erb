@@ -1,0 +1,28 @@
+<% content_for :title, "Room Categories - Nooklyn - Rentals, Sales, Lofts in Bushwick and Williamsburg, Brooklyn, NY" %>
+<div class="super_container">
+  <br>
+  <div class="container">
+    <h1>Room Categories</h1>
+    <%= link_to 'Create', new_room_category_path, class: "btn btn-blue btn-2x" %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @room_categories.each do |room_category| %>
+          <tr>
+            <td><%= room_category.id %></td>
+            <td><%= room_category.name %></td>
+            <td><%= link_to 'Show', room_category %> &middot; <%= link_to 'Edit', edit_room_category_path(room_category) %> &middot; <%= link_to 'Destroy', room_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+</div>

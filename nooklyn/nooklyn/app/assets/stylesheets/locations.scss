@@ -1,0 +1,477 @@
+/*****************************************************************************/
+/*
+/* Location Index Page
+/*
+/*****************************************************************************/
+
+div#locations-index-map {
+  /* Positioning */
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  /* Box-model */
+  width: 100%;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+div.location-search-row {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  .btn-3x {
+    /* Positioning */
+    /* Box-model */
+    padding: 17px 22px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+}
+
+ul.location-category-strip {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+  img {
+    /* Positioning */
+    /* Box-model */
+    max-width: 80px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+  li {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    color: #111;
+    /* Misc */
+    -webkit-transition: all .3s ease-in-out;
+       -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+    a {
+      color: #111;
+      &:hover {
+        color: #2f79e7;
+      }
+    }
+  }
+}
+
+a.locations-map-overlay {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  color: #333;
+  /* Misc */
+}
+
+div.location-info-window {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  color: #333;
+  /* Misc */
+  a {
+    color: #333;
+  }
+}
+
+
+/*****************************************************************************/
+/*
+/* Location Cards
+/*
+/*****************************************************************************/
+
+div.locations-container {
+  /* Positioning */
+  /* Box-model */
+  text-align: center;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+div.location-card {
+  /* Positioning */
+  vertical-align: top;
+  /* Box-model */
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 250px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  div.location-card-stub {
+    background-color: #3d3d3d;
+  }
+  img {
+    max-width: 250px;
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* Typography */
+    font-size: 14px;
+    text-align: center;
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    /* Visual */
+    /* Misc */
+  }
+  div.like-notice, div.unlike-notice {
+    display: none;
+    margin-top: -295px;
+    position: absolute;
+    width: 250px;
+    background-color: rgba(17,17,17, .75);
+    color: #fff;
+    font-size: 12px;
+    line-height: 50px;
+    height: 250px;
+    padding-top: 50px;
+  }
+  div.location-heart-button {
+    /* Positioning */
+    position: absolute;
+    /* Box-model */
+    height: 49px;
+    margin-left: 187px;
+    margin-top: -94px;
+    padding-top: 6px;
+    width: 63px;
+    /* Typography */
+    /* Visual */
+    background-color: rgba(240, 87, 92, 0.75);
+    /* Misc */
+    button {
+      background-color: transparent;
+      border: none;
+      &:active {
+        padding: 0;
+      }
+    }
+    i {
+      font-size: 32px;
+      line-height: 1;
+      color: #fff;
+      text-decoration: none;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+  a {
+    font-family: inherit;
+    color: #fff;
+    -webkit-transition: all .3s ease-in-out;
+       -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+    &:hover {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #ffc03a;
+      /* Misc */
+    }
+  }
+}
+
+div.location-category-grid {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  background-color: #fff;
+  /* Visual */
+  /* Misc */
+  img {
+    max-height: 184px;
+  }
+}
+
+div.location-category {
+  min-height: 410px;
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    color: #111;
+    /* Misc */
+    -webkit-transition: all .3s ease-in-out;
+       -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+    a {
+      color: #111;
+      &:hover {
+        color: #2f79e7;
+      }
+    }
+  }
+  ul.location-list {
+    a {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #333;
+      /* Misc */
+      &:hover {
+        color: #2f79e7;
+      }
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Location Show Page
+/*
+/*****************************************************************************/
+
+div.location-show-page {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  div.location-show-photo {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 15px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+    img {
+      /* Positioning */
+      /* Box-model */
+      width: 100%;
+      /* Typography */
+      /* Visual */
+      /* Misc */
+    }
+  }
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+div#location-show-map {
+  /* Positioning */
+  /* Box-model */
+  height: 800px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  @media screen and (max-width: 540px) {
+    height: 400px;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Location Info Window
+/*
+/*****************************************************************************/
+
+a.location-map-overlay {
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Location Modern
+/*
+/*****************************************************************************/
+
+div.modern-location-actions-bar {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 5px;
+  padding-left: 10px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+div.modern-location-jumbotron {
+  /* Positioning */
+  /* Box-model */
+  height: 1000px;
+  width: 100%;
+  /* Typography */
+  /* Visual */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Misc */
+  @media screen and (max-width: 540px) {
+    height: 500px;
+  }
+}
+
+div.modern-location-card {
+  /* Positioning */
+  /* Box-model */
+  margin: -520px auto 0 auto;
+  padding-bottom: 50px;
+  max-width: 780px;
+  /* Typography */
+  /* Visual */
+  background-color: #111;
+  color: #fff;
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 50px;
+    /* Typography */
+    text-align: center;
+    font-weight: 100;
+    font-size: 38px;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 25px;
+    /* Typography */
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  address {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 5px;
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    font-size: 24px;
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  hr {
+    /* Positioning */
+    /* Box-model */
+    width: 70%;
+    /* Typography */
+    /* Visual */
+    border-color: #2d2d2d;
+    /* Misc */
+  }
+  img {
+    padding-top: 15px;
+    max-width: 150px;
+    padding-bottom: 25px;
+  }
+}
+
+div.location-category-bg {
+  background-color: #fff;
+  margin: 20px auto 0 auto;
+  border-radius: 30000px;
+  max-width: 175px;
+}
+
+div.location-gallery-area {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  img.logo-alt {
+    /* Positioning */
+    /* Box-model */
+    height: 50px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+}

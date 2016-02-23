@@ -1,0 +1,104 @@
+/*****************************************************************************/
+/*
+/* Feedback#New
+/*
+/*****************************************************************************/
+
+div.feedback-container {
+  background-color: #fff;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 15px;
+  text-align: center;
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    color: #333;
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 300;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 18px;
+    /* Visual */
+    /* Misc */
+  }
+  img {
+    margin: 10px auto;
+    text-align: center;
+  }
+  a {
+    color: #333;
+    font-weight: 400;
+    &:hover {
+      color: #df4a37;
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Feedback#Index
+/*
+/*****************************************************************************/
+
+div.feedback-index {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 400px;
+  padding: 25px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  div.feedback-strip {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 20px;
+    /* Typography */
+    /* Visual */
+    border-bottom: 1px dashed #ccc;
+    /* Misc */
+    h3 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      /* Visual */
+      /* Misc */
+    }
+    h4 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-size: 11px;
+      text-align: center;
+      font-weight: 500;
+      /* Visual */
+      color: #a6aebb;
+      /* Misc */
+    }
+    p {
+      border-left: 1px solid #c3c9d2;
+      font-size: 12px;
+      padding-left: 10px;
+      text-align: left;
+    }
+  }
+}

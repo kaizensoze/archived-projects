@@ -1,0 +1,134 @@
+<div class="container">
+  <div class="filters matrix-filters">
+    <div class="row">
+      <!-- Agent -->
+      <div class="col-sm-3">
+        <select class="matrix-listing-filter selectize" id="agent">
+          <option value="">Nooklyn Agent</option>
+          <% @agents.each do |agent| %>
+            <option value="<%= agent.name %>"><%= agent.name %></option>
+          <% end %>
+        </select>
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-4">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="nklyn-icon-marker"></i></span>
+          <input type="text" id="address-search" placeholder="Apartment Address"  class="general-text-field matrix-listing-filter" />
+        </div>
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-3">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="nklyn-icon-calendar"></i></span>
+          <input type="text" id="move_in_search" placeholder="Move In Date"  class="matrix_date general-text-field matrix-listing-filter" />
+        </div>
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-2">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="nklyn-icon-asterisk"></i></span>
+          <input type="text" id="listing-id" placeholder="Listing ID #"  class="general-text-field matrix-listing-filter" />
+        </div>
+      </div>
+      <br class="visible-xs">
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-3 min-max-price">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><i class="nklyn-icon-money-bills nklyn-1x"></i></span>
+          <input type="text" class="form-control matrix-listing-filter" placeholder="Min Price" id="minimum-price">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><i class="nklyn-icon-money-bills nklyn-1x"></i></span>
+          <input type="text" class="form-control matrix-listing-filter" placeholder="Max Price" id="maximum-price">
+        </div>
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-3">
+        <i class="nklyn-icon-amenity-bed nklyn-2x"></i><br>
+        <div class="btn-group" id="bedroom-filter">
+          <button type="button" class="btn btn-default" value="0.0">0</button>
+          <button type="button" class="btn btn-default" value="1.0">1</button>
+          <button type="button" class="btn btn-default" value="2.0">2</button>
+          <button type="button" class="btn btn-default" value="3.0">3</button>
+          <button type="button" class="btn btn-default" value="4.0">4</button>
+          <button type="button" class="btn btn-default" value="5.0">5+</button>
+        </div>
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-3">
+        <i class="nklyn-icon-amenity-bath nklyn-2x"></i><br>
+        <div class="btn-group" id="bathroom-filter">
+          <button type="button" class="btn btn-default" value="0.0">0</button>
+          <button type="button" class="btn btn-default" value="1.0">1</button>
+          <button type="button" class="btn btn-default" value="2.0">2</button>
+          <button type="button" class="btn btn-default" value="3.0">3</button>
+          <button type="button" class="btn btn-default" value="4.0">4</button>
+          <button type="button" class="btn btn-default" value="5.0">5+</button>
+        </div>
+      </div>
+      <br class="visible-xs">
+      <div class="col-sm-3">
+        <select id="select-amenities" class="input-tags matrix-listing-filter" placeholder="Amenity">
+          <option value=""></option>
+          <option value="Central A/C">Central A/C</option>
+          <option value="Doorman">Doorman</option>
+          <option value="Elevator">Elevator</option>
+          <option value="Laundry in building">Laundry in building</option>
+          <option value="Dishwasher">Dishwasher</option>
+          <option value="Common courtyard">Common courtyard</option>
+          <option value="Private backyard">Private backyard</option>
+          <option value="Shared backyard">Shared backyard</option>
+          <option value="Balcony">Balcony</option>
+          <option value="Terrace">Terrace</option>
+          <option value="Patio">Patio</option>
+          <option value="Roof access">Roof access</option>
+          <option value="Private roof deck">Private roof deck</option>
+          <option value="Storage space">Storage space</option>
+          <option value="Bike storage">Bike storage</option>
+          <option value="Gym">Gym</option>
+          <option value="Private parking">Private parking</option>
+          <option value="Washer dryer installed">Washer dryer installed</option>
+          <option value="Washer dryer hookup">Washer dryer hookup</option>
+          <option value="Wheelchair Accessible">Wheelchair Accessible</option>
+        </select>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="btn-toolbar">
+          <div class="btn-group">
+            <button data-toggle="dropdown" aria-expanded="false" class="btn btn-default">Regions <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <% @regions.each do |region| %>
+                <li><%= link_to region.name, matrix_region_path(region) %></li>
+              <% end %>
+            </ul>
+          </div>
+          <!-- Neighborhoods -->
+          <div class="btn-group">
+            <button data-toggle="dropdown" aria-expanded="false" class="btn btn-default">Neighborhoods <span class="caret"></span></button>
+              <ul class="neighborhood-filter dropdown-menu" role="menu">
+                <li class="active"><%= link_to "All Listings" %></li>
+                <% @neighborhoods.each do |neighborhood| %>
+                  <li><%= link_to neighborhood.name %></li>
+                <% end %>
+              </ul>
+          </div>
+          <!-- Type -->
+          <button type="button" id="residential-filter" class="btn btn-default" value="1">Residential</button>
+          <button type="button" id="commercial-filter" class="btn btn-default" value="1">Commercial</button>
+          <button type="button" id="pets-filter" class="btn btn-default" value="1">Pets Allowed</button>
+          <button type="button" id="owner-pays-filter" class="btn btn-default" value="1">Owner Pays</button>
+          <button type="button" id="exclusive-filter" class="btn btn-default" value="1">Exclusive</button>
+          <br class="visible-xs">
+          <%= link_to 'Create Listing', new_listing_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>

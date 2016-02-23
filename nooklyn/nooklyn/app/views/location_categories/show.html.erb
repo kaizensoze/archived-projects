@@ -1,0 +1,11 @@
+<% content_for :title, "#{@location_category.name} locations in Brooklyn, New York - Powered by Nooklyn" %>
+<div class="super_container">
+  <div class="standard-page-header">
+    <%= image_tag @location_category.image(:thumb), class: "img-responsive" %>
+    <h1><%= @location_category.name %></h1>
+  </div>
+  <div class="locations-container container">
+    <%= render partial: "locations/location", collection: @locations %>
+  </div>
+  <br>
+</div>

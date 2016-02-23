@@ -1,0 +1,29 @@
+<%= form_for [@room_post, @room] do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@room.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @room.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :picture, "Upload a picture of the room" %><br>
+    <%= f.file_field :picture, class: "form-control" %>
+  </div>
+  <%= f.hidden_field :agent_id, :value => current_agent.id %>
+  <%= f.hidden_field :room_post_id, :value => @room_post.id %>
+  <br>
+  <div class="field">
+    <label class="select">
+    <%= collection_select(:room, :room_category_id, @room_categories, :id, :name) %>
+    </label>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Submit", class: "btn btn-black btn-2x" %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<div class="mega-container">
+  <div class="container">
+    <br>
+    <div class="text-center">
+    <%= image_tag @photo.image.url(:square), class: "img-responsive" %>
+    <hr>
+    <%= link_to 'Edit', edit_photo_path(@photo), class: "button btn-yellow btn-2x" %>
+    </div>
+    <br>
+  </div>
+</div>
+

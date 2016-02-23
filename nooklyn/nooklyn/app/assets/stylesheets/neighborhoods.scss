@@ -1,0 +1,135 @@
+/*****************************************************************************/
+/*
+/* Neighborhoods#Index
+/*
+/*****************************************************************************/
+
+div.neighborhood-card-container {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  max-width: 1800px;
+  text-align: center;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+div.neighborhood-card {
+  /* Positioning */
+  position: relative;
+  display: inline-block;
+  /* Box-model */
+  margin-bottom: 15px;
+  margin-left: 15px;
+  max-width: 424px;
+  /* Typography */
+  /* Visual */
+  color: #fff;
+  /* Misc */
+  clear: both;
+  @media screen and (max-width: 541px) {
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  img {
+    min-width: 320px;
+    min-height: 320px;
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  .hood-overlay {
+    /* Positioning */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 35% 15% 40% 15%;
+    /* Box-model */
+    width: 100%;
+    height: 100%;
+    /* Typography */
+    /* Visual */
+    background-color: rgba(17,17,17,.3);
+    color: #fff;
+    /* Misc */
+    -webkit-transition: all .2s ease-in-out;
+       -moz-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+    &:hover {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      background-color: rgba(255,212,84,.6);
+      /* Misc */
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Neighborhoods#Show
+/*
+/*****************************************************************************/
+
+div.neighborhoods-show-header {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* Typography */
+  /* Visual */
+  color: #fff;
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 10px;
+    /* Typography */
+    /* Visual */
+    font-weight: 100;
+    /* Misc */
+  }
+}
+
+div#hoods-show-map {
+  width: 100%;
+  height: 600px;
+}
+
+div#nklyn-hood-apartments-map {
+  height: 100%;
+  width: 100%;
+}
+
+div.neighborhood-show-empty-message {
+  /* Positioning */
+  /* Box-model */
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 25px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 20px;
+    /* Typography */
+    font-size: 18px;
+    /* Visual */
+    /* Misc */
+  }
+}

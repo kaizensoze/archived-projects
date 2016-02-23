@@ -1,0 +1,14 @@
+<ul class="list-unstyled side-navigation-component">
+  <li>
+    <%= link_to "General Settings", edit_agent_registration_path(current_agent) %>
+  </li>
+  <li>
+    <%= link_to "Privacy and Notifications", edit_agent_settings_path(current_agent) %>
+  </li>
+  <li>
+    <%= link_to "Update Password", change_password_path(current_agent) %>
+  </li>
+  <li>
+    <%= link_to "Rooms & Mates Settings", rm_settings_path %>
+  </li>
+</ul>

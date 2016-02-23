@@ -1,0 +1,394 @@
+/*****************************************************************************/
+/*
+/* Form Layouts
+/*
+/*****************************************************************************/
+
+div.narrow-form-container {
+  /* Positioning */
+  /* Box-model */
+  padding: 25px;
+  margin: 0 auto;
+  max-width: 800px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+}
+
+div.small_form_container {
+  background-color: #fff;
+  padding: 25px;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+
+
+/*****************************************************************************/
+/*
+/* Labels
+/*
+/*****************************************************************************/
+
+.general-text-label {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 20px;
+  margin-bottom: 10px;
+  /* Typography */
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  /* Visual */
+  /* Misc */
+}
+
+.nklyn-dark-label {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  color: #ffc03a;
+  /* Visual */
+  /* Misc */
+}
+
+
+/*****************************************************************************/
+/*
+/* Inputs
+/*
+/*****************************************************************************/
+
+.general-text-field {
+  /* Positioning */
+  /* Box-model */
+  padding: 13px;
+  width: 100%;
+  /* Typography */
+  font-size: 16px;
+  font-weight: 300;
+  /* Visual */
+  border: 1px solid #ddd;
+  /* Misc */
+  outline: 0;
+  -webkit-transition: all 400ms ease-in-out;
+     -moz-transition: all 400ms ease-in-out;
+          transition: all 400ms ease-in-out;
+  &:active, &:focus {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    border-color: #2f79e7;
+    /* Misc */
+  }
+}
+
+.general-text-field-space-gray {
+  /* Positioning */
+  /* Box-model */
+  padding: 15px;
+  width: 100%;
+  /* Typography */
+  font-size: 20px;
+  font-weight: 300;
+  /* Visual */
+  background-color: rgba(34,34,34,1);
+  border: 1px solid #555;
+  color: #ffc03a;
+  /* Misc */
+  outline: 0;
+  -webkit-transition: all 400ms ease-in-out;
+     -moz-transition: all 400ms ease-in-out;
+          transition: all 400ms ease-in-out;
+  &:active, &:focus {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    border-color: #ffc03a;
+    color: #ffc03a;
+    /* Misc */
+  }
+}
+
+input[readonly].datepicker {
+  cursor: default;
+  background-color: white;
+}
+
+input[readonly].matrix_date {
+  cursor: default;
+  background-color: rgba(0,0,0,0);
+}
+
+input[readonly].timepicker {
+  cursor: default;
+  background-color: white;
+}
+
+/*****************************************************************************/
+/*
+/* Text Areas
+/*
+/*****************************************************************************/
+
+.general-text-area {
+  /* Positioning */
+  /* Box-model */
+  padding: 10px 15px;
+  width: 100%;
+  /* Typography */
+  /* Visual */
+  border: 1px solid #ddd;
+  /* Misc */
+  outline: 0;
+  -webkit-transition: all 400ms ease-in-out;
+     -moz-transition: all 400ms ease-in-out;
+          transition: all 400ms ease-in-out;
+  &:active, &:focus {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    border-color: #2f79e7;
+    /* Misc */
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Submit, Form Actions
+/*
+/*****************************************************************************/
+
+div.general-form-actions {
+  height: 100px;
+  padding: 20px 0 20px 0;
+}
+
+
+/*****************************************************************************/
+/*
+/* Form Typography
+/*
+/*****************************************************************************/
+
+p.form-help-block {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  /* Typography */
+  font-size: 12px;
+  text-align: left;
+  /* Visual */
+  border-left: 2px solid #c3c9d2;
+  /* Misc */
+}
+
+p.form-help-block-space-gray {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  /* Typography */
+  font-size: 12px;
+  text-align: left;
+  /* Visual */
+  border-left: 2px solid #ffc03a;
+  /* Misc */
+}
+
+/*****************************************************************************/
+/*
+/* Error Handling
+/*
+/*****************************************************************************/
+
+div.field_with_errors {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  label {
+    color: #df4a37;
+  }
+  input {
+    border-color: #df4a37;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Side Navigation Component
+/*
+/*****************************************************************************/
+
+ul.side-navigation-component {
+  /* Positioning */
+  /* Box-model */
+  max-width: 80%;
+  margin: 70px auto 0 auto;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  @media screen and (max-width: 1200px) {
+    max-width: 100%;
+  }
+  li {
+    /* Positioning */
+    /* Box-model */
+    padding: 15px;
+    margin-bottom: 0;
+    /* Typography */
+    /* Visual */
+    background-color: #2d2d2d;
+    border-left: 3px solid #ffc03a;
+    border-bottom: 1px solid #4e4e4e;
+    /* Misc */
+  }
+  a {
+    /* Positioning */
+    /* Box-model */
+    padding: 15px;
+    /* Typography */
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    /* Visual */
+    color: #fff;
+    /* Misc */
+    -webkit-transition: all .3s ease-in-out;
+       -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+    &:hover {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #ffc03a;
+      /* Misc */
+    }
+  }
+}
+
+
+/*****************************************************************************/
+/*
+/* Improve Select's from WTForms
+/*
+/*****************************************************************************/
+
+.select {
+  position: relative;
+  display: inline-block;
+  color: #555;
+}
+.select select {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: .5rem 2.25rem .5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #eee;
+  border: 0;
+  border-radius: .25rem;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+/* Undo the Firefox inner focus ring */
+.select select:focus:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+/* Dropdown arrow */
+.select:after {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -.15rem;
+  pointer-events: none;
+  border-top: .35rem solid;
+  border-right: .35rem solid transparent;
+  border-bottom: .35rem solid transparent;
+  border-left: .35rem solid transparent;
+}
+
+/* Hover state */
+/* Uncomment if you need it, but be aware of the sticky iOS states.
+.select select:hover {
+  background-color: #ddd;
+}
+*/
+
+/* Focus */
+.select select:focus {
+  box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem #0074d9;
+}
+
+/* Active/open */
+.select select:active {
+  color: #fff;
+  background-color: #0074d9;
+}
+
+/* Hide the arrow in IE10 and up */
+.select select::-ms-expand {
+  display: none;
+}
+
+/* Media query to target Firefox only */
+@-moz-document url-prefix() {
+  /* Firefox hack to hide the arrow */
+  .select select {
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-right: 1rem;
+  }
+
+  /* <option> elements inherit styles from <select>, so reset them. */
+  .select option {
+    background-color: white;
+  }
+}
+
+/* IE9 hack to hide the arrow */
+@media screen and (min-width:0\0) {
+  .select select {
+    z-index: 1;
+    padding: .5rem 1.5rem .5rem 1rem;
+  }
+  .select:after {
+    z-index: 5;
+  }
+  .select:before {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    bottom: 0;
+    z-index: 2;
+    content: "";
+    display: block;
+    width: 1.5rem;
+    background-color: #eee;
+  }
+  .select select:hover,
+  .select select:focus,
+  .select select:active {
+    color: #555;
+    background-color: #eee;
+  }
+}

@@ -1,0 +1,51 @@
+<% cache(cache_key_for_listings) do %>
+<% @listings.each do |listing| %>
+  <% cache(listing) do %>
+    <%= link_to listing, target: "_blank" do %>
+      <%= content_tag :div, class: "nooklyn_listing_square nklyn-listing",
+                            id: "listing_card_#{listing.id}",
+                            data: {
+                              id: listing.id,
+                              latitude: listing.latitude,
+                              longitude: listing.longitude,
+                              photo: listing.image(:thumb),
+                              price: listing.price,
+                              residential: listing.residential,
+                              rental: listing.rental,
+                              bedrooms: listing.bedrooms
+                              } do %>
+        <% if listing.image.blank? %>
+          <%= image_tag listing.thumb %>
+        <% else %>
+          <%= image_tag listing.image(:thumb), alt: "A #{number_to_currency(listing.price)}, #{number_to_human(listing.bedrooms)} bed / #{number_to_human(listing.bathrooms)} bathroom apartment in #{listing.neighborhood.name}" %>
+        <% end %>
+        <div class="nooklyn_listing_square_price">
+          <%= number_to_currency(listing.price, precision: 0) %>
+        </div>
+        <div class="nooklyn_listing_square_heart">
+          <a href="#" class="unlike-button">
+            <i class="nklyn-icon-heart-fill nooklyn_listing_square_heart"></i>
+            <i class="nklyn-icon-heart nooklyn_listing_square_heart"></i>
+          </a>
+        </div>
+        <div class="nooklyn_listing_square_bed_and_bath">
+          <% if listing.residential? %>
+            <%= number_to_human(listing.bedrooms) %> Bed / <%= number_to_human(listing.bathrooms) %> Bath
+          <% else %>
+            Commercial
+          <% end %>
+        </div>
+        <div class="like-notice">
+          <p>You liked the listing!</p>
+        </div>
+        <div class="unlike-notice">
+          <p>We removed it from your favorites.</p>
+        </div>
+        <div class="error-notice">
+          <p>An error stopped you from liking the listing. :(</p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<% end %>

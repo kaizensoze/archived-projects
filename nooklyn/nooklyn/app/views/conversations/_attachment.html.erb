@@ -1,0 +1,5 @@
+<% if attachment.is_a?(Listing) %>
+  <%= render partial: 'listing', object: attachment %>
+<% elsif attachment.is_a?(MatePost) %>
+  <%= render partial: 'mate_post', object: attachment %>
+<% end %>

@@ -1,0 +1,80 @@
+<div class="nooklyn-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 col-xs-6 col-sm-offset-2">
+        <h5>Nooklyn</h5>
+        <ul class="list-unstyled">
+          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "Agents", agents_path %></li>
+          <li><%= link_to "Culture", culture_path %></li>
+          <li><%= link_to "Help", support_path %></li>
+          <li><%= link_to "Jobs", jobs_path %></li>
+          <li><%= link_to "Legal", legal_path %></li>
+        </ul>
+      </div>
+      <div class="col-sm-2 col-xs-6">
+        <h5>Hoods</h5>
+        <ul class="list-unstyled">
+          <li><%= link_to "All", neighborhoods_path %></li>
+          <li><%= link_to "Bushwick", neighborhood_path("bushwick") %></li>
+          <li><%= link_to "Williamsburg", neighborhood_path("williamsburg") %></li>
+          <li><%= link_to "Greenpoint", neighborhood_path("greenpoint") %></li>
+          <li><%= link_to "Ridgewood", neighborhood_path("ridgewood") %></li>
+          <li><%= link_to "Crown Heights", neighborhood_path("crown-heights") %></li>
+        </ul>
+      </div>
+      <div class="col-sm-2 col-xs-6">
+        <h5>Listings</h5>
+        <ul class="list-unstyled">
+          <li><%= link_to "All", listings_path %></li>
+          <li><%= link_to "Apartments", rentals_path %></li>
+          <li><%= link_to "Sales", sales_path %></li>
+          <li><%= link_to "Commercial", commercial_path %></li>
+          <li><%= link_to "Documents", documents_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
+        </ul>
+      </div>
+      <div class="col-sm-2 col-xs-6">
+        <h5>Rooms & Mates</h5>
+        <ul class="list-unstyled">
+          <li><%= link_to "How it Works", roommates_path %></li>
+          <li><%= link_to "Mates", mates_path %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="social-icons-row text-center">
+      <h5>Follow Us</h5>
+      <ul class="list-unstyled list-inline">
+        <li>
+          <%= link_to "https://www.facebook.com/nooklynrentalarmy", target: "_blank" do %>
+            <i class="nklyn-icon-social-facebook nklyn-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "https://instagram.com/nooklyn", target: "_blank" do %>
+            <i class="nklyn-icon-social-instagram nklyn-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "http://twitter.com/nooklyn", target: "_blank" do %>
+            <i class="nklyn-icon-social-twitter nklyn-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "https://www.youtube.com/user/nooklynrentals", target: "_blank" do %>
+            <i class="nklyn-icon-social-youtube nklyn-2x"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "https://plus.google.com/116431653639341441147/about?hl=en", target: "_blank" do %>
+            <i class="nklyn-icon-social-google-plus nklyn-2x"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <hr>
+    <div class="text-center">
+      <p>&copy; 2016 Nooklyn &middot; Built with <i class="nklyn-icon-heart-fill"></i> in <a href="https://nooklyn.com/guides/bushwick">Bushwick</a>, Brooklyn</p>
+    </div>
+  </div>
+</div>

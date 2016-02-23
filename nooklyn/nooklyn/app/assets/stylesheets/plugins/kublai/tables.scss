@@ -1,0 +1,93 @@
+/*****************************************************************************/
+/*
+/* Responsive Table Hack
+/*
+/*****************************************************************************/
+
+div.responsive-table {
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+/*****************************************************************************/
+/*
+/* Standard Table
+/*
+/*****************************************************************************/
+
+table.nklyn-table {
+  margin-top: 10px;
+  thead:first-child {
+    text-transform: uppercase;
+    th {
+      cursor: pointer;
+    }
+    tr:first-child {
+      th {
+        /* Positioning */
+        /* Box-model */
+        padding: 7px 18px;
+        /* Typography */
+        font-size: 10px;
+        letter-spacing: 1px;
+        font-weight: 700;
+        /* Visual */
+        background-color: #f2f2f2;
+        border: 1px solid #ddd;
+        border-bottom-width: 3px;
+        /* Misc */
+        &:hover {
+          background-color: #2f79e7;
+          color: #fff;
+        }
+      }
+    }
+  }
+  tbody {
+    font-size: 11px;
+    border: 1px solid #ddd;
+    tr {
+      &:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      td {
+        padding: 13px 18px 12px 18px;
+        border: 1px solid #f2f2f2;
+      }
+    }
+  }
+}
+
+table.matrix-table {
+  thead:first-child {
+    text-transform: uppercase;
+    tr:first-child {
+      th {
+        /* Positioning */
+        /* Box-model */
+        padding: 7px 18px;
+        /* Typography */
+        font-size: 10px;
+        letter-spacing: 1px;
+        font-weight: 700;
+        /* Visual */
+        background-color: #f2f2f2;
+        border: 1px solid #ddd;
+        border-bottom-width: 3px;
+        /* Misc */
+      }
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Table Hover
+/*
+/*****************************************************************************/
+
+
+.nklyn-table-hover > tbody > tr:hover {
+  color: #333;
+  font-weight: bold;
+}

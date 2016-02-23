@@ -1,0 +1,57 @@
+// Place all the styles related to the Deposits controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+tr.deposit-row {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  a#link {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    color: #333;
+    /* Misc */
+    &:hover {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #2f79e7;
+      /* Misc */
+    }
+    address {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-size: 14px;
+      line-height: 2;
+      /* Visual */
+      /* Misc */
+    }
+  }
+  i.nklyn-icon-dot-fill {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    line-height: 1;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 10px;
+    /* Typography */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    /* Visual */
+    border-bottom: 1px solid #333;
+    /* Misc */
+  }
+}

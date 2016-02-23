@@ -1,0 +1,54 @@
+<% content_for :title, "Keys - Nooklyn - Rental, Sales, Lofts" %>
+<div class="mega-container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="narrow-page-container">
+    <div class="standard-page-header">
+      <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/2x/Keys.png', class: "img-responsive" %>
+      <h1>Key Checkout</h1>
+      <%= link_to 'Checkout', new_matrix_key_checkout_path, class: "button btn-black btn-4x" %>
+      <hr>
+      <input class="general-text-field" id="nklyn-table-filter" type="text" placeholder="Filter">
+      <div class="text-center">
+        <%= paginate @key_checkouts, :window => 10, :right => 1 %><br>
+      </div>
+    </div>
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th width="49%">Address</th>
+          <th>Returned</th>
+          <th>Action</th>
+          <th>When</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @key_checkouts.each do |key_checkout| %>
+          <tr data-name="<%= key_checkout.message %>" class="table-row">
+            <td>
+              <b>Address:</b> <%= key_checkout.message %><br>
+              <%= key_checkout.agent.name %> &middot; <%= number_to_phone(key_checkout.agent.phone) %><br>
+              <%= key_checkout.office.name %>
+            </td>
+            <% if key_checkout.returned? %>
+            <td>Yes</td>
+            <td></td>
+            <% else %>
+            <td>No</td>
+            <td><%= link_to 'Return', return_matrix_key_checkout_path(key_checkout), class: "button btn-black btn-3x" %></td>
+            <% end %>
+            <td numerical-value="<%= key_checkout.updated_at.to_i %>">
+              <% if key_checkout.returned? %>
+              Returned: <%= key_checkout.updated_at.strftime('%I:%M%P on %D') %><br>
+              Checked Out: <%= key_checkout.created_at.strftime('%I:%M%P on %D') %><br>
+              <% else %>
+              Checked Out: <%= key_checkout.created_at.strftime('%I:%M%P on %D') %><br>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+</div>

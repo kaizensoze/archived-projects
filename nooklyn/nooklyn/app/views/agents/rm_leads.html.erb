@@ -1,0 +1,17 @@
+<% content_for :title, "Manage - Rooms & Mates Leads - Nooklyn" %>
+
+<div class="super_container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/EmailNotification.png', class: "img-responsive" %>
+    <h1>Messages</h1>
+  </div>
+    <div class="container-fluid">
+      <% if current_agent.room_posts.empty? && current_agent.mate_posts.empty? %>
+        <%= render 'agents/empty_rm_message' %>
+      <% end %>
+      <%= render 'agents/room_post_leads' %>
+      <br>
+      <%= render 'agents/mate_post_leads' %>
+    </div>
+  <br>
+</div>

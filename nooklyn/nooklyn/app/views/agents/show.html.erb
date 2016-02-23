@@ -1,0 +1,7 @@
+<% content_for :title, @agent.name + " on Nooklyn: Apartments, Roommates, Neighborhoods" %>
+<%= render 'agents/agent_profile_header' %>
+<div class="agent-profile-container">
+  <%= render 'agents/agent_listings' %>
+  <%= render 'agents/favorite_listings' %>
+</div>
+<%= render 'agents/message_agent_modal' %>

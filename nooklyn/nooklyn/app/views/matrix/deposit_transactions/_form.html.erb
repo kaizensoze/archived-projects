@@ -1,0 +1,34 @@
+<%= form_for [:matrix, @deposit, @deposit_transaction] do |f| %>
+  <div class="field">
+    <%= f.label :client_name, class: "general-text-label" %><br>
+    <%= f.text_field :client_name, class: "general-text-field" %>
+  </div>
+  <hr>
+  <div class="field">
+    <%= f.label :amount, class: "general-text-label" %><br>
+    <%= f.text_field :amount, class: "general-text-field" %>
+  </div>
+  <hr>
+  <div class="field">
+    <%= f.label :deposit_transaction_type, class: "general-text-label" %><br>
+    <% DepositTransaction.types.each do |type| %>
+      <%= f.radio_button :deposit_transaction_type, type %>
+      <%= f.label :deposit_transaction_type, type, value: type, class: "general-text-label" %>
+      <br />
+    <% end %>
+  </div>
+  <hr>
+  <div class="field">
+      <%= f.label :office_id, "Which office was the transaction taken in?", class: "general-text-label" %><br>
+      <%= collection_select :deposit_transaction, :office_id, @offices, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+  <%= f.hidden_field :creator_id, :value => current_agent.id %>
+  <div class="field">
+    <%= f.label :notes, class: "general-text-label" %><br>
+    <%= f.text_area :notes, class: "general-text-area" %>
+  </div>
+  <hr>
+  <div class="actions text-center">
+    <%= f.submit "Submit", class: "button btn-black btn-3x" %>
+  </div>
+<% end %>

@@ -1,0 +1,101 @@
+/*****************************************************************************/
+/*
+/* Photo Uploader Page
+/*
+/*****************************************************************************/
+
+div.photo-upload-container {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  h3 {
+    /* Positioning */
+    display: inline-block;
+    /* Box-model */
+    width: 45px;
+    height: 45px;
+    padding-top: 10px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: #2f79e7;
+    color: #fff;
+    /* Misc */
+  }
+  h4 {
+    /* Positioning */
+    display: inline-block;
+    padding-left: 10px;
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Listing#Manage Photos
+/*
+/*****************************************************************************/
+
+.tablephoto-large {
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+}
+
+div.manage-photos-page {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  h3 {
+    /* Positioning */
+    position: relative;
+    /* Box-model */
+    display: block;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 34px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 40%;
+      top: 25px;
+      border-bottom: solid 1px #777;
+    }
+    &:after {
+      right: 0;
+      content: '';
+      position: absolute;
+      display: block;
+      width: 40%;
+      top: 25px;
+      border-bottom: solid 1px #777;
+    }
+  }
+}
+
+div.manage-photo-toolbar {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 5px;
+  padding-top: 5px;
+  /* Typography */
+  /* Visual */
+  border-top: 1px solid #666;
+  /* Misc */
+}

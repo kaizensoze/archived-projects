@@ -1,0 +1,33 @@
+<%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/Money.png", class: "img-responsive center-block" %>
+<div class="container">
+  <h2 href="#deposits" name="deposits" class="fake-link">Deposits</h2>
+  <div class="row stat-row">
+    <div class="col-sm-3">
+      <h3>Total</h3>
+      <h5><%= number_with_delimiter(@deposits.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Today</h3>
+      <h5><%= @deposits_day.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Week</h3>
+      <h5><%= @deposits_week.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Month</h3>
+      <h5><%= @deposits_month.count %></h5>
+    </div>
+  </div>
+  <% @deposit_stats.each_slice(4) do |deposit_stat_row| %>
+    <div class="row stat-row">
+      <% deposit_stat_row.each do |(month_year, deposits_for_month)| %>
+        <div class="col-sm-3">
+          <h3><%= month_year %></h3>
+          <h5><%= number_with_delimiter(deposits_for_month.count) %></h5>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

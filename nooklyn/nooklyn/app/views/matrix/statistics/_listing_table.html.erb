@@ -1,0 +1,36 @@
+<!-- Listings -->
+<%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/SearchListings.png", class: "img-responsive center-block" %>
+<h2 href="#popular" name="popular" class="fake-link">Popular Listings</h2>
+<div class="container responsive-table">
+  <table class='table nook-desk nklyn-table-hover table-bordered nklyn-table'>
+    <thead>
+      <tr class="text-center">
+        <th>ID</th>
+        <th>Price</th>
+        <th>Address</th>
+        <th>Likes</th>
+        <th class="hidden-xs">Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render :partial => 'matrix/statistics/listing', collection: @popular, as: :listing %>
+    </tbody>
+  </table>
+</div>
+<h2>Newest Listings</h2>
+<div class="container responsive-table">
+  <table class='table nook-desk nklyn-table-hover table-bordered nklyn-table'>
+    <thead>
+      <tr class="text-center">
+        <th>ID</th>
+        <th>Price</th>
+        <th>Address</th>
+        <th>Likes</th>
+        <th class="hidden-xs">Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render :partial => 'matrix/statistics/listing', collection: @newest, as: :listing %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+<% content_for :title, "Edit Room - Powered by Nooklyn" %>
+
+<div class="super_container">
+  <br>
+  <div class="container">
+    <div class="rm_form_container">
+      <h1 class="text-center">Rooms</h1>
+      <div class="text-center">
+        <a class="btn btn-orange" data-toggle="modal" data-target="#myModal">Posting Guidelines</a>
+      </div>
+      <br>
+      <%= render 'form' %>
+    </div>
+  </div>
+  <br>
+</div>
+
+<%= render 'roommates/posting_guidelines_modal' %>

@@ -1,0 +1,41 @@
+<% content_for :title, "A " + number_to_currency(@page.price, precision: 0) + " " + @page.listing_type + " in " + @listing.neighborhood.name + ", " + @listing.neighborhood.borough + " - Nooklyn - Apartments, Roommates, Neighborhoods" %>
+<% content_for :meta_url, listing_url(@page.listing.id) %>
+<% content_for :og_image, @page.main_image %>
+<% content_for :og_type, 'place' %>
+<% content_for :og_lat, "#{@page.latitude}" %>
+<% content_for :og_long, "#{@page.longitude}" %>
+<% content_for :description, @page.description %>
+<% content_for :keywords, @page.keywords %>
+<% content_for :twitter_card, 'gallery' %>
+<% content_for :image0, @page.images[0] %>
+<% content_for :image1, @page.images[1] %>
+<% content_for :image2, @page.images[2] %>
+<% content_for :image3, @page.images[3] %>
+
+<div class="super_container">
+  <br>
+  <% if @page.rented? %>
+    <br>
+    <h1 class="text-center">This listing isn't currently available.</h1>
+  <% end %>
+  <% if can? :create, Listing %>
+    <%= render 'listings/listing_admin_area' %>
+  <% end %>
+  <div class="listing-page container">
+    <%= render 'listings/listing_content_area', page: @page.content_area_view %>
+    <% if @page.has_photos? %>
+      <%= render 'listings/listing_gallery', photos: @page.photos %>
+    <% end %>
+    <hr>
+    <%= render 'listings/listing_map', page: @page %>
+    <%= render 'listings/listing_social', page: @page %>
+  </div>
+  <br>
+  <div class="container">
+    <% if can? :manage, :all %>
+      <%= link_to 'Delete Listing', @listing, method: :delete, data: {confirm: 'Are you sure you want to delete the listing?' }, class: "button btn-black btn-2x" %>
+      <br><br>
+    <%= render 'listings/listing_status_history' %>
+    <% end %>
+  </div>
+</div>

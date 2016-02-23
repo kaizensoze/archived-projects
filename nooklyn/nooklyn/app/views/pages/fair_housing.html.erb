@@ -1,0 +1,43 @@
+<% content_for :title, "Our Fair Housing Policy - Nooklyn, Inc." %>
+
+<div class="nklyn-jumbotron">
+  <div class="container text-center">
+    <h1>Fair Housing Policy</h1>
+  </div>
+</div>
+
+<div class="super_container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <br>
+        <div class="list-group">
+          <a href="/about" class="list-group-item">
+            <h4 class="list-group-item-heading">About</h4>
+          </a>
+          <a href="/terms" class="list-group-item">
+            <h4 class="list-group-item-heading">Terms of Service</h4>
+          </a>
+          <a href="/privacy" class="list-group-item">
+            <h4 class="list-group-item-heading">Privacy Policy</h4>
+          </a>
+          <a href="/fair-housing" class="list-group-item">
+            <h4 class="list-group-item-heading">Fair Housing</h4>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-9">
+        <div class="narrow-page-container text-center">
+          <%= image_tag 'legal/house.png', class: "img-responsive center-block" %>
+          <h3>Equal Housing Opportunity</h3>
+          <p>(The Fair Housing Amendments Act of 1988)</p>
+          <p id="legal_box_statement">It is illegal to discriminate against any person because of race, color, religion, sex, handicap, familial status, or national origin.</p>
+          <br>
+          <%= link_to "http://portal.hud.gov/hudportal/HUD?src=/program_offices/fair_housing_equal_opp", target: "_blank" do %>
+            <button class="button btn-nklyn-black btn-4x">Read More</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

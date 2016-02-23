@@ -1,0 +1,42 @@
+<% content_for :title, "Update Privacy and Notifications - Nooklyn: Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<div class="login-and-signup-container">
+    <div class="text-center"><i class="nklyn-icon-logo nklyn-yellow nklyn-7x"></i></div>
+    <h1 class="text-center">Update my Profile</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <%= render 'agents/side_navigation' %>
+        </div>
+        <div class="col-sm-8">
+          <div class="form-well">
+            <%= link_to agent_omniauth_authorize_path(:facebook), class: "button btn-facebook btn-login center-block" do %>
+            <i class="nklyn-icon-social-facebook"></i> Connect with Facebook
+            <% end %>
+              <hr>
+              <%= form_for(current_agent, as: current_agent, url: registration_path(current_agent), html: { method: :put }) do |f| %>
+                <div class="field">
+                  <%= f.label :private_profile, "Make my profile private", class: "general-text-label" %>
+                  <%= f.check_box :private_profile %>
+                </div>
+                <div class="field">
+                  <%= f.label :sms_notifications, "Send SMS notifications when I get a new message", class: "general-text-label" %>
+                  <%= f.check_box :sms_notifications %>
+                </div>
+                <div class="field">
+                  <%= f.label :email_notifications, "Send e-mail notifications when I get a new message", class: "general-text-label" %>
+                  <%= f.check_box :email_notifications %>
+                </div>
+                <hr>
+                <div class="field">
+                  <%= f.label :current_password, class: "general-text-label" %> <small><i>(this is to confirm your changes)</i></small><br />
+                  <%= f.password_field :current_password, class: "general-text-field-space-gray", autocomplete: "off", placeholder: "Current Password" %></div>
+                <Br>
+                <div class="general_form_actions text-center">
+                  <%= f.submit "Update", :class => 'button btn-black btn-3x' %>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

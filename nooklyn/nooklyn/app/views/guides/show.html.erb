@@ -1,0 +1,53 @@
+<% content_for :title, "The #{@guide.neighborhood.name} Neighborhood Guide - Powered by Nooklyn" %>
+<% content_for :description, "Explore the best art, coffee, food, nightlife, recreation and shopping locations that #{@guide.neighborhood.name} has to offer." %>
+<% content_for :og_image, "https://nooklyn-files.s3.amazonaws.com/guides/Neighborhood_Illo_Hero.jpg" %>
+<div class="mega-container">
+  <div class="guides-hero">
+    <h6>Welcome to</h6>
+    <h1><%= @guide.neighborhood.name %></h1>
+    <h6>Brooklyn</h6>
+  </div>
+  <div class="text-center">
+  <br>
+    <%= link_to "Apartments", @guide.neighborhood, class: "button btn-transparent-bk btn-3x" %>
+    <%= link_to "Rooms", rooms_neighborhood_path(@guide.neighborhood), class: "button btn-transparent-bk btn-3x" %>
+    <%= link_to "Mates", mates_neighborhood_path(@guide.neighborhood), class: "button btn-transparent-bk btn-3x" %>
+    <%= link_to "Places", locations_neighborhood_path(@guide.neighborhood), class: "button btn-transparent-bk btn-3x" %>
+  </div>
+  <hr>
+    <ul class="location-category-strip list-inline list-unstyled">
+      <% @location_categories.each do |category| %>
+        <%= link_to category do %>
+          <li>
+            <%= image_tag category.image(:large), class: "img-responsive center-block" %>
+            <h3><%= link_to category.name, category %></h3>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <div class="guide-explore-section">
+  <br>
+  <h3>Connect with Roommates</h3>
+  <% @mates.each do |mate| %>
+    <%= image_tag mate.image.url(:thumb), class: "img-circle img-mate" %>
+  <% end %>
+  <br><br>
+  <%= link_to "#{@neighborhood.name} Roommmate Finder", mates_neighborhood_path(@guide.neighborhood), class: "button btn-transparent-bk btn-3x" %>
+  <br>
+  <h3>Explore <%= @neighborhood.name %></h3>
+  <br>
+  <div class="location-gallery-area row no-gutters">
+    <% @photos.shuffle.each do |photo| %>
+      <div class="col-xs-4">
+        <%= link_to photo.location do %>
+          <%= image_tag photo.image.url(:half_standard), class: 'img-responsive center-block' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  </div>
+  <div class="guide-help-area text-center">
+    <h3>Want to help?</h3>
+    <p>If you want to suggest a location, request a free photo story of your business, or have ideas on how we can improve our <%= @guide.neighborhood.name %> Neighborhood Guide, please email us at <a href="mailto:help@nooklyn.com">help@nooklyn.com</a>.</p>
+  </div>
+</div>

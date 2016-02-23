@@ -1,0 +1,30 @@
+<% content_for :title, "Create an Account - Nooklyn: Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<div class="login-and-signup-container">
+  <div class="container">
+    <div class="form-well">
+      <div class="row">
+          <%= devise_error_messages! %>
+      </div>
+      <div>
+        <div class="text-center"><i class="nklyn-icon-logo nklyn-yellow nklyn-7x"></i></div>
+        <%= link_to agent_omniauth_authorize_path(:facebook), class: "button btn-facebook" do %>
+        <i class="nklyn-icon-social-facebook nklyn-3x"></i> Connect with Facebook
+        <% end %>
+        <p class="form-help-block">We value privacy and we'll never post or send messages with your Facebook account.</p>
+        <br>
+        <p class="or">or</p>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div><%= f.email_field :email, class: "general-text-field-space-gray", placeholder: "Email" %></div><br>
+        <div><%= f.password_field :password, class: "general-text-field-space-gray", autocomplete: "off", placeholder: "Password" %></div><br>
+        <div><%= f.password_field :password_confirmation, class: "general-text-field-space-gray", autocomplete: "off", placeholder: "Password Again" %></div>
+        <hr>
+        <div><%= f.text_field :first_name, class: "general-text-field-space-gray", placeholder: "First Name" %></div><br>
+        <div><%= f.text_field :last_name, class: "general-text-field-space-gray", placeholder: "Last Name" %></div><br>
+        <div><%= f.telephone_field :phone, class: "general-text-field-space-gray", placeholder: "Phone Number (Optional)" %></div><br>
+        <br>
+        <div class="text-center"><%= f.submit "Sign Up", :class => 'button btn-black btn-3x' %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

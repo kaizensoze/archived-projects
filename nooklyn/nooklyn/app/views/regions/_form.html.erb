@@ -1,0 +1,46 @@
+<%= form_for(@region) do |f| %>
+  <% if @region.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@region.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @region.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, class: "general-text-label" %><br>
+    <%= f.text_field :name, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :featured, class: "general-text-label" %><br>
+    <%= f.check_box :featured, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :image, "Primary Image", class: "general-text-label" %><br>
+    <%= f.file_field :image %>
+  </div>
+  <hr>
+  <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+  <div id="type-selector" class="controls">
+    <input type="radio" name="type" id="changetype-all" checked="checked">
+    <label for="changetype-all">All</label>
+  </div>
+  <div id="form-map"></div>
+  <div class="row">
+    <div class="col-lg-6 field">
+      <%= f.label :latitude, class: "general-text-label" %><br>
+      <%= f.text_field :latitude, class: "general-text-field", id: "listing_latitude", placeholder: "Latitude (e.g. 40.708284)" %>
+    </div>
+    <div class="col-lg-6 field">
+      <%= f.label :longitude, class: "general-text-label" %><br>
+      <%= f.text_field :longitude, class: "general-text-field", id: "listing_longitude", placeholder: "Longitude (e.g. -73.921847)" %>
+    </div>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Save", class: "button btn-black btn-2x" %>
+  </div>
+<% end %>

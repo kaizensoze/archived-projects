@@ -1,0 +1,67 @@
+<%= form_for(@neighborhood) do |f| %>
+  <% if @neighborhood.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@neighborhood.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @neighborhood.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="field">
+        <%= f.label :name, class: "general-text-label" %><br />
+        <%= f.text_field :name, class: "general-text-field" %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="field">
+        <%= f.label :borough, class: "general-text-label" %><br />
+        <%= f.text_field :borough, class: "general-text-field" %>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <%= f.label :region, class: "general-text-label" %><br>
+      <label class="select">
+      <%= collection_select(:neighborhood, :region_id, @regions, :id, :name, include_blank: true) %>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 field">
+      <%= f.label :featured, class: "general-text-label" %><br>
+      <%= f.check_box :featured, class: "form-control" %>
+    </div>
+    <div class=" col-lg-6 field">
+      <%= f.label :image, "Upload a picture of the neighborhood", class: "general-text-label" %><br>
+      <%= f.file_field :image, class: "form-control" %>
+      <p class="form-help-block">We recommend image dimensions of 500x500.</p>
+    </div>
+  </div>
+  <hr>
+  <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+  <div id="type-selector" class="controls">
+    <input type="radio" name="type" id="changetype-all" checked="checked">
+    <label for="changetype-all">All</label>
+  </div>
+  <div id="form-map"></div>
+  <br>
+  <div class="row">
+    <div class="col-lg-6 field">
+      <%= f.label :latitude, class: "general-text-label" %><br>
+      <%= f.text_field :latitude, class: "general-text-field", id: "listing_latitude", placeholder: "Latitude (e.g. 40.708284)" %>
+    </div>
+    <div class="col-lg-6 field">
+      <%= f.label :longitude, class: "general-text-label" %><br>
+      <%= f.text_field :longitude, class: "general-text-field", id: "listing_longitude", placeholder: "Longitude (e.g. -73.921847)" %>
+    </div>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'button btn-black btn-2x' %>
+  </div>
+<% end %>

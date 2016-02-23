@@ -1,0 +1,60 @@
+<% if current_agent.super_admin? %>
+<br>
+<div class="container">
+  <div class="row">
+  <nav class="navbar navbar-white" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to admin_settings_dashboard_path, class: 'navbar-brand' do %>
+          <%= image_tag 'teepee.png' %>
+          <h5>Admin</h5>
+        <% end %>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Dashboard", admin_settings_dashboard_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Users", admin_agents_path %></li>
+              <li><%= link_to "Agents", employees_admin_agents_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Listings <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "All Listings", admin_listings_path %></li>
+              <li><%= link_to "Available Listings", admin_available_listings_path %></li>
+              <li><%= link_to "Pending Listings", admin_pending_listings_path %></li>
+              <li><%= link_to "Rented Listings", admin_rented_listings_path %></li>
+              <li><%= link_to "Search Listings", admin_listings_search_path %></li>
+              <li><%= link_to "Non Employee Listings", admin_listings_need_updates_path %></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Locations <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Locations", admin_locations_path %></li>
+              <li><%= link_to "Modern Locations", admin_modern_layout_locations_path %></li>
+              <li><%= link_to "Public Locations", locations_path %></li>
+              <li><%= link_to "New Location", new_location_path %></li>
+            </ul>
+          </li>
+          <li><%= link_to "Neighborhoods", admin_neighborhoods_path %></li>
+          <li><%= link_to "Mates", admin_mate_posts_path %></li>
+          <li><%= link_to "Rooms", admin_room_posts_path %></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </div>
+</div>
+<br>
+<% end %>

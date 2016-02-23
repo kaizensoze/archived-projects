@@ -1,0 +1,81 @@
+<% content_for :title, "Manage Photos - Powered by Nooklyn" %>
+
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5>Manage Photos</h5>
+    <h1>#<%= @listing.id %></h1>
+    <h2><%= number_to_human(@listing.bedrooms) %> Bed / <%= number_to_human(@listing.bathrooms) %> Bath in <%= @listing.neighborhood.name %><% if @listing.neighborhood.borough != "Brooklyn" %>, <%= @listing.neighborhood.borough %><% end %></h2>
+    <hr>
+    <ul class="list-inline list-unstyled">
+      <li><%= link_to "Public Listing Page", @listing, class: "button btn-transparent btn-3x" %></li>
+      <li><%= link_to "Edit Listing", edit_listing_path(@listing), class: "button btn-transparent btn-3x" %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="mega-container">
+  <div class="container manage-photos-page">
+    <div class="text-center">
+      <%= image_tag "//nooklyn-files.s3.amazonaws.com/illustrations/UploadPhotos.png", class: "img-responsive center-block" %>
+      <h3>Upload Photos</h3>
+    </div>
+    <%= form_for Photo.new, :html => { :multipart => true, :id => "fileupload", :class => "dropzone nklyn-dropzone" } do |f| %>
+      <%= f.hidden_field :listing_id, :value => @listing.id %>
+    <% end %>
+    <script>
+      Dropzone.options.fileupload = {
+        paramName: "photo[image]",
+        dictDefaultMessage : "Drop your photos here to upload."
+      };
+    </script>
+    <hr>
+    <div class="text-center">
+      <h3>Primary Photo</h3>
+    </div>
+    <%= image_tag @listing.image.url(:large), class: "img-responsive center-block" %><br>
+    <div class="caption">
+      <%= link_to 'Download Original', @listing.image.url(:original),  class: "button btn-blue btn-2x", target: "_blank" %>
+    </div>
+    <hr>
+    <div class="text-center">
+      <h3>Gallery</h3>
+      <p>
+        <%= form_tag gallery_listing_path(@listing), method: :get do %>
+          <label class="select">
+            <%= select_tag 'image_size', options_for_select(ListingCommands::ArchiveGallery::AVAILABLE_SIZES, :original) %>
+          </label>
+          <%= submit_tag 'Download All', class: 'button btn-blue btn-2x' %>
+        <% end %>
+      </p>
+      <br>
+    </div>
+    <div class="row">
+      <% @listing.photos.each do |photo| %>
+        <div class="col-sm-4">
+          <%= image_tag photo.image.url(:square), class: "img-responsive center-block" %><br>
+          <div class="caption">
+            <%= link_to 'Download Original', photo.image.url(:original),  class: "btn btn-xs btn-default", target: "_blank" %>
+            <%= link_to 'Edit', edit_photo_path(photo), class: "btn btn-xs btn-warning" %>
+            <%= link_to 'Delete', photo, remote: true, method: :delete, data: {type: 'json', confirm: 'Are you sure you want to delete the photo?' }, class: "btn btn-xs btn-danger delete-button" %>
+            <% if photo.featured? %>
+            <%= link_to 'Remove Feature', mark_as_not_featured_photo_path(photo), class: "btn btn-xs btn-default" %>
+            <% else %>
+            <%= link_to 'Feature', mark_as_featured_photo_path(photo), class: "btn btn-xs btn-default" %>
+            <% end %>
+          </div>
+          <br>
+        </div>
+      <% end %>
+    </div>
+    <script>
+      // remove photo on delete asynchronously
+      $(function() {
+        $(".delete-button").on("ajax:send", function(event, data, status, xhr) {
+          var photoElement = $(event.target).closest("div.col-sm-3");
+          photoElement.remove();
+        });
+      });
+    </script>
+  </div>
+  <br>
+</div>

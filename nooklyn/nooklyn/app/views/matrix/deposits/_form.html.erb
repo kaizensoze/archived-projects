@@ -1,0 +1,126 @@
+<%= form_for [:matrix, @deposit] do |f| %>
+  <% if @deposit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deposit.errors.count, "error") %> prohibited this deposit from being saved:</h2>
+
+      <ul>
+      <% @deposit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+  <div id="type-selector" class="controls">
+    <input type="radio" name="type" id="changetype-all" checked="checked">
+    <label for="changetype-all">All</label>
+  </div>
+  <div id="form-map"></div>
+  <div class="row">
+    <div class="field col-sm-10">
+      <%= f.label :address, class: "general-text-label" %><br>
+      <%= f.text_field :address, class: "general-text-field map-autocomplete-address" %>
+    </div>
+    <div class="field col-sm-2">
+      <%= f.label :unit, class: "general-text-label" %><br>
+      <%= f.text_field :unit, class: "general-text-field" %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :full_address, class: "map-autocomplete-address" %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="field col-sm-6">
+      <%= f.label :listing_agent_id, class: "general-text-label" %><br>
+      <%= collection_select :deposit, :listing_agent_id, @agents, :id, :name, {include_blank: true}, {class: "selectize"} %>
+    </div>
+    <div class="field col-sm-6">
+      <%= f.label :training_agent_id, "Training agent (optional)", class: "general-text-label" %><br>
+      <%= collection_select :deposit, :training_agent_id, @agents, :id, :name, {include_blank: true}, {class: "selectize"} %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field col-sm-6">
+      <%= f.label :sales_agent_id, class: "general-text-label" %><br>
+      <%= collection_select :deposit, :sales_agent_id, @agents, :id, :name, {include_blank: true}, {class: "selectize"} %>
+    </div>
+    <div class="field col-sm-6">
+      <%= f.label :other_sales_agent_id, "second sales agent (only mark if split)", class: "general-text-label" %><br>
+      <%= collection_select :deposit, :other_sales_agent_id, @agents, :id, :name, {include_blank: true}, {class: "selectize"} %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="field col-sm-8">
+      <%= f.label :apartment_price, class: "general-text-label" %><br>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="nklyn-icon-money-bills"></i></span>
+        <%= f.text_field :apartment_price, class: "general-text-field" %>
+      </div>
+    </div>
+    <div class="field col-sm-4">
+      <%= f.label :offer_price, "Offer Price (optional)", class: "general-text-label" %><br>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="nklyn-icon-money-bills"></i></span>
+        <%= f.text_field :offer_price, class: "general-text-field" %>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :when, "When is the move in date?", class: "general-text-label" %><br>
+    <%= f.text_field :when, class: "datepicker general-text-field" %>
+  </div>
+  <hr>
+  <div class="field">
+    <%= f.label :length_of_lease, "Length of Lease", class: "general-text-label" %><br>
+    <%= f.text_field :length_of_lease, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :landlord_llc, "Landlord LLC (optional)", class: "general-text-label" %><br>
+    <%= f.text_field :landlord_llc, class: "general-text-field" %>
+  </div>
+  <div class="row">
+    <div class="field col-sm-6">
+      <%= f.label :deposit_status_id, "Deposit Status", class: "general-text-label" %><br>
+      <%= collection_select :deposit, :deposit_status_id, @deposit_statuses, :id, :name, {include_blank: true}, {class: "selectize"} %>
+    </div>
+    <div class="field col-sm-6">
+      <%= f.label :office_id, "Office ID", class: "general-text-label" %><br>
+      <%= collection_select :deposit, :office_id, @offices, :id, :name, {include_blank: true}, {class: "selectize"} %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="field col-sm-4">
+      <%= f.label :credit_check, "Credit Check", class: "general-text-label" %><br>
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <%= f.number_field :credit_check, class: "general-text-field" %>
+      </div>
+    </div>
+    <div class="field col-sm-4">
+      <%= f.label :owner_pays, "Owner Pays (%)", class: "general-text-label" %><br>
+      <div class="input-group">
+        <span class="input-group-addon">%</span>
+        <%= f.number_field :owner_pays, class: "general-text-field" %>
+      </div>
+    </div>
+    <div class="field col-sm-4">
+      <%= f.label :total_broker_fee, "Total Broker Fee ($)", class: "general-text-label" %><br>
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <%= f.number_field :total_broker_fee, class: "general-text-field" %>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="field">
+    <%= f.label :description, "Notes", class: "general-text-label" %><br>
+    <%= f.text_area :description, class: "general-text-field" %>
+  </div>
+  <hr>
+  <div class="actions text-center">
+    <%= f.submit "Submit", class: "button btn-black btn-3x" %>
+  </div>
+<% end %>

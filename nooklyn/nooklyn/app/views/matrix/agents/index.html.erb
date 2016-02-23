@@ -1,0 +1,56 @@
+<% content_for :title, "Agents Matrix - Nooklyn - Rental, Sales, Lofts" %>
+
+<div class="super_container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="container agents-index-container">
+    <div class="standard-page-header text-center">
+      <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/FriendlyAgents.png', class: "img-responsive" %>
+      <h1>Agents</h1>
+      <% if can? :employ, Agent %>
+        <div class="btn-toolbar btn-group">
+          <%= link_to "Current Agents", matrix_agents_path, class: "btn btn-default" %>
+          <%= link_to "Hire Agents", hire_matrix_agents_path, class: "btn btn-default" %>
+          <%= link_to "Probation Agents", probation_matrix_agents_path, class: "btn btn-default" %>
+        </div>
+        <hr>
+      <% end %>
+      <input type="text" class="general-text-field" placeholder="Filter" id="agent-filter">
+      <hr>
+    </div>
+  <div class="text-center">
+    <%= paginate @agents, :window => 10, :right => 1 %><br>
+  </div>
+    <% @agents.each do |agent| %>
+      <div class="agents-card text-center" data-name="<%= agent.name %>">
+        <br>
+        <%= link_to image_tag(agent.profile_picture.url(:medium), class: "img-circle"), agents_path(agent) %>
+        <hr>
+        <h2 class="name"><%= link_to agent.name, agent_path(agent.id) %></h2>
+        <br>
+        <i class="nklyn-icon-message nklyn-3x"></i>
+        <h2 class="email"><a href="mailto:<%= agent.email %>"><%= agent.email %></a></h2>
+        <i class="nklyn-icon-phone nklyn-3x"></i>
+        <h2 class="phone"><%= number_to_phone(agent.phone) %></h2>
+        <% if current_agent.employer? %>
+        <hr>
+          <% if agent.employee? %>
+            <% if agent.on_probation? %>
+              <%= link_to 'Remove from Probation', remove_from_probation_matrix_agent_path(agent), class: "btn btn-xs btn-default" %><br>
+              <% else %>
+              <%= link_to 'Place On Probation', place_on_probation_matrix_agent_path(agent), class: "btn btn-xs btn-default" %><br>
+            <% end %>
+            <% if agent.suspended? %>
+              <%= link_to 'Remove from Suspension', remove_from_suspension_matrix_agent_path(agent), class: "btn btn-xs btn-default" %><br>
+              <% else %>
+              <%= link_to 'Place On Suspension', place_on_suspension_matrix_agent_path(agent), class: "btn btn-xs btn-default" %><br>
+            <% end %>
+            <%= link_to 'Fire', fire_matrix_agent_path(agent), class: "btn btn-xs btn-danger" %><br>
+          <% else %>
+            <%= link_to 'Hire', employ_matrix_agent_path(agent.id), class: "btn btn-xs btn-primary" %><br>
+          <% end %>
+          <br><br>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

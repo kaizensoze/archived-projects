@@ -1,0 +1,34 @@
+<div class="mega-container">
+<%= render 'matrix/listings/matrix_navigation' %>
+  <div class="text-center container">
+    <h1>Deposit Status</h1>
+    <hr>
+    <%= link_to 'New Deposit Status', new_matrix_deposit_status_path, class: "button btn-white btn-2x" %>
+  </div>
+  <div class="container">
+    <div class="responsive-table">
+      <table class="table nklyn-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Active</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @deposit_statuses.each do |deposit_status| %>
+            <tr>
+              <td><%= deposit_status.name %></td>
+              <td><%= deposit_status.description %></td>
+              <td><%= deposit_status.active %></td>
+              <td><%= link_to 'Show', matrix_deposit_status_path(deposit_status) %></td>
+              <td><%= link_to 'Edit', edit_matrix_deposit_status_path(deposit_status) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

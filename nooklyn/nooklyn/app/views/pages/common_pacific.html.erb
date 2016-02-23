@@ -1,0 +1,78 @@
+<% content_for :title, "Common | Flexible, Friendly Shared Housing, Powered by Nooklyn: Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<% content_for :description, "Common offers flexible, community-driven housing by providing fully furnished, month-to-month memberships, beginning in New York City." %>
+<% content_for :og_image, "https://nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-14.jpg" %>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+<div class="common-jumbotron">
+  <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-logo-white.png", class: "img-responsive center-block" %>
+  <h1>common</h1>
+  <p class="common-jumbotron-lead">
+    Common offers flexible, community-driven housing by providing fully furnished, month-to-month memberships, beginning in New York City.
+  </p>
+  <br>
+  <%= link_to "Become a Common Member", "http://www.hicommon.com/apply-form/", class: "button btn-black btn-4x" %>
+</div>
+<div class="mega-container common-content-section">
+  <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-logo-dark.png", class: "img-responsive center-block", id: "common-logo" %>
+  <h2>Why Common?</h2>
+  <h3>&nbsp;</h3>
+  <p>You can stay a month or stay a while. Common members can move between Common communities — or leave entirely — with only a month's notice.</p>
+  <hr>
+  <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-14.jpg", class: "img-responsive center-block" %>
+  <br>
+  <div class="container">
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-18.jpg", class: "img-responsive center-block" %>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-12.jpg", class: "img-responsive center-block" %>
+      </div>
+      <div class="col-sm-6">
+        <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-8.jpg", class: "img-responsive center-block" %>
+      </div>
+    </div>
+    <br>
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-20.jpg", class: "img-responsive center-block" %>
+  </div>
+  <hr>
+  <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-logo-dark.png", class: "img-responsive center-block", id: "common-logo" %>
+  <h2>Community</h2>
+  <h3>&nbsp;</h3>
+  <p>Common communities feature regular talks, dinners, gatherings, and other events to meet your fellow members and neighbors.</p>
+  <hr>
+  <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-13.jpg", class: "img-responsive center-block" %>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-3.jpg", class: "img-responsive center-block" %>
+      </div>
+      <div class="col-sm-6">
+        <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-4.jpg", class: "img-responsive center-block" %>
+      </div>
+    </div>
+    <br>
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-2.jpg", class: "img-responsive center-block" %>
+    <hr>
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-logo-dark.png", class: "img-responsive center-block", id: "common-logo" %>
+    <h2>Convenience</h2>
+    <h3>&nbsp;</h3>
+    <p>Living made simple. Spend less time dealing with the hassles of finding a new home. Common makes it easy to live, work and play.</p>
+    <hr>
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/hicommon/common-pacific-7.jpg", class: "img-responsive center-block" %>
+  </div>
+  <hr>
+  <div class="text-center">
+    <i class="nklyn-icon-marker nklyn-4x"></i>
+    <h2>Neighborhood</h2>
+    <br>
+    <div id="location-show-map" data-latitude="40.677741" data-longitude="-73.9558957"></div>
+    <input type="hidden" id="listing_latitude" value="40.677741" />
+    <input type="hidden" id="listing_longitude" value="-73.9558957" />
+    <br><br>
+    <%= render partial: "locations/location", collection: @locations %>
+    <br>
+    <hr>
+    <%= link_to "Become a Common Member", "http://www.hicommon.com/apply-form/", class: "button btn-black btn-4x" %>
+  </div>
+</div>
+

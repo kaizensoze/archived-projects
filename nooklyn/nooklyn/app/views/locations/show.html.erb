@@ -1,0 +1,58 @@
+<% content_for :title, "#{@location.name} in #{@location.neighborhood.name} - Powered by Nooklyn" %>
+<% content_for :description, "#{@location.description}" %>
+<% content_for :meta_url, location_url(@location.id) %>
+<% content_for :og_image, @location.image(:large) %>
+<% content_for :og_type, "place" %>
+<% content_for :og_lat, "#{@location.latitude}" %>
+<% content_for :og_long, "#{@location.longitude}" %>
+<% if @location.modern? %>
+  <% if can? :manage, :all %>
+    <div class="modern-location-actions-bar">
+      <div class="btn-group">
+        <%= link_to "Manage Photos", manage_photos_location_path(@location), class: "button btn-nklyn-dark btn-2x" %>
+        <%= link_to "Edit", edit_location_path(@location), class: "button btn-nklyn-dark btn-2x" %>
+        <%= link_to "Feature", make_feature_admin_location_path(@location), class: "button btn-nklyn-dark btn-2x" %>
+        <%= link_to "Destroy", @location, method: :delete, data: { confirm: 'Are you sure?' }, class: "button btn-nklyn-dark btn-2x" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="modern-location-jumbotron" style="background-image: url(<%= @location.cover_image.url(:wide_big) %>)"></div>
+  <div class="modern-location-card">
+    <h1><%= @location.name %></h1>
+    <hr>
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col-sm-6">
+          <div class="location-category-bg">
+            <%= image_tag @location.location_category.image(:large), class: "img-responsive center-block" %>
+          </div>
+        </div>
+        <div class="col-sm-6">
+        <h5>Location</h5><br>
+        <address>
+          <%= @location.address_line_one %><% unless @location.address_line_two.empty? %>, <%= @location.address_line_two %><% end %><br>
+          <%= @location.city %>, <%= @location.state %> <%= @location.zip %>
+        </address>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mega-container text-center">
+    <%= render 'locations/modern_location_gallery' %>
+    <%= render 'locations/modern_location_area' %>
+  </div>
+
+<% else %>
+  <div class="super_container">
+    <br>
+    <%= render 'locations/location_admin_area' %>
+    <div class="container location-show-page">
+      <%= render 'locations/location_content_area' %>
+      <hr>
+      <%= render 'locations/location_gallery_area' %>
+      <hr>
+      <%= render 'locations/location_map_area' %>
+    </div>
+    </br>
+  </div>
+<% end %>

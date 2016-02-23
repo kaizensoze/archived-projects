@@ -1,0 +1,22 @@
+<%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/Photos.png", class: "img-responsive center-block" %>
+<div class="container">
+  <h2 href="#photos" name="photos" class="fake-link">Photos</h2>
+  <div class="row stat-row">
+    <div class="col-sm-3">
+      <h3>Total</h3>
+      <h5><%= number_with_delimiter(@photos.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Today</h3>
+      <h5><%= @photos_day.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Week</h3>
+      <h5><%= @photos_week.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Month</h3>
+      <h5><%= @photos_month.count %></h5>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="feedback-container">
+  <div class="row">
+    <div class="col-sm-4">
+      <i class="nklyn-icon-message nklyn-3x"></i>
+      <h5><a href="mailto:help@nooklyn.com">help@nooklyn.com</a></h5>
+    </div>
+    <div class="col-sm-4">
+      <i class="nklyn-icon-phone nklyn-3x"></i>
+      <h5><a href="tel:+13473183595">347-318-3595</a></h5>
+    </div>
+    <div class="col-sm-4">
+      <i class="nklyn-icon-social-twitter nklyn-3x"></i>
+      <h5><a href="http://twitter.com/nooklyn">@nooklyn</a></h5>
+    </div>
+  </div>
+  <hr>
+    <%= form_for(@feedback) do |f| %>
+      <% if @feedback.errors.any? %>
+        <div id="error_explanation">
+          <h3><%= pluralize(@feedback.errors.count, "mistake") %> must be corrected</h3>
+          <ul>
+          <% @feedback.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :name, class: "general-text-label" %>
+        <%= f.text_field :name, class: "general-text-field" %>
+      </div>
+      <div class="field">
+        <%= f.label :email, class: "general-text-label" %>
+        <%= f.text_field :email, class: "general-text-field" %>
+      </div>
+      <div class="field">
+        <%= f.label :message, class: "general-text-label" %>
+        <%= f.text_area :message, rows: 5, class: "general-text-area", placeholder: "What's on your mind?" %>
+      </div>
+      <div class="field actions">
+        <br>
+        <%= f.submit 'Talk to a human', class: 'button btn-nklyn-black btn-4x' %>
+      </div>
+    <% end %>
+</div>
+<br>

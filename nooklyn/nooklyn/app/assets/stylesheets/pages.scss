@@ -1,0 +1,340 @@
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+
+div.nklyn-homepage-jumbotron {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 100px;
+  height: 555px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #ffc03a;
+  background-image: url('//nooklyn-files.s3.amazonaws.com/img/5k-iMac.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+  /* Misc */
+  @media screen and (max-width: 540px) {
+    height: 520px;
+  }
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 104px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    @media screen and (max-width: 540px) {
+      font-size: 60px;
+    }
+  }
+  i {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 90px;
+    line-height: 1;
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    @media screen and (max-width: 540px) {
+      font-size: 20px;
+    }
+  }
+}
+
+div.nklyn-homepage-grid {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 20px;
+  /* Typography */
+  font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+  line-height: .8;
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  @media screen and (max-width: 540px) {
+    padding-top: 2px;
+  }
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 50px;
+    padding-bottom: 15px;
+    /* Typography */
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 50px;
+    /* Typography */
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+div.home_page_features_container {
+  /* Positioning */
+  /* Box-model */
+  padding-bottom: 25px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    font-size: 50px;
+    margin-bottom: 20px;
+    /* Typography */
+    font-weight: 300;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+  }
+  button.call-to-action {
+    margin-top: 30px;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* About
+/*
+/*****************************************************************************/
+
+div.nklyn-about-jumbotron {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 250px;
+  height: 888px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #333;
+  background-image: url('//nooklyn-files.s3.amazonaws.com/img/about.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  /* Misc */
+  @media screen and (max-width: 540px) {
+    height: 520px;
+    padding-top: 110px;
+  }
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 104px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    @media screen and (max-width: 540px) {
+      font-size: 60px;
+    }
+  }
+  i {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 90px;
+    line-height: 1;
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    @media screen and (max-width: 540px) {
+      font-size: 20px;
+    }
+  }
+}
+
+div.about-page-container {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  padding-top: 50px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  color: #333;
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 50px;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 0;
+    /* Typography */
+    font-weight: 700;
+    font-size: 50px;
+    /* Visual */
+    color: #333;
+    /* Misc */
+  }
+  h4 {
+    padding-top: 40px;
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 25px;
+  }
+  h6 {
+    margin: 10px auto;
+    max-width: 50%;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+
+/*****************************************************************************/
+/*
+/* Privacy Policy
+/*
+/*****************************************************************************/
+
+div.privacy-policy-page {
+  /* Positioning */
+  /* Box-model */
+  padding: 25px;
+  /* Typography */
+  font-family: 'kepler-std', Georgia, serif;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /* Visual */
+  /* Misc */
+  h2, h3 {
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'kepler-std', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    /* Visual */
+    /* Misc */
+  }
+  hr {
+    border-color: #ccc;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Legal Page
+/*
+/*****************************************************************************/
+
+div.legal-card {
+  /* Positioning */
+  /* Box-model */
+  min-height: 500px;
+  /* Typography */
+  /* Visual */
+  color: #fff;
+  /* Misc */
+  -webkit-transition: all .4s ease-in-out;
+     -moz-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+
+  &:hover {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #ffc03a;
+    color: #111;
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 200px;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 34px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+  }
+}

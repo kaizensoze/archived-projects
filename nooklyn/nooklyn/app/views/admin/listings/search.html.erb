@@ -1,0 +1,61 @@
+<% content_for :title, "(#{@listings.count}) Search Results" %>
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5>returned <%= @listings.count %> listings</h5>
+    <h1>Search Listing Database</h1>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <%= render 'admin/shared/admin_navigation' %>
+  <br>
+  <%= form_for admin_listings_search_path, method: :get do |f| %>
+    <div class="row">
+      <div class="col-sm-10">
+        <%= text_field_tag :q, params[:q], class: "general-text-field" %>
+      </div>
+      <div>
+        <%= submit_tag "Go", name: nil, class: "button btn-black btn-4x" %>
+      </div>
+    </div>
+  <% end %>
+  <hr>
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Address</th>
+          <th>Full Address</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Status</th>
+          <th>Price</th>
+          <th>Bedrooms</th>
+          <th>Bathrooms</th>
+          <th>Description</th>
+          <th>Amenities</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @listings.each do |listing| %>
+        <tr>
+          <td><%= listing.id %></td>
+          <td><%= link_to listing.address, admin_listing_path(listing) %></td>
+          <td><%= listing.full_address %></td>
+          <td><%= listing.latitude %></td>
+          <td><%= listing.longitude %></td>
+          <td><%= listing.status %></td>
+          <td><%= number_to_currency(listing.price, precision: 0) %></td>
+          <td><%= number_to_human(listing.bedrooms) %></td>
+          <td><%= number_to_human(listing.bathrooms) %></td>
+          <td><%= listing.description %></td>
+          <td><%= listing.amenities %></td>
+          <td><%= link_to 'Show', listing_path(listing), class: "button btn-default btn-2x" %></td>
+          <td><%= link_to 'Edit', edit_listing_path(listing), class: "button btn-edit btn-2x" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

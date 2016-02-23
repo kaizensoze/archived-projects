@@ -1,0 +1,29 @@
+<%= form_for(@location_category) do |f| %>
+  <% if @location_category.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@location_category.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @location_category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, class: "general-text-label" %><br>
+    <%= f.text_field :name, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :image, "Category Image", class: "general-text-label" %><br>
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :slug, class: "general-text-label" %><br>
+    <%= f.text_field :slug, class: "general-text-field" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Save", class: "btn btn-black" %>
+  </div>
+<% end %>

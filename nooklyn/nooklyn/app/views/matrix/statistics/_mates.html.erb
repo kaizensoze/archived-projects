@@ -1,0 +1,36 @@
+<%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/BrowseRoomies.png", class: "img-responsive center-block" %>
+<h2 href="#mates" name="mates" class="fake-link">Mates</h2>
+<div class="d3-chart-container">
+  <h3>Daily Active Profiles</h3>
+  <div id="damp-graph"></div>
+</div>
+<div class="container">
+  <div class="row stat-row">
+    <div class="col-sm-3">
+      <h3>Total</h3>
+      <h5><%= number_with_delimiter(@mates.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Today</h3>
+      <h5><%= @mates_day.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Week</h3>
+      <h5><%= @mates_week.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Month</h3>
+      <h5><%= @mates_month.count %></h5>
+    </div>
+  </div>
+  <% @mate_stats.each_slice(4) do |mate_stat_row| %>
+    <div class="row stat-row">
+      <% mate_stat_row.each do |(month_year, mates_for_month)| %>
+        <div class="col-sm-3">
+          <h3><%= month_year %></h3>
+          <h5><%= number_with_delimiter(mates_for_month.count) %></h5>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

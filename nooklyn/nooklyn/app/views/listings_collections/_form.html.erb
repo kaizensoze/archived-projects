@@ -1,0 +1,86 @@
+<%= form_for @listings_collection, html: { class: "form-horizontal" } do |f| %>
+  <% if @listings_collection.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@listings_collection.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @listings_collection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, class: "general-text-label" %>
+    <%= f.text_field :name, class: "general-text-field" %>
+  </div>
+  <div class="row">
+    <div class="field col-sm-8">
+      <%= f.label :description, class: "general-text-label" %>
+      <%= f.text_area :description, rows: "7", class: "general-text-area limit_500", maxlength: 500 %>
+      <p class="form-help-block"><span id="remain">500</span> characters remaining</p>
+    </div>
+  </div>
+
+<hr>
+  <% if @listing %>
+    <div class="nooklyn_listing_square nooklyn-matrix-listing-card">
+      <% if @listing.image.blank? %>
+        <%= image_tag @listing.thumb %>
+      <% else %>
+        <%= image_tag @listing.image(:thumb) %>
+      <% end %>
+      <div class="nooklyn-matrix-listing-card-stub">
+        <div class="price">
+          <h5>Price</h5>
+          <h3><%= number_to_currency(@listing.price, precision: 0) %></h3>
+        </div>
+        <div class="bedrooms">
+          <h5>Beds</h5>
+          <h3><%= number_to_human(@listing.bedrooms) %></h3>
+        </div>
+        <div class="bathrooms">
+          <h5>Baths</h5>
+          <h3><%= number_to_human(@listing.bathrooms) %></h3>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <%= f.hidden_field :listing_ids, multiple: true, value: @listing.id %>
+  <% end %>
+
+  <% if @listings_collection.listings %>
+    <% @listings_collection.listings.each do |listing| %>
+      <div class="nooklyn_listing_square nooklyn-matrix-listing-card removable" id="<%= "listing_#{listing.id}" %>">
+        <% if listing.image.blank? %>
+          <%= image_tag listing.thumb %>
+        <% else %>
+          <%= image_tag listing.image(:thumb) %>
+        <% end %>
+      <div class="nooklyn-matrix-listing-card-stub">
+        <div class="price">
+          <h5>Price</h5>
+          <h3><%= number_to_currency(listing.price, precision: 0) %></h3>
+        </div>
+        <div class="bedrooms">
+          <h5>Beds</h5>
+          <h3><%= number_to_human(listing.bedrooms) %></h3>
+        </div>
+        <div class="bathrooms">
+          <h5>Baths</h5>
+          <h3><%= number_to_human(listing.bathrooms) %></h3>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+        <div class="text-center">
+          <button class="button btn-black">Remove from Collection</button>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="actions general_form_actions text-center">
+    <%= f.submit 'Submit', :class => 'button btn-nklyn-black btn-4x' %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="responsive-table">
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>Client Name</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Office</th>
+          <th>Notes</th>
+          <th>Date</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @deposit.transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.client_name %></td>
+            <td><%= number_to_currency(transaction.amount) %></td>
+            <td><%= transaction.deposit_transaction_type %></td>
+            <td><%= transaction.office.try(:name) %></td>
+            <td><%= transaction.notes %></td>
+            <td><%= transaction.created_at.strftime('%D') %></td>
+            <td><%= link_to "Edit", edit_matrix_deposit_transaction_path(transaction), class: "button btn-white btn-2x" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

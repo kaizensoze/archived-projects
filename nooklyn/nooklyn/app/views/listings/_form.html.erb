@@ -1,0 +1,446 @@
+<%= form_for @listing, :html => { :class => "form-horizontal" } do |f| %>
+  <% if @listing.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@listing.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @listing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <h2 class="text-center">Basics</h2>
+
+  <div class="field">
+    <%= f.label :title, class: "general-text-label" %>
+    <%= f.text_field :title, class: "general-text-field" %>
+  </div>
+  <div class="row">
+    <div class="field col-sm-8">
+      <%= f.label :description, class: "general-text-label" %>
+      <%= f.text_area :description, :rows => "7", class: "general-text-area limit_500", maxlength: 500 %>
+      <p class="form-help-block"><span id="remain">500</span> characters remaining</p>
+    </div>
+    <div class="col-sm-4">
+      <br><br>
+      <div class="well">
+        <h5>Things to avoid:</h5>
+        <ul>
+          <li>Excessive CAPITALIZATION or punctuation!!!</li>
+          <li>Repeating or using too many keywords</li>
+          <li>Revealing private information about the listing (e.g. address)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "Primary Photo", class: "general-text-label" %><br>
+    <%= f.file_field :image %>
+    <p class="form-help-block">This is the primary image for the listing. We recommend image dimensions of 1250x1250</p>
+  </div>
+  <br>
+  <h2 class="text-center">Location</h2>
+  <label for="listing_latitude" class="general-text-label">Pin Location</label>
+
+  <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+  <div id="type-selector" class="controls">
+    <input type="radio" name="type" id="changetype-all" checked="checked">
+    <label for="changetype-all">All</label>
+  </div>
+
+  <div id="form-map"></div>
+
+  <div class="field">
+    <label for="listing_address" class="general-text-label">Street Address <small>(Private)</small></label>
+    <%= f.text_field :address, class: "general-text-field map-autocomplete-address" %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :full_address, class: "general-text-field map-autocomplete-address" %>
+    <%= f.hidden_field :zip, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <label for="listing_apartment" class="general-text-label">Unit Number <small>(Private)</small></label>
+    <%= f.text_field :apartment, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :neighborhood, class: "general-text-label" %><br>
+    <%= grouped_collection_select :listing, :neighborhood_id, @regions, :neighborhoods, :name, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <%= f.hidden_field :latitude, class: "general-text-field" %>
+    </div>
+    <div class="col-sm-6">
+      <%= f.hidden_field :longitude, class: "general-text-field" %>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+    $('.listing_form_container').on("keyup keypress", function(e) {
+    var code = e.keyCode || e.which;
+    if (code  == 13) {
+      e.preventDefault();
+      return false;
+    }
+    });
+  </script>
+
+  <div class="field">
+    <label for="listings_subway_line" class="general-text-label">Subway Lines</label>
+    <%= f.hidden_field :subway_line %>
+    <div class="subway-lines">
+      <% @trains = ['L', 'G', 'J', 'M', 'Z', 'A', 'C', 'E', 'B', 'D', 'F', 'N', 'Q', 'R', '7', 'S', '1', '2', '3', '4', '5', '6'];
+      @trains.each do |train| %>
+        <label><%= check_box_tag :subway_lines, train %><img src="//nooklyn-files.s3.amazonaws.com/subway/<%= train %>.png"></label>
+      <% end %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="field">
+    <label for="listings_stations" class="general-text-label">Nearby Stations</label>
+    <%= f.text_field :station, :placeholder => "Myrtle Ave (J/Z express, M), Morgan Ave (L)", class: "general-text-field" %>
+  </div>
+
+<br>
+
+  <h2 class="text-center">Numbers</h2>
+
+  <!-- Price -->
+  <div class="field">
+    <%= f.label :price, class: "general-text-label" %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="nklyn-icon-money-bills"></i></span>
+      <%= f.text_field :price, class: "general-text-field" %>
+    </div>
+  </div>
+
+  <!-- Owner Pays % -->
+  <div class="field">
+    <label for="listing_owner_pays" class="general-text-label">Owner Pays <small>(Private)</small></label>
+    <div class="input-group">
+      <span class="input-group-addon">%</span>
+      <%= f.number_field :owner_pays, class: "general-text-field" %>
+    </div>
+  </div>
+
+  <!-- Fee -->
+  <div class="field">
+    <label for="listing_fee" class="general-text-label">Fee Notes <small>(Private)</small></label>
+    <%= f.text_field :fee, class: "general-text-field" %>
+  </div>
+
+  <!-- Utilities -->
+  <div class="field">
+    <label for="listing_utilities" class="general-text-label">Utilities <small>(Private)</small></label>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="nklyn-icon-money-bills"></i></span>
+      <%= f.text_field :utilities, class: "general-text-field" %>
+    </div>
+  </div>
+
+  <!-- Move In Cost -->
+  <div class="field">
+    <label for="listing_utilities" class="general-text-label">Move In Cost <small>(Private)</small></label><br>
+    <div class="btn-group btn-group" data-toggle="buttons-radio">
+      <button type="button" class="btn btn-default<% if @listing.move_in_cost %> active<% end %>" value="true">First, Last, and Security</button>
+      <button type="button" class="btn btn-default<% if @listing.move_in_cost == false %> active<% end %>" value="false">First and Security</button>
+      <%= f.hidden_field :move_in_cost %>
+    </div>
+  </div>
+
+  <!-- Date Available -->
+  <div class="field">
+    <%= f.label :date_available, "Earliest Date Available", class: "general-text-label" %>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="nklyn-icon-calendar"></i></span>
+      <%= f.text_field :date_available, :class => "datepicker general-text-field" %>
+    </div>
+  </div>
+
+  <!-- Beds -->
+  <div class="field">
+    <%= f.label :bedrooms, class: "general-text-label" %>
+    <%= f.number_field :bedrooms, :step => "0.5", :min => 0, class: "general-text-field" %>
+  </div>
+
+  <!-- Bathrooms -->
+  <div class="field">
+    <%= f.label :bathrooms, class: "general-text-label" %>
+      <%= f.number_field :bathrooms, :step => "0.5", :min => 0, class: "general-text-field" %>
+  </div>
+
+  <!-- Pets -->
+  <div class="field">
+    <%= f.label :pets, class: "general-text-label" %><br>
+    <div class="btn-group btn-group" data-toggle="buttons-radio">
+      <button type="button" class="btn btn-default<% if @listing.pets %> active<% end %>" value="true">Allowed</button>
+      <button type="button" class="btn btn-default<% if @listing.pets == false %> active<% end %>" value="false">Banned</button>
+      <%= f.hidden_field :pets %>
+    </div>
+  </div>
+
+  <!-- Square Feet -->
+  <div class="field">
+    <%= f.label :square_feet, "Size", class: "general-text-label" %>
+    <div class="input-group">
+      <%= f.number_field :square_feet, :step => "5", :min => "50", class: "general-text-field" %>
+      <span class="input-group-addon">sq. feet</span>
+    </div>
+  </div>
+
+<h2 class="text-center">Amenities</h2>
+
+      <%= f.hidden_field :amenities %>
+      <div class="amenities">
+        <% @amenities = { :basics => [
+            'High Ceilings',
+            'Hardwood floors',
+            'Exposed brick',
+            'Central A/C',
+            'Video Intercom',
+            'Doorman',
+            'Elevator',
+            'Washer dryer installed',
+            'Washer dryer hookup',
+            'Laundry in building',
+          ], :kitchen => [
+            'Eat In Kitchen',
+            'Stainless Steel Appliances',
+            'Dishwasher',
+            'Built in microwave',
+            'Stone countertops',
+            'Granite countertops',
+          ], :commercial => [
+            'Storefront',
+            'Backyard',
+            'Industrial',
+            'Office',
+            'Flex Space',
+            'Corner Space',
+            'Drivein Doors',
+            'Liquor License Applicable',
+            'Certificate of Occupancy Provided',
+            'Letter of No Objection Provided',
+            'All Uses Considered',
+            'Electrical 220 Volt Circuit',
+            'Water Available',
+            'Gas Available',
+            'Basement',
+            'Sprinkler installed'
+          ], :luxury => [
+            'Duplex',
+            'Childrens Playroom',
+            'Concierge',
+            'Doorman',
+            'Playground',
+            'Spa Services',
+            'Basement'
+          ], :sports => [
+            'Swimming Pool',
+            'Tennis Courts',
+            'Volleyball Courts',
+            'Basketball Courts',
+          ], :outdoors => [
+            'Outdoor Space',
+            'Common courtyard',
+            'Private backyard',
+            'Shared backyard',
+            'Balcony',
+            'Terrace',
+            'Patio',
+            'Roof access',
+            'Private roof deck',
+            'Skyline view'
+          ], :building => [
+            'Storage space',
+            'Bike storage',
+            'Gym',
+            'Wheelchair Accessible',
+            'Game room',
+            'Screening room',
+            'Lounge',
+            'Private parking',
+            'Zipcar'
+          ], :pets => [
+            'All pets ok',
+            'Dogs ok',
+            'Small dogs ok',
+            'Cats ok',
+            'Pet spa'
+          ]
+          };
+        %>
+        <div class="row">
+          <div class="col-md-3">
+            <legend>Basics</legend>
+            <% @amenities[:basics].each do |amenity| %>
+              <div class="checkbox">
+                <label class="checkbox"><%= check_box_tag :amenities, amenity %><%= amenity %></label>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <legend>Building</legend>
+            <% @amenities[:building].each do |amenity| %>
+              <div class="checkbox">
+                <label class="checkbox"><%= check_box_tag :amenities, amenity %><%= amenity %></label>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <legend>Outdoors</legend>
+            <% @amenities[:outdoors].each do |amenity| %>
+              <div class="checkbox">
+                <label class="checkbox"><%= check_box_tag :amenities, amenity %><%= amenity %></label>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <legend>Kitchen</legend>
+            <% @amenities[:kitchen].each do |amenity| %>
+              <div class="checkbox">
+                <label class="checkbox"><%= check_box_tag :amenities, amenity %><%= amenity %></label>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-3">
+            <legend>Luxury</legend>
+            <% @amenities[:luxury].each do |amenity| %>
+              <div class="checkbox">
+                <label class="checkbox"><%= check_box_tag :amenities, amenity %><%= amenity %></label>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <legend>Sports</legend>
+            <% @amenities[:sports].each do |amenity| %>
+              <div class="checkbox">
+                <label class="checkbox"><%= check_box_tag :amenities, amenity %><%= amenity %></label>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <legend>Commercial</legend>
+            <% @amenities[:commercial].each do |amenity| %>
+              <div class="checkbox">
+                <label class="checkbox"><%= check_box_tag :amenities, amenity %><%= amenity %></label>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <legend>Pets</legend>
+            <% @amenities[:pets].each do |amenity| %>
+              <div class="checkbox">
+                <label class="checkbox"><%= check_box_tag :amenities, amenity %><%= amenity %></label>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+<br>
+
+<h2 class="text-center">Details</h2>
+
+  <!-- Building Access -->
+  <div class="field">
+    <label for="listing_access" class="general-text-label">Building Access <small>(Private)</small></label>
+    <%= f.text_area :access, :rows => "4", class: "general-text-area" %>
+  </div>
+
+  <!-- Landlord Contact -->
+  <div class="field">
+    <label for="listing_landlord_contact" class="general-text-label">Landlord Contact <small>(Private)</small></label>
+    <%= f.text_field :landlord_contact, :rows => "3", class: "general-text-field" %>
+  </div>
+
+  <!-- Term -->
+  <div class="field">
+    <%= f.label :term, class: "general-text-label" %>
+    <%= f.text_field :term, :placeholder => "12 months", class: "general-text-field" %>
+  </div>
+
+  <!-- Sales Agent -->
+  <div class="field">
+    <label for="listing_sales_agent_id" class="general-text-label">Sales Agent <small>(First name and phone number will appear on the listing.)</small></label><br>
+    <%= collection_select :listing, :sales_agent_id, @agents, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+
+  <!-- Listing Agent -->
+  <div class="field">
+    <label class="general-text-label">Listing Agent <small>(Private)</small></label><br>
+    <%= collection_select :listing, :listing_agent_id, @agents, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+
+  <br>
+  <!-- Type, Exclusive and Property Toggles -->
+  <div class="row text-center">
+    <div class="field col-sm-4">
+      <%= f.label :rental, "Type", class: "general-text-label" %><br>
+      <div class="btn-group btn-group" data-toggle="buttons-radio">
+        <button type="button" class="btn btn-white<% if @listing.rental %> active<% end %>" value="true">Lease</button>
+        <button type="button" class="btn btn-white<% if @listing.rental == false %> active<% end %>" value="false">&nbsp;Sale&nbsp;</button>
+        <%= f.hidden_field :rental %>
+      </div>
+    </div>
+
+    <div class="field col-sm-4">
+      <%= f.label :exclusive, "Exclusive", class: "general-text-label" %><br>
+      <div class="btn-group btn-group" data-toggle="buttons-radio">
+        <button type="button" class="btn btn-white<% if @listing.exclusive %> active<% end %>" value="true">Yes</button>
+        <button type="button" class="btn btn-white<% if @listing.exclusive == false %> active<% end %>" value="false">&nbsp;No</button>
+        <%= f.hidden_field :exclusive %>
+      </div>
+    </div>
+
+    <div class="field col-lg-4">
+      <%= f.label :residential, "Property", class: "general-text-label" %><br>
+        <div class="btn-group" data-toggle="buttons-radio">
+          <button type="button" class="btn btn-white<% if @listing.residential %> active<% end %>" value="true">&nbsp;Residential</button>
+          <button type="button" class="btn btn-white<% if @listing.residential == false %> active<% end %>" value="false">Commercial</button>
+          <%= f.hidden_field :residential %>
+        </div>
+      </div>
+  </div>
+
+  <!-- Private, Office, and Status toggles -->
+  <div class="row text-center">
+    <div class="field col-sm-4">
+      <%= f.label :private, "Private", class: "general-text-label" %><br>
+      <div class="btn-group btn-group" data-toggle="buttons-radio">
+        <button type="button" class="btn btn-white<% if @listing.private == false %> active<% end %>" value="false">Public</button>
+        <button type="button" class="btn btn-white<% if @listing.private == true %> active<% end %>" value="true">Private</button>
+        <%= f.hidden_field :private %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="field">
+        <%= f.label :office_id, class: "general-text-label" %><br>
+        <%= collection_select :listing, :office_id, @offices, :id, :name, {include_blank: true}, {class: "selectize"} %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="field">
+        <%= f.label :status, class: "general-text-label" %><br>
+        <div class="btn-group" data-toggle="buttons-radio">
+          <button type="button" class="btn btn-white<% if @listing.status == "Available" %> active<% end %>" value="Available">Available</button>
+          <button type="button" class="btn btn-white<% if @listing.status == "Application Pending" %> active<% end %>" value="Application Pending">Application Pending</button>
+          <button type="button" class="btn btn-white<% if @listing.status == "Rented" %> active<% end %>" value="Rented">Rented</button>
+          <%= f.hidden_field :status %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+  <div class="actions general_form_actions text-center">
+    <%= f.submit 'Submit', :class => 'button btn-nklyn-black btn-4x' %>
+  </div>
+<% end %>

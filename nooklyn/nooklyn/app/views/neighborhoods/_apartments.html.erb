@@ -1,0 +1,39 @@
+<div class="listings-index-container">
+  <div class="split-pane-frame">
+    <div class="split-pane vertical-percent">
+      <div class="split-pane-component" id="left-component">
+        <div class="decoration">
+          <div class="listing-index">
+            <%= render 'listings/listings_filters' %>
+          </div>
+          <div class="nooklyn_listings_index_container"></div>
+        </div>
+      </div>
+      <div class="split-pane-divider" id="my-divider"></div>
+      <div class="split-pane-component" id="right-component">
+        <div class="decoration">
+          <div id="nklyn-hood-apartments-map" data-latitude="<%= @neighborhood.latitude %>" data-longitude="<%= @neighborhood.longitude %>" data-zoom="14" data-hood="<%= @neighborhood.id %>"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    // split pane
+    $('div.split-pane').splitPane();
+
+    // on split pane resize, trigger google map resize
+    $('div.split-pane').on('resize', function() {
+      var mapDiv = document.getElementById('nklyn-hood-apartments-map');
+      google.maps.event.trigger(mapDiv, "resize");
+    });
+
+    // hide footer
+    $('.nooklyn-footer').hide();
+
+    // liked listings
+    likedListingIds = [<%= @liked_listings.join(', ') %>];
+  });
+</script>

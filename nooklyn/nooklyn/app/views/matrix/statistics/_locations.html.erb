@@ -1,0 +1,18 @@
+<%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/2x/guides/food.png", class: "img-responsive center-block" %>
+<div class="container">
+  <h2 href="#locations" name="locations" class="fake-link">Locations</h2>
+  <div class="row stat-row">
+    <div class="col-sm-4">
+      <h3>Total</h3>
+      <h5><%= number_with_delimiter(@locations.count) %></h5>
+    </div>
+    <div class="col-sm-4">
+      <h3>SF</h3>
+      <h5><%= @locations_sf.count %></h5>
+    </div>
+    <div class="col-sm-4">
+      <h3>NYC</h3>
+      <h5><%= @locations_nyc.count %></h5>
+    </div>
+  </div>
+</div>

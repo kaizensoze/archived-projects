@@ -1,0 +1,24 @@
+<% content_for :title, "Edit a Neighborhood - Nooklyn: Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<div class="mega-container">
+  <br>
+  <div class="container">
+    <div class="standard-page-header">
+      <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/Neighborhoods.png', class: "img-responsive" %>
+      <h1>Edit Neighborhood</h1>
+    </div>
+    <div class="narrow-form-container">
+     <%= render 'form' %>
+    </div>
+  </div>
+  <br><br>
+</div>
+
+<script type="text/javascript">
+  $('.narrow-form-container').on("keyup keypress", function(e) {
+  var code = e.keyCode || e.which;
+  if (code  == 13) {
+    e.preventDefault();
+    return false;
+  }
+  });
+</script>

@@ -1,0 +1,41 @@
+/*****************************************************************************/
+/*
+/* Globals
+/*
+/*****************************************************************************/
+
+img { vertical-align: middle; }
+
+/*****************************************************************************/
+/*
+/* Image Helpers
+/*
+/*****************************************************************************/
+
+img.img-circle-small { max-width: 50px; }
+img.img-rounded { border-radius: 6px; }
+img.img-circle { border-radius: 50%; }
+
+
+.img-responsive {
+  /* Positioning */
+  /* Box-model */
+  display: block;
+  max-width: 100%;
+  height: auto;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+img.img-small {
+  max-width: 250px;
+}
+
+img.img-xsmall {
+  max-width: 100px;
+}
+
+img.img-xxsmall {
+  max-width: 35px;
+}

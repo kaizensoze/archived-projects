@@ -1,0 +1,77 @@
+<% content_for :title, "The Styleguide - Powered by Nooklyn" %>
+
+<div class="super_container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/2x/PoweredByNooklyn.png', class: "img-responsive" %>
+    <h1>Styleguide</h1>
+  </div>
+  <div class="narrow-page-container container nklyn-styleguide">
+    <h2>Logo</h2>
+    <div class="row text-center">
+      <div class="col-sm-6">
+        <h3>Teepee</h3>
+        <%= image_tag 'teepee-bigger.png' %>
+      </div>
+      <div class="col-sm-6">
+        <h3>Seal</h3>
+        <%= image_tag 'seal_bw_sm.png' %>
+      </div>
+    </div>
+    <h2>Colors</h2>
+    <div class="color-swatch" id="color-swatch-yellow">
+      <h4>Yellow</h4>
+      <div class="color-swatch-footer">
+        #ffc03a
+        <br>
+        .fill-nklyn-yellow
+      </div>
+    </div>
+    <div class="color-swatch" id="color-swatch-light-yellow">
+      <h4>Light Yellow</h4>
+      <div class="color-swatch-footer">
+        #f1e577
+        <br>
+        .fill-nklyn-light-yellow
+      </div>
+    </div>
+    <div class="color-swatch" id="color-swatch-black">
+      <h4>Black</h4>
+      <div class="color-swatch-footer">
+        #000000
+        <br>
+        .fill-nklyn-black
+      </div>
+    </div>
+    <div class="color-swatch" id="color-swatch-dark-gray">
+      <h4>Dark Gray</h4>
+      <div class="color-swatch-footer">
+        #2d2d2d
+        <br>
+        .fill-nklyn-dark-gray
+      </div>
+    </div>
+    <div class="color-swatch" id="color-swatch-light-gray">
+      <h4>Light Gray</h4>
+      <div class="color-swatch-footer">
+        #eceef1
+        <br>
+        .fill-nklyn-light-gray
+      </div>
+    </div>
+    <div class="color-swatch" id="color-swatch-white">
+      <h4>White</h4>
+      <div class="color-swatch-footer">
+        #ffffff
+        <br>
+        .fill-nklyn-dark-white
+      </div>
+    </div>
+    <h2>Icons</h2>
+    <div class="icons-showcase-container">
+      <%= render 'pages/icon_font' %>
+    </div>
+    <h2>Illustrations</h2>
+    <%= render 'pages/illustrations' %>
+  </div>
+  <br>
+</div>

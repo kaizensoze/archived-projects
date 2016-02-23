@@ -1,0 +1,29 @@
+<% content_for :title, "Location Categories - Powered by Nooklyn" %>
+<div class="mega-container">
+  <div class="container">
+    <div class="standard-page-header">
+      <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/Neighborhoods.png', class: "img-responsive" %>
+      <h1>Location Categories</h1>
+      <% if can? :manage, LocationCategory %>
+      <%= link_to 'New Category', new_location_category_path, class: "button btn-black btn-2x" %>
+      <% end %>
+    </div>
+    <br>
+    <div class="location-category-grid">
+      <div class="row text-center">
+        <% @location_categories.each do |location_category| %>
+        <div class="col-md-4">
+          <%= image_tag location_category.image(:large), class: "img-responsive center-block" %>
+          <h3><%= link_to location_category.name, location_category %></h3>
+          <% if can? :manage, LocationCategory %>
+          <ul class="list-unstyled list-inline">
+            <li><%= link_to 'Edit', edit_location_category_path(location_category), class: "button btn-white btn-2x" %></li>
+          </ul>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>

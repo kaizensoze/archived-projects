@@ -1,0 +1,717 @@
+/*****************************************************************************/
+/*
+/* Reset
+/*
+/*****************************************************************************/
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Dark Outline Button
+/*
+/*****************************************************************************/
+
+
+.btn-nklyn-dark {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background-color: rgba(0,0,0,0);
+  border-color: #4e4e4e;
+  color: #fff;
+  /* Misc */
+  -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+
+  border-radius: 0 !important;
+  &:hover {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #ffc03a;
+    border-color: #ffc03a;
+    color: #333;
+    /* Misc */
+  }
+}
+
+
+/*****************************************************************************/
+/*
+/* Standard Button Class
+/*
+/*****************************************************************************/
+.button {
+  /* Positioning */
+  /* Box-model */
+  display: inline-block;
+  // padding: 11px 22px;
+  padding: 11px 22px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  vertical-align: middle;
+  /* Typography */
+  font-size: 11px;
+  font-weight: 900;
+  line-height:  2.125rem;
+  letter-spacing: 0.7px;
+  text-shadow: none;
+  text-align: center;
+  /* Visual */
+  background-image: none;
+  border: 1px solid #d4dce4;
+  border-radius: 4px;
+  box-shadow: none;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  /* Misc */
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  &:hover {
+    text-decoration: none;
+  }
+  &.disabled {
+    background: linear-gradient(#fff, #f7f9fb) #f7f9fb;
+    border: 1px solid #d4dce4;
+    color: #333;
+    cursor: not-allowed;
+    filter: alpha(opacity=50);
+         -khtml-opacity: .50;
+           -moz-opacity: .50;
+                opacity: .50;
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Transparent Buttons
+/*
+/*****************************************************************************/
+
+.btn-transparent {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-weight: 500;
+  /* Visual */
+  background-color: rgba(0,0,0,0);
+  border-color: #fff;
+  color: #fff;
+  /* Misc */
+  -webkit-transition: all .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+
+  &:hover {
+    border-color: #ffc03a;
+    color: #ffc03a;
+  }
+  &:active, &:focus {
+    border-color: #ffc03a;
+    color: #ffc03a;
+    outline: none !important;
+  }
+}
+
+
+.btn-transparent-bk {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-weight: 500;
+  /* Visual */
+  background-color: rgba(0,0,0,0);
+  border-color: #333;
+  color: #333;
+  /* Misc */
+  -webkit-transition: all .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+
+  &:hover {
+    border-color: #2f79e7;
+    color: #2f79e7;
+  }
+  &:active, &:focus {
+    border-color: #2f79e7;
+    color: #2f79e7;
+    outline: none !important;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Black Button
+/*
+/*****************************************************************************/
+
+.btn-black {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-weight: 500;
+  /* Visual */
+  background-color: #111;
+  border-color: #333;
+  color: #fff;
+  /* Misc */
+  -webkit-transition: all .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+.btn-nklyn-black {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-weight: 500;
+  /* Visual */
+  // background: linear-gradient(#444444, #222222) #444444;
+  background-color: #000;
+  border-color: #333;
+  color: #fff !important;
+  /* Misc */
+  -webkit-transition: all .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+
+  &:hover {
+    // background: linear-gradient(#222222, #444444) #222222;
+    background-color: #333;
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+
+}
+
+/*****************************************************************************/
+/*
+/* White Button
+/*
+/*****************************************************************************/
+
+.btn-white {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-weight: 600;
+  /* Visual */
+  background: linear-gradient(#fff, #f7f9fb) #f7f9fb;
+  border: 1px solid #d5d5d5;
+  color: #333;
+  /* Misc */
+  &:hover {
+    background: #f7f9fb;
+    color: #333;
+  }
+  &:active, &:focus {
+    background: linear-gradient(#444444, #222222) #444444;
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Approve/Green Buttons
+/*
+/*****************************************************************************/
+
+.btn-green {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-weight: 500;
+  /* Visual */
+  background-color: #70b32d;
+  border-color: #70b32d;
+  color: #fff;
+  /* Misc */
+  z-index: 2;
+  &:hover {
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+.btn-approve {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background: linear-gradient(#fff, #f7f9fb) #f7f9fb;
+  border: 1px solid #d5d5d5;
+  color: #333;
+  /* Misc */
+  &:hover {
+    background: #70b32d;
+    border-color: #51970b;
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+.btn-nklyn-approve {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background: rgba(0,0,0,0);
+  border: 1px solid #333;
+  color: #333;
+  /* Misc */
+  -webkit-transition: all .4s ease-in-out;
+     -moz-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+
+  &:hover {
+    background-color: #121212;
+    border-color: rgba(0,0,0,1);
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+
+/*****************************************************************************/
+/*
+/* Edit/Yellow Buttons
+/*
+/*****************************************************************************/
+
+.btn-edit {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-size: 11px;
+  /* Visual */
+  background: linear-gradient(#fff, #f7f9fb) #f7f9fb;
+  border: 1px solid #d4dce4;
+  color: #333;
+  /* Misc */
+  -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+  &:hover {
+    color: #333;
+    background: linear-gradient(to bottom, #ffc03a 0%, #ffc03a 100%);
+    border-color: #888;
+  }
+  &:active, &:focus {
+    color: #333;
+    background: linear-gradient(to bottom, #ffc03a 0%, #ffc03a 100%);
+    border-color: #888;
+    outline: none !important;
+    text-decoration: none;
+  }
+}
+
+.btn-nklyn-edit {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background: rgba(0,0,0,0);
+  border: 1px solid #333;
+  color: #333;
+  /* Misc */
+  -webkit-transition: all .4s ease-in-out;
+     -moz-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+  &:hover {
+    background-color: #121212;
+    border-color: rgba(0,0,0,1);
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+    text-decoration: none;
+  }
+}
+
+.btn-yellow {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background-color: #ffa823;
+  background: linear-gradient(#ffc13a, #ffa823) #ffa823;
+  border-color: #333;
+  color: #111;
+  /* Misc */
+  -webkit-transition: all .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+
+  &:hover {
+    border-color: #333;
+    background-color: #ffc13a;
+    color: #333;
+  }
+  &:active, &:focus {
+    color: #111;
+    outline: none !important;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Red/Delete Buttons
+/*
+/*****************************************************************************/
+
+.btn-red {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-size: 12px;
+  font-weight: 500;
+  /* Visual */
+  background: linear-gradient(#fff, #f7f9fb) #f7f9fb;
+  border: 1px solid #d4dce4;
+  color: #333;
+  /* Misc */
+  -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+  &:hover {
+    color: #fff;
+    background-color: #b33630;
+    background: linear-gradient(#dc5f59, #b33630);
+    border-color: #cd504a;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+.btn-reject {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background: linear-gradient(#fff, #f7f9fb) #f7f9fb;
+  border: 1px solid #d5d5d5;
+  color: #333;
+  /* Misc */
+  -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(#dc403a, #dc403a);
+    border-color: #dc403a;
+    color: #fff;
+  }
+  &:active, &:focus {
+    background: linear-gradient(#dc403a, #dc403a);
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+.btn-nklyn-reject {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background: rgba(0,0,0,0);
+  border: 1px solid #333;
+  color: #333;
+  /* Misc */
+  -webkit-transition: all .4s ease-in-out;
+     -moz-transition: all .4s ease-in-out;
+          transition: all .4s ease-in-out;
+  &:hover {
+    background-color: #121212;
+    border-color: rgba(0,0,0,1);
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Purple Button
+/*
+/*****************************************************************************/
+
+.btn-purple {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-size: 12px;
+  font-weight: 500;
+  /* Visual */
+  background-color: #795aac;
+  border: 1px solid #795aac;
+  color: #fff;
+  /* Misc */
+  &:hover {
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Submit/Blue Buttons
+/*
+/*****************************************************************************/
+
+.btn-blue {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  font-weight: 500;
+  /* Visual */
+  background-color: #4e7abb;
+  background: linear-gradient(#3585fd, #2f79e7) #2f79e7;
+  color: #fff;
+  border-color: #2A68A5;
+  /* Misc */
+  &:hover {
+    background-color: #3260c7;
+    color: #fff;
+  }
+  &:active, &:focus {
+    color: #fff;
+    outline: none !important;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Button Sizing
+/*
+/*****************************************************************************/
+
+.btn-5x,
+.btn-group-5x > .btn {
+  padding: 22px 27px;
+  line-height: 1.3333333;
+}
+
+
+.btn-4x,
+.btn-group-4x > .btn {
+  padding: 19.6px 23.8px;
+  line-height: 1.3333333;
+}
+
+.btn-3x,
+.btn-group-3x > .btn {
+  padding: 11px 22px;
+  line-height: 1.3333333;
+}
+.btn-2x,
+.btn-group-2x > .btn {
+  padding: 6px 11px;
+  line-height: 1.5;
+}
+.btn-1x,
+.btn-group-1x > .btn {
+  padding: 1px 5px;
+  line-height: 1.5;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/*****************************************************************************/
+/*
+/* Nooklyn Brand Buttons
+/*
+/*****************************************************************************/
+
+.global-call-to-action {
+  padding: 15px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+button.call-to-action {
+  margin-top: 30px;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 12px;
+  width: 250px;
+}
+
+.btn-facebook>:first-child{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:32px;
+  line-height:42px;
+  font-size:1.6em;
+  text-align:center;
+  border-right:1px solid rgba(0,0,0,0.2);
+}
+
+.btn-facebook {
+  /* Positioning */
+  /* Box-model */
+  position:relative;
+  padding-left:44px;
+  min-width: 100%;
+  max-width: 404px;
+  height: 40px;
+  /* Typography */
+  font-weight: 300;
+  text-align:left;
+  text-overflow:ellipsis;
+  /* Visual */
+  color:#fff !important;
+  background-color:#3b5998;
+  border-color:rgba(0,0,0,0.2);
+  /* Misc */
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.btn-facebook:focus,.btn-facebook.focus {
+  color:#fff;
+  background-color:#2d4373;
+  border-color:rgba(0,0,0,0.2);
+}
+
+.btn-facebook:hover {
+  color:#fff;
+  background-color:#2d4373;
+  border-color:rgba(0,0,0,0.2);
+}
+
+.btn-facebook:active,
+.btn-facebook.active,
+.open>.dropdown-toggle.btn-facebook {
+  color:#fff;
+  background-color:#2d4373;
+  border-color:rgba(0,0,0,0.2)
+}
+
+.btn-facebook:active:hover,
+.btn-facebook.active:hover,
+.open>.dropdown-toggle.btn-facebook:hover,
+.btn-facebook:active:focus,
+.btn-facebook.active:focus,
+.open>.dropdown-toggle.btn-facebook:focus,
+.btn-facebook:active.focus,
+.btn-facebook.active.focus,
+.open>.dropdown-toggle.btn-facebook.focus {
+  color:#fff;
+  background-color:#23345a;
+  border-color:rgba(0,0,0,0.2)
+}
+
+.btn-facebook:active,
+.btn-facebook.active,
+.open>.dropdown-toggle.btn-facebook {
+  background-image:none
+}
+
+.btn-facebook.disabled,
+.btn-facebook[disabled],fieldset[disabled] .btn-facebook,
+.btn-facebook.disabled:hover,
+.btn-facebook[disabled]:hover,
+fieldset[disabled].btn-facebook:hover,
+.btn-facebook.disabled:focus,
+.btn-facebook[disabled]:focus,
+fieldset[disabled] .btn-facebook:focus,
+.btn-facebook.disabled.focus,
+.btn-facebook[disabled].focus,
+fieldset[disabled] .btn-facebook.focus,
+.btn-facebook.disabled:active,
+.btn-facebook[disabled]:active,
+fieldset[disabled] .btn-facebook:active,
+.btn-facebook.disabled.active,
+.btn-facebook[disabled].active,
+fieldset[disabled] .btn-facebook.active {
+  background-color:#3b5998;
+  border-color:rgba(0,0,0,0.2)
+}
+
+.btn-facebook .badge {
+  color:#3b5998;
+  background-color:#fff
+}
+
+.btn-facebook>span {
+  border:none;
+  text-align:center;
+  width:100% !important;
+}
+
+.btn-login {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+/*****************************************************************************/
+/*
+/* Nooklyn Labels
+/*
+/*****************************************************************************/
+
+.label-nklyn-warning {
+  background-color: rgba(0,0,0,0);
+  border: 1px solid #333;
+  color: #333;
+}

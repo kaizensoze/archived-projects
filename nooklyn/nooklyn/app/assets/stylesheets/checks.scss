@@ -1,0 +1,93 @@
+div.checks-container {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+}
+
+div.check-request-card {
+  /* Positioning */
+  vertical-align: middle;
+  /* Box-model */
+  display: inline-block;
+  margin-bottom: 20px;
+  min-height: 500px;
+  width: 400px;
+  /* Typography */
+  /* Visual */
+  border: 1px solid #4e4e4e;
+  background-color: #121212;
+  /* Misc */
+  a#files-link {
+    color: #ffc03a;
+  }
+  span.label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 9.5px;
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 0;
+    /* Typography */
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  div.check-request-top {
+    /* Positioning */
+    /* Box-model */
+    padding: 10px;
+    text-align: left;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+    h3 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-size: 16px;
+      font-weight: 300;
+      /* Visual */
+      /* Misc */
+    }
+    h4 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-size: 16px;
+      font-weight: 300;
+      /* Visual */
+      /* Misc */
+    }
+  }
+  div.check-request-stub {
+    /* Positioning */
+    /* Box-model */
+    padding: 10px;
+    /* Typography */
+    text-align: left;
+    /* Visual */
+    background-color: #ffc03a;
+    border-top: 1px solid #4e4e4e;
+    /* Misc */
+  }
+  div.verified-background {
+    background-color: #5fcf80;
+  }
+  div.check-request-bottom {
+    /* Positioning */
+    /* Box-model */
+    padding: 10px;
+    /* Typography */
+    text-align: left;
+    /* Visual */
+    /* Misc */
+  }
+}

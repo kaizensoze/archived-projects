@@ -1,0 +1,17 @@
+<% content_for :title, "Rooms - Nooklyn - Powered by Nooklyn" %>
+<div id="rooms-map"></div>
+<div class="rm_container">
+  <br>
+  <% if agent_signed_in? %>
+    <%= link_to new_room_post_path do %>
+    <button class="button btn-yellow global-call-to-action">Add Your Room</button>
+    <% end %>
+  <% else %>
+    <%= link_to register_path do %>
+    <button class="button btn-yellow global-call-to-action">Add Your Room</button>
+    <% end %>
+  <% end %>
+  <br>
+  <br>
+  <%= render partial: "room_post", collection: @room_posts %>
+</div>

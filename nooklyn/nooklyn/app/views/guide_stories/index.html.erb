@@ -1,0 +1,28 @@
+<div class="mega-container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/Neighborhoods.png', class: "img-responsive" %>
+    <h1>Guide Stories</h1>
+    <% if can? :manage, :all %>
+    <%= link_to 'New Story', new_guide_story_path, class: 'button btn-black btn-2x' %>
+    <% end %>
+    <hr>
+  </div>
+  <div class="guide-stories-container container">
+    <div class="row">
+      <% @guide_stories.each do |guide_story| %>
+        <div class="col-sm-6">
+          <%= link_to guide_story.url, target: "_blank" do %>
+          <div class="guide-story-card">
+            <h3><%= guide_story.title %></h3>
+            <h4><%= guide_story.neighborhood.name %></h4>
+            <%= image_tag guide_story.image(:wide_small), class: "img-responsive" %>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

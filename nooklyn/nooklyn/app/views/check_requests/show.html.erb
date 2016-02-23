@@ -1,0 +1,59 @@
+<% content_for :title, "Check Request - Powered by Nooklyn" %>
+
+<div class="mega-container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/Money.png', class: "img-responsive" %>
+    <h1>Checks</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <%= @check_request.name %>
+        <%= @check_request.apartment_address %><br>
+        Unit: <%= @check_request.unit %><br>
+      </div>
+      <div class="col-sm-4">
+        <%= number_to_currency(@check_request.amount) %><br>
+        <%= @check_request.check_date.strftime('%D') %><br>
+        <%= @check_request.check_request_type.try(:name) %><br>
+      </div>
+      <div class="col-sm-4">
+        <% if @check_request.approved? %>
+          <span class="label label-success">Approved</span>
+          <% elsif @check_request.rejected? %>
+          <span class="label label-danger">Rejected</span>
+          <% else %>
+          <span class="label label-warning">Pending</span>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <br><br>
+    <div class="row text-center check-attachments-area">
+      <div class="col-md-6">
+      <h4>Files</h4>
+      <hr>
+      <ul class="list-unstyled">
+        <% @check_request.documents.each do |document| %>
+          <li>
+            <%= link_to "PDF", document.attachment.url, target: "_blank", class: "btn btn-blue btn-2x" %><br>
+          </li>
+          <hr>
+        <% end %>
+      </ul>
+      </div>
+      <div class="col-md-6">
+        <h4>Upload</h4>
+        <hr>
+        <%= form_for [@check_request, @check_request.documents.build] do |f| %>
+          <div id="file-descriptors">
+            <div class="file-input"><%= f.file_field :attachment, :placeholder => "File" %></div><br>
+          </div>
+          <div class="form-actions">
+            <%= f.submit "Submit", class:"button btn-nklyn-black btn-4x" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

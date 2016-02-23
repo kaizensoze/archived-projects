@@ -1,0 +1,5 @@
+<div id="hoods-show-map" data-hood-id="<%= @neighborhood.id %>" data-longitude="<%= @neighborhood.longitude %>" data-latitude="<%= @neighborhood.latitude %>"></div>
+<br>
+<div class="locations-container">
+  <%= render partial: "locations/location", collection: @locations %>
+</div>

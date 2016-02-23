@@ -1,0 +1,36 @@
+<div class="text-center">
+  <i class="nklyn-icon-marker nklyn-4x"></i>
+  <h3>Location</h3>
+  <div class="row">
+    <div id="location-show-map" data-latitude="<%= @location.latitude %>" data-longitude="<%= @location.longitude %>"></div>
+    <input type="hidden" id="listing_latitude" value="<%= @location.latitude %>" />
+    <input type="hidden" id="listing_longitude" value="<%= @location.longitude %>" />
+  </div>
+  <div class="row">
+    <br>
+    <% @locations.includes(:location_category).each do |location| %>
+      <% next if location == @location %>
+        <div class="location-card" id="<%= "location_card_#{location.id}" %>" data-id="<%= location.id %>" data-latitude="<%= location.latitude %>" data-longitude="<%= location.longitude %>" data-photo="<%= location.image(:large) %>">
+          <%= link_to image_tag(location.image.url(:medium)), location %>
+          <div class="location-card-stub">
+            <h2><%= link_to truncate(location.name, length: 30), location, title: "#{location.name}" %></h2>
+          </div>
+          <div class="location-heart-button">
+            <% if location.interested_agents.include?(current_agent) %>
+              <%= render 'locations/unlike_button', :location => location %>
+            <% else %>
+              <%= render 'locations/like_button', :location => location %>
+            <% end %>
+          </div>
+          <div class="like-notice">
+            <i class="nklyn-icon-heart-fill nklyn-7x"></i><br>
+            You liked the location!
+          </div>
+          <div class="unlike-notice">
+            <i class="nklyn-icon-face-sad nklyn-7x"></i><br>
+            We'll remove it from your favorites.
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

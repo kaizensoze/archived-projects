@@ -1,0 +1,1132 @@
+/*****************************************************************************/
+/*
+/* Roommates#New
+/*
+/*****************************************************************************/
+
+div.mates-jumbotron {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  height: 780px;
+  padding-top: 220px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-image: url('//nooklyn-files.s3.amazonaws.com/img/nooklyn-mates-web.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 104px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+    @media screen and (max-width: 570px) {
+      font-size: 70px;
+    }
+  }
+}
+
+div.mates-marketing-section {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 0;
+  padding-top: 50px;
+  padding-bottom: 100px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #ffc03a;
+  color: #333;
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+
+
+
+
+/*****************************************************************************/
+/*
+/* Roommates#Old
+/*
+/*****************************************************************************/
+
+div.rm_index_container {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    font-size: 50px;
+    margin-bottom: 20px;
+    /* Typography */
+    font-weight: 300;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+  }
+  div.rm-marketing-section {
+    h2 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-weight: 300;
+      font-size: 42px;
+      /* Visual */
+      color: #444;
+      /* Misc */
+    }
+    p {
+      /* Positioning */
+      /* Box-model */
+      max-width: 290px;
+      margin: 0 auto;
+      /* Typography */
+      text-align: center;
+      /* Visual */
+      color: #333;
+      /* Misc */
+    }
+    hr {
+      margin-top: 20px;
+      width: 70%;
+      border-color: #ddd;
+    }
+  }
+  div.rm-hero-2 {
+    /* Positioning */
+    /* Box-model */
+    height: 500px;
+    margin-top: 50px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-image: url('//nooklyn-files.s3.amazonaws.com/img/rm1.jpg');
+    background-position: center;
+    /* Misc */
+    button.call-to-action-1 {
+      margin-top: 170px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 12px;
+      width: 220px;
+      &:hover {
+        background-color: #111;
+        color: #fff;
+      }
+    }
+    button.call-to-action-2 {
+      margin-top: 25px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 12px;
+      width: 220px;
+      &:hover {
+        background-color: #ffd430;
+      }
+    }
+  }
+}
+
+div.marketing-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  div.marketing-text {
+    margin: 0 auto 50px auto;
+    width: 100%;
+    img {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 10px;
+    margin: 0 auto;
+    /* Typography */
+    font-size: 23px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    text-align: center;
+    letter-spacing: 1.5px;
+    /* Visual */
+    color: #444;
+    /* Misc */
+  }
+  p.marketing {
+    /* Positioning */
+    /* Box-model */
+    margin: 0 auto;
+    /* Typography */
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+div.rm-logo {
+  /* Positioning */
+  /* Box-model */
+  margin: 50px auto 0 auto;
+  width: 250px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  background-color: rgba(17,17,17,.85);
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    padding: 25px 25px 0 25px;
+    /* Typography */
+    font-weight: 700;
+    font-size: 53px;
+    font-style: normal;
+    line-height: 1;
+    text-align: left;
+    /* Visual */
+    color: #f1e577;
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 25px;
+    /* Typography */
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 1px;
+    /* Visual */
+    color: #fff;
+    /* Misc */
+  }
+}
+
+div.roommates-page {
+  h1 {
+    font-size: 42px;
+  }
+  h2#rm-section-header a {
+    text-transform: uppercase;
+    color: #333;
+  }
+}
+
+div#rmModal {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  div.modal-content {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    border: none;
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+    /* Misc */
+    div.modal-body {
+      /* Positioning */
+      /* Box-model */
+      padding-left: 40px;
+      /* Typography */
+      /* Visual */
+      /* Misc */
+      h3 {
+        /* Positioning */
+        /* Box-model */
+        margin-bottom: 10px;
+        /* Typography */
+        font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 34px;
+        /* Visual */
+        /* Misc */
+      }
+      li {
+        font-family: 'kepler-std', Georgia, serif;
+        font-weight: 100;
+        font-size: 18px;
+      }
+    }
+    div.modal-header {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      background-color: #222;
+      color: #fff;
+      /* Misc */
+      button.close {
+        color: #fff;
+        opacity: 1;
+      }
+      h4 {
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+div.rooms_form_bg {
+  background-image: url('//nooklyn-files.s3.amazonaws.com/img/room-post-form.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+div.mates_form_bg {
+  background-image: url('//nooklyn-files.s3.amazonaws.com/img/mate-post-form.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+div.rm_form_container {
+  /* Positioning */
+  /* Box-model */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  span {
+    background-color: #fff;
+    color: #111;
+    border-color: #dbdfe5;
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+  }
+  span#remain {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: bold;
+    /* Visual */
+    background-color: #fff;
+    color: #111;
+    /* Misc */
+  }
+  div.field {
+    margin-top: 10px;
+  }
+  .btn-default {
+    /* Positioning */
+    /* Box-model */
+    height: 149px;
+    width: 177px;
+    /* Typography */
+    font-weight: 600;
+    /* Visual */
+    /* Misc */
+    outline: 0;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    &:active {
+      outline: 0;
+    }
+  }
+}
+
+div.rm_container {
+  padding: 0;
+  text-align: center;
+  h1 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 25px;
+  }
+}
+
+div.mates_account_message {
+  background-color: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 25px;
+  .btn-blue {
+    i {
+      font-size: 20px;
+      padding-right: 5px;
+    }
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  p {
+    text-align: left;
+  }
+}
+
+div.roommate_card {
+  /* Positioning */
+  /* Box-model */
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  width: 320px;
+  /* Typography */
+  /* Visual */
+  -webkit-box-shadow: 0 2px 2px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 2px 2px rgba(0,0,0,.1);
+  box-shadow: 0 2px 2px rgba(0,0,0,.1);
+  /* Misc */
+  p.description-overlay {
+    @media screen and (max-width: 320px) {
+      position: relative;
+      margin-top: 0;
+      background-color: rgba(255, 255, 255, 1);
+      opacity: 1;
+      color: #333;
+      height: auto;
+      margin-bottom: 0;
+    }
+    /* Positioning */
+    position: absolute;
+    /* Box-model */
+    padding: 20px;
+    margin-top: -320px;
+    height: 320px;
+    width: 320px;
+    /* Typography */
+    font-size: 14px;
+    text-align: left;
+    /* Visual */
+    background-color: rgba(17,17,17, .85);
+    color: #fff;
+    /* Misc */
+    opacity: 0;
+    -webkit-transition: all 400ms ease-in-out;
+       -moz-transition: all 400ms ease-in-out;
+            transition: all 400ms ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+    a.read-more-link {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-size: 12px;
+      text-transform: uppercase;
+      /* Visual */
+      color: #ffc03a;
+      /* Misc */
+      @media screen and (max-width: 320px) {
+        color: #333;
+      }
+    }
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    float: left;
+    padding-left: 15px;
+    width: 180px;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    text-align: left;
+    font-size: 24px;
+    line-height: 60px;
+    /* Visual */
+    background-color: #fff;
+    color: #555;
+    /* Misc */
+    a {
+      color: #333;
+      &:hover {
+        color: #2d72d9;
+        text-decoration: none;
+      }
+    }
+  }
+  div.roommate_price {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 160px;
+    /* Typography */
+    /* Visual */
+    background-color: #fff;
+    color: #555;
+    /* Misc */
+  }
+  div.roommate_move_in {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 160px;
+    /* Typography */
+    /* Visual */
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    color: #555;
+    /* Misc */
+  }
+  div.like-notice, div.unlike-notice {
+    display: none;
+    margin-top: -320px;
+    position: absolute;
+    width: 320px;
+    background-color: rgba(17,17,17, .75);
+    color: #fff;
+    font-size: 12px;
+    line-height: 50px;
+    height: 320px;
+    padding-top: 100px;
+  }
+  div.roommate_hood {
+    /* Positioning */
+    /* Box-model */
+    width: 320px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    /* Misc */
+  }
+  div.roommate_image {
+    height: 320px;
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    text-align: center;
+    font-size: 36px;
+    line-height: 60px;
+    font-weight: 300;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  h4 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    line-height: 60px;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 0;
+    /* Typography */
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  div.roommate_comment {
+    /* Positioning */
+    float: left;
+    width: 140px;
+    height: 60px;
+    padding-top: 15px;
+    /* Box-model */
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: #f1e577;
+    color: #333;
+    h5 {
+      padding-right: 8px;
+      text-transform: none;
+      float: right;
+    }
+    /* Misc */
+    i {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      line-height: 1.8;
+      /* Visual */
+      color: #333;
+      /* Misc */
+    }
+    a {
+      color: #333;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  div.roommate_heart {
+    /* Positioning */
+    position: absolute;
+    margin-top: -60px;
+    margin-left: 250px;
+    width: 70px;
+    height: 60px;
+    padding-top: 10px;
+    z-index: 500;
+    /* Box-model */
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: rgba(240, 87, 92, 0.75);
+    /* Misc */
+    i {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      line-height: .8;
+      /* Visual */
+      color: #fff;
+      /* Misc */
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      &:active {
+        padding: 0;
+      }
+    }
+  }
+}
+
+
+// Roommate Comment Area
+
+div.roommate_reply {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  display: block;
+  max-width: 320px;
+  padding-bottom: 20px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    /* Typography */
+    font-size: 18px;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    margin: 25px auto;
+    padding-left: 10px;
+    width: 90%;
+    /* Typography */
+    font-size: 13px;
+    text-align: left;
+    /* Visual */
+    /* Misc */
+  }
+  div.roommate_price {
+    border-bottom: 1px solid #c3c9d2;
+  }
+  div.roommate_move_in {
+    border-bottom: 1px solid #c3c9d2;
+  }
+  .btn-primary {
+    /* Positioning */
+    /* Box-model */
+    height: 36px;
+    width: 118px;
+    /* Typography */
+    font-size: 12px;
+    font-weight: 600;
+    /* Visual */
+    /* Misc */
+    outline: 0;
+    &:active {
+      outline: 0;
+    }
+  }
+  hr {
+    width: 90%;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"]
+  {
+    /* Positioning */
+    /* Box-model */
+    margin: 0 auto 10px auto;
+    padding: 16px;
+    width: 90%;
+    /* Typography */
+    font-size: 14px;
+    /* Visual */
+    background-color: #f2f2f2;
+    border: 0;
+    border-bottom: 3px solid #f2f2f2;
+    color: #222;
+    outline: 0;
+    /* Misc */
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+    -webkit-transition: all 200ms ease-in;
+       -moz-transition: all 200ms ease-in;
+            transition: all 200ms ease-in;
+
+    &:active, &:focus {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      background-color: #fff;
+      border-color: #ccc;
+      color: #333;
+      /* Misc */
+    }
+  }
+  textarea {
+    /* Positioning */
+    /* Box-model */
+    padding: 16px;
+    min-height: 150px;
+    width: 90%;
+    /* Typography */
+    font-size: 14px;
+    /* Visual */
+    background-color: #f2f2f2;
+    border: 0;
+    color: #222;
+    /* Misc */
+    resize: vertical;
+    outline: 0;
+    &:active, &:focus {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      background-color: #fff;
+      border-color: #ccc;
+      color: #333;
+      /* Misc */
+    }
+  }
+}
+
+ul.mate-moderator-tool-list {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+  li {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 10px;
+    /* Typography */
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    /* Visual */
+    /* Misc */
+  }
+  a {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    color: #333;
+    /* Misc */
+  }
+}
+
+div.roommate_manage_card {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  width: 320px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    margin-bottom: 0;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    text-align: center;
+    font-size: 36px;
+    line-height: 60px;
+    font-weight: 300;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 0;
+    /* Typography */
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    margin: 15px auto 0 auto;
+    padding-left: 10px;
+    width: 90%;
+    /* Typography */
+    font-size: 13px;
+    text-align: left;
+    /* Visual */
+    border-left: 1px solid #c3c9d2;
+    /* Misc */
+  }
+  div.roommate_price {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    margin-bottom: 10px;
+    width: 160px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    /* Misc */
+  }
+  div.roommate_move_in {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 160px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    /* Misc */
+  }
+  div.roommate_private_public {
+    /* Positioning */
+    /* Box-model */
+    height: 160px;
+    width: 320px;
+    /* Typography */
+    font-size: 12px;
+    line-height: 160px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #111;
+    color: #fff;
+    /* Misc */
+    -webkit-transition: all 300ms ease-in-out;
+       -moz-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+
+    &:hover {
+      background-color: #f1e577;
+      color: #333;
+    }
+  }
+  div.roommate_edit {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 160px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    /* Misc */
+    a {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #000;
+      /* Misc */
+    }
+  }
+  div.roommate_share {
+    /* Positioning */
+    /* Box-model */
+    float: left;
+    width: 160px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: #fff;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    /* Misc */
+    a {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #000;
+      /* Misc */
+    }
+  }
+}
+
+div.roommate_leads_card {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 320px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  p {
+    /* Positioning */
+    /* Box-model */
+    margin: 25px auto;
+    padding-left: 10px;
+    width: 90%;
+    /* Typography */
+    font-size: 13px;
+    text-align: left;
+    /* Visual */
+    border-left: 1px solid #c3c9d2;
+    /* Misc */
+  }
+  div.roommate_comments {
+    text-align: center;
+    h5 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      color: #a6aebb;
+      font-size: 12px;
+    }
+  }
+}
+
+div.roommate_photos_card {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  padding-top: 5px;
+  width: 320px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+  div#room-actions-row {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* Typography */
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    /* Visual */
+    /* Misc */
+    a {
+      -webkit-transition: all .2s ease-in-out;
+         -moz-transition: all .2s ease-in-out;
+              transition: all .2s ease-in-out;
+
+      &:hover {
+        color: #ff2f28;
+      }
+    }
+  }
+  a {
+    color: #333;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  div.add_photos_button {
+    /* Positioning */
+    /* Box-model */
+    height: 160px;
+    width: 320px;
+    /* Typography */
+    font-size: 12px;
+    line-height: 160px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #111;
+    color: #fff;
+    /* Misc */
+    -webkit-transition: all 300ms ease-in-out;
+       -moz-transition: all 300ms ease-in-out;
+            transition: all 300ms ease-in-out;
+
+    &:hover {
+      background-color: #f1e577;
+      color: #333;
+    }
+  }
+  h3 {
+    padding-bottom: 8px;
+    text-align: center;
+  }
+}
+
+div.iphone-hack {
+  @media screen and (max-width: 320px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+div#rooms-map {
+  height: 500px;
+  @media screen and (max-width: 320px) {
+    height: 250px;
+  }
+}
+
+div.rm-filter-bar {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  max-width: 970px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  /* Misc */
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 0;
+    /* Typography */
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    color: #444444;
+    /* Misc */
+  }
+  ul {
+    margin-bottom: 5px;
+  }
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

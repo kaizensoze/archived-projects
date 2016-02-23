@@ -1,0 +1,22 @@
+<%= form_for(@room_category) do |f| %>
+  <% if @room_category.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@room_category.errors.count, "mistake") %> must be corrected</h3>
+
+      <ul>
+      <% @room_category.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Submit", class: "btn btn-blue btn-2x" %>
+  </div>
+<% end %>

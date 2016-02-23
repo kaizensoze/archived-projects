@@ -1,0 +1,348 @@
+/*****************************************************************************/
+/*
+/* Agent#Show
+/*
+/*****************************************************************************/
+
+div.agent-profile-header {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #111;
+  color: #fff;
+  /* Misc */
+  img {
+    margin-top: 20px;
+    max-height: 150px;
+  }
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 20px;
+    /* Typography */
+    font-weight: 300;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* Typography */
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+div.agent-profile-bar {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  border-top: 2px solid #111;
+  border-bottom: 2px solid #111;
+  color: #fff;
+  /* Misc */
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: #ffc03a;
+    }
+  }
+  h4 {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 0;
+    /* Typography */
+    font-weight: 800;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 3px;
+    /* Typography */
+    font-size: 12px;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+div.agent-send-message {
+  form {
+    width: 40%;
+    margin: auto;
+    padding-bottom: 10px;
+  }
+}
+
+div.agent-employment-bar {
+  /* Positioning */
+  /* Box-model */
+  padding-bottom: 10px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+div.agent-profile-container {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 15px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #000;
+  /* Misc */
+}
+
+div.agent-profile-listings {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 10px;
+    padding-bottom: 50px;
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    color: #fff;
+    /* Misc */
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Login, Signup, and Edit Profile Page
+/*
+/*****************************************************************************/
+
+div.login-and-signup-container {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background-color: #000;
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    color: #fff;
+    /* Misc */
+  }
+  .form-well {
+    /* Positioning */
+    /* Box-model */
+    margin: 25px auto 250px auto;
+    max-width: 500px;
+    padding: 45px;
+    /* Typography */
+    /* Visual */
+    color: #fff;
+    /* Misc */
+    div.field {
+      /* Positioning */
+      /* Box-model */
+      margin-bottom: 10px;
+      /* Typography */
+      /* Visual */
+      /* Misc */
+    }
+    a {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #ffc03a;
+      /* Misc */
+    }
+    .btn-login {
+      /* Positioning */
+      /* Box-model */
+      min-width: 100%;
+      max-width: 404px;
+      height: 40px;
+      /* Typography */
+      /* Visual */
+      /* Misc */
+    }
+    p.or {
+      color: #eee;
+      display: block;
+      font-size: 16px;
+      padding: 10px 0;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 40%;
+        top: 20px;
+        border-bottom: solid 1px #4e4e4e;
+      }
+      &:after {
+        right: 0;
+        content: '';
+        position: absolute;
+        display: block;
+        width: 40%;
+        top: 20px;
+        border-bottom: solid 1px #4e4e4e;
+      }
+    }
+    div.login-actions {
+      /* Positioning */
+      /* Box-model */
+      margin-top: 25px;
+      /* Typography */
+      text-align: center;
+      /* Visual */
+      /* Misc */
+    }
+    hr {
+      /* Positioning */
+      /* Box-model */
+      max-width: 100%;
+      /* Typography */
+      /* Visual */
+      border-color: #4e4e4e;
+      /* Misc */
+    }
+    h4 {
+      margin: 5px auto 25px auto;
+      padding-top: 15px;
+      padding-bottom: 5px;
+      text-transform: none;
+    }
+    span {
+      min-width: 39px;
+    }
+    img {
+      margin: 15px 0 15px 0;
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Agent#Index
+/*
+/*****************************************************************************/
+
+div.agents-index-container {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 10px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+}
+
+div.agents-card {
+  /* Positioning */
+  display: inline-block;
+  /* Box-model */
+  margin-left: 15px;
+  margin-bottom: 15px;
+  max-width: 250px;
+  width: 250px;
+  /* Typography */
+  /* Visual */
+  border: 1px solid #2d2d2d;
+  background-color: #ffc03a;
+  /* Misc */
+  @media screen and (max-width: 320px) {
+    margin-left: 0;
+  }
+  img {
+    /* Positioning */
+    /* Box-model */
+    max-width: 200px;
+    vertical-align: bottom;
+    /* Typography */
+    /* Visual */
+    border: 4px solid #2d2d2d;
+    /* Misc */
+  }
+  hr {
+    /* Positioning */
+    /* Box-model */
+    max-width: 60%;
+    /* Typography */
+    /* Visual */
+    border-color: #2d2d2d;
+    border-width: 2px;
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    margin: 0;
+    /* Typography */
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    /* Visual */
+    color: #333;
+    /* Misc */
+
+    &.name {
+      font-size: 16px;
+    }
+    a {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #333;
+      /* Misc */
+    }
+
+    &.email, &.phone {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Agent#Index
+/*
+/*****************************************************************************/

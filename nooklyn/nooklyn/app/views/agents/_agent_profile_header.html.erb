@@ -1,0 +1,33 @@
+<div class="agent-profile-header">
+  <% if @agent.profile_picture.nil? %>
+    <%= image_tag 'missing.png', class: "img-circle" %>
+  <% else %>
+    <%= image_tag @agent.profile_picture.url(:medium), class: "img-circle", alt: "#{@agent.name}" %>
+  <% end %>
+  <h1><%= @agent.name.titleize %></h1>
+  <% if @agent.employee? && !@agent.super_admin %>
+    <h3>Licensed Real Estate Agent</h3>
+    <h2><%= number_to_phone(@agent.phone, area_code: true) %></h2>
+  <% end %>
+  <% if agent_signed_in? && @agent != current_agent %>
+    <br>
+    <a class="button btn-black btn-3x" data-toggle="modal" data-target="#messageModal">Message</a>
+    <br>
+  <% end %>
+</div>
+<div class="agent-profile-bar container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h4><%= link_to @agent.liked_listings.count, @agent %></h4>
+      <h5>Apartments</h5>
+    </div>
+    <div class="col-sm-4">
+      <h4><%= link_to @agent.liked_mates.count, agent_favorite_mates_path(@agent) %></h4>
+      <h5>Mates</h5>
+    </div>
+    <div class="col-sm-4">
+      <h4><%= @agent.liked_locations.count %></h4>
+      <h5>Places</h5>
+    </div>
+  </div>
+</div>

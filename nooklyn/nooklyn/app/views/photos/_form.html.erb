@@ -1,0 +1,30 @@
+<%= form_for @photo, :html => { :multipart => true } do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+      <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <div class="row">
+      <div class="col-xs-6">
+        <%= f.label :image, "File", class: "general-text-label" %><br>
+        <%= f.file_field :image %>
+      </div>
+      <div class="col-xs-6">
+        <%= f.label :listing_id, "Listing ID", class: "general-text-label" %><br>
+        <%= f.text_field :listing_id, class: "general-text-field" %>
+        <span class="help-block">This is the <strong>Listing ID</strong>. You can only put in one listing ID.</span>
+      </div>
+    </div>
+  </div>
+    <hr>
+  <div class="actions">
+    <%= f.submit 'Submit', class: "button btn-blue btn-2x" %>
+  </div>
+<% end %>

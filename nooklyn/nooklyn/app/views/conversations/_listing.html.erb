@@ -1,0 +1,34 @@
+    <%= link_to listing do %>
+      <div class="nooklyn_listing_square nklyn-listing text-center" id="<%= "listing_card_#{listing.id}" %>" data-id="<%= listing.id %>" data-latitude="<%= listing.latitude %>" data-longitude="<%= listing.longitude %>" data-photo="<%= listing.image(:thumb) %>" data-price="<%= listing.price %>" data-formatted-price="<%= number_to_currency(listing.price, precision: 0) %>" data-is-residential="<%= listing.residential %>" data-bedrooms="<%= listing.bedrooms %>" data-formatted-bedrooms="<%= number_to_human(listing.bedrooms) %>" data-formatted-bathrooms="<%= number_to_human(listing.bathrooms) %>">
+        <% if listing.image.blank? %>
+          <%= image_tag listing.thumb %>
+        <% else %>
+          <%= image_tag listing.image(:thumb) %>
+        <% end %>
+        <div class="nooklyn_listing_square_price">
+          <%= number_to_currency(listing.price, precision: 0) %>
+        </div>
+        <div class="nooklyn_listing_square_heart">
+          <a href="#" class="unlike-button">
+            <i class="nklyn-icon-heart-fill nooklyn_listing_square_heart"></i>
+            <i class="nklyn-icon-heart nooklyn_listing_square_heart"></i>
+          </a>
+        </div>
+        <div class="nooklyn_listing_square_bed_and_bath">
+          <% if listing.residential? %>
+            <%= number_to_human(listing.bedrooms) %> Bed / <%= number_to_human(listing.bathrooms) %> Bath
+          <% else %>
+            Commercial
+          <% end %>
+        </div>
+        <div class="like-notice">
+          <p>You liked the listing!</p>
+        </div>
+        <div class="unlike-notice">
+          <p>We removed it from your favorites.</p>
+        </div>
+        <div class="error-notice">
+          <p>An error stopped you from liking the listing. :(</p>
+        </div>
+      </div>
+    <% end %>

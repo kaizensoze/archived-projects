@@ -1,0 +1,6 @@
+  <% unless @agent.liked_rooms.empty? %>
+    <h1 class="text-center">Rooms</h1>
+    <div class="text-center">
+      <%= render partial: "room_posts/room_post", collection: @room_posts %>
+    </div>
+  <% end %>

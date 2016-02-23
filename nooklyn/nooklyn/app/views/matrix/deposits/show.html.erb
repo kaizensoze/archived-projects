@@ -1,0 +1,151 @@
+<% content_for :title, "#{@deposit.address} - Nooklyn" %>
+<div class="mega-container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="container">
+    <div class="standard-page-header">
+      <h1><%= @deposit.address %>: <%= @deposit.unit %></h1>
+      <ul class="list-inline list-unstyled">
+        <li><%= link_to 'Edit', edit_matrix_deposit_path(@deposit), class: "button btn-edit btn-3x" %></li>
+      </ul>
+      <div class="text-center">
+        <% if @deposit.offer_price.blank? %>
+        <h3><%= number_to_currency(@deposit.apartment_price, precision: 0) %></h3>
+        <% else %>
+        <h3><%= number_to_currency(@deposit.apartment_price, precision: 0) %> <small>(price)</small> /
+        <%= number_to_currency(@deposit.offer_price, precision: 0) %> <small>(offer)</small></h3>
+        <% end %>
+      </div>
+      <br>
+      <hr>
+      <div class="row">
+        <div class="col-sm-4">
+          Credit Checks: <%= @deposit.credit_check %>
+        </div>
+        <div class="col-sm-4">
+          Owner Pays: <%= @deposit.owner_pays %>
+        </div>
+        <div class="col-sm-4">
+          Total Broker Fee: <%= @deposit.total_broker_fee %>
+        </div>
+      </div>
+      <hr>
+      <h5>Notes</h5>
+      <p><%= @deposit.description %></p>
+      <hr>
+    </div>
+    <div class="narrow-page-container">
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <h3>Listing</h3>
+        <%= link_to @deposit.listing_agent, target: "_blank" do %>
+          <% if @deposit.listing_agent.profile_picture.nil? %>
+            <%= image_tag 'missing.png', class: "img-circle" %>
+          <% else %>
+            <%= image_tag @deposit.listing_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+          <% end %>
+        <% end %>
+        <h5><%= @deposit.listing_agent.name %></h5>
+        <small><%= number_to_phone(@deposit.listing_agent.phone) %></small><br>
+      </div>
+      <div class="col-sm-4">
+        <h3>Sales</h3>
+        <%= link_to @deposit.sales_agent, target: "_blank" do %>
+          <% if @deposit.sales_agent.profile_picture.nil? %>
+            <%= image_tag 'missing.png', class: "img-circle" %>
+          <% else %>
+            <%= image_tag @deposit.sales_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+          <% end %>
+        <% end %>
+        <h5><%= @deposit.sales_agent.name %></h5>
+        <small><%= number_to_phone(@deposit.sales_agent.phone) %></small><br>
+      </div>
+      <div class="col-sm-4">
+        <h3>Split</h3>
+        <% unless @deposit.other_sales_agent.nil? %>
+        <%= link_to @deposit.other_sales_agent, target: "_blank" do %>
+          <% if @deposit.other_sales_agent.profile_picture.nil? %>
+            <%= image_tag 'missing.png', class: "img-circle" %>
+          <% else %>
+            <%= image_tag @deposit.other_sales_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+          <% end %>
+        <% end %>
+        <h5><%= @deposit.other_sales_agent.name %></h5>
+        <small><%= number_to_phone(@deposit.other_sales_agent.phone) %></small><br>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="standard-page-header">
+      <h1>Files</h1>
+      <hr>
+    </div>
+    <div class="row text-center check-attachments-area">
+      <div class="col-md-6">
+      <h4>Files</h4>
+      <hr>
+      <ul class="list-unstyled">
+        <% @deposit.documents.each do |document| %>
+          <li>
+            <%= link_to "PDF", document.attachment.url, target: "_blank", class: "btn btn-blue btn-2x" %><br>
+          </li>
+          <hr>
+        <% end %>
+      </ul>
+      </div>
+      <div class="col-md-6">
+        <h4>Upload</h4>
+        <hr>
+        <%= form_for [:matrix, @deposit, @deposit.documents.build] do |f| %>
+          <div id="file-descriptors">
+            <div class="file-input"><%= f.file_field :attachment, :placeholder => "File" %></div><br>
+          </div>
+          <div class="form-actions">
+            <%= f.submit "Submit", class:"button btn-nklyn-black btn-4x" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <% if @conversation.persisted? %>
+      <div class="standard-page-header">
+        <h1>Continue the conversation</h1>
+        <hr>
+      </div>
+      <%= render partial: 'conversations/conversation', object: @conversation %>
+    <% else %>
+      <div class="standard-page-header">
+        <h1>Start a conversation</h1>
+        <hr>
+      </div>
+      <%= form_tag(conversations_path, method: :post) do %>
+        <fieldset>
+          <%= text_area_tag 'conversation[message]', '', autocomplete: 'off', class: 'general-text-field limit_500', placeholder: 'Send a nice message.' %><br>
+          <p class="form-help-block"><span id="remain">500</span> characters remaining</p>
+          <%= hidden_field_tag 'conversation[recipient_id][]', @deposit.listing_agent.id %>
+          <%= hidden_field_tag 'conversation[recipient_id][]', @deposit.sales_agent.id %>
+          <% if @deposit.other_sales_agent %>
+            <%= hidden_field_tag 'conversation[recipient_id][]', @deposit.other_sales_agent.id %>
+          <% end %>
+          <%= hidden_field_tag 'conversation[context_url]', request.original_url %>
+          <%= submit_tag 'Send', class: 'button btn-blue btn-3x' %>
+        </fieldset>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="standard-page-header">
+    <h1>Clients</h1>
+    <hr>
+    <%= link_to 'New Client', new_matrix_deposit_deposit_client_path(@deposit), class: "button btn-blue btn-2x" %>
+  </div>
+  <%= render 'matrix/deposits/clients' %>
+  <div class="standard-page-header">
+    <h1>Transactions</h1>
+    <h3><%= number_to_currency(@transactions_total) %></h3>
+    <hr>
+    <%= link_to 'New Transaction', new_matrix_deposit_deposit_transaction_path(@deposit), class: "button btn-blue btn-3x" %>
+  </div>
+  <%= render 'matrix/deposits/transactions' %>
+  </div>
+  </div>
+</div>
+</div>

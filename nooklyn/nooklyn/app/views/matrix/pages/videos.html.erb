@@ -1,0 +1,81 @@
+<% content_for :title, "Videos - Powered By Nooklyn" %>
+
+<div class="super_container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/PoweredByNooklyn.png', class: "img-responsive" %>
+    <h1>Videos</h1>
+  </div>
+  <div class="container documents-page narrow-page-container text-center">
+    <div class="row">
+      <h2>Approval Process</h2>
+      <span class="label label-danger">New</span><br><hr>
+      <p>Learn how to get a deposit approved and the lease signed.</p>
+      <br>
+      <%= link_to matrix_videos_approval_path do %>
+      <button class="button btn-white btn-2x">Watch</button>
+      <% end %>
+      <%= link_to "https://www.dropbox.com/sh/9k2h36hydh1vw59/AADKwogEQgeFdlMRoGf0QK-da?dl=0", target: "_blank" do %>
+      <button class="button btn-white btn-2x">Sample Documents</button>
+      <% end %>
+    </div>
+    <hr>
+    <div class="row">
+      <h2>The Deposit</h2>
+      <p>Learn how to take a deposit for an apartment and the paperwork associated with the process.</p>
+      <br>
+      <%= link_to matrix_videos_deposit_path do %>
+      <button class="button btn-white btn-2x">Watch</button>
+      <% end %>
+    </div>
+    <hr>
+    <div class="row">
+      <h2>How to Show</h2>
+      <p>Learn how to show apartments like a boss agent.</p>
+      <br>
+      <%= link_to matrix_videos_how_to_show_path do %>
+      <button class="button btn-white btn-2x">Watch</button>
+      <% end %>
+    </div>
+    <hr>
+    <div class="row">
+      <h2>The Phone Call</h2>
+      <p>Learn how to qualify leads and build rapport on your initial phone call with a lead.</p>
+      <br>
+      <%= link_to matrix_videos_phone_call_path do %>
+      <button class="button btn-white btn-2x">Watch</button>
+      <% end %>
+    </div>
+    <hr>
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/ListRoom.png', class: "img-responsive center-block" %>
+    <h2>Posting</h2>
+    <div class="row">
+      <h2>Beginner Posting</h2>
+      <span class="label label-danger">New</span><br><hr>
+      <p>Learn how to post ads on various services.</p>
+      <br>
+      <%= link_to matrix_videos_how_to_post_beginner_path do %>
+      <button class="button btn-white btn-2x">Watch</button>
+      <% end %>
+    </div>
+    <div class="row">
+      <h2>Intermediate Posting</h2>
+      <span class="label label-danger">New</span><br><hr>
+      <p>Learn some more advanced techniques to post ads on various services.</p>
+      <br>
+      <%= link_to matrix_videos_how_to_post_intermediate_path do %>
+      <button class="button btn-white btn-2x">Watch</button>
+      <% end %>
+    </div>
+    <div class="row">
+      <h2>Criagslist Broker Ads</h2>
+      <span class="label label-danger">New</span></br><hr>
+      <p>Learn how to create Craigslist Broker ads.</p>
+      <br>
+      <%= link_to matrix_videos_craigslist_broker_ads_path do %>
+      <button class="button btn-white btn-2x">Watch</button>
+      <% end %>
+    </div>
+  </div>
+  <br>
+</div>

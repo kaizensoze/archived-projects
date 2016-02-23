@@ -1,0 +1,39 @@
+<% content_for :title, "Nooklyn - Rentals, Sales, Lofts in Bushwick and Williamsburg, Brooklyn, NY" %>
+<% content_for :description, "Search through available apartments, rentals, and lofts in Brooklyn. Nooklyn's listings are updated daily to help you find your next home." %>
+<% content_for :meta_url, "http://www.nooklyn.com/listings" %>
+<% content_for :og_image, "https://nooklyn-files.s3.amazonaws.com/img/home_mini.jpg" %>
+
+<div class="neighborhoods-show-header text-center">
+  <i class="nklyn-icon-marker nklyn-4x"></i>
+  <h1><%= @listings_collection.name %></h1>
+  <p><%= @listings_collection.description %></p>
+  <br>
+</div>
+
+<div id="nooklyn_listings_index_map"></div>
+<div class="listing-index">
+<%= render 'listings/listings_filters' %>
+</div>
+
+<div class="nooklyn_listings_index_container">
+  <% cache(cache_key_for_listings) do %>
+    <%= render 'listings/listings' %>
+  <% end %>
+</div>
+
+<div class="clearfix"></div>
+
+<script type="text/javascript">
+  var likedListingIds = [<%= @liked_listings.join(', ') %>];
+
+  likedListingIds.forEach(function(listingId) {
+
+      var elementId, button;
+
+      elementId = "#listing_card_" + listingId;
+
+      button = $(elementId).find('a.unlike-button')
+      button.removeClass('unlike-button');
+      button.addClass('like-button');
+  });
+</script>

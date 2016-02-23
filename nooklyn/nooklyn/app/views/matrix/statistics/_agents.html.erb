@@ -1,0 +1,64 @@
+    <!-- Agents -->
+    <%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/FriendlyAgents.png", class: "img-responsive center-block" %>
+    <h2 href="#agents" name="agents" class="fake-link">Agents</h2>
+    <div class="container">
+      <div class="row stat-row">
+        <div class="col-sm-4">
+          <h3>Total</h3>
+          <h5><%= number_with_delimiter(@employees.count) %></h5>
+        </div>
+        <div class="col-sm-4">
+          <h3>This Month</h3>
+          <h5><%= number_with_delimiter(@employees_month.count) %></h5>
+        </div>
+        <div class="col-sm-4">
+          <h3>This Year</h3>
+          <h5><%= @employees_year.count %></h5>
+        </div>
+      </div>
+    </div>
+
+<% if can? :manage, :all %>
+  <h2><a href="#leaderboard" name="leaderboard" class="fake-link">The Leaderboard</a></h2>
+  <h3><%= Time.zone.now.strftime('%B %Y') %></h3>
+  <div class="container responsive-table">
+    <table class='table nook-desk nklyn-table-hover table-bordered nklyn-table leaderboard'>
+      <thead>
+        <tr class="text-center">
+          <th>Rank</th>
+          <th>Agent</th>
+          <th>Completed Deals</th>
+          <th>Active Deals</th>
+          <th>Cancelled Deals</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @agent_deposit_stats.each do |deposit_stat| %>
+        <tr>
+          <td numerical-value="<%= deposit_stat.monthly_rank %>">
+            <h3><%= deposit_stat.monthly_rank %></h3>
+          </td>
+          <td>
+           <% if deposit_stat.agent.profile_picture.nil? %>
+              <%= image_tag 'missing.png', class: "img-circle" %>
+            <% else %>
+              <%= image_tag deposit_stat.agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+            <% end %>
+            <h5><%= link_to deposit_stat.agent.name, deposit_stat.agent, target: "_blank" %></h5>
+            <small><%= number_to_phone(deposit_stat.agent.phone) %></small><br>
+          </td>
+          <td numerical-value="<%= deposit_stat.completed %>">
+            <h3><%= deposit_stat.completed %></h3>
+          </td>
+          <td numerical-value="<%= deposit_stat.active %>">
+            <h3><%= deposit_stat.active %></h3>
+          </td>
+          <td numerical-value="<%= deposit_stat.cancelled %>">
+            <h3><%= deposit_stat.cancelled %></h3>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>

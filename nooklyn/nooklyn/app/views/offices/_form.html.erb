@@ -1,0 +1,41 @@
+<%= form_for(@office) do |f| %>
+  <% if @office.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@office.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @office.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, class: "general-text-label" %><br>
+    <%= f.text_field :name, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_one, class: "general-text-label" %><br>
+    <%= f.text_field :address_line_one, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_two, class: "general-text-label" %><br>
+    <%= f.text_field :address_line_two, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :city, class: "general-text-label" %><br>
+    <%= f.text_field :city, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :state, class: "general-text-label" %><br>
+    <%= f.text_field :state, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :zip_code, class: "general-text-label" %><br>
+    <%= f.text_field :zip_code, class: "general-text-field" %>
+  </div>
+  <hr>
+  <div class="actions text-center">
+    <%= f.submit "Submit", class: "buton btn-black btn-2x" %>
+  </div>
+<% end %>

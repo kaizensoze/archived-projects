@@ -1,0 +1,69 @@
+<% content_for :title, "#{@mate_post.agent.first_name} on Rooms & Mates - Powered by Nooklyn" %>
+<% content_for :description, "#{@mate_post.description}" %>
+<% content_for :meta_url, "#{mate_post_url(@mate_post)}" %>
+<% content_for :og_image, "#{@mate_post.image.url(:medium)}" %>
+
+
+  <% if agent_signed_in? %>
+<div class="super_container">
+  <br>
+  <div class="container">
+    <div class="roommate_reply roommate_card">
+      <h4>Reply to <%= @mate_post.agent.first_name %></h4>
+      <%= image_tag @mate_post.image.url(:medium), class: "img-responsive" %>
+      <div class="roommate_hood" id="mate_hood">
+        <h5>Hood</h5>
+        <h4><%= @mate_post.neighborhood.name %>, <%= @mate_post.neighborhood.region.name %></h4>
+      </div>
+      <div class="roommate_price">
+        <h5>Budget</h5>
+        <h3><%= number_to_currency(@mate_post.price, precision: 0) %></h3>
+      </div>
+      <div class="roommate_move_in">
+        <h5>Move In</h5>
+        <h3><%= @mate_post.when.strftime('%b %e') %></h3>
+      </div>
+      <div class="clearfix"></div>
+      <p><%= truncate(@mate_post.description, length: 250) %></p>
+      <% if current_agent.mate_posts.empty? %>
+        <div class="alert">In order to send a message to <%= @mate_post.agent.first_name %>, you need to create a profile.</div>
+        <br>
+        <%= link_to 'Create Profile', new_mate_post_url(alt_from: encoded_page_url), class: 'button btn-white btn-3x' %>
+      <% elsif @conversation.persisted? %>
+        <%= link_to 'Continue the Conversation', @conversation, class: 'button btn-white btn-3x' %>
+      <% else %>
+        <%= form_tag(conversations_path, method: :post) do %>
+          <fieldset>
+            <%= text_area_tag 'conversation[message]', '', :autocomplete => "off", class: "general-text-field limit_500", placeholder: "Send a nice message." %><br>
+            <p class="form-help-block"><span id="remain">500</span> characters remaining</p>
+            <%= hidden_field_tag 'conversation[recipient_id]', @mate_post.agent.id %>
+            <%= hidden_field_tag 'conversation[context_url]', request.original_url %>
+            <%= submit_tag 'Send', :class => 'button btn-blue btn-3x' %>
+          </fieldset>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <% if can? :manage, :all %>
+    <div class="container">
+      <%= render partial: 'moderator', locals: { view: @moderation_view } %>
+    </div>
+<% end %>
+  <br>
+</div>
+  <% else %>
+  <div class="super_container">
+    <br>
+    <div class="mates_account_message">
+      <%= link_to agent_omniauth_authorize_path(:facebook) do %>
+      <button class="btn btn-blue btn-3x"><i class="nklyn-icon-social-facebook"></i> Connect your Facebook Account</button>
+      <% end %>
+      <hr>
+      <h2 class="text-left">Why Facebook?</h2>
+      <p>We want to avoid the pitfalls of anonymous websites. Finding someone to live with requires a lot of trust, and Facebook helps build up that trust.</p>
+      <p>We know you hate surprises and we'll never post or send messages with your Facebook account. We also don't link anyone directly to your Facebook account from Nooklyn.</p>
+    </div>
+    <br>
+  </div>
+  <% end %>

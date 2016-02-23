@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  agent_id: 
+  mate_post_id: 
+  ip_address: MyString
+  user_agent: MyString
+
+two:
+  agent_id: 
+  mate_post_id: 
+  ip_address: MyString
+  user_agent: MyString

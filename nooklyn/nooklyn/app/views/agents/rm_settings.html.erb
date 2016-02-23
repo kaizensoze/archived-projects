@@ -1,0 +1,22 @@
+<% content_for :title, "Edit Rooms & Mates Profile - Nooklyn" %>
+
+<div class="mega-container">
+  <div class="standard-page-header container">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/PoweredByNooklyn.png', class: "img-responsive" %>
+    <h1>Rooms &amp; Mates Settings</h1>
+    <hr>
+  </div>
+    <div class="container-fluid">
+      <% if current_agent.room_posts.empty? && current_agent.mate_posts.empty? %>
+        <%= render 'agents/empty_rm_message' %>
+      <% end %>
+      <% unless current_agent.mate_posts.empty? %>
+      <%= render 'agents/mate_post_settings' %>
+      <% end %>
+      <hr>
+      <% unless current_agent.room_posts.empty? %>
+      <%= render 'agents/room_post_settings' %>
+      <% end %>
+    </div>
+  <br>
+</div>

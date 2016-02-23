@@ -1,0 +1,28 @@
+<% content_for :title, "#{@region.name} Matrix - Nooklyn - Rentals, Sales, Lofts" %>
+<div class="mega-container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="text-center">
+    <%= paginate @listings, :window => 10, :right => 1 %><br>
+  </div>
+  <%= render 'matrix/listings/matrix_filters' %>
+  <div class="matrix_page">
+    <br>
+    <div class="responsive-table">
+      <table class="table table-bordered listings">
+        <thead>
+          <tr>
+            <th width="8%">Apartment</th>
+            <th width="26%">Listing</th>
+            <th width="18%">Details</th>
+            <th width="10%">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cache(cache_key_for_matrix) do %>
+            <%= render partial: 'matrix/listings/matrix_listings', collection: @listings, as: :listing %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

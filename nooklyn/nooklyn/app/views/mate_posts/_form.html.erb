@@ -1,0 +1,47 @@
+<%= form_for(@mate_post) do |f| %>
+  <%= hidden_field_tag 'alt_from', params[:alt_from] %>
+  <% if @mate_post.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@mate_post.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @mate_post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :image, "Upload a picture of yourself", class: "general-text-label" %><br>
+    <%= f.file_field :image, class: "form-control" %>
+    <p class="form-help-block">We recommend image dimensions of 640×640.</p>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Describe yourself", class: "general-text-label" %><br>
+    <%= f.text_area :description, class: "general-text-area limit_250", maxlength: 250, rows: 5 %>
+    <p class="form-help-block"><span id="remain">250</span> characters remaining</p>
+  </div>
+  <div class="field">
+    <%= f.label :price, "Monthly Budget", class: "general-text-label" %><br>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">$</span>
+      <%= f.text_field :price, class: "general-text-field" %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :when, "What's your move in date?", class: "general-text-label" %><br>
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1"><i class="nklyn-icon-calendar"></i></span>
+      <%= f.text_field :when, class: "general-text-field datepicker" %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :neighborhood_id, "What neighborhood do you want to live in?", class: "general-text-label" %><br>
+    <%= grouped_collection_select :mate_post, :neighborhood_id, @regions, :neighborhoods, :name, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+  <br>
+  <div class="actions text-center">
+    <hr>
+    <%= f.submit "Submit", class: "button btn-nklyn-black btn-4x" %>
+  </div>
+<% end %>

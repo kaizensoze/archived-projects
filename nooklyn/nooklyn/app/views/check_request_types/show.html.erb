@@ -1,0 +1,88 @@
+<% content_for :title, "Check Requests - Powered by Nooklyn" %>
+<div class="dark-mega-container">
+  <div class="checks-container">
+    <div class="standard-page-header">
+      <h1>Check Requests</h1>
+      <div class="btn-group">
+        <%= link_to 'New Check Request', new_check_request_path, class: "button btn-nklyn-black btn-3x" %>
+        <button data-toggle="dropdown" aria-expanded="false" class="button btn-nklyn-black btn-3x">Types <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu">
+            <% @check_request_types.each do |type| %>
+              <li><%= link_to type.name, check_request_type_path(type) %></li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+    <div class="container">
+    <br>
+      <div class="row">
+        <div class="col-sm-6">
+          <%= form_tag check_requests_url, method: :get do %>
+            <div class="form-group">
+              <%= text_field_tag 'address_search', '', id: 'check-request-address-search', placeholder: 'Address', class: 'general-text-field-space-gray deposit-filter' %>
+            </div>
+            <button type="submit" class="button btn-nklyn-black btn-3x">Search</button>
+          <% end %>
+        </div>
+        <div class="col-sm-6">
+          <%= form_tag check_requests_url, method: :get do %>
+            <div class="form-group">
+              <%= text_field_tag 'vendor_search', '', id: 'check-request-vendor-search', placeholder: 'Vendor', class: 'general-text-field-space-gray deposit-filter' %>
+            </div>
+            <button type="submit" class="button btn-nklyn-black btn-3x">Search</button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="text-center nklyn-actions-bar">
+      <%= paginate @check_requests %><br>
+    </div>
+    <br>
+    <% @check_requests.each do |check_request| %>
+      <div class="check-request-card">
+        <div class="check-request-stub <% if check_request.verified? || check_request.approved? %>verified-background<% end %>">
+          <% if can? :approve, CheckRequest %>
+            <% if check_request.approved? %>
+            <% elsif check_request.rejected? %>
+            <% else %>
+              <%= link_to 'Approve', approve_check_request_path(check_request), class: "button btn-nklyn-approve btn-2x" %>
+              <%= link_to 'Edit', edit_check_request_path(check_request), class: "button btn-nklyn-edit btn-2x" %>
+              <% if check_request.verified? %>
+              <% else %>
+              <%= link_to 'Verify', verify_check_request_path(check_request), class: "button btn-nklyn-edit btn-2x" %>
+              <% end %>
+              <%= link_to 'Reject', reject_check_request_path(check_request), class: "button btn-nklyn-reject btn-2x" %>
+            <% end %>
+          <% end %>
+          <% if check_request.approved? %>
+            <span class="label label-nklyn-warning">Completed</span>
+            <% elsif check_request.rejected? %>
+            <span class="label label-nklyn-warning">Rejected</span>
+            <% else %>
+            <span class="label label-nklyn-warning ">Pending</span>
+          <% end %>
+        </div>
+        <div class="check-request-top">
+          <h5>Vendor</h5>
+          <ul class="list-inline list-unstyled">
+            <li><h3><%= check_request.name %></h3></li>
+            <li>&middot;</li>
+            <li><h4><%= number_to_currency(check_request.amount) %></h4></li>
+          </ul>
+        </div>
+        <div class="check-request-bottom">
+          <h5>Address</h5>
+          <br>
+          <%= check_request.apartment_address %>
+          Unit: <%= check_request.unit %>
+          <hr>
+          <h5>Details</h5><br>
+          <small><%= check_request.check_request_type.name %> &middot; Submitted on <%= check_request.created_at.strftime('%D at %I:%M%P') %> by <%= link_to check_request.agent.name, check_request.agent, id: "files-link" %> &middot; <%= link_to "Files", check_request, id: "files-link" %></small>
+          <hr>
+          <h5>Notes</h5><br>
+          <%= check_request.notes %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

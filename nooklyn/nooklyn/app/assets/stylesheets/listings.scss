@@ -1,0 +1,656 @@
+/*****************************************************************************/
+/*
+/* Nooklyn Office Info Windows
+/*
+/*****************************************************************************/
+
+div#map_content {
+  /* Positioning */
+  /* Box-model */
+  min-width: 300px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 18px;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+
+.controls {
+  margin-top: 16px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+  background-color: #fff;
+  font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: 'proxima-nova', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/*****************************************************************************/
+/*
+/* Listings#Index
+/*
+/*****************************************************************************/
+
+div#nooklyn_listings_index_map {
+  height: 100%;
+  width: 100%;
+  // height: 600px;
+  // @media screen and (max-width: 540px) {
+  //   height: 300px;
+  // }
+}
+
+div#bedroom-filter-bar {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 5px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+
+div.listing-info-window {
+  div.bed_bath {
+    position: absolute;
+    margin-top: -240px;
+    margin-left: 139px;
+    width: 100px;
+    font-size: 11px;
+    font-weight: 500px;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+    text-transform: uppercase;
+    background-color: #3B3836;
+    color: #FFF;
+    border-radius: 2px;
+  }
+
+  h3.listing-maps-price {
+    /* Positioning */
+    position: absolute;
+    /* Box-model */
+    margin: -47px 0 0 169px;
+    padding: 0 0 0 0;
+    width: 70px;
+    /* Typography */
+    font-family: inherit;
+    font-size: 14px;
+    text-align: center;
+    line-height: 35px;
+    font-weight: 300;
+    /* Visual */
+    background-color: #df4a37;
+    color: #fff;
+    /* Misc */
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+  }
+}
+
+div.nooklyn_listings_index_container {
+  /* Positioning */
+  position: relative;
+  /* Box-model */
+  padding-top: 25px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  overflow: auto;
+  height: 83.5%;
+  /* Misc */
+}
+
+div.nooklyn_listing_square {
+  /* Positioning */
+  display: inline-block;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  max-width: 250px;
+  width: 250px;
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+
+  &.selected {
+    outline: 4px solid #ffc03a;
+  }
+
+  @media screen and (max-width: 400px) {
+    margin-left: 0;
+  }
+  img {
+    min-width: 250px;
+    height: 250px;
+    max-width: 250px;
+    vertical-align: bottom;
+  }
+  div.nooklyn_listing_square_price {
+    /* Positioning */
+    position: absolute;
+    /* Box-model */
+    height: 50px;
+    margin-top: -50px;
+    width: 175px;
+    /* Typography */
+    font-family: 'proxima-nova-condensed', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    line-height: 54px;
+    /* Visual */
+    background-color: #3b3836;
+    color: #fff;
+    /* Misc */
+    opacity: .85;
+  }
+  div.nooklyn_listing_square_heart {
+    /* Positioning */
+    position: absolute;
+    /* Box-model */
+    height: 50px;
+    margin-left: 175px;
+    margin-top: -50px;
+    padding-top: 10px;
+    width: 75px;
+    /* Typography */
+    /* Visual */
+    background-color: rgba(240, 87, 92, 0.75);
+    /* Misc */
+    i {
+      font-size: 32px;
+      line-height: 1;
+      color: #fff;
+      text-decoration: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    a.like-button .nklyn-icon-heart {
+      display: none;
+    }
+    a.unlike-button .nklyn-icon-heart-fill {
+      display: none;
+    }
+  }
+  div.nooklyn_listing_square_bed_and_bath {
+    /* Positioning */
+    position: absolute;
+    /* Box-model */
+    margin-top: -240px;
+    margin-left: 140px;
+    width: 110px;
+    /* Typography */
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    background-color: #3b3836;
+    color: #fff;
+    /* Misc */
+  }
+  div.like-notice, div.unlike-notice, div.error-notice {
+    display: none;
+    margin-top: -100px;
+    position: absolute;
+    width: 250px;
+    background-color: rgba(240, 87, 92, 0.75);
+    color: #fff;
+    font-size: 12px;
+    line-height: 50px;
+    height: 50px;
+  }
+}
+
+div.nooklyn_listings_filters_area {
+  /* Positioning */
+  /* Box-model */
+  margin-top: 10px;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  color: #f1e577;
+  /* Misc */
+  hr {
+    border-color: #4e4e4e;
+    margin-bottom: 0px;
+  }
+  button#residential-button, button#commercial-button {
+    /* Positioning */
+    /* Box-model */
+    width: 150px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+  button.btn-warning {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #111;
+    border-color: #333;
+    color: #f1e577;
+    /* Misc */
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+    a {
+      color: #f1e577;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &:focus {
+      background-color: #f1e577;
+      color: #333;
+    }
+  }
+  button.active {
+    background-color: #f1e577;
+    color: #333;
+  }
+  span.input-group-addon {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    background-color: #111;
+    border-color: #333;
+    color: #f1e577;
+    /* Misc */
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+  }
+  input {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    /* Visual */
+    border-color: #333;
+    background-color: #111;
+    color: #eee;
+    /* Misc */
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+  }
+  .form-control:focus {
+    border-color: #f1e577;
+  }
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open .dropdown-toggle.btn-warning {
+  background-color: #f1e577;
+  color: #333;
+  border-color: #f1e577;
+  outline: 0;
+}
+
+.subway-lines {
+  max-width:310px;
+  label {
+    float:left;
+    margin: 1px;
+    opacity:0.23;
+    &.checked {
+      opacity:1.0;
+      transition: opacity 0.5s;
+    }
+    input {
+      display:none;
+    }
+  }
+}
+.amenities {
+  label {
+    float:left;
+    width:200px;
+    max-height:20px;
+  }
+  legend {
+    border-bottom:0;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    padding-top: 15px;
+    font-size:1.3em;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Listing#Show
+/*
+/*****************************************************************************/
+
+div.listing-page {
+  /* Positioning */
+  /* Box-model */
+  padding-bottom: 25px;
+  padding-top: 25px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  /* Misc */
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin: 0;
+    padding: 25px 0 15px 0;
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    margin: 0;
+    /* Typography */
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  h6 {
+    /* Positioning */
+    /* Box-model */
+    margin: 0;
+    padding-top: 3px;
+    /* Typography */
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  div.listing-show-image {
+    img {
+      width: 100%;
+    }
+  }
+
+  div.listing-show-details {
+    /* Positioning */
+    /* Box-model */
+    text-align: center;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+    h2 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-size: 50px;
+      font-weight: 100;
+      /* Visual */
+      /* Misc */
+    }
+    p {
+      /* Positioning */
+      /* Box-model */
+      padding-top: 25px;
+      /* Typography */
+      font-family: 'kepler-std', Georgia, serif;
+      font-size: 18px;
+      font-weight: 100;
+      text-align: left;
+      /* Visual */
+      /* Misc */
+    }
+    a {
+      font-family: inherit;
+      text-decoration: none;
+    }
+    a.like-button .nklyn-icon-heart {
+      display: none;
+    }
+    a.unlike-button .nklyn-icon-heart-fill {
+      display: none;
+    }
+    div.listing-like {
+      /* Positioning */
+      /* Box-model */
+      padding-top: 25px;
+      /* Typography */
+      /* Visual */
+      /* Misc */
+      i {
+        /* Positioning */
+        /* Box-model */
+        padding-bottom: 15px;
+        /* Typography */
+        line-height: 1.3;
+        font-size: 45px;
+        /* Visual */
+        color: #df4a37;
+        /* Misc */
+      }
+    }
+  }
+  div.listing-contact-area {
+    img {
+      max-width: 100px;
+    }
+  }
+  p.amenities {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 14px;
+    line-height: 2;
+    /* Visual */
+    /* Misc */
+    -webkit-column-count:2;
+    column-count:2;
+    i {
+      /* Positioning */
+      /* Box-model */
+      margin-right: 5px;
+      /* Typography */
+      font-size: 10px;
+      /* Visual */
+      /* Misc */
+    }
+  }
+  div.listing-show-locations {
+    @media screen and (max-width: 540px) {
+      height: 300px;
+    }
+    /* Positioning */
+    /* Box-model */
+    max-height: 500px;
+    overflow: scroll;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+  div.listing-transit {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    /* Misc */
+  }
+  div.location-on-listing-strip {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 5px;
+    /* Typography */
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    /* Visual */
+    /* Misc */
+    h4 {
+      /* Positioning */
+      /* Box-model */
+      padding-bottom: 0;
+      /* Typography */
+      font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      /* Visual */
+      /* Misc */
+    }
+  }
+  div.listing-gallery {
+    img {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+  div.listing-social-section {
+    img {
+      max-height: 60px;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+    i {
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+    }
+    a {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      text-decoration: none;
+      /* Visual */
+      color: #333;
+      /* Misc */
+      &:hover {
+        .nklyn-icon-social-facebook {
+          color: #3B5998;
+        }
+        .nklyn-icon-social-twitter {
+          color: #55acee;
+        }
+      }
+    }
+  }
+}
+
+div#listings-show-map {
+  /* Positioning */
+  /* Box-model */
+  height: 500px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+/*****************************************************************************/
+/*
+/* Listings#Form
+/*
+/*****************************************************************************/
+
+div.listing_form_container {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 25px;
+  input, select, textarea {
+    -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+  }
+}
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div.listings-index-container {
+  height: 93.5%;
+  background: blue;
+}
+
+#left-component {
+	right: 40%;
+	margin-right: 10px;
+}
+
+#my-divider {
+	right: 40%;
+	width: 10px;
+  border-left: 1px solid #2d2d2d;
+  border-right: 1px solid #2d2d2d;
+  border-top: none;
+  background-color: #2d2d2d;
+}
+
+#right-component {
+	width: 40%;
+}
+
+.nooklyn_listings_filters_area > .row {
+  margin-left: 0px;
+  margin-right: 0px;
+}

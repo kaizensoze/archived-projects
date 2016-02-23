@@ -1,0 +1,27 @@
+<% content_for :title, "Brooklyn Roommate Finder - Powered by Nooklyn" %>
+
+<div class="super_container">
+  <div class="rm_container">
+    <div class="standard-page-header">
+      <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/BrowseRooms.png', class: "img-responsive" %>
+      <h1>Rooms</h1>
+      <% if !agent_signed_in? %>
+        <%= link_to register_path do %>
+          <button class="button btn-black">Sign Up</button>
+        <% end %>
+      <% end %>
+    </div>
+  <br>
+
+    <div class="mates_account_message">
+      <%= link_to agent_omniauth_authorize_path(:facebook), class: "button btn-facebook center-block" do %>
+        <i class="nklyn-icon-social-facebook"></i> Connect with Facebook
+      <% end %>
+      <hr>
+      <h2 class="text-left">Why Facebook?</h2>
+      <p>We want to avoid the pitfalls of anonymous websites. Finding someone to live with requires a lot of trust, and Facebook helps build up that trust.</p>
+      <p>We know you hate surprises and we'll never post or send messages with your Facebook account. We also don't link anyone directly to your Facebook account from Nooklyn.</p>
+    </div>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,33 @@
+<% content_for :title, "Neighborhoods in Brooklyn, New York - Powered by Nooklyn - Apartments, Roommates, Neighborhoods" %>
+<% content_for :description, "Browse Nooklyn's featured neighborhoods in Brooklyn such as Bushwick, Williamsburg, Greenpoint, Ridgewood, Park Slope and Bed-Stuy." %>
+
+<div class="mega-container">
+<br>
+  <div class="neighborhood-card-container">
+    <% @neighborhoods.each do |neighborhood| %>
+      <%= link_to neighborhood do %>
+      <div class="neighborhood-card">
+        <%= image_tag neighborhood.image(:medium), class: "img-responsive" %>
+         <div class="hood-overlay">
+          <h3><%= neighborhood.name %></h3>
+         </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="guide-stories-container container-fluid">
+    <div class="row">
+      <% @locations.each do |location| %>
+        <div class="col-sm-6">
+          <%= link_to location do %>
+          <div class="guide-story-card">
+            <h3><%= location.name %></h3>
+            <h4><%= location.neighborhood.name %></h4>
+            <%= image_tag location.cover_image(:wide_big), class: "img-responsive" %>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

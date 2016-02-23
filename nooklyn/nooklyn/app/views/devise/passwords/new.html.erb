@@ -1,0 +1,20 @@
+<div class="mega-container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/Registration.png', class: "img-responsive" %>
+    <h1>Reset Password</h1>
+  </div>
+  <div class="narrow-form-container">
+    <hr>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="field">
+      <%= f.label :email, "Your Email", class: "general-text-label" %><br>
+      <%= f.email_field :email, placeholder: "Your Email", class: "general-text-field", autofocus: true %>
+    </div><br>
+    <div class="text-center">
+      <%= f.submit "Submit", class: "button btn-black btn-2x" %>
+    </div>
+    <% end %>
+  </div>
+  <br>
+</div>

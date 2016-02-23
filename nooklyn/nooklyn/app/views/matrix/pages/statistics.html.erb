@@ -1,0 +1,128 @@
+<% content_for :title, "Statistics - Nooklyn: Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<div class="numbers-page">
+  <br>
+  <div class="chart-container">
+    <h2>User Growth</h2>
+    <canvas id="user-line-graph" width="980" height="400"></canvas>
+  </div>
+  <div class="mega-container">
+    <div class="user-growth-numbers-card">
+      <h2>User Growth Summary</h2>
+      <hr>
+      <div class="row stat-row">
+        <div class="col-sm-3">
+          <h3>Users</h3>
+          <h5><%= number_with_delimiter(@users.count) %></h5>
+        </div>
+        <div class="col-sm-3">
+          <h3>Today</h3>
+          <h5><%= @users_day.count %></h5>
+        </div>
+        <div class="col-sm-3">
+          <h3>This Week</h3>
+          <h5><%= @users_week.count %></h5>
+        </div>
+        <div class="col-sm-3">
+          <h3>This Month</h3>
+          <h5><%= @users_month.count %></h5>
+        </div>
+        <% @user_stats.each_slice(4) do |user_stat_row| %>
+          <div class="row stat-row">
+            <% user_stat_row.each do |(month_year, users_for_month)| %>
+              <div class="col-sm-3">
+                <h3><%= month_year %></h3>
+                <h5><%= number_with_delimiter(users_for_month.count) %></h5>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="container chart-container">
+    <h2>Demographics</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <h4>Gender</h4>
+          <canvas id="gender-graph" width="280" height="280"></canvas>
+        </div>
+        <div class="col-md-6 text-center">
+          <h4>Age</h4>
+          <canvas id="age-graph" width="280" height="280"></canvas>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+    <hr>
+  </div>
+
+  <div class="chart-container">
+    <h2>Sessions</h2>
+    <canvas id="sessions-graph" width="980" height="400"></canvas>
+  </div>
+  <div class="mega-container">
+    <div class="user-growth-numbers-card">
+      <h2>Sessions Summary</h2>
+      <hr>
+      <div class="row stat-row">
+        <div class="col-sm-4">
+          <h3>2015</h3>
+          <h5>530,793</h5>
+        </div>
+        <div class="col-sm-4">
+          <h3>Jan 2016</h3>
+          <h5>56,739</h5>
+        </div>
+        <div class="col-sm-4">
+          <h3>Jan 2015</h3>
+          <h5>16,810</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <h2>Pageviews</h2>
+    <canvas id="pv-graph" width="980" height="400"></canvas>
+  </div>
+  <div class="mega-container">
+    <div class="user-growth-numbers-card">
+      <h2>Pageview Summary</h2>
+      <hr>
+      <div class="row stat-row">
+        <div class="col-sm-4">
+          <h3>2015</h3>
+          <h5>3,588,451</h5>
+        </div>
+        <div class="col-sm-4">
+          <h3>Jan 2016</h3>
+          <h5>321,985</h5>
+        </div>
+        <div class="col-sm-4">
+          <h3>Jan 2015</h3>
+          <h5>124,519</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chart-container">
+    <h2>Rental Applications</h2>
+    <canvas id="rental-applications-graph" width="980" height="400"></canvas>
+  </div>
+  <div class="mega-container">
+    <%= render 'matrix/statistics/mobile' %><hr>
+    <% if can? :manage, :all %>
+      <%= render 'matrix/statistics/deposits' %><hr>
+    <% end %>
+    <%= render 'matrix/statistics/mates' %><hr>
+    <%= render 'matrix/statistics/likes' %><hr>
+    <%= render 'matrix/statistics/messages' %><hr>
+    <%= render 'matrix/statistics/photos' %><hr>
+    <%= render 'matrix/statistics/locations' %><hr>
+    <%= render 'matrix/statistics/agents' %><hr>
+    <%= render 'matrix/statistics/listings' %><hr>
+    <%= render 'matrix/statistics/listing_table' %>
+  </div>
+</div>

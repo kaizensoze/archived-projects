@@ -1,0 +1,47 @@
+<% content_for :title, "Nooklyn Transactions Database" %>
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5><%= @transactions.total_count %> transactions</h5>
+    <h1>Deposit Transactions</h1>
+    <%= form_tag matrix_transactions_url, method: :get do %>
+      <div class="form-group">
+        <%= text_field_tag 'name_search', '', id: 'transaction-name-search', placeholder: 'Name', class: 'general-text-field-space-gray' %>
+      </div>
+      <button type="submit" class="button btn-nklyn-black btn-3x">Search</button>
+    <% end %>
+  </div>
+</div>
+<div class="container-fluid mega-container">
+  <%= paginate @transactions, :window => 10, :right => 1 %><br>
+  <div class="responsive-table">
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Deposit</th>
+          <th>Amount</th>
+          <th>type</th>
+          <th>Client name</th>
+          <th>Office</th>
+          <th>Notes</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.created_at.strftime('%D at %I:%M%P') %></td>
+            <td><%= link_to transaction.deposit.address, matrix_deposit_path(transaction.deposit), target: "_blank" %><br> Unit <%= transaction.deposit.unit %></td>
+            <td><%= number_to_currency(transaction.amount) %></td>
+            <td><%= transaction.deposit_transaction_type %></td>
+            <td><%= transaction.client_name %></td>
+            <td><%= transaction.office.try(:name) %></td>
+            <td><%= transaction.notes %></td>
+            <td><%= link_to "Edit", edit_matrix_deposit_transaction_path(transaction), class: "button btn-white btn-2x" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<% content_for :title, "Documents - Powered by Nooklyn" %>
+
+<div class="super_container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/PoweredByNooklyn.png', class: "img-responsive" %>
+    <h1>Documents</h1>
+  </div>
+  <div class="narrow-page-container documents-page">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Rental Application</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/Rental-Application.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download PDF</button>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>Guarantor Application</h2>
+        <br>
+        <%= link_to "https://nooklyn-files.s3.amazonaws.com/pdf/nklyn-guarantor-application.pdf", target: "_blank" do %>
+        <button class="button btn-white btn-2x">Download PDF</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,7 @@
+<% if can? :manage, :all %>
+  <div class="container text-center">
+    <%= link_to "Manage Photos", manage_photos_location_path(@location), class: "button btn-white btn-4x" %>
+    <%= link_to "Edit", edit_location_path(@location), class: "button btn-edit btn-4x" %>
+    <%= link_to "Destroy", @location, method: :delete, data: { confirm: 'Are you sure?' }, class: "button btn-reject btn-4x" %>
+  </div>
+<% end %>

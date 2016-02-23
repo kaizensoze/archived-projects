@@ -1,0 +1,79 @@
+div.listings-collection-card {
+    /* Positioning */
+    display: inline-block;
+    /* Box-model */
+    margin-left: 15px;
+    margin-bottom: 15px;
+    max-width: 250px;
+    padding-bottom: 15px;
+    width: 250px;
+    /* Typography */
+    text-align: center;
+    /* Visual */
+    background-color: #fff;
+    color: #333;
+    /* Misc */
+    @media screen and (max-width: 320px) {
+      margin-left: 0;
+    }
+    img {
+      max-width: 250px;
+      vertical-align: bottom;
+    }
+    h2 {
+      /* Positioning */
+      /* Box-model */
+      margin: 0;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      /* Typography */
+      font-size: 12px;
+      font-weight: 600;
+      /* Visual */
+      /* Misc */
+    }
+    h5 {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      /* Visual */
+      /* Misc */
+    }
+    a {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      /* Visual */
+      color: #333;
+      /* Misc */
+      -webkit-transition: all .3s ease-in-out;
+         -moz-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+
+      &:hover {
+        /* Positioning */
+        /* Box-model */
+        /* Typography */
+        /* Visual */
+        color: #ffc03a;
+        /* Misc */
+      }
+    }
+    p {
+      /* Positioning */
+      /* Box-model */
+      margin-left: 10px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 5px;
+      /* Typography */
+      font-size: 12px;
+      text-align: left;
+      /* Visual */
+      /* Misc */
+    }
+}

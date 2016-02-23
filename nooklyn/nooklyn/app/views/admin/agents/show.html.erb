@@ -1,0 +1,78 @@
+<% content_for :title, "#{@agent.name} - Admin - Powered by Nooklyn" %>
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5><%= @agent.email %></h5>
+    <h1><%= @agent.name %></h1>
+  </div>
+</div>
+
+<div class="admin-show-page-container">
+  <div class="admin-key-value-pair-card">
+    <h3>Counts</h3>
+    <ul class="list-unstyled">
+      <li><b>Listing Likes:</b> <%= @agent.liked_listings.count %> </li>
+      <li><b>Room Likes:</b> <%= @agent.liked_rooms.count %> </li>
+      <li><b>Mate Likes:</b> <%= @agent.liked_mates.count %> </li>
+    </ul>
+  </div>
+  <div class="admin-key-value-pair-card">
+    <h3>Mate Comments</h3>
+    <ul class="list-unstyled">
+      <% @agent.mate_comments.each do |comment| %>
+      <li><b><%= comment.id %></b>: <%= comment.message %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="admin-key-value-pair-card">
+    <h3>Room Comments</h3>
+    <ul class="list-unstyled">
+      <% @agent.room_comments.each do |comment| %>
+      <li><b><%= comment.id %></b>: <%= comment.message %> </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+  <div class="container">
+    <h2>Favorite Mate Posts</h2>
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>When</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @favorite_mate_posts.each do |mate_post| %>
+        <tr>
+          <td><%= link_to mate_post.agent.name, mate_post %></td>
+          <td><%= number_to_currency(mate_post.price) %></td>
+          <td><%= mate_post.when.strftime('%D') %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <h2>Favorite Room Posts</h2>
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>When</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @favorite_room_posts.each do |room_post| %>
+        <tr>
+          <td><%= link_to room_post.agent.name, room_post %></td>
+          <td><%= number_to_currency(room_post.price) %></td>
+          <td><%= room_post.when.strftime('%D') %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,72 @@
+<% if can? :create, Listing %>
+<div class="container">
+  <div class="row">
+    <%= render 'matrix/listings/matrix_navigation' %>
+  </div>
+  <div class="btn-group">
+      <%= link_to 'Edit Listing', edit_listing_path(@listing), class: "button btn-white btn-2x" %>
+      <%= link_to 'Manage Photos', manage_photos_listing_path(@listing), class: 'button btn-white btn-2x' %>
+  </div>
+  <div class="admin-show-page-container text-center">
+    <div class="admin-key-value-pair-card">
+      <h3>Details</h3>
+      <ul class="list-unstyled">
+        <li><b>ID:</b> <%= @listing.id %> </li>
+        <li><b>Status:</b> <%= @listing.status %></li>
+        <li><b>Address:</b><br> <%= @listing.address %></li>
+        <li><b>Apartment:</b> <%= @listing.apartment %></li>
+        <li><b>Access:</b> <% unless @listing.access.blank? %><%= @listing.access.humanize %><% end %></li>
+      </ul>
+    </div>
+    <div class="admin-key-value-pair-card">
+      <h3>Details</h3>
+      <ul class="list-unstyled">
+        <li><b>Term:</b> <% unless @listing.term.blank? %><%= @listing.term.humanize %><% end %></li>
+        <li><b>Date:</b> <% if @listing.date_available.blank? %> - <% else %><%= @listing.date_available.strftime('%D') %><% end %></li>
+        <li><b>OP:</b> <% unless @listing.owner_pays.blank? %><%= number_to_percentage(@listing.owner_pays, precision: 2) %><% end %></li>
+        <li><b>Fee:</b> <% unless @listing.fee.blank? %><%= @listing.fee %><% end %></li>
+        <li><b>Utilities:</b> <% unless @listing.utilities.blank? %><%= @listing.utilities.humanize %><% end %></li>
+        <li><b>Move in Cost</b> <% unless @listing.move_in_cost.blank? %><small>Move In Cost:</small> <% if @listing.move_in_cost == true %>First, Last and Security<% else %>First and Security<% end %><br><% end %></li>
+        <li>
+          <%= hidden_field_tag :listing_id, @listing.id %>
+          <%= form_for(@listing) do |f| %>
+            <label><%= f.radio_button :action_status, "available" %> Available</label><br>
+            <label><%= f.radio_button :action_status, "pending" %> Pending</label><br>
+            <label><%= f.radio_button :action_status, "rented" %> Rented</label><br>
+            <label><%= f.check_box :featured %> Featured</label>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="admin-key-value-pair-card">
+      <h3>Agents</h3>
+      <ul class="list-unstyled">
+        <li><h4>Listing</h4></li>
+        <li class="text-center">
+          <%= link_to @listing.listing_agent, target: "_blank" do %>
+            <% if @listing.listing_agent.profile_picture.nil? %>
+              <%= image_tag 'missing.png', class: "img-circle" %>
+            <% else %>
+              <%= image_tag @listing.listing_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+            <% end %>
+          <% end %>
+          <br>
+          <%= @listing.listing_agent.name %> <br><%= number_to_phone(@listing.listing_agent.phone) %>
+        </li>
+        <li><h4>Sales</h4></li>
+        <li class="text-center">
+          <%= link_to @listing.sales_agent, target: "_blank" do %>
+            <% if @listing.sales_agent.profile_picture.nil? %>
+              <%= image_tag 'missing.png', class: "img-circle" %>
+            <% else %>
+              <%= image_tag @listing.sales_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+            <% end %>
+          <% end %>
+          <br>
+          <%= @listing.sales_agent.name %> <br><%= number_to_phone(@listing.sales_agent.phone) %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<% end %>

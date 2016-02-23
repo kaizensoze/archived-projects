@@ -1,0 +1,19 @@
+<% content_for :title, "Nooklyn's Rental Army - Nooklyn: Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<% content_for :description, "Our real estate agents are awesome people who will help you find your next home." %>
+<div class="agents-index-container">
+  <% @agents_by_deposit.each do |agent| %>
+    <div class="agents-card">
+      <br>
+      <%= link_to agent do %>
+        <%= image_tag agent.profile_picture.url(:medium), class: "img-circle", alt: "#{agent.name} - Licensed Real Estate Agent at Nooklyn" %>
+      <% end %>
+      <hr>
+      <h2 class="name"><%= link_to agent.name, agent %></h2>
+      <br>
+      <i class="nklyn-icon-message nklyn-3x"></i>
+      <h2 class="email"><a href="mailto:<%= agent.email %>"><%= agent.email %></a></h2>
+      <i class="nklyn-icon-phone nklyn-3x"></i>
+      <h2 class="phone"><%= number_to_phone(agent.phone) %></h2>
+    </div>
+  <% end %>
+</div>

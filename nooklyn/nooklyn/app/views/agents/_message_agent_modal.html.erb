@@ -1,0 +1,23 @@
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Message</h4>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+          <%= form_tag(conversations_path, method: :post) do %>
+            <fieldset>
+              <%= text_area_tag 'conversation[message]', '', autocomplete: 'off', class: 'general-text-field limit_500', placeholder: 'Send a nice message.' %><br>
+              <p class="form-help-block"><span id="remain">500</span> characters remaining</p>
+              <%= hidden_field_tag 'conversation[recipient_id]', @agent.id %>
+              <%= hidden_field_tag 'conversation[context_url]', request.original_url %>
+              <%= submit_tag 'Send', class: 'button btn-blue btn-3x' %>
+            </fieldset>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

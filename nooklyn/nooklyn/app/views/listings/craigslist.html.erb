@@ -1,0 +1,40 @@
+<div class="super_container">
+  <div class="standard-page-header">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/ListRoom.png', class: "img-responsive" %>
+    <h1>Craigslist</h1>
+  </div>
+  <div class="narrow-page-container">
+    <br>
+    <ul class="">
+      <li><b>Please disclose type & amount of ANY & ALL fees:</b> $75 Application Fee </li>
+      <li><b>Full name of the company and of the person posting this ad:</b> <%= current_agent.first_name %>'s Awesome Apartment</li>
+      <li><b>Posting title:</b> <%= @listing.title %></li>
+      <li><b>Specific Location:</b> <%= @listing.neighborhood.name %></li>
+      <li><b>Postal Code:</b> 11237</li>
+      <li>
+        <b>Posting Body:</b><br><br>
+        <%= @listing.description %><br><br>
+        <% @listing.amenities.split("\n").each do |amenity| %><%= amenity %><br> <% end %>
+        <br>
+        Call or text to schedule a viewing! Thanks! :)
+      </li>
+      <br>
+      <li><b>Rent</b> <%= number_to_currency(@listing.price, precision: 0) %></li>
+      <li><b>Available On:</b> <% if @listing.date_available? %><%= @listing.date_available.strftime('%D') %><% else %>N/A<% end %></li>
+      <li><b>Bedrooms:</b> <%= number_to_human(@listing.bedrooms) %></li>
+      <li><b>Bathrooms:</b> <%= number_to_human(@listing.bathrooms) %></li>
+      <li><b>Housing Type:</b> Apartment</li>
+      <li><b>Cats OK:</b> YES</li>
+      <li><b>Dogs OK:</b> YES</li>
+      <li><b>Show on maps:</b> YES</li>
+      <li><b>Streets:</b> <%= @listing.cross_streets %></li>
+      <li><b>City:</b> <%= @listing.neighborhood.borough %>, NY</li>
+    </ul>
+    <hr>
+    <h2 class="text-center">Photos</h2>
+    <% @listing.photos.each do |photo| %>
+    <%= image_tag photo.image.url(:square), class: "img-responsive center-block" %><br>
+    <% end %>
+  </div>
+  <br>
+</div>

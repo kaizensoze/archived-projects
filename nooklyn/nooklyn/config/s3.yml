@@ -1,0 +1,12 @@
+development:
+  bucket: nooklyn-pro
+  access_key_id: <%= ENV['S3_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['S3_ACCESS_KEY'] %>
+test:
+  bucket: nooklyn-test
+  access_key_id: <%= ENV['S3_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['S3_ACCESS_KEY'] %>
+production:
+  bucket: nooklyn-pro
+  access_key_id: <%= ENV['S3_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['S3_ACCESS_KEY'] %>

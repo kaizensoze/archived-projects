@@ -1,0 +1,28 @@
+<% content_for :title, "Login - Nooklyn: Apartments, Roommates, Neighborhoods in Brooklyn" %>
+<% content_for :description, "Login to Nooklyn to save listings, list your room, and find roommates." %>
+<div class="login-and-signup-container">
+  <div class="container">
+    <div class="form-well">
+      <div class="text-center">
+        <i class="nklyn-icon-logo nklyn-yellow nklyn-7x"></i>
+      </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= f.email_field :email, placeholder: "Email", class: "general-text-field-space-gray" %><br><br>
+        <%= f.password_field :password, placeholder: "Password", class: "general-text-field-space-gray" %><br>
+        <% if devise_mapping.rememberable? -%>
+          <div>
+            <%= f.label :remember_me, "Keep Me Signed In", class: "general-text-label nklyn-dark-label" %>
+            <%= f.check_box :remember_me, checked: true %>
+          </div>
+        <% end -%>
+        <div class="login-actions"><%= f.submit "Login", :class => 'button btn-black btn-login' %></div>
+      <% end %>
+      <p class="or">or</p>
+      <%= link_to agent_omniauth_authorize_path(:facebook), class: "button btn-facebook center-block" do %>
+      <i class="nklyn-icon-social-facebook"></i> Connect with Facebook
+      <% end %>
+      <hr>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<%= form_for [:matrix, @deposit_status] do |f| %>
+  <% if @deposit_status.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@deposit_status.errors.count, "error") %> prohibited this deposit_status from being saved:</h2>
+
+      <ul>
+      <% @deposit_status.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, class: "general-text-label" %><br>
+    <%= f.text_field :name, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :description, class: "general-text-label" %><br>
+    <%= f.text_area :description, class: "general-text-area" %>
+  </div>
+  <div class="field">
+    <%= f.label :active, class: "general-text-label" %><br>
+    <%= f.check_box :active, class: "general-text-field" %>
+  </div>
+  <%= f.hidden_field :creator_id, :value => current_agent.id %>
+  <hr>
+  <div class="actions">
+    <%= f.submit "Submit", class: "button btn-black btn-3x" %>
+  </div>
+<% end %>

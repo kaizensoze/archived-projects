@@ -1,0 +1,22 @@
+<%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/Favorites.png", class: "img-responsive center-block" %>
+<div class="container">
+  <h2 href="#likes" name="likes" class="fake-link">Likes</h2>
+  <div class="row stat-row">
+    <div class="col-sm-3">
+      <h3>Total</h3>
+      <h5><%= number_with_delimiter(@liked_listings.count + @mate_likes.count + @room_likes.count + @location_likes.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Listings</h3>
+      <h5><%= number_with_delimiter(@liked_listings.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Mates</h3>
+      <h5><%= number_with_delimiter(@mate_likes.count + @room_likes.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Locations</h3>
+      <h5><%= number_with_delimiter(@location_likes.count) %></h5>
+    </div>
+  </div>
+</div>

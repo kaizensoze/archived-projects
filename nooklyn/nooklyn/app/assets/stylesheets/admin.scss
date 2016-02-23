@@ -1,0 +1,69 @@
+/*****************************************************************************/
+/*
+/* Admin::Cards
+/*
+/*****************************************************************************/
+
+div.admin-show-page-container {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+div.admin-key-value-pair-card {
+  /* Positioning */
+  /* Box-model */
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px;
+  width: 300px;
+  /* Typography */
+  text-align: left;
+  /* Visual */
+  border: 1px solid #f2f2f2;
+  /* Misc */
+  ul {
+    margin-bottom: 0;
+    li {
+      /* Positioning */
+      /* Box-model */
+      padding: 15px;
+      /* Typography */
+      /* Visual */
+      /* Misc */
+    }
+    li:nth-of-type(odd) {background-color: #f9f9f9;}
+    li:nth-of-type(even) {background-color: #fff;}
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    padding: 20px 0;
+    margin: 0;
+    /* Typography */
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Visual */
+    background-color: #dedede;
+    /* Misc */
+  }
+  h4 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Visual */
+    /* Misc */
+  }
+}

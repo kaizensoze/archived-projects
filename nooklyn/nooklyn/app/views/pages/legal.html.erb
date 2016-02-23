@@ -1,0 +1,27 @@
+<% content_for :title, "Legal Information - Nooklyn, Inc." %>
+
+<div class="nklyn-jumbotron">
+  <div class="container text-center">
+    <h5>Privacy, Terms, Fair Housing</h5>
+    <h1>Legal Information</h1>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <%= link_to terms_path do %>
+      <div class="col-sm-4 legal-card">
+        <h2>Terms of Service</h2>
+      </div>
+    <% end %>
+    <%= link_to privacy_path do %>
+      <div class="col-sm-4 legal-card">
+        <h2>Privacy Policy</h2>
+      </div>
+    <% end %>
+    <%= link_to fair_housing_path do %>
+      <div class="col-sm-4 legal-card">
+        <h2>Fair Housing</h2>
+      </div>
+    <% end %>
+  </div>
+</div>

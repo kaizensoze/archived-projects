@@ -1,0 +1,13 @@
+<div class="text-center">
+  <i class="nklyn-icon-marker nklyn-4x"></i>
+  <h3>Location</h3>
+  <br>
+  <div class="row">
+    <div id="listings-show-map" data-latitude="<%= @page.latitude %>" data-longitude="<%= @page.longitude %>"></div>
+  </div>
+  <div class="row">
+    <br>
+    <h5 class="text-center">Nearby Locations</h5><br>
+      <%= render partial: "locations/location", collection: page.locations %>
+  </div>
+</div>

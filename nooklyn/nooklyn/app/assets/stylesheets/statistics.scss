@@ -1,0 +1,44 @@
+div.d3-chart-container {
+  /* Positioning */
+  /* Box-model */
+  padding: 15px 35px;
+  /* Typography */
+  /* Visual */
+  background-color: #2d2d2d;
+  /* Misc */
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    color: #fff;
+    /* Misc */
+  }
+}
+
+#damp-graph {
+
+  text {
+    fill: #FFFFFF;
+  }
+
+  .axis text {
+    fill: #55505b;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #55505b;
+    shape-rendering: crispEdges;
+  }
+
+  .line {
+    fill: none;
+    stroke: #FFC03A;
+    stroke-width: 1.5px;
+  }
+}

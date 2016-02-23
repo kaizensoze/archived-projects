@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="listing-show-image">
+      <%= image_tag page.main_image, class: 'img-responsive', alt: "A #{number_to_currency(page.price, precision: 0)}, #{number_to_human(page.bedrooms)} bed / #{number_to_human(page.bathrooms)} bathroom apartment in #{page.neighborhood_name}" %>
+    </div>
+  </div>
+  <div class="col-md-6 listing-show-details">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2><%= number_to_currency(page.price, precision: 0) %></h2>
+        <h5>price</h5>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <div class="listing-like" id='<%= "listing_card_#{@listing.id}" %>'>
+          <a href="#" class="unlike-button">
+            <i class="nklyn-icon-heart-fill nooklyn_listing_square_heart"></i>
+            <i class="nklyn-icon-heart nooklyn_listing_square_heart"></i>
+          </a>
+          <% if page.likes_listing?(current_agent) %>
+          <h6>Saved</h6>
+          <% else %>
+          <h6>Save</h6>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <h2><%= number_to_human(page.number_likes)%></h2>
+        <h5>Likes</h5>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-6">
+        <i class="nklyn-icon-building nklyn-3x"></i>
+        <h3><%= page.neighborhood_name %></h3>
+        <h5>hood</h5>
+        <br>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <i class="nklyn-icon-amenity-bed nklyn-3x"></i>
+        <h3><%= number_to_human(page.bedrooms) %></h3>
+        <h5>bed</h5>
+        <br>
+      </div>
+      <div class="col-sm-3 col-xs-6">
+        <i class="nklyn-icon-amenity-bath nklyn-3x"></i>
+        <h3><%= number_to_human(page.bathrooms) %></h3>
+        <h5>bath</h5>
+        <br>
+      </div>
+    </div>
+    <hr>
+    <h5>Description</h5>
+    <p>
+      <% if page.residential_listing? %>
+        <%= page.bed_bath_shorthand %> in <%= link_to(page.neighborhood_name, page.listing.neighborhood) %>, <%= page.borough_name %>.
+        <%= page.square_feet_message(suffix: ',') %> <%= page.pets_message %>.
+      <% else %>
+        A <%= "#{page.square_feet_message} commercial property with #{page.bathroom_message} in #{page.neighborhood_borough_message}." %>
+      <% end %>
+
+      <%= page.description %>
+
+      <% if page.listing.bedrooms > 1 %>
+        We can help you <%= link_to 'find roommates', roommates_path %>.
+      <% end %>
+    </p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-6">
+    <h5 class="text-center">Transit</h5><br>
+    <div class="listing-transit">
+      <%= render partial: 'subway_line', collection: page.subway_lines %>
+      <h6><%= page.nearest_subway_station %></h6>
+    </div>
+    <hr>
+    <h5 class="text-center">Amenities</h5><br>
+    <p class="amenities">
+      <%= render partial: 'amenity', collection: page.amenities %>
+    </p>
+  </div>
+  <div class="col-md-6">
+    <div class="text-center listing-contact-area">
+      <h3>Listed by <%= link_to_if(page.has_sales_agent?, page.listed_by, page.sales_agent) %></h3>
+
+      <% if @listing.sales_agent.has_photo? %>
+        <%= link_to page.sales_agent do %>
+          <%= image_tag page.sales_agent_thumbnail, class: 'img-circle', alt: "#{page.sales_agent.name} - Licensed Real Estate Agent"  %>
+        <% end %>
+      <% end %>
+
+      <h3><%= number_to_phone(page.phone_contact) %></h3>
+      <h6>Listing ID: <%= page.listing_id %></h6>
+      <br>
+      <% if agent_signed_in? && !@page.rented?  %>
+        <%= form_tag(conversations_path, method: :post) do %>
+          <fieldset>
+            <%= text_area_tag 'conversation[message]', '', autocomplete: 'off', class: 'general-text-field limit_500', placeholder: 'Send a nice message.' %><br>
+            <p class="form-help-block"><span id="remain">500</span> characters remaining</p>
+            <%= hidden_field_tag 'conversation[recipient_id]', page.sales_agent.id %>
+            <%= hidden_field_tag 'conversation[context_url]', request.original_url %>
+            <%= submit_tag 'Send', class: 'button btn-blue btn-3x' %>
+          </fieldset>
+        <% end %>
+      <% else %>
+        <%= link_to 'Contact Us', contact_path(anchor: 'message'), class: 'button btn-blue btn-3x' %>
+      <% end %>
+
+      <% if page.application_pending? %>
+        <p class="help-block">
+          <span class="label label-default">Application Pending</span><br>
+          Someone recently submitted an application for this listing.<br>
+          This listing may still be available and we might have similar listings in the area.
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<hr>
+
+<% if page.likes_listing?(current_agent) %>
+<script>
+  $('a.unlike-button').removeClass('unlike-button').addClass('like-button');
+</script>
+<% end %>

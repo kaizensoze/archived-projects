@@ -1,0 +1,162 @@
+/*****************************************************************************/
+/*
+/* Leads#Index
+/*
+/*****************************************************************************/
+
+div.leads-index {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  .btn-group {
+    margin-bottom: 15px;
+  }
+  table.nook-desk {
+    th {
+      cursor: pointer;
+      &:hover {
+        color: #25AE5F;
+      }
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Contact Page
+/*
+/*****************************************************************************/
+
+div.contact-page {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  color: #333;
+  /* Misc */
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  div.office-information {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-family: 'brandon-grotesque', 'Helvetica Neue', Helvetica, sans-serif;
+    /* Visual */
+    /* Misc */
+    h3 {
+      /* Positioning */
+      /* Box-model */
+      margin: 0;
+      padding-bottom: 5px;
+      padding-left: 0;
+      padding-top: 20px;
+      /* Typography */
+      font-weight: 700;
+      font-size: 34px;
+      text-transform: uppercase;
+      /* Visual */
+      /* Misc */
+    }
+    h5 {
+      /* Positioning */
+      /* Box-model */
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      width: 100px;
+      /* Typography */
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      /* Visual */
+      border-bottom: 2px solid #111;
+      /* Misc */
+    }
+    p {
+      /* Positioning */
+      /* Box-model */
+      /* Typography */
+      font-family: 'kepler-std', Georgia, serif;
+      font-weight: 100;
+      font-size: 18px;
+      /* Visual */
+      /* Misc */
+    }
+    a {
+      /* Positioning */
+      /* Box-model */
+      margin-bottom: 10px;
+      width: 100px;
+      /* Typography */
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 2;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      /* Visual */
+      color: #222;
+      /* Misc */
+      &:hover {
+        color: #ffc03a;
+      }
+    }
+  }
+}
+
+div#nooklyn_contact_page_map {
+  width: 100%;
+  height: 600px;
+  @media screen and (max-width: 640px) {
+    display: none;
+    }
+  }
+
+div.lead_contact_form {
+  text-align: left;
+  input, select {
+    margin-bottom: 10px;
+  }
+}
+
+
+/*****************************************************************************/
+/*
+/* Leads#Show
+/*
+/*****************************************************************************/
+
+div.lead_show_container {
+  /* Positioning */
+  /* Box-model */
+  margin: 25px auto;
+  padding-bottom: 25px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  border: 1px solid #bbb;
+  /* Misc */
+  div.lead_update_form {
+    max-width: 420px;
+    margin: 0 auto;
+    textarea, input {
+      border-radius: 0;
+    }
+  }
+  p#lead_comment_paragraph {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+div.lead_updates_box {
+  max-width: 320px;
+  border: 1px solid #eee;
+  margin: 10px auto;
+  h5 {
+    text-align: center;
+  }
+  p {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,57 @@
+<% content_for :title, "(#{@listings.count}) Search Listings - Nooklyn - Rentals, Sales, Lofts" %>
+<div class="mega-container">
+  <% if @listings.empty? %>
+    <div class="nklyn-search-page">
+      <i class="nklyn-icon-logo nklyn-7x"></i>
+      <%= form_for matrix_listings_search_path, method: :get do |f| %>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10">
+              <%= text_field_tag :q, params[:q], class: "general-text-field general-text-field-space-gray", placeholder: "Search Listings" %>
+            </div>
+            <div class="col-sm-2">
+              <%= submit_tag "Go", name: nil, class: "button btn-black btn-5x" %>
+            </div>
+          </div>
+          <hr>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="nklyn-search-page">
+      <i class="nklyn-icon-logo nklyn-7x"></i>
+      <%= form_for matrix_listings_search_path, method: :get do |f| %>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-11">
+              <%= text_field_tag :q, params[:q], class: "general-text-field general-text-field-space-gray", placeholder: "Search Listings" %>
+            </div>
+            <div class="col-sm-1">
+              <%= submit_tag "Go", name: nil, class: "button btn-black btn-5x" %>
+            </div>
+          </div>
+          <hr>
+        </div>
+      <% end %>
+    </div>
+    <div class="matrix_page">
+      <br>
+      <%= render 'matrix_filters' %>
+      <div class="responsive-table">
+        <table class="table table-bordered table-condensed listings">
+          <thead>
+            <tr>
+              <th class="text-center" width="8%">Apartment</th>
+              <th class="text-center" width="26%">Listing</th>
+              <th class="text-center" width="18%">Details</th>
+              <th class="text-center" width="10%">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+              <%= render partial: 'no_cache_matrix_listings', collection: @listings, as: :listing %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>

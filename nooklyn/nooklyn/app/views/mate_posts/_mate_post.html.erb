@@ -1,0 +1,58 @@
+<div class="roommate_card" id="<%= "mate_card_#{mate_post.id}" %>" data-id="" data-move-in="" data-budget="<%= mate_post.price %>">
+  <h2><%= link_to truncate(mate_post.agent.first_name, length: 13), mate_post, title: mate_post.agent.first_name %></h2>
+  <div class="roommate_comment">
+    <% if agent_signed_in? %>
+      <%= link_to mate_post do %>
+        <i class="nklyn-icon-paper-plane nklyn-2x"></i> <h5>Send a Message</h5>
+      <% end %>
+    <% else %>
+      <%= link_to register_path do %>
+        <i class="nklyn-icon-paper-plane nklyn-2x"></i> <h5>Send a Message</h5>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="clearfix"></div>
+  <div class="roommate_image">
+    <% if mate_post.image.blank? %>
+    <% else %>
+      <%= image_tag mate_post.image.url(:medium) %>
+    <% end %>
+  </div>
+  <div class="roommate_heart">
+    <% if mate_post.interested_agents.include?(current_agent) %>
+      <%= render 'mate_posts/unlike_button', :mate_post => mate_post %>
+    <% else %>
+      <%= render 'mate_posts/like_button', :mate_post => mate_post %>
+    <% end %>
+  </div>
+  <div class="like-notice">
+    <i class="nklyn-icon-heart-fill nklyn-7x"></i><br>
+    You liked the post!
+  </div>
+  <div class="unlike-notice">
+    <i class="nklyn-icon-face-sad nklyn-7x"></i><br>
+    We'll remove it from your favorites.
+  </div>
+  <p class="description-overlay">
+    <%= truncate(mate_post.description, length: 250) %>
+    <br><br>
+    <%= link_to "Read More", mate_post, class: "read-more-link" %>
+    <% if can? :manage, :all %>
+    &middot;
+    <%= link_to "Facebook", mate_post.agent.facebook_url, class: "read-more-link", target: "_blank" %>
+    <% end %>
+  </p>
+  <div class="roommate_hood" id="mate_hood">
+    <h5>Hood</h5>
+    <h4><%= mate_post.neighborhood.name %>, <%= mate_post.neighborhood.region.name %></h4>
+  </div>
+  <div class="roommate_price">
+    <h5>Budget</h5>
+    <h3><%= number_to_currency(mate_post.price, precision: 0) %></h3>
+  </div>
+  <div class="roommate_move_in">
+    <h5>Move In</h5>
+    <h3><%= mate_post.when.strftime('%b %e') %></h3>
+  </div>
+  <div class="clearfix"></div>
+</div>

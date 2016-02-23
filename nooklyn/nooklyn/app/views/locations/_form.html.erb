@@ -1,0 +1,115 @@
+<%= form_for(@location) do |f| %>
+  <% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@location.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <legend>General</legend>
+  <div class="field">
+    <%= f.label :name, class: "general-text-label" %><br>
+    <%= f.text_field :name, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :website, class: "general-text-label" %><br>
+    <%= f.text_field :website, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :description, class: "general-text-label" %><br>
+    <%= f.text_area :description, class: "general-text-area", rows: 5 %>
+  </div>
+  <div class="field">
+    <%= f.label :location_category_id, class: "general-text-label" %><br>
+    <%= collection_select :location, :location_category_id, @location_categories, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number, class: "general-text-label" %><br>
+    <%= f.text_field :phone_number, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :image, class: "general-text-label" %><br>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :cover_image, class: "general-text-label" %><br>
+    <%= f.file_field :cover_image, class: "form-control" %>
+  </div>
+  <br>
+
+  <legend>Location</legend>
+  <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+  <div id="type-selector" class="controls">
+    <input type="radio" name="type" id="changetype-all" checked="checked">
+    <label for="changetype-all">All</label>
+  </div>
+  <div id="form-map"></div>
+  <br>
+  <div class="field">
+    <%= f.text_field :latitude, class: "general-text-field", id: "listing_latitude", placeholder: "Latitude (e.g. 40.708284)" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.text_field :longitude, class: "general-text-field", id: "listing_longitude", placeholder: "Longitude (e.g. -73.921847)" %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_one, class: "general-text-label" %><br>
+    <%= f.text_field :address_line_one, class: "general-text-field map-autocomplete-address" %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line_two, class: "general-text-label" %><br>
+    <%= f.text_field :address_line_two, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :city, class: "general-text-label" %><br>
+    <%= f.text_field :city, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :state, class: "general-text-label" %><br>
+    <%= f.text_field :state, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :zip, class: "general-text-label" %><br>
+    <%= f.number_field :zip, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :neighborhood_id, class: "general-text-label" %><br>
+    <%= grouped_collection_select :location, :neighborhood_id, @regions, :neighborhoods, :name, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+  <br>
+  <legend>Optional</legend>
+  <div class="field">
+    <%= f.label :facebook_url, class: "general-text-label" %><br>
+    <%= f.text_field :facebook_url, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_website, class: "general-text-label" %><br>
+    <%= f.text_field :delivery_website, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :yelp_url, class: "general-text-label" %><br>
+    <%= f.text_field :yelp_url, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :modern, class: "general-text-label" %><br>
+    <%= f.check_box :modern, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :featured, class: "general-text-label" %><br>
+    <%= f.check_box :featured, class: "general-text-field" %>
+  </div>
+  <% if can? :manage, :all %>
+  <div class="field">
+    <%= f.label :slug, class: "general-text-label" %><br>
+    <%= f.text_field :slug, class: "general-text-field" %>
+  </div>
+  <% end %>
+  <br>
+  <div class="actions text-center">
+    <%= f.submit "Save", class: "btn btn-black btn-4x" %>
+  </div>
+<% end %>

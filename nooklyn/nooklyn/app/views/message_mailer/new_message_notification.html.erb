@@ -1,0 +1,9 @@
+<%= image_tag 'https://nooklyn-files.s3.amazonaws.com/teepee/teepee.png', class: "center" %><br><br><br>
+
+Hiya <%= @recipient.first_name %>,<br><br>
+
+<%= @sender.first_name %> just sent you a message:<br><br>
+
+"<%= @message %>"<br><br>
+
+<%= link_to 'Continue the conversation here!', conversations_url %><br><br>

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-6 location-show-photo">
+    <%= image_tag @location.image(:large), class: "img-responsive" %>
+  </div>
+  <div class="col-sm-6">
+    <h1><%= @location.name %></h1>
+    <h3><%= link_to @location.location_category.name, @location.location_category %></h3>
+    <hr>
+    <div class="location-show-address">
+      <i class="nklyn-icon-marker nklyn-4x"></i><br>
+      <h3>Address</h3>
+      <%= @location.address_line_one %><% unless @location.address_line_two.empty? %>, <%= @location.address_line_two %><% end %><br>
+      <%= @location.city %>, <%= @location.state %> <%= @location.zip %>
+    </div>
+    <hr>
+    <p><%= @location.description %></p>
+    <hr>
+    <div class="row text-center">
+      <div class="col-xs-4">
+        <%= link_to "Visit Website", @location.website, class: "button btn-transparent-bk btn-2x" %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to "Facebook Page", @location.facebook_url, class: "button btn-transparent-bk btn-2x" %>
+      </div>
+      <div class="col-xs-4">
+        <%= link_to "Yelp Page", @location.yelp_url, class: "button btn-transparent-bk btn-2x" %>
+      </div>
+    </div>
+  </div>
+</div>

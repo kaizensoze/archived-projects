@@ -1,0 +1,77 @@
+<% content_for :title, "(#{@locations.total_count}) Nooklyn Locations Database" %>
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5><%= @locations.total_count %> locations</h5>
+    <h1>Locations Database</h1>
+    <%= form_tag admin_locations_url, method: :get do %>
+      <div class="form-group">
+        <%= text_field_tag 'name_search', '', id: 'location-name-search', placeholder: 'Name', class: 'general-text-field-space-gray' %>
+      </div>
+      <button type="submit" class="button btn-nklyn-black btn-3x">Search</button>
+    <% end %>
+  </div>
+</div>
+<div class="container-fluid">
+  <%= render 'admin/shared/admin_navigation' %>
+  <div class="text-center">
+    <%= paginate @locations, :window => 10, :right => 1 %><br>
+  </div>
+  <div class="responsive-table">
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Address</th>
+          <th>Featured</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th colspan="4">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @locations.each do |location| %>
+        <tr>
+          <td><%= location.id %></td>
+          <td>
+            <% if location.image.nil? %>
+              <%= image_tag 'missing.png', class: "img-responsive img-xsmall" %>
+            <% else %>
+              <%= image_tag location.image.url(:thumb), class: "img-responsive img-xsmall" %>
+            <% end %>
+          </td>
+          <td><%= link_to location.name, location_path(location) %></td>
+          <td><%= location.location_category.name %></td>
+          <td>
+          <b>Address:</b>
+            <%= location.address_line_one %><% unless location.address_line_two.empty? %>, <%= location.address_line_two %><% end %><br>
+            <%= location.city %>, <%= location.state %> <%= location.zip %>
+          <br>
+          <b>Full:</b>
+            <%= location.full_address %>
+          </td>
+          <td><%= location.featured? %></td>
+          <td><%= location.latitude %></td>
+          <td><%= location.longitude %></td>
+          <td numerical-value="<%= location.created_at.to_i %>"><%= location.created_at.strftime('%D at %I:%M%P') %></td>
+          <td numerical-value="<%= location.created_at.to_i %>"><%= location.updated_at.strftime('%D at %I:%M%P') %></td>
+          <td>
+            <% if location.featured? %>
+            <%= link_to 'Remove Feature', remove_feature_admin_location_path(location), class: "button btn-edit btn-2x" %>
+            <% else %>
+            <%= link_to 'Feature', make_feature_admin_location_path(location), class: "button btn-edit btn-2x" %>
+            <% end %>
+          </td>
+          <td><%= link_to 'Show', location_path(location), class: "button btn-white btn-2x" %></td>
+          <td><%= link_to 'Edit', edit_location_path(location), class: "button btn-edit btn-2x" %></td>
+          <td><%= link_to 'Delete', location, method: :delete, data: {confirm: 'Are you sure you want to delete the location?' }, class: "button btn-reject btn-2x" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

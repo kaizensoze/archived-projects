@@ -1,0 +1,40 @@
+<% content_for :title, "Locations in Brooklyn, NY - Powered by Nooklyn" %>
+<div class="mega-container">
+  <div class="container">
+    <div class="standard-page-header">
+      <%= image_tag 'nklyn-logo-alt.png', class: "logo-alt" %>
+      <h1>Hoods</h1>
+      <h5>by Nooklyn</h5>
+      <hr>
+      <%= form_tag locations_url, method: :get do %>
+        <div class="row location-search-row">
+          <div class="form-group col-sm-11">
+            <%= text_field_tag 'name_search', '', id: 'location-name-search', placeholder: 'Search', class: 'general-text-field' %>
+          </div>
+          <div class="col-sm-1">
+            <button type="submit" class="button btn-nklyn-black btn-3x">Search</button>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <ul class="location-category-strip list-inline list-unstyled">
+      <% @location_categories.each do |category| %>
+        <%= link_to category do %>
+          <li>
+            <%= image_tag category.image(:large), class: "img-responsive center-block" %>
+            <h3><%= link_to category.name, category %></h3>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <% unless @locations.empty? %>
+      <hr>
+      <% @locations.each do |location| %>
+      <%= link_to location.name, location %><br>
+      <% end %>
+      <hr>
+    <% end %>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,45 @@
+<% content_for :title, "Job Applications - Nooklyn - Rental, Sales Lofts" %>
+<div class="mega-container">
+  <br>
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="text-center">
+    <h1>Job Applications</h1>
+    <%= paginate @job_applications, :window => 10, :right => 1 %><br>
+  </div>
+  <div class="container responsive-table jobs-page">
+    <br>
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Full name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Current Company</th>
+          <th>Position</th>
+          <th>Resume</th>
+          <th>Agent</th>
+          <th>Claim</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @job_applications.each do |job_application| %>
+          <tr>
+            <td><%= job_application.created_at.strftime('%D') %></td>
+            <td><%= job_application.full_name %></td>
+            <td><%= job_application.email %></td>
+            <td><%= job_application.phone %></td>
+            <td><%= job_application.current_company %></td>
+            <td><%= job_application.position %></td>
+            <td><%= link_to "PDF", job_application.resume.url, target: "_blank" %></td>
+            <td><%= job_application.try(:agent).try(:name) %></td>
+            <td><%= link_to "Claim", claim_job_application_path(job_application) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+  </div>
+  <br>
+</div>

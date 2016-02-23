@@ -1,0 +1,55 @@
+<% content_for :title, "(#{@agents.count}) Search Results" %>
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5>returned <%= @agents.count %> awesome users</h5>
+    <h1>Search User Database</h1>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <%= render 'admin/shared/admin_navigation' %>
+  <br>
+  <%= form_for admin_agents_search_path, method: :get do |f| %>
+    <div class="row">
+      <div class="col-sm-10">
+        <%= text_field_tag :q, params[:q], class: "general-text-field" %>
+      </div>
+      <div>
+        <%= submit_tag "Go", name: nil, class: "button btn-black btn-4x" %>
+      </div>
+    </div>
+  <% end %>
+  <hr>
+
+  <table class="table nklyn-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>super admin</th>
+        <th>admin</th>
+        <th>employer</th>
+        <th>employee</th>
+        <th>suspended</th>
+        <th>Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @agents.each do |agent| %>
+      <tr>
+        <td><%= agent.id %></td>
+        <td><%= link_to agent.full_name, admin_agent_path(agent.id) %></td>
+        <td><%= agent.email %></td>
+        <td><%= agent.super_admin? %></td>
+        <td><%= agent.admin? %></td>
+        <td><%= agent.employer? %></td>
+        <td><%= agent.employee? %></td>
+        <td><%= agent.suspended? %></td>
+        <td><%= agent.created_at %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,9 @@
+<% if agent_signed_in? %>
+  <% unless current_agent.provider.blank? %>
+    <% unless @agent.liked_mates.empty? %>
+      <div class="text-center">
+        <%= render partial: "mate_posts/mate_post", collection: @mates %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

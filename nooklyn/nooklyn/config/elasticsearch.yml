@@ -1,0 +1,9 @@
+development:
+  host: localhost
+  port: 9200
+test:
+  host: localhost
+  port: 9200
+production:
+  host: https://ixsj63iy:9cun2v9d8il0s1h7@privet-6892434.us-east-1.bonsai.io/
+  port: 9200

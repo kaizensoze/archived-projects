@@ -1,0 +1,7 @@
+<tr>
+  <td><%= link_to listing.id, listing, class: "button btn-white btn-2x", target: "_blank" %></td>
+  <td><%= number_to_currency(listing.price, precision: 0) %></td>
+  <td><%= listing.full_address %></td>
+  <td numerical-value="<%= listing.likes.count.to_i %>"><%= listing.likes.count %></td>
+  <td class="hidden-xs"><%= listing.created_at.strftime('%D') %></td>
+</tr>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @deposit_client.name %>
+</p>
+
+<p>
+  <strong>Guarantor:</strong>
+  <%= @deposit_client.guarantor %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @deposit_client.deposit_id %>
+</p>
+
+<%= link_to 'Edit', edit_deposit_client_path(@deposit_client) %> |
+<%= link_to 'Back', deposit_clients_path %>

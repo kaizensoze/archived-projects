@@ -1,0 +1,13 @@
+<% content_for :title, "Feedback - Nooklyn - Rental, Sales Lofts" %>
+
+<br>
+<div class="container feedback-index">
+  <% @feedbacks.each do |feedback| %>
+  <div class="row feedback-strip">
+      <h3><%= feedback.name %></h3>
+      <h4><%= feedback.email %> &middot; <%= feedback.created_at.strftime('%D') %> &middot; <%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+      <p><%= feedback.message %></p>
+    </div>
+  <% end %>
+</div>
+

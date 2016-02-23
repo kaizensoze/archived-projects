@@ -1,0 +1,81 @@
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5><%= @listing.address %></h5>
+    <h1>#<%= @listing.id %></h1>
+    <ul class="list-unstyled list-inline">
+      <li><%= link_to 'Show', listing_path(@listing), class: "button btn-transparent btn-3x" %></li>
+      <li><%= link_to 'Edit', edit_listing_path(@listing), class: "button btn-transparent btn-3x", target: "_blank" %></li>
+      <li><%= link_to 'Delete', @listing, method: :delete, data: {confirm: 'Are you sure you want to delete the listing?' }, class: "button btn-transparent btn-3x" %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container-fluid admin-show-page-container">
+    <div class="admin-key-value-pair-card">
+      <h3>Strings</h3>
+      <ul class="list-unstyled">
+        <li><b>Status:</b> <%= @listing.status %> </li>
+        <li><b>Price:</b> <%= number_to_currency(@listing.price, precision: 0) %></li>
+        <li><b>Beds:</b> <%= number_to_human(@listing.bedrooms) %></li>
+        <li><b>Bathrooms:</b> <%= number_to_human(@listing.bedrooms) %></li>
+        <li><b>Pets:</b> <%= @listing.pets? %></li>
+        <li><b>Title:</b> <%= @listing.title %></li>
+        <li><b>Description:</b> <%= @listing.description %> </li>
+        <li><b>Fee:</b> <%= @listing.fee %> </li>
+        <li><b>Term:</b> <%= @listing.term %> </li>
+        <li><b>Access:</b> <%= @listing.access %> </li>
+        <li><b>Square Feet:</b> <%= @listing.square_feet %> </li>
+        <li><b>Landlord Contact:</b> <%= @listing.landlord_contact %> </li>
+        <li><b>Owner Pays:</b> <%= @listing.owner_pays %> </li>
+        <li><b>Utilities:</b> <%= @listing.utilities %> </li>
+        <li><b>Move in cost</b><%= @listing.move_in_cost? %></li>
+      </ul>
+    </div>
+    <div class="admin-key-value-pair-card">
+      <h3>Amenities</h3>
+      <ul class="list-unstyled">
+        <% @listing.amenities.split("\n").each do |amenity| %>
+        <li><i class="nklyn-icon-dot-fill nklyn-green"></i> <span><%= amenity %></span></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="admin-key-value-pair-card">
+      <h3>Location</h3>
+      <ul class="list-unstyled">
+        <li><b>Address:</b> <%= @listing.address %></li>
+        <li><b>Unit:</b><% @listing.apartment %></li>
+        <li><b>Full Address:</b> <%= @listing.full_address %></li>
+        <li><b>Zip:</b> <%= @listing.zip %></li>
+        <li><b>Neighborhood:</b> <%= @listing.neighborhood.name %></li>
+        <li><b>Latitude:</b> <%= @listing.latitude %></li>
+        <li><b>Longitude:</b> <%= @listing.longitude %></li>
+        <li><b>Subway:</b> <%= @listing.subway_line %></li>
+        <li><b>Station:</b> <%= @listing.station %></li>
+      </ul>
+    </div>
+    <div class="admin-key-value-pair-card">
+      <h3>Booleans</h3>
+      <ul class="list-unstyled">
+        <li><b>Exclusive:</b> <%= @listing.exclusive? %></li>
+        <li><b>Private:</b> <%= @listing.private? %></li>
+        <li><b>Featured:</b> <%= @listing.featured? %></li>
+        <li><b>Rental:</b> <%= @listing.rental? %></li>
+        <li><b>Residential:</b> <%= @listing.residential? %></li>
+      </ul>
+    </div>
+    <div class="admin-key-value-pair-card">
+      <h3>Timestamps</h3>
+      <ul class="list-unstyled">
+        <li><b>Created at:</b> <%= @listing.created_at.strftime('%D at %I:%M%P') %></li>
+        <li><b>Private:</b> <%= @listing.updated_at.strftime('%D at %I:%M%P') %></li>
+        <li><b>Available:</b> <%= @listing.date_available.strftime('%D') %></li>
+      </ul>
+    </div>
+    <div class="admin-key-value-pair-card">
+      <h3>Agents</h3>
+      <ul class="list-unstyled">
+        <li><b>Listing:</b> <%= link_to @listing.sales_agent.name, admin_agent_path(@listing.sales_agent) %></li>
+        <li><b>Sales:</b> <%= link_to @listing.listing_agent.name, admin_agent_path(@listing.listing_agent) %></li>
+      </ul>
+    </div>
+</div>

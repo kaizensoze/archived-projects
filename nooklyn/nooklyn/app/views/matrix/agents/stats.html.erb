@@ -1,0 +1,28 @@
+<div class="numbers-page">
+  <div class="mega-container">
+    <%= image_tag 'https://nooklyn-files.s3.amazonaws.com/illustrations/FriendlyAgents.png', class: "img-responsive center-block" %>
+    <h2>By Message Response Time</h2>
+    <div class="container responsive-table">
+      <table class='table table-hover table-bordered'>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Agent</th>
+            <th>Avg. Response Time</th>
+            <th>Number of Conversations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @agent_stats.each_with_index do |agent, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= "#{agent['first_name']} #{agent['last_name']}" %></td>
+            <td><%= distance_of_time_in_words(agent['avg_response_secs'].to_f) %></td>
+            <td><%= agent['num_conversations'] %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

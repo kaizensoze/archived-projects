@@ -1,0 +1,32 @@
+<%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/Messages.png", class: "img-responsive center-block" %>
+<div class="container">
+  <h2 href="#messages" name="messages" class="fake-link">Messages</h2>
+  <div class="row stat-row">
+    <div class="col-sm-3">
+      <h3>Total</h3>
+      <h5><%= number_with_delimiter(@messages.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Today</h3>
+      <h5><%= @messages_day.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Week</h3>
+      <h5><%= @messages_week.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Month</h3>
+      <h5><%= @messages_month.count %></h5>
+    </div>
+  </div>
+  <% @message_stats.each_slice(4) do |message_stat_row| %>
+    <div class="row stat-row">
+      <% message_stat_row.each do |(month_year, messages_for_month)| %>
+        <div class="col-sm-3">
+          <h3><%= month_year %></h3>
+          <h5><%= number_with_delimiter(messages_for_month.count) %></h5>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

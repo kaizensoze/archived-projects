@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing_id: 
+  agent_id: 
+  status: 1
+
+two:
+  listing_id: 
+  agent_id: 
+  status: 1

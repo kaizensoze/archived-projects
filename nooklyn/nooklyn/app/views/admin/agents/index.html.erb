@@ -1,0 +1,61 @@
+<% content_for :title, "(#{@agents.total_count}) Nooklyn User Database" %>
+<div class="nklyn-jumbotron">
+  <div class="container">
+    <h5><%= @agents.total_count %> awesome users</h5>
+    <h1>User Database</h1>
+  </div>
+</div>
+<div class="container-fluid">
+  <%= render 'admin/shared/admin_navigation' %>
+  <div class="text-center">
+    <%= paginate @agents, :window => 10, :right => 1 %><br>
+  </div>
+  <div class="responsive-table">
+    <table class="table nklyn-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>super admin</th>
+          <th>admin</th>
+          <th>employer</th>
+          <th>employee</th>
+          <th>suspended</th>
+          <th>Created</th>
+          <th>Updated</th>
+          <th>Sign In</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @agents.each do |agent| %>
+        <tr>
+          <td><%= agent.id %></td>
+          <td>
+            <%= link_to agent, target: "_blank" do %>
+              <% if agent.profile_picture.nil? %>
+                <%= image_tag 'missing.png', class: "img-circle" %>
+              <% else %>
+                <%= image_tag agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small" %>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= link_to agent.name, admin_agent_path(agent) %></td>
+          <td><%= agent.email %></td>
+          <td><%= number_to_phone(agent.phone) %></td>
+          <td><%= agent.super_admin? %></td>
+          <td><%= agent.admin? %></td>
+          <td><%= agent.employer? %></td>
+          <td><%= agent.employee? %></td>
+          <td><%= agent.suspended? %></td>
+          <td><%= agent.created_at.strftime('%D at %I:%M%P') %></td>
+          <td><%= agent.updated_at.strftime('%D at %I:%M%P') %></td>
+          <td><% unless agent.current_sign_in_at.blank? %><%= agent.current_sign_in_at.strftime('%D') %><% end %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

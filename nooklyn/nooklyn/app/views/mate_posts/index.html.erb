@@ -1,0 +1,10 @@
+<% content_for :title, "Brooklyn Roommate Finder - Powered by Nooklyn" %>
+
+<div class="super_container">
+  <div class="rm_container">
+    <%= render 'mate_posts/mate_header' %>
+    <%= render 'mate_posts/mate_post_filters' %>
+    <%= render partial: "mate_post", collection: @mate_posts %>
+  </div>
+  <br>
+</div>

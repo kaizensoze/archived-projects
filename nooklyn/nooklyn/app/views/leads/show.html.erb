@@ -1,0 +1,62 @@
+<div class="super_container">
+  <br>
+  <%= render 'matrix/listings/matrix_navigation' %>
+<div class="container lead_show_container">
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <h2>Name</h2>
+      <p class="lead-info"><%= @lead.full_name %></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Phone</h2>
+      <p class="lead-info"><%= number_to_phone(@lead.phone) %></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Email</h2>
+      <p class="lead-info"><%= @lead.email %></p>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <h2>Move In</h2>
+      <p class="lead-info"><%= @lead.move_in %></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Pets?</h2>
+      <p class="lead-info"><%= @lead.pets %></p>
+    </div>
+    <div class="col-sm-4">
+      <h2>Price</h2>
+      <p class="lead-info"><%= number_to_currency(@lead.min_price) %> to <%= number_to_currency(@lead.max_price) %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2 class="text-center">Additional Notes</h2>
+      <p id="lead_comment_paragraph"><%= @lead.comments %></p>
+    </div>
+  </div>
+<br>
+<hr>
+
+<h4 class="text-center">Contact History</h4>
+  <% @lead.updates.reverse_each do |update| %>
+  <div class="lead_updates_box">
+    <h5><%= update.agent.name %></h5>
+    <hr>
+    <p><%= update.message %></p>
+    <small><p class="text-center"><%= update.created_at.strftime('%D at %I:%M%P') %></p></small>
+  </div>
+  <% end %>
+
+  <%= form_for [@lead, @lead.updates.build] do |f| %>
+  <fieldset>
+  <div class="lead_update_form">
+    <%= f.text_area :message, :autocomplete => "off", :class => "form-control", :rows => 3 %>
+    <%= f.submit 'Post', :class => 'button btn-blue btn-3x btn-block' %>
+  </div>
+  </fieldset>
+  <% end %>
+</div>
+<br>
+</div>

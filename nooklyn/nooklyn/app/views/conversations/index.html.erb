@@ -1,0 +1,8 @@
+<% content_for :title, "Conversations - Powered by Nooklyn" %>
+
+<%= render 'conversations/conversation_header' %>
+
+<div class="conversations-index-page">
+  <%= render partial: "conversation", collection: @conversations %>
+</div>
+<br>

@@ -1,0 +1,79 @@
+<% content_for :title, "Work at Nooklyn - Rental, Sales, Lofts" %>
+<% content_for :description, "Nooklyn is an amazing place to work and we have an awesome team of agents who will help you learn the ropes of real estate in Brooklyn." %>
+
+<div class="nklyn-jobs-jumbotron">
+  <i class="nklyn-icon-logo nklyn-7x"></i>
+  <h1>Nooklyn</h1>
+  <h2>Find your Nook</h2>
+  <br>
+  <%= link_to "Apply Today", new_job_application_path, class: "button btn-yellow btn-3x" %>
+</div>
+
+<div class="jobs-page text-center">
+  <div class="standard-page-header">
+    <%= image_tag 'nklyn-logo-alt.png', class: "logo-alt img-responsive img-xsmall center-block" %>
+    <h1>Nooklyn</h1>
+    <p>Nooklyn is a technology powered brokerage. In 2015, we rented over 3,000 apartments in North Brooklyn and we double every year. We offer the best customer experience to our renters and property owners - and our customers love us.</p>
+    <hr>
+  </div>
+  <div class="nklyn-office-card">
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/img/jobs/bushwick.jpg", class: "img-responsive center-block" %>
+     <div class="hood-overlay">
+      <h3>Bushwick</h3>
+      <h4>&nbsp;</h4>
+      <p>
+        28 Scott Ave<br>
+        Brooklyn, NY 11237
+      </p>
+     </div>
+  </div>
+  <div class="nklyn-office-card">
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/img/jobs/greenpoint.jpg", class: "img-responsive center-block" %>
+     <div class="hood-overlay">
+      <h3>Greenpoint</h3>
+      <h4>&nbsp;</h4>
+      <p>
+        568 Manhattan Ave<br>
+        Brooklyn, NY 11222
+      </p>
+     </div>
+  </div>
+  <div class="nklyn-office-card">
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/img/jobs/crown.jpg", class: "img-responsive center-block" %>
+     <div class="hood-overlay">
+      <h3>Crown Heights</h3>
+      <h4>&nbsp;</h4>
+      <p>
+        765 Franklin Ave<br>
+        Brooklyn, NY 11238
+      </p>
+     </div>
+  </div>
+  <div class="nklyn-office-card">
+    <%= image_tag "//nooklyn-files.s3.amazonaws.com/img/jobs/manhattan.jpg", class: "img-responsive center-block" %>
+     <div class="hood-overlay">
+      <h3>Union Square</h3>
+      <h4>&nbsp;</h4>
+      <p>
+        Coming Soon
+      </p>
+    </div>
+  </div>
+  <div class="standard-page-header">
+    <%= image_tag 'nklyn-logo-alt.png', class: "logo-alt img-responsive img-xsmall center-block" %>
+    <h1>Technology</h1>
+    <p>We've built a successful app/website to manage listings, track deposits, and checkout keys. Our tech gives you access to our exclusive listings database everywhere and will help you rent more apartments. </p><br>
+  </div>
+  <div class="jobs-app-section">
+    <ul class="list-unstyled list-inline">
+      <li><%= image_tag "//nooklyn-files.s3.amazonaws.com/img/jobs/nklyn-ios-apartments.png", class: "img-responsive center-block" %></li>
+      <li><%= image_tag "//nooklyn-files.s3.amazonaws.com/img/jobs/nklyn-ios-hoodview.png", class: "img-responsive center-block" %></li>
+      <li><%= image_tag "//nooklyn-files.s3.amazonaws.com/img/jobs/nklyn-ios-mates.png", class: "img-responsive center-block" %></li>
+    </ul>
+    <div class="text-center">
+      <%= link_to "https://itunes.apple.com/us/app/nooklyn-apartments-roommates/id1024150110", target: "_blank" do %>
+        <%= image_tag 'download-tunes.svg', class: "img-responsive center-block", alt: "button to download the nooklyn app on the App Store" %>
+      <% end %>
+    </div>
+  </div>
+</div>

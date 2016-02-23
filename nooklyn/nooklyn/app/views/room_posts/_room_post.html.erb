@@ -1,0 +1,53 @@
+<div class="roommate_card" id="<%= "room_card_#{room_post.id}" %>" data-id="<%= room_post.id %>" data-latitude="<%= room_post.latitude %>" data-longitude="<%= room_post.longitude %>" data-photo="<%= room_post.image.url(:medium) %>" data-price="<%= room_post.price %>" data-formatted-price="<%= number_to_currency(room_post.price, precision: 0) %>">
+  <h2><%= room_post.agent.first_name %></h2>
+  <div class="roommate_comment">
+  <% if agent_signed_in? %>
+    <%= link_to room_post do %>
+      <i class="nklyn-icon-message nklyn-2x"></i> <h5>Send a Message</h5>
+    <% end %>
+  <% else %>
+    <%= link_to register_path do %>
+      <i class="nklyn-icon-message nklyn-2x"></i> <h5>Send a Message</h5>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="clearfix"></div>
+  <%= link_to room_post do %>
+  <div class="roommate_image">
+    <% if room_post.image.blank? %>
+    <!-- add default image here -->
+    <% else %>
+    <%= image_tag room_post.image.url(:medium) %>
+    <% end %>
+  </div>
+  <% end %>
+  <div class="roommate_heart">
+    <% if room_post.interested_agents.include?(current_agent) %>
+      <%= render 'room_posts/unlike_button', :room_post => room_post %>
+    <% else %>
+      <%= render 'room_posts/like_button', :room_post => room_post %>
+    <% end %>
+  </div>
+  <div class="like-notice">
+    <i class="nklyn-icon-heart-fill nklyn-7x"></i><br>
+    You liked the post!
+  </div>
+  <div class="unlike-notice">
+    <i class="nklyn-icon-face-sad nklyn-7x"></i><br>
+    We'll remove it from your favorites.
+  </div>
+  <p class="description-overlay"><%= truncate(room_post.description, length: 250) %><br><br><%= link_to "Read More", room_post, class: "read-more-link" %></p>
+  <div class="roommate_hood" id="mate_hood">
+    <h5>Hood</h5>
+    <h4><%= room_post.neighborhood.name %>, <%= room_post.neighborhood.region.name %></h4>
+  </div>
+  <div class="roommate_price">
+    <h5>Budget</h5>
+    <h3><%= number_to_currency(room_post.price, precision: 0) %></h3>
+  </div>
+  <div class="roommate_move_in">
+    <h5>Move In</h5>
+    <h3><%= room_post.when.strftime('%b %e') %></h3>
+  </div>
+  <div class="clearfix"></div>
+</div>

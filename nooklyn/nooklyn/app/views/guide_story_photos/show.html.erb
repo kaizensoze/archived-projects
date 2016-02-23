@@ -1,0 +1,11 @@
+<%= image_tag @guide_story_photo.image.url(:standard), class: 'img-responsive center-block' %>
+<div class="mega-container container">
+  <br><hr>
+  <% unless @guide_story_photo.caption.blank? %>
+    <h3>&ldquo;</h3>
+    <p><%= @guide_story_photo.caption %></p>
+    <h3>&rdquo;</h3>
+  <% end %>
+  <%= link_to "Story", @guide_story_photo.guide_story, class: "button btn-white btn-2x" %>
+  <%= link_to 'Edit', edit_guide_story_photo_path(@guide_story_photo), class: "button btn-edit btn-2x" %>
+</div>

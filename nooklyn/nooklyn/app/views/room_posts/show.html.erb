@@ -1,0 +1,39 @@
+<% content_for :title, "A room in #{@room_post.neighborhood.name} by #{@room_post.agent.first_name} on Rooms & Mates - Powered by Nooklyn" %>
+<% content_for :description, "#{@room_post.description}" %>
+<% content_for :meta_url, "#{room_post_url(@room_post)}" %>
+<% content_for :og_image, "#{@room_post.image.url(:medium)}" %>
+
+<div class="super_container">
+  <br>
+  <div class="container">
+    <% unless agent_signed_in? %>
+    <div class="alert alert-info" role="alert">In order to send a message, you must <%= link_to "sign up.", login_path %></div>
+    <% end %>
+    <div class="roommate_reply">
+      <h2>Reply to <%= link_to @room_post.agent.first_name, @room_post.agent %></h2>
+      <%= image_tag @room_post.image.url(:medium), class: "img-responsive" %>
+      <p><%= @room_post.description %></p>
+      <% @room_post.rooms.each do |room| %>
+        <%= image_tag room.picture.url(:medium), class: "img-responsive" %>
+      <% end %>
+      <br>
+      <br>
+      <% if agent_signed_in? %>
+        <%= form_tag(conversations_path, method: :post) do %>
+          <fieldset>
+            <%= text_area_tag 'conversation[message]', '', :autocomplete => "off", class: "general-text-field limit_500", placeholder: "Send a nice message." %><br>
+            <p class="form-help-block"><span id="remain">500</span> characters remaining</p>
+            <%= hidden_field_tag 'conversation[recipient_id]', @room_post.agent.id %>
+            <%= hidden_field_tag 'conversation[context_url]', request.original_url %>
+            <%= submit_tag 'Send', :class => 'button btn-blue btn-3x' %>
+          </fieldset>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <% if can? :manage, :all %>
+    <%= link_to @room_post, method: :delete, data: { confirm: 'Are you sure?' } do %><button class="button btn-white btn-2x">Delete</button> <% end %>
+  <% end %>
+  <br>
+</div>

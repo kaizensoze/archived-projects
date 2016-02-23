@@ -1,0 +1,79 @@
+/*****************************************************************************/
+/*
+/* Matrix#Index
+/*
+/*****************************************************************************/
+
+div.matrix_page {
+  background-color: #fff;
+  padding: 15px;
+  div.nooklyn_listing_square {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+  }
+}
+
+.table tbody tr.success td  {
+  background-color: #c8fbcc;
+}
+
+.table tbody tr.warning td  {
+  background-color: #FBFAC8;
+}
+
+
+/*****************************************************************************/
+/*
+/* Table View
+/*
+/*****************************************************************************/
+
+  .p-exclusive td {
+    background-color: #c8fbcc !important;
+  }
+  .p-pending td {
+    background-color: #FBFAC8 !important;
+  }
+
+div.nklyn-search-page {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #000;
+  /* Misc */
+  i {
+    /* Positioning */
+    /* Box-model */
+    margin-bottom: 25px;
+    /* Typography */
+    /* Visual */
+    color: #ffc03a;
+    /* Misc */
+  }
+  hr {
+    border-color: #333;
+  }
+}
+
+
+
+div.nklyn-search-results {
+  /* Positioning */
+  /* Box-model */
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 50px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+}
+
+
+

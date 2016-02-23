@@ -1,0 +1,21 @@
+<% current_agent.room_posts.each do |room_post| %>
+<div class="row">
+  <div class="col-md-4 iphone-hack">
+    <div class="roommate_leads_card">
+      <h3 class="text-center">Leads</h3>
+      <% if room_post.comments.empty? %>
+      <p>You don't have any leads yet</p>
+      <% else %>
+        <% room_post.comments.each do |comment| %>
+        <div class="roommate_comments">
+        <h4><%= comment.agent.name %></h4>
+        <h5><%= number_to_phone(comment.phone) %> &middot; <%= comment.email %></h5>
+        <p><%= comment.message %></p>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
+<% end %>

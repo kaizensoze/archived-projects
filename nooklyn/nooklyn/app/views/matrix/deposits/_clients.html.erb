@@ -1,0 +1,25 @@
+  <div class="container">
+    <div class="responsive-table">
+      <table class="table nklyn-table">
+        <thead>
+          <tr>
+            <th>Client Name</th>
+            <th>guarantor</th>
+            <th>Date</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @deposit.clients.each do |client| %>
+            <tr>
+              <td><%= client.name %></td>
+              <td><%= client.guarantor %></td>
+              <td><%= client.created_at.strftime('%D') %></td>
+              <td><%= link_to "Edit", edit_matrix_deposit_client_path(client), class: "button btn-white btn-2x" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>

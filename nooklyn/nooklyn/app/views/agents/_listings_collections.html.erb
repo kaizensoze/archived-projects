@@ -1,0 +1,17 @@
+<% current_agent.listings_collections.each do |collection| %>
+  <div class="listings-collection-card">
+    <%= image_tag random_listing_image(collection), class: "img-responsive" %>
+    <h2><%= link_to collection.name, collection %> &middot; <%= link_to "Edit", edit_listings_collection_path(collection) %></h2>
+    <p><%= truncate(collection.description, length: 250) %></p>
+    <hr>
+    <h5>Share</h5>
+    <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{listings_collection_url(collection)}", target: "_blank" do %><i class="nklyn-icon-social-facebook nklyn-3x"></i><% end %>
+    <%= link_to "https://twitter.com/intent/tweet?button_hashtag=nooklyn&text=#{listings_collection_url(collection)}", target: "_blank" do %><i class="nklyn-icon-social-twitter nklyn-3x"></i><% end %>
+    <hr>
+    <% if collection.private? %>
+      <%= link_to "Make Public", make_public_listings_collection_path(collection), class: "button btn-nklyn-black btn-3x" %>
+    <% else %>
+      <%= link_to "Make Private", make_private_listings_collection_path(collection), class: "button btn-nklyn-black btn-3x" %>
+    <% end %>
+  </div>
+<% end %>

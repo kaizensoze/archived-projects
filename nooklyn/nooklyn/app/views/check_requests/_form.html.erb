@@ -1,0 +1,75 @@
+<%= form_for(@check_request) do |f| %>
+  <% if @check_request.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@check_request.errors.count, "mistake") %> must be corrected</h3>
+      <ul>
+      <% @check_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :agent_id, "Agent", class: "general-text-label" %><br>
+    <%= collection_select :check_request, :agent_id, @agents, :id, :name, {include_blank: true}, {class: "selectize"} %>
+  </div>
+  <div class="field">
+    <%= f.label :name, "check payable to", class: "general-text-label" %><br>
+    <%= f.text_field :name, class: "general-text-field" %>
+    <p class="form-help-block">Please enter the legal name of the landlord, client or the company name.</p>
+  </div>
+  <div class="field">
+    <%= f.label :check_request_type_id, class: "general-text-label" %><br>
+    <label class="select">
+    <%= collection_select(:check_request, :check_request_type_id, @check_types, :id, :name) %>
+    </label>
+  </div>
+  <hr>
+  <div id="form-map"></div>
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
+    <div id="type-selector" class="controls">
+      <input type="radio" name="type" id="changetype-all" checked="checked">
+      <label for="changetype-all">All</label>
+    </div>
+  <br>
+  <div class="row">
+    <div class="field col-lg-10">
+      <%= f.label :apartment_address, class: "general-text-label" %><br>
+      <%= f.text_field :apartment_address, class: "general-text-field map-autocomplete-address" %>
+    </div>
+    <div class="field col-lg-2">
+      <%= f.label :unit, class: "general-text-label" %><br>
+      <%= f.text_field :unit, class: "general-text-field" %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :amount, "Check Amount", class: "general-text-label" %><br>
+    <%= f.text_field :amount, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :check_date, "Date", class: "general-text-label" %><br>
+    <%= f.text_field :check_date, class: "general-text-field datepicker" %>
+    <p class="form-help-block">This is the date the check is needed by.</p>
+  </div>
+  <div class="field">
+    <%= f.label :notes, class: "general-text-label" %><br>
+    <%= f.text_area :notes, class: "general-text-area", rows: 5 %>
+    <p class="form-help-block">Please submit any additional information that you may think is useful.</p>
+  </div>
+  <hr>
+  <div class="actions text-center">
+    <%= f.submit "Save", class: "button btn-blue btn-5x" %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('.narrow-form-container').on("keyup keypress", function(e) {
+  var code = e.keyCode || e.which;
+  if (code  == 13) {
+    e.preventDefault();
+    return false;
+  }
+  });
+</script>

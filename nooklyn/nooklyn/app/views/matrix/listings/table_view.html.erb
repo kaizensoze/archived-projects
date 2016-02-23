@@ -1,0 +1,66 @@
+<% content_for :title, "Table View - Nooklyn - Rentals, Sales, Lofts" %>
+<div class="mega-container">
+  <%= render 'matrix_navigation' %>
+  <%= render 'matrix_filters' %>
+  <div class="responsive-table">
+    <table class="table nklyn-table table-striped table-bordered table-condensed">
+      <thead>
+        <tr>
+            <th>ID#:</th>
+            <th>Price</th>
+            <th width="10%">Fee</th>
+            <th width="15%">Address</th>
+            <th width="5%">Apartment</th>
+            <th>Neighborhood</th>
+            <th width="15%">Access</th>
+            <th>Pets</th>
+            <th>Beds</th>
+            <th>Bath</th>
+            <th width="5%">Utilities</th>
+            <th>Type</th>
+            <th>Listing</th>
+            <th>Exclusive</th>
+            <th>Created</th>
+            <th>Updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @listings.each do |listing| %>
+        <tr class="matrix-listing <% if listing.exclusive? %> p-exclusive <% end %><% if listing.status == "Application Pending" %> p-pending <% end %>"
+          data-neighborhood="<%= listing.neighborhood.name %>"
+          data-is-residential="<%= listing.residential %>"
+          data-status="<%= listing.status %>"
+          data-bedrooms="<%= listing.bedrooms %>"
+          data-bathrooms="<%= listing.bathrooms %>"
+          data-price="<%= listing.price %>"
+          data-id=<%= listing.id %>
+          data-listing-agent="<%= listing.listing_agent.name %>"
+          data-sales-agent="<%= listing.sales_agent.name %>"
+          data-address="<%= listing.address %>"
+          data-pets="<%= listing.pets %>"
+          data-owner-pays="<%= listing.owner_pays %>"
+          data-exclusive="<%= listing.exclusive %>"
+          <% unless listing.date_available.blank? %>data-move="<%= listing.date_available.strftime('%D')%>"<% end %>
+          data-amenities="<% listing.amenities.split("\n").each do |amenity| %> <%= amenity %> <% end %>">
+          <td><%= link_to listing.id, listing %></td>
+          <td numerical-value="<%= listing.price %>"><%= number_to_currency(listing.price, precision: 0) %></td>
+          <td><%= listing.fee %></td>
+          <td><%= listing.address %></td>
+          <td><%= listing.apartment %></td>
+          <td><%= listing.neighborhood.name %></td>
+          <td><%= listing.access %></td>
+          <td><% if listing.pets == true %>Yes<% else %>No<% end %></td>
+          <td><%= number_to_human(listing.bedrooms) %></td>
+          <td><%= number_to_human(listing.bathrooms) %></td>
+          <td><%= listing.utilities %></td>
+          <td><% if listing.residential %>Residential<% else %>Commercial<% end %></td>
+          <td><%= listing.listing_agent.name %></td>
+          <td><% unless listing.exclusive %>Non-<% end %>Exclusive<br></td>
+          <td numerical-value="<%= listing.created_at.to_i  %>"><%= listing.created_at.strftime('%D')  %></td>
+          <td numerical-value="<%= listing.updated_at.to_i  %>"><%= listing.updated_at.strftime('%D')  %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <h3 class="text-center">Status History</h3>
+  <table class="table nklyn-table">
+    <thead>
+      <tr>
+        <th>Agent</th>
+        <th>New Status</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @listing.status_changes.each do |status_change| %>
+      <tr>
+        <td><%= status_change.agent.name %></td>
+        <td><%= status_change.humanable_status %></td>
+        <td numerical-value="<%= status_change.created_at.to_i %>"><%= status_change.created_at.strftime('%D %I:%M%P') %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+</div>

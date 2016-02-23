@@ -1,0 +1,31 @@
+<% content_for :title, "Deposits - Nooklyn: Apartments, Roommates, Neighborhoods" %>
+<div class="mega-container">
+  <%= render 'matrix/listings/matrix_navigation' %>
+  <div class="text-center container">
+    <h1>Deposits (<%= @deposits.count %>)</h1><hr>
+    <%= link_to 'New Deposit', new_matrix_deposit_path, class: "button btn-blue btn-2x" %>
+  </div>
+  <%= render 'matrix/deposits/deposit_filters' %>
+
+  <table class="table nklyn-table">
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Status</th>
+        <th>Listing agent</th>
+        <th>Sales agent</th>
+        <th>Split sales agent</th>
+        <th>Apartment price</th>
+        <th>Transactions</th>
+        <th>Office</th>
+        <th>Move In</th>
+        <th>Created</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'deposit_row', collection: @deposits, as: :deposit %>
+    </tbody>
+  </table>
+  <br>
+</div>

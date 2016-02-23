@@ -1,0 +1,138 @@
+<% cache(listing) do %>
+  <tr class="matrix-listing"
+    data-neighborhood="<%= listing.neighborhood.name %>"
+    data-is-residential="<%= listing.residential %>"
+    data-status="<%= listing.status %>"
+    data-bedrooms="<%= listing.bedrooms %>"
+    data-bathrooms="<%= listing.bathrooms %>"
+    data-price="<%= listing.price %>"
+    data-id=<%= listing.id %>
+    data-listing-agent="<%= listing.listing_agent.name %>"
+    data-sales-agent="<%= listing.sales_agent.name %>"
+    data-address="<%= listing.address %>"
+    data-pets="<%= listing.pets %>"
+    data-owner-pays="<%= listing.owner_pays %>"
+    data-exclusive="<%= listing.exclusive %>"
+    <% unless listing.date_available.blank? %>data-move="<%= listing.date_available.strftime('%D')%>"<% end %>
+    data-amenities="<% listing.amenities.split("\n").each do |amenity| %> <%= amenity %> <% end %>">
+    <td>
+    <div class="nooklyn-matrix-index-listing-card-stub">
+      <%= link_to listing, target: "_blank" do %>
+        <div class="matrix-listing-image">
+          <% if listing.image.blank? %>
+            <%= image_tag "https://placeholdit.imgix.net/~text?txtsize=18&txt=Upload+an+image&w=350&h=350" %>
+          <% else %>
+            <%= image_tag listing.image(:xsthumb) %>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="matrix-listing-id">
+        <h5>ID</h5>
+        <h3><%= listing.id %></h3>
+      </div>
+      <div class="clearfix"></div>
+        <div class="price">
+          <h5>Price</h5>
+          <h3><%= number_to_currency(listing.price, precision: 0) %></h3>
+        </div>
+        <div class="price-per-bed">
+          <% if listing.residential? %>
+            <h5>$ Per Bed</h5>
+            <h3><%= number_to_currency(listing.cost_per_bed, precision: 0) %></h3>
+          <% else %>
+            <h5>$ Per Foot</h5>
+            <h3><%= number_to_currency(listing.cost_per_foot, precision: 0) %></h3>
+          <% end %>
+        </div>
+        <div class="clearfix"></div>
+        <div class="bedrooms">
+          <h5>Beds</h5>
+          <h3><%= number_to_human(listing.bedrooms) %></h3>
+        </div>
+        <div class="bathrooms">
+          <h5>Baths</h5>
+          <h3><%= number_to_human(listing.bathrooms) %></h3>
+        </div>
+        <div class="hood">
+          <h5>Hood</h5>
+          <h2><%= listing.neighborhood.name %></h2>
+        </div>
+        <div class="subway text-center">
+          <% listing.subway_line.strip.split(' ').each do |train| %>
+            <%= image_tag "//nooklyn-files.s3.amazonaws.com/subway/2x/#{train.upcase}.png" %>
+          <% end %>
+        </div>
+      </div>
+    </td>
+    <td>
+      <%= listing.address %><br>
+      <small>Unit:</small> <%= listing.apartment %><br>
+      <small>Access:</small> <%= listing.access.humanize %><br />
+      <% if listing.featured? %><span class="label label-warning">Featured</span> <% end %>
+      <% if listing.private? %><span class="label label-danger">Private</span> <% end %>
+      <% if listing.exclusive? %><span class="label label-success">Exclusive</span> <% end %>
+      <hr>
+      <div class="row text-center matrix-agents">
+        <div class="col-md-6">
+          <h5>Listing</h5>
+          <%= link_to listing.listing_agent, target: "_blank" do %>
+            <% if listing.listing_agent.profile_picture.nil? %>
+              <%= image_tag 'missing.png', class: "img-circle" %>
+            <% else %>
+              <%= image_tag listing.listing_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+            <% end %>
+          <% end %>
+          <h5><%= listing.listing_agent.name %></h5>
+          <h6><%= number_to_phone(listing.listing_agent.phone) %></h6>
+        </div>
+        <div class="col-md-6">
+          <h5>Sales</h5>
+          <%= link_to listing.sales_agent, target: "_blank" do %>
+            <% if listing.sales_agent.profile_picture.nil? %>
+              <%= image_tag 'missing.png', class: "img-circle" %>
+            <% else %>
+              <%= image_tag listing.sales_agent.profile_picture.url(:thumb), class: "img-circle img-responsive img-circle-small center-block" %>
+            <% end %>
+          <% end %>
+          <h5><%= listing.sales_agent.name %></h5>
+          <h6><%= number_to_phone(listing.sales_agent.phone) %></h6>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="admin-key-value-pair-card">
+        <ul class="list-unstyled">
+         <li><small>ID:</small> <%= listing.id %><br></li>
+         <% unless listing.owner_pays.blank? %><li><small>Owner Pays:</small> <%= number_to_percentage(listing.owner_pays, precision: 0) %><br></li><% end %>
+         <% unless listing.fee.blank? %><li><small>Fee Notes:</small> <%= listing.fee.humanize %><br></li><% end %>
+         <% unless listing.utilities.blank? %><li><small>Utilities:</small> <%= listing.utilities.humanize %><br></li><% end %>
+         <li><small>Move In Cost:</small> <% if listing.move_in_cost == true %>First, Last and Security<% end %><% if listing.move_in_cost == false %>First and Security<% end %><br></li>
+         <li><small>Pets:</small> <% if listing.pets == true %>Allowed<% else %>Not Allowed<% end %><br></li>
+         <% unless listing.term.blank? %><li><small>Term:</small> <%= listing.term %><br></li><% end %>
+         <% unless listing.square_feet.blank? %><li><small>Square Feet:</small> <%= listing.square_feet %><br></li><% end %>
+        </ul>
+      </div>
+      <br>
+      <% unless listing.date_available.blank? %>
+        <div class="matrix-date-available">
+          <h5><%= listing.date_available.strftime('%B') %></h5>
+          <h4><%= listing.date_available.strftime('%e') %></h4>
+        </div>
+      <% end %>
+    </td>
+    <td>
+      <%= hidden_field_tag 'listing_id', listing.id %>
+      <%= form_for(listing) do |f| %>
+        <label><%= f.radio_button :action_status, "available" %> Available</label><br>
+        <label><%= f.radio_button :action_status, "pending" %> Pending</label><br>
+        <label><%= f.radio_button :action_status, "rented" %> Rented</label><br>
+        <label><%= f.check_box :featured %> Featured</label>
+      <% end %>
+      <div class="btn-group">
+        <%= link_to 'Edit Listing', edit_listing_path(listing), class: 'button btn-edit btn-3x' %><br>
+        <%= link_to 'Manage Photos', manage_photos_listing_path(listing), class: 'button btn-white btn-3x' %>
+        <%= link_to "Craigslist", craigslist_listing_path(listing), :class => 'button btn-edit btn-3x' %>
+      </div>
+    </td>
+  </tr>
+<% end %>

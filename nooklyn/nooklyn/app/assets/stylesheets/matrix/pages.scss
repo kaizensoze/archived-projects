@@ -1,0 +1,496 @@
+/*****************************************************************************/
+/*
+/* Agent Guide
+/*
+/*****************************************************************************/
+
+div.agent-guide-container {
+  /* Positioning */
+  /* Box-model */
+  max-width: 620px;
+  margin: 10px auto;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 300;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    /* Typography */
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: uppercase;
+    /* Visual */
+    border-bottom: 1px solid #eee;
+    /* Misc */
+  }
+  p {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'kepler-std', Georgia, serif;
+    /* Visual */
+    /* Misc */
+  }
+  p.lead {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 22px;
+    /* Visual */
+    /* Misc */
+  }
+  ul,ol {
+    li {
+      /* Positioning */
+      /* Box-model */
+      padding-bottom: 15px;
+      /* Typography */
+      font-size: 18px;
+      font-weight: 300;
+      font-family: 'kepler-std', Georgia, serif;
+      /* Visual */
+      /* Misc */
+    }
+  }
+}
+
+/*****************************************************************************/
+/*
+/* New Stats Page
+/*
+/*****************************************************************************/
+
+div.numbers-page {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  background-color: #222;
+  color: #333;
+  /* Misc */
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  img {
+    max-width: 200px;
+  }
+  h4 {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 25px;
+    /* Typography */
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 11px;
+    text-transform: uppercase;
+    /* Visual */
+    color: #fff;
+    /* Misc */
+  }
+  h6 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+  div.stat-row {
+    padding-left: 15px;
+    padding-right: 15px;
+    h3 {
+      /* Positioning */
+      /* Box-model */
+      margin-bottom: 0;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      /* Typography */
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      /* Visual */
+      border: 1px solid #eee;
+      border-bottom-width: 3px;
+      /* Misc */
+    }
+    h5 {
+      /* Positioning */
+      /* Box-model */
+      margin-top: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      /* Typography */
+      font-size: 50px;
+      font-weight: 100;
+      text-align: center;
+      /* Visual */
+      border: 1px solid #eee;
+      border-top: 0;
+      /* Misc */
+    }
+  }
+}
+
+div.chart-container {
+  /* Positioning */
+  /* Box-model */
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 98%;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  color: #fff;
+  hr {
+    border-color: #4e4e4e;
+  }
+}
+
+div.user-growth-numbers-card {
+  /* Positioning */
+  /* Box-model */
+  margin: 0 auto;
+  max-width: 900px;
+  padding-top: 25px;
+  padding-bottom: 100px;
+  /* Typography */
+  /* Visual */
+  background-color: #fff;
+  /* Misc */
+}
+
+table.leaderboard {
+  img.img-circle-small {
+    /* Positioning */
+    /* Box-model */
+    max-width: 50px;
+    margin-bottom: 10px;
+    /* Typography */
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 50px;
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    max-width: 200px;
+    margin: 10px auto;
+    padding-bottom: 10px;
+    /* Typography */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    /* Visual */
+    border-bottom: 1px solid #333;
+    color: #333;
+    /* Misc */
+  }
+  a {
+    color: #333;
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Stats
+/*
+/*****************************************************************************/
+
+div.stats_page {
+  h2 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  div.stats_container {
+    padding: 50px;
+    background-color: #fff;
+    max-width: 1070px;
+    margin: 15px auto;
+    @media screen and (max-width: 320px) {
+      padding: 25px;
+    }
+  }
+}
+
+div.stat-card {
+  /* Positioning */
+  /* Box-model */
+  display: inline-block;
+  max-width: 320px;
+  min-width: 280px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  /* Typography */
+  background-color: #fff;
+  text-align: center;
+  /* Visual */
+  border: 1px solid #eee;
+  /* Misc */
+  div.row {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* Typography */
+    /* Visual */
+    background-color: #f9fafa;
+    /* Misc */
+  }
+  h1 {
+    /* Positioning */
+    /* Box-model */
+    padding-bottom: 15px;
+    /* Typography */
+    font-size: 18px;
+    border-bottom: 1px dotted #eee;
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 70px;
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 100;
+    /* Visual */
+    /* Misc */
+  }
+  h5 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+/*****************************************************************************/
+/*
+/* Documents
+/*
+/*****************************************************************************/
+
+div.documents-page {
+  /* Positioning */
+  /* Box-model */
+  padding: 25px;
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 16px;
+    /* Visual */
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    font-size: 11px;
+    font-weight: 700;
+    /* Visual */
+    text-transform: uppercase;
+    /* Misc */
+  }
+  a {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    color: #333;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+
+/*****************************************************************************/
+/*
+/* Styleguide
+/*
+/*****************************************************************************/
+
+div.nklyn-styleguide {
+  div.nklyn-icons-header {
+    /* Positioning */
+    /* Box-model */
+    /* Typography */
+    text-align: left;
+    /* Visual */
+    /* Misc */
+  }
+  h2 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 30px;
+    padding-bottom: 20px;
+    /* Typography */
+    font-weight: 300;
+    text-align: center;
+    /* Visual */
+    border-bottom: 1px dotted #ccc;
+    /* Misc */
+  }
+  h3 {
+    /* Positioning */
+    /* Box-model */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    /* Typography */
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    /* Visual */
+    /* Misc */
+  }
+}
+
+
+
+div.color-swatch {
+  /* Positioning */
+  display: inline-block;
+  /* Box-model */
+  height: 225px;
+  margin-bottom: 10px;
+  padding: 15px;
+  width: 140px;
+  /* Typography */
+  /* Visual */
+  /* Misc */
+  h4 {
+    font-weight: 600;
+    font-size: 12px;
+  }
+  h5 {
+  }
+  div.color-swatch-footer {
+    font-size: 11px;
+    padding-top: 110px;
+    font-weight: 300;
+  }
+}
+
+div#color-swatch-yellow {
+  background-color: #ffc03a;
+  border: 1px solid #333;
+  color: #333;
+  div.color-swatch-footer {
+    color: rgba(17, 17, 17, 1);
+  }
+}
+
+div#color-swatch-light-yellow {
+  background-color: #f1e577;
+  border: 1px solid #ffc03a;
+  color: #333;
+  div.color-swatch-footer {
+    color: rgba(17, 17, 17, 1);
+  }
+}
+
+div#color-swatch-black {
+  background-color: #000000;
+  border: 1px solid #af3c2d;
+  color: #fff;
+  div.color-swatch-footer {
+    color: rgba(255, 255, 255, .6);
+  }
+}
+
+div#color-swatch-dark-gray {
+  background-color: #2d2d2d;
+  border: 1px solid #af3c2d;
+  color: #fff;
+  div.color-swatch-footer {
+    color: rgba(255, 255, 255, .6);
+  }
+}
+
+div#color-swatch-light-gray {
+  background-color: #eceef1;
+  border: 1px solid #ddd;
+  color: #333;
+  div.color-swatch-footer {
+    color: rgba(34, 34, 34, .6);
+  }
+}
+
+div#color-swatch-white {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  div.color-swatch-footer {
+    color: rgba(34, 34, 34, .6);
+  }
+}
+
+// Icons Section
+
+div.nklyn-icons-cheatsheet {
+  /* Positioning */
+  /* Box-model */
+  /* Typography */
+  text-align: center;
+  /* Visual */
+  /* Misc */
+}

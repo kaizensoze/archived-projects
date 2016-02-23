@@ -1,0 +1,26 @@
+<%= form_for(@check_request_type) do |f| %>
+  <% if @check_request_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@check_request_type.errors.count, "error") %> prohibited this check_request_type from being saved:</h2>
+
+      <ul>
+      <% @check_request_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, class: "general-text-label" %><br>
+    <%= f.text_field :name, class: "general-text-field" %>
+  </div>
+  <div class="field">
+    <%= f.label :active, class: "general-text-label" %><br>
+    <%= f.check_box :active, class: "general-text-field" %>
+  </div>
+  <hr>
+  <div class="actions">
+    <%= f.submit "Submit", class:"button btn-nklyn-black btn-4x" %>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<% content_for :title, @region.name + " on Nooklyn: Apartments, Roommates, Neighborhoods" %>
+<div class="mega-container">
+  <div class="standard-page-header container">
+    <h1><%= @region.name %></h1>
+    <% if can? :manage, :all %>
+    <%= link_to 'Edit', edit_region_path(@region), class: "button btn-blue btn-2x" %>
+    <% end %>
+    <hr>
+  </div>
+
+  <div class="neighborhood-card-container">
+    <%= render partial: "neighborhoods/neighborhood", collection: @neighborhoods %>
+  </div>
+
+  <div id="region-show-map" data-region-id="<%= @region.id %>" data-latitude="<%= @region.latitude %>" data-longitude="<%= @region.longitude %>"></div>
+  <br>
+  <div class="locations-container">
+    <%= render partial: "locations/location", collection: @locations %>
+  </div>
+</div>

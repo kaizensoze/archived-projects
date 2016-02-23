@@ -1,0 +1,51 @@
+<% content_for :title, "Rooms & Mates - A roommate finder powered by Nooklyn" %>
+<% content_for :meta_url, "https://nooklyn.com/rooommates" %>
+<% content_for :og_url, "https://nooklyn.com/rooommates" %>
+<% content_for :description, "Find rooms for rent and connect with roommates in Brooklyn, New York and San Francisco" %>
+<% content_for :og_image, "https://nooklyn-files.s3.amazonaws.com/img/nooklyn-mates-web.jpg" %>
+
+
+<div class="mates-jumbotron">
+  <i class="nklyn-icon-logo nklyn-7x"></i>
+  <h1>Rooms & Mates</h1>
+    <div class="text-center">
+      <% if agent_signed_in? %>
+        <%= link_to new_mate_post_path do %>
+          <button class="button btn-yellow btn-2x call-to-action">Create a Profile</button>
+        <% end %>
+        <br>
+        <% else %>
+        <%= link_to register_path do %>
+          <button class="button btn-yellow btn-2x call-to-action">Sign Up Free</button>
+        <% end %>
+      <% end %>
+      <br>
+      <%= link_to "https://itunes.apple.com/us/app/nooklyn-apartments-roommates/id1024150110", target: "_blank" do %>
+        <%= image_tag 'download-tunes.svg', class: "img-responsive center-block" %>
+      <% end %>
+    </div>
+</div>
+
+<div class="mates-marketing-section">
+  <div class="rm-marketing-section">
+    <%= image_tag '//nooklyn-files.s3.amazonaws.com/illustrations/BrowseRoomies.png', class: "img-responsive center-block" %>
+    <h2>Connect with Roommates</h2>
+    <p>Thousands of people have already found roommates using Nooklyn's Rooms & Mates.</p>
+    <div class="text-center">
+      <% if agent_signed_in? %>
+        <%= link_to new_mate_post_path do %>
+          <button class="button btn-yellow btn-2x call-to-action">Create a Profile</button>
+        <% end %>
+        <br>
+        <% else %>
+        <%= link_to register_path do %>
+          <button class="button btn-yellow btn-2x call-to-action">Sign Up Free</button>
+        <% end %>
+      <% end %>
+      <br>
+      <%= link_to "https://itunes.apple.com/us/app/nooklyn-apartments-roommates/id1024150110", target: "_blank" do %>
+        <%= image_tag 'download-tunes.svg', class: "img-responsive center-block" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<!-- Listings -->
+<%= image_tag "https://nooklyn-files.s3.amazonaws.com/illustrations/ListRoom.png", class: "img-responsive center-block" %>
+<h2>Listings</h2>
+<div class="container">
+  <div class="row stat-row">
+    <div class="col-sm-3">
+      <h3>Total</h3>
+      <h5><%= number_with_delimiter(@listings.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Total Exclusive</h3>
+      <h5><%= number_with_delimiter(@exclusive_listings_total.count) %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Available</h3>
+      <h5><%= @available_listings.count %></h5>
+    </div>
+    <div class="col-sm-3">
+      <h3>Available Exclusive</h3>
+      <h5><%= number_with_delimiter(@exclusive_listings_available.count) %></h5>
+    </div>
+  </div>
+</div>

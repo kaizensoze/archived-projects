@@ -1,0 +1,19 @@
+<% content_for :title, "Rooms and Sublets in #{@neighborhood.name} - Powered by Nooklyn" %>
+<% content_for :description, "Browse available rooms and sublets in #{@neighborhood.name} or list your own apartment for rent." %>
+<%= render 'neighborhoods/header' %>
+<div id="rooms-map" data-latitude="<%= @neighborhood.latitude %>" data-longitude="<%= @neighborhood.longitude %>" data-zoom="14" data-hood="<%= @neighborhood.id %>"></div>
+<div class="rm_container">
+  <br>
+  <% if agent_signed_in? %>
+    <%= link_to new_room_post_path do %>
+    <button class="button btn-yellow btn-2x global-call-to-action">Add Your Room</button>
+    <% end %>
+  <% else %>
+    <%= link_to register_path do %>
+    <button class="button btn-yellow btn-2x global-call-to-action">Add Your Room</button>
+    <% end %>
+  <% end %>
+  <br>
+  <br>
+  <%= render partial: "room_posts/room_post", collection: @room_posts %>
+</div>
